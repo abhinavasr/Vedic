@@ -1,0 +1,36 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec.lock.bak
+*.iml
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/ephemeral/
+**/*.xcuserdatad/
+**/xcuserdata/
+
+# Android
+android/.gradle/
+android/local.properties
+android/key.properties
+*.jks
+*.keystore
+
+# Models and content packs are downloaded at runtime, never committed
+*.litertlm
+*.tflite
+*.onnx
+/packs/
+
+# macOS
+.DS_Store
+
+# Env
+.env
