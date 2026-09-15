@@ -52,6 +52,9 @@ class SadhanaHeader extends StatelessWidget {
         const SizedBox(width: 14),
         Expanded(
           child: Column(
+            // Without this the column fills the hero's height and drags the
+            // logo and settings button to the middle of it.
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(

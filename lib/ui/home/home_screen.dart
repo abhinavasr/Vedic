@@ -12,6 +12,8 @@ import '../simple_screens.dart';
 import '../theme.dart';
 import 'hero_painter.dart';
 
+const _heroShadow = [Shadow(color: Color(0x66000000), blurRadius: 12)];
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
     super.key,
@@ -34,8 +36,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final verse = repository.verseOfTheDay(DateTime.now());
     final heroHeight = math.max(
-      300.0,
-      MediaQuery.sizeOf(context).height * 0.34,
+      380.0,
+      MediaQuery.sizeOf(context).height * 0.44,
     );
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -54,7 +56,31 @@ class HomeScreen extends StatelessWidget {
                   bottom: false,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(20, 8, 8, 0),
-                    child: SadhanaHeader(onOpenSettings: onOpenSettings),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SadhanaHeader(onOpenSettings: onOpenSettings),
+                        const SizedBox(height: 34),
+                        Text(
+                          'Ancient Wisdom\nfor a Calmer You',
+                          style: serif(
+                            size: 34,
+                            color: Colors.white,
+                            height: 1.15,
+                          ).copyWith(shadows: _heroShadow),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          'Read  ·  Listen  ·  Reflect  ·  Anytime',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.white.withValues(alpha: 0.85),
+                            shadows: _heroShadow,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

@@ -7,7 +7,6 @@ import 'package:flutter/services.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 import '../meditation/meditation_session.dart';
-import 'brand_header.dart';
 import 'home/hero_painter.dart';
 import 'theme.dart';
 
@@ -15,9 +14,7 @@ const _totalMinutes = [5, 10, 20, 30];
 const _intervalMinutes = <int?>[null, 1, 2, 5, 10];
 
 class MeditationScreen extends StatefulWidget {
-  const MeditationScreen({super.key, required this.onOpenSettings});
-
-  final VoidCallback onOpenSettings;
+  const MeditationScreen({super.key});
 
   @override
   State<MeditationScreen> createState() => _MeditationScreenState();
@@ -210,14 +207,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 4),
-                      child: SadhanaHeader(
-                        onOpenSettings: widget.onOpenSettings,
-                        onDark: false,
-                      ),
-                    ),
-                    const SizedBox(height: 24),
+                    const SizedBox(height: 12),
                     Padding(
                       padding: const EdgeInsets.only(left: 8),
                       child: Column(

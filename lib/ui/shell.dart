@@ -46,7 +46,7 @@ class _SadhanaShellState extends State<SadhanaShell> {
               'computed on this phone and cite the verses they come from. '
               'Arrives with the on-device assistant download.',
         ),
-        MeditationScreen(onOpenSettings: _openSettings),
+        const MeditationScreen(),
       ],
     ),
     bottomNavigationBar: NavigationBar(
