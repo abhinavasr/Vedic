@@ -264,7 +264,7 @@ class _VerseCard extends StatelessWidget {
               Text(
                 devanagariToIast(verse.verse.text),
                 style: serif(
-                  size: 16,
+                  size: 15,
                   style: FontStyle.italic,
                   color: SadhanaColors.inkSoft,
                   height: 1.4,
@@ -500,7 +500,7 @@ class _SearchBar extends StatelessWidget {
                 'Search scriptures, verses or ask a question…',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: serif(size: 16, color: SadhanaColors.inkSoft),
+                style: serif(size: 15, color: SadhanaColors.inkSoft),
               ),
             ),
           ],

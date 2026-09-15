@@ -20,59 +20,59 @@ class HeroPainter extends CustomPainter {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Color(0xFF4E5E6E),
-            Color(0xFF8D8C8E),
-            Color(0xFFDDB07D),
-            Color(0xFFF0D3A8),
+            Color(0xFF55667A),
+            Color(0xFFA2958C),
+            Color(0xFFE8B982),
+            Color(0xFFF3D9B0),
           ],
-          stops: [0, 0.38, 0.62, 0.8],
+          stops: [0, 0.36, 0.58, 0.76],
         ).createShader(rect),
     );
 
-    final sun = Offset(size.width * 0.76, size.height * 0.52);
-    final glow = Rect.fromCircle(center: sun, radius: size.width * 0.3);
+    final sun = Offset(size.width * 0.7, size.height * 0.56);
+    final glow = Rect.fromCircle(center: sun, radius: size.width * 0.36);
     canvas
       ..drawCircle(
         sun,
         glow.width / 2,
         Paint()
           ..shader = const RadialGradient(
-            colors: [Color(0xCCFFE3A3), Color(0x00FFE3A3)],
+            colors: [Color(0xDDFFE7B0), Color(0x00FFE7B0)],
           ).createShader(glow),
       )
-      ..drawCircle(sun, 9, Paint()..color = const Color(0xFFFFF5DA));
+      ..drawCircle(sun, 10, Paint()..color = const Color(0xFFFFF6DE));
 
     _ridge(
       canvas,
       size,
-      base: 0.54,
-      amp: 0.1,
+      base: 0.6,
+      amp: 0.14,
       seed: 1,
-      color: const Color(0x8C6F7A86),
+      color: const Color(0x996F7A86),
     );
     _ridge(
       canvas,
       size,
-      base: 0.64,
-      amp: 0.08,
+      base: 0.68,
+      amp: 0.1,
       seed: 2,
-      color: const Color(0xBF4B5563),
+      color: const Color(0xCC4B5563),
     );
     _temple(canvas, size);
     _ridge(
       canvas,
       size,
-      base: 0.76,
-      amp: 0.05,
+      base: 0.8,
+      amp: 0.06,
       seed: 3,
       color: const Color(0xFF2F3A33),
     );
 
     final fade = Rect.fromLTWH(
       0,
-      size.height * 0.7,
+      size.height * 0.72,
       size.width,
-      size.height * 0.3,
+      size.height * 0.28,
     );
     canvas.drawRect(
       fade,
@@ -108,82 +108,78 @@ class HeroPainter extends CustomPainter {
     canvas.drawPath(path, Paint()..color = color);
   }
 
+  /// A small shikhara temple on the right-hand ridge, below the header.
   void _temple(Canvas canvas, Size size) {
-    final unit = size.width * 0.022;
-    final cx = size.width * 0.86;
-    final baseY = size.height * 0.68;
+    final unit = size.width * 0.0105;
+    final cx = size.width * 0.88;
+    final baseY = size.height * 0.72;
     final stone = Paint()..color = const Color(0xFF34302B);
 
     canvas
       ..drawRect(
         Rect.fromLTRB(
-          cx - unit * 7,
+          cx - unit * 8,
           baseY - unit * 1.2,
           cx + unit * 6,
-          baseY + unit * 4,
+          baseY + unit * 6,
         ),
         stone,
       )
       ..drawRect(
-        Rect.fromLTRB(
-          cx - unit * 6.5,
-          baseY - unit * 4,
-          cx - unit * 1.5,
-          baseY,
-        ),
+        Rect.fromLTRB(cx - unit * 7, baseY - unit * 4, cx - unit * 1.5, baseY),
         stone,
       )
       ..drawPath(
         Path()
-          ..moveTo(cx - unit * 7, baseY - unit * 4)
-          ..lineTo(cx - unit * 4, baseY - unit * 7)
+          ..moveTo(cx - unit * 7.5, baseY - unit * 4)
+          ..lineTo(cx - unit * 4.25, baseY - unit * 7)
           ..lineTo(cx - unit, baseY - unit * 4)
           ..close(),
         stone,
       )
       ..drawPath(
         Path()
-          ..moveTo(cx - unit * 2.5, baseY)
-          ..lineTo(cx - unit * 2.5, baseY - unit * 5)
+          ..moveTo(cx - unit * 2.6, baseY)
+          ..lineTo(cx - unit * 2.6, baseY - unit * 5)
           ..quadraticBezierTo(
-            cx - unit * 2.4,
+            cx - unit * 2.5,
             baseY - unit * 13,
             cx,
             baseY - unit * 17,
           )
           ..quadraticBezierTo(
-            cx + unit * 2.4,
-            baseY - unit * 13,
             cx + unit * 2.5,
+            baseY - unit * 13,
+            cx + unit * 2.6,
             baseY - unit * 5,
           )
-          ..lineTo(cx + unit * 2.5, baseY)
+          ..lineTo(cx + unit * 2.6, baseY)
           ..close(),
         stone,
       )
-      ..drawCircle(Offset(cx, baseY - unit * 17.4), unit * 0.6, stone)
+      ..drawCircle(Offset(cx, baseY - unit * 17.4), unit * 0.7, stone)
       ..drawLine(
         Offset(cx, baseY - unit * 17.5),
-        Offset(cx, baseY - unit * 21),
+        Offset(cx, baseY - unit * 22),
         Paint()
           ..color = stone.color
-          ..strokeWidth = unit * 0.2,
+          ..strokeWidth = math.max(1, unit * 0.25),
       )
       ..drawPath(
         Path()
-          ..moveTo(cx, baseY - unit * 21)
-          ..lineTo(cx + unit * 2.2, baseY - unit * 20.3)
-          ..lineTo(cx, baseY - unit * 19.6)
+          ..moveTo(cx, baseY - unit * 22)
+          ..lineTo(cx + unit * 3, baseY - unit * 21)
+          ..lineTo(cx, baseY - unit * 20)
           ..close(),
         Paint()..color = const Color(0xFFD9642B),
       );
 
     final band = Paint()
       ..color = const Color(0xFF4A453D)
-      ..strokeWidth = unit * 0.25;
+      ..strokeWidth = math.max(1, unit * 0.3);
     for (var i = 1; i <= 4; i++) {
       final y = baseY - unit * (5 + i * 2.6);
-      final half = unit * (2.5 - i * 0.35);
+      final half = unit * (2.6 - i * 0.35);
       canvas.drawLine(Offset(cx - half, y), Offset(cx + half, y), band);
     }
   }
