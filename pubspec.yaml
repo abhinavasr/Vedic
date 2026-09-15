@@ -1,5 +1,5 @@
 name: vedic
-description: "A new Flutter project."
+description: "Offline-first scripture reader, panchang and on-device assistant."
 publish_to: 'none'
 version: 0.1.0+1
 
@@ -25,3 +25,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    # Bundled content packs (docs/CONTENT_PACKS.md). Flat files: a directory
+    # entry does not include subdirectories.
+    - assets/packs/

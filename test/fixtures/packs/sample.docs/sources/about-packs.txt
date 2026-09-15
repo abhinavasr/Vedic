@@ -1,0 +1,7 @@
+A content pack is the unit of reference material the app installs. The same format is used for data bundled inside the app and for packs downloaded later from a server.
+
+Each pack carries a signed manifest and a payload. The payload is a SQLite database holding works, sections, passages and the chunks the assistant retrieves from.
+
+Bundled packs are not encrypted, because any key shipped inside the app could be read by anyone with the app. Downloaded packs are encrypted with a key that is unique to the pack revision and wrapped for each device.
+
+यह एक परीक्षण दस्तावेज़ है। इसका उपयोग केवल स्वचालित परीक्षणों में होता है।

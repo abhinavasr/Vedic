@@ -107,7 +107,7 @@ class PackManifest {
     } on FormatException catch (e) {
       throw PackFormatException('manifest is not UTF-8 JSON: ${e.message}');
     }
-    final j = _Json(decoded, 'manifest');
+    final j = JsonReader(decoded, 'manifest');
 
     if (j.string('format') != 'vedic-pack') {
       throw const PackFormatException('manifest.format must be "vedic-pack"');
@@ -269,7 +269,7 @@ const _keyDeliveryNames = {
 final _sha256Hex = RegExp(r'^[0-9a-f]{64}$');
 final _fileName = RegExp(r'^[A-Za-z0-9][A-Za-z0-9._-]*$');
 
-PackPayload _parsePayload(_Json p) {
+PackPayload _parsePayload(JsonReader p) {
   final file = p.string('file');
   if (!_fileName.hasMatch(file)) {
     throw PackFormatException('payload.file "$file" is not a plain file name');
@@ -296,8 +296,8 @@ PackPayload _parsePayload(_Json p) {
 }
 
 /// Typed access to a decoded JSON object, with the path in every error.
-class _Json {
-  _Json(Object? value, this.path)
+class JsonReader {
+  JsonReader(Object? value, this.path)
     : map = value is Map<String, Object?>
           ? value
           : throw PackFormatException('$path must be an object');
@@ -350,13 +350,15 @@ class _Json {
     throw PackFormatException('$path.$key has unknown value "$v"');
   }
 
-  _Json object(String key) => _Json(_require(key), '$path.$key');
+  JsonReader object(String key) => JsonReader(_require(key), '$path.$key');
 
-  List<_Json> objects(String key, {bool optional = false}) {
+  List<JsonReader> objects(String key, {bool optional = false}) {
     if (optional && map[key] == null) return const [];
     final v = _require(key);
     if (v is! List) throw PackFormatException('$path.$key must be a list');
-    return [for (var i = 0; i < v.length; i++) _Json(v[i], '$path.$key[$i]')];
+    return [
+      for (var i = 0; i < v.length; i++) JsonReader(v[i], '$path.$key[$i]'),
+    ];
   }
 
   List<String> strings(String key) {

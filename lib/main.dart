@@ -1,16 +1,30 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:path/path.dart' as p;
+import 'package:path_provider/path_provider.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+import 'app_build.dart';
+import 'packs/bundled_assets.dart';
+import 'packs/pack_store.dart';
+import 'packs/trusted_keys.dart';
+import 'ui/app.dart';
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
-    );
-  }
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final support = await getApplicationSupportDirectory();
+  final store = PackStore(
+    root: Directory(p.join(support.path, 'packs')),
+    trustedKeys: trustedPublisherKeys,
+    appBuild: appBuild,
+  );
+  runApp(
+    VedicApp(
+      store: store,
+      prepare: () async {
+        await store.removeLeftovers();
+        await installPacksFromAppBundle(store);
+      },
+    ),
+  );
 }

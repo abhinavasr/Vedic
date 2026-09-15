@@ -1,0 +1,25 @@
+# Test fixture only. Not bundled in the app.
+pack_id: sample.docs
+revision: 1
+kind: text
+created_at: 2026-09-15T00:00:00Z
+min_app_build: 1
+title:
+  en: Sample documents
+languages: [en, hi]
+
+licences:
+  - id: vedic-own-work
+    name: Vedic project, own work
+    commercial_redistribution: true
+    grant_reference: own-work
+    attribution: Written for the Vedic app test suite.
+
+works:
+  - slug: about-packs
+    kind: document
+    source: sources/about-packs.txt
+    title: About content packs
+    language: en
+    script: Latn
+    licence: vedic-own-work

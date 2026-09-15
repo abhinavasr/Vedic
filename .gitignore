@@ -37,3 +37,6 @@ android/key.properties
 
 # IDE
 .idea/
+
+# Pack signing seeds never leave the build machine
+tool/keys/*.seed

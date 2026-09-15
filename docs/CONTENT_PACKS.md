@@ -263,7 +263,7 @@ CREATE TABLE passages (               -- the unit the reader shows and citations
 CREATE TABLE renderings (             -- transliterations, translations, commentary
   id         INTEGER PRIMARY KEY,
   passage_id INTEGER NOT NULL REFERENCES passages(id),
-  kind       TEXT NOT NULL CHECK (kind IN ('transliteration', 'translation', 'commentary')),
+  kind       TEXT NOT NULL CHECK (kind IN ('transliteration', 'translation', 'commentary', 'variant')),
   language   TEXT NOT NULL,
   script     TEXT,
   scheme     TEXT,                      -- transliteration scheme: 'IAST', 'ISO15919'
@@ -471,11 +471,15 @@ Runs on our machines, never on the phone. Input per pack:
 
 ```
 content/<pack_id>/
-  pack.yaml        pack_id, revision, titles, languages, licences with grant references,
-                   created_at (fixed, not the clock), ref_changes
+  pack.yaml        pack_id, revision, titles, languages, licences, created_at (fixed, not
+                   the clock), and one entry per work: slug, kind, source file, format,
+                   language, script, edition, licence
   sources/         .pdf and .txt files
-  works.yaml       per source file: work slug, kind, language, script, edition, licence
 ```
+
+Build with `dart run tool/build_pack.dart content/<pack_id>`. `--bundle` also copies the pack
+into `assets/packs/`; `--encrypt` produces a download pack with a fresh content key under
+`build/key-vault/`. The first real pack is `content/bhagavad-gita.sa`.
 
 Steps:
 
@@ -483,9 +487,13 @@ Steps:
    PDFs (no text layer) are **flagged, not guessed**: OCR on Sanskrit is unreliable (roadmap
    §3.6), so they need a human-checked text file. `.txt` is read as UTF-8 and rejected if not.
 2. **Normalise.** NFC; fix line-break hyphenation; collapse whitespace; keep ZWJ and ZWNJ.
-3. **Structure.** `kind: document` becomes one `page` passage per PDF page (`ref` `p12`).
-   `kind: scripture` from structured text becomes chapters and verses, with refs from the verse
-   numbers (`॥ २.४७ ॥` → `2.47`). The exact markup convention is set once we see the real files.
+3. **Structure.** A PDF becomes one `page` passage per page (`ref` `p12`); a plain `.txt`
+   becomes one `prose` passage per paragraph (`para3`). `format: verses` parses
+   chapter-and-verse text laid out as on sanskritdocuments.org: chapter headings become
+   sections, verses get refs from their numbers (`॥ २-४७॥` → `2.47`), speaker lines,
+   chapter openings and colophons become their own passages, and parenthesised readings
+   become `variant` renderings rather than verse text. The parser is strict: any line that
+   doesn't fit fails the build with its line number.
 4. **Chunk** with `lib/core/chunker.dart`, the same code the app uses on user documents, so
    pack and user retrieval behave alike.
 5. **Embed (optional),** only if desktop output of the embedder is verified to match the phone
