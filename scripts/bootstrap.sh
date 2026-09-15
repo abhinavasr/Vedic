@@ -90,6 +90,19 @@ else
 fi
 
 # --- 3. iOS ------------------------------------------------------------------
+# Flutter 3.47 generates Swift Package Manager projects, so there is usually no Podfile.
+# The Xcode project's build settings are the source of truth for the deployment target.
+PBXPROJ="$ROOT/ios/Runner.xcodeproj/project.pbxproj"
+if [ -f "$PBXPROJ" ]; then
+  if grep -q "IPHONEOS_DEPLOYMENT_TARGET = 1[0-5]\." "$PBXPROJ"; then
+    info "iOS: Xcode project deployment target 16.0 (required by LiteRT-LM)"
+    sed -i.bak 's/IPHONEOS_DEPLOYMENT_TARGET = 1[0-5]\.[0-9]*;/IPHONEOS_DEPLOYMENT_TARGET = 16.0;/g' "$PBXPROJ"
+    rm -f "$PBXPROJ.bak"
+  else
+    skip "iOS Xcode project deployment target"
+  fi
+fi
+
 PODFILE="$ROOT/ios/Podfile"
 if [ -f "$PODFILE" ]; then
   if grep -q "^platform :ios, '16.0'" "$PODFILE"; then
@@ -103,8 +116,8 @@ if [ -f "$PODFILE" ]; then
     fi
     rm -f "$PODFILE.bak"
   fi
-else
-  warn "No ios/Podfile found — skipping iOS config"
+elif [ ! -f "$PBXPROJ" ]; then
+  warn "No ios/ project found — skipping iOS config"
 fi
 
 XCCONFIG="$ROOT/ios/Flutter/Release.xcconfig"

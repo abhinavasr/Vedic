@@ -1,0 +1,5 @@
+#include "Generated.xcconfig"
+
+// FFI plugins using DynamicLibrary.process() lose their symbols otherwise.
+// Debug builds prove nothing about release here.
+STRIP_STYLE = non-global

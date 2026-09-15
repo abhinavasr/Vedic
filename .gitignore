@@ -34,3 +34,6 @@ android/key.properties
 
 # Env
 .env
+
+# IDE
+.idea/
