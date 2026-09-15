@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../library/scripture_repository.dart';
 import 'home/home_screen.dart';
 import 'library_screen.dart';
+import 'meditation_screen.dart';
 import 'simple_screens.dart';
 
 class SadhanaShell extends StatefulWidget {
@@ -20,6 +21,10 @@ class _SadhanaShellState extends State<SadhanaShell> {
 
   void _open(int tab) => setState(() => _tab = tab);
 
+  void _openSettings() =>
+      Navigator.of(context)
+          .push(MaterialPageRoute<void>(builder: (_) => const ProfileScreen()));
+
   @override
   Widget build(BuildContext context) => Scaffold(
     body: IndexedStack(
@@ -29,7 +34,8 @@ class _SadhanaShellState extends State<SadhanaShell> {
           repository: widget.repository,
           problem: widget.problem,
           onOpenLibrary: () => _open(1),
-          onOpenSettings: () => _open(3),
+          onOpenMeditation: () => _open(3),
+          onOpenSettings: _openSettings,
         ),
         LibraryScreen(repository: widget.repository),
         const ComingSoonScreen(
@@ -40,7 +46,7 @@ class _SadhanaShellState extends State<SadhanaShell> {
               'computed on this phone and cite the verses they come from. '
               'Arrives with the on-device assistant download.',
         ),
-        const ProfileScreen(),
+        MeditationScreen(onOpenSettings: _openSettings),
       ],
     ),
     bottomNavigationBar: NavigationBar(
@@ -63,9 +69,9 @@ class _SadhanaShellState extends State<SadhanaShell> {
           label: 'Insights',
         ),
         NavigationDestination(
-          icon: Icon(Icons.person_outline),
-          selectedIcon: Icon(Icons.person),
-          label: 'Profile',
+          icon: Icon(Icons.self_improvement),
+          selectedIcon: Icon(Icons.self_improvement),
+          label: 'Meditation',
         ),
       ],
     ),

@@ -33,6 +33,27 @@ void main() {
     expect(find.text('No scripture installed yet.'), findsOneWidget);
   });
 
+  testWidgets('the meditation timer follows the chosen total time', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      VedicApp(store: emptyStore(), prepare: () async {}),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.widgetWithText(NavigationDestination, 'Meditation'));
+    await tester.pumpAndSettle();
+    expect(find.text('Meditation Timer'), findsOneWidget);
+    expect(find.text('20:00'), findsOneWidget);
+    expect(find.text('Ready to begin'), findsOneWidget);
+
+    final tenMinutes = find.text('10 min').first;
+    await tester.ensureVisible(tenMinutes);
+    await tester.tap(tenMinutes);
+    await tester.pumpAndSettle();
+    expect(find.text('10:00'), findsOneWidget);
+  });
+
   testWidgets('still opens when preparing fails, and says why', (tester) async {
     await tester.pumpWidget(
       VedicApp(

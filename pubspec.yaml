@@ -7,6 +7,7 @@ environment:
   sdk: ^3.13.3
 
 dependencies:
+  audioplayers: ^6.8.1
   crypto: ^3.0.7
   cryptography: ^2.9.0
   flutter:
@@ -14,6 +15,7 @@ dependencies:
   path: ^1.9.1
   path_provider: ^2.1.6
   sqlite3: ^3.6.0
+  wakelock_plus: ^1.8.0
 
 dev_dependencies:
   flutter_test:
@@ -22,6 +24,7 @@ dev_dependencies:
   yaml: ^3.1.4
   args: ^2.7.0
   pdfrx_engine: ^0.6.0
+  flutter_launcher_icons: ^0.14.4
 
 flutter:
   uses-material-design: true
@@ -29,3 +32,16 @@ flutter:
     # Bundled content packs (docs/CONTENT_PACKS.md). Flat files: a directory
     # entry does not include subdirectories.
     - assets/packs/
+    - assets/images/
+    - assets/sounds/
+
+# App icons from the Sadhana logo: `dart run flutter_launcher_icons`.
+# Sources live in branding/ so they are not bundled into the app.
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: branding/app_icon.png
+  remove_alpha_ios: true
+  adaptive_icon_background: "#FBF1E1"
+  adaptive_icon_foreground: branding/app_icon_foreground.png
+  min_sdk_android: 31

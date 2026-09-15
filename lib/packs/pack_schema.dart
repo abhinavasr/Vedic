@@ -1,4 +1,5 @@
-// SQLite schema of a pack database: docs/CONTENT_PACKS.md §5.
+// SQLite schema of the local pack database built on install from a pack's
+// content JSON: docs/CONTENT_PACKS.md §5, docs/PACK_CONTENT_JSON.md.
 
 /// `PRAGMA application_id` of every pack database: "VPK1".
 const int packApplicationId = 0x56504B31;
@@ -21,6 +22,15 @@ CREATE TABLE licences (
   notice                    TEXT
 );
 
+CREATE TABLE voices (
+  id         TEXT PRIMARY KEY,
+  name       TEXT NOT NULL,
+  language   TEXT NOT NULL,
+  style      TEXT NOT NULL CHECK (style IN ('chant', 'read')),
+  engine     TEXT NOT NULL,
+  licence_id TEXT NOT NULL REFERENCES licences(id)
+);
+
 CREATE TABLE works (
   id           INTEGER PRIMARY KEY,
   slug         TEXT NOT NULL UNIQUE,
@@ -34,6 +44,13 @@ CREATE TABLE works (
   source_note  TEXT
 );
 
+CREATE TABLE work_titles (
+  work_id  INTEGER NOT NULL REFERENCES works(id),
+  language TEXT NOT NULL,
+  title    TEXT NOT NULL,
+  PRIMARY KEY (work_id, language)
+) WITHOUT ROWID;
+
 CREATE TABLE sections (
   id        INTEGER PRIMARY KEY,
   work_id   INTEGER NOT NULL REFERENCES works(id),
@@ -43,6 +60,13 @@ CREATE TABLE sections (
   number    TEXT,
   title     TEXT
 );
+
+CREATE TABLE section_titles (
+  section_id INTEGER NOT NULL REFERENCES sections(id),
+  language   TEXT NOT NULL,
+  title      TEXT NOT NULL,
+  PRIMARY KEY (section_id, language)
+) WITHOUT ROWID;
 
 CREATE TABLE passages (
   id         INTEGER PRIMARY KEY,
@@ -67,8 +91,20 @@ CREATE TABLE renderings (
   scheme     TEXT,
   author     TEXT,
   licence_id TEXT NOT NULL REFERENCES licences(id),
+  origin     TEXT NOT NULL DEFAULT 'human' CHECK (origin IN ('human', 'machine')),
   text       TEXT NOT NULL
 );
+
+CREATE TABLE audio (
+  passage_id  INTEGER NOT NULL REFERENCES passages(id),
+  voice_id    TEXT NOT NULL REFERENCES voices(id),
+  file        TEXT NOT NULL,
+  mime        TEXT NOT NULL,
+  duration_ms INTEGER NOT NULL,
+  size        INTEGER NOT NULL,
+  sha256      TEXT NOT NULL,
+  PRIMARY KEY (passage_id, voice_id)
+) WITHOUT ROWID;
 
 CREATE TABLE chunks (
   id               INTEGER PRIMARY KEY,

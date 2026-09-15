@@ -305,6 +305,9 @@ class JsonReader {
   final Map<String, Object?> map;
   final String path;
 
+  /// Whether [key] is present and not null.
+  bool has(String key) => map[key] != null;
+
   Object? _require(String key) {
     if (!map.containsKey(key)) {
       throw PackFormatException('$path.$key is missing');

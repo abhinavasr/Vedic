@@ -195,9 +195,12 @@ builds pin a separate dev key that production builds do not trust.
 
 ## 5. Payload: the pack database
 
-The plaintext payload is a **SQLite database file**, deflate-compressed (RFC 1950 zlib stream)
-and then, for downloads, encrypted. SQLite because the app already reads SQLite, a pack is
-queryable in place with no import step, and `PRAGMA integrity_check` gives a free final check.
+The plaintext payload is the **content JSON** defined in
+[PACK_CONTENT_JSON.md](PACK_CONTENT_JSON.md), deflate-compressed (RFC 1950 zlib stream) and then,
+for downloads, encrypted. `plaintext_sha256` is the SHA-256 of that JSON. JSON is what the
+content server and editors produce, so it is also what ships. On install the app validates it and
+builds the local **SQLite database** below from it. Audio files are not in the payload: they sit
+next to it under `audio/` and are fetched per verse.
 
 - `PRAGMA application_id = 0x56504B31` ("VPK1"), so a stray SQLite file is never mistaken for a
   pack.

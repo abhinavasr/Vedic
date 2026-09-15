@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'dart:math' as math;
 
@@ -5,7 +6,9 @@ import 'package:crypto/crypto.dart' as crypto;
 import 'package:path/path.dart' as p;
 import 'package:sqlite3/sqlite3.dart';
 
+import 'content.dart';
 import 'manifest.dart';
+import 'pack_database.dart';
 import 'pack_schema.dart';
 import 'payload_codec.dart';
 import 'signature.dart';
@@ -177,12 +180,12 @@ class PackStore {
     }
 
     await tempDirectory.create(recursive: true);
-    final temp = File(
-      p.join(
-        tempDirectory.path,
-        '${manifest.packId}-${manifest.revision}-${_randomHex()}.sqlite',
-      ),
+    final stem = p.join(
+      tempDirectory.path,
+      '${manifest.packId}-${manifest.revision}-${_randomHex()}',
     );
+    final temp = File('$stem.json');
+    final database = File('$stem.sqlite');
     try {
       Stream<List<int>> bytes = payloadFile.openRead();
       if (payload.isEncrypted) {
@@ -203,14 +206,26 @@ class PackStore {
 
       if (await temp.length() != payload.plaintextSize ||
           await _sha256(temp.openRead()) != payload.plaintextSha256) {
-        throw const PackIntegrityException('pack database checksum mismatch');
+        throw const PackIntegrityException('pack content checksum mismatch');
       }
-      _validateDatabase(temp.path, manifest);
+      final content = _readContent(await temp.readAsBytes(), manifest);
+      try {
+        writePackDatabase(
+          database.path,
+          content,
+          createdAt: manifest.createdAt,
+        );
+      } on SqliteException catch (e) {
+        throw PackIntegrityException(
+          'pack content breaks the database schema: ${e.message}',
+        );
+      }
+      _validateDatabase(database.path, manifest);
 
       final relative = p.join(manifest.packId, '${manifest.revision}.sqlite');
       final destination = File(p.join(root.path, relative));
       await destination.parent.create(recursive: true);
-      await temp.rename(destination.path);
+      await database.rename(destination.path);
 
       final installedAt = DateTime.now().toUtc();
       final previous = _withRegistry((db) {
@@ -250,7 +265,9 @@ class PackStore {
         ),
       );
     } finally {
-      if (await temp.exists()) await temp.delete();
+      for (final file in [temp, database]) {
+        if (await file.exists()) await file.delete();
+      }
     }
   }
 
@@ -268,6 +285,22 @@ class PackStore {
       db.close();
     }
   }
+}
+
+PackContent _readContent(List<int> bytes, PackManifest manifest) {
+  final PackContent content;
+  try {
+    content = PackContent.fromJson(jsonDecode(utf8.decode(bytes)));
+  } on FormatException catch (e) {
+    throw PackIntegrityException('pack content is not JSON: ${e.message}');
+  } on PackFormatException catch (e) {
+    throw PackIntegrityException('pack content is invalid: ${e.message}');
+  }
+  if (content.packId != manifest.packId ||
+      content.revision != manifest.revision) {
+    throw const PackIntegrityException('pack content does not match manifest');
+  }
+  return content;
 }
 
 void _validateDatabase(String path, PackManifest manifest) {

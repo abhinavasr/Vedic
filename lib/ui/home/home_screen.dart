@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 
 import '../../core/transliteration.dart';
 import '../../library/scripture_repository.dart';
+import '../brand_header.dart';
 import '../reader_screens.dart';
 import '../search_screen.dart';
 import '../simple_screens.dart';
@@ -16,12 +17,14 @@ class HomeScreen extends StatelessWidget {
     super.key,
     required this.repository,
     required this.onOpenLibrary,
+    required this.onOpenMeditation,
     required this.onOpenSettings,
     this.problem,
   });
 
   final ScriptureRepository repository;
   final VoidCallback onOpenLibrary;
+  final VoidCallback onOpenMeditation;
   final VoidCallback onOpenSettings;
 
   /// Why bundled content couldn't be installed, if it couldn't.
@@ -31,8 +34,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final verse = repository.verseOfTheDay(DateTime.now());
     final heroHeight = math.max(
-      380.0,
-      MediaQuery.sizeOf(context).height * 0.44,
+      300.0,
+      MediaQuery.sizeOf(context).height * 0.34,
     );
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -45,7 +48,16 @@ class HomeScreen extends StatelessWidget {
               left: 0,
               right: 0,
               height: heroHeight,
-              child: _Hero(onOpenSettings: onOpenSettings),
+              child: CustomPaint(
+                painter: const HeroPainter(fadeTo: SadhanaColors.background),
+                child: SafeArea(
+                  bottom: false,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 8, 8, 0),
+                    child: SadhanaHeader(onOpenSettings: onOpenSettings),
+                  ),
+                ),
+              ),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -73,7 +85,10 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 28),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: _FeatureTiles(onOpenLibrary: onOpenLibrary),
+                  child: _FeatureTiles(
+                    onOpenLibrary: onOpenLibrary,
+                    onOpenMeditation: onOpenMeditation,
+                  ),
                 ),
                 const SizedBox(height: 28),
                 Padding(
@@ -92,91 +107,6 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class _Hero extends StatelessWidget {
-  const _Hero({required this.onOpenSettings});
-
-  final VoidCallback onOpenSettings;
-
-  @override
-  Widget build(BuildContext context) {
-    const shadow = [Shadow(color: Color(0x66000000), blurRadius: 12)];
-    final soft = Colors.white.withValues(alpha: 0.85);
-    return CustomPaint(
-      painter: const HeroPainter(fadeTo: SadhanaColors.background),
-      child: SafeArea(
-        bottom: false,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 8, 8, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  const Text(
-                    'ॐ',
-                    style: TextStyle(
-                      fontSize: 44,
-                      height: 1.1,
-                      color: Color(0xFFE2BE86),
-                      shadows: shadow,
-                    ),
-                  ),
-                  const SizedBox(width: 14),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Sadhana',
-                          style: serif(
-                            size: 30,
-                            color: Colors.white,
-                          ).copyWith(shadows: shadow),
-                        ),
-                        Text(
-                          'Scripture  ·  Calendar  ·  Self',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: soft,
-                            shadows: shadow,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  IconButton(
-                    tooltip: 'Settings',
-                    onPressed: onOpenSettings,
-                    icon: const Icon(
-                      Icons.settings_outlined,
-                      color: Colors.white,
-                      size: 28,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 36),
-              Text(
-                'Ancient Wisdom\nfor a Calmer You',
-                style: serif(
-                  size: 34,
-                  color: Colors.white,
-                  height: 1.15,
-                ).copyWith(shadows: shadow),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                'Read  ·  Listen  ·  Reflect  ·  Anytime',
-                style: TextStyle(fontSize: 15, color: soft, shadows: shadow),
-              ),
-            ],
-          ),
         ),
       ),
     );
@@ -345,9 +275,13 @@ class _ListenButton extends StatelessWidget {
 }
 
 class _FeatureTiles extends StatelessWidget {
-  const _FeatureTiles({required this.onOpenLibrary});
+  const _FeatureTiles({
+    required this.onOpenLibrary,
+    required this.onOpenMeditation,
+  });
 
   final VoidCallback onOpenLibrary;
+  final VoidCallback onOpenMeditation;
 
   @override
   Widget build(BuildContext context) {
@@ -379,7 +313,8 @@ class _FeatureTiles extends StatelessWidget {
           onTap: () => comingSoon(
             'Listen',
             Icons.headphones_outlined,
-            'Sanskrit chanting, verse by verse, arrives as downloadable audio packs.',
+            'Sanskrit chanting, verse by verse, arrives as downloadable audio '
+                'packs.',
           ),
         ),
         _Tile(
@@ -391,22 +326,17 @@ class _FeatureTiles extends StatelessWidget {
           onTap: () => comingSoon(
             'Panchang',
             Icons.calendar_month_outlined,
-            'Tithi, nakṣatra, yoga, karaṇa and sunrise, calculated on this phone '
-                'for where you are. Coming in a later update.',
+            'Tithi, nakṣatra, yoga, karaṇa and sunrise, calculated on this '
+                'phone for where you are. Coming in a later update.',
           ),
         ),
         _Tile(
-          title: 'Astrology',
-          subtitle: 'Tithi & Planets',
-          icon: Icons.auto_awesome_outlined,
+          title: 'Meditation',
+          subtitle: 'Calm & Mindfulness',
+          icon: Icons.self_improvement,
           background: const Color(0xFFE9E6F7),
           foreground: const Color(0xFF5B4FA3),
-          onTap: () => comingSoon(
-            'Astrology',
-            Icons.auto_awesome_outlined,
-            'Planet positions and tithi details, calculated on this phone. '
-                'Coming in a later update.',
-          ),
+          onTap: onOpenMeditation,
         ),
       ],
     );

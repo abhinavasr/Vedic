@@ -16,7 +16,9 @@ Builds a content pack from a content directory (docs/CONTENT_PACKS.md §9).
 
   dart run tool/build_pack.dart <content-dir> [options]
 
-<content-dir> holds pack.yaml and the .txt / .pdf sources it lists.
+<content-dir> holds pack.yaml and either
+  - the .txt / .pdf sources its `works` list, or
+  - a ready-made content JSON (docs/PACK_CONTENT_JSON.md) named by `content:`.
 ''';
 
 Future<void> main(List<String> arguments) async {
@@ -73,20 +75,7 @@ Future<void> main(List<String> arguments) async {
   ) as Map<String, Object?>;
 
   try {
-    final passages = <String, List<PassageSource>>{};
-    for (final work in JsonReader(config, 'pack.yaml').objects('works')) {
-      final slug = work.string('slug');
-      final source = work.string('source');
-      passages[slug] = await _extract(
-        contentDir,
-        source,
-        format: work.optionalString('format'),
-      );
-      stdout.writeln(
-        '  $slug: ${passages[slug]!.length} passages from $source',
-      );
-    }
-    final source = PackSource.fromConfig(config, passagesBySlug: passages);
+    final source = await _readSource(contentDir, config);
 
     final seed = File(args.option('signing-seed')!).readAsBytesSync();
     if (seed.length != 32) _fail('signing seed must be exactly 32 bytes');
@@ -123,7 +112,7 @@ Future<void> main(List<String> arguments) async {
     final payload = built.manifest.payload;
     stdout.writeln(
       'Built ${built.directory.path}: ${payload.size} bytes '
-      '(${payload.plaintextSize} uncompressed)',
+      '(${payload.plaintextSize} bytes of content JSON)',
     );
     if (args.flag('bundle')) {
       await copyToBundledAssets(built, Directory('assets/packs'));
@@ -131,7 +120,47 @@ Future<void> main(List<String> arguments) async {
     }
   } on PackFormatException catch (e) {
     _fail(e.message);
+  } on FormatException catch (e) {
+    _fail(e.message);
   }
+}
+
+Future<PackSource> _readSource(
+  Directory contentDir,
+  Map<String, Object?> config,
+) async {
+  final c = JsonReader(config, 'pack.yaml');
+  if (c.has('content')) {
+    final file = _contentFile(contentDir, c.string('content'));
+    final content = PackContent.fromJson(jsonDecode(await file.readAsString()));
+    stdout.writeln(
+      '  content JSON: ${content.works.length} works, '
+      '${content.works.fold(0, (n, w) => n + w.passages.length)} passages',
+    );
+    return PackSource.fromContent(config, content);
+  }
+
+  final passages = <String, List<PassageSource>>{};
+  for (final work in c.objects('works')) {
+    final slug = work.string('slug');
+    final source = work.string('source');
+    passages[slug] = await _extract(
+      contentDir,
+      source,
+      format: work.optionalString('format'),
+    );
+    stdout.writeln('  $slug: ${passages[slug]!.length} passages from $source');
+  }
+  return PackSource.fromConfig(config, passagesBySlug: passages);
+}
+
+File _contentFile(Directory contentDir, String source) {
+  if (p.isAbsolute(source) || p.split(p.normalize(source)).contains('..')) {
+    throw PackFormatException(
+      'source "$source" must be inside the content directory',
+    );
+  }
+  return File(p.join(contentDir.path, source));
 }
 
 /// Reads a work's source. [format] is null for plain documents, or `verses`
@@ -141,15 +170,10 @@ Future<List<PassageSource>> _extract(
   String source, {
   String? format,
 }) async {
-  if (p.isAbsolute(source) || p.split(p.normalize(source)).contains('..')) {
-    throw PackFormatException(
-      'source "$source" must be inside the content directory',
-    );
-  }
+  final file = _contentFile(contentDir, source);
   if (format != null && format != 'verses') {
     throw PackFormatException('unknown format "$format" for $source');
   }
-  final file = File(p.join(contentDir.path, source));
   switch (p.extension(source).toLowerCase()) {
     case '.txt':
       final String text;

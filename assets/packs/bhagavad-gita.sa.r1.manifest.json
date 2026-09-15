@@ -16,13 +16,13 @@
   ],
   "payload": {
     "file": "payload.bin",
-    "size": 117271,
-    "sha256": "6962141d4a75d05cce3ef8cba039ddd339d82989000387080f9b031e02b1b557",
+    "size": 41924,
+    "sha256": "76eaef7b095548921911278ec25344efbd5db5e37ea16bd2dda0f7d8ed40ac61",
     "compression": "deflate",
     "encryption": "none",
     "key_delivery": "none",
-    "plaintext_size": 651264,
-    "plaintext_sha256": "146ffdad5b61857f411a729f3ef05dc7f6f9295037aab51451c3f2ca1a361b7d"
+    "plaintext_size": 227574,
+    "plaintext_sha256": "06c030c1f19b2f0c8438ae9330004d0b983d1266b0da1399a1052ca80c67806a"
   },
   "licences": [
     {

@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vedic.app/schemas/pack-content.v1.schema.json",
+  "title": "Vedic pack content, format_version 1",
+  "description": "See docs/PACK_CONTENT_JSON.md. Cross-references (licence ids, voice ids, unique refs) are checked by the app, not by this schema.",
+  "type": "object",
+  "required": ["format", "format_version", "pack_id", "revision", "languages", "licences", "voices", "works"],
+  "properties": {
+    "format": { "const": "vedic-pack-content" },
+    "format_version": { "const": 1 },
+    "pack_id": { "$ref": "#/$defs/packId" },
+    "revision": { "type": "integer", "minimum": 1 },
+    "languages": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/language" }, "uniqueItems": true },
+    "licences": { "type": "array", "items": { "$ref": "#/$defs/licence" } },
+    "voices": { "type": "array", "items": { "$ref": "#/$defs/voice" } },
+    "works": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/work" } }
+  },
+  "$defs": {
+    "packId": { "type": "string", "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*$" },
+    "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$" },
+    "language": { "type": "string", "pattern": "^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$" },
+    "nonEmpty": { "type": "string", "minLength": 1 },
+    "localised": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "$ref": "#/$defs/language" },
+      "additionalProperties": { "$ref": "#/$defs/nonEmpty" }
+    },
+    "licence": {
+      "type": "object",
+      "required": ["id", "name", "attribution"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "$ref": "#/$defs/nonEmpty" },
+        "attribution": { "$ref": "#/$defs/nonEmpty" },
+        "notice": { "type": ["string", "null"] }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "required": ["id", "name", "language", "style", "engine", "licence"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "$ref": "#/$defs/nonEmpty" },
+        "language": { "$ref": "#/$defs/language" },
+        "style": { "enum": ["chant", "read"] },
+        "engine": { "$ref": "#/$defs/nonEmpty" },
+        "licence": { "$ref": "#/$defs/id" }
+      }
+    },
+    "work": {
+      "type": "object",
+      "required": ["slug", "kind", "title", "original_language", "script", "licence"],
+      "properties": {
+        "slug": { "$ref": "#/$defs/packId" },
+        "kind": { "enum": ["scripture", "commentary", "document"] },
+        "title": { "$ref": "#/$defs/localised" },
+        "original_language": { "$ref": "#/$defs/language" },
+        "script": { "type": "string", "pattern": "^[A-Z][a-z]{3}$" },
+        "edition": { "type": ["string", "null"] },
+        "licence": { "$ref": "#/$defs/id" },
+        "source_note": { "type": ["string", "null"] },
+        "front_matter": { "type": "array", "items": { "$ref": "#/$defs/passage" } },
+        "sections": { "type": "array", "items": { "$ref": "#/$defs/section" } },
+        "back_matter": { "type": "array", "items": { "$ref": "#/$defs/passage" } }
+      }
+    },
+    "section": {
+      "type": "object",
+      "required": ["kind", "number"],
+      "properties": {
+        "kind": { "$ref": "#/$defs/nonEmpty" },
+        "number": { "$ref": "#/$defs/nonEmpty" },
+        "title": { "$ref": "#/$defs/localised" },
+        "passages": { "type": "array", "items": { "$ref": "#/$defs/passage" } },
+        "sections": { "type": "array", "items": { "$ref": "#/$defs/section" } }
+      },
+      "anyOf": [{ "required": ["passages"] }, { "required": ["sections"] }]
+    },
+    "lines": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "passage": {
+      "type": "object",
+      "required": ["ref", "kind", "lines"],
+      "properties": {
+        "ref": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$" },
+        "kind": { "enum": ["verse", "prose", "heading", "page"] },
+        "label": { "type": ["string", "null"] },
+        "speaker": { "$ref": "#/$defs/localised" },
+        "lines": { "$ref": "#/$defs/lines" },
+        "meter": { "type": ["string", "null"] },
+        "transliterations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["scheme", "lines"],
+            "properties": { "scheme": { "enum": ["IAST", "ISO15919"] }, "lines": { "$ref": "#/$defs/lines" } }
+          }
+        },
+        "translations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["language", "text", "licence"],
+            "properties": {
+              "language": { "$ref": "#/$defs/language" },
+              "text": { "$ref": "#/$defs/nonEmpty" },
+              "translator": { "type": ["string", "null"] },
+              "licence": { "$ref": "#/$defs/id" },
+              "origin": { "enum": ["human", "machine"], "default": "human" }
+            }
+          }
+        },
+        "variants": { "type": "array", "items": { "$ref": "#/$defs/nonEmpty" } },
+        "audio": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["voice", "file", "mime", "duration_ms", "size", "sha256"],
+            "properties": {
+              "voice": { "$ref": "#/$defs/id" },
+              "file": { "type": "string", "pattern": "^audio/(?:[A-Za-z0-9_-][A-Za-z0-9._-]*/)*[A-Za-z0-9_-][A-Za-z0-9._-]*$" },
+              "mime": { "enum": ["audio/mp4", "audio/ogg"] },
+              "duration_ms": { "type": "integer", "minimum": 1 },
+              "size": { "type": "integer", "minimum": 1 },
+              "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

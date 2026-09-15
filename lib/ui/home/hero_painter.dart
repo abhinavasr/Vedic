@@ -3,12 +3,14 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 /// Dawn over mountain ridges with a temple silhouette, fading into the page
-/// background. Painted rather than a photo so it costs no app size; swap in an
-/// image asset later if the design calls for one.
+/// background. Painted rather than a photo so it costs no app size.
+///
+/// [light] paints a pale morning version for screens with dark type on top.
 class HeroPainter extends CustomPainter {
-  const HeroPainter({required this.fadeTo});
+  const HeroPainter({required this.fadeTo, this.light = false});
 
   final Color fadeTo;
+  final bool light;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -16,16 +18,23 @@ class HeroPainter extends CustomPainter {
     canvas.drawRect(
       rect,
       Paint()
-        ..shader = const LinearGradient(
+        ..shader = LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [
-            Color(0xFF55667A),
-            Color(0xFFA2958C),
-            Color(0xFFE8B982),
-            Color(0xFFF3D9B0),
-          ],
-          stops: [0, 0.36, 0.58, 0.76],
+          colors: light
+              ? const [
+                  Color(0xFFF7EBDD),
+                  Color(0xFFF6DDC0),
+                  Color(0xFFF2CFA2),
+                  Color(0xFFF6E3C6),
+                ]
+              : const [
+                  Color(0xFF55667A),
+                  Color(0xFFA2958C),
+                  Color(0xFFE8B982),
+                  Color(0xFFF3D9B0),
+                ],
+          stops: const [0, 0.36, 0.58, 0.76],
         ).createShader(rect),
     );
 
@@ -48,7 +57,7 @@ class HeroPainter extends CustomPainter {
       base: 0.6,
       amp: 0.14,
       seed: 1,
-      color: const Color(0x996F7A86),
+      color: light ? const Color(0x55B79B86) : const Color(0x996F7A86),
     );
     _ridge(
       canvas,
@@ -56,7 +65,7 @@ class HeroPainter extends CustomPainter {
       base: 0.68,
       amp: 0.1,
       seed: 2,
-      color: const Color(0xCC4B5563),
+      color: light ? const Color(0x88A0826C) : const Color(0xCC4B5563),
     );
     _temple(canvas, size);
     _ridge(
@@ -65,7 +74,7 @@ class HeroPainter extends CustomPainter {
       base: 0.8,
       amp: 0.06,
       seed: 3,
-      color: const Color(0xFF2F3A33),
+      color: light ? const Color(0xAA7F7457) : const Color(0xFF2F3A33),
     );
 
     final fade = Rect.fromLTWH(
@@ -113,7 +122,8 @@ class HeroPainter extends CustomPainter {
     final unit = size.width * 0.0105;
     final cx = size.width * 0.88;
     final baseY = size.height * 0.72;
-    final stone = Paint()..color = const Color(0xFF34302B);
+    final stone = Paint()
+      ..color = light ? const Color(0xFF7A6553) : const Color(0xFF34302B);
 
     canvas
       ..drawRect(
@@ -175,7 +185,7 @@ class HeroPainter extends CustomPainter {
       );
 
     final band = Paint()
-      ..color = const Color(0xFF4A453D)
+      ..color = light ? const Color(0xFF8E7864) : const Color(0xFF4A453D)
       ..strokeWidth = math.max(1, unit * 0.3);
     for (var i = 1; i <= 4; i++) {
       final y = baseY - unit * (5 + i * 2.6);
@@ -185,5 +195,6 @@ class HeroPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(HeroPainter oldDelegate) => oldDelegate.fadeTo != fadeTo;
+  bool shouldRepaint(HeroPainter oldDelegate) =>
+      oldDelegate.fadeTo != fadeTo || oldDelegate.light != light;
 }
