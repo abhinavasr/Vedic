@@ -7,6 +7,11 @@ calculation, and on-device AI over the user's own documents.
 It records what was verified, what was ruled out, and why. Several obvious-looking choices were
 already investigated and rejected for non-obvious reasons.
 
+**Before touching scripture content, bundled data or downloads, read
+[`docs/CONTENT_PACKS.md`](docs/CONTENT_PACKS.md).** Bundled base data and server downloads share
+one signed pack format; downloads are encrypted with a per-pack key wrapped to each device's
+hardware key.
+
 ## Ground rules — do not relitigate these
 
 1. **No cloud AI APIs.** All inference and all astronomical maths run on-device. The only
