@@ -14,6 +14,9 @@ downloads of model weights and content packs from static file hosts.
 actually buildable, what is not, and in what order. It includes an honest account of the one
 spec assumption that does not hold (on-device Vāgdhenu TTS) and what we do instead.
 
+📜 **[docs/LICENSING.md](docs/LICENSING.md)** — dependency licence review and the one open
+decision that blocks Phase 3.
+
 ## Planned capabilities
 
 | | Feature | Phase |
@@ -40,3 +43,11 @@ The app is fully functional with no AI model installed. The AI is a power featur
   AI answers are retrieval-grounded, cited, and labelled as machine-generated.
 - **Every feature degrades to absent.** A missing model means a feature is hidden or explained,
   never broken.
+
+## Licence
+
+**Proprietary. All rights reserved.** See [`LICENSE`](LICENSE).
+
+Third-party components ship under their own licences — reviewed in
+[docs/LICENSING.md](docs/LICENSING.md). MIT, BSD and Apache-2.0 notices must be reproduced in
+the app's "Open source licences" screen; being closed source does not exempt us from that.

@@ -1,7 +1,7 @@
 # Vedic App — Feasibility Assessment & Phased Roadmap
 
 **Status:** pre-implementation. No app code has been written yet.
-**Date:** 2026-09-15
+**Date:** 2026-09-15 (updated: project licence decided — **proprietary / closed source**)
 **Purpose:** establish what is actually buildable before committing to an architecture.
 
 This document is deliberately blunt. The original spec is a good product vision, but three
@@ -143,14 +143,40 @@ So festivals are a **rule engine layered on top of the astronomy**, with an expl
 tradition/region setting, and the app must show *which* convention produced a date.
 Budget for this separately — it is more work than the ephemeris integration itself.
 
-### 3.4 Swiss Ephemeris licensing — a decision, not a detail
+### 3.4 Swiss Ephemeris costs money now — that is the only licensing surprise
 
-Swiss Ephemeris is dual-licensed: **AGPL-3.0, or a paid commercial licence** (order of a few
-hundred CHF). AGPL on a mobile app is workable only if we open-source the app. If this is ever
-a closed-source or paid app, the commercial licence must be bought.
+**Resolved: the project is proprietary / closed source.** See [LICENSING.md](LICENSING.md) for
+the full analysis. The short version, because it has architectural consequences:
 
-*Decision needed from you before Phase 3.* The alternative is writing our own Moshier-based
-ephemeris, which is weeks of work and worse.
+Swiss Ephemeris is dual-licensed — **AGPL-3.0, or a paid Professional Licence.** There is no
+free closed-source path, so using `sweph` means **buying the licence** (one-off, order of
+several hundred CHF; confirm current pricing with Astrodienst).
+
+The alternative is a permissively-licensed ephemeris. This is viable because **our accuracy
+requirement is modest**: a panchang needs the Sun, Moon, five planets and the nodes over
+~1900–2100 to about a minute of time. Published theories (VSOP87 / ELP2000-82B) give
+arcsecond accuracy there, and one arcsecond is about a third of a second of tithi time —
+roughly a hundredfold more precision than we need. Swiss Ephemeris solves a far harder problem
+than ours.
+
+**Recommendation: evaluate the MPL-2.0 `ephemeris` package first** (MPL's copyleft is
+file-level, so it is safe to link into a closed-source app), and **buy the Professional Licence
+without hesitation if it falls short.** The fee is small against 2–4 weeks of engineering.
+
+*Decision needed before Phase 3, not before Phase 1.*
+
+### 3.4b Closed source re-opens two better dependencies
+
+Going commercial flips the licensing question from "may we combine this with proprietary code?"
+to "does this force us to publish source?" — so the danger is now **copyleft**, not proprietary
+dependencies. Two components worth having are back on the table: **ML Kit**, whose Devanagari
+OCR is materially better than Tesseract's, and **ObjectBox**, if we ever outgrow brute-force
+vector search. `syncfusion_flutter_pdf` is permitted but costs money and buys nothing over
+`pdfrx`.
+
+One trap persists regardless: **pub.dev shows the licence of a package's Dart wrapper, not of
+the native library it bundles.** A GPL native library would force disclosure of our source and
+would not be visible on the package page. CI must check both levels (LICENSING.md §3).
 
 ### 3.5 Reach: the AI excludes a large part of the audience
 
@@ -209,8 +235,11 @@ document is worth more than any design I could write from scratch; it is measure
                │                │ Gemma 4 E2B-it     │
        ┌───────▼────────┐       │ (LiteRT-LM)        │
        │ VectorStore    │◄──────┤ EmbeddingGemma/    │
-       │ ObjectBox HNSW │       │ Gecko (.tflite)    │
-       └────────────────┘       └────────────────────┘
+       │ int8 vectors   │       │ Gecko (.tflite)    │
+       │ in SQLite,     │       └────────────────────┘
+       │ exact cosine   │
+       │ in pure Dart   │
+       └────────────────┘
                │
        ┌───────▼────────────────────────────────────┐
        │ ModelManager + PackManager                 │
@@ -225,8 +254,20 @@ honest `Content-Length`, `Range`, strong `ETag`, `HEAD`, no auth, never delete a
 file, publish a `.sha256`). Content packs are far smaller and far more likely to change, so
 they additionally carry a version and a manifest.
 
-**Vector store:** ObjectBox 5.3.2 (stable HNSW vector search) over `sqlite_vec` 0.1.7-**alpha**.
-Alpha is not acceptable for the store that holds the user's imported documents.
+**Vector store: exact brute-force cosine in pure Dart, over int8 vectors in SQLite.** ObjectBox
+is now permitted but not needed, and `sqlite_vec` is 0.1.7-**alpha** — unacceptable for the store
+holding the user's imported documents.
+
+20,000 chunks × 768 dims is
+~15M multiply-accumulates per query — tens of milliseconds at most, **to be measured, not
+assumed**. int8-quantised embeddings hold 20k chunks in ~15 MB instead of 61 MB. And brute force
+is *exact*: no HNSW recall cliff, no index to build, tune, or corrupt. Revisit only with a
+measurement showing it hurts.
+
+**PDF text: `pdfrx`** (MIT, wrapping BSD-licensed PDFium) — free, and Syncfusion buys us
+nothing here. **OCR fallback: ML Kit**, the better Devanagari recogniser. It is still weak on
+Sanskrit conjuncts, avagraha and vedic accents (§3.6) — measure it on real scanned pages in
+Phase 1 and label the OCR path as approximate in the UI regardless.
 
 ---
 
@@ -268,11 +309,13 @@ All effort figures are **rough estimates** for one experienced Flutter developer
 - Download manager: one transfer at a time, resumable, Wi-Fi default, SHA-256
 - Embeddings via `flutter_gemma_embeddings` (start with Gecko for speed; measure both)
 - **Share-to-app**: Android intent filters + iOS share extension (thin — copy only, §3.6)
-- PDF text extraction, OCR fallback, resumable chunked ingestion with visible progress
-- Chunk → embed → ObjectBox HNSW; **Ask** screen: retrieve → cite → grounded answer, streamed
+- PDF text via `pdfrx`, ML Kit OCR fallback, resumable chunked ingestion with visible progress
+- Chunk → embed → int8 vectors in SQLite; **Ask** screen: retrieve → cite → grounded answer, streamed
+- Benchmark retrieval latency and OCR accuracy on real documents early — both are assumptions
 - Output hygiene: runaway guard, thinking splitter, output cleaner, script verifier
 - Grounding rules of §3.2 enforced in code, with unit tests
 - Bundled seed pack (Gītā) so the app is useful before any download
+- CI licence check that fails on any GPL / AGPL / SSPL dependency, wrapper *or* native
 - **In parallel from day 1: corpus licensing and sourcing work** (§3.1)
 
 *Estimate: 6–9 weeks.* Risk: low. Every dependency is verified and the playbook de-risks the hard parts.
@@ -297,7 +340,10 @@ All effort figures are **rough estimates** for one experienced Flutter developer
 - **Festival rule engine** with a tradition/region selector, showing which convention gave the
   date (§3.3) — the expensive half of this phase
 - Panchang UI + `flutter_local_notifications` for muhūrta reminders
-- **Blocker to resolve first: Swiss Ephemeris licence (§3.4)**
+- **Blocker to resolve first: the ephemeris choice (§3.4, LICENSING.md §1).** Closed source
+  means `sweph` requires Astrodienst's paid Professional Licence. Either buy it, or adopt a
+  permissive alternative — evaluate the MPL-2.0 `ephemeris` package during Phase 2. Add ~2–4
+  weeks to this phase only if we end up writing our own VSOP87/ELP2000
 
 *Estimate: 4 weeks for the astronomy, 4–6 more for festival rules and validation against
 published panchangs.* Risk: low for math, medium for conventions.
@@ -321,16 +367,18 @@ widgets, per-user reading plans.
 
 ## 7. Open decisions for you
 
-1. **Swiss Ephemeris licence** — AGPL (app must be open source) or buy the commercial licence?
-   Blocks Phase 3.
+1. ~~**Open source or commercial?**~~ — **decided: proprietary / closed source.** The
+   *ephemeris implementation* choice remains open and blocks Phase 3, not Phase 1: buy
+   Astrodienst's Professional Licence, or adopt a permissive alternative (§3.4).
 2. **Which scripture is the bundled seed pack?** Proposal: Bhagavad Gītā. Needs a
    licence-clean translation chosen and verified.
 3. **Where are packs and models hosted?** Needs to meet the playbook §4.2 contract. HuggingFace
    works for the Gemma weights but serves weak ETags (so resume is unsafe there — mark it
    non-pausable and offer a mirror).
 4. **Which languages ship first** for translations, and which are AI-only (§3.5 route logic)?
-5. **Open source or commercial?** Determines (1), and determines whether SEA-LION-class
-   non-commercial models are even an option.
+5. **Corpus for a commercial product.** "Free to read online" is not "licensed for commercial
+   redistribution." Going commercial narrows the usable set of translations and makes §3.1
+   harder, not easier. Every shipped text needs an explicit commercial grant on record.
 
 ---
 
@@ -342,3 +390,6 @@ widgets, per-user reading plans.
 - Effort estimates are estimates. The corpus work in §3.1 is the one I would trust least,
   because it depends on other people's licences.
 - Nothing in this repo has been compiled (§3.7).
+- The licence analysis in LICENSING.md is an engineering reading of public licence terms, not
+  legal advice. For a commercial product, have a lawyer confirm the dependency review and the
+  corpus grants before release.
