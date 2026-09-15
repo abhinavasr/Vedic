@@ -465,6 +465,26 @@ imported documents. Search is exact cosine over int8 vectors (FEASIBILITY_AND_RO
 
 ---
 
+## 8b. Chant audio: served, cached or generated
+
+Audio for a passage comes from the first source that has it (`lib/audio/chant_audio.dart`):
+
+1. **An installed audio pack** (`kind: audio`), e.g. pre-rendered Vāgdhenu chant.
+2. **Server audio**, one file per passage on the static host. It is downloaded on first play and
+   cached, so it is never downloaded twice. When offline, this step is skipped.
+3. **Audio generated earlier on this phone**, replayed from the cache.
+4. **Generate now** with the on-device Sanskrit speech model, then save it, so each passage is
+   generated at most once per model and text.
+
+The cache key is the pack, work, passage ref, the **exact text** and the **voice id**. A corrected
+text in a new pack revision, or a new model revision, therefore never replays stale audio. Server
+and on-device audio are cached separately, and server audio is preferred once it exists. The
+cache is capped (300 MB by default) and evicts the least recently played audio first. Concurrent
+requests for the same passage share one generation.
+
+With no pack, no server audio and no model installed, there is no audio, and the Listen control
+says so (ground rule 3).
+
 ## 9. Build pipeline: from your PDFs and text files to a pack
 
 Runs on our machines, never on the phone. Input per pack:
