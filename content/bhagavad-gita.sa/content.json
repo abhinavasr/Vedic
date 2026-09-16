@@ -2,7 +2,7 @@
   "format": "vedic-pack-content",
   "format_version": 1,
   "pack_id": "bhagavad-gita.sa",
-  "revision": 7,
+  "revision": 8,
   "languages": [
     "sa",
     "hi",
@@ -17943,6 +17943,61 @@
               "lines": [
                 "मय्यासक्तमनाः पार्थ योगं युञ्जन्मदाश्रयः ।",
                 "असंशयं समग्रं मां यथा ज्ञास्यसि तच्छृणु ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "mayyāsaktamanāḥ pārtha yogaṃ yuñjanmadāśrayaḥ |",
+                    "asaṃśayaṃ samagraṃ māṃ yathā jñāsyasi tacchṛṇu ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रीभगवान् बोले: हे पार्थ! मुझमें आसक्त मन वाला होकर और मेरे आश्रय होकर योग का अभ्यास करते हुए तू जिस प्रकार से पूर्ण रूप से बिना किसी संशय के मुझे जानेगा, उसे सुन।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Supreme Personality of Godhead said: Now hear, O son of Pritha, how by practicing yoga in full consciousness of Me, with mind attached to Me, you can know Me in full, free from doubt.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna introduces the path of devotion (Bhakti Yoga). He explains that by attaching the mind to the Supreme and taking refuge in Him, a seeker can understand the Divine completely and without any lingering doubts.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण भक्ति योग का परिचय देते हैं। वे बताते हैं कि मन को परमात्मा में लगाने और उनकी शरण लेने से, एक साधक बिना किसी संदेह के परमात्मा को पूरी तरह से समझ सकता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Attachment to the Divine dispels all worldly doubts.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Taking refuge in God is the foundation of ultimate knowledge.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -17952,6 +18007,61 @@
               "lines": [
                 "ज्ञानं तेऽहं सविज्ञानमिदं वक्ष्याम्यशेषतः ।",
                 "यज्ज्ञात्वा नेह भूयोऽन्यज्ज्ञातव्यमवशिष्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "jñānaṃ te'haṃ savijñānamidaṃ vakṣyāmyaśeṣataḥ |",
+                    "yajjñātvā neha bhūyo'nyajjñātavyamavaśiṣyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मैं तुम्हारे लिए इस विज्ञान सहित ज्ञान को पूर्ण रूप से कहूँगा, जिसे जानने के बाद इस संसार में जानने योग्य और कुछ भी शेष नहीं रह जाता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "I shall now declare unto you in full this knowledge, both phenomenal and numinous. This being known, nothing further shall remain for you to know.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna promises to reveal comprehensive knowledge—both spiritual (jnana) and its practical, phenomenal realization (vijnana). Once this absolute truth is grasped, all other mundane knowledge becomes secondary or unnecessary.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण व्यापक ज्ञान—आध्यात्मिक (ज्ञान) और इसके व्यावहारिक, प्रत्यक्ष बोध (विज्ञान) दोनों को प्रकट करने का वादा करते हैं। एक बार इस परम सत्य को समझ लेने के बाद, अन्य सभी सांसारिक ज्ञान अनावश्यक हो जाते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Complete knowledge encompasses both theory and practical realization.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual wisdom is the ultimate knowledge that satisfies all seeking.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -17961,6 +18071,61 @@
               "lines": [
                 "मनुष्याणां सहस्रेषु कश्चिद्यतति सिद्धये ।",
                 "यततामपि सिद्धानां कश्चिन्मां वेत्ति तत्त्वतः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "manuṣyāṇāṃ sahasreṣu kaścidyatati siddhaye |",
+                    "yatatāmapi siddhānāṃ kaścinmāṃ vetti tattvataḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हज़ारों मनुष्यों में से कोई एक सिद्धि के लिए प्रयत्न करता है, और प्रयत्न करने वाले सिद्धों में से भी कोई एक ही मुझे तत्त्व से जानता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Out of many thousands among men, one may endeavor for perfection, and of those who have achieved perfection, hardly one knows Me in truth.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "True spiritual realization is incredibly rare. Most people are absorbed in worldly life; of the few who seek perfection, even fewer actually achieve a genuine, profound understanding of the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सच्चा आध्यात्मिक साक्षात्कार अविश्वसनीय रूप से दुर्लभ है। अधिकांश लोग सांसारिक जीवन में मग्न हैं; पूर्णता की तलाश करने वाले कुछ लोगों में से, बहुत कम लोग वास्तव में परमात्मा की वास्तविक समझ प्राप्त कर पाते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The spiritual path is walked by a rare minority.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Knowing the Supreme in truth is the pinnacle of human achievement.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -17970,6 +18135,61 @@
               "lines": [
                 "भूमिरापोऽनलो वायुः खं मनो बुद्धिरेव च ।",
                 "अहङ्कार इतीयं मे भिन्ना प्रकृतिरष्टधा ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "bhūmirāpo'nalo vāyuḥ khaṃ mano buddhireva ca |",
+                    "ahaṅkāra itīyaṃ me bhinnā prakṛtiraṣṭadhā ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "पृथ्वी, जल, अग्नि, वायु, आकाश, मन, बुद्धि और अहंकार—इस प्रकार मेरी यह प्रकृति आठ प्रकार से विभाजित है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Earth, water, fire, air, ether, mind, intelligence and false ego—all together these eight constitute My separated material energies.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna categorizes His material energy (Apara Prakriti) into eight components. Five are gross physical elements (earth, water, fire, air, ether) and three are subtle psychological elements (mind, intellect, false ego).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण अपनी भौतिक ऊर्जा (अपरा प्रकृति) को आठ घटकों में वर्गीकृत करते हैं। पांच स्थूल भौतिक तत्व (पृथ्वी, जल, अग्नि, वायु, आकाश) हैं और तीन सूक्ष्म मनोवैज्ञानिक तत्व (मन, बुद्धि, अहंकार) हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The physical and mental worlds are both made of God's material energy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Our minds and egos are part of the material domain, not the soul.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -17979,6 +18199,61 @@
               "lines": [
                 "अपरेयमितस्त्वन्यां प्रकृतिं विद्धि मे पराम् ।",
                 "जीवभूतां महाबाहो ययेदं धार्यते जगत् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "apareyamitastvanyāṃ prakṛtiṃ viddhi me parām |",
+                    "jīvabhūtāṃ mahābāho yayedaṃ dhāryate jagat ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे महाबाहु! यह तो मेरी अपरा (जड़) प्रकृति है। इसके अलावा मेरी एक दूसरी परा (चेतन) प्रकृति को जान, जो जीवरूपा है और जिसके द्वारा यह संपूर्ण जगत् धारण किया जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Besides these, O mighty-armed Arjuna, there is another, superior energy of Mine, which comprises the living entities who are exploiting the resources of this material, inferior nature.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Beyond the inferior material energy lies Krishna's superior, spiritual energy (Para Prakriti). This superior energy consists of the conscious living entities (souls) who animate and sustain the physical universe.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अवर भौतिक ऊर्जा से परे कृष्ण की श्रेष्ठ, आध्यात्मिक ऊर्जा (परा प्रकृति) है। इस श्रेष्ठ ऊर्जा में चेतन जीव (आत्माएँ) शामिल हैं जो भौतिक ब्रह्मांड को चेतन करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Consciousness is a superior, distinct energy from physical matter.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Living beings animate the otherwise dead material world.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -17988,6 +18263,61 @@
               "lines": [
                 "एतद्योनीनि भूतानि सर्वाणीत्युपधारय ।",
                 "अहं कृत्स्नस्य जगतः प्रभवः प्रलयस्तथा ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "etadyonīni bhūtāni sarvāṇītyupadhāraya |",
+                    "ahaṃ kṛtsnasya jagataḥ prabhavaḥ pralayastathā ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "यह जान लो कि ये दोनों प्रकृतियां ही सभी प्राणियों का स्रोत हैं। मैं ही इस संपूर्ण जगत् की उत्पत्ति और प्रलय का कारण हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "All created beings have their source in these two natures. Of all that is material and all that is spiritual in this world, know for certain that I am both the origin and the dissolution.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Every living being is a combination of the material body (Apara) and the spiritual soul (Para). Since both energies emanate from Krishna, He is the ultimate origin, sustainer, and destroyer of everything.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "प्रत्येक जीवित प्राणी भौतिक शरीर (अपरा) और आध्यात्मिक आत्मा (परा) का एक संयोजन है। चूँकि दोनों ऊर्जाएँ कृष्ण से निकलती हैं, इसलिए वे ही हर चीज़ के अंतिम उद्गम और संहारक हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "We are a blend of material elements and spiritual consciousness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The Supreme is the source of all visible and invisible reality.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -17997,6 +18327,61 @@
               "lines": [
                 "मत्तः परतरं नान्यत्किञ्चिदस्ति धनञ्जय ।",
                 "मयि सर्वमिदं प्रोतं सूत्रे मणिगणा इव ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "mattaḥ parataraṃ nānyatkiñcidasti dhanañjaya |",
+                    "mayi sarvamidaṃ protaṃ sūtre maṇigaṇā iva ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे धनञ्जय! मुझसे श्रेष्ठ कोई दूसरा तत्त्व नहीं है। यह सम्पूर्ण जगत् धागे में पिरोए हुए मोतियों के समान मुझमें ही गुँथा हुआ है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O conqueror of wealth, there is no truth superior to Me. Everything rests upon Me, as pearls are strung on a thread.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Using a beautiful analogy, Krishna explains that He is the unifying force of the universe. Just as an invisible thread holds a necklace of pearls together, the unseen Divine connects and supports all existence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "एक सुंदर सादृश्य का उपयोग करते हुए, कृष्ण बताते हैं कि वह ब्रह्मांड की एकीकृत शक्ति हैं। जिस प्रकार एक अदृश्य धागा मोतियों की माला को एक साथ रखता है, उसी प्रकार परमात्मा सभी अस्तित्व को जोड़ता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "There is a hidden unity behind the diverse physical world.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God is the underlying thread connecting all lives.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18006,6 +18391,61 @@
               "lines": [
                 "रसोऽहमप्सु कौन्तेय प्रभास्मि शशिसूर्ययोः ।",
                 "प्रणवः सर्ववेदेषु शब्दः खे पौरुषं नृषु ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "raso'hamapsu kaunteya prabhāsmi śaśisūryayoḥ |",
+                    "praṇavaḥ sarvavedeṣu śabdaḥ khe pauruṣaṃ nṛṣu ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे कुंतीपुत्र! जल में मैं रस हूँ, चंद्रमा और सूर्य में मैं प्रकाश हूँ, सभी वेदों में मैं ॐकार हूँ, आकाश में मैं शब्द हूँ, और पुरुषों में मैं पौरुष (क्षमता) हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O son of Kunti, I am the taste of water, the light of the sun and the moon, the syllable Om in the Vedic mantras; I am the sound in ether and ability in man.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna begins to show how He can be perceived in everyday phenomena. He is the essence that gives everything its defining characteristic—the taste that quenches thirst, the light that illuminates, and the talent within humans.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण यह दिखाना शुरू करते हैं कि उन्हें रोजमर्रा की घटनाओं में कैसे देखा जा सकता है। वह वह सार है जो हर चीज को उसकी परिभाषित विशेषता देता है - वह स्वाद जो प्यास बुझाता है, प्रकाश जो रोशन करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The Divine is experienced through the pure essence of everyday things.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Human talent and ability are manifestations of God's energy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18015,6 +18455,61 @@
               "lines": [
                 "पुण्यो गन्धः पृथिव्यां च तेजश्चास्मि विभावसौ ।",
                 "जीवनं सर्वभूतेषु तपश्चास्मि तपस्विषु ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "puṇyo gandhaḥ pṛthivyāṃ ca tejaścāsmi vibhāvasau |",
+                    "jīvanaṃ sarvabhūteṣu tapaścāsmi tapasviṣu ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मैं पृथ्वी में पवित्र गंध हूँ और अग्नि में तेज हूँ। मैं सभी प्राणियों में जीवन हूँ और तपस्वियों में तप हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "I am the original fragrance of the earth, and I am the heat in fire. I am the life of all that lives, and I am the penances of all ascetics.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Continuing the theme, Krishna identifies Himself as the pure, original qualities of nature. He is the life force that animates biology and the spiritual fire (tapas) that sustains ascetics in their discipline.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "विषय को जारी रखते हुए, कृष्ण स्वयं को प्रकृति के शुद्ध, मूल गुणों के रूप में पहचानते हैं। वह जीवन शक्ति है जो जीव विज्ञान को जीवंत करती है और आध्यात्मिक अग्नि (तप) है जो तपस्वियों को उनके अनुशासन में बनाए रखती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Look for the Divine in the vitality and purity of the natural world.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual discipline (tapas) is fueled by divine energy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18024,6 +18519,61 @@
               "lines": [
                 "बीजं मां सर्वभूतानां विद्धि पार्थ सनातनम् ।",
                 "बुद्धिर्बुद्धिमतामस्मि तेजस्तेजस्विनामहम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "bījaṃ māṃ sarvabhūtānāṃ viddhi pārtha sanātanam |",
+                    "buddhirbuddhimatāmasmi tejastejasvināmaham ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे पार्थ! मुझे सभी प्राणियों का सनातन बीज जान। मैं बुद्धिमानों की बुद्धि और तेजस्वियों का तेज हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O son of Pritha, know that I am the original seed of all existences, the intelligence of the intelligent, and the prowess of all powerful men.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "As the eternal seed, Krishna is the cause of all causes. The brilliance of a genius or the charisma of a leader are not their own independent creations, but reflections of the Supreme's qualities.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सनातन बीज के रूप में, कृष्ण सभी कारणों का कारण हैं। एक प्रतिभाशाली व्यक्ति की प्रतिभा या एक नेता का करिश्मा उनकी अपनी स्वतंत्र रचनाएँ नहीं हैं, बल्कि परमात्मा के गुणों का प्रतिबिंब हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Everything grows from the original divine seed.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True intelligence and power are borrowed from the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18033,6 +18583,61 @@
               "lines": [
                 "बलं बलवतां चाहं कामरागविवर्जितम् ।",
                 "धर्माविरुद्धो भूतेषु कामोऽस्मि भरतर्षभ ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "balaṃ balavatāṃ cāhaṃ kāmarāgavivarjitam |",
+                    "dharmāviruddho bhūteṣu kāmo'smi bharatarṣabha ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे भरतश्रेष्ठ! मैं बलवानों का वह बल हूँ जो काम और आसक्ति से रहित है। मैं प्राणियों में वह काम (इच्छा) हूँ जो धर्म के विरुद्ध नहीं है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "I am the strength of the strong, devoid of passion and desire. I am sex life which is not contrary to religious principles, O lord of the Bharatas (Arjuna).",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Strength used for exploitation is not divine; strength used for protection (free from greed) is God. Similarly, desire aligned with righteousness (like procreation within marriage) is a manifestation of the Divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "शोषण के लिए इस्तेमाल की जाने वाली ताकत दिव्य नहीं है; सुरक्षा के लिए इस्तेमाल की जाने वाली ताकत (लालच से मुक्त) भगवान है। इसी तरह, धर्म के साथ जुड़ी इच्छा परमात्मा की अभिव्यक्ति है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Power is divine only when it is free from selfish passion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Desire is sacred when it operates within ethical boundaries.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18042,6 +18647,61 @@
               "lines": [
                 "ये चैव सात्त्विका भावा राजसास्तामसाश्च ये ।",
                 "मत्त एवेति तान्विद्धि न त्वहं तेषु ते मयि ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ye caiva sāttvikā bhāvā rājasāstāmasāśca ye |",
+                    "matta eveti tānviddhi na tvahaṃ teṣu te mayi ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो भी सात्त्विक, राजसिक और तामसिक भाव हैं, वे सब मुझसे ही उत्पन्न होते हैं, ऐसा जान। फिर भी मैं उनमें नहीं हूँ, बल्कि वे मुझमें हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Know that all states of being—be they of goodness, passion or ignorance—are manifested by My energy. I am, in one sense, everything, but I am independent. I am not under the modes of material nature, for they, on the contrary, are within Me.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "While the three modes of nature (Gunas) come from the Supreme, He is not bound by them. Just as a state creates laws but the king is above those laws, God generates material nature but remains free from its conditioning.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यद्यपि प्रकृति के तीन गुण परमात्मा से आते हैं, वे उनसे बंधे नहीं हैं। जिस प्रकार एक राज्य कानून बनाता है लेकिन राजा उन कानूनों से ऊपर होता है, भगवान भौतिक प्रकृति उत्पन्न करते हैं लेकिन मुक्त रहते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The creator is greater than the creation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God is the source of material nature but remains eternally untouched by it.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18051,6 +18711,61 @@
               "lines": [
                 "त्रिभिर्गुणमयैर्भावैरेभिः सर्वमिदं जगत् ।",
                 "मोहितं नाभिजानाति मामेभ्यः परमव्ययम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tribhirguṇamayairbhāvairebhiḥ sarvamidaṃ jagat |",
+                    "mohitaṃ nābhijānāti māmebhyaḥ paramavyayam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इन तीन गुणों से युक्त भावों द्वारा यह सारा संसार मोहित हो रहा है, इसलिए वह मुझ अविनाशी और इन गुणों से परे परमेश्वर को नहीं जानता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Deluded by the three modes [goodness, passion and ignorance], the whole world does not know Me, who am above the modes and inexhaustible.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Humanity is hypnotized by the interactions of goodness, passion, and ignorance. Caught in this illusion, people fail to see the eternal, unchangeable reality that exists beyond these shifting modes.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "मानवता अच्छाई, जुनून और अज्ञानता की बातचीत से सम्मोहित है। इस भ्रम में फंसकर, लोग उस शाश्वत, अपरिवर्तनीय वास्तविकता को देखने में विफल रहते हैं जो इन बदलते तरीकों से परे मौजूद है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Worldly conditioning acts as a veil over true perception.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "To know God, one must look past the temporary qualities of nature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18060,6 +18775,61 @@
               "lines": [
                 "दैवी ह्येषा गुणमयी मम माया दुरत्यया ।",
                 "मामेव ये प्रपद्यन्ते मायामेतां तरन्ति ते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "daivī hyeṣā guṇamayī mama māyā duratyayā |",
+                    "māmeva ye prapadyante māyāmetāṃ taranti te ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मेरी यह गुणों वाली दैवी माया पार करना बहुत कठिन है। परन्तु जो केवल मेरी ही शरण में आते हैं, वे इस माया को पार कर जाते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "This divine energy of Mine, consisting of the three modes of material nature, is difficult to overcome. But those who have surrendered unto Me can easily cross beyond it.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The illusion of the material world (Maya) is divinely powered and therefore incredibly difficult to break through using sheer personal effort. However, complete surrender to the Supreme provides a direct escape route.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "भौतिक दुनिया (माया) का भ्रम ईश्वरीय शक्ति से संचालित होता है और इसलिए व्यक्तिगत प्रयास का उपयोग करके इसे तोड़ना अविश्वसनीय रूप से कठिन है। हालाँकि, परमात्मा के प्रति पूर्ण समर्पण एक सीधा मार्ग प्रदान करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Material illusion is too strong to conquer by willpower alone.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Surrender to the Divine is the master key to liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18069,6 +18839,61 @@
               "lines": [
                 "न मां दुष्कृतिनो मूढाः प्रपद्यन्ते नराधमाः ।",
                 "माययापहृतज्ञाना आसुरं भावमाश्रिताः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "na māṃ duṣkṛtino mūḍhāḥ prapadyante narādhamāḥ |",
+                    "māyayāpahṛtajñānā āsuraṃ bhāvamāśritāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "माया द्वारा जिनका ज्ञान हर लिया गया है और जो आसुरी स्वभाव को धारण किए हुए हैं, ऐसे नीच, दुष्टकर्म करने वाले मूर्ख मेरी शरण में नहीं आते।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those miscreants who are grossly foolish, who are lowest among mankind, whose knowledge is stolen by illusion, and who partake of the atheistic nature of demons do not surrender unto Me.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna categorizes those who refuse to surrender into four types: the foolish, the degraded, the deluded intellectuals, and the openly demonic. Their egos and bad deeds prevent them from accepting divine shelter.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण समर्पण करने से इनकार करने वालों को चार प्रकारों में वर्गीकृत करते हैं: मूर्ख, पतित, भ्रमित बुद्धिजीवी और खुले तौर पर राक्षसी। उनका अहंकार उन्हें ईश्वरीय आश्रय स्वीकार करने से रोकता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Arrogance and unethical living block spiritual receptivity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A brilliant intellect means nothing if it is hijacked by illusion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18078,6 +18903,61 @@
               "lines": [
                 "चतुर्विधा भजन्ते मां जनाः सुकृतिनोऽर्जुन ।",
                 "आर्तो जिज्ञासुरर्थार्थी ज्ञानी च भरतर्षभ ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "caturvidhā bhajante māṃ janāḥ sukṛtino'rjuna |",
+                    "ārto jijñāsurarthārthī jñānī ca bharatarṣabha ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे भरतश्रेष्ठ अर्जुन! चार प्रकार के पुण्यकर्मी मेरी भक्ति करते हैं—आर्त (दुखी), जिज्ञासु (ज्ञान की इच्छा वाले), अर्थार्थी (धन की इच्छा वाले) और ज्ञानी।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O best among the Bharatas, four kinds of pious men begin to render devotional service unto Me—the distressed, the desirer of wealth, the inquisitive, and he who is searching for knowledge of the Absolute.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "People approach God for different reasons: when in deep pain, when seeking material gain, out of philosophical curiosity, or when possessing true wisdom. All four are considered pious because they turn to the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "लोग विभिन्न कारणों से भगवान के पास जाते हैं: जब गहरे दर्द में होते हैं, भौतिक लाभ की तलाश में, दार्शनिक जिज्ञासा से, या ज्ञान होने पर। सभी चार को पवित्र माना जाता है क्योंकि वे परमात्मा की ओर मुड़ते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God welcomes you regardless of your initial motivation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Suffering, curiosity, and need are valid catalysts for spiritual life.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18087,6 +18967,61 @@
               "lines": [
                 "तेषां ज्ञानी नित्ययुक्त एकभक्तिर्विशिष्यते ।",
                 "प्रियो हि ज्ञानिनोऽत्यर्थमहं स च मम प्रियः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "teṣāṃ jñānī nityayukta ekabhaktirviśiṣyate |",
+                    "priyo hi jñānino'tyarthamahaṃ sa ca mama priyaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "उनमें से जो नित्य मुझमें स्थित है और अनन्य भक्ति वाला ज्ञानी है, वह सर्वश्रेष्ठ है। क्योंकि ज्ञानी को मैं अत्यंत प्रिय हूँ और वह मुझे अत्यंत प्रिय है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Of these, the one who is in full knowledge and who is always engaged in pure devotional service is the best. For I am very dear to him, and he is dear to Me.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "While all four types of seekers are good, the wise person (Jnani) who worships out of pure love, not out of need or fear, is the highest. Their connection is constant and based on profound, reciprocal love.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यद्यपि सभी चार प्रकार के साधक अच्छे हैं, बुद्धिमान व्यक्ति (ज्ञानी) जो शुद्ध प्रेम से पूजा करता है, वह सर्वोच्च है। उनका संबंध निरंतर है और गहरे, पारस्परिक प्रेम पर आधारित है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Unconditional devotion is superior to transactional prayer.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "To know God truly is to love God deeply.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18096,6 +19031,61 @@
               "lines": [
                 "उदाराः सर्व एवैते ज्ञानी त्वात्मैव मे मतम् ।",
                 "आस्थितः स हि युक्तात्मा मामेवानुत्तमां गतिम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "udārāḥ sarva evaite jñānī tvātmaiva me matam |",
+                    "āsthitaḥ sa hi yuktātmā māmevānuttamāṃ gatim ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "ये सभी श्रेष्ठ हैं, परन्तु ज्ञानी तो साक्षात् मेरा स्वरूप ही है, ऐसा मेरा मत है। क्योंकि वह समाहित मन वाला भक्त मुझ सर्वोच्च गति में ही स्थित है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "All these devotees are undoubtedly magnanimous souls, but he who is situated in knowledge of Me I consider to be just like My own self. Being engaged in My transcendental service, he is sure to attain Me, the highest and most perfect goal.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna clarifies that He values anyone who approaches Him. However, the fully realized soul is non-different from God because their mind is completely merged with the Supreme in purpose and identity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण स्पष्ट करते हैं कि वह किसी को भी महत्व देते हैं जो उनके पास आता है। हालाँकि, पूर्णतः आत्मज्ञानी आत्मा परमात्मा से भिन्न नहीं है क्योंकि उनका मन पूरी तरह से परमात्मा में विलीन हो गया है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Every sincere approach to God is noble.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The ultimate devotee becomes a reflection of God Himself.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18105,6 +19095,61 @@
               "lines": [
                 "बहूनां जन्मनामन्ते ज्ञानवान्मां प्रपद्यते ।",
                 "वासुदेवः सर्वमिति स महात्मा सुदुर्लभः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "bahūnāṃ janmanāmante jñānavānmāṃ prapadyate |",
+                    "vāsudevaḥ sarvamiti sa mahātmā sudurlabhaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "बहुत जन्मों के अंत में, ज्ञानवान् मेरी शरण में आता है और यह मानता है कि 'वासुदेव ही सब कुछ है'। ऐसा महात्मा अत्यंत दुर्लभ है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "After many births and deaths, he who is actually in knowledge surrenders unto Me, knowing Me to be the cause of all causes and all that is. Such a great soul is very rare.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "True realization takes time, often spanning many lifetimes. The ultimate peak of wisdom is recognizing that the Divine (Vasudeva) permeates absolutely everything. Such enlightened beings are exceptionally rare.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सच्चे बोध में समय लगता है, अक्सर कई जन्म लग जाते हैं। ज्ञान का अंतिम शिखर यह पहचानना है कि परमात्मा हर चीज में व्याप्त है। ऐसे प्रबुद्ध प्राणी असाधारण रूप से दुर्लभ हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual maturity is a long, multi-lifetime process.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Seeing God in everything is the rarest and highest wisdom.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18114,6 +19159,61 @@
               "lines": [
                 "कामैस्तैस्तैर्हृतज्ञानाः प्रपद्यन्तेऽन्यदेवताः ।",
                 "तं तं नियममास्थाय प्रकृत्या नियताः स्वया ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "kāmaistaistairhṛtajñānāḥ prapadyante'nyadevatāḥ |",
+                    "taṃ taṃ niyamamāsthāya prakṛtyā niyatāḥ svayā ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अपनी-अपनी प्रकृति के अनुसार अलग-अलग कामनाओं द्वारा जिनका ज्ञान छिन गया है, वे उन-उन नियमों का पालन करते हुए अन्य देवताओं की शरण में जाते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those whose intelligence has been stolen by material desires surrender unto demigods and follow the particular rules and regulations of worship according to their own natures.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Driven by specific material cravings, people often turn to lesser deities or specific rituals that promise quick results. This fragmented worship is dictated by their own conditioned nature and lack of overarching wisdom.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "विशिष्ट भौतिक लालसाओं से प्रेरित होकर, लोग अक्सर कम देवताओं या विशिष्ट अनुष्ठानों की ओर मुड़ते हैं जो त्वरित परिणाम का वादा करते हैं। यह खंडित पूजा उनके स्वयं के स्वभाव से तय होती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Material greed fractures our spiritual focus.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "People choose their form of worship based on their inner psychology.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18123,6 +19223,61 @@
               "lines": [
                 "यो यो यां यां तनुं भक्तः श्रद्धयार्चितुमिच्छति ।",
                 "तस्य तस्याचलां श्रद्धां तामेव विदधाम्यहम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yo yo yāṃ yāṃ tanuṃ bhaktaḥ śraddhayārcitumicchati |",
+                    "tasya tasyācalāṃ śraddhāṃ tāmeva vidadhāmyaham ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो-जो भक्त जिस-जिस देवता के स्वरूप को श्रद्धा से पूजना चाहता है, मैं उस-उस भक्त की श्रद्धा को उसी देवता में स्थिर कर देता हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "I am in everyone's heart as the Supersoul. As soon as one desires to worship some demigod, I make his faith steady so that he can devote himself to that particular deity.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The Supreme Lord is supremely generous. If someone chooses to worship a lesser deity or a specific form, God acts from within their heart to stabilize their faith in that chosen path, allowing them to pursue it.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "परमेश्वर अत्यंत उदार है। यदि कोई कम देवता की पूजा करने का विकल्प चुनता है, तो भगवान उनके दिल के भीतर से उस चुने हुए मार्ग में उनके विश्वास को स्थिर करने का कार्य करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God honors human free will and chosen paths.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "All sincere faith, regardless of the target, is sustained by the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18132,6 +19287,61 @@
               "lines": [
                 "स तया श्रद्धया युक्तस्तस्याराधनमीहते ।",
                 "लभते च ततः कामान्मयैव विहितान्हि तान् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sa tayā śraddhayā yuktastasyārādhanamīhate |",
+                    "labhate ca tataḥ kāmānmayaiva vihitānhi tān ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वह उस श्रद्धा से युक्त होकर उस देवता की आराधना करता है और उससे अपनी इच्छित कामनाओं को प्राप्त करता है, जिन्हें वास्तव में मेरे द्वारा ही प्रदान किया गया है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Endowed with such a faith, he endeavors to worship a particular demigod and obtains his desires. But in actuality these benefits are bestowed by Me alone.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "When people pray to various entities and receive what they ask for, they credit that specific entity. However, Krishna clarifies that all power and all rewards ultimately flow from the Supreme Source.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जब लोग प्रार्थना करते हैं और जो मांगते हैं वह प्राप्त करते हैं, तो वे उसे श्रेय देते हैं। हालाँकि, कृष्ण स्पष्ट करते हैं कि सभी शक्ति और सभी पुरस्कार अंततः सर्वोच्च स्रोत से बहते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "All blessings ultimately come from the one Supreme source.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Secondary gods or systems are merely conduits for Divine grace.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18141,6 +19351,61 @@
               "lines": [
                 "अन्तवत्तु फलं तेषां तद्भवत्यल्पमेधसाम् ।",
                 "देवान्देवयजो यान्ति मद्भक्ता यान्ति मामपि ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "antavattu phalaṃ teṣāṃ tadbhavatyalpamedhasām |",
+                    "devāndevayajo yānti madbhaktā yānti māmapi ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परन्तु उन अल्पबुद्धि वालों का वह फल नाशवान होता है। देवताओं को पूजने वाले देवताओं को प्राप्त होते हैं, और मेरे भक्त मुझे ही प्राप्त होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Men of small intelligence worship the demigods, and their fruits are limited and temporary. Those who worship the demigods go to the planets of the demigods, but My devotees ultimately reach My supreme planet.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Pursuing material boons from lesser deities yields temporary results, because the material world itself is temporary. Those who seek the eternal Supreme attain eternal liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कम देवताओं से भौतिक वरदान प्राप्त करने से अस्थायी परिणाम मिलते हैं, क्योंकि भौतिक दुनिया स्वयं अस्थायी है। जो शाश्वत परमात्मा की तलाश करते हैं वे शाश्वत मुक्ति प्राप्त करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Temporary goals yield temporary results.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Aiming for the highest Reality ensures an eternal outcome.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18150,6 +19415,61 @@
               "lines": [
                 "अव्यक्तं व्यक्तिमापन्नं मन्यन्ते मामबुद्धयः ।",
                 "परं भावमजानन्तो ममाव्ययमनुत्तमम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "avyaktaṃ vyaktimāpannaṃ manyante māmabuddhayaḥ |",
+                    "paraṃ bhāvamajānanto mamāvyayamanuttamam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "बुद्धिहीन लोग, मेरे परम, अविनाशी और सर्वोच्च स्वरूप को न जानते हुए, मुझ अव्यक्त (निराकार) को व्यक्ति (साकार रूप) में आया हुआ मानते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Unintelligent men, who do not know Me perfectly, think that I, the Supreme Personality of Godhead, Krishna, was impersonal before and have now assumed this personality. Due to their small knowledge, they do not know My higher nature, which is imperishable and supreme.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "People lacking deep insight mistake Krishna as merely an ordinary human or a formless energy that has temporarily taken a body. They fail to grasp His eternal, supreme, and transcendental nature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "गहरी अंतर्दृष्टि की कमी वाले लोग कृष्ण को केवल एक साधारण इंसान मानते हैं। वे उनके शाश्वत, सर्वोच्च और पारलौकिक स्वभाव को समझने में विफल रहते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The Divine cannot be boxed into human physical limitations.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual ignorance limits God to what the eyes can see.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18159,6 +19479,61 @@
               "lines": [
                 "नाहं प्रकाशः सर्वस्य योगमायासमावृतः ।",
                 "मूढोऽयं नाभिजानाति लोको मामजमव्ययम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "nāhaṃ prakāśaḥ sarvasya yogamāyāsamāvṛtaḥ |",
+                    "mūḍho'yaṃ nābhijānāti loko māmajamavyayam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अपनी योगमाया से ढका हुआ मैं सभी के लिए प्रकट नहीं होता। यह मूर्ख संसार मुझे अजन्मा और अविनाशी नहीं जानता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "I am never manifest to the foolish and unintelligent. For them I am covered by My internal potency, and therefore they do not know that I am unborn and infallible.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "God does not reveal His absolute nature to everyone. He is veiled by His own mystic illusion (Yoga Maya). Only those who approach with devotion can see past the veil; the arrogant remain blind to Him.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "भगवान सभी के सामने अपने पूर्ण स्वरूप को प्रकट नहीं करते। वे अपनी योगमाया से ढके हुए हैं। जो भक्ति के साथ आते हैं वे ही पर्दे के पार देख सकते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The Divine is hidden in plain sight by the veil of illusion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Receptivity determines revelation; God hides from the arrogant.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18168,6 +19543,61 @@
               "lines": [
                 "वेदाहं समतीतानि वर्तमानानि चार्जुन ।",
                 "भविष्याणि च भूतानि मां तु वेद न कश्चन ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "vedāhaṃ samatītāni vartamānāni cārjuna |",
+                    "bhaviṣyāṇi ca bhūtāni māṃ tu veda na kaścana ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे अर्जुन! मैं अतीत, वर्तमान और भविष्य के सभी प्राणियों को जानता हूँ, परन्तु मुझे कोई नहीं जानता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O Arjuna, as the Supreme Personality of Godhead, I know everything that has happened in the past, all that is happening in the present, and all things that are yet to come. I also know all living entities; but Me no one knows.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna asserts His absolute omniscience. While humans are bound by time and ignorance, the Supreme exists outside of time, knowing all beings across all eras. Yet, the finite cannot fully comprehend the infinite.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण अपनी पूर्ण सर्वज्ञता का दावा करते हैं। जबकि मनुष्य समय और अज्ञानता से बंधे हैं, परमात्मा समय के बाहर मौजूद है। फिर भी, सीमित असीमित को पूरी तरह से नहीं समझ सकता।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God's knowledge spans the past, present, and future perfectly.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The finite human mind can never completely grasp the infinite Divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18177,6 +19607,61 @@
               "lines": [
                 "इच्छाद्वेषसमुत्थेन द्वन्द्वमोहेन भारत ।",
                 "सर्वभूतानि सम्मोहं सर्गे यान्ति परन्तप ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "icchādveṣasamutthena dvandvamohena bhārata |",
+                    "sarvabhūtāni sammohaṃ sarge yānti parantapa ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे भरतवंशी! हे परन्तप! इस संसार में जन्म लेते ही इच्छा और द्वेष से उत्पन्न द्वंद्वों के मोह से सभी प्राणी भ्रमित हो जाते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O scion of Bharata, O conqueror of the foe, all living entities are born into delusion, bewildered by dualities arisen from desire and hate.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The root cause of human confusion is traced back to the moment of birth in the material world. We are immediately caught in the dualities of 'I want this' (desire) and 'I hate this' (aversion), blinding us to reality.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "मानव भ्रम का मूल कारण भौतिक दुनिया में जन्म के क्षण से है। हम तुरंत 'मुझे यह चाहिए' (इच्छा) और 'मुझे इससे नफरत है' (द्वेष) के द्वंद्व में फंस जाते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Material existence is inherently bewildering.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Desire and hatred create a false binary that traps the mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18186,6 +19671,61 @@
               "lines": [
                 "येषां त्वन्तगतं पापं जनानां पुण्यकर्मणाम् ।",
                 "ते द्वन्द्वमोहनिर्मुक्ता भजन्ते मां दृढव्रताः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yeṣāṃ tvantagataṃ pāpaṃ janānāṃ puṇyakarmaṇām |",
+                    "te dvandvamohanirmuktā bhajante māṃ dṛḍhavratāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परन्तु जिन पुण्यकर्मा मनुष्यों के पाप नष्ट हो गए हैं, वे द्वंद्वों के मोह से मुक्त होकर दृढ़ निश्चय के साथ मेरी भक्ति करते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Persons who have acted piously in previous lives and in this life and whose sinful actions are completely eradicated are freed from the dualities of delusion, and they engage themselves in My service with determination.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Only through sustained righteous action (punya) are past sins cleared. Once the mind is purified of these impurities, the illusion of duality fades, allowing the person to worship the Supreme with unshakeable resolve.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "केवल निरंतर धार्मिक कार्यों (पुण्य) के माध्यम से ही पिछले पाप मिटते हैं। एक बार जब मन शुद्ध हो जाता है, तो द्वंद्व का भ्रम मिट जाता है, जिससे व्यक्ति दृढ़ संकल्प के साथ पूजा कर सकता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Pure actions clear the fog of mental delusion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A sinless mind naturally gravitates toward unwavering devotion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18195,6 +19735,61 @@
               "lines": [
                 "जरामरणमोक्षाय मामाश्रित्य यतन्ति ये ।",
                 "ते ब्रह्म तद्विदुः कृत्स्नमध्यात्मं कर्म चाखिलम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "jarāmaraṇamokṣāya māmāśritya yatanti ye |",
+                    "te brahma tadviduḥ kṛtsnamadhyātmaṃ karma cākhilam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो मेरी शरण लेकर बुढ़ापे और मृत्यु से मुक्ति पाने के लिए यत्न करते हैं, वे उस ब्रह्म को, सम्पूर्ण अध्यात्म को और सम्पूर्ण कर्म को जान लेते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Intelligent persons who are endeavoring for liberation from old age and death take refuge in Me in devotional service. They are actually Brahman because they entirely know everything about transcendental activities.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Those who seek ultimate freedom from the cycle of old age and death by taking refuge in God achieve the highest knowledge. They understand the nature of Brahman (the Absolute), the soul (Adhyatma), and the mechanics of action (Karma).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जो लोग भगवान की शरण लेकर बुढ़ापे और मृत्यु के चक्र से अंतिम स्वतंत्रता चाहते हैं, वे सर्वोच्च ज्ञान प्राप्त करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Seeking refuge in the Divine answers the ultimate existential problems.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True liberation brings complete knowledge of the self and the universe.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -18204,6 +19799,61 @@
               "lines": [
                 "साधिभूताधिदैवं मां साधियज्ञं च ये विदुः ।",
                 "प्रयाणकालेऽपि च मां ते विदुर्युक्तचेतसः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sādhibhūtādhidaivaṃ māṃ sādhiyajñaṃ ca ye viduḥ |",
+                    "prayāṇakāle'pi ca māṃ te viduryuktacetasaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो मुझे अधिभूत, अधिदैव और अधियज्ञ के सहित जानते हैं, वे युक्त चित्त वाले मनुष्य अंतकाल में (मृत्यु के समय) भी मुझे ही जानते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those in full consciousness of Me, who know Me, the Supreme Lord, to be the governing principle of the material manifestation, of the demigods, and of all methods of sacrifice, can understand and know Me, the Supreme Personality of Godhead, even at the time of death.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The chapter concludes by summarizing that those who integrate their spiritual understanding—seeing God in the physical world (adhibhuta), the celestial world (adhidaiva), and all sacrifices (adhiyajna)—maintain their divine consciousness even through the traumatic transition of death.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अध्याय यह सारांशित करते हुए समाप्त होता है कि जो लोग अपनी आध्यात्मिक समझ को एकीकृत करते हैं—भौतिक दुनिया, आकाशीय दुनिया और सभी यज्ञों में भगवान को देखते हैं—मृत्यु के समय भी अपनी दिव्य चेतना बनाए रखते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A lifetime of spiritual integration prepares one for the final test.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Divine consciousness remains intact even at the hour of death.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
