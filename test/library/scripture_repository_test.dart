@@ -177,6 +177,22 @@ void main() {
     );
   });
 
+  test('finds the verse before, across a chapter boundary', () {
+    final work = repository.works().single;
+
+    // 2.47 opens a chapter, so continuity runs back into the one before.
+    expect(repository.verseBefore(work, '2.47')?.ref, '1.2');
+
+    // And it carries the speaker line that introduces it.
+    final first = repository.verseBefore(work, '1.2')!;
+    expect(first.ref, '1.1');
+    expect(first.speaker, startsWith('धृतराष्ट्र उवाच'));
+
+    // Nothing comes before the first verse of the work.
+    expect(repository.verseBefore(work, '1.1'), isNull);
+    expect(repository.verseBefore(work, 'no.such.ref'), isNull);
+  });
+
   test('remembers small app settings between runs', () {
     expect(store.setting('assistant.host'), isNull);
     store.saveSetting('assistant.host', 'mirror');

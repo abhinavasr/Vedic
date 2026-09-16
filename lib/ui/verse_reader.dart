@@ -117,7 +117,11 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
       workTitle: widget.work.title,
       section: widget.section,
       verse: verse,
-      previous: index > 0 ? _verses[index - 1] : null,
+      // At the top of a chapter the thread continues in the one before, so
+      // the store is asked rather than this chapter's list.
+      previous: index > 0
+          ? _verses[index - 1]
+          : widget.repository.verseBefore(widget.work, verse.ref),
     );
   }
 

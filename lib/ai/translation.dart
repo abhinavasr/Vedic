@@ -77,6 +77,38 @@ class TranslationRejected implements Exception {
 ///
 /// All of it comes from the installed pack. None of it is invented, and none
 /// of it is an instruction: it is fenced in the prompt like the verse itself.
+/// The verse just before this one, for continuity.
+///
+/// A verse is rarely self-contained: it answers the one before it, and its
+/// pronouns point backwards. Carrying the previous verse — and what it is
+/// already known to mean — is what lets the model translate a passage rather
+/// than a sentence.
+@immutable
+class PrecedingVerse {
+  const PrecedingVerse({
+    required this.text,
+    this.label,
+    this.speaker,
+    this.transliteration,
+    this.published = const {},
+  });
+
+  final String text;
+
+  /// Its reference, e.g. "1.47". Says outright when the thread crosses a
+  /// chapter boundary.
+  final String? label;
+  final String? speaker;
+
+  /// Always available, since the app can transliterate Devanagari itself.
+  /// It is most of the value here when nothing has translated that verse.
+  final String? transliteration;
+
+  /// Published translations of that verse, by language name. Often empty:
+  /// most of a work is usually still untranslated.
+  final Map<String, String> published;
+}
+
 class VerseContext {
   const VerseContext({
     this.work,
@@ -84,7 +116,7 @@ class VerseContext {
     this.speaker,
     this.transliteration,
     this.published = const {},
-    this.previousVerse,
+    this.previous,
   });
 
   /// The work's title, e.g. "Bhagavad Gītā".
@@ -103,7 +135,7 @@ class VerseContext {
   final Map<String, String> published;
 
   /// The verse before this one, for the pronouns that point backwards.
-  final String? previousVerse;
+  final PrecedingVerse? previous;
 
   bool get isEmpty =>
       work == null &&
@@ -111,7 +143,7 @@ class VerseContext {
       speaker == null &&
       transliteration == null &&
       published.isEmpty &&
-      previousVerse == null;
+      previous == null;
 }
 
 /// Rules live in the system instruction, most important last.
@@ -148,10 +180,33 @@ String translationPrompt(
   if (context.speaker case final speaker?) {
     out.writeln('Spoken by:\n<<<\n${_fence(speaker.trim())}\n>>>');
   }
-  if (context.previousVerse case final previous?) {
+  if (context.previous case final previous?) {
+    final label = previous.label == null ? '' : ' (${_label(previous.label!)})';
+    // Speaker and verse in one fence: what came before is one piece of
+    // context, and a wall of markers reads worse to a small model.
+    final before = [?previous.speaker, previous.text].join('\n');
     out.writeln(
-      'The verse before this one:\n<<<\n${_fence(previous.trim())}\n>>>',
+      'The verse before this one$label:\n<<<\n${_fence(before.trim())}\n>>>',
     );
+    if (previous.transliteration case final iast?) {
+      out.writeln(
+        'That verse in Latin letters:\n<<<\n${_fence(iast.trim())}\n>>>',
+      );
+    }
+    if (previous.published.isEmpty) {
+      // Said outright, so the silence is not read as "there was nothing
+      // before this verse".
+      out.writeln(
+        'Nobody has translated that verse yet. Read the Sanskrit for what '
+        'came before, and translate only the verse below.',
+      );
+    }
+    for (final entry in previous.published.entries) {
+      out.writeln(
+        'What that verse means, in ${entry.key}:'
+        '\n<<<\n${_fence(entry.value.trim())}\n>>>',
+      );
+    }
   }
   if (out.isNotEmpty) out.writeln();
 
@@ -290,6 +345,16 @@ String _fence(String text) {
     out = out.replaceAll('<<<', '<\u200B<<').replaceAll('>>>', '>\u200B>>');
   }
   return out;
+}
+
+/// A reference such as "1.47", written into the prompt's own prose rather than
+/// fenced, so it is cut back to what a reference can contain.
+String _label(String raw) {
+  // A reference is one word: take the first, drop anything that is not part
+  // of one, and cap it. Nothing else from the label reaches the prompt.
+  final first = raw.trim().split(RegExp(r'\s')).first;
+  final clean = first.replaceAll(RegExp(r'[^\w.\-:]'), '');
+  return clean.length <= 16 ? clean : clean.substring(0, 16);
 }
 
 String _letters(String text) =>

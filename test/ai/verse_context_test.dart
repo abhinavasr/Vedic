@@ -45,7 +45,30 @@ void main() {
     expect(context.published['English'], 'Your right is to action alone.');
     // No transliteration in the pack, so the app's mechanical one stands in.
     expect(context.transliteration, startsWith('karma'));
-    expect(context.previousVerse, isNull);
+    expect(context.previous, isNull);
+  });
+
+  test('carries the verse before, transliterated even when untranslated', () {
+    final context = verseContext(
+      workTitle: 'Bhagavad Gītā',
+      section: _section,
+      verse: _verse(),
+      previous: PassageView(
+        ref: '2.46',
+        label: '2.46',
+        type: PassageType.verse,
+        text: 'यावानर्थ उदपाने',
+        variants: const [],
+        speaker: 'श्रीभगवानुवाच',
+      ),
+    );
+
+    final previous = context.previous!;
+    expect(previous.label, '2.46');
+    expect(previous.speaker, 'श्रीभगवानुवाच');
+    expect(previous.published, isEmpty);
+    // The one thing always available for a verse nobody has translated.
+    expect(previous.transliteration, startsWith('y'));
   });
 
   test('never offers a machine translation as evidence', () {

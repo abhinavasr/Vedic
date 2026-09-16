@@ -155,13 +155,29 @@ returns prose in one language. It never writes scripture:
 
 `verseContext` (`lib/ai/verse_context.dart`) gathers what the installed pack
 already knows: the work and chapter, the speaker line, the transliteration,
-the verse before this one, and **published translations of the same verse in
-other languages**. That last one does most of the work — rendering Hindi from
-the Sanskrit plus a published English translation is a far better bet, on a 2B
-model, than the Sanskrit alone.
+**the verse before this one**, and any published translations of either verse.
 
-A machine translation is never included. One phone's guess is not a source,
-and translating from it would launder a guess into a second language.
+Everything in it is optional, and that is the point: most of a work is
+untranslated while it is being worked through, so the context has to be
+useful when it is nothing but Sanskrit. The transliteration is always there,
+because the app can produce it mechanically.
+
+**Continuity.** The previous verse is fetched with `verseBefore`, which walks
+by ordinal across the whole work rather than within the open chapter — a
+dialogue does not stop at a chapter end, and the first verse of one is usually
+an answer to the last verse of the one before. It carries its own speaker
+line, so the model can see whether the voice has changed.
+
+When that verse has no translation, the prompt says so outright — otherwise
+the silence reads as "nothing came before this verse".
+
+A machine translation is never included, for this verse or the one before.
+One phone's guess is not a source, and translating from it would launder a
+guess into a second language.
+
+References such as "1.47" are the one piece written into the prompt's own
+prose rather than fenced, so they are cut back to what a reference can be: the
+first word, letters and digits and punctuation only, sixteen characters.
 
 The target language is named twice, with its endonym and its script —
 "Hindi (हिन्दी), in the Devanagari script" — and stated again at the end of

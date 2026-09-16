@@ -20,12 +20,26 @@ VerseContext verseContext({
   // The pack's own transliteration where there is one; otherwise the app's,
   // which is a mechanical mapping rather than anybody's reading.
   transliteration: verse.transliteration ?? devanagariToIast(verse.text),
-  published: {
-    for (final translation in verse.translations)
-      if (!translation.machine)
-        TargetLanguage.forCode(translation.language)?.name ??
-                translation.language:
-            translation.text,
-  },
-  previousVerse: previous?.text,
+  published: _published(verse),
+  previous: previous == null
+      ? null
+      : PrecedingVerse(
+          text: previous.text,
+          label: previous.label ?? previous.ref,
+          speaker: previous.speaker,
+          // Carries most of the weight when that verse has no translation at
+          // all, which is the common case in a work still being translated.
+          transliteration:
+              previous.transliteration ?? devanagariToIast(previous.text),
+          published: _published(previous),
+        ),
 );
+
+/// Published translations only, by language name.
+Map<String, String> _published(PassageView verse) => {
+  for (final translation in verse.translations)
+    if (!translation.machine)
+      TargetLanguage.forCode(translation.language)?.name ??
+              translation.language:
+          translation.text,
+};

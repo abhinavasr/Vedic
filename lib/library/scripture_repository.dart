@@ -323,6 +323,55 @@ class ScriptureRepository {
     return result;
   }
 
+  /// The verse immediately before [ref] in this work, with the speaker line
+  /// that introduces it.
+  ///
+  /// Crosses a chapter boundary when it has to: a dialogue does not stop at
+  /// the end of a chapter, and the first verse of one is often an answer to
+  /// the last verse of the one before.
+  PassageView? verseBefore(WorkSummary work, String ref) {
+    final local = _localTranslations(work);
+    return _read(work.pack, (db) {
+      final at = db.select(
+        'SELECT ordinal FROM passages WHERE work_id = ? AND ref = ?',
+        [work.id, ref],
+      );
+      if (at.isEmpty) return null;
+      final ordinal = at.first['ordinal'] as int;
+
+      final rows = db.select(
+        'SELECT id, ref, label, text, meter, ordinal FROM passages '
+        "WHERE work_id = ? AND kind = 'verse' AND ordinal < ? "
+        'ORDER BY ordinal DESC LIMIT 1',
+        [work.id, ordinal],
+      );
+      if (rows.isEmpty) return null;
+
+      final previous = _passage(
+        db,
+        rows.first,
+        PassageType.verse,
+        local: local,
+      );
+      return previous.withSpeaker(
+        _speakerBefore(db, work.id, rows.first['ordinal'] as int),
+      );
+    });
+  }
+
+  /// The "X said" line directly above a passage, if that is what is there.
+  String? _speakerBefore(Database db, int workId, int ordinal) {
+    final rows = db.select(
+      'SELECT ref, kind, text FROM passages '
+      'WHERE work_id = ? AND ordinal < ? ORDER BY ordinal DESC LIMIT 1',
+      [workId, ordinal],
+    );
+    if (rows.isEmpty) return null;
+    final row = rows.first;
+    final type = _typeOf(row['kind'] as String, row['ref'] as String);
+    return type == PassageType.speaker ? row['text'] as String : null;
+  }
+
   /// The section with this id, for opening the reader where a verse lives.
   SectionSummary? sectionOf(WorkSummary work, int? sectionId) {
     for (final section in sections(work)) {
