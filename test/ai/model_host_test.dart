@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vedic/ai/model_host.dart';
+import 'package:vedic/core/model_catalog.dart';
 
 void main() {
   test('a served file is reachable, whole or partial', () {
@@ -52,7 +53,8 @@ void main() {
   test('both hosts point at the same file name', () {
     // The installed model's identity is its file name, so switching hosts
     // must not look like a different model.
-    String file(ModelHost host) => Uri.parse(host.url).pathSegments.last;
+    String file(ModelHost host) =>
+        Uri.parse(host.urlFor(gemma4E2b)).pathSegments.last;
     expect(file(ModelHost.mirror), file(ModelHost.huggingFace));
     expect(file(ModelHost.huggingFace), 'gemma-4-E2B-it.litertlm');
   });

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../ai/assistant.dart';
+import '../ai/reading_languages.dart';
 import '../ai/translation.dart';
 import '../ai/verse_context.dart';
-import '../core/model_catalog.dart';
 import '../core/transliteration.dart';
 import '../library/scripture_repository.dart';
 import '../packs/pack_store.dart';
@@ -197,8 +197,8 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
           // possible to re-translate everything a weaker one produced, or
           // everything that came the long way round through another language.
           model: source.isOriginal
-              ? assistantModelFile
-              : '$assistantModelFile via ${source.languageCode}',
+              ? assistant.model.fileName
+              : '${assistant.model.fileName} via ${source.languageCode}',
           createdAt: DateTime.now().toUtc(),
         ),
       );
@@ -475,7 +475,9 @@ class _VersePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final translation = verse.translationFor(const ['en', 'hi']);
+    final translation = verse.translationFor(
+      ReadingLanguage.instance.preference,
+    );
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
       children: [
@@ -734,11 +736,19 @@ class _TranslateOnPhone extends StatelessWidget {
       for (final translation in verse.translations)
         if (!translation.machine) translation.language,
     };
+    // The reader's own language leads; English and Hindi follow because packs
+    // usually carry them. Every other language is behind "More languages", so
+    // the row stays a row rather than becoming a menu.
+    final seen = <String>{};
     final missing = [
-      for (final language in TargetLanguage.all)
-        if (!published.contains(language.code)) language,
+      for (final language in [
+        ReadingLanguage.instance.language,
+        TargetLanguage.english,
+        TargetLanguage.hindi,
+      ])
+        if (!published.contains(language.code) && seen.add(language.code))
+          language,
     ];
-    if (missing.isEmpty) return const SizedBox.shrink();
     final again = missing.any(
       (language) => verse.hasTranslationIn(language.code),
     );
@@ -766,10 +776,66 @@ class _TranslateOnPhone extends StatelessWidget {
               ),
               child: Text(language.name),
             ),
+          TextButton(
+            key: const ValueKey('translate-more'),
+            onPressed: () => _pickLanguage(context, verse, onTranslate),
+            style: TextButton.styleFrom(
+              foregroundColor: SadhanaColors.inkSoft,
+              visualDensity: VisualDensity.compact,
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+            ),
+            child: const Text('More languages…'),
+          ),
         ],
       ),
     );
   }
+}
+
+/// Every language the app can be asked for, with what the verse already has
+/// marked so the reader is not offered work that is already done.
+Future<void> _pickLanguage(
+  BuildContext context,
+  PassageView verse,
+  void Function(TargetLanguage language) onTranslate,
+) async {
+  final chosen = await showModalBottomSheet<TargetLanguage>(
+    context: context,
+    backgroundColor: SadhanaColors.surface,
+    showDragHandle: true,
+    isScrollControlled: true,
+    builder: (context) => SafeArea(
+      child: ListView(
+        shrinkWrap: true,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
+            child: Text(
+              'Translate this verse into',
+              style: serif(size: 20, color: SadhanaColors.ink),
+            ),
+          ),
+          for (final language in TargetLanguage.all)
+            ListTile(
+              key: ValueKey('sheet-${language.code}'),
+              title: Text(language.name),
+              subtitle: language.endonym == language.name
+                  ? null
+                  : Text(language.endonym),
+              trailing: verse.hasTranslationIn(language.code)
+                  ? const Icon(
+                      Icons.check,
+                      size: 18,
+                      color: SadhanaColors.green,
+                    )
+                  : null,
+              onTap: () => Navigator.of(context).pop(language),
+            ),
+        ],
+      ),
+    ),
+  );
+  if (chosen != null) onTranslate(chosen);
 }
 
 class _SectionLabel extends StatelessWidget {

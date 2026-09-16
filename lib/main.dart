@@ -6,6 +6,7 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
 import 'ai/assistant.dart';
+import 'ai/reading_languages.dart';
 import 'ai/store_settings.dart';
 import 'app_build.dart';
 import 'packs/bundled_assets.dart';
@@ -23,7 +24,9 @@ Future<void> main() async {
   );
   // The assistant remembers its host and its measured load time; everything
   // else about it is decided fresh each run.
-  Assistant.instance = Assistant(settings: StoreAssistantSettings(store));
+  final settings = StoreAssistantSettings(store);
+  Assistant.instance = Assistant(settings: settings);
+  ReadingLanguage.instance = ReadingLanguage(settings);
   Assistant.instance.watchLifecycle();
   runApp(
     VedicApp(

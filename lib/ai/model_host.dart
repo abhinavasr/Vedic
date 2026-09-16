@@ -3,7 +3,7 @@ import 'dart:io';
 
 import '../core/model_catalog.dart';
 
-// Where the model comes from, and whether that host can actually serve it.
+// Where a model comes from, and whether that host can actually serve it.
 //
 // Asking costs one round trip and saves the reader from a download that climbs
 // for a while and then dies, which tells them nothing and invites them to
@@ -17,9 +17,9 @@ enum ModelHost {
 
   final String label;
 
-  String get url => switch (this) {
-    ModelHost.huggingFace => gemmaModelUrl,
-    ModelHost.mirror => gemmaModelFallbackUrl,
+  String urlFor(ModelChoice model) => switch (this) {
+    ModelHost.huggingFace => model.url,
+    ModelHost.mirror => model.mirrorUrl,
   };
 
   /// Whether a paused transfer can be picked up again.
@@ -75,15 +75,18 @@ class HostProbe {
 
   final Duration timeout;
 
-  /// The first host that can serve the file.
+  /// The first host that can serve [model].
   ///
   /// With [preferred] set, only that host is asked: a host the reader picked
   /// is not overruled by the automatic order. Otherwise the worst answer is
   /// reported, preferring [ModelHostStatus.offline] — being offline is worth
   /// saying even if a later host merely timed out.
-  Future<ChosenHost> choose({ModelHost? preferred}) async {
+  Future<ChosenHost> choose({
+    required ModelChoice model,
+    ModelHost? preferred,
+  }) async {
     if (preferred != null) {
-      final status = await check(preferred);
+      final status = await check(preferred, model);
       return ChosenHost(
         status,
         host: status == ModelHostStatus.reachable ? preferred : null,
@@ -92,7 +95,7 @@ class HostProbe {
 
     var worst = ModelHostStatus.unavailable;
     for (final host in ModelHost.values) {
-      final status = await check(host);
+      final status = await check(host, model);
       if (status == ModelHostStatus.reachable) {
         return ChosenHost(status, host: host);
       }
@@ -102,12 +105,12 @@ class HostProbe {
     return ChosenHost(worst);
   }
 
-  Future<ModelHostStatus> check(ModelHost host) async {
+  Future<ModelHostStatus> check(ModelHost host, ModelChoice model) async {
     final client = HttpClient()
       ..connectionTimeout = timeout
       ..userAgent = 'Sadhana';
     try {
-      final request = await client.headUrl(Uri.parse(host.url));
+      final request = await client.headUrl(Uri.parse(host.urlFor(model)));
       request.followRedirects = true;
       final response = await request.close().timeout(timeout);
       await response.drain<void>();

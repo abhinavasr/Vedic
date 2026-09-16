@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../ai/assistant.dart';
 import '../../ai/model_host.dart';
 import '../../core/capability.dart';
+import '../../core/model_catalog.dart';
 import '../../core/units.dart';
 import '../theme.dart';
 
@@ -96,6 +97,7 @@ class _AssistantScreenState extends State<AssistantScreen> {
           _StatusCard(
             state: state,
             requirement: _assistant.requirement,
+            modelName: _assistant.model.name,
             loadEstimate: _assistant.loadEstimate,
             loadElapsed: _assistant.loadElapsed,
             onInstall: _assistant.install,
@@ -103,6 +105,19 @@ class _AssistantScreenState extends State<AssistantScreen> {
             onRetry: _assistant.refresh,
             onRemove: _confirmRemoval,
           ),
+          if (state.phase == AssistantPhase.notInstalled ||
+              state.phase == AssistantPhase.ready ||
+              state.phase == AssistantPhase.failed) ...[
+            const SizedBox(height: 24),
+            _ModelPicker(
+              chosen: _assistant.model,
+              onChanged: (model) {
+                setState(() => _assistant.model = model);
+                // Whether this one is installed is a different question.
+                _assistant.refresh();
+              },
+            ),
+          ],
           if (state.phase == AssistantPhase.notInstalled ||
               state.phase == AssistantPhase.failed) ...[
             const SizedBox(height: 24),
@@ -116,6 +131,45 @@ class _AssistantScreenState extends State<AssistantScreen> {
         ],
       ),
     ),
+  );
+}
+
+/// Which model to run.
+///
+/// Two real choices, and the difference between them is quality against size:
+/// said plainly, because it is the reader's phone and their data.
+class _ModelPicker extends StatelessWidget {
+  const _ModelPicker({required this.chosen, required this.onChanged});
+
+  final ModelChoice chosen;
+  final void Function(ModelChoice model) onChanged;
+
+  @override
+  Widget build(BuildContext context) => Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text('Which model', style: serif(size: 18, color: SadhanaColors.ink)),
+      const SizedBox(height: 8),
+      RadioGroup<String>(
+        groupValue: chosen.id,
+        onChanged: (id) => onChanged(modelChoiceById(id)),
+        child: Column(
+          children: [
+            for (final model in assistantModels)
+              RadioListTile<String>(
+                key: ValueKey('model-${model.id}'),
+                value: model.id,
+                contentPadding: EdgeInsets.zero,
+                title: Text(
+                  '${model.name}  ·  ${formatBytes(model.downloadBytes)}',
+                ),
+                subtitle: Text(model.summary),
+                isThreeLine: true,
+              ),
+          ],
+        ),
+      ),
+    ],
   );
 }
 
@@ -169,6 +223,7 @@ class _StatusCard extends StatelessWidget {
   const _StatusCard({
     required this.state,
     required this.requirement,
+    required this.modelName,
     required this.loadEstimate,
     required this.loadElapsed,
     required this.onInstall,
@@ -179,6 +234,7 @@ class _StatusCard extends StatelessWidget {
 
   final AssistantState state;
   final ModelRequirement requirement;
+  final String modelName;
   final Duration loadEstimate;
   final ValueListenable<Duration> loadElapsed;
   final VoidCallback onInstall;
@@ -307,7 +363,11 @@ class _StatusCard extends StatelessWidget {
       case AssistantPhase.ready:
       case AssistantPhase.working:
         return [
-          _Title(state.phase == AssistantPhase.working ? 'Working…' : 'Ready'),
+          _Title(
+            state.phase == AssistantPhase.working
+                ? 'Working…'
+                : '$modelName is ready',
+          ),
           const SizedBox(height: 8),
           _Line(
             'Open a verse with no translation in your language and choose '

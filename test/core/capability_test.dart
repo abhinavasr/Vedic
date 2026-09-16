@@ -26,46 +26,56 @@ NotCapable refused(Capability c) {
 void main() {
   group('checkCapability', () {
     test('offers the model to a capable phone', () {
-      expect(checkCapability(phone(), gemma4E2bIt), isA<Capable>());
+      expect(checkCapability(phone(), gemma4E2b.requirement), isA<Capable>());
     });
 
     test('refuses simulators even when they report plenty of memory', () {
       final r = refused(
-        checkCapability(phone(physical: false, ramMb: 64 * 1024), gemma4E2bIt),
+        checkCapability(
+          phone(physical: false, ramMb: 64 * 1024),
+          gemma4E2b.requirement,
+        ),
       );
       expect(r.refusal, Refusal.simulator);
     });
 
     test('requires Android 12', () {
       expect(
-        refused(checkCapability(phone(os: 30), gemma4E2bIt)).refusal,
+        refused(checkCapability(phone(os: 30), gemma4E2b.requirement)).refusal,
         Refusal.osTooOld,
       );
-      expect(checkCapability(phone(os: 31), gemma4E2bIt), isA<Capable>());
+      expect(
+        checkCapability(phone(os: 31), gemma4E2b.requirement),
+        isA<Capable>(),
+      );
     });
 
     test('requires iOS 16', () {
       final ios = DevicePlatform.ios;
       expect(
-        refused(checkCapability(phone(platform: ios, os: 15), gemma4E2bIt))
-            .refusal,
+        refused(
+          checkCapability(phone(platform: ios, os: 15), gemma4E2b.requirement),
+        ).refusal,
         Refusal.osTooOld,
       );
       expect(
-        checkCapability(phone(platform: ios, os: 16), gemma4E2bIt),
+        checkCapability(phone(platform: ios, os: 16), gemma4E2b.requirement),
         isA<Capable>(),
       );
     });
 
     test('refuses when the OS version is unknown', () {
       expect(
-        refused(checkCapability(phone(os: null), gemma4E2bIt)).refusal,
+        refused(checkCapability(phone(os: null), gemma4E2b.requirement))
+            .refusal,
         Refusal.osUnknown,
       );
     });
 
     test('refuses too little memory and names both amounts', () {
-      final r = refused(checkCapability(phone(ramMb: 2048), gemma4E2bIt));
+      final r = refused(
+        checkCapability(phone(ramMb: 2048), gemma4E2b.requirement),
+      );
       expect(r.refusal, Refusal.notEnoughMemory);
       expect(r.message, contains('3.0 GB'));
       expect(r.message, contains('2.0 GB'));
@@ -73,21 +83,25 @@ void main() {
 
     test('memory floor is inclusive', () {
       expect(
-        checkCapability(phone(ramMb: gemma4E2bIt.minRamMb), gemma4E2bIt),
+        checkCapability(
+          phone(ramMb: gemma4E2b.requirement.minRamMb),
+          gemma4E2b.requirement,
+        ),
         isA<Capable>(),
       );
     });
 
     test('refuses when memory could not be read', () {
       expect(
-        refused(checkCapability(phone(ramMb: 0), gemma4E2bIt)).refusal,
+        refused(checkCapability(phone(ramMb: 0), gemma4E2b.requirement))
+            .refusal,
         Refusal.memoryUnknown,
       );
     });
 
     test('refuses too little storage and says how much to free', () {
       final r = refused(
-        checkCapability(phone(freeDiskBytes: 3 * gib), gemma4E2bIt),
+        checkCapability(phone(freeDiskBytes: 3 * gib), gemma4E2b.requirement),
       );
       expect(r.refusal, Refusal.notEnoughStorage);
       expect(r.message, contains('Free up another 1.0 GB'));
@@ -96,8 +110,8 @@ void main() {
     test('storage floor is inclusive', () {
       expect(
         checkCapability(
-          phone(freeDiskBytes: gemma4E2bIt.minFreeDiskBytes),
-          gemma4E2bIt,
+          phone(freeDiskBytes: gemma4E2b.requirement.minFreeDiskBytes),
+          gemma4E2b.requirement,
         ),
         isA<Capable>(),
       );
@@ -106,7 +120,7 @@ void main() {
     test('memory is megabytes and storage is bytes', () {
       // A phone with 4 GB of RAM and 4 GB free, each in its own unit.
       final device = phone(ramMb: 4096, freeDiskBytes: 4 * gib);
-      expect(checkCapability(device, gemma4E2bIt), isA<Capable>());
+      expect(checkCapability(device, gemma4E2b.requirement), isA<Capable>());
     });
   });
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vedic/ai/assistant.dart';
 import 'package:vedic/ai/model_host.dart';
+import 'package:vedic/core/model_catalog.dart';
 import 'package:vedic/ui/ai/assistant_screen.dart';
 
 class _MemorySettings implements AssistantSettings {
@@ -76,6 +77,43 @@ void main() {
 
     // A later run starts from the saved choice.
     expect(Assistant(settings: settings).preferredHost, ModelHost.mirror);
+  });
+
+  testWidgets('offers both models, with the cost of each, and remembers', (
+    tester,
+  ) async {
+    _tallWindow(tester);
+    final settings = _MemorySettings();
+    final assistant = Assistant(settings: settings)
+      ..state.value = const AssistantState(AssistantPhase.notInstalled);
+    await tester.pumpWidget(
+      MaterialApp(home: AssistantScreen(assistant: assistant)),
+    );
+    await tester.pump();
+
+    expect(assistant.model.id, gemma4E2b.id, reason: 'the best one by default');
+    expect(find.textContaining('2.4 GB'), findsWidgets);
+    expect(find.textContaining('331.2 MB'), findsOneWidget);
+
+    await tester.tap(find.byKey(ValueKey('model-${qwen3_06b.id}')));
+    await tester.pumpAndSettle();
+    expect(assistant.model.id, qwen3_06b.id);
+    expect(settings.values['assistant.model'], qwen3_06b.id);
+
+    // A later run starts from the model that was picked.
+    expect(Assistant(settings: settings).model.id, qwen3_06b.id);
+  });
+
+  test('each model has its own file, so one never masks another', () {
+    final files = assistantModels.map((m) => m.fileName).toSet();
+    expect(files, hasLength(assistantModels.length));
+    for (final model in assistantModels) {
+      // Only the extension comes off: "qwen3_0.6b_..." keeps its own dot.
+      expect(model.modelId, isNot(endsWith('.litertlm')));
+      expect(model.fileName, startsWith(model.modelId));
+      expect(model.url, startsWith('https://'));
+      expect(model.mirrorUrl, endsWith(model.fileName));
+    }
   });
 
   testWidgets('a download can be stopped', (tester) async {

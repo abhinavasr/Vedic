@@ -1,4 +1,32 @@
-enum Script { latin, devanagari, kannada }
+enum Script {
+  latin,
+  devanagari,
+  bengali,
+  gurmukhi,
+  gujarati,
+  odia,
+  tamil,
+  telugu,
+  kannada,
+  malayalam,
+}
+
+/// Where each Indic script's 128-code-point block starts.
+///
+/// They are laid out alike, so the offsets inside a block mean the same thing
+/// in all of them: `+0x64`/`+0x65` are the danda, which every Indic script
+/// shares and none is identified by, and `+0x66`–`+0x6F` are its digits.
+const Map<Script, int> _indicBlocks = {
+  Script.devanagari: 0x0900,
+  Script.bengali: 0x0980,
+  Script.gurmukhi: 0x0A00,
+  Script.gujarati: 0x0A80,
+  Script.odia: 0x0B00,
+  Script.tamil: 0x0B80,
+  Script.telugu: 0x0C00,
+  Script.kannada: 0x0C80,
+  Script.malayalam: 0x0D00,
+};
 
 /// Counts the letters of [text] in each script.
 ///
@@ -44,14 +72,19 @@ Script? _scriptOf(int c) {
       (c >= 0x1E00 && c <= 0x1EFF)) {
     return Script.latin;
   }
-  if ((c >= 0x0900 && c <= 0x0963) ||
-      (c >= 0x0970 && c <= 0x097F) ||
-      (c >= 0xA8E0 && c <= 0xA8FF) ||
-      (c >= 0x1CD0 && c <= 0x1CFF)) {
+  // Devanagari Extended and the Vedic Extensions, which sit apart from the
+  // main block.
+  if ((c >= 0xA8E0 && c <= 0xA8FF) || (c >= 0x1CD0 && c <= 0x1CFF)) {
     return Script.devanagari;
   }
-  if ((c >= 0x0C80 && c <= 0x0CE5) || (c >= 0x0CF0 && c <= 0x0CFF)) {
-    return Script.kannada;
+  for (final entry in _indicBlocks.entries) {
+    final base = entry.value;
+    if (c < base || c > base + 0x7F) continue;
+    final offset = c - base;
+    // The danda and the digits say nothing about which script this is.
+    if (offset == 0x64 || offset == 0x65) return null;
+    if (offset >= 0x66 && offset <= 0x6F) return null;
+    return entry.key;
   }
   return null;
 }

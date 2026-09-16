@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../ai/reading_languages.dart';
+
 import 'ai/assistant_screen.dart';
+import 'settings/language_screen.dart';
 import 'theme.dart';
 
 /// A feature that isn't available yet, explained rather than broken.
@@ -51,6 +54,17 @@ class ProfileScreen extends StatelessWidget {
     appBar: AppBar(title: const Text('Profile')),
     body: ListView(
       children: [
+        ListTile(
+          leading: const Icon(Icons.translate_outlined),
+          title: const Text('Reading language'),
+          subtitle: Text(ReadingLanguage.instance.language.name),
+          onTap: () async {
+            await Navigator.of(context).push(
+              MaterialPageRoute<void>(builder: (_) => const LanguageScreen()),
+            );
+          },
+        ),
+        const Divider(height: 1),
         ListTile(
           leading: const Icon(Icons.auto_awesome_outlined),
           title: const Text('On-device AI'),

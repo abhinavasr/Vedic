@@ -53,7 +53,120 @@ class TargetLanguage {
     scriptName: 'Devanagari',
   );
 
-  static const all = [english, hindi];
+  /// The languages the app can be asked for.
+  ///
+  /// The Indian ones come first and in the order a reader is most likely to
+  /// want them; they are also the ones the pivot in [chooseSource] serves
+  /// best, since Hindi carries most of the same vocabulary.
+  static const all = [
+    english,
+    hindi,
+    TargetLanguage(
+      code: 'mr',
+      name: 'Marathi',
+      endonym: 'मराठी',
+      script: Script.devanagari,
+      scriptName: 'Devanagari',
+    ),
+    TargetLanguage(
+      code: 'ne',
+      name: 'Nepali',
+      endonym: 'नेपाली',
+      script: Script.devanagari,
+      scriptName: 'Devanagari',
+    ),
+    TargetLanguage(
+      code: 'gu',
+      name: 'Gujarati',
+      endonym: 'ગુજરાતી',
+      script: Script.gujarati,
+      scriptName: 'Gujarati',
+    ),
+    TargetLanguage(
+      code: 'bn',
+      name: 'Bengali',
+      endonym: 'বাংলা',
+      script: Script.bengali,
+      scriptName: 'Bengali',
+    ),
+    TargetLanguage(
+      code: 'pa',
+      name: 'Punjabi',
+      endonym: 'ਪੰਜਾਬੀ',
+      script: Script.gurmukhi,
+      scriptName: 'Gurmukhi',
+    ),
+    TargetLanguage(
+      code: 'or',
+      name: 'Odia',
+      endonym: 'ଓଡ଼ିଆ',
+      script: Script.odia,
+      scriptName: 'Odia',
+    ),
+    TargetLanguage(
+      code: 'ta',
+      name: 'Tamil',
+      endonym: 'தமிழ்',
+      script: Script.tamil,
+      scriptName: 'Tamil',
+    ),
+    TargetLanguage(
+      code: 'te',
+      name: 'Telugu',
+      endonym: 'తెలుగు',
+      script: Script.telugu,
+      scriptName: 'Telugu',
+    ),
+    TargetLanguage(
+      code: 'kn',
+      name: 'Kannada',
+      endonym: 'ಕನ್ನಡ',
+      script: Script.kannada,
+      scriptName: 'Kannada',
+    ),
+    TargetLanguage(
+      code: 'ml',
+      name: 'Malayalam',
+      endonym: 'മലയാളം',
+      script: Script.malayalam,
+      scriptName: 'Malayalam',
+    ),
+    TargetLanguage(
+      code: 'es',
+      name: 'Spanish',
+      endonym: 'Español',
+      script: Script.latin,
+      scriptName: 'Latin',
+    ),
+    TargetLanguage(
+      code: 'fr',
+      name: 'French',
+      endonym: 'Français',
+      script: Script.latin,
+      scriptName: 'Latin',
+    ),
+    TargetLanguage(
+      code: 'de',
+      name: 'German',
+      endonym: 'Deutsch',
+      script: Script.latin,
+      scriptName: 'Latin',
+    ),
+    TargetLanguage(
+      code: 'pt',
+      name: 'Portuguese',
+      endonym: 'Português',
+      script: Script.latin,
+      scriptName: 'Latin',
+    ),
+    TargetLanguage(
+      code: 'id',
+      name: 'Indonesian',
+      endonym: 'Bahasa Indonesia',
+      script: Script.latin,
+      scriptName: 'Latin',
+    ),
+  ];
 
   static TargetLanguage? forCode(String code) {
     for (final language in all) {

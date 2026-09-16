@@ -110,11 +110,8 @@ abstract class AssistantSettings {
 }
 
 class Assistant {
-  Assistant({
-    this.requirement = gemma4E2bIt,
-    this.probe = const HostProbe(),
-    this.settings,
-  }) {
+  Assistant({this.probe = const HostProbe(), this.settings}) {
+    _model = modelChoiceById(settings?.read(_modelKey));
     final saved = settings?.read(_hostKey);
     _preferred = ModelHost.values
         .where((host) => host.name == saved)
@@ -129,15 +126,32 @@ class Assistant {
   static Assistant instance = Assistant();
 
   static const _hostKey = 'assistant.host';
+  static const _modelKey = 'assistant.model';
   static const _loadMillisKey = 'assistant.loadMillis';
 
   /// A download that has made no progress for this long is stuck, whatever the
   /// transfer layer still believes.
   static const _stallAfter = Duration(seconds: 90);
 
-  final ModelRequirement requirement;
   final HostProbe probe;
   final AssistantSettings? settings;
+
+  late ModelChoice _model;
+
+  /// Which model the reader picked. Changing it does not touch what is
+  /// already installed; the new one is downloaded when they ask for it.
+  ModelChoice get model => _model;
+
+  /// Records the choice. The caller decides when to look at the phone again:
+  /// a setter that quietly starts asynchronous work is a setter that fires in
+  /// the middle of a test.
+  set model(ModelChoice choice) {
+    if (choice.id == _model.id) return;
+    _model = choice;
+    settings?.write(_modelKey, choice.id);
+  }
+
+  ModelRequirement get requirement => _model.requirement;
 
   final state = ValueNotifier<AssistantState>(
     const AssistantState(AssistantPhase.unknown),
@@ -170,7 +184,7 @@ class Assistant {
   }
 
   var _engineReady = false;
-  InferenceModel? _model;
+  InferenceModel? _loaded;
   CancelToken? _download;
   Timer? _stall;
   Timer? _ticker;
@@ -196,11 +210,20 @@ class Assistant {
           break;
       }
       await _registerEngine();
+      // This model, not any model: the reader can have installed one and then
+      // picked another. The runtime names an installed model by its file in
+      // some places and by the file without its extension in others, so both
+      // count as a match.
       final installed = await FlutterGemma.listInstalledModels();
       _set(
-        installed.isEmpty ? AssistantPhase.notInstalled : AssistantPhase.ready,
+        _installedName(installed) == null
+            ? AssistantPhase.notInstalled
+            : AssistantPhase.ready,
       );
-    } on Exception catch (e) {
+    } on UnsupportedError catch (e) {
+      // Not a phone at all. The feature is absent rather than broken.
+      _set(AssistantPhase.unsupported, message: e.message ?? '$e');
+    } on Object catch (e) {
       _set(AssistantPhase.failed, message: '$e');
     }
   }
@@ -217,7 +240,7 @@ class Assistant {
       // One round trip, before committing the reader to 2.4 GB. Without it a
       // moved file shows up as a bar that climbs for a while and then dies.
       _set(AssistantPhase.checking);
-      final chosen = await probe.choose(preferred: _preferred);
+      final chosen = await probe.choose(model: _model, preferred: _preferred);
       if (chosen.host == null) {
         _set(
           AssistantPhase.failed,
@@ -235,10 +258,10 @@ class Assistant {
 
       final installation =
           await FlutterGemma.installModel(
-                modelType: _modelFamily,
+                modelType: modelFamily(_model.family),
                 fileType: ModelFileType.litertlm,
               )
-              .fromNetwork(chosen.host!.url)
+              .fromNetwork(chosen.host!.urlFor(_model))
               .withCancelToken(token)
               .withProgress(_onProgress)
               .install();
@@ -259,7 +282,7 @@ class Assistant {
       }
 
       await load();
-    } on Exception catch (e) {
+    } on Object catch (e) {
       _stopStall();
       if (CancelToken.isCancel(e)) {
         await refresh();
@@ -342,7 +365,7 @@ class Assistant {
       await _registerEngine();
       _set(AssistantPhase.loading);
       await FlutterGemma.installModel(
-        modelType: _modelFamily,
+        modelType: modelFamily(_model.family),
         fileType: path.endsWith('.task')
             ? ModelFileType.task
             : ModelFileType.litertlm,
@@ -356,7 +379,7 @@ class Assistant {
   /// Loads the model and keeps it loaded, which is what the ~60 s cold start
   /// buys. Call it once the app knows the assistant is wanted.
   Future<void> load() async {
-    if (_model != null) {
+    if (_loaded != null) {
       _set(AssistantPhase.ready);
       return;
     }
@@ -377,13 +400,13 @@ class Assistant {
         maxTokens: 2048,
         preferredBackend: await _backend(),
       );
-      _model = model;
+      _loaded = model;
 
       final took = DateTime.now().difference(started);
       loadEstimate = took;
       settings?.write(_loadMillisKey, '${took.inMilliseconds}');
       _set(AssistantPhase.ready, backend: '${model.activeBackend}');
-    } on Exception catch (e) {
+    } on Object catch (e) {
       _set(AssistantPhase.failed, message: _readable(e));
     } finally {
       _ticker?.cancel();
@@ -396,19 +419,18 @@ class Assistant {
   Future<void> unload() async {
     _ticker?.cancel();
     _ticker = null;
-    final model = _model;
-    _model = null;
+    final model = _loaded;
+    _loaded = null;
     await model?.close();
   }
 
-  /// Deletes the model, giving the reader their storage back.
+  /// Deletes the model in use, giving the reader their storage back.
   Future<void> remove() async {
     try {
       await unload();
-      for (final id in await FlutterGemma.listInstalledModels()) {
-        await FlutterGemma.uninstallModel(id);
-      }
-    } on Exception catch (e) {
+      final name = _installedName(await FlutterGemma.listInstalledModels());
+      if (name != null) await FlutterGemma.uninstallModel(name);
+    } on Object catch (e) {
       _set(AssistantPhase.failed, message: _readable(e));
       return;
     }
@@ -447,8 +469,8 @@ class Assistant {
     StreamController<AssistantChunk> out,
   ) async {
     try {
-      if (_model == null) await load();
-      final model = _model;
+      if (_loaded == null) await load();
+      final model = _loaded;
       if (model == null) {
         throw StateError('The assistant is not loaded.');
       }
@@ -462,7 +484,7 @@ class Assistant {
         randomSeed: 1,
         maxOutputTokens: request.maxOutputTokens,
         isThinking: request.thinking,
-        modelType: _modelFamily,
+        modelType: modelFamily(_model.family),
       );
       final raw = StringBuffer();
       final thinking = StringBuffer();
@@ -519,6 +541,14 @@ class Assistant {
     }
   }
 
+  /// What the runtime calls this model, if it has it at all.
+  String? _installedName(List<String> installed) {
+    for (final id in installed) {
+      if (id == _model.fileName || id == _model.modelId) return id;
+    }
+    return null;
+  }
+
   Future<void> _registerEngine() async {
     if (_engineReady) return;
     await FlutterGemma.initialize(inferenceEngines: [LiteRtLmEngine()]);
@@ -555,7 +585,7 @@ class Assistant {
 ///
 /// The pairing matters: hand a file to the wrong family and it fails to load
 /// with "Model may be invalid", which is true only of the pairing.
-ModelType get _modelFamily => switch (assistantModelFamily) {
+ModelType modelFamily(String family) => switch (family) {
   'gemma4' => ModelType.gemma4,
   'gemmaIt' => ModelType.gemmaIt,
   'qwen3' => ModelType.qwen3,

@@ -1,0 +1,42 @@
+import 'package:flutter/foundation.dart';
+
+import 'assistant.dart';
+import 'translation.dart';
+
+/// The language the reader wants to read in.
+///
+/// One choice rather than a list: it decides which translation is shown first
+/// and which one the app offers to make. Everything a pack ships stays
+/// available underneath it.
+class ReadingLanguage extends ChangeNotifier {
+  ReadingLanguage(this.settings) {
+    _code = settings?.read(_key) ?? TargetLanguage.english.code;
+  }
+
+  /// The app's, replaceable in tests.
+  static ReadingLanguage instance = ReadingLanguage(null);
+
+  static const _key = 'reading.language';
+
+  final AssistantSettings? settings;
+
+  late String _code;
+
+  TargetLanguage get language =>
+      TargetLanguage.forCode(_code) ?? TargetLanguage.english;
+
+  set language(TargetLanguage choice) {
+    if (choice.code == _code) return;
+    _code = choice.code;
+    settings?.write(_key, choice.code);
+    notifyListeners();
+  }
+
+  /// Which translation to show, best first: the reader's language, then the
+  /// two that packs most often carry.
+  List<String> get preference => [
+    _code,
+    if (_code != 'en') 'en',
+    if (_code != 'hi') 'hi',
+  ];
+}
