@@ -24,6 +24,7 @@ const verses = '''
 
 void main() {
   late Directory temp;
+  late PackStore store;
   late ScriptureRepository repository;
 
   setUp(() async {
@@ -61,7 +62,7 @@ void main() {
       outputRoot: Directory(p.join(temp.path, 'out')),
       signer: PackSigner(keyId: 'test', seed: seed),
     );
-    final store = PackStore(
+    store = PackStore(
       root: Directory(p.join(temp.path, 'store')),
       trustedKeys: [
         PublisherKey(keyId: 'test', publicKey: await publicKeyFromSeed(seed)),
@@ -118,6 +119,62 @@ void main() {
         repository.verseOfTheDay(day.add(Duration(days: i)))!.verse.ref,
     };
     expect(refs.length, greaterThan(1));
+  });
+
+  test('shows an on-device translation, labelled, where the pack has none', () {
+    final work = repository.works().single;
+    store.saveLocalTranslation(
+      LocalTranslation(
+        packId: work.pack.packId,
+        workSlug: work.slug,
+        ref: '2.47',
+        language: 'en',
+        text: 'Your right is to action alone, never to its fruits.',
+        model: 'gemma-4-E2B-it',
+        createdAt: DateTime.utc(2026, 9, 16),
+      ),
+    );
+
+    final chapterTwo = repository.sections(work)[1];
+    final verse = repository.verses(work, chapterTwo).single;
+    final english = verse.translationFor(['en'])!;
+    expect(english.machine, isTrue);
+    expect(english.text, startsWith('Your right is to action'));
+    expect(verse.hasTranslationIn('hi'), isFalse);
+
+    // The verse itself stays exactly as the pack ships it.
+    expect(verse.text, contains('कर्मण्येवाधिकारस्ते'));
+  });
+
+  test('a published translation is never shadowed by a machine one', () {
+    final work = repository.works().single;
+    final verse = repository.verses(work, repository.sections(work)[1]).single;
+    expect(verse.translations, isEmpty);
+
+    for (final origin in ['machine', 'published']) {
+      store.saveLocalTranslation(
+        LocalTranslation(
+          packId: work.pack.packId,
+          workSlug: work.slug,
+          ref: '2.47',
+          language: 'en',
+          text: 'From the phone, revision $origin.',
+          model: 'gemma-4-E2B-it',
+          createdAt: DateTime.utc(2026, 9, 16),
+        ),
+      );
+    }
+
+    // Re-translating replaces, rather than piling up.
+    final again = repository.verses(work, repository.sections(work)[1]).single;
+    expect(again.translations, hasLength(1));
+    expect(again.translations.single.text, endsWith('revision published.'));
+
+    store.clearLocalTranslations(language: 'en');
+    expect(
+      repository.verses(work, repository.sections(work)[1]).single.translations,
+      isEmpty,
+    );
   });
 
   test('searches verses in Devanagari and in plain Latin', () {

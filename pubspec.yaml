@@ -10,8 +10,11 @@ dependencies:
   audioplayers: ^6.8.1
   crypto: ^3.0.7
   cryptography: ^2.9.0
+  device_info_plus: ^13.2.0
   flutter:
     sdk: flutter
+  flutter_gemma: ^1.8.3
+  flutter_gemma_litertlm: ^1.6.4
   path: ^1.9.1
   path_provider: ^2.1.6
   sqlite3: ^3.6.0

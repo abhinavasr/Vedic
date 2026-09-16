@@ -1,4 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Downloading the on-device model; release builds need this declared here. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:label="Sadhana"
         android:name="${applicationName}"

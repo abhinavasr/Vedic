@@ -113,7 +113,8 @@ class PassageView {
     takeaways: takeaways,
   );
 
-  /// The translation to show, preferring [languages] in order.
+  /// The translation to show, preferring [languages] in order. Published
+  /// translations come first, so one is never shadowed by a machine one.
   TranslationView? translationFor(List<String> languages) {
     for (final language in languages) {
       for (final translation in translations) {
@@ -122,6 +123,9 @@ class PassageView {
     }
     return translations.isEmpty ? null : translations.first;
   }
+
+  bool hasTranslationIn(String language) =>
+      translations.any((t) => t.language == language);
 }
 
 /// A verse with the work and section it belongs to.
@@ -165,7 +169,12 @@ class ScriptureRepository {
         return VerseOfTheDay(
           work: work,
           sectionId: row['section_id'] as int?,
-          verse: _passage(db, row, PassageType.verse),
+          verse: _passage(
+            db,
+            row,
+            PassageType.verse,
+            local: _localTranslations(work),
+          ),
         );
       });
     }
@@ -183,6 +192,7 @@ class ScriptureRepository {
 
     final hits = <VerseOfTheDay>[];
     for (final work in works()) {
+      final local = _localTranslations(work);
       _read<void>(work.pack, (db) {
         for (final row in db.select(
           'SELECT id, section_id, ref, label, text, meter FROM passages '
@@ -196,7 +206,7 @@ class ScriptureRepository {
             VerseOfTheDay(
               work: work,
               sectionId: row['section_id'] as int?,
-              verse: _passage(db, row, PassageType.verse),
+              verse: _passage(db, row, PassageType.verse, local: local),
             ),
           );
           if (hits.length == limit) return;
@@ -270,24 +280,27 @@ class ScriptureRepository {
     ];
   });
 
-  List<PassageView> passages(WorkSummary work, SectionSummary section) =>
-      _read(work.pack, (db) {
-        final where = section.id == null
-            ? 'work_id = ? AND section_id IS NULL'
-            : 'section_id = ?';
-        return [
-          for (final row in db.select(
-            'SELECT id, ref, label, kind, text, meter FROM passages '
-            'WHERE $where ORDER BY ordinal',
-            [section.id ?? work.id],
-          ))
-            _passage(
-              db,
-              row,
-              _typeOf(row['kind'] as String, row['ref'] as String),
-            ),
-        ];
-      });
+  List<PassageView> passages(WorkSummary work, SectionSummary section) {
+    final local = _localTranslations(work);
+    return _read(work.pack, (db) {
+      final where = section.id == null
+          ? 'work_id = ? AND section_id IS NULL'
+          : 'section_id = ?';
+      return [
+        for (final row in db.select(
+          'SELECT id, ref, label, kind, text, meter FROM passages '
+          'WHERE $where ORDER BY ordinal',
+          [section.id ?? work.id],
+        ))
+          _passage(
+            db,
+            row,
+            _typeOf(row['kind'] as String, row['ref'] as String),
+            local: local,
+          ),
+      ];
+    });
+  }
 
   /// The verses of a section in reading order, each carrying the speaker line
   /// that introduces it.
@@ -318,7 +331,28 @@ class ScriptureRepository {
     return null;
   }
 
-  PassageView _passage(Database db, Row row, PassageType type) {
+  /// Translations this phone produced, by ref, for merging into [_passage].
+  Map<String, List<TranslationView>> _localTranslations(WorkSummary work) {
+    final byRef = <String, List<TranslationView>>{};
+    for (final local in store.localTranslations(work.pack.packId, work.slug)) {
+      (byRef[local.ref] ??= []).add(
+        TranslationView(
+          language: local.language,
+          text: local.text,
+          translator: null,
+          machine: true,
+        ),
+      );
+    }
+    return byRef;
+  }
+
+  PassageView _passage(
+    Database db,
+    Row row,
+    PassageType type, {
+    Map<String, List<TranslationView>> local = const {},
+  }) {
     final variants = <String>[];
     final translations = <TranslationView>[];
     final explanations = <String>[];
@@ -350,6 +384,8 @@ class ScriptureRepository {
           transliteration ??= text;
       }
     }
+    // After the pack's own, so a published translation always wins.
+    translations.addAll(local[row['ref'] as String] ?? const []);
     return PassageView(
       ref: row['ref'] as String,
       label: row['label'] as String?,

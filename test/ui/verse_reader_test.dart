@@ -125,6 +125,43 @@ void main() {
     );
   });
 
+  testWidgets('offers an on-device translation only where one is missing', (
+    tester,
+  ) async {
+    await openReader(tester);
+
+    // 2.47 ships both languages, so there is nothing to offer.
+    expect(find.textContaining('Translate on this phone'), findsNothing);
+
+    await tester.tap(find.byIcon(Icons.chevron_right));
+    await tester.pumpAndSettle();
+    expect(find.byKey(const ValueKey('translate-en')), findsOneWidget);
+    expect(find.byKey(const ValueKey('translate-hi')), findsOneWidget);
+  });
+
+  testWidgets('shows a translation this phone already made, labelled', (
+    tester,
+  ) async {
+    repository.store.saveLocalTranslation(
+      LocalTranslation(
+        packId: 'bhagavad-gita',
+        workSlug: 'bhagavad-gita',
+        ref: '2.48',
+        language: 'en',
+        text: 'Steadfast in yoga, do your work.',
+        model: 'gemma-4-E2B-it.litertlm',
+        createdAt: DateTime.utc(2026, 9, 16),
+      ),
+    );
+    await openReader(tester);
+    await tester.tap(find.byIcon(Icons.chevron_right));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Steadfast in yoga, do your work.'), findsOneWidget);
+    expect(find.text('Machine translation'), findsOneWidget);
+    expect(find.byKey(const ValueKey('translate-en')), findsNothing);
+  });
+
   testWidgets('remembers the verse reached and bookmarks it', (tester) async {
     await openReader(tester);
     final store = repository.store;

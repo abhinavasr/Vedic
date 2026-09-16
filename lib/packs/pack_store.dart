@@ -84,6 +84,32 @@ class ReadingMark {
   final DateTime at;
 }
 
+/// A translation this phone produced, kept outside the pack so a pack update
+/// never overwrites it and never passes it off as published text.
+class LocalTranslation {
+  const LocalTranslation({
+    required this.packId,
+    required this.workSlug,
+    required this.ref,
+    required this.language,
+    required this.text,
+    required this.model,
+    required this.createdAt,
+  });
+
+  final String packId;
+  final String workSlug;
+  final String ref;
+
+  /// BCP 47.
+  final String language;
+  final String text;
+
+  /// Which model wrote it, so a later version can re-translate or drop it.
+  final String model;
+  final DateTime createdAt;
+}
+
 /// Returns the content key for an encrypted pack, e.g. by unwrapping its
 /// device key envelope.
 typedef ContentKeyProvider = Future<List<int>> Function(PackManifest manifest);
@@ -363,6 +389,60 @@ class PackStore {
     ],
   );
 
+  /// Every on-device translation for a work, for merging into what the pack
+  /// ships.
+  List<LocalTranslation> localTranslations(String packId, String workSlug) =>
+      _withRegistry(
+        (db) => [
+          for (final row in db.select(
+            'SELECT ref, language, text, model, created_at '
+            'FROM local_translations WHERE pack_id = ? AND work_slug = ? '
+            'ORDER BY ref',
+            [packId, workSlug],
+          ))
+            LocalTranslation(
+              packId: packId,
+              workSlug: workSlug,
+              ref: row['ref'] as String,
+              language: row['language'] as String,
+              text: row['text'] as String,
+              model: row['model'] as String,
+              createdAt: DateTime.parse(row['created_at'] as String),
+            ),
+        ],
+      );
+
+  /// Stores a translation, replacing any earlier one for the same verse and
+  /// language.
+  void saveLocalTranslation(LocalTranslation translation) => _withRegistry(
+    (db) => db.execute(
+      'INSERT INTO local_translations '
+      '(pack_id, work_slug, ref, language, text, model, created_at) '
+      'VALUES (?, ?, ?, ?, ?, ?, ?) '
+      'ON CONFLICT (pack_id, work_slug, ref, language) DO UPDATE SET '
+      'text = excluded.text, model = excluded.model, '
+      'created_at = excluded.created_at',
+      [
+        translation.packId,
+        translation.workSlug,
+        translation.ref,
+        translation.language,
+        translation.text,
+        translation.model,
+        translation.createdAt.toUtc().toIso8601String(),
+      ],
+    ),
+  );
+
+  /// Forgets on-device translations: all of them, or one language's.
+  void clearLocalTranslations({String? language}) => _withRegistry(
+    (db) => language == null
+        ? db.execute('DELETE FROM local_translations')
+        : db.execute('DELETE FROM local_translations WHERE language = ?', [
+            language,
+          ]),
+  );
+
   ReadingMark _mark(Row row, String timeColumn) => ReadingMark(
     packId: row['pack_id'] as String,
     workSlug: row['work_slug'] as String,
@@ -391,6 +471,15 @@ class PackStore {
           'CREATE TABLE IF NOT EXISTS bookmarks ('
           'pack_id TEXT NOT NULL, work_slug TEXT NOT NULL, ref TEXT NOT NULL, '
           'created_at TEXT NOT NULL, PRIMARY KEY (pack_id, work_slug, ref))',
+        )
+        // Kept here rather than in the pack database, which is replaced whole
+        // on every pack update and holds published text only.
+        ..execute(
+          'CREATE TABLE IF NOT EXISTS local_translations ('
+          'pack_id TEXT NOT NULL, work_slug TEXT NOT NULL, ref TEXT NOT NULL, '
+          'language TEXT NOT NULL, text TEXT NOT NULL, model TEXT NOT NULL, '
+          'created_at TEXT NOT NULL, '
+          'PRIMARY KEY (pack_id, work_slug, ref, language))',
         );
       return body(db);
     } finally {

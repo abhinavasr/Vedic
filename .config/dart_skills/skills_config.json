@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "installations": {
+    "claude": {
+      "package:flutter_gemma": {
+        "skills": [
+          {
+            "name": "flutter-gemma-builtin-ai",
+            "installedAt": "2026-09-16T07:50:22.395178Z",
+            "contentHash": "l6eU7N5+gxMb7K4u9Y9f4w==",
+            "path": "skills/flutter-gemma-builtin-ai"
+          },
+          {
+            "name": "flutter-gemma-speech",
+            "installedAt": "2026-09-16T07:50:22.396505Z",
+            "contentHash": "Y1H+aXyiJzPQDBv8ZdAKeg==",
+            "path": "skills/flutter-gemma-speech"
+          },
+          {
+            "name": "flutter-gemma-function-calling",
+            "installedAt": "2026-09-16T07:50:22.397595Z",
+            "contentHash": "lRPELKNDUy1BvvH70XSeYQ==",
+            "path": "skills/flutter-gemma-function-calling"
+          },
+          {
+            "name": "flutter-gemma-rag",
+            "installedAt": "2026-09-16T07:50:22.398677Z",
+            "contentHash": "9cos4FD+lYzI+WuaxxVucA==",
+            "path": "skills/flutter-gemma-rag"
+          },
+          {
+            "name": "flutter-gemma-onnx",
+            "installedAt": "2026-09-16T07:50:22.399618Z",
+            "contentHash": "36fUWNT0y2UmbA5qrGOXtg==",
+            "path": "skills/flutter-gemma-onnx"
+          },
+          {
+            "name": "flutter-gemma-inference",
+            "installedAt": "2026-09-16T07:50:22.401341Z",
+            "contentHash": "xKyuUulTVwTNf5DxThchNA==",
+            "path": "skills/flutter-gemma-inference"
+          },
+          {
+            "name": "flutter-gemma-mediapipe",
+            "installedAt": "2026-09-16T07:50:22.402281Z",
+            "contentHash": "XdxySLvryTiEDfiUUu9cOQ==",
+            "path": "skills/flutter-gemma-mediapipe"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../ai/assistant.dart';
+import '../ai/translation.dart';
+import '../core/model_catalog.dart';
 import '../core/transliteration.dart';
 import '../library/scripture_repository.dart';
+import '../packs/pack_store.dart';
+import 'ai/assistant_screen.dart';
 import 'home/hero_painter.dart';
 import 'simple_screens.dart';
 import 'theme.dart';
@@ -31,14 +36,14 @@ class VerseReaderScreen extends StatefulWidget {
 }
 
 class _VerseReaderScreenState extends State<VerseReaderScreen> {
-  late final List<PassageView> _verses = widget.repository.verses(
-    widget.work,
-    widget.section,
-  );
+  late var _verses = widget.repository.verses(widget.work, widget.section);
   late final PageController _pages;
   var _show = _Show.both;
   var _index = 0;
   var _bookmarked = false;
+
+  /// The verse being translated on the phone, if any.
+  String? _translating;
 
   @override
   void initState() {
@@ -103,6 +108,61 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
         duration: const Duration(seconds: 2),
       ),
     );
+  }
+
+  /// Translates a verse on this phone, once the reader has asked for it.
+  ///
+  /// With no model installed this leads to the setup screen instead: the
+  /// download is large and never starts on its own.
+  Future<void> _translate(PassageView verse, TargetLanguage language) async {
+    final assistant = Assistant.instance;
+    if (assistant.state.value.phase == AssistantPhase.unknown) {
+      await assistant.refresh();
+    }
+    if (!mounted) return;
+    if (!assistant.state.value.canAnswer) {
+      await Navigator.of(
+        context,
+      ).push(MaterialPageRoute<void>(builder: (_) => const AssistantScreen()));
+      return;
+    }
+
+    setState(() => _translating = verse.ref);
+    try {
+      final text = await translateVerse(
+        assistant,
+        verse: verse.text,
+        language: language,
+      );
+      widget.repository.store.saveLocalTranslation(
+        LocalTranslation(
+          packId: widget.work.pack.packId,
+          workSlug: widget.work.slug,
+          ref: verse.ref,
+          language: language.code,
+          text: text,
+          model: gemmaModelFileName,
+          createdAt: DateTime.now().toUtc(),
+        ),
+      );
+      if (!mounted) return;
+      setState(
+        () => _verses = widget.repository.verses(widget.work, widget.section),
+      );
+    } on Exception catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            e is TranslationRejected
+                ? e.message
+                : 'The translation did not finish. Try again.',
+          ),
+        ),
+      );
+    } finally {
+      if (mounted) setState(() => _translating = null);
+    }
   }
 
   @override
@@ -176,8 +236,13 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
                               _index = index;
                               _syncVerse();
                             }),
-                            itemBuilder: (context, i) =>
-                                _VersePage(verse: _verses[i], show: _show),
+                            itemBuilder: (context, i) => _VersePage(
+                              verse: _verses[i],
+                              show: _show,
+                              translating: _translating == _verses[i].ref,
+                              onTranslate: (language) =>
+                                  _translate(_verses[i], language),
+                            ),
                           ),
                   ),
                 ],
@@ -301,10 +366,17 @@ class _ModeChip extends StatelessWidget {
 }
 
 class _VersePage extends StatelessWidget {
-  const _VersePage({required this.verse, required this.show});
+  const _VersePage({
+    required this.verse,
+    required this.show,
+    required this.translating,
+    required this.onTranslate,
+  });
 
   final PassageView verse;
   final _Show show;
+  final bool translating;
+  final void Function(TargetLanguage language) onTranslate;
 
   @override
   Widget build(BuildContext context) {
@@ -398,6 +470,11 @@ class _VersePage extends StatelessWidget {
                     const SizedBox(height: 8),
                     _Credit(translation: translation),
                   ],
+                  _TranslateOnPhone(
+                    verse: verse,
+                    translating: translating,
+                    onTranslate: onTranslate,
+                  ),
                 ],
                 const SizedBox(height: 16),
                 const Divider(height: 1, color: SadhanaColors.line),
@@ -469,6 +546,78 @@ class _VersePage extends StatelessWidget {
             ),
         ],
       ],
+    );
+  }
+}
+
+/// Offers a translation in any language the verse does not already have.
+///
+/// Nothing runs until the reader asks: the model is large and slow, and a
+/// published translation is always the better one.
+class _TranslateOnPhone extends StatelessWidget {
+  const _TranslateOnPhone({
+    required this.verse,
+    required this.translating,
+    required this.onTranslate,
+  });
+
+  final PassageView verse;
+  final bool translating;
+  final void Function(TargetLanguage language) onTranslate;
+
+  @override
+  Widget build(BuildContext context) {
+    if (translating) {
+      return const Padding(
+        padding: EdgeInsets.only(top: 14),
+        child: Row(
+          children: [
+            SizedBox(
+              width: 16,
+              height: 16,
+              child: CircularProgressIndicator(strokeWidth: 2),
+            ),
+            SizedBox(width: 10),
+            Flexible(
+              child: Text(
+                'Translating on this phone…',
+                style: TextStyle(fontSize: 13, color: SadhanaColors.inkSoft),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    final missing = [
+      for (final language in TargetLanguage.all)
+        if (!verse.hasTranslationIn(language.code)) language,
+    ];
+    if (missing.isEmpty) return const SizedBox.shrink();
+
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Wrap(
+        spacing: 4,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: [
+          const Text(
+            'Translate on this phone:',
+            style: TextStyle(fontSize: 13, color: SadhanaColors.inkSoft),
+          ),
+          for (final language in missing)
+            TextButton(
+              key: ValueKey('translate-${language.code}'),
+              onPressed: () => onTranslate(language),
+              style: TextButton.styleFrom(
+                foregroundColor: SadhanaColors.green,
+                visualDensity: VisualDensity.compact,
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+              ),
+              child: Text(language.name),
+            ),
+        ],
+      ),
     );
   }
 }

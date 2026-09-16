@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'ai/assistant_screen.dart';
 import 'theme.dart';
 
 /// A feature that isn't available yet, explained rather than broken.
@@ -50,6 +51,17 @@ class ProfileScreen extends StatelessWidget {
     appBar: AppBar(title: const Text('Profile')),
     body: ListView(
       children: [
+        ListTile(
+          leading: const Icon(Icons.auto_awesome_outlined),
+          title: const Text('On-device AI'),
+          subtitle: const Text(
+            'Translate verses and ask questions, all on this phone',
+          ),
+          onTap: () => Navigator.of(context).push(
+            MaterialPageRoute<void>(builder: (_) => const AssistantScreen()),
+          ),
+        ),
+        const Divider(height: 1),
         ListTile(
           leading: const Icon(Icons.description_outlined),
           title: const Text('Open source licences'),

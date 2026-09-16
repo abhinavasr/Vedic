@@ -5,6 +5,15 @@ import 'units.dart';
 /// Android, and the per-SoC files failed to create an engine (CLAUDE.md).
 const String gemmaModelFileName = 'gemma-4-E2B-it.litertlm';
 
+/// Where model weights are downloaded from. Switching hosts is a build flag,
+/// not a release (docs/DEVELOPMENT.md).
+const String assistantModelBase = String.fromEnvironment(
+  'ASSISTANT_MODEL_BASE',
+  defaultValue: 'https://huggingface.co/litert-community/gemma-4-E2B-it-litert-lm/resolve/main',
+);
+
+String get gemmaModelUrl => '$assistantModelBase/$gemmaModelFileName';
+
 const ModelRequirement gemma4E2bIt = ModelRequirement(
   displayName: 'The assistant',
   downloadBytes: 2588147712,
