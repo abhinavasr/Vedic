@@ -104,14 +104,18 @@ class ListenControl extends StatefulWidget {
 class _ListenControlState extends State<ListenControl> {
   /// What is available for this verse: the chips offer nothing that is not.
   var _hasChant = false;
-  String? _spokenLanguage;
+
+  /// The languages each clip will *actually* be read in, which is not always
+  /// the one asked for — a pack without that translation, or a phone without
+  /// that voice, falls back. The row says what will happen, not what was
+  /// wanted.
+  String? _meaningIn;
+  String? _explanationIn;
 
   /// What the offer was worked out for, so a language or a mix chosen
   /// elsewhere is picked up rather than leaving a stale line.
   ({String language, String mix})? _madeFor;
   var _asked = 0;
-
-  bool get _hasExplanation => widget.verse.explanations.isNotEmpty;
 
   @override
   void didChangeDependencies() {
@@ -135,18 +139,31 @@ class _ListenControlState extends State<ListenControl> {
   /// recording and listing the installed voices both touch the platform.
   Future<void> _look(ReadingLanguage reading) async {
     final asked = ++_asked;
+    final here = reading.language.code;
     final chant = await ChantSource.instance.find(widget.verse);
-    final choice = await VerseSpeech.instance.chooseForMeaning(
+    final meaning = await VerseSpeech.instance.chooseForMeaning(
       available: {
         for (final translation in widget.verse.translations)
           translation.language: translation.text,
       },
-      preferred: reading.language.code,
+      preferred: reading.mix.meaningIn(here),
+    );
+    final explanation = await VerseSpeech.instance.chooseForMeaning(
+      available: {
+        for (final language in widget.verse.noteLanguages(
+          widget.verse.explanations,
+        ))
+          language: widget.verse
+              .notesFor(widget.verse.explanations, [language])
+              .join(' '),
+      },
+      preferred: reading.mix.explanationIn(here),
     );
     if (!mounted || asked != _asked) return;
     setState(() {
       _hasChant = chant != null;
-      _spokenLanguage = choice == null ? null : languageOf(choice);
+      _meaningIn = meaning?.languageCode;
+      _explanationIn = explanation?.languageCode;
     });
   }
 
@@ -180,7 +197,14 @@ class _ListenControlState extends State<ListenControl> {
     final mix = reading.mix;
     // Nothing this verse can offer, so no control at all rather than a button
     // that does nothing.
-    if (!_hasChant && _spokenLanguage == null) return const SizedBox.shrink();
+    if (!_hasChant && _meaningIn == null && _explanationIn == null) {
+      return const SizedBox.shrink();
+    }
+    // Described as it will actually sound, falling back and all.
+    final actual = mix.with_(
+      meaningLanguage: _meaningIn,
+      explanationLanguage: _explanationIn,
+    );
 
     return ValueListenableBuilder<String?>(
       valueListenable: VersePlayer.instance.playing,
@@ -218,7 +242,7 @@ class _ListenControlState extends State<ListenControl> {
                           ),
                         ),
                         Text(
-                          mix.describe(
+                          actual.describe(
                             reading: reading.language.code,
                             nameOf: languageName,
                           ),
@@ -249,7 +273,7 @@ class _ListenControlState extends State<ListenControl> {
                       onChanged: (on) =>
                           reading.mix = mix.with_(chant: on),
                     ),
-                  if (_spokenLanguage != null)
+                  if (_meaningIn != null)
                     _MixChip(
                       label: 'Meaning',
                       icon: Icons.translate,
@@ -257,7 +281,7 @@ class _ListenControlState extends State<ListenControl> {
                       onChanged: (on) =>
                           reading.mix = mix.with_(meaning: on),
                     ),
-                  if (_hasExplanation && _spokenLanguage != null)
+                  if (_explanationIn != null)
                     _MixChip(
                       label: 'Explanation',
                       icon: Icons.notes,
@@ -274,10 +298,6 @@ class _ListenControlState extends State<ListenControl> {
     );
   }
 }
-
-/// What the meaning will be read in, which is not always what was asked for.
-String languageOf(SpokenChoice choice) =>
-    choice.description.replaceFirst('Read aloud in ', '');
 
 /// One of the three things a verse can be listened to as.
 class _MixChip extends StatelessWidget {

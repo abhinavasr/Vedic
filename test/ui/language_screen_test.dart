@@ -25,7 +25,7 @@ void main() {
 
     final settings = _MemorySettings();
     final reading = ReadingLanguage(settings);
-    expect(reading.language.code, 'en', reason: 'English until asked');
+    expect(reading.language.code, 'hi', reason: 'Hindi until asked');
 
     await tester.pumpWidget(
       MaterialApp(home: LanguageScreen(reading: reading)),
@@ -56,6 +56,8 @@ void main() {
     // still open underneath, kept showing the old one until it was rebuilt.
     final reading = ReadingLanguage(_MemorySettings());
     late String seen;
+    // Hindi is where a fresh install starts, so the change under test is the
+    // move away from it.
     await tester.pumpWidget(
       ReadingLanguageScope(
         language: reading,
@@ -69,11 +71,11 @@ void main() {
         ),
       ),
     );
-    expect(seen, 'English');
+    expect(seen, 'Hindi');
 
-    reading.language = TargetLanguage.hindi;
+    reading.language = TargetLanguage.english;
     await tester.pump();
-    expect(seen, 'Hindi', reason: 'the open screen rebuilt on its own');
+    expect(seen, 'English', reason: 'the open screen rebuilt on its own');
   });
 
   test('reading the explanation aloud is remembered', () {
@@ -92,7 +94,8 @@ void main() {
     final settings = _MemorySettings()..values['reading.language'] = 'mr';
     expect(ReadingLanguage(settings).preference, ['mr', 'en', 'hi']);
 
-    final english = _MemorySettings();
-    expect(ReadingLanguage(english).preference, ['en', 'hi']);
+    // A fresh install reads Hindi, with English behind it.
+    final fresh = _MemorySettings();
+    expect(ReadingLanguage(fresh).preference, ['hi', 'en']);
   });
 }

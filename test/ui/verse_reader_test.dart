@@ -89,7 +89,9 @@ void main() {
       findsOneWidget,
       reason: 'transliterated by the app when the pack has none',
     );
-    expect(find.text('Test English rendering of 2.47.'), findsOneWidget);
+    expect(find.text('2.47 का परीक्षण अनुवाद।'), findsOneWidget);
+    // The explanation is English-only here, and one language is shown rather
+    // than every language the pack happens to carry.
     expect(find.text('Test explanation of 2.47.'), findsOneWidget);
     expect(find.text('First takeaway.'), findsOneWidget);
     expect(find.text('Meter: anuṣṭubh'), findsOneWidget);
@@ -102,12 +104,12 @@ void main() {
     await tester.tap(find.byKey(const ValueKey('show-meaning')));
     await tester.pumpAndSettle();
     expect(find.textContaining('कर्मण्येवाधिकारस्ते'), findsNothing);
-    expect(find.text('Test English rendering of 2.47.'), findsOneWidget);
+    expect(find.text('2.47 का परीक्षण अनुवाद।'), findsOneWidget);
 
     await tester.tap(find.byKey(const ValueKey('show-sanskrit')));
     await tester.pumpAndSettle();
     expect(find.textContaining('कर्मण्येवाधिकारस्ते'), findsOneWidget);
-    expect(find.text('Test English rendering of 2.47.'), findsNothing);
+    expect(find.text('2.47 का परीक्षण अनुवाद।'), findsNothing);
   });
 
   testWidgets('moving on says when a verse has no translation yet', (

@@ -11,7 +11,9 @@ import 'translation.dart';
 /// available underneath it.
 class ReadingLanguage extends ChangeNotifier {
   ReadingLanguage(this.settings) {
-    _code = settings?.read(_key) ?? TargetLanguage.english.code;
+    // Hindi until they say otherwise: most of the people this is for read it,
+    // the packs carry it, and English is one tap away for everyone else.
+    _code = settings?.read(_key) ?? TargetLanguage.hindi.code;
     // The explanation switch came first and became one of three. A phone that
     // has it set keeps what it chose.
     _mix =

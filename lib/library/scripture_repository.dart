@@ -197,7 +197,15 @@ class PassageView {
       ];
       if (matching.isNotEmpty) return matching;
     }
-    return [for (final note in notes) note.text];
+    // Nothing in any language asked for. Fall back to one language — the
+    // first the pack carries — and not to all of them at once. Returning
+    // every language is how a verse came to be read aloud in English and
+    // then again in Hindi: two voices, two languages, one explanation.
+    final fallback = notes.isEmpty ? null : notes.first.language;
+    return [
+      for (final note in notes)
+        if (note.language == fallback) note.text,
+    ];
   }
 
   /// The language [notesFor] settles on, so the reader can be told when it is
