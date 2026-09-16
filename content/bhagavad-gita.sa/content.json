@@ -2,7 +2,7 @@
   "format": "vedic-pack-content",
   "format_version": 1,
   "pack_id": "bhagavad-gita.sa",
-  "revision": 16,
+  "revision": 17,
   "languages": [
     "sa",
     "hi",
@@ -37061,6 +37061,61 @@
               "lines": [
                 "अभयं सत्त्वसंशुद्धिर्ज्ञानयोगव्यवस्थितिः ।",
                 "दानं दमश्च यज्ञश्च स्वाध्यायस्तप आर्जवम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "abhayaṃ sattvasaṃśuddhirjñānayogavyavasthitiḥ |",
+                    "dānaṃ damaśca yajñaśca svādhyāyastapa ārjavam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्री भगवान बोले: भय का सर्वथा अभाव, अंतःकरण की पूर्ण निर्मलता, तत्त्वज्ञान के लिए ध्यान योग में निरंतर दृढ़ स्थिति, सात्त्विक दान, इंद्रियों का दमन, भगवत्पूजा, अग्निहोत्र आदि उत्तम कर्म, वेद-शास्त्रों का पठन-पाठन, स्वधर्म पालन के लिए कष्ट सहना और शरीर तथा इंद्रियों के साथ अंतःकरण की सरलता...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Supreme Personality of Godhead said: Fearlessness; purification of one's existence; cultivation of spiritual knowledge; charity; self-control; performance of sacrifice; study of the Vedas; austerity; simplicity...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna lists the divine qualities (Daivi Sampad) that elevate human consciousness. The very first is fearlessness, which stems from depending entirely on the Supreme and living a life of spiritual integrity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण उन दैवीय गुणों (दैवी सम्पदा) को सूचीबद्ध करते हैं जो मानव चेतना को ऊपर उठाते हैं। इनमें सबसे पहला है निडरता, जो पूरी तरह से परमात्मा पर निर्भर होने और सत्य के मार्ग पर चलने से उत्पन्न होती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Cultivate fearlessness through spiritual grounding.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Divine qualities purify the mind and actions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37070,6 +37125,61 @@
               "lines": [
                 "अहिंसा सत्यमक्रोधस्त्यागः शान्तिरपैशुनम् ।",
                 "दया भूतेष्वलोलुप्त्वं मार्दवं ह्रीरचापलम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ahiṃsā satyamakrodhastyāgaḥ śāntirapaiśunam |",
+                    "dayā bhūteṣvaloluptvaṃ mārdavaṃ hrīracāpalam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मन, वाणी और शरीर से किसी को कष्ट न देना, यथार्थ और प्रिय भाषण, अपना अपकार करने वाले पर भी क्रोध न करना, कर्मों में कर्तापन के अभिमान का त्याग, अन्तःकरण की उपरति, निंदा न करना, सब प्राणियों में दया, इंद्रियों का विषयों के साथ संयोग होने पर भी उनमें आसक्ति का न होना, कोमलता, लोक और शास्त्र के विरुद्ध आचरण में लज्जा और व्यर्थ चेष्टाओं का अभाव...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Nonviolence; truthfulness; freedom from anger; renunciation; tranquillity; aversion to faultfinding; compassion for all living entities; freedom from covetousness; gentleness; modesty; steady determination...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The list continues with qualities that foster social harmony and internal peace. Non-violence, truthfulness, and compassion are emphasized as essential traits of a spiritually advanced, godly person.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सूची उन गुणों के साथ जारी है जो सामाजिक सद्भाव और आंतरिक शांति को बढ़ावा देते हैं। अहिंसा, सत्यवादिता और करुणा को आध्यात्मिक रूप से उन्नत व्यक्ति के आवश्यक लक्षणों के रूप में जोर दिया गया है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Gentleness and compassion reflect inner strength.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Control anger and practice harmlessness in thoughts, words, and deeds.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37079,6 +37189,61 @@
               "lines": [
                 "तेजः क्षमा धृतिः शौचमद्रोहो नातिमानिता ।",
                 "भवन्ति सम्पदं दैवीमभिजातस्य भारत ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tejaḥ kṣamā dhṛtiḥ śaucamadroho nātimānitā |",
+                    "bhavanti sampadaṃ daivīmabhijātasya bhārata ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "तेज, क्षमा, धैर्य, बाहर-भीतर की शुद्धि, किसी में भी शत्रुभाव का न होना और अपने में पूज्यता के अभिमान का अभाव—ये सब तो हे अर्जुन! दैवी संपदा को लेकर उत्पन्न हुए पुरुष के लक्षण हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Vigor; forgiveness; fortitude; cleanliness; and freedom from envy and from the passion for honor—these transcendental qualities, O son of Bharata, belong to godly men endowed with divine nature.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Concluding the list of twenty-six divine qualities, Krishna highlights vigor, forgiveness, and the absence of vanity. These traits constitute the true wealth of those born with a liberating, divine nature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "26 दैवीय गुणों का समापन करते हुए, कृष्ण तेज, क्षमा और घमंड की अनुपस्थिति पर प्रकाश डालते हैं। ये लक्षण उन लोगों की सच्ची संपत्ति हैं जो एक दैवीय, मुक्त स्वभाव के साथ पैदा हुए हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Forgiveness and inner cleanliness are true wealth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Avoid the trap of seeking excessive honor and prestige.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37088,6 +37253,61 @@
               "lines": [
                 "दम्भो दर्पोऽभिमानश्च क्रोधः पारुष्यमेव च ।",
                 "अज्ञानं चाभिजातस्य पार्थ सम्पदमासुरीम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "dambho darpo'bhimānaśca krodhaḥ pāruṣyameva ca |",
+                    "ajñānaṃ cābhijātasya pārtha sampadamāsurīm ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे पार्थ! पाखंड, घमंड, अभिमान, क्रोध, कठोर वाणी और अज्ञान भी—ये सब आसुरी संपदा को लेकर उत्पन्न हुए पुरुष के लक्षण हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Pride, arrogance, conceit, anger, harshness and ignorance—these qualities belong to those of demonic nature, O son of Pritha.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna sharply contrasts the divine qualities with the demonic (Asuric) ones. Ignorance breeds a toxic combination of ego, harshness, and anger that characterizes a degraded nature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण दैवीय गुणों की आसुरी गुणों के साथ तीखी तुलना करते हैं। अज्ञानता अहंकार, कठोरता और क्रोध का एक जहरीला संयोजन पैदा करती है जो एक पतित स्वभाव की विशेषता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Arrogance and harshness are symptoms of deep ignorance.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Demonic qualities lead to suffering and conflict.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37097,6 +37317,61 @@
               "lines": [
                 "दैवी सम्पद्विमोक्षाय निबन्धायासुरी मता ।",
                 "मा शुचः सम्पदं दैवीमभिजातोऽसि पाण्डव ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "daivī sampadvimokṣāya nibandhāyāsurī matā |",
+                    "mā śucaḥ sampadaṃ daivīmabhijāto'si pāṇḍava ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "दैवी संपदा मुक्ति के लिए और आसुरी संपदा बाँधने के लिए मानी गई है। इसलिए हे अर्जुन! तुम शोक मत करो, क्योंकि तुम दैवी संपदा को लेकर उत्पन्न हुए हो।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The transcendental qualities are conducive to liberation, whereas the demonic qualities make for bondage. Do not worry, O son of Pandu, for you are born with the divine qualities.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The practical consequence of these traits is stark: divine qualities liberate the soul, while demonic qualities enslave it in material suffering. Krishna reassures Arjuna that he naturally possesses the liberating qualities.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "इन लक्षणों का व्यावहारिक परिणाम स्पष्ट है: दैवीय गुण आत्मा को मुक्त करते हैं, जबकि आसुरी गुण इसे भौतिक पीड़ा में बांधते हैं। कृष्ण अर्जुन को आश्वस्त करते हैं कि उनके पास स्वाभाविक रूप से मुक्ति के गुण हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Your character determines your spiritual destiny.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Good traits lead to freedom; toxic traits lead to psychological bondage.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37106,6 +37381,61 @@
               "lines": [
                 "द्वौ भूतसर्गौ लोकेऽस्मिन्दैव आसुर एव च ।",
                 "दैवो विस्तरशः प्रोक्त आसुरं पार्थ मे श‍ृणु ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "dvau bhūtasargau loke'smindaiva āsura eva ca |",
+                    "daivo vistaraśaḥ prokta āsuraṃ pārtha me śṛṇu ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे अर्जुन! इस लोक में भूतों की सृष्टि यानी मनुष्यों के स्वभाव दो ही प्रकार के हैं—एक तो दैवी प्रकृति वाले और दूसरे आसुरी प्रकृति वाले। उनमें से दैवी प्रकृति वाले तो विस्तारपूर्वक कहे गए, अब तुम आसुरी प्रकृति वालों को मुझसे सुनो।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O son of Pritha, in this world there are two kinds of created beings. One is called the divine and the other demonic. I have already explained the divine at length. Now hear from Me of the demonic.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Having detailed the divine nature, Krishna now prepares to dissect the mindset and behavior of the demonic or materialistic nature, so Arjuna can clearly identify and avoid it.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "दैवीय स्वभाव का विस्तार से वर्णन करने के बाद, कृष्ण अब आसुरी या भौतिकवादी स्वभाव की मानसिकता और व्यवहार को विच्छेदित करने की तैयारी करते हैं, ताकि अर्जुन इसे पहचान सकें और इससे बच सकें।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Humanity is broadly divided into those moving towards light and those moving towards darkness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Understanding the dark mindset helps in avoiding its traps.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37115,6 +37445,61 @@
               "lines": [
                 "प्रवृत्तिं च निवृत्तिं च जना न विदुरासुराः ।",
                 "न शौचं नापि चाचारो न सत्यं तेषु विद्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "pravṛttiṃ ca nivṛttiṃ ca janā na vidurāsurāḥ |",
+                    "na śaucaṃ nāpi cācāro na satyaṃ teṣu vidyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "आसुरी स्वभाव वाले मनुष्य यह नहीं जानते कि धर्म में कैसे प्रवृत्त होना चाहिए और अधर्म से कैसे निवृत्त होना चाहिए। उनमें न तो बाहरी-भीतरी शुद्धि होती है, न श्रेष्ठ आचरण होता है और न ही सत्य भाषण होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those who are demoniac do not know what is to be done and what is not to be done. Neither cleanliness nor proper behavior nor truth is found in them.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The fundamental flaw of the demonic mentality is the loss of a moral compass. Lacking purity, good conduct, and truthfulness, they cannot distinguish between right and wrong action.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "आसुरी मानसिकता की मूलभूत खामी नैतिक कंपास का नुकसान है। पवित्रता, अच्छे आचरण और सत्यवादिता की कमी के कारण, वे सही और गलत काम के बीच अंतर नहीं कर सकते।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A lack of ethical boundaries is the first sign of a degraded nature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Purity and truthfulness are essential for proper discernment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37124,6 +37509,61 @@
               "lines": [
                 "असत्यमप्रतिष्ठं ते जगदाहुरनीश्वरम् ।",
                 "अपरस्परसम्भूतं किमन्यत्कामहैतुकम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "asatyamapratiṣṭhaṃ te jagadāhurānīśvaram |",
+                    "aparasparasambhūtaṃ kimanyatkāmahaitukam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वे आसुरी प्रकृति वाले मनुष्य कहते हैं कि यह जगत् आश्रयरहित, सर्वथा असत्य और बिना ईश्वर के है। यह केवल स्त्री-पुरुष के संयोग से उत्पन्न हुआ है और काम (वासना) ही इसका एकमात्र कारण है, इसके सिवा और क्या है?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "They say that this world is unreal, with no foundation, no God in control. They say it is produced of sex desire and has no cause other than lust.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This verse perfectly describes a purely materialistic, atheistic worldview. Such people believe the universe has no divine architect, no moral foundation, and is simply a product of random biological urges and lust.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यह श्लोक पूरी तरह से विशुद्ध भौतिकवादी, नास्तिक विश्वदृष्टि का वर्णन करता है। ऐसे लोगों का मानना है कि ब्रह्मांड का कोई दिव्य वास्तुकार नहीं है, कोई नैतिक आधार नहीं है, और यह केवल यादृच्छिक जैविक आग्रहों और वासना का उत्पाद है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Denying a higher purpose reduces life to mere mechanical and biological functions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Nihilism breeds a lack of accountability.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37133,6 +37573,61 @@
               "lines": [
                 "एतां दृष्टिमवष्टभ्य नष्टात्मानोऽल्पबुद्धयः ।",
                 "प्रभवन्त्युग्रकर्माणः क्षयाय जगतोऽहिताः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "etāṃ dṛṣṭimavaṣṭabhya naṣṭātmāno'lpabuddhayaḥ |",
+                    "prabhavantyugrakarmāṇaḥ kṣayāya jagato'hitāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इस मिथ्या दृष्टि का आश्रय लेकर जिनका स्वभाव नष्ट हो गया है और जिनकी बुद्धि मंद है, वे अपकारी और क्रूरकर्मी मनुष्य केवल जगत् के विनाश के लिए ही उत्पन्न होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Following such conclusions, the demoniac, who are lost to themselves and who have no intelligence, engage in unbeneficial, horrible works meant to destroy the world.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Holding a nihilistic and materialistic worldview naturally leads to destructive behavior. Because they lack a spiritual conscience, their intelligence is degraded, and their actions cause environmental or social ruin.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "शून्यवादी और भौतिकवादी विश्वदृष्टि रखने से स्वाभाविक रूप से विनाशकारी व्यवहार होता है। क्योंकि उनमें आध्यात्मिक विवेक का अभाव है, उनकी बुद्धि क्षीण हो जाती है, और उनके कार्य नुकसान और सामाजिक विनाश का कारण बनते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Ideologies have consequences; a worldview empty of meaning leads to cruel actions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Harmful actions stem from a disconnected, 'lost' soul.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37142,6 +37637,61 @@
               "lines": [
                 "काममाश्रित्य दुष्पूरं दम्भमानमदान्विताः ।",
                 "मोहाद्गृहीत्वासद्ग्राहान्प्रवर्तन्तेऽशुचिव्रताः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "kāmamāśritya duṣpūraṃ dambhamānamadānvitāḥ |",
+                    "mohādgṛhītvāsadgrāhānpravartante'śucivratāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वे कभी न पूर्ण होने वाली वासनाओं का आश्रय लेकर दंभ, मान और मद से युक्त होकर, अज्ञानवश झूठे सिद्धांतों को ग्रहण करके भ्रष्ट आचरणों में प्रवृत्त होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Taking shelter of insatiable lust and absorbed in the conceit of pride and false prestige, the demoniac, thus illusioned, are always sworn to unclean work, attracted by the impermanent.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Their driving force is an unquenchable thirst for pleasure. Inflated by ego and vanity, they latch onto false beliefs and commit to corrupt, unethical practices to satisfy their endless cravings.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "उनकी प्रेरक शक्ति आनंद की एक न बुझने वाली प्यास है। अहंकार और घमंड से फूले हुए, वे झूठे विश्वासों से जुड़ जाते हैं और अपनी अंतहीन लालसाओं को पूरा करने के लिए भ्रष्ट, अनैतिक प्रथाओं के प्रति प्रतिबद्ध होते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Lust is an unfillable void that corrupts one's actions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "False prestige blinds a person to the unethical nature of their pursuits.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37151,6 +37701,61 @@
               "lines": [
                 "चिन्तामपरिमेयां च प्रलयान्तामुपाश्रिताः ।",
                 "कामोपभोगपरमा एतावदिति निश्चिताः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "cintāmaparimeyāṃ ca pralayāntāmupāśritāḥ |",
+                    "kāmopabhogaparamā etāvaditi niścitāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वे मृत्युपर्यंत रहने वाली असंख्य चिंताओं का आश्रय लिए रहते हैं। विषय-भोगों को भोगना ही उनका परम लक्ष्य होता है और वे यही मानते हैं कि बस इतना ही सुख है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "They believe that to gratify the senses is the prime necessity of human civilization. Thus until the end of life their anxiety is immeasurable.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Believing that life's only purpose is sensory enjoyment, they are plagued by infinite anxieties. The constant stress of acquiring and maintaining wealth and pleasure torments them until their dying breath.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यह मानते हुए कि जीवन का एकमात्र उद्देश्य संवेदी आनंद है, वे अनंत चिंताओं से घिरे रहते हैं। धन और सुख प्राप्त करने और बनाए रखने का निरंतर तनाव उन्हें उनकी अंतिम सांस तक परेशान करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Basing your life entirely on sensual pleasure guarantees a life of severe anxiety.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Material pursuits offer no lasting peace, only endless worry.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37160,6 +37765,61 @@
               "lines": [
                 "आशापाशशतैर्बद्धाः कामक्रोधपरायणाः ।",
                 "ईहन्ते कामभोगार्थमन्यायेनार्थसञ्चयान् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "āśāpāśaśatairbaddhāḥ kāmakrodhaparāyaṇāḥ |",
+                    "īhante kāmabhogārthamanyāyenārthasañcayān ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "आशा की सैकड़ों फाँसियों से बंधे हुए तथा काम और क्रोध के परायण होकर, वे विषय-भोगों के लिए अन्यायपूर्वक धन का संग्रह करने की चेष्टा करते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Bound by a network of hundreds of thousands of desires and absorbed in lust and anger, they secure money by illegal means for sense gratification.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Shackled by countless expectations and easily triggered into anger when frustrated, they stoop to corruption, exploitation, and illegal methods just to hoard wealth for their indulgences.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अनगिनत अपेक्षाओं की बेड़ियों में जकड़े हुए और निराश होने पर आसानी से क्रोधित हो जाने वाले, वे अपने भोग-विलास के लिए धन इकट्ठा करने के लिए भ्रष्टाचार, शोषण और अवैध तरीकों पर उतर आते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Unchecked desires lead to anger and ethical compromises.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The end goal of sensory gratification does not justify unjust means.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37169,6 +37829,61 @@
               "lines": [
                 "इदमद्य मया लब्धमिमं प्राप्स्ये मनोरथम् ।",
                 "इदमस्तीदमपि मे भविष्यति पुनर्धनम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "idamadya mayā labdhamimaṃ prāpsye manoratham |",
+                    "idamastīdamapi me bhaviṣyati punardhanam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वे सोचते हैं: 'आज मैंने यह प्राप्त कर लिया है, अब इस मनोरथ को प्राप्त करूँगा; मेरे पास इतना धन है और भविष्य में यह धन और भी बढ़ जाएगा।'",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The demoniac person thinks: \"So much wealth do I have today, and I will gain more according to my schemes. So much is mine now, and it will increase in the future, more and more.\"",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna vividly details their internal monologue. It is a loop of endless greed, constantly calculating current net worth and plotting how to accumulate even more, never finding true satisfaction.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण उनके आंतरिक एकालाप का स्पष्ट रूप से विवरण देते हैं। यह अंतहीन लालच का एक लूप है, जो लगातार वर्तमान निवल संपत्ति की गणना करता है और यह योजना बनाता है कि और भी अधिक कैसे जमा किया जाए, जिससे कभी सच्ची संतुष्टि नहीं मिलती।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Greed is a psychological trap; 'enough' is never enough for a materialistic mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Measuring self-worth by accumulating wealth leads to an endless, exhausting treadmill.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37178,6 +37893,61 @@
               "lines": [
                 "असौ मया हतः शत्रुर्हनिष्ये चापरानपि ।",
                 "ईश्वरोऽहमहं भोगी सिद्धोऽहं बलवान्सुखी ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "asau mayā hataḥ śatrurhaniṣye cāparānapi |",
+                    "īśvaro'hamahaṃ bhogī siddho'haṃ balavānsukhī ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "'वह शत्रु मेरे द्वारा मारा गया है और अन्य शत्रुओं को भी मैं मार डालूँगा। मैं ईश्वर हूँ, मैं ऐश्वर्य भोगने वाला हूँ, मैं सब सिद्धियों से युक्त, बलवान् और सुखी हूँ।'",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "\"He is my enemy, and I have killed him, and my other enemies will also be killed. I am the lord of everything. I am the enjoyer. I am perfect, powerful and happy.\"",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Delusions of grandeur take over. The demonic mind views others as obstacles to eliminate. They fancy themselves as the ultimate controllers (playing God), invincible, and entirely self-made.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "भव्यता का भ्रम हावी हो जाता है। आसुरी मन दूसरों को खत्म करने के लिए बाधाओं के रूप में देखता है। वे स्वयं को अंतिम नियंत्रक (ईश्वर के समान), अजेय और पूरी तरह से स्व-निर्मित मानते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The ego's ultimate illusion is believing it is the supreme controller of destiny.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Viewing the world purely in terms of 'friends' to use and 'enemies' to crush destroys the soul.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37187,6 +37957,61 @@
               "lines": [
                 "आढ्योऽभिजनवानस्मि कोऽन्योऽस्ति सदृशो मया ।",
                 "यक्ष्ये दास्यामि मोदिष्य इत्यज्ञानविमोहिताः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "āḍhyo'bhijanavānasmi ko'nyo'sti sadṛśo mayā |",
+                    "yakṣye dāsyāmi modiṣya ityajñānavimohitāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "'मैं बड़ा धनवान् और बड़े परिवार वाला हूँ; मेरे समान दूसरा कौन है? मैं यज्ञ करूँगा, दान दूँगा और आनंद मनाऊँगा।' इस प्रकार वे अज्ञान से मोहित रहते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "\"I am the richest man, surrounded by aristocratic relatives. There is none so powerful and happy as I am. I shall perform sacrifices, I shall give some charity, and thus I shall rejoice.\" In this way, such persons are deluded by ignorance.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Even their attempts at religion or charity are completely poisoned by narcissism. They perform rituals and give charity simply to show off their wealth and superiority, remaining entirely trapped in delusion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "धर्म या दान के उनके प्रयास भी पूरी तरह से आत्म-मुग्धता से भरे होते हैं। वे केवल अपना धन और श्रेष्ठता दिखाने के लिए अनुष्ठान करते हैं और दान देते हैं, पूरी तरह से भ्रम में फंसे रहते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Charity and religion performed for PR and ego-boosting offer no spiritual benefit.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Wealth and status are poor metrics for genuine human worth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37196,6 +38021,61 @@
               "lines": [
                 "अनेकचित्तविभ्रान्ता मोहजालसमावृताः ।",
                 "प्रसक्ताः कामभोगेषु पतन्ति नरकेऽशुचौ ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "anekacittavibhrāntā mohajālasamāvṛtāḥ |",
+                    "prasaktāḥ kāmabhogeṣu patanti narake'śucau ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इस प्रकार अनेक प्रकार से भ्रमित चित्त वाले, मोहरूपी जाल में फँसे हुए और विषय-भोगों में अत्यंत आसक्त वे लोग महान् अपवित्र नरक में गिरते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Thus perplexed by various anxieties and bound by a network of illusions, they become too strongly attached to sense enjoyment and fall down into a foul hell.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The inevitable result of this chaotic, greedy, and ego-driven lifestyle is psychological and spiritual ruin. Hopelessly entangled in illusion, their consciousness degrades, plunging them into a hellish existence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "इस अराजक, लालची और अहंकार से प्रेरित जीवन शैली का अपरिहार्य परिणाम मनोवैज्ञानिक और आध्यात्मिक पतन है। भ्रम में पूरी तरह से उलझे हुए, उनकी चेतना क्षीण हो जाती है, उन्हें नरक जैसे अस्तित्व में धकेल देती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A distracted mind and obsession with pleasure lead to a personal hell.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The 'network of illusions' is woven by one's own unchecked desires.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37205,6 +38085,61 @@
               "lines": [
                 "आत्मसम्भाविताः स्तब्धा धनमानमदान्विताः ।",
                 "यजन्ते नामयज्ञैस्ते दम्भेनाविधिपूर्वकम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ātmasambhāvitāḥ stabdhā dhanamānamadānvitāḥ |",
+                    "yajante nāmayajñaiste dambhenāvidhipūrvakam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वे अपने आप को ही श्रेष्ठ मानने वाले, घमंडी तथा धन और मान के नशे में चूर मनुष्य केवल नाममात्र के यज्ञों द्वारा पाखंड से और शास्त्रविधि से रहित होकर यजन करते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Self-complacent and always impudent, deluded by wealth and false prestige, they sometimes proudly perform sacrifices in name only, without following any rules or regulations.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Their arrogance makes them disregard all authentic spiritual rules. If they do engage in religious practices, it is a superficial sham designed only to stroke their egos, utterly lacking in genuine devotion or respect.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "उनका अहंकार उन्हें सभी प्रामाणिक आध्यात्मिक नियमों की अवहेलना कराता है। यदि वे धार्मिक प्रथाओं में संलग्न होते हैं, तो यह केवल उनके अहंकार को संतुष्ट करने के लिए बनाया गया एक सतही दिखावा है, जिसमें वास्तविक भक्ति या सम्मान का सर्वथा अभाव होता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True spirituality requires humility and adherence to discipline.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Hypocritical religion is a symptom of arrogance, not piety.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37214,6 +38149,61 @@
               "lines": [
                 "अहङ्कारं बलं दर्पं कामं क्रोधं च संश्रिताः ।",
                 "मामात्मपरदेहेषु प्रद्विषन्तोऽभ्यसूयकाः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ahaṅkāraṃ balaṃ darpaṃ kāmaṃ krodhaṃ ca saṃśritāḥ |",
+                    "māmātmaparadeheṣu pradviṣanto'bhyasūyakāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वे अहंकार, बल, घमंड, वासना और क्रोध के वशीभूत होकर दूसरों की निंदा करने वाले मनुष्य अपने और दूसरों के शरीरों में स्थित मुझ अंतर्यामी से द्वेष करते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Bewildered by false ego, strength, pride, lust and anger, the demons become envious of the Supreme Personality of Godhead, who is situated in their own bodies and in the bodies of others, and blaspheme against the real religion.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Drunk on their own perceived power, they become hostile to the very idea of God. By exploiting and harming others, they are effectively hating and attacking the Supreme Lord who resides within every living being.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अपनी कथित शक्ति के नशे में धुत, वे ईश्वर के विचार के प्रति ही शत्रुतापूर्ण हो जाते हैं। दूसरों का शोषण और नुकसान करके, वे प्रभावी रूप से उस परमेश्वर से नफरत कर रहे हैं और उस पर हमला कर रहे हैं जो हर जीवित प्राणी के भीतर निवास करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Disrespecting any living being is a direct insult to the God residing within them.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Toxic ego turns a person into an enemy of universal harmony.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37223,6 +38213,61 @@
               "lines": [
                 "तानहं द्विषतः क्रूरान्संसारेषु नराधमान् ।",
                 "क्षिपाम्यजस्रमशुभानासुरीष्वेव योनिषु ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tānahaṃ dviṣataḥ krūrānsaṃsāreṣu narādhamān |",
+                    "kṣipāmyajasramaśubhānāsurīṣveva yoniṣu ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "उन द्वेष करने वाले, क्रूर और मनुष्यों में नीच और अपवित्र लोगों को मैं संसार में बार-बार आसुरी योनियों में ही डालता हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those who are envious and mischievous, who are the lowest among men, I perpetually cast into the ocean of material existence, into various demoniac species of life.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The karmic consequence of such cruel, hateful behavior is severe. The laws of nature, overseen by God, repeatedly force these degraded souls to take birth in lower, darker, and more suffering-filled states of existence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "ऐसे क्रूर, घृणास्पद व्यवहार का कर्म परिणाम गंभीर होता है। ईश्वर की देखरेख में प्रकृति के नियम, बार-बार इन पतित आत्माओं को अस्तित्व की निचली, गहरी और अधिक पीड़ा से भरी अवस्थाओं में जन्म लेने के लिए मजबूर करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Cruelty has a steep cosmic price; it degrades the soul's evolutionary trajectory.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Karma acts as a strict corrective force for malice.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37232,6 +38277,61 @@
               "lines": [
                 "आसुरीं योनिमापन्ना मूढा जन्मनि जन्मनि ।",
                 "मामप्राप्यैव कौन्तेय ततो यान्त्यधमां गतिम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "āsurīṃ yonimāpannā mūḍhā janmani janmani |",
+                    "māmaprāpyaiva kaunteya tato yāntyadhamāṃ gatim ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे कुन्तीपुत्र! वे मूर्ख मुझको न प्राप्त होकर जन्म-जन्म में आसुरी योनियों को ही प्राप्त होते हैं और फिर उससे भी अति नीच गति को (घोर नरक को) प्राप्त होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Attaining repeated birth amongst the species of demoniac life, O son of Kunti, such persons can never approach Me. Gradually they sink down to the most abominable type of existence.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Stuck in a downward spiral of their own making, these souls plunge deeper into ignorance with each lifetime. Without course correction, they distance themselves completely from the divine light, reaching the lowest states of consciousness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अपने ही बनाए गए नीचे की ओर जाने वाले सर्पिल में फँसकर, ये आत्माएँ प्रत्येक जीवनकाल के साथ अज्ञानता में और गहराई तक उतरती हैं। बिना सुधार के, वे ईश्वरीय प्रकाश से पूरी तरह दूर हो जाते हैं और चेतना की सबसे निचली अवस्थाओं तक पहुँच जाते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Ignoring spiritual laws creates a negative momentum that is hard to break.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The rejection of goodness results in a gradual descent into profound darkness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37241,6 +38341,61 @@
               "lines": [
                 "त्रिविधं नरकस्येदं द्वारं नाशनमात्मनः ।",
                 "कामः क्रोधस्तथा लोभस्तस्मादेतत्त्रयं त्यजेत् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "trividhaṃ narakasyedaṃ dvāraṃ nāśanamātmanaḥ |",
+                    "kāmaḥ krodhastathā lobhastasmādetattrayaṃ tyajet ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "काम (वासना), क्रोध और लोभ—ये आत्मा का नाश करने वाले नरक के तीन दरवाजे हैं; इसलिए इन तीनों को त्याग देना चाहिए।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "There are three gates leading to this hell—lust, anger and greed. Every sane man should give these up, for they lead to the degradation of the soul.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna distills the entire dark nature down to three root causes. Lust (unchecked desire), Anger (frustrated desire), and Greed (never having enough) are the primary gateways to psychological and spiritual ruin. They must be avoided at all costs.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण पूरी काली प्रकृति को तीन मूल कारणों में निचोड़ते हैं। काम (अनियंत्रित इच्छा), क्रोध (निराश इच्छा), और लोभ (कभी पर्याप्त न होना) मनोवैज्ञानिक और आध्यात्मिक विनाश के प्राथमिक प्रवेश द्वार हैं। इनसे हर कीमत पर बचना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Lust, anger, and greed form the toxic triad that destroys human potential.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Eliminating these three is the foundation of self-improvement.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37250,6 +38405,61 @@
               "lines": [
                 "एतैर्विमुक्तः कौन्तेय तमोद्वारैस्त्रिभिर्नरः ।",
                 "आचरत्यात्मनः श्रेयस्ततो याति परां गतिम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "etairvimuktaḥ kaunteya tamodvāraistribhirnaraḥ |",
+                    "ācaratyātmanaḥ śreyastato yāti parāṃ gatim ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे कुन्तीपुत्र! नरक के इन तीनों द्वारों से मुक्त पुरुष अपने कल्याण का आचरण करता है और इसके फलस्वरूप वह परम गति को प्राप्त हो जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The man who has escaped these three gates of hell, O son of Kunti, performs acts conducive to self-realization and thus gradually attains the supreme destination.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Escaping the traps of lust, anger, and greed immediately clears the mind. Once free from these destructive impulses, a person naturally engages in constructive, spiritually uplifting actions, steadily advancing toward liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "काम, क्रोध और लोभ के जाल से बचना तुरंत मन को साफ कर देता है। एक बार इन विनाशकारी आवेगों से मुक्त होने के बाद, व्यक्ति स्वाभाविक रूप से रचनात्मक, आध्यात्मिक रूप से उत्थानकारी कार्यों में संलग्न होता है, और मोक्ष की ओर लगातार बढ़ता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Freedom from negative impulses clears the path for positive growth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Righteous action becomes natural when the mind is clean.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37259,6 +38469,61 @@
               "lines": [
                 "यः शास्त्रविधिमुत्सृज्य वर्तते कामकारतः ।",
                 "न स सिद्धिमवाप्नोति न सुखं न परां गतिम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yaḥ śāstravidhimutsṛjya vartate kāmakārataḥ |",
+                    "na sa siddhimavāpnoti na sukhaṃ na parāṃ gatim ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो मनुष्य शास्त्र-विधि को छोड़कर अपनी इच्छा से मनमाना आचरण करता है, वह न तो सिद्धि को प्राप्त करता है, न सुख को और न ही परम गति को।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "He who discards scriptural injunctions and acts according to his own whims attains neither perfection, nor happiness, nor the supreme destination.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "True freedom is not acting on every whim. Rejecting accumulated spiritual wisdom (scriptures) to follow impulsive, selfish desires leads to a chaotic life devoid of genuine success, peace, or ultimate spiritual fulfillment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सच्ची स्वतंत्रता हर लहर पर कार्य करना नहीं है। आवेगी, स्वार्थी इच्छाओं का पालन करने के लिए संचित आध्यात्मिक ज्ञान (शास्त्रों) को अस्वीकार करने से एक अराजक जीवन होता है जिसमें वास्तविक सफलता, शांति या अंतिम आध्यात्मिक पूर्ति का अभाव होता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Discipline and guidance are necessary for spiritual success; mere whim is a poor compass.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Discarding ethical frameworks guarantees unhappiness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -37268,6 +38533,61 @@
               "lines": [
                 "तस्माच्छास्त्रं प्रमाणं ते कार्याकार्यव्यवस्थितौ ।",
                 "ज्ञात्वा शास्त्रविधानोक्तं कर्म कर्तुमिहार्हसि ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tasmācchāstraṃ pramāṇaṃ te kāryākāryavyavasthitau |",
+                    "jñātvā śāstravidhānoktaṃ karma kartumihārhasi ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इसलिए तुम्हारे लिए क्या करना उचित है और क्या अनुचित, इसकी व्यवस्था में शास्त्र ही प्रमाण है। यह जानकर, शास्त्रों के विधान द्वारा निर्धारित कर्मों को ही तुम्हें इस लोक में करना चाहिए।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Therefore, one should understand what is duty and what is not duty by the regulations of the scriptures. Knowing such rules and regulations, one should do his work so that he may gradually be elevated.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna concludes the chapter by emphasizing the importance of a reliable moral framework. To navigate the complexities of right and wrong, one must rely on the established wisdom of scriptures (representing universal ethical laws) rather than personal bias.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण एक विश्वसनीय नैतिक ढांचे के महत्व पर जोर देते हुए अध्याय का समापन करते हैं। सही और गलत की जटिलताओं को दूर करने के लिए, किसी को व्यक्तिगत पूर्वाग्रह के बजाय शास्त्रों (सार्वभौमिक नैतिक नियमों का प्रतिनिधित्व) के स्थापित ज्ञान पर निर्भर रहना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "An objective standard is needed to distinguish right from wrong action.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Educate yourself on ethical and spiritual laws to guide your earthly duties.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
