@@ -110,18 +110,64 @@ State is a `ValueNotifier<AssistantState>`: `unknown`, `unsupported`,
 `failed`. The setup screen (`lib/ui/ai/assistant_screen.dart`) renders exactly
 those.
 
+## Answering as it is written
+
+`Assistant.stream` returns a `Stream<AssistantChunk>` at once and starts the
+work when its turn in the queue comes, so a caller can show "waiting" without
+holding a future that looks identical to a stalled one. Each chunk carries the
+**whole** answer so far, not a delta.
+
+Reasoning is on by default for translation. Two things follow from that, and
+both are easy to get wrong:
+
+- **The token ceiling has to cover both.** Reasoning and answer come out of
+  the same budget, so `translationTokenCap` triples when thinking is on
+  (12× the verse, floor 768) rather than nudging up.
+- **The runaway guard is measured against the answer only.** Reasoning
+  legitimately repeats itself; a guard run over the raw stream cuts the model
+  off mid-deliberation, before it has written a word of the translation.
+
+`lib/core/thinking.dart` splits the two. The markers are Gemma 4's
+`<|channel>thought` … `<channel|>`, taken from the runtime's own filter rather
+than guessed, and the splitter runs even when thinking was switched off: the
+runtime only filters models it knows can think, and Gemma 4 is not on that
+list when the flag is off. It also handles a thought that never closed because
+generation hit its ceiling part-way through one — without that, the whole run
+reads as reasoning and nothing is shown.
+
+While there is no answer yet the reader sees the reasoning instead. Honest,
+and better than watching it think in silence.
+
 ## Translation
 
-`lib/ai/translation.dart`. The model is given one verse and returns prose in
-one language. It never writes scripture:
+`lib/ai/translation.dart`. The model is given one verse **in its context** and
+returns prose in one language. It never writes scripture:
 
 - the rules live in the system instruction, ordered least to most important;
-- the verse is fenced between `<<<` and `>>>`, and any such marker inside the
-  text is broken up, so content cannot close its own fence or issue
-  instructions;
+- everything from the pack is fenced between `<<<` and `>>>`, and any such
+  marker inside the text is broken up, so content cannot close its own fence
+  or issue instructions;
 - the answer is checked before it is stored — right script for the language,
   not empty, not just the verse echoed back. A rejected answer is discarded and
   the reader is told.
+
+### The context
+
+`verseContext` (`lib/ai/verse_context.dart`) gathers what the installed pack
+already knows: the work and chapter, the speaker line, the transliteration,
+the verse before this one, and **published translations of the same verse in
+other languages**. That last one does most of the work — rendering Hindi from
+the Sanskrit plus a published English translation is a far better bet, on a 2B
+model, than the Sanskrit alone.
+
+A machine translation is never included. One phone's guess is not a source,
+and translating from it would launder a guess into a second language.
+
+The target language is named twice, with its endonym and its script —
+"Hindi (हिन्दी), in the Devanagari script" — and stated again at the end of
+the prompt, because on a model this size the instruction nearest the end is
+the one that gets followed. Asked for a language by its English name alone,
+these models answer in a neighbour that shares the script.
 
 Results go to `local_translations` in the store's registry database
 (`lib/packs/pack_store.dart`), keyed by pack, work, ref and language, with the

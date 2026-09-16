@@ -9,6 +9,7 @@ import '../core/backend.dart';
 import '../core/capability.dart';
 import '../core/model_catalog.dart';
 import '../core/output_hygiene.dart';
+import '../core/thinking.dart';
 import 'device_facts.dart';
 import 'model_host.dart';
 
@@ -68,16 +69,37 @@ class AssistantRequest {
     this.maxOutputTokens = 512,
     this.temperature = 0.2,
     this.maxChars = 6000,
+    this.thinking = false,
   });
 
   final String systemInstruction;
   final String prompt;
+
+  /// The ceiling on generated tokens. With [thinking] on it has to cover the
+  /// reasoning too: they draw on the same budget.
   final int maxOutputTokens;
   final double temperature;
 
   /// How long an answer may get before it is treated as a loop. Sized to the
   /// task, because a caption and an explanation are not the same length.
   final int maxChars;
+
+  /// Whether the model reasons before answering. Slower, and better on a
+  /// dense verse.
+  final bool thinking;
+}
+
+/// An answer as it arrives: both fields accumulate, so each chunk is the whole
+/// of what there is so far rather than a delta.
+@immutable
+class AssistantChunk {
+  const AssistantChunk({required this.answer, required this.thinking});
+
+  /// The answer so far, with any reasoning already removed.
+  final String answer;
+
+  /// The reasoning so far. Empty unless the request asked for it.
+  final String thinking;
 }
 
 /// Where the assistant remembers its few settings between runs.
@@ -389,55 +411,108 @@ class Assistant {
     await refresh();
   }
 
-  /// Answers [request], queued behind any request already running.
-  Future<String> ask(AssistantRequest request) {
-    final result = _queue.then((_) => _run(request));
-    _queue = result.then<void>((_) {}, onError: (_) {});
-    return result;
+  /// Answers [request] as it is written, queued behind anything already
+  /// running.
+  ///
+  /// The stream is returned at once and the work starts when its turn comes,
+  /// so a caller can show "waiting" without holding a future that looks
+  /// identical to a stalled one.
+  Stream<AssistantChunk> stream(AssistantRequest request) {
+    final out = StreamController<AssistantChunk>();
+    _queue = _queue
+        .then((_) => _run(request, out))
+        // One failed generation must not poison every later one. The error
+        // has already reached the caller through the stream.
+        .catchError((Object _) {})
+        .whenComplete(out.close);
+    return out.stream;
   }
 
-  Future<String> _run(AssistantRequest request) async {
-    if (_model == null) await load();
-    final model = _model;
-    if (model == null) {
-      throw StateError('The assistant is not loaded.');
+  /// Answers [request] in one piece, for callers with nothing to show until
+  /// the answer is whole.
+  Future<String> ask(AssistantRequest request) async {
+    var answer = '';
+    await for (final chunk in stream(request)) {
+      answer = chunk.answer;
     }
+    return answer;
+  }
 
-    _set(AssistantPhase.working);
-    final chat = await model.createChat(
-      systemInstruction: request.systemInstruction,
-      temperature: request.temperature,
-      // Pure argmax made a phone repeat one character forever (CLAUDE.md).
-      topK: 40,
-      maxOutputTokens: request.maxOutputTokens,
-    );
-    final answer = StringBuffer();
+  Future<void> _run(
+    AssistantRequest request,
+    StreamController<AssistantChunk> out,
+  ) async {
     try {
-      await chat.addQueryChunk(Message(text: request.prompt, isUser: true));
-      await for (final response in chat.generateChatResponseAsync()) {
-        switch (response) {
-          case TextResponse(:final token):
-            answer.write(token);
-            // Measure the guard against the visible answer only.
-            final keep = detectRunaway(
-              answer.toString(),
-              maxChars: request.maxChars,
-            );
-            if (keep != null) {
-              await chat.stopGeneration();
-              return cleanOutput(answer.toString().substring(0, keep));
-            }
-          case ThinkingResponse():
-          case FunctionCallResponse():
-          case ParallelFunctionCallResponse():
-            break;
-        }
+      if (_model == null) await load();
+      final model = _model;
+      if (model == null) {
+        throw StateError('The assistant is not loaded.');
       }
-    } finally {
-      await chat.close();
-      _set(AssistantPhase.ready, backend: state.value.backend);
+
+      _set(AssistantPhase.working);
+      final chat = await model.createChat(
+        systemInstruction: request.systemInstruction,
+        temperature: request.temperature,
+        // Pure argmax made a phone repeat one character forever (CLAUDE.md).
+        topK: 40,
+        randomSeed: 1,
+        maxOutputTokens: request.maxOutputTokens,
+        isThinking: request.thinking,
+        modelType: ModelType.gemma4,
+      );
+      final raw = StringBuffer();
+      final thinking = StringBuffer();
+      try {
+        await chat.addQueryChunk(Message(text: request.prompt, isUser: true));
+        await for (final response in chat.generateChatResponseAsync()) {
+          switch (response) {
+            case TextResponse(:final token):
+              raw.write(token);
+            case ThinkingResponse(:final content):
+              thinking.write(content);
+            case FunctionCallResponse():
+            case ParallelFunctionCallResponse():
+              continue;
+          }
+
+          // The guard is measured against the visible answer, never the
+          // reasoning: reasoning legitimately repeats itself, and a model that
+          // deliberated for 400 characters would be cut off before writing a
+          // word of the answer.
+          final visible = cleanOutput(withoutThinking(raw.toString()));
+          final keep = detectRunaway(visible, maxChars: request.maxChars);
+          if (keep != null) {
+            await chat.stopGeneration();
+            out.add(
+              AssistantChunk(
+                answer: visible.substring(0, keep),
+                thinking: thinking.toString().trim(),
+              ),
+            );
+            return;
+          }
+          if (visible.isNotEmpty || thinking.isNotEmpty) {
+            out.add(
+              AssistantChunk(
+                answer: visible,
+                thinking: thinking.toString().trim(),
+              ),
+            );
+          }
+        }
+        out.add(
+          AssistantChunk(
+            answer: cleanOutput(withoutThinking(raw.toString())),
+            thinking: thinking.toString().trim(),
+          ),
+        );
+      } finally {
+        await chat.close();
+        _set(AssistantPhase.ready, backend: state.value.backend);
+      }
+    } on Object catch (e, trace) {
+      out.addError(e, trace);
     }
-    return cleanOutput(answer.toString());
   }
 
   Future<void> _registerEngine() async {

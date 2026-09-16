@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../ai/assistant.dart';
 import '../ai/translation.dart';
+import '../ai/verse_context.dart';
 import '../core/model_catalog.dart';
 import '../core/transliteration.dart';
 import '../library/scripture_repository.dart';
@@ -42,8 +43,8 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
   var _index = 0;
   var _bookmarked = false;
 
-  /// The verse being translated on the phone, if any.
-  String? _translating;
+  /// The translation being written on this phone, if any.
+  _Translating? _translating;
 
   @override
   void initState() {
@@ -110,6 +111,16 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
     );
   }
 
+  VerseContext _contextFor(PassageView verse) {
+    final index = _verses.indexWhere((v) => v.ref == verse.ref);
+    return verseContext(
+      workTitle: widget.work.title,
+      section: widget.section,
+      verse: verse,
+      previous: index > 0 ? _verses[index - 1] : null,
+    );
+  }
+
   /// Translates a verse on this phone, once the reader has asked for it.
   ///
   /// With no model installed this leads to the setup screen instead: the
@@ -127,13 +138,28 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
       return;
     }
 
-    setState(() => _translating = verse.ref);
+    setState(
+      () => _translating = _Translating(ref: verse.ref, language: language),
+    );
     try {
-      final text = await translateVerse(
+      var text = '';
+      await for (final progress in translateVerseStream(
         assistant,
         verse: verse.text,
         language: language,
-      );
+        context: _contextFor(verse),
+      )) {
+        text = progress.text;
+        if (!mounted) return;
+        // Only the final value has been checked, so what is shown while it
+        // runs is never stored.
+        setState(
+          () => _translating = _translating?.with_(
+            text: progress.text,
+            thinking: progress.thinking,
+          ),
+        );
+      }
       widget.repository.store.saveLocalTranslation(
         LocalTranslation(
           packId: widget.work.pack.packId,
@@ -239,7 +265,9 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
                             itemBuilder: (context, i) => _VersePage(
                               verse: _verses[i],
                               show: _show,
-                              translating: _translating == _verses[i].ref,
+                              translating: _translating?.ref == _verses[i].ref
+                                  ? _translating
+                                  : null,
                               onTranslate: (language) =>
                                   _translate(_verses[i], language),
                             ),
@@ -365,6 +393,34 @@ class _ModeChip extends StatelessWidget {
   );
 }
 
+/// A translation being written on this phone, right now.
+@immutable
+class _Translating {
+  const _Translating({
+    required this.ref,
+    required this.language,
+    this.text = '',
+    this.thinking = '',
+  });
+
+  final String ref;
+  final TargetLanguage language;
+
+  /// What has arrived so far. Unchecked, so it is shown and not stored.
+  final String text;
+
+  /// The model's reasoning so far.
+  final String thinking;
+
+  _Translating with_({required String text, required String thinking}) =>
+      _Translating(
+        ref: ref,
+        language: language,
+        text: text,
+        thinking: thinking,
+      );
+}
+
 class _VersePage extends StatelessWidget {
   const _VersePage({
     required this.verse,
@@ -375,7 +431,9 @@ class _VersePage extends StatelessWidget {
 
   final PassageView verse;
   final _Show show;
-  final bool translating;
+
+  /// Set while this verse is the one being translated.
+  final _Translating? translating;
   final void Function(TargetLanguage language) onTranslate;
 
   @override
@@ -562,28 +620,69 @@ class _TranslateOnPhone extends StatelessWidget {
   });
 
   final PassageView verse;
-  final bool translating;
+
+  /// Set while this verse is the one being translated.
+  final _Translating? translating;
   final void Function(TargetLanguage language) onTranslate;
 
   @override
   Widget build(BuildContext context) {
-    if (translating) {
-      return const Padding(
-        padding: EdgeInsets.only(top: 14),
-        child: Row(
+    if (translating case final live?) {
+      return Padding(
+        padding: const EdgeInsets.only(top: 14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              width: 16,
-              height: 16,
-              child: CircularProgressIndicator(strokeWidth: 2),
+            Row(
+              children: [
+                const SizedBox(
+                  width: 14,
+                  height: 14,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                ),
+                const SizedBox(width: 10),
+                Flexible(
+                  child: Text(
+                    live.text.isEmpty
+                        ? 'Working it out in ${live.language.name}…'
+                        : 'Translating into ${live.language.name}…',
+                    style: const TextStyle(
+                      fontSize: 13,
+                      color: SadhanaColors.inkSoft,
+                    ),
+                  ),
+                ),
+              ],
             ),
-            SizedBox(width: 10),
-            Flexible(
-              child: Text(
-                'Translating on this phone…',
-                style: TextStyle(fontSize: 13, color: SadhanaColors.inkSoft),
+            // The reasoning, while there is nothing better to show. Honest,
+            // and better than watching it think in silence.
+            if (live.text.isEmpty && live.thinking.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Text(
+                  live.thinking,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  style: serif(
+                    size: 13,
+                    style: FontStyle.italic,
+                    color: SadhanaColors.inkSoft,
+                    height: 1.4,
+                  ),
+                ),
               ),
-            ),
+            if (live.text.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Text(
+                  live.text,
+                  style: const TextStyle(
+                    fontSize: 17,
+                    height: 1.55,
+                    color: SadhanaColors.ink,
+                  ),
+                ),
+              ),
           ],
         ),
       );
