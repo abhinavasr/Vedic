@@ -1,16 +1,49 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../ai/reading_languages.dart';
+import '../audio/listen_player.dart';
 import '../audio/speech.dart';
 import '../library/scripture_repository.dart';
 import 'theme.dart';
 
-/// What to read aloud for a verse: its meaning, and its explanation too when
-/// the reader has asked for that.
-Future<SpokenChoice?> spokenVerse(
+/// Where a verse's chant comes from, once one has been published for it.
+///
+/// A hook rather than a dependency: the reader asks for a recording and gets
+/// one or gets nothing, and everything above here works the same either way.
+/// Packs without audio, and builds without a vault key, simply answer null.
+class ChantSource {
+  ChantSource({Future<File?> Function(PassageView verse)? find})
+    : _find = find ?? ((_) async => null);
+
+  /// The app's. Replaceable in tests, and wired up at startup.
+  static ChantSource instance = ChantSource();
+
+  final Future<File?> Function(PassageView verse) _find;
+
+  Future<File?> find(PassageView verse) => _find(verse);
+}
+
+/// What playing this verse will play, in order: the chant as recorded, then
+/// the meaning, then the explanation — whichever of them the reader asked for.
+///
+/// Returns an empty list when there is nothing to play, which is not an error:
+/// a verse with no recording, no translation and no explanation is simply a
+/// verse the app cannot read aloud yet.
+Future<List<ListenSegment>> listenSegments(
   PassageView verse,
   ReadingLanguage reading,
 ) async {
+  final mix = reading.mix;
+  final segments = <ListenSegment>[];
+
+  if (mix.chant) {
+    final file = await ChantSource.instance.find(verse);
+    if (file != null) segments.add(ChantSegment(file));
+  }
+  if (!mix.meaning && !mix.explanation) return segments;
+
   final choice = await VerseSpeech.instance.chooseForMeaning(
     available: {
       for (final translation in verse.translations)
@@ -18,222 +51,279 @@ Future<SpokenChoice?> spokenVerse(
     },
     preferred: reading.language.code,
   );
-  if (choice == null || !reading.withExplanation) return choice;
-  // The explanation is only read in the same language as the meaning, so one
-  // voice is not asked to read two languages in a row.
-  final explanation = verse
-      .notesFor(verse.explanations, [choice.languageCode])
-      .join(' ');
-  if (explanation.isEmpty) return choice;
-  return SpokenChoice(
-    text: '${choice.text}\n\n$explanation',
-    locale: choice.locale,
-    languageCode: choice.languageCode,
-    description: '${choice.description}, with the explanation',
-  );
+  if (choice == null) return segments;
+  if (mix.meaning) segments.add(SpokenSegment(choice));
+  if (mix.explanation) {
+    // Read in the same language as the meaning, so one voice is never asked
+    // to read two languages in a row.
+    final explanation = verse
+        .notesFor(verse.explanations, [choice.languageCode])
+        .join(' ');
+    if (explanation.isNotEmpty) {
+      segments.add(
+        SpokenSegment(
+          SpokenChoice(
+            text: explanation,
+            locale: choice.locale,
+            languageCode: choice.languageCode,
+            description: choice.description,
+          ),
+        ),
+      );
+    }
+  }
+  return segments;
 }
 
-/// Reads the verse's meaning aloud.
+/// The play control, and beside it the three things it can play.
 ///
-/// There is no chant here. A chant has to be a recording by someone who knows
-/// the text, and no pack carries one yet; a phone sounding the Sanskrit out
-/// from its transliteration was tried and was not worth offering. The meaning
-/// is a different matter, and a phone reads it perfectly well.
-class ListenMeaning extends StatefulWidget {
-  const ListenMeaning({
+/// The choice lives here rather than in Settings because it is not a
+/// preference so much as a mood: the chant alone this morning, the meaning and
+/// the explanation on tonight's walk. It is remembered, so it only has to be
+/// said once, but it is always one tap from the verse it applies to.
+class ListenControl extends StatefulWidget {
+  const ListenControl({
     super.key,
     required this.verse,
     this.onBeforePlay,
-    this.offerExplanation = true,
+    this.compact = false,
   });
 
   final PassageView verse;
 
-  /// Whether to offer the toggle that reads the explanation too.
-  ///
-  /// Off where the explanation itself is not on screen: a card showing one
-  /// verse has no room for it, and a switch over something invisible is a
-  /// puzzle rather than a choice.
-  final bool offerExplanation;
-
-  /// Called before this verse is read, so a reader that is reading straight
-  /// through can stand down rather than compete for the voice.
+  /// Called before this verse plays, so a reader that is reading straight
+  /// through can stand down rather than compete for the speaker.
   final Future<void> Function()? onBeforePlay;
 
+  /// Drops the chips, for a card with no room for them and no explanation on
+  /// it to switch on.
+  final bool compact;
+
   @override
-  State<ListenMeaning> createState() => _ListenMeaningState();
+  State<ListenControl> createState() => _ListenControlState();
 }
 
-class _ListenMeaningState extends State<ListenMeaning> {
-  SpokenChoice? _choice;
+class _ListenControlState extends State<ListenControl> {
+  /// What is available for this verse: the chips offer nothing that is not.
+  var _hasChant = false;
+  String? _spokenLanguage;
 
-  /// What the choice was made for, so a setting changed elsewhere — the
-  /// language, or the explanation switched off in Settings — is picked up
-  /// rather than leaving a stale line about reading something it no longer
-  /// will.
-  ({String language, bool explanation})? _madeFor;
-
-  /// Counts the choices asked for, so a slow answer cannot land on top of a
-  /// newer one.
+  /// What the offer was worked out for, so a language or a mix chosen
+  /// elsewhere is picked up rather than leaving a stale line.
+  ({String language, String mix})? _madeFor;
   var _asked = 0;
 
-  /// Whether this verse has an explanation to add at all.
-  bool get _hasExplanation =>
-      widget.offerExplanation && widget.verse.explanations.isNotEmpty;
+  bool get _hasExplanation => widget.verse.explanations.isNotEmpty;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    // Registers this widget with the reading language, so it is called again
-    // whenever that changes.
     final reading = ReadingLanguageScope.of(context);
-    final now = (
-      language: reading.language.code,
-      explanation: reading.withExplanation,
-    );
+    final now = (language: reading.language.code, mix: reading.mix.code);
     if (_madeFor == now) return;
     _madeFor = now;
-    _pick();
+    _look(reading);
   }
 
   @override
-  void didUpdateWidget(ListenMeaning oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.verse.ref != widget.verse.ref) _pick();
+  void didUpdateWidget(ListenControl old) {
+    super.didUpdateWidget(old);
+    if (old.verse.ref != widget.verse.ref) {
+      _look(ReadingLanguageScope.of(context));
+    }
   }
 
-  /// Which language this phone can read this verse in. Asked once per verse,
-  /// because listing the installed voices touches the platform.
-  Future<void> _pick() async {
-    final reading = ReadingLanguageScope.of(context);
+  /// What this verse can offer. Asked once per verse, because finding a
+  /// recording and listing the installed voices both touch the platform.
+  Future<void> _look(ReadingLanguage reading) async {
     final asked = ++_asked;
-    final choice = await spokenVerse(widget.verse, reading);
-    // Two changes in quick succession leave two of these in flight, and the
-    // slower one must not overwrite the newer answer.
-    if (mounted && asked == _asked) setState(() => _choice = choice);
+    final chant = await ChantSource.instance.find(widget.verse);
+    final choice = await VerseSpeech.instance.chooseForMeaning(
+      available: {
+        for (final translation in widget.verse.translations)
+          translation.language: translation.text,
+      },
+      preferred: reading.language.code,
+    );
+    if (!mounted || asked != _asked) return;
+    setState(() {
+      _hasChant = chant != null;
+      _spokenLanguage = choice == null ? null : languageOf(choice);
+    });
   }
 
-  Future<void> _tap(bool speaking) async {
-    final speech = VerseSpeech.instance;
-    // Either way this verse is taking the voice, so reading-straight-through
+  Future<void> _tap(bool playing, ReadingLanguage reading) async {
+    final player = VersePlayer.instance;
+    // Either way this verse is taking the speaker, so reading-straight-through
     // stands down first — otherwise stopping here looks like a page turn.
     await widget.onBeforePlay?.call();
-    if (speaking) return speech.stop();
-    final choice = _choice;
-    if (choice == null) return;
+    if (playing) return player.stop();
+    final segments = await listenSegments(widget.verse, reading);
+    if (!mounted) return;
+    if (segments.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Nothing to play for this verse yet.')),
+      );
+      return;
+    }
     try {
-      await speech.speak(widget.verse.ref, choice);
+      await player.play(widget.verse.ref, segments);
     } on Object {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('This phone could not read it aloud.')),
+        const SnackBar(content: Text('This phone could not play it.')),
       );
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final choice = _choice;
-    if (choice == null) return const SizedBox.shrink();
+    final reading = ReadingLanguageScope.of(context);
+    final mix = reading.mix;
+    // Nothing this verse can offer, so no control at all rather than a button
+    // that does nothing.
+    if (!_hasChant && _spokenLanguage == null) return const SizedBox.shrink();
+
     return ValueListenableBuilder<String?>(
-      valueListenable: VerseSpeech.instance.speaking,
+      valueListenable: VersePlayer.instance.playing,
       builder: (context, ref, _) {
-        final speaking = ref == widget.verse.ref;
-        final reading = ReadingLanguageScope.of(context);
-        return InkWell(
-          borderRadius: BorderRadius.circular(28),
-          onTap: () => _tap(speaking),
-          child: Row(
-            children: [
-              CircleAvatar(
-                radius: 22,
-                backgroundColor: SadhanaColors.green,
-                child: Icon(
-                  speaking ? Icons.stop_rounded : Icons.play_arrow_rounded,
-                  color: Colors.white,
-                  size: 28,
-                ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      speaking ? 'Stop' : 'Listen to the meaning',
-                      style: const TextStyle(
-                        fontSize: 16,
-                        color: SadhanaColors.ink,
-                      ),
+        final playing = ref == widget.verse.ref;
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            InkWell(
+              borderRadius: BorderRadius.circular(28),
+              onTap: mix.isSilent ? null : () => _tap(playing, reading),
+              child: Row(
+                children: [
+                  CircleAvatar(
+                    radius: 22,
+                    backgroundColor: mix.isSilent
+                        ? SadhanaColors.inkSoft
+                        : SadhanaColors.green,
+                    child: Icon(
+                      playing ? Icons.stop_rounded : Icons.play_arrow_rounded,
+                      color: Colors.white,
+                      size: 28,
                     ),
-                    Text(
-                      '${choice.description}, this verse only',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 13,
-                        color: SadhanaColors.inkSoft,
-                      ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          playing ? 'Stop' : 'Listen',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: SadhanaColors.ink,
+                          ),
+                        ),
+                        Text(
+                          mix.describe(language: _spokenLanguage),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontSize: 13,
+                            color: SadhanaColors.inkSoft,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              // The choice belongs beside the control it changes, not in a
-              // settings screen two taps away. It is remembered either way.
-              if (_hasExplanation)
-                _WithExplanation(
-                  on: reading.withExplanation,
-                  // Setting it is enough: the change comes back round through
-                  // the scope, which is also how Settings reaches this row.
-                  onChanged: (on) => reading.withExplanation = on,
-                ),
+            ),
+            if (!widget.compact) ...[
+              const SizedBox(height: 10),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: [
+                  if (_hasChant)
+                    _MixChip(
+                      label: 'Chant',
+                      icon: Icons.graphic_eq,
+                      on: mix.chant,
+                      onChanged: (on) =>
+                          reading.mix = mix.with_(chant: on),
+                    ),
+                  if (_spokenLanguage != null)
+                    _MixChip(
+                      label: 'Meaning',
+                      icon: Icons.translate,
+                      on: mix.meaning,
+                      onChanged: (on) =>
+                          reading.mix = mix.with_(meaning: on),
+                    ),
+                  if (_hasExplanation && _spokenLanguage != null)
+                    _MixChip(
+                      label: 'Explanation',
+                      icon: Icons.notes,
+                      on: mix.explanation,
+                      onChanged: (on) =>
+                          reading.mix = mix.with_(explanation: on),
+                    ),
+                ],
+              ),
             ],
-          ),
+          ],
         );
       },
     );
   }
 }
 
-/// A small switch beside the listen control: read the explanation too.
-class _WithExplanation extends StatelessWidget {
-  const _WithExplanation({required this.on, required this.onChanged});
+/// What the meaning will be read in, which is not always what was asked for.
+String languageOf(SpokenChoice choice) =>
+    choice.description.replaceFirst('Read aloud in ', '');
 
+/// One of the three things a verse can be listened to as.
+class _MixChip extends StatelessWidget {
+  const _MixChip({
+    required this.label,
+    required this.icon,
+    required this.on,
+    required this.onChanged,
+  });
+
+  final String label;
+  final IconData icon;
   final bool on;
   final void Function(bool on) onChanged;
 
   @override
-  Widget build(BuildContext context) => Tooltip(
-    message: on
-        ? 'The explanation is read too'
-        : 'Read the explanation as well',
-    child: Material(
-      color: on ? SadhanaColors.greenTint : Colors.transparent,
-      shape: const StadiumBorder(side: BorderSide(color: SadhanaColors.line)),
-      child: InkWell(
-        key: const ValueKey('with-explanation'),
-        customBorder: const StadiumBorder(),
-        onTap: () => onChanged(!on),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                on ? Icons.check : Icons.add,
-                size: 15,
+  Widget build(BuildContext context) => Material(
+    color: on ? SadhanaColors.greenTint : Colors.transparent,
+    shape: StadiumBorder(
+      side: BorderSide(
+        color: on ? SadhanaColors.green : SadhanaColors.line,
+      ),
+    ),
+    child: InkWell(
+      key: ValueKey('mix-${label.toLowerCase()}'),
+      customBorder: const StadiumBorder(),
+      onTap: () => onChanged(!on),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              on ? Icons.check : icon,
+              size: 15,
+              color: on ? SadhanaColors.green : SadhanaColors.inkSoft,
+            ),
+            const SizedBox(width: 6),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 13,
                 color: on ? SadhanaColors.green : SadhanaColors.inkSoft,
+                fontWeight: on ? FontWeight.w600 : FontWeight.w400,
               ),
-              const SizedBox(width: 4),
-              Text(
-                'Explanation',
-                style: TextStyle(
-                  fontSize: 12,
-                  color: on ? SadhanaColors.green : SadhanaColors.inkSoft,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     ),

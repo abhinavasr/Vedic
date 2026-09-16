@@ -77,10 +77,11 @@ void main() {
   });
 
   test('reading the explanation aloud is remembered', () {
-    // It was written as a literal, so the toggle never survived a restart.
+    // It was written as a literal once, so the toggle never survived a
+    // restart. It is now one of the three things a verse can be played as.
     final settings = _MemorySettings();
     final reading = ReadingLanguage(settings)..withExplanation = true;
-    expect(settings.values['reading.speakExplanation'], 'true');
+    expect(settings.values['reading.listenMix'], 'me');
     expect(ReadingLanguage(settings).withExplanation, isTrue);
 
     reading.withExplanation = false;

@@ -313,11 +313,11 @@ class _VerseCard extends StatelessWidget {
               const SizedBox(height: 18),
               // One under the other. Side by side, the two of them squeezed
               // the listen row until it broke a word across every line.
-              ListenMeaning(
+              ListenControl(
                 verse: verse.verse,
-                // The explanation is not on this card, so the switch that
-                // reads it aloud belongs with it in the reader.
-                offerExplanation: false,
+                // The chips belong beside the verse they apply to, in the
+                // reader. This card is one verse and one button.
+                compact: true,
               ),
               const SizedBox(height: 14),
               SizedBox(

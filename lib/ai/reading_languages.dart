@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 
+import '../audio/listen_mix.dart';
 import 'assistant.dart';
 import 'translation.dart';
 
@@ -11,7 +12,11 @@ import 'translation.dart';
 class ReadingLanguage extends ChangeNotifier {
   ReadingLanguage(this.settings) {
     _code = settings?.read(_key) ?? TargetLanguage.english.code;
-    _withExplanation = settings?.read(_explanationKey) == 'true';
+    // The explanation switch came first and became one of three. A phone that
+    // has it set keeps what it chose.
+    _mix =
+        ListenMix.parse(settings?.read(_mixKey)) ??
+        ListenMix(explanation: settings?.read(_explanationKey) == 'true');
   }
 
   /// The app's, replaceable in tests.
@@ -19,11 +24,12 @@ class ReadingLanguage extends ChangeNotifier {
 
   static const _key = 'reading.language';
   static const _explanationKey = 'reading.speakExplanation';
+  static const _mixKey = 'reading.listenMix';
 
   final AssistantSettings? settings;
 
   late String _code;
-  late bool _withExplanation;
+  late ListenMix _mix;
 
   TargetLanguage get language =>
       TargetLanguage.forCode(_code) ?? TargetLanguage.english;
@@ -35,15 +41,21 @@ class ReadingLanguage extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Whether reading a verse aloud carries on into its explanation.
-  bool get withExplanation => _withExplanation;
+  /// What playing a verse plays: any of the chant, the meaning and the
+  /// explanation.
+  ListenMix get mix => _mix;
 
-  set withExplanation(bool on) {
-    if (on == _withExplanation) return;
-    _withExplanation = on;
-    settings?.write(_explanationKey, on ? 'true' : 'false');
+  set mix(ListenMix choice) {
+    if (choice == _mix) return;
+    _mix = choice;
+    settings?.write(_mixKey, choice.code);
     notifyListeners();
   }
+
+  /// Whether reading a verse aloud carries on into its explanation.
+  bool get withExplanation => _mix.explanation;
+
+  set withExplanation(bool on) => mix = _mix.with_(explanation: on);
 
   /// Which translation to show, best first: the reader's language, then the
   /// two that packs most often carry.

@@ -10,7 +10,7 @@ import '../ai/verse_context.dart';
 import '../core/transliteration.dart';
 import '../library/scripture_repository.dart';
 import '../packs/pack_store.dart';
-import '../audio/speech.dart';
+import '../audio/listen_player.dart';
 import 'ai/assistant_screen.dart';
 import 'listen_meaning.dart';
 import 'home/hero_painter.dart';
@@ -184,7 +184,7 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
     _settle?.cancel();
     if (_settling?.isCompleted == false) _settling?.complete();
     Assistant.instance.state.removeListener(_keepAhead);
-    VerseSpeech.instance.stop();
+    VersePlayer.instance.stop();
     _pages.dispose();
     super.dispose();
   }
@@ -195,23 +195,23 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
   /// interval, so a long verse is never cut off and a short one never leaves
   /// a silence.
   Future<void> _readOn() async {
-    final speech = VerseSpeech.instance;
+    final player = VersePlayer.instance;
     // Read once, before any awaiting: the language is a listenable and this
     // loop outlives several frames.
     final reading = ReadingLanguageScope.of(context);
     setState(() => _continuous = true);
     while (mounted && _continuous && _index < _verses.length) {
       final verse = _verses[_index];
-      final choice = await spokenVerse(verse, reading);
+      final segments = await listenSegments(verse, reading);
       if (!mounted || !_continuous) break;
-      if (choice == null) {
-        // Nothing to read here. Give the reader a moment to look at it.
+      if (segments.isEmpty) {
+        // Nothing to play here. Give the reader a moment to look at it.
         await Future<void>.delayed(const Duration(seconds: 3));
       } else {
         try {
           // False means it was stopped rather than finished, and a stop must
           // not turn the page.
-          if (!await speech.speak(verse.ref, choice)) break;
+          if (!await player.play(verse.ref, segments)) break;
         } on Object {
           break;
         }
@@ -348,7 +348,7 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
 
   Future<void> _stopReading() async {
     setState(() => _continuous = false);
-    await VerseSpeech.instance.stop();
+    await VersePlayer.instance.stop();
   }
 
   PassageView? get _verse => _verses.isEmpty ? null : _verses[_index];
@@ -1071,7 +1071,7 @@ class _VersePage extends StatelessWidget {
                 const SizedBox(height: 16),
                 const Divider(height: 1, color: SadhanaColors.line),
                 const SizedBox(height: 12),
-                ListenMeaning(verse: verse, onBeforePlay: onBeforePlay),
+                ListenControl(verse: verse, onBeforePlay: onBeforePlay),
               ],
             ),
           ),
