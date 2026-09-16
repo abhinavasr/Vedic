@@ -8,6 +8,7 @@ import '../ai/verse_context.dart';
 import '../core/transliteration.dart';
 import '../library/scripture_repository.dart';
 import '../packs/pack_store.dart';
+import '../audio/speech.dart';
 import 'ai/assistant_screen.dart';
 import 'listen_meaning.dart';
 import 'home/hero_painter.dart';
@@ -47,6 +48,9 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
   /// The translation being written on this phone, if any.
   _Translating? _translating;
 
+  /// Whether the reader is being read to, verse after verse.
+  var _continuous = false;
+
   /// The language last asked for, by verse. Someone who asks for Tamil means
   /// to read Tamil, whatever their usual language is.
   final _justTranslated = <String, String>{};
@@ -65,8 +69,164 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
 
   @override
   void dispose() {
+    _continuous = false;
+    VerseSpeech.instance.stop();
     _pages.dispose();
     super.dispose();
+  }
+
+  /// Reads the verses aloud one after another, turning the page itself.
+  ///
+  /// Each verse waits for the voice to finish rather than for a guessed
+  /// interval, so a long verse is never cut off and a short one never leaves
+  /// a silence.
+  Future<void> _readOn() async {
+    final speech = VerseSpeech.instance;
+    // Read once, before any awaiting: the language is a listenable and this
+    // loop outlives several frames.
+    final reading = ReadingLanguageScope.of(context);
+    setState(() => _continuous = true);
+    while (mounted && _continuous && _index < _verses.length) {
+      final verse = _verses[_index];
+      final choice = await spokenVerse(verse, reading);
+      if (!mounted || !_continuous) break;
+      if (choice == null) {
+        // Nothing to read here. Give the reader a moment to look at it.
+        await Future<void>.delayed(const Duration(seconds: 3));
+      } else {
+        try {
+          await speech.speak(verse.ref, choice);
+        } on Object {
+          break;
+        }
+      }
+      if (!mounted || !_continuous) break;
+      if (_index >= _verses.length - 1) break;
+      _goTo(_index + 1);
+      await Future<void>.delayed(const Duration(milliseconds: 500));
+    }
+    if (mounted) setState(() => _continuous = false);
+  }
+
+  /// A way to reach any verse in the work without leaving the reader.
+  ///
+  /// Paging one verse at a time is fine for reading and hopeless for looking
+  /// something up, and going back out to the chapter list to come back in is
+  /// worse.
+  Future<void> _showJump() async {
+    await _stopReading();
+    if (!mounted) return;
+    final sections = widget.repository.sections(widget.work);
+    var chosen = widget.section;
+    final target = await showModalBottomSheet<({SectionSummary s, String ref})>(
+      context: context,
+      backgroundColor: SadhanaColors.surface,
+      showDragHandle: true,
+      isScrollControlled: true,
+      builder: (context) => StatefulBuilder(
+        builder: (context, setSheet) {
+          final verses = widget.repository.verses(widget.work, chosen);
+          return SafeArea(
+            child: SizedBox(
+              height: MediaQuery.sizeOf(context).height * 0.62,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
+                    child: Text(
+                      'Go to',
+                      style: serif(size: 20, color: SadhanaColors.ink),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 44,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      children: [
+                        for (final section in sections)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8),
+                            child: ChoiceChip(
+                              label: Text(
+                                section.number == null
+                                    ? (section.title ?? 'Other')
+                                    : section.number!,
+                              ),
+                              selected: section.id == chosen.id,
+                              onSelected: (_) =>
+                                  setSheet(() => chosen = section),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  Expanded(
+                    child: GridView.count(
+                      crossAxisCount: 5,
+                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                      mainAxisSpacing: 8,
+                      crossAxisSpacing: 8,
+                      children: [
+                        for (final verse in verses)
+                          Material(
+                            color:
+                                verse.ref == _verses[_index].ref &&
+                                    chosen.id == widget.section.id
+                                ? SadhanaColors.greenTint
+                                : SadhanaColors.searchFill,
+                            borderRadius: BorderRadius.circular(12),
+                            child: InkWell(
+                              borderRadius: BorderRadius.circular(12),
+                              onTap: () =>
+                                  Navigator.of(context)
+                                      .pop((s: chosen, ref: verse.ref)),
+                              child: Center(
+                                child: Text(
+                                  (verse.label ?? verse.ref).split('.').last,
+                                  style: const TextStyle(
+                                    fontSize: 15,
+                                    color: SadhanaColors.ink,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
+      ),
+    );
+    if (target == null || !mounted) return;
+    if (target.s.id == widget.section.id) {
+      final at = _verses.indexWhere((v) => v.ref == target.ref);
+      if (at >= 0) _goTo(at);
+      return;
+    }
+    // Another chapter: replace rather than stack, so Back still leaves the
+    // reader rather than walking through every chapter visited.
+    await Navigator.of(context).pushReplacement(
+      MaterialPageRoute<void>(
+        builder: (_) => VerseReaderScreen(
+          repository: widget.repository,
+          work: widget.work,
+          section: target.s,
+          initialRef: target.ref,
+        ),
+      ),
+    );
+  }
+
+  Future<void> _stopReading() async {
+    setState(() => _continuous = false);
+    await VerseSpeech.instance.stop();
   }
 
   PassageView? get _verse => _verses.isEmpty ? null : _verses[_index];
@@ -308,6 +468,7 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
                                   : null,
                               onTranslate: (language) =>
                                   _translate(_verses[i], language),
+                              onBeforePlay: _stopReading,
                             ),
                           ),
                   ),
@@ -376,13 +537,41 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
             ),
           const SizedBox(width: 4),
           IconButton(
+            key: const ValueKey('read-on'),
+            visualDensity: VisualDensity.compact,
+            tooltip: _continuous
+                ? 'Stop reading'
+                : 'Read on, verse after verse',
+            color: SadhanaColors.green,
+            onPressed: _verses.isEmpty
+                ? null
+                : () => _continuous ? _stopReading() : _readOn(),
+            icon: Icon(
+              _continuous
+                  ? Icons.pause_circle_filled
+                  : Icons.play_circle_fill_rounded,
+            ),
+          ),
+          IconButton(
             visualDensity: VisualDensity.compact,
             onPressed: _index == 0 ? null : () => _goTo(_index - 1),
             icon: const Icon(Icons.chevron_left),
           ),
-          Text(
-            _verses.isEmpty ? '—' : '${_index + 1} of ${_verses.length}',
-            style: const TextStyle(fontSize: 13, color: SadhanaColors.inkSoft),
+          InkWell(
+            key: const ValueKey('jump'),
+            borderRadius: BorderRadius.circular(12),
+            onTap: _verses.isEmpty ? null : _showJump,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+              child: Text(
+                _verses.isEmpty ? '—' : '${_index + 1} of ${_verses.length}',
+                style: const TextStyle(
+                  fontSize: 13,
+                  color: SadhanaColors.green,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
           ),
           IconButton(
             visualDensity: VisualDensity.compact,
@@ -472,6 +661,7 @@ class _VersePage extends StatelessWidget {
     required this.prefer,
     required this.translating,
     required this.onTranslate,
+    required this.onBeforePlay,
   });
 
   final PassageView verse;
@@ -485,9 +675,16 @@ class _VersePage extends StatelessWidget {
   final _Translating? translating;
   final void Function(TargetLanguage language) onTranslate;
 
+  /// Lets reading-straight-through stand down when one verse is asked for.
+  final Future<void> Function() onBeforePlay;
+
   @override
   Widget build(BuildContext context) {
     final reading = ReadingLanguageScope.of(context).language;
+    final preference = ReadingLanguageScope.of(context).preference;
+    // One language's notes, not every language's at once.
+    final explanations = verse.notesFor(verse.explanations, preference);
+    final takeaways = verse.notesFor(verse.takeaways, preference);
     final translation = verse.translationFor([
       ?prefer,
       ...ReadingLanguageScope.of(context).preference,
@@ -601,16 +798,16 @@ class _VersePage extends StatelessWidget {
                 const SizedBox(height: 16),
                 const Divider(height: 1, color: SadhanaColors.line),
                 const SizedBox(height: 12),
-                ListenMeaning(verse: verse),
+                ListenMeaning(verse: verse, onBeforePlay: onBeforePlay),
               ],
             ),
           ),
         ),
-        if (verse.explanations.isNotEmpty) ...[
+        if (explanations.isNotEmpty) ...[
           const SizedBox(height: 22),
           _SectionLabel('Explanation'),
           const SizedBox(height: 8),
-          for (final explanation in verse.explanations)
+          for (final explanation in explanations)
             Padding(
               padding: const EdgeInsets.only(bottom: 10),
               child: Text(
@@ -623,11 +820,11 @@ class _VersePage extends StatelessWidget {
               ),
             ),
         ],
-        if (verse.takeaways.isNotEmpty) ...[
+        if (takeaways.isNotEmpty) ...[
           const SizedBox(height: 14),
           _SectionLabel('Key Takeaways'),
           const SizedBox(height: 6),
-          for (final takeaway in verse.takeaways)
+          for (final takeaway in takeaways)
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 4),
               child: Row(

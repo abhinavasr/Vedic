@@ -39,10 +39,14 @@ class SpokenChoice {
   const SpokenChoice({
     required this.text,
     required this.locale,
+    required this.languageCode,
     required this.description,
   });
 
   final String text;
+
+  /// BCP 47, so a caller can match other text to the same voice.
+  final String languageCode;
 
   /// The tag handed to the platform, e.g. "hi-IN".
   final String locale;
@@ -107,6 +111,7 @@ class VerseSpeech {
       return SpokenChoice(
         text: text,
         locale: _locales[code]!,
+        languageCode: code,
         description: 'Read aloud in ${languageName(code)}',
       );
     }
@@ -114,9 +119,10 @@ class VerseSpeech {
   }
 
   /// Reads [choice] aloud, and stops anything already being read.
+  /// Reads [choice] aloud and returns when the voice has finished.
   Future<void> speak(String ref, SpokenChoice choice) async {
     await stop();
-    _wire();
+    await _wire();
     try {
       await _tts.setLanguage(choice.locale);
       // Scripture read at conversational speed runs away from the reader.
@@ -124,6 +130,7 @@ class VerseSpeech {
       await _tts.setPitch(1);
       speaking.value = ref;
       await _tts.speak(choice.text);
+      speaking.value = null;
     } on Object {
       speaking.value = null;
       rethrow;
@@ -139,9 +146,12 @@ class VerseSpeech {
     }
   }
 
-  void _wire() {
+  Future<void> _wire() async {
     if (_wired) return;
     _wired = true;
+    // Makes speak() finish when the voice does, which is what lets one verse
+    // hand over to the next.
+    await _tts.awaitSpeakCompletion(true);
     _tts
       ..setCompletionHandler(() => speaking.value = null)
       ..setCancelHandler(() => speaking.value = null)

@@ -11,16 +11,19 @@ import 'translation.dart';
 class ReadingLanguage extends ChangeNotifier {
   ReadingLanguage(this.settings) {
     _code = settings?.read(_key) ?? TargetLanguage.english.code;
+    _withExplanation = settings?.read(_explanationKey) == 'true';
   }
 
   /// The app's, replaceable in tests.
   static ReadingLanguage instance = ReadingLanguage(null);
 
   static const _key = 'reading.language';
+  static const _explanationKey = 'reading.speakExplanation';
 
   final AssistantSettings? settings;
 
   late String _code;
+  late bool _withExplanation;
 
   TargetLanguage get language =>
       TargetLanguage.forCode(_code) ?? TargetLanguage.english;
@@ -29,6 +32,16 @@ class ReadingLanguage extends ChangeNotifier {
     if (choice.code == _code) return;
     _code = choice.code;
     settings?.write(_key, choice.code);
+    notifyListeners();
+  }
+
+  /// Whether reading a verse aloud carries on into its explanation.
+  bool get withExplanation => _withExplanation;
+
+  set withExplanation(bool on) {
+    if (on == _withExplanation) return;
+    _withExplanation = on;
+    settings?.write(_explanationKey, '\$on');
     notifyListeners();
   }
 

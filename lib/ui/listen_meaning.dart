@@ -5,6 +5,34 @@ import '../audio/speech.dart';
 import '../library/scripture_repository.dart';
 import 'theme.dart';
 
+/// What to read aloud for a verse: its meaning, and its explanation too when
+/// the reader has asked for that.
+Future<SpokenChoice?> spokenVerse(
+  PassageView verse,
+  ReadingLanguage reading,
+) async {
+  final choice = await VerseSpeech.instance.chooseForMeaning(
+    available: {
+      for (final translation in verse.translations)
+        translation.language: translation.text,
+    },
+    preferred: reading.language.code,
+  );
+  if (choice == null || !reading.withExplanation) return choice;
+  // The explanation is only read in the same language as the meaning, so one
+  // voice is not asked to read two languages in a row.
+  final explanation = verse
+      .notesFor(verse.explanations, [choice.languageCode])
+      .join(' ');
+  if (explanation.isEmpty) return choice;
+  return SpokenChoice(
+    text: '\${choice.text}\n\n\$explanation',
+    locale: choice.locale,
+    languageCode: choice.languageCode,
+    description: '\${choice.description}, with the explanation',
+  );
+}
+
 /// Reads the verse's meaning aloud.
 ///
 /// There is no chant here. A chant has to be a recording by someone who knows
@@ -12,9 +40,13 @@ import 'theme.dart';
 /// from its transliteration was tried and was not worth offering. The meaning
 /// is a different matter, and a phone reads it perfectly well.
 class ListenMeaning extends StatefulWidget {
-  const ListenMeaning({super.key, required this.verse});
+  const ListenMeaning({super.key, required this.verse, this.onBeforePlay});
 
   final PassageView verse;
+
+  /// Called before this verse is read, so a reader that is reading straight
+  /// through can stand down rather than compete for the voice.
+  final Future<void> Function()? onBeforePlay;
 
   @override
   State<ListenMeaning> createState() => ListenMeaningState();
@@ -38,13 +70,8 @@ class ListenMeaningState extends State<ListenMeaning> {
   /// Which language this phone can read this verse in. Asked once per verse,
   /// because listing the installed voices touches the platform.
   Future<void> _pick() async {
-    final choice = await VerseSpeech.instance.chooseForMeaning(
-      available: {
-        for (final translation in widget.verse.translations)
-          translation.language: translation.text,
-      },
-      preferred: ReadingLanguageScope.of(context).language.code,
-    );
+    final reading = ReadingLanguageScope.of(context);
+    final choice = await spokenVerse(widget.verse, reading);
     if (mounted) setState(() => _choice = choice);
   }
 
@@ -53,6 +80,7 @@ class ListenMeaningState extends State<ListenMeaning> {
     if (speaking) return speech.stop();
     final choice = _choice;
     if (choice == null) return;
+    await widget.onBeforePlay?.call();
     try {
       await speech.speak(widget.verse.ref, choice);
     } on Object {
@@ -98,7 +126,7 @@ class ListenMeaningState extends State<ListenMeaning> {
                       ),
                     ),
                     Text(
-                      choice.description,
+                      '${choice.description}, this verse only',
                       style: const TextStyle(
                         fontSize: 13,
                         color: SadhanaColors.inkSoft,

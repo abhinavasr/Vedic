@@ -453,6 +453,54 @@ class PackStore {
           ),
   );
 
+  /// Notes this phone wrote for a work: explanations, by ref.
+  Map<String, List<LocalTranslation>> localNotes(
+    String packId,
+    String workSlug,
+  ) => _withRegistry((db) {
+    final byRef = <String, List<LocalTranslation>>{};
+    for (final row in db.select(
+      'SELECT ref, language, text, model, created_at FROM local_notes '
+      "WHERE pack_id = ? AND work_slug = ? AND scheme = 'explanation' "
+      'ORDER BY ref',
+      [packId, workSlug],
+    )) {
+      (byRef[row['ref'] as String] ??= []).add(
+        LocalTranslation(
+          packId: packId,
+          workSlug: workSlug,
+          ref: row['ref'] as String,
+          language: row['language'] as String,
+          text: row['text'] as String,
+          model: row['model'] as String,
+          createdAt: DateTime.parse(row['created_at'] as String),
+        ),
+      );
+    }
+    return byRef;
+  });
+
+  /// Stores an explanation this phone wrote, replacing any earlier one.
+  void saveLocalNote(LocalTranslation note) => _withRegistry(
+    (db) => db.execute(
+      'INSERT INTO local_notes '
+      '(pack_id, work_slug, ref, language, scheme, text, model, created_at) '
+      "VALUES (?, ?, ?, ?, 'explanation', ?, ?, ?) "
+      'ON CONFLICT (pack_id, work_slug, ref, language, scheme) DO UPDATE SET '
+      'text = excluded.text, model = excluded.model, '
+      'created_at = excluded.created_at',
+      [
+        note.packId,
+        note.workSlug,
+        note.ref,
+        note.language,
+        note.text,
+        note.model,
+        note.createdAt.toUtc().toIso8601String(),
+      ],
+    ),
+  );
+
   /// Forgets on-device translations: all of them, or one language's.
   void clearLocalTranslations({String? language}) => _withRegistry(
     (db) => language == null
@@ -503,6 +551,15 @@ class PackStore {
         ..execute(
           'CREATE TABLE IF NOT EXISTS app_settings ('
           'key TEXT PRIMARY KEY, value TEXT NOT NULL)',
+        )
+        // Explanations this phone translated. A table of its own rather than
+        // a column on local_translations, which is already on devices.
+        ..execute(
+          'CREATE TABLE IF NOT EXISTS local_notes ('
+          'pack_id TEXT NOT NULL, work_slug TEXT NOT NULL, ref TEXT NOT NULL, '
+          'language TEXT NOT NULL, scheme TEXT NOT NULL, text TEXT NOT NULL, '
+          'model TEXT NOT NULL, created_at TEXT NOT NULL, '
+          'PRIMARY KEY (pack_id, work_slug, ref, language, scheme))',
         );
       return body(db);
     } finally {

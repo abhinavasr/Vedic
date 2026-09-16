@@ -73,6 +73,24 @@ class TranslationView {
   final bool onThisPhone;
 }
 
+/// A note the pack carries about a passage: an explanation, or a takeaway.
+///
+/// It keeps its language, because a pack carries the same note in several and
+/// the reader wants theirs rather than all of them at once.
+class NoteView {
+  const NoteView({
+    required this.language,
+    required this.text,
+    this.onThisPhone = false,
+  });
+
+  final String language;
+  final String text;
+
+  /// Written by this phone rather than shipped in the pack.
+  final bool onThisPhone;
+}
+
 class PassageView {
   const PassageView({
     required this.ref,
@@ -105,11 +123,12 @@ class PassageView {
   final String? transliteration;
   final List<TranslationView> translations;
 
-  /// Explanation paragraphs shipped with the verse.
-  final List<String> explanations;
+  /// Explanation paragraphs shipped with the verse, in every language the
+  /// pack carries.
+  final List<NoteView> explanations;
 
-  /// Key takeaway lines shipped with the verse.
-  final List<String> takeaways;
+  /// Key takeaway lines shipped with the verse, in every language.
+  final List<NoteView> takeaways;
 
   PassageView withSpeaker(String? speaker) => PassageView(
     ref: ref,
@@ -138,6 +157,26 @@ class PassageView {
 
   bool hasTranslationIn(String language) =>
       translations.any((t) => t.language == language);
+
+  /// The notes to show, in the first of [languages] the pack has them in.
+  ///
+  /// One language at a time: showing a reader the same explanation twice, in
+  /// two languages, is worse than showing it once in the wrong one.
+  List<String> notesFor(List<NoteView> notes, List<String> languages) {
+    for (final language in languages) {
+      final matching = [
+        for (final note in notes)
+          if (note.language == language) note.text,
+      ];
+      if (matching.isNotEmpty) return matching;
+    }
+    return [for (final note in notes) note.text];
+  }
+
+  /// Which languages this passage has notes in.
+  Set<String> noteLanguages(List<NoteView> notes) => {
+    for (final note in notes) note.language,
+  };
 }
 
 /// A verse with the work and section it belongs to.
@@ -295,6 +334,7 @@ class ScriptureRepository {
 
   List<PassageView> passages(WorkSummary work, SectionSummary section) {
     final local = _localTranslations(work);
+    final notes = _localNotes(work);
     return _read(work.pack, (db) {
       final where = section.id == null
           ? 'work_id = ? AND section_id IS NULL'
@@ -310,6 +350,7 @@ class ScriptureRepository {
             row,
             _typeOf(row['kind'] as String, row['ref'] as String),
             local: local,
+            localNotes: notes,
           ),
       ];
     });
@@ -393,6 +434,15 @@ class ScriptureRepository {
     return null;
   }
 
+  /// Explanations this phone wrote, by ref.
+  Map<String, List<NoteView>> _localNotes(WorkSummary work) => {
+    for (final entry in store.localNotes(work.pack.packId, work.slug).entries)
+      entry.key: [
+        for (final note in entry.value)
+          NoteView(language: note.language, text: note.text, onThisPhone: true),
+      ],
+  };
+
   /// Translations this phone produced, by ref, for merging into [_passage].
   Map<String, List<TranslationView>> _localTranslations(WorkSummary work) {
     final byRef = <String, List<TranslationView>>{};
@@ -415,11 +465,12 @@ class ScriptureRepository {
     Row row,
     PassageType type, {
     Map<String, List<TranslationView>> local = const {},
+    Map<String, List<NoteView>> localNotes = const {},
   }) {
     final variants = <String>[];
     final translations = <TranslationView>[];
-    final explanations = <String>[];
-    final takeaways = <String>[];
+    final explanations = <NoteView>[];
+    final takeaways = <NoteView>[];
     String? transliteration;
     for (final rendering in db.select(
       'SELECT kind, language, author, origin, scheme, text FROM renderings '
@@ -441,7 +492,7 @@ class ScriptureRepository {
           );
         case 'commentary':
           (rendering['scheme'] == 'takeaway' ? takeaways : explanations).add(
-            text,
+            NoteView(language: rendering['language'] as String, text: text),
           );
         case 'transliteration':
           transliteration ??= text;
@@ -449,6 +500,7 @@ class ScriptureRepository {
     }
     // After the pack's own, so a published translation always wins.
     translations.addAll(local[row['ref'] as String] ?? const []);
+    explanations.addAll(localNotes[row['ref'] as String] ?? const []);
     return PassageView(
       ref: row['ref'] as String,
       label: row['label'] as String?,

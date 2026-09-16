@@ -35,8 +35,9 @@ class _LanguageScreenState extends State<LanguageScreen> {
         const Padding(
           padding: EdgeInsets.fromLTRB(20, 4, 20, 16),
           child: Text(
-            'Translations in this language are shown first. Where a pack does '
-            'not carry one, the app can make it on this phone.',
+            'Translations and explanations in this language are shown first. '
+            'Where a pack does not carry one, the app can make it on this '
+            'phone.',
             style: TextStyle(
               fontSize: 15,
               height: 1.5,
@@ -44,6 +45,16 @@ class _LanguageScreenState extends State<LanguageScreen> {
             ),
           ),
         ),
+        SwitchListTile(
+          key: const ValueKey('speak-explanation'),
+          value: _reading.withExplanation,
+          onChanged: (on) => setState(() => _reading.withExplanation = on),
+          title: const Text('Read the explanation too'),
+          subtitle: const Text(
+            'When a verse is read aloud, carry on into its explanation',
+          ),
+        ),
+        const Divider(height: 1),
         RadioGroup<String>(
           groupValue: _reading.language.code,
           onChanged: (code) {
