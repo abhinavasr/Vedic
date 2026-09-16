@@ -142,16 +142,38 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
       return;
     }
 
+    // Measured on a phone: going from a translation someone already made
+    // beats going from the Sanskrit, in both directions
+    // (docs/ON_DEVICE_AI.md). The pack's own renderings count; this phone's
+    // do not.
+    final source = chooseSource(
+      target: language,
+      original: verse.text,
+      available: {
+        for (final translation in verse.translations)
+          if (!translation.onThisPhone) translation.language: translation.text,
+      },
+    );
+
     setState(
-      () => _translating = _Translating(ref: verse.ref, language: language),
+      () => _translating = _Translating(
+        ref: verse.ref,
+        language: language,
+        source: source,
+      ),
     );
     try {
       var text = '';
       await for (final progress in translateVerseStream(
         assistant,
-        verse: verse.text,
+        verse: source.text,
+        from: source.languageName,
         language: language,
-        context: _contextFor(verse),
+        context: source.isOriginal
+            ? _contextFor(verse)
+            // Translating a translation: the Sanskrit context would invite it
+            // to answer from the original instead of the text it was given.
+            : const VerseContext(),
       )) {
         text = progress.text;
         if (!mounted) return;
@@ -171,9 +193,12 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
           ref: verse.ref,
           language: language.code,
           text: text,
-          // The model that actually wrote it, which is what makes it possible
-          // to re-translate everything a weaker one produced.
-          model: assistantModelFile,
+          // The model and the text it worked from, which is what makes it
+          // possible to re-translate everything a weaker one produced, or
+          // everything that came the long way round through another language.
+          model: source.isOriginal
+              ? assistantModelFile
+              : '$assistantModelFile via ${source.languageCode}',
           createdAt: DateTime.now().toUtc(),
         ),
       );
@@ -405,12 +430,17 @@ class _Translating {
   const _Translating({
     required this.ref,
     required this.language,
+    required this.source,
     this.text = '',
     this.thinking = '',
   });
 
   final String ref;
   final TargetLanguage language;
+
+  /// What it is being translated out of, which the reader is told: a
+  /// translation of a translation is a different claim.
+  final TranslationSource source;
 
   /// What has arrived so far. Unchecked, so it is shown and not stored.
   final String text;
@@ -422,6 +452,7 @@ class _Translating {
       _Translating(
         ref: ref,
         language: language,
+        source: source,
         text: text,
         thinking: thinking,
       );
@@ -651,7 +682,9 @@ class _TranslateOnPhone extends StatelessWidget {
                   child: Text(
                     live.text.isEmpty
                         ? 'Working it out in ${live.language.name}…'
-                        : 'Translating into ${live.language.name}…',
+                        : 'Translating from the '
+                              '${live.source.languageName} '
+                              'into ${live.language.name}…',
                     style: const TextStyle(
                       fontSize: 13,
                       color: SadhanaColors.inkSoft,

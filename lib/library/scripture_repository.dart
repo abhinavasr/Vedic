@@ -51,6 +51,7 @@ class TranslationView {
     required this.text,
     required this.translator,
     required this.machine,
+    this.onThisPhone = false,
   });
 
   final String language;
@@ -59,6 +60,12 @@ class TranslationView {
 
   /// Machine-translated, and labelled as such wherever it is shown.
   final bool machine;
+
+  /// Produced by this phone rather than shipped in the pack.
+  ///
+  /// A pack's own machine translation was vetted by whoever published it; this
+  /// one was not, so it is never used as the source for another translation.
+  final bool onThisPhone;
 }
 
 class PassageView {
@@ -390,6 +397,7 @@ class ScriptureRepository {
           text: local.text,
           translator: null,
           machine: true,
+          onThisPhone: true,
         ),
       );
     }

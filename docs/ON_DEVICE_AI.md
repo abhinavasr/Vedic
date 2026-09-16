@@ -132,7 +132,46 @@ Both readings make the same mistake — विषीदन्तम्, "despond
 error is systematic rather than unlucky: the model does not parse the word,
 and reaches for the one it knows.
 
-So the pipeline is sound and **this model's Sanskrit is not**. What follows
+### Which language to translate out of
+
+Bhagavad Gītā 1.2, same model, same day, against the pack's own rendering.
+`integration_test/translation_quality_test.dart` reruns this anywhere.
+
+| From → into | Time | What came back |
+| --- | --- | --- |
+| **English → Hindi** | 20 s | संजय ने कहा: हे राजा, पांडु के पुत्रों द्वारा सैन्य गठन में व्यवस्थित सेना को देखकर, राजा दुर्योधन अपने गुरु के पास गया और निम्नलिखित शब्द बोले। |
+| **Hindi → English** | 18 s | "Sanjay said that at that time, King Duryodhana, seeing the Pandavas' army was strategically arranged, went to Dronacharya and said this *promise*." |
+| **Sanskrit → English** | 23 s | "Having seen the Pandava army formed, Duryodhana then, meeting the teacher, the king spoke his words." |
+| **Sanskrit → Hindi** | 16 s | जब उसने **पांडवानीकं** को व्यूढ रूप में देखा, तब दुर्योधन ने आचार्य से मिलकर वचन कहे। |
+
+English into Hindi is the best of the four and reads naturally. Hindi into
+English is close behind, with one word off: वचन becomes "promise" rather than
+"words", a meaning it can carry but not here. The two out of Sanskrit are the
+weakest — the English is stiff but right, and the Hindi gives up on
+पाण्डवानीकं and copies it across untranslated, which is the same kind of
+failure as 2.1 in a milder form.
+
+So `chooseSource` prefers, in order:
+
+1. **Hindi**, for a target written in Devanagari and steeped in the same
+   vocabulary, where a compound often survives almost unchanged.
+2. **English**, otherwise, because it is what packs most often carry.
+3. **The Sanskrit**, last.
+
+Only the pack's own renderings are eligible. A translation this phone made is
+not: it was never vetted, and translating from it would compound one guess
+into another. The stored row records the route (`…litertlm via en`) so
+anything that came the long way round can be found and redone later.
+
+Caveats worth keeping in view: the ordering between Hindi and English as
+*sources* rests on one verse in each direction, and the preference for Hindi
+into other Indic languages is reasoning about shared vocabulary rather than a
+measurement — no Marathi or Gujarati target has been tested. And a pivot
+inherits its source's mistakes: "promise" would travel onward intact.
+
+### What follows
+
+The pipeline is sound and **this model's Sanskrit is not**. What follows
 from that:
 
 - Where a published translation exists in *another* language, translating from
