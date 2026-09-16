@@ -1,4 +1,5 @@
 import 'package:audio_service/audio_service.dart';
+import 'package:flutter/services.dart';
 
 // The notification and the lock screen.
 //
@@ -27,6 +28,26 @@ class ChantSession extends BaseAudioHandler {
 
   /// Whoever is listening at the moment. Null when nobody is.
   ListenControls? controls;
+
+  static const _permissions = MethodChannel('com.batiyao.veda/notifications');
+
+  var _asked = false;
+
+  /// Asks for the one permission the notification needs, once.
+  ///
+  /// From Android 13 a media notification simply does not appear without it,
+  /// with no error and nothing in the log — which is exactly how it looks when
+  /// you have forgotten to ask for it. Refusing costs the notification and
+  /// nothing else: the recitation still plays.
+  Future<void> ensureNotificationAllowed() async {
+    if (_asked) return;
+    _asked = true;
+    try {
+      await _permissions.invokeMethod<bool>('request');
+    } on Object {
+      // A platform with no such notion, which is every platform but Android.
+    }
+  }
 
   /// Shows [item] in the notification and on the lock screen.
   void show(MediaItem item, {required bool playing}) {

@@ -9,6 +9,7 @@ import '../ai/translation.dart';
 import '../audio/chant_session.dart';
 import '../audio/listen_player.dart';
 import '../library/scripture_repository.dart';
+import 'jump_sheet.dart';
 import 'listen_meaning.dart';
 import 'theme.dart';
 
@@ -64,6 +65,9 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
     // Re-read the passages whenever the phone has written another translation,
     // so a verse filled in while this one plays is ready when it is reached.
     ChantSession.instance?.controls = this;
+    // Asked here rather than at launch: the prompt makes sense to someone who
+    // has just opened the player, and to nobody who has just opened the app.
+    unawaited(ChantSession.instance?.ensureNotificationAllowed() ?? Future.value());
     _fill.onFilled = () {
       if (!mounted) return;
       setState(() => _verses = widget.repository.verses(widget.work, _section));
@@ -196,15 +200,28 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
     if (wasPlaying) unawaited(_playOn());
   }
 
-  Future<void> _goToSection(SectionSummary section) async {
+  /// The same Go-to sheet the reader uses: chapter, then verse.
+  Future<void> _showJump() async {
     final wasPlaying = _playing;
     await _stop();
     if (!mounted) return;
+    final target = await showJumpSheet(
+      context,
+      repository: widget.repository,
+      work: widget.work,
+      section: _section,
+      currentRef: _verse?.ref,
+    );
+    if (target == null || !mounted) return;
     setState(() {
-      _section = section;
-      _verses = widget.repository.verses(widget.work, section);
-      _index = 0;
+      if (target.section.id != _section.id) {
+        _section = target.section;
+        _verses = widget.repository.verses(widget.work, _section);
+      }
+      final at = _verses.indexWhere((v) => v.ref == target.ref);
+      _index = at < 0 ? 0 : at;
     });
+    _publish();
     _fillAhead();
     if (wasPlaying) unawaited(_playOn());
   }
@@ -227,10 +244,9 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
         child: ListView(
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 32),
           children: [
-            _ChapterStrip(
-              sections: widget.repository.sections(widget.work),
-              chosen: _section,
-              onChosen: _goToSection,
+            _WhereTo(
+              chapter: chapterName(_section),
+              onTap: _showJump,
             ),
             const SizedBox(height: 20),
             _NowPlaying(
@@ -374,35 +390,55 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
   }
 }
 
-/// Which chapter is being listened to.
-class _ChapterStrip extends StatelessWidget {
-  const _ChapterStrip({
-    required this.sections,
-    required this.chosen,
-    required this.onChosen,
-  });
+/// The chapter being listened to, and the way to any other.
+///
+/// A row of bare numbers said nothing: "1 2 3 4" is not a set of chapters, it
+/// is a set of numbers. This names the chapter and opens the same Go-to sheet
+/// the reader uses, so there is one way to move around the book.
+class _WhereTo extends StatelessWidget {
+  const _WhereTo({required this.chapter, required this.onTap});
 
-  final List<SectionSummary> sections;
-  final SectionSummary chosen;
-  final void Function(SectionSummary section) onChosen;
+  final String chapter;
+  final VoidCallback onTap;
 
   @override
-  Widget build(BuildContext context) => SizedBox(
-    height: 40,
-    child: ListView(
-      scrollDirection: Axis.horizontal,
-      children: [
-        for (final section in sections)
-          Padding(
-            padding: const EdgeInsets.only(right: 8),
-            child: ChoiceChip(
-              key: ValueKey('listen-chapter-${section.number}'),
-              label: Text(section.number ?? section.title ?? 'Other'),
-              selected: section.id == chosen.id,
-              onSelected: (_) => onChosen(section),
+  Widget build(BuildContext context) => Material(
+    color: SadhanaColors.surface,
+    borderRadius: BorderRadius.circular(16),
+    child: InkWell(
+      key: const ValueKey('listen-jump'),
+      borderRadius: BorderRadius.circular(16),
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 14, 12, 14),
+        child: Row(
+          children: [
+            const Icon(
+              Icons.menu_book_outlined,
+              size: 20,
+              color: SadhanaColors.green,
             ),
-          ),
-      ],
+            const SizedBox(width: 12),
+            Expanded(
+              child: Text(
+                chapter,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontSize: 15, color: SadhanaColors.ink),
+              ),
+            ),
+            const Text(
+              'Go to',
+              style: TextStyle(fontSize: 13, color: SadhanaColors.green),
+            ),
+            const Icon(
+              Icons.expand_more,
+              size: 20,
+              color: SadhanaColors.green,
+            ),
+          ],
+        ),
+      ),
     ),
   );
 }

@@ -12,6 +12,7 @@ import '../library/scripture_repository.dart';
 import '../packs/pack_store.dart';
 import '../audio/listen_player.dart';
 import 'ai/assistant_screen.dart';
+import 'jump_sheet.dart';
 import 'listen_meaning.dart';
 import 'home/hero_painter.dart';
 import 'simple_screens.dart';
@@ -225,109 +226,18 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
   }
 
   /// A way to reach any verse in the work without leaving the reader.
-  ///
-  /// Paging one verse at a time is fine for reading and hopeless for looking
-  /// something up, and going back out to the chapter list to come back in is
-  /// worse.
   Future<void> _showJump() async {
     await _stopReading();
     if (!mounted) return;
-    final sections = widget.repository.sections(widget.work);
-    var chosen = widget.section;
-    final target = await showModalBottomSheet<({SectionSummary s, String ref})>(
-      context: context,
-      backgroundColor: SadhanaColors.surface,
-      showDragHandle: true,
-      isScrollControlled: true,
-      builder: (context) => StatefulBuilder(
-        builder: (context, setSheet) {
-          final verses = widget.repository.verses(widget.work, chosen);
-          return SafeArea(
-            child: SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.62,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
-                    child: Text(
-                      'Go to',
-                      style: serif(size: 20, color: SadhanaColors.ink),
-                    ),
-                  ),
-                  const _JumpLabel('Chapter'),
-                  SizedBox(
-                    height: 44,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      children: [
-                        for (final section in sections)
-                          Padding(
-                            padding: const EdgeInsets.only(right: 8),
-                            child: ChoiceChip(
-                              label: Text(
-                                section.number == null
-                                    ? (section.title ?? 'Other')
-                                    : section.number!,
-                              ),
-                              selected: section.id == chosen.id,
-                              onSelected: (_) =>
-                                  setSheet(() => chosen = section),
-                            ),
-                          ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 14),
-                  _JumpLabel(
-                    chosen.number == null
-                        ? 'Verse'
-                        : 'Verse in chapter ${chosen.number}',
-                  ),
-                  Expanded(
-                    child: GridView.count(
-                      crossAxisCount: 5,
-                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                      mainAxisSpacing: 8,
-                      crossAxisSpacing: 8,
-                      children: [
-                        for (final verse in verses)
-                          Material(
-                            color:
-                                verse.ref == _verses[_index].ref &&
-                                    chosen.id == widget.section.id
-                                ? SadhanaColors.greenTint
-                                : SadhanaColors.searchFill,
-                            borderRadius: BorderRadius.circular(12),
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(12),
-                              onTap: () =>
-                                  Navigator.of(context)
-                                      .pop((s: chosen, ref: verse.ref)),
-                              child: Center(
-                                child: Text(
-                                  (verse.label ?? verse.ref).split('.').last,
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    color: SadhanaColors.ink,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
+    final target = await showJumpSheet(
+      context,
+      repository: widget.repository,
+      work: widget.work,
+      section: widget.section,
+      currentRef: _verses.isEmpty ? null : _verses[_index].ref,
     );
     if (target == null || !mounted) return;
-    if (target.s.id == widget.section.id) {
+    if (target.section.id == widget.section.id) {
       final at = _verses.indexWhere((v) => v.ref == target.ref);
       if (at >= 0) _goTo(at);
       return;
@@ -339,7 +249,7 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
         builder: (_) => VerseReaderScreen(
           repository: widget.repository,
           work: widget.work,
-          section: target.s,
+          section: target.section,
           initialRef: target.ref,
         ),
       ),
@@ -1471,28 +1381,6 @@ Future<void> _pickLanguage(
     ),
   );
   if (chosen != null) onTranslate(chosen);
-}
-
-/// A quiet heading inside the jump sheet, so a row of numbers says what it
-/// is a row of.
-class _JumpLabel extends StatelessWidget {
-  const _JumpLabel(this.text);
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
-    child: Text(
-      text.toUpperCase(),
-      style: const TextStyle(
-        fontSize: 11,
-        letterSpacing: 1.2,
-        fontWeight: FontWeight.w600,
-        color: SadhanaColors.gold,
-      ),
-    ),
-  );
 }
 
 class _SectionLabel extends StatelessWidget {
