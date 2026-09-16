@@ -453,6 +453,32 @@ class PackStore {
           ),
   );
 
+  /// Whether a verse was found to stand on its own, or null when it has not
+  /// been looked at.
+  ///
+  /// Kept beside the other small settings rather than in a table of its own:
+  /// it is one bit per verse, only ever about the verses the day's dice have
+  /// landed on, and losing it costs nothing but asking again.
+  bool? standsAlone(String packId, String workSlug, String ref) =>
+      switch (setting(_standsAloneKey(packId, workSlug, ref))) {
+        'yes' => true,
+        'no' => false,
+        _ => null,
+      };
+
+  void saveStandsAlone({
+    required String packId,
+    required String workSlug,
+    required String ref,
+    required bool stands,
+  }) => saveSetting(
+    _standsAloneKey(packId, workSlug, ref),
+    stands ? 'yes' : 'no',
+  );
+
+  String _standsAloneKey(String packId, String workSlug, String ref) =>
+      'verse.standsAlone/$packId/$workSlug/$ref';
+
   /// Notes this phone wrote for a work: explanations, by ref.
   Map<String, List<LocalTranslation>> localNotes(
     String packId,

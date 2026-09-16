@@ -238,15 +238,50 @@ class ScriptureRepository {
   /// A verse picked at random from every installed work, the same all day.
   ///
   /// [when] is the device's own local time; the day it belongs to is decided
-  /// by [scriptureDay].
-  VerseOfTheDay? verseOfTheDay(DateTime when) {
+  /// by [scriptureDay]. Random rather than sequential: the point is to be
+  /// handed a verse, not to be walked through the book.
+  ///
+  /// [skip] rules a verse out — used for the ones already found to say nothing
+  /// on their own. It is asked about each candidate in turn, and the day gets
+  /// the first that survives, so a phone that has judged nothing yet behaves
+  /// exactly as it did before.
+  VerseOfTheDay? verseOfTheDay(
+    DateTime when, {
+    bool Function(VerseOfTheDay verse)? skip,
+  }) {
+    for (final verse in versesForDay(when)) {
+      if (skip == null || !skip(verse)) return verse;
+    }
+    return null;
+  }
+
+  /// How many verses a day has in reserve behind the one it shows.
+  ///
+  /// Enough that a run of unsuitable verses still leaves one to show, few
+  /// enough that judging them all is a handful of questions rather than a job.
+  static const dayCandidates = 5;
+
+  /// The day's verse and its reserves, in the order they would be taken.
+  List<VerseOfTheDay> versesForDay(DateTime when) {
     final day = scriptureDay(when);
+    final seed = math.Random(day.year * 10000 + day.month * 100 + day.day);
+    final picked = <VerseOfTheDay>[];
+    final seen = <String>{};
+    for (var i = 0; i < dayCandidates; i++) {
+      final verse = _nthVerse(seed);
+      if (verse == null) break;
+      if (seen.add('${verse.work.slug}/${verse.verse.ref}')) picked.add(verse);
+    }
+    return picked;
+  }
+
+  /// One verse drawn from everything installed, by the day's own dice.
+  VerseOfTheDay? _nthVerse(math.Random seed) {
     final candidates = works().where((w) => w.verseCount > 0).toList();
     final total = candidates.fold(0, (n, w) => n + w.verseCount);
     if (total == 0) return null;
 
-    var index = math.Random(day.year * 10000 + day.month * 100 + day.day)
-        .nextInt(total);
+    var index = seed.nextInt(total);
     for (final work in candidates) {
       if (index >= work.verseCount) {
         index -= work.verseCount;

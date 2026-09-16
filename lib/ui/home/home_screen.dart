@@ -4,6 +4,8 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../ai/assistant.dart';
+import '../../ai/verse_judgement.dart';
 import '../../core/transliteration.dart';
 import '../../library/scripture_repository.dart';
 import '../brand_header.dart';
@@ -40,19 +42,86 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   /// shows the new verse without being reopened.
   Timer? _turnover;
 
+  /// The pass working out which of the coming days' verses are worth showing.
+  Future<void>? _judging;
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _waitForTomorrow();
+    Assistant.instance.state.addListener(_judgeAhead);
+    _judgeAhead();
   }
 
   @override
   void dispose() {
     _turnover?.cancel();
+    Assistant.instance.state.removeListener(_judgeAhead);
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
+
+  /// Works out, in advance, which of the coming days' verses say something on
+  /// their own.
+  ///
+  /// Ahead rather than now: a verse that changed a second after it appeared
+  /// would be worse than the wrong verse. Today is shown from what is already
+  /// known, and what is learned here is for tomorrow. With no model installed
+  /// nothing is judged and every verse is eligible, which is how it worked
+  /// before there was a model at all.
+  void _judgeAhead() {
+    if (_judging != null) return;
+    _judging = _judgeTheDaysAhead().whenComplete(() => _judging = null);
+  }
+
+  Future<void> _judgeTheDaysAhead() async {
+    final assistant = Assistant.instance;
+    if (!assistant.state.value.canAnswer) return;
+    final store = widget.repository.store;
+    for (var ahead = 1; ahead <= 2; ahead++) {
+      final day = DateTime.now().add(Duration(days: ahead));
+      for (final candidate in widget.repository.versesForDay(day)) {
+        if (!mounted) return;
+        final work = candidate.work;
+        final known = store.standsAlone(
+          work.pack.packId,
+          work.slug,
+          candidate.verse.ref,
+        );
+        // Settled: that day has its verse, or this one is already ruled out
+        // and the next in line is the one to look at.
+        if (known == true) break;
+        if (known == false) continue;
+        final verdict = await judgeStandalone(
+          assistant,
+          verse: candidate.verse.text,
+          meaning: candidate.verse.translationFor(const ['en', 'hi'])?.text,
+          about: '${work.title}, verse '
+              '${candidate.verse.label ?? candidate.verse.ref}',
+        );
+        // No answer is not a no: leave the day as it stands and try again
+        // another time rather than passing over a verse on a shrug.
+        if (verdict == null) break;
+        store.saveStandsAlone(
+          packId: work.pack.packId,
+          workSlug: work.slug,
+          ref: candidate.verse.ref,
+          stands: verdict,
+        );
+        if (verdict) break;
+      }
+    }
+  }
+
+  /// Verses already found to say nothing on their own.
+  bool _passedOver(VerseOfTheDay candidate) =>
+      widget.repository.store.standsAlone(
+        candidate.work.pack.packId,
+        candidate.work.slug,
+        candidate.verse.ref,
+      ) ==
+      false;
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
@@ -81,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     final onOpenLibrary = widget.onOpenLibrary;
     final onOpenMeditation = widget.onOpenMeditation;
     final onOpenSettings = widget.onOpenSettings;
-    final verse = repository.verseOfTheDay(DateTime.now());
+    final verse = repository.verseOfTheDay(DateTime.now(), skip: _passedOver);
     // Only the header sits on the picture now, so the banner is as tall as
     // it needs to be to read as one rather than as a gap.
     final heroHeight = math.max(

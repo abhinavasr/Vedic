@@ -11,6 +11,7 @@ void openSection(
   WorkSummary work,
   SectionSummary section, {
   String? atRef,
+  bool visiting = false,
 }) => Navigator.of(context).push(
   MaterialPageRoute<void>(
     builder: (_) => section.verseCount > 0
@@ -19,12 +20,17 @@ void openSection(
             work: work,
             section: section,
             initialRef: atRef,
+            visiting: visiting,
           )
         : SectionScreen(repository: repository, work: work, section: section),
   ),
 );
 
 /// Opens the verse of the day, or a search hit, at that verse.
+///
+/// A visit, not a continuation: someone who taps the verse of the day is
+/// being shown one verse of a book they may not be reading, and it must not
+/// cost them the place they had reached in it.
 void openVerseSection(
   BuildContext context,
   ScriptureRepository repository,
@@ -32,7 +38,14 @@ void openVerseSection(
 ) {
   final section = repository.sectionOf(verse.work, verse.sectionId);
   if (section == null) return;
-  openSection(context, repository, verse.work, section, atRef: verse.verse.ref);
+  openSection(
+    context,
+    repository,
+    verse.work,
+    section,
+    atRef: verse.verse.ref,
+    visiting: true,
+  );
 }
 
 class WorkScreen extends StatelessWidget {

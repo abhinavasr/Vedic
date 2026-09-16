@@ -425,10 +425,10 @@ String translationPrompt(
   // and the rule the model is given makes no exception for short strings.
   final source = [?context.work, ?context.chapter].join(', ');
   if (source.isNotEmpty) {
-    out.writeln('Where this comes from:\n<<<\n${_fence(source)}\n>>>');
+    out.writeln('Where this comes from:\n<<<\n${fence(source)}\n>>>');
   }
   if (context.speaker case final speaker?) {
-    out.writeln('Spoken by:\n<<<\n${_fence(speaker.trim())}\n>>>');
+    out.writeln('Spoken by:\n<<<\n${fence(speaker.trim())}\n>>>');
   }
   if (context.previous case final previous?) {
     final label = previous.label == null ? '' : ' (${_label(previous.label!)})';
@@ -436,11 +436,11 @@ String translationPrompt(
     // context, and a wall of markers reads worse to a small model.
     final before = [?previous.speaker, previous.text].join('\n');
     out.writeln(
-      'The verse before this one$label:\n<<<\n${_fence(before.trim())}\n>>>',
+      'The verse before this one$label:\n<<<\n${fence(before.trim())}\n>>>',
     );
     if (previous.transliteration case final iast?) {
       out.writeln(
-        'That verse in Latin letters:\n<<<\n${_fence(iast.trim())}\n>>>',
+        'That verse in Latin letters:\n<<<\n${fence(iast.trim())}\n>>>',
       );
     }
     if (previous.published.isEmpty) {
@@ -454,22 +454,22 @@ String translationPrompt(
     for (final entry in previous.published.entries) {
       out.writeln(
         'What that verse means, in ${entry.key}:'
-        '\n<<<\n${_fence(entry.value.trim())}\n>>>',
+        '\n<<<\n${fence(entry.value.trim())}\n>>>',
       );
     }
   }
   if (out.isNotEmpty) out.writeln();
 
-  out.writeln('Verse to translate ($from):\n<<<\n${_fence(verse.trim())}\n>>>');
+  out.writeln('Verse to translate ($from):\n<<<\n${fence(verse.trim())}\n>>>');
   if (context.transliteration case final iast?) {
     out.writeln(
-      '\nThe same verse in Latin letters:\n<<<\n${_fence(iast.trim())}\n>>>',
+      '\nThe same verse in Latin letters:\n<<<\n${fence(iast.trim())}\n>>>',
     );
   }
   for (final entry in context.published.entries) {
     out.writeln(
       '\nA published translation, in ${entry.key}:'
-      '\n<<<\n${_fence(entry.value.trim())}\n>>>',
+      '\n<<<\n${fence(entry.value.trim())}\n>>>',
     );
   }
 
@@ -673,10 +673,10 @@ String notePrompt(
 }) {
   final out = StringBuffer();
   if (about != null && about.trim().isNotEmpty) {
-    out.writeln('What this explains:\n<<<\n${_fence(about.trim())}\n>>>\n');
+    out.writeln('What this explains:\n<<<\n${fence(about.trim())}\n>>>\n');
   }
   out.writeln('Explanation to translate ($from):');
-  out.writeln('<<<\n${_fence(note.trim())}\n>>>');
+  out.writeln('<<<\n${fence(note.trim())}\n>>>');
   out.write(
     '\nNow translate that explanation into ${language.described}, '
     'in the ${language.scriptName} script, keeping its paragraphs.'
@@ -758,7 +758,7 @@ Stream<TranslationProgress> translateNoteStream(
 
 /// Breaks up marker sequences inside the verse, so content cannot close its
 /// own fence.
-String _fence(String text) {
+String fence(String text) {
   var out = text;
   while (out.contains('<<<') || out.contains('>>>')) {
     out = out.replaceAll('<<<', '<\u200B<<').replaceAll('>>>', '>\u200B>>');

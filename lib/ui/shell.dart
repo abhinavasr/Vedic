@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../library/scripture_repository.dart';
+import 'bookmarks_screen.dart';
 import 'home/home_screen.dart';
 import 'library_screen.dart';
 import 'meditation_screen.dart';
@@ -19,7 +20,14 @@ class SadhanaShell extends StatefulWidget {
 class _SadhanaShellState extends State<SadhanaShell> {
   var _tab = 0;
 
-  void _open(int tab) => setState(() => _tab = tab);
+  /// Counts visits to the bookmarks tab, so it re-reads the list when opened
+  /// rather than showing what was there when the app started.
+  var _bookmarkVisits = 0;
+
+  void _open(int tab) => setState(() {
+    _tab = tab;
+    if (tab == 2) _bookmarkVisits++;
+  });
 
   void _openSettings() =>
       Navigator.of(context)
@@ -42,13 +50,13 @@ class _SadhanaShellState extends State<SadhanaShell> {
           problem: widget.problem,
           onOpenSettings: _openSettings,
         ),
-        const ComingSoonScreen(
-          title: 'Insights',
-          icon: Icons.spa_outlined,
-          message:
-              'Ask questions about your scriptures and documents. Answers are '
-              'computed on this phone and cite the verses they come from. '
-              'Arrives with the on-device assistant download.',
+        // Where the bookmark button leads. It has been in the reader from the
+        // start with nowhere to go, which made keeping a verse a way of
+        // losing it.
+        BookmarksScreen(
+          repository: widget.repository,
+          onOpenSettings: _openSettings,
+          revision: _bookmarkVisits,
         ),
         const MeditationScreen(),
       ],
@@ -68,9 +76,9 @@ class _SadhanaShellState extends State<SadhanaShell> {
           label: 'Library',
         ),
         NavigationDestination(
-          icon: Icon(Icons.spa_outlined),
-          selectedIcon: Icon(Icons.spa),
-          label: 'Insights',
+          icon: Icon(Icons.bookmark_border),
+          selectedIcon: Icon(Icons.bookmark),
+          label: 'Bookmarks',
         ),
         NavigationDestination(
           icon: Icon(Icons.self_improvement),

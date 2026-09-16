@@ -27,6 +27,7 @@ class VerseReaderScreen extends StatefulWidget {
     required this.work,
     required this.section,
     this.initialRef,
+    this.visiting = false,
   });
 
   final ScriptureRepository repository;
@@ -35,6 +36,14 @@ class VerseReaderScreen extends StatefulWidget {
 
   /// The verse to open at, e.g. from the verse of the day.
   final String? initialRef;
+
+  /// Whether this is a visit rather than a continuation.
+  ///
+  /// Arriving from the verse of the day drops someone into the middle of a
+  /// book they may not be reading. Their place in it stays where they left it
+  /// until they turn a page here, which is the point at which they are
+  /// reading rather than looking.
+  final bool visiting;
 
   @override
   State<VerseReaderScreen> createState() => _VerseReaderScreenState();
@@ -344,16 +353,21 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
 
   PassageView? get _verse => _verses.isEmpty ? null : _verses[_index];
 
+  /// Whether the reader has moved off the verse they arrived at.
+  var _moved = false;
+
   /// Remembers where the reader is, and whether this verse is bookmarked.
   void _syncVerse() {
     final verse = _verse;
     if (verse == null) return;
     final pack = widget.work.pack.packId;
-    widget.repository.store.saveLastRead(
-      packId: pack,
-      workSlug: widget.work.slug,
-      ref: verse.ref,
-    );
+    if (!widget.visiting || _moved) {
+      widget.repository.store.saveLastRead(
+        packId: pack,
+        workSlug: widget.work.slug,
+        ref: verse.ref,
+      );
+    }
     _bookmarked = widget.repository.store.isBookmarked(
       pack,
       widget.work.slug,
@@ -697,6 +711,7 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
                             onPageChanged: (index) {
                               setState(() {
                                 _index = index;
+                                _moved = true;
                                 _syncVerse();
                               });
                               // Keep the work ahead of where they now are.
