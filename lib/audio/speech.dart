@@ -56,13 +56,55 @@ class SpokenChoice {
   final String description;
 }
 
+/// The platform's voice, behind a seam so the logic above it can be tested
+/// without a phone.
+abstract class SpeechEngine {
+  Future<List<Object?>> languages();
+
+  /// Makes [speak] return when the voice has finished rather than when it
+  /// starts.
+  Future<void> awaitCompletion();
+
+  Future<void> configure({required String locale, required double rate});
+
+  Future<void> speak(String text);
+
+  Future<void> stop();
+}
+
+class PlatformSpeech implements SpeechEngine {
+  PlatformSpeech({FlutterTts? tts}) : _tts = tts ?? FlutterTts();
+
+  final FlutterTts _tts;
+
+  @override
+  Future<List<Object?>> languages() async =>
+      await _tts.getLanguages as List<Object?>;
+
+  @override
+  Future<void> awaitCompletion() => _tts.awaitSpeakCompletion(true);
+
+  @override
+  Future<void> configure({required String locale, required double rate}) async {
+    await _tts.setLanguage(locale);
+    await _tts.setSpeechRate(rate);
+    await _tts.setPitch(1);
+  }
+
+  @override
+  Future<void> speak(String text) => _tts.speak(text);
+
+  @override
+  Future<void> stop() => _tts.stop();
+}
+
 class VerseSpeech {
-  VerseSpeech({FlutterTts? tts}) : _tts = tts ?? FlutterTts();
+  VerseSpeech({SpeechEngine? engine}) : _tts = engine ?? PlatformSpeech();
 
   /// The app's. Replaceable in tests.
   static VerseSpeech instance = VerseSpeech();
 
-  final FlutterTts _tts;
+  final SpeechEngine _tts;
 
   /// The passage being read aloud, so one verse's control shows as playing
   /// and the others do not.
@@ -71,12 +113,16 @@ class VerseSpeech {
   var _wired = false;
   Set<String>? _available;
 
+  /// Bumped by every stop and every new utterance, so a finished `speak` can
+  /// tell whether it ran to the end or was cut off.
+  var _token = 0;
+
   /// Which languages this phone can actually speak. Empty when the platform
   /// will not say, in which case every language is attempted.
   Future<Set<String>> availableLocales() async {
     if (_available case final known?) return known;
     try {
-      final languages = await _tts.getLanguages as List<Object?>;
+      final languages = await _tts.languages();
       return _available = {
         for (final language in languages) '$language'.toLowerCase(),
       };
@@ -120,24 +166,31 @@ class VerseSpeech {
 
   /// Reads [choice] aloud, and stops anything already being read.
   /// Reads [choice] aloud and returns when the voice has finished.
-  Future<void> speak(String ref, SpokenChoice choice) async {
+  ///
+  /// False means it was cut off — stopped by the reader, or replaced by
+  /// another utterance. A caller reading straight through must not treat that
+  /// as "this verse is done" and turn the page.
+  Future<bool> speak(String ref, SpokenChoice choice) async {
     await stop();
     await _wire();
+    final token = ++_token;
     try {
-      await _tts.setLanguage(choice.locale);
       // Scripture read at conversational speed runs away from the reader.
-      await _tts.setSpeechRate(0.42);
-      await _tts.setPitch(1);
+      await _tts.configure(locale: choice.locale, rate: 0.42);
       speaking.value = ref;
       await _tts.speak(choice.text);
-      speaking.value = null;
     } on Object {
-      speaking.value = null;
+      if (token == _token) speaking.value = null;
       rethrow;
     }
+    if (token != _token) return false;
+    speaking.value = null;
+    return true;
   }
 
   Future<void> stop() async {
+    // Before the await: anything in flight is now cut off, whoever is asking.
+    _token++;
     speaking.value = null;
     try {
       await _tts.stop();
@@ -151,10 +204,6 @@ class VerseSpeech {
     _wired = true;
     // Makes speak() finish when the voice does, which is what lets one verse
     // hand over to the next.
-    await _tts.awaitSpeakCompletion(true);
-    _tts
-      ..setCompletionHandler(() => speaking.value = null)
-      ..setCancelHandler(() => speaking.value = null)
-      ..setErrorHandler((_) => speaking.value = null);
+    await _tts.awaitCompletion();
   }
 }

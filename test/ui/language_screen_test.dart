@@ -76,6 +76,17 @@ void main() {
     expect(seen, 'Hindi', reason: 'the open screen rebuilt on its own');
   });
 
+  test('reading the explanation aloud is remembered', () {
+    // It was written as a literal, so the toggle never survived a restart.
+    final settings = _MemorySettings();
+    final reading = ReadingLanguage(settings)..withExplanation = true;
+    expect(settings.values['reading.speakExplanation'], 'true');
+    expect(ReadingLanguage(settings).withExplanation, isTrue);
+
+    reading.withExplanation = false;
+    expect(ReadingLanguage(settings).withExplanation, isFalse);
+  });
+
   test('the reader\'s language leads, with the common two behind it', () {
     final settings = _MemorySettings()..values['reading.language'] = 'mr';
     expect(ReadingLanguage(settings).preference, ['mr', 'en', 'hi']);

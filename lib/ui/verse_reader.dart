@@ -95,7 +95,9 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
         await Future<void>.delayed(const Duration(seconds: 3));
       } else {
         try {
-          await speech.speak(verse.ref, choice);
+          // False means it was stopped rather than finished, and a stop must
+          // not turn the page.
+          if (!await speech.speak(verse.ref, choice)) break;
         } on Object {
           break;
         }
@@ -133,12 +135,13 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
                     child: Text(
                       'Go to',
                       style: serif(size: 20, color: SadhanaColors.ink),
                     ),
                   ),
+                  const _JumpLabel('Chapter'),
                   SizedBox(
                     height: 44,
                     child: ListView(
@@ -162,7 +165,12 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 14),
+                  _JumpLabel(
+                    chosen.number == null
+                        ? 'Verse'
+                        : 'Verse in chapter ${chosen.number}',
+                  ),
                   Expanded(
                     child: GridView.count(
                       crossAxisCount: 5,
@@ -1077,6 +1085,28 @@ Future<void> _pickLanguage(
     ),
   );
   if (chosen != null) onTranslate(chosen);
+}
+
+/// A quiet heading inside the jump sheet, so a row of numbers says what it
+/// is a row of.
+class _JumpLabel extends StatelessWidget {
+  const _JumpLabel(this.text);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
+    child: Text(
+      text.toUpperCase(),
+      style: const TextStyle(
+        fontSize: 11,
+        letterSpacing: 1.2,
+        fontWeight: FontWeight.w600,
+        color: SadhanaColors.gold,
+      ),
+    ),
+  );
 }
 
 class _SectionLabel extends StatelessWidget {

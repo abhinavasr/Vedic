@@ -26,10 +26,10 @@ Future<SpokenChoice?> spokenVerse(
       .join(' ');
   if (explanation.isEmpty) return choice;
   return SpokenChoice(
-    text: '\${choice.text}\n\n\$explanation',
+    text: '${choice.text}\n\n$explanation',
     locale: choice.locale,
     languageCode: choice.languageCode,
-    description: '\${choice.description}, with the explanation',
+    description: '${choice.description}, with the explanation',
   );
 }
 
@@ -49,11 +49,14 @@ class ListenMeaning extends StatefulWidget {
   final Future<void> Function()? onBeforePlay;
 
   @override
-  State<ListenMeaning> createState() => ListenMeaningState();
+  State<ListenMeaning> createState() => _ListenMeaningState();
 }
 
-class ListenMeaningState extends State<ListenMeaning> {
+class _ListenMeaningState extends State<ListenMeaning> {
   SpokenChoice? _choice;
+
+  /// Whether this verse has an explanation to add at all.
+  bool get _hasExplanation => widget.verse.explanations.isNotEmpty;
 
   @override
   void initState() {
@@ -77,10 +80,12 @@ class ListenMeaningState extends State<ListenMeaning> {
 
   Future<void> _tap(bool speaking) async {
     final speech = VerseSpeech.instance;
+    // Either way this verse is taking the voice, so reading-straight-through
+    // stands down first — otherwise stopping here looks like a page turn.
+    await widget.onBeforePlay?.call();
     if (speaking) return speech.stop();
     final choice = _choice;
     if (choice == null) return;
-    await widget.onBeforePlay?.call();
     try {
       await speech.speak(widget.verse.ref, choice);
     } on Object {
@@ -99,6 +104,7 @@ class ListenMeaningState extends State<ListenMeaning> {
       valueListenable: VerseSpeech.instance.speaking,
       builder: (context, ref, _) {
         final speaking = ref == widget.verse.ref;
+        final reading = ReadingLanguageScope.of(context);
         return InkWell(
           borderRadius: BorderRadius.circular(28),
           onTap: () => _tap(speaking),
@@ -135,10 +141,65 @@ class ListenMeaningState extends State<ListenMeaning> {
                   ],
                 ),
               ),
+              // The choice belongs beside the control it changes, not in a
+              // settings screen two taps away. It is remembered either way.
+              if (_hasExplanation)
+                _WithExplanation(
+                  on: reading.withExplanation,
+                  onChanged: (on) {
+                    reading.withExplanation = on;
+                    _pick();
+                  },
+                ),
             ],
           ),
         );
       },
     );
   }
+}
+
+/// A small switch beside the listen control: read the explanation too.
+class _WithExplanation extends StatelessWidget {
+  const _WithExplanation({required this.on, required this.onChanged});
+
+  final bool on;
+  final void Function(bool on) onChanged;
+
+  @override
+  Widget build(BuildContext context) => Tooltip(
+    message: on
+        ? 'The explanation is read too'
+        : 'Read the explanation as well',
+    child: Material(
+      color: on ? SadhanaColors.greenTint : Colors.transparent,
+      shape: const StadiumBorder(side: BorderSide(color: SadhanaColors.line)),
+      child: InkWell(
+        key: const ValueKey('with-explanation'),
+        customBorder: const StadiumBorder(),
+        onTap: () => onChanged(!on),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                on ? Icons.check : Icons.add,
+                size: 15,
+                color: on ? SadhanaColors.green : SadhanaColors.inkSoft,
+              ),
+              const SizedBox(width: 4),
+              Text(
+                'Explanation',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: on ? SadhanaColors.green : SadhanaColors.inkSoft,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
 }

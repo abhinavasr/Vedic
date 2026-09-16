@@ -41,7 +41,7 @@ class ReadingLanguage extends ChangeNotifier {
   set withExplanation(bool on) {
     if (on == _withExplanation) return;
     _withExplanation = on;
-    settings?.write(_explanationKey, '\$on');
+    settings?.write(_explanationKey, on ? 'true' : 'false');
     notifyListeners();
   }
 
