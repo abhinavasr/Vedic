@@ -1,10 +1,12 @@
 import 'dart:async';
 
+import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 
 import '../ai/fill_ahead.dart';
 import '../ai/reading_languages.dart';
 import '../ai/translation.dart';
+import '../audio/chant_session.dart';
 import '../audio/listen_player.dart';
 import '../library/scripture_repository.dart';
 import 'listen_meaning.dart';
@@ -36,7 +38,7 @@ class ListenScreen extends StatefulWidget {
   State<ListenScreen> createState() => _ListenScreenState();
 }
 
-class _ListenScreenState extends State<ListenScreen> {
+class _ListenScreenState extends State<ListenScreen> implements ListenControls {
   late SectionSummary _section = widget.section;
   late var _verses = widget.repository.verses(widget.work, _section);
   late var _index = _startingIndex();
@@ -61,6 +63,7 @@ class _ListenScreenState extends State<ListenScreen> {
     super.initState();
     // Re-read the passages whenever the phone has written another translation,
     // so a verse filled in while this one plays is ready when it is reached.
+    ChantSession.instance?.controls = this;
     _fill.onFilled = () {
       if (!mounted) return;
       setState(() => _verses = widget.repository.verses(widget.work, _section));
@@ -77,8 +80,44 @@ class _ListenScreenState extends State<ListenScreen> {
   @override
   void dispose() {
     _playing = false;
+    final session = ChantSession.instance;
+    if (identical(session?.controls, this)) session?.clear();
     VersePlayer.instance.stop();
     super.dispose();
+  }
+
+  // The notification's buttons. They drive the same loop the on-screen
+  // controls do, so the two can never disagree about what is playing.
+
+  @override
+  Future<void> resume() => _playOn();
+
+  @override
+  Future<void> halt() => _stop();
+
+  @override
+  Future<void> forward() => _goTo(_index + 1);
+
+  @override
+  Future<void> back() => _goTo(_index - 1);
+
+  /// Tells the lock screen what is playing, and what the buttons should say.
+  void _publish() {
+    final verse = _verse;
+    final session = ChantSession.instance;
+    if (session == null || verse == null) return;
+    session.controls = this;
+    session.show(
+      MediaItem(
+        id: verse.ref,
+        title: '${widget.work.title}  ·  ${verse.label ?? verse.ref}',
+        album: _section.number == null
+            ? widget.work.title
+            : 'Chapter ${_section.number}',
+        artist: 'Vāgdhenu',
+      ),
+      playing: _playing,
+    );
   }
 
   PassageView? get _verse =>
@@ -107,6 +146,7 @@ class _ListenScreenState extends State<ListenScreen> {
     final reading = _reading;
     if (reading == null) return;
     setState(() => _playing = true);
+    _publish();
     while (mounted && _playing) {
       final verse = _verse;
       if (verse == null) break;
@@ -129,12 +169,18 @@ class _ListenScreenState extends State<ListenScreen> {
       if (!mounted || !_playing) break;
       if (_index >= _verses.length - 1) break;
       setState(() => _index++);
+      _publish();
     }
-    if (mounted) setState(() => _playing = false);
+    if (mounted) {
+      setState(() => _playing = false);
+      _publish();
+    }
   }
 
   Future<void> _stop() async {
-    setState(() => _playing = false);
+    if (mounted) setState(() => _playing = false);
+    _playing = false;
+    _publish();
     await VersePlayer.instance.stop();
   }
 
@@ -145,6 +191,7 @@ class _ListenScreenState extends State<ListenScreen> {
     await _stop();
     if (!mounted) return;
     setState(() => _index = index);
+    _publish();
     _fillAhead();
     if (wasPlaying) unawaited(_playOn());
   }
