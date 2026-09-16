@@ -2,7 +2,7 @@
   "format": "vedic-pack-content",
   "format_version": 1,
   "pack_id": "bhagavad-gita.sa",
-  "revision": 3,
+  "revision": 4,
   "languages": [
     "sa",
     "hi",
@@ -7508,6 +7508,61 @@
               "lines": [
                 "ज्यायसी चेत्कर्मणस्ते मता बुद्धिर्जनार्दन ।",
                 "तत्किं कर्मणि घोरे मां नियोजयसि केशव ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "jyāyasī cetkarmaṇaste matā buddhirjanārdana |",
+                    "tatkiṃ karmaṇi ghore māṃ niyojayasi keśava ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अर्जुन बोले: हे जनार्दन! यदि आपको कर्म की अपेक्षा ज्ञान श्रेष्ठ मान्य है, तो फिर हे केशव! मुझे इस भयंकर कर्म (युद्ध) में क्यों लगाते हैं?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Arjuna said: O Janardana, O Keshava, if You consider intelligence (knowledge) to be better than fruitive work, why do You want to engage me in this ghastly warfare?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna is confused by Krishna's previous teachings. If detached knowledge and equanimity are superior to action, he wonders why Krishna is pushing him into the horrific action of war instead of letting him renounce the world.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन कृष्ण की पिछली शिक्षाओं से भ्रमित हैं। यदि ज्ञान और समभाव कर्म से श्रेष्ठ हैं, तो वह सोच रहे हैं कि कृष्ण उन्हें दुनिया को त्यागने देने के बजाय युद्ध के भयानक कार्य में क्यों धकेल रहे हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual teachings can seem contradictory to a confused mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "It is natural to question apparent paradoxes in philosophy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7517,6 +7572,61 @@
               "lines": [
                 "व्यामिश्रेणेव वाक्येन बुद्धिं मोहयसीव मे ।",
                 "तदेकं वद निश्चित्य येन श्रेयोऽहमाप्नुयाम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "vyāmiśreṇeva vākyena buddhiṃ mohayasīva me |",
+                    "tadekaṃ vada niścitya yena śreyo'hamāpnuyām ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "आप मिले हुए-से वचनों से मेरी बुद्धि को मानो मोहित कर रहे हैं। इसलिए उस एक बात को निश्चित करके कहिए, जिससे मैं कल्याण को प्राप्त होऊँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "My intelligence is bewildered by Your equivocal instructions. Therefore, please tell me decisively which will be most beneficial for me.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna admits that Krishna's mixed statements about action (Karma) and knowledge (Jnana) have overwhelmed his intellect. He explicitly asks for one clear, decisive path to follow.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन स्वीकार करते हैं कि कर्म और ज्ञान के बारे में कृष्ण के मिश्रित बयानों ने उनकी बुद्धि को अभिभूत कर दिया है। वह स्पष्ट रूप से पालन करने के लिए एक निश्चित मार्ग पूछते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Seek clarity when faced with complex instructions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A true seeker demands a direct, unambiguous path.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7529,6 +7639,61 @@
               "lines": [
                 "लोकेऽस्मिन् द्विविधा निष्ठा पुरा प्रोक्ता मयानघ ।",
                 "ज्ञानयोगेन साङ्ख्यानां कर्मयोगेन योगिनाम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "loke'smin dvividhā niṣṭhā purā proktā mayānagha |",
+                    "jñānayogena sāṅkhyānāṃ karmayogena yoginām ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रीभगवान् बोले: हे निष्पाप! इस लोक में दो प्रकार की निष्ठा (साधन की परिपक्वावस्था) मेरे द्वारा पहले कही गई है। उनमें से सांख्यवादियों की निष्ठा तो ज्ञानयोग से और योगियों की निष्ठा कर्मयोग से होती है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Supreme Personality of Godhead said: O sinless Arjuna, I have already explained that there are two classes of men who try to realize the self. Some are inclined to understand it by empirical, philosophical speculation, and others by devotional service.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna clarifies that there are two fundamental paths to self-realization that He has established: the path of knowledge and contemplation (Jnana Yoga) for the introspective, and the path of unselfish action (Karma Yoga) for the active.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण स्पष्ट करते हैं कि आत्म-साक्षात्कार के दो मूलभूत मार्ग हैं: आत्मनिरीक्षण करने वालों के लिए ज्ञान योग, और सक्रिय लोगों के लिए निःस्वार्थ कर्म योग।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Different personalities require different spiritual paths.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Both contemplation and selfless action lead to the same ultimate truth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7538,6 +7703,61 @@
               "lines": [
                 "न कर्मणामनारम्भान्नैष्कर्म्यं पुरुषोऽश्नुते ।",
                 "न च संन्यसनादेव सिद्धिं समधिगच्छति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "na karmaṇāmanārambhānnaiṣkarmyaṃ puruṣo'śnute |",
+                    "na ca saṃnyasanādeva siddhiṃ samadhigacchati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मनुष्य न तो कर्मों का आरम्भ किए बिना निष्कर्मता को (जिस अवस्था में कर्मों के फल से लेप नहीं होता) प्राप्त होता है और न कर्मों के केवल त्याग मात्र से सिद्धि (योगसंसिद्धि) को ही प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Not by merely abstaining from work can one achieve freedom from reaction, nor by renunciation alone can one attain perfection.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna warns against superficial renunciation. Simply stopping physical activity does not mean one is free from karmic reactions, nor does abandoning duties automatically lead to spiritual perfection.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण सतही वैराग्य के खिलाफ चेतावनी देते हैं। केवल शारीरिक गतिविधि को रोकने का मतलब यह नहीं है कि कोई कर्मों के बंधन से मुक्त है, और न ही केवल कर्तव्यों को छोड़ने से आध्यात्मिक पूर्णता प्राप्त होती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True freedom is not found in escaping responsibilities.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Physical inaction does not equal spiritual advancement.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7547,6 +7767,61 @@
               "lines": [
                 "न हि कश्चित्क्षणमपि जातु तिष्ठत्यकर्मकृत् ।",
                 "कार्यते ह्यवशः कर्म सर्वः प्रकृतिजैर्गुणैः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "na hi kaścitkṣaṇamapi jātu tiṣṭhatyakarmakṛt |",
+                    "kāryate hyavaśaḥ karma sarvaḥ prakṛtijairguṇaiḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "निःसन्देह कोई भी मनुष्य किसी भी काल में क्षणमात्र भी बिना कर्म किए नहीं रहता; क्योंकि सारा मनुष्य समुदाय प्रकृति जनित गुणों द्वारा परवश हुआ कर्म करने के लिए बाध्य है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Everyone is forced to act helplessly according to the qualities he has acquired from the modes of material nature; therefore no one can refrain from doing something, not even for a moment.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Total inaction is a biological and psychological impossibility. The natural modes of material nature (Gunas) force everyone to act—whether breathing, thinking, or moving—at all times.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "पूर्ण निष्क्रियता एक जैविक और मनोवैज्ञानिक असंभवता है। भौतिक प्रकृति के गुण हर किसी को हर समय कार्य करने—सांस लेने, सोचने या चलने—के लिए मजबूर करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Action is an inescapable law of nature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "We are constantly driven by our underlying nature (Gunas).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7556,6 +7831,61 @@
               "lines": [
                 "कर्मेन्द्रियाणि संयम्य य आस्ते मनसा स्मरन् ।",
                 "इन्द्रियार्थान्विमूढात्मा मिथ्याचारः स उच्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "karmendriyāṇi saṃyamya ya āste manasā smaran |",
+                    "indriyārthānvimūḍhātmā mithyācāraḥ sa ucyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो मूढ़बुद्धि मनुष्य सम्पूर्ण इन्द्रियों को हठपूर्वक ऊपर से रोककर मन से उन इन्द्रियों के विषयों का चिन्तन करता रहता है, वह मिथ्याचारी अर्थात् दम्भी कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One who restrains the senses of action but whose mind dwells on sense objects certainly deludes himself and is called a pretender.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna strongly condemns hypocrisy. Forcibly restraining the body while the mind is still fantasizing about sense objects is not spirituality; it is self-delusion and pretense.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण पाखंड की कड़ी निंदा करते हैं। शरीर को जबरन रोकना जबकि मन अभी भी विषयों के बारे में कल्पना कर रहा है, आध्यात्मिकता नहीं है; यह आत्म-छल है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Mental purity is more important than external asceticism.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Repression of desires without inner transformation leads to hypocrisy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7565,6 +7895,61 @@
               "lines": [
                 "यस्त्विन्द्रियाणि मनसा नियम्यारभतेऽर्जुन ।",
                 "कर्मेन्द्रियैः कर्मयोगमसक्तः स विशिष्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yastvindriyāṇi manasā niyamyārabhate'rjuna |",
+                    "karmendriyaiḥ karmayogamasaktaḥ sa viśiṣyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "किन्तु हे अर्जुन! जो पुरुष मन से इन्द्रियों को वश में करके अनासक्त हुआ सम्पूर्ण इन्द्रियों द्वारा कर्मयोग का आचरण करता है, वही श्रेष्ठ है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "On the other hand, if a sincere person tries to control the active senses by the mind and begins karma-yoga (in Krishna consciousness) without attachment, he is by far superior.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "True superiority lies in inner control. A person who genuinely controls the mind, restrains the senses, and performs their worldly duties without attachment to the results is the true practitioner of Karma Yoga.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सच्ची श्रेष्ठता आंतरिक नियंत्रण में है। जो व्यक्ति मन को नियंत्रित करता है और अनासक्त होकर अपने सांसारिक कर्तव्यों का पालन करता है, वही कर्म योग का सच्चा साधक है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Sincere engagement is better than fake renunciation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Detached action is the path of the genuinely wise.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7574,6 +7959,61 @@
               "lines": [
                 "नियतं कुरु कर्म त्वं कर्म ज्यायो ह्यकर्मणः ।",
                 "शरीरयात्रापि च ते न प्रसिद्ध्येदकर्मणः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "niyataṃ kuru karma tvaṃ karma jyāyo hyakarmaṇaḥ |",
+                    "śarīrayātrāpi ca te na prasiddhyedakarmaṇaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "तू शास्त्रविहित कर्त्तव्य कर्म कर, क्योंकि कर्म न करने की अपेक्षा कर्म करना श्रेष्ठ है, तथा कर्म न करने से तेरा शरीर-निर्वाह भी नहीं सिद्ध होगा।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Perform your prescribed duty, for doing so is better than not working. One cannot even maintain one's physical body without work.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna gives practical advice: Do your duty. Action is inherently better than inaction. Without action, even basic survival and the maintenance of the physical body become impossible.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण व्यावहारिक सलाह देते हैं: अपना कर्तव्य करो। निष्क्रियता की तुलना में कर्म करना स्वाभाविक रूप से बेहतर है। कर्म के बिना जीवन निर्वाह भी संभव नहीं है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Duty is the practical foundation of life.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Action is necessary for both material survival and spiritual growth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7583,6 +8023,61 @@
               "lines": [
                 "यज्ञार्थात्कर्मणोऽन्यत्र लोकोऽयं कर्मबन्धनः ।",
                 "तदर्थं कर्म कौन्तेय मुक्तसङ्गः समाचर ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yajñārthātkarmaṇo'nyatra loko'yaṃ karmabandhanaḥ |",
+                    "tadarthaṃ karma kaunteya muktasaṅgaḥ samācara ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "यज्ञ (विष्णु) के निमित्त किए जाने वाले कर्मों के अतिरिक्त दूसरे कर्मों में लगा हुआ ही यह मनुष्य-समुदाय कर्मों से बँधता है। इसलिए हे अर्जुन! तू आसक्ति से रहित होकर उस यज्ञ के निमित्त ही भलीभाँति कर्त्तव्य-कर्म कर।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Work done as a sacrifice for Vishnu has to be performed, otherwise work causes bondage in this material world. Therefore, O son of Kunti, perform your prescribed duties for His satisfaction, and in that way you will always remain free from bondage.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Any action done for selfish motives binds a person to the cycle of karma. However, action performed as a sacrifice (Yajna)—dedicated to the Supreme without attachment—frees one from this bondage.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "स्वार्थ के लिए किया गया कोई भी कर्म व्यक्ति को कर्म के चक्र में बाँधता है। हालाँकि, यज्ञ (ईश्वर को समर्पित) के रूप में किया गया कर्म मनुष्य को इस बंधन से मुक्त करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Selfish work binds; selfless work liberates.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Dedicate your actions to a higher purpose to avoid karmic entanglement.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7592,6 +8087,61 @@
               "lines": [
                 "सहयज्ञाः प्रजाः सृष्ट्वा पुरोवाच प्रजापतिः ।",
                 "अनेन प्रसविष्यध्वमेष वोऽस्त्विष्टकामधुक् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sahayajñāḥ prajāḥ sṛṣṭvā purovāca prajāpatiḥ |",
+                    "anena prasaviṣyadhvameṣa vo'stviṣṭakāmadhuk ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "प्रजापति ब्रह्मा ने कल्प के आदि में यज्ञसहित प्रजाओं को रचकर उनसे कहा कि तुम लोग इस यज्ञ द्वारा वृद्धि को प्राप्त होओ और यह यज्ञ तुम लोगों को इच्छित भोग प्रदान करने वाला हो।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "In the beginning of creation, the Lord of all creatures sent forth generations of men and demigods, along with sacrifices for Vishnu, and blessed them by saying, 'Be thou happy by this yajna (sacrifice) because its performance will bestow upon you everything desirable for living happily and achieving liberation.'",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna explains that the universe is built on the principle of sacrifice and mutual cooperation. The Creator (Prajapati) established this system so that beings could fulfill their needs while progressing spiritually.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण बताते हैं कि ब्रह्मांड यज्ञ और सहयोग के सिद्धांत पर बना है। प्रजापति ने इस प्रणाली की स्थापना इसलिए की ताकि मनुष्य अपनी आध्यात्मिक उन्नति करते हुए अपनी आवश्यकताओं को पूरा कर सकें।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The universe operates on the principle of mutual sacrifice and giving.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Fulfilling duties selflessly ensures collective prosperity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7601,6 +8151,61 @@
               "lines": [
                 "देवान्भावयतानेन ते देवा भावयन्तु वः ।",
                 "परस्परं भावयन्तः श्रेयः परमवाप्स्यथ ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "devānbhāvayatānena te devā bhāvayantu vaḥ |",
+                    "parasparaṃ bhāvayantaḥ śreyaḥ paramavāpsyatha ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "तुम लोग इस यज्ञ द्वारा देवताओं को उन्नत करो और वे देवता तुम लोगों को उन्नत करें। इस प्रकार निःस्वार्थ भाव से एक-दूसरे को उन्नत करते हुए तुम लोग परम कल्याण को प्राप्त हो जाओगे।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The demigods, being pleased by sacrifices, will also please you, and thus, by cooperation between men and demigods, prosperity will reign for all.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "There is a symbiotic relationship between humans and cosmic forces (devas). By offering sacrifice and doing one's duty, nature responds favorably, creating a harmonious and prosperous environment for everyone.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "मनुष्यों और ब्रह्मांडीय शक्तियों (देवताओं) के बीच एक सहजीवी संबंध है। यज्ञ और अपना कर्तव्य करने से, प्रकृति अनुकूल प्रतिक्रिया देती है, जिससे सभी के लिए समृद्धि आती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Cooperation with natural laws brings prosperity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "We thrive when we support the systems that sustain us.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7610,6 +8215,61 @@
               "lines": [
                 "इष्टान्भोगान्हि वो देवा दास्यन्ते यज्ञभाविताः ।",
                 "तैर्दत्तानप्रदायैभ्यो यो भुङ्क्ते स्तेन एव सः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "iṣṭānbhogānhi vo devā dāsyante yajñabhāvitāḥ |",
+                    "tairdattānapradāyaibhyo yo bhuṅkte stena eva saḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "यज्ञ द्वारा बढ़ाए हुए देवता तुम लोगों को बिना माँगे ही इच्छित भोग निश्चय ही देते रहेंगे। इस प्रकार उन देवताओं द्वारा दिए हुए भोगों को जो पुरुष उनको बिना दिए स्वयं भोगता है, वह चोर ही है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "In charge of the various necessities of life, the demigods, being satisfied by the performance of yajna (sacrifice), will supply all necessities to you. But he who enjoys such gifts without offering them to the demigods in return is certainly a thief.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Nature provides abundantly for our needs. Taking these resources for personal enjoyment without giving back—through gratitude, duty, and sacrifice—is equated to theft.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "प्रकृति हमारी आवश्यकताओं को प्रचुर मात्रा में पूरा करती है। कृतज्ञता, कर्तव्य और यज्ञ के माध्यम से वापस दिए बिना इन संसाधनों को व्यक्तिगत आनंद के लिए लेना चोरी के समान है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Consume the world's resources with gratitude and responsibility.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Selfish consumption without contributing back is a moral crime.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7619,6 +8279,61 @@
               "lines": [
                 "यज्ञशिष्टाशिनः सन्तो मुच्यन्ते सर्वकिल्बिषैः ।",
                 "भुञ्जते ते त्वघं पापा ये पचन्त्यात्मकारणात् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yajñaśiṣṭāśinaḥ santo mucyante sarvakilbiṣaiḥ |",
+                    "bhuñjate te tvaghaṃ pāpā ye pacantyātmakāraṇāt ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "यज्ञ से बचे हुए अन्न को खाने वाले श्रेष्ठ पुरुष सब पापों से मुक्त हो जाते हैं और जो पापी लोग अपने शरीर-पोषण के लिए ही अन्न पकाते हैं, वे तो पाप को ही खाते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The devotees of the Lord are released from all kinds of sins because they eat food which is offered first for sacrifice. Others, who prepare food for personal sense enjoyment, verily eat only sin.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Those who recognize that all provisions come from the Supreme and offer their actions/food first in gratitude are freed from sin. Those who hoard and consume entirely selfishly generate negative karma.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जो लोग यह मानते हैं कि सब कुछ ईश्वर से आता है और कृतज्ञता में अपना कर्म/भोजन अर्पित करते हैं, वे पाप से मुक्त हो जाते हैं। केवल अपने लिए जीने वाले पापी हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Offer gratitude before you consume.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Self-centered living breeds sin and suffering.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7628,6 +8343,61 @@
               "lines": [
                 "अन्नाद्भवन्ति भूतानि पर्जन्यादन्नसम्भवः ।",
                 "यज्ञाद्भवति पर्जन्यो यज्ञः कर्मसमुद्भवः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "annādbhavanti bhūtāni parjanyādannasambhavaḥ |",
+                    "yajñādbhavati parjanyo yajñaḥ karmasamudbhavaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "सम्पूर्ण प्राणी अन्न से उत्पन्न होते हैं, अन्न की उत्पत्ति वृष्टि से होती है, वृष्टि यज्ञ से होती है और यज्ञ विहित कर्मों से उत्पन्न होने वाला है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "All living bodies subsist on food grains, which are produced from rains. Rains are produced by performance of yajna (sacrifice), and yajna is born of prescribed duties.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna traces the cycle of life: Living beings depend on food, food depends on rain, rain is sustained by cosmic harmony (sacrifice), and this harmony is maintained when beings perform their prescribed duties.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण जीवन के चक्र का वर्णन करते हैं: जीव भोजन पर निर्भर हैं, भोजन वर्षा पर, वर्षा यज्ञ (ब्रह्मांडीय सद्भाव) से होती है, और यह सद्भाव तब बना रहता है जब लोग अपने कर्तव्य करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Everything in the universe is interconnected.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Fulfilling our duty sustains the entire ecological and spiritual cycle.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7637,6 +8407,61 @@
               "lines": [
                 "कर्म ब्रह्मोद्भवं विद्धि ब्रह्माक्षरसमुद्भवम् ।",
                 "तस्मात्सर्वगतं ब्रह्म नित्यं यज्ञे प्रतिष्ठितम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "karma brahmodbhavaṃ viddhi brahmākṣarasamudbhavam |",
+                    "tasmātsarvagataṃ brahma nityaṃ yajñe pratiṣṭhitam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "कर्मसमुदाय को तू वेद से उत्पन्न जान और वेद को अविनाशी परमात्मा से उत्पन्न हुआ जान। इससे सिद्ध होता है कि सर्वव्यापी परम अक्षर परमात्मा सदा ही यज्ञ में प्रतिष्ठित है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Regulated activities are prescribed in the Vedas, and the Vedas are directly manifested from the Supreme Personality of Godhead. Consequently the all-pervading Transcendence is eternally situated in acts of sacrifice.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The rules for right action come from the Vedas (divine knowledge), which originate from the imperishable Supreme. Therefore, when one performs their duty selflessly (sacrifice), the Supreme is directly present in that action.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सही कर्म के नियम वेदों से आते हैं, जो अविनाशी परमात्मा से उत्पन्न होते हैं। इसलिए, जब कोई निस्वार्थ भाव से अपना कर्तव्य (यज्ञ) करता है, तो परमात्मा उस कार्य में सीधे मौजूद होता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Divine knowledge is the source of all right action.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God is present wherever selfless duty is performed.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7646,6 +8471,61 @@
               "lines": [
                 "एवं प्रवर्तितं चक्रं नानुवर्तयतीह यः ।",
                 "अघायुरिन्द्रियारामो मोघं पार्थ स जीवति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "evaṃ pravartitaṃ cakraṃ nānuvartayatīha yaḥ |",
+                    "aghāyurindriyārāmo moghaṃ pārtha sa jīvati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे पार्थ! जो पुरुष इस लोक में इस प्रकार परम्परा से प्रचलित सृष्टिचक्र के अनुकूल नहीं बरतता, अर्थात् अपने कर्त्तव्य का पालन नहीं करता, वह इन्द्रियों के द्वारा भोगों में रमण करने वाला पापायु पुरुष व्यर्थ ही जीता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "My dear Arjuna, one who does not follow in human life the cycle of sacrifice thus established by the Vedas certainly leads a life full of sin. Living only for the satisfaction of the senses, such a person lives in vain.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "A person who ignores this interconnected cycle of duty and sacrifice, living only for personal sensory pleasure, disrupts the harmony of the universe. Such a self-serving life is considered wasted.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जो व्यक्ति कर्तव्य और यज्ञ के इस चक्र को नज़रअंदाज़ करता है, केवल व्यक्तिगत सुख के लिए जीता है, वह ब्रह्मांड के सद्भाव को बाधित करता है। ऐसा जीवन व्यर्थ माना जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Living solely for sensual pleasure is a waste of human life.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "We have a cosmic responsibility to participate in the cycle of giving.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7655,6 +8535,61 @@
               "lines": [
                 "यस्त्वात्मरतिरेव स्यादात्मतृप्तश्च मानवः ।",
                 "आत्मन्येव च सन्तुष्टस्तस्य कार्यं न विद्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yastvātmaratireva syādātmatṛptaśca mānavaḥ |",
+                    "ātmanyeva ca santuṣṭastasya kāryaṃ na vidyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परन्तु जो मनुष्य आत्मा में ही रमण करने वाला और आत्मा में ही तृप्त तथा आत्मा में ही सन्तुष्ट हो, उसके लिए कोई कर्त्तव्य नहीं है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "But for one who takes pleasure in the self, whose human life is one of self-realization, and who is satisfied in the self only, fully satiated—for him there is no duty.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna clarifies an exception: A fully enlightened sage who has found complete satisfaction, joy, and peace within the Self no longer has any worldly obligations or karmic duties to perform.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण एक अपवाद स्पष्ट करते हैं: एक पूरी तरह से प्रबुद्ध ऋषि जिसने आत्म (आत्मा) के भीतर पूर्ण संतुष्टि, आनंद और शांति पा ली है, उसके लिए कोई सांसारिक या कर्मकांडीय कर्तव्य शेष नहीं है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Complete self-realization frees one from mandatory worldly duties.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True satisfaction eliminates the compulsion to act for results.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7664,6 +8599,61 @@
               "lines": [
                 "नैव तस्य कृतेनार्थो नाकृतेनेह कश्चन ।",
                 "न चास्य सर्वभूतेषु कश्चिदर्थव्यपाश्रयः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "naiva tasya kṛtenārtho nākṛteneha kaścana |",
+                    "na cāsya sarvabhūteṣu kaścidarthavyapāśrayaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "उस महापुरुष का इस विश्व में न तो कर्म करने से कोई प्रयोजन रहता है और न कर्मों के न करने से ही कोई प्रयोजन रहता है; तथा सम्पूर्ण प्राणियों में भी इसका किञ्चिन्मात्र भी स्वार्थ का सम्बन्ध नहीं रहता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "A self-realized man has no purpose to fulfill in the discharge of his prescribed duties, nor has he any reason not to perform such work. Nor has he any need to depend on any other living being.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The enlightened soul gains nothing by doing work, nor loses anything by not doing it. They are entirely independent and do not rely on anyone or anything in the material world for their fulfillment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "प्रबुद्ध आत्मा को काम करने से कुछ नहीं मिलता, न ही काम न करने से कुछ खोता है। वे पूरी तरह से स्वतंत्र हैं और भौतिक दुनिया में किसी पर निर्भर नहीं हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Enlightenment brings absolute spiritual independence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A liberated soul acts without any hidden personal agenda.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7673,6 +8663,61 @@
               "lines": [
                 "तस्मादसक्तः सततं कार्यं कर्म समाचर ।",
                 "असक्तो ह्याचरन्कर्म परमाप्नोति पूरुषः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tasmādasaktaḥ satataṃ kāryaṃ karma samācara |",
+                    "asakto hyācarankarma paramāpnoti pūruṣaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इसलिए तू निरन्तर आसक्ति से रहित होकर सदा कर्त्तव्य कर्म को भलीभाँति करता रह; क्योंकि आसक्ति से रहित होकर कर्म करता हुआ मनुष्य परमात्मा को प्राप्त हो जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Therefore, without being attached to the fruits of activities, one should act as a matter of duty, for by working without attachment one attains the Supreme.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Since Arjuna is not yet a fully self-realized sage, Krishna advises him to continuously perform his required duties without attachment. Detached action is the very method to reach that ultimate Supreme state.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "चूंकि अर्जुन अभी तक पूरी तरह से आत्म-साक्षात्कारी ऋषि नहीं हैं, कृष्ण उन्हें अनासक्त होकर अपना कर्तव्य करने की सलाह देते हैं। अनासक्त कर्म ही परम गति तक पहुँचने का तरीका है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Perform your duties relentlessly, but without attachment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Detached action is a bridge to the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7682,6 +8727,61 @@
               "lines": [
                 "कर्मणैव हि संसिद्धिमास्थिता जनकादयः ।",
                 "लोकसङ्ग्रहमेवापि सम्पश्यन्कर्तुमर्हसि ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "karmaṇaiva hi saṃsiddhimāsthitā janakādayaḥ |",
+                    "lokasaṅgrahamevāpi sampaśyankartumarhasi ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जनकादि ज्ञानीजन भी आसक्तिरहित कर्म द्वारा ही परम सिद्धि को प्राप्त हुए थे। इसलिए तथा लोकसंग्रह को देखते हुए भी तू कर्म करने के ही योग्य है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Kings such as Janaka attained perfection solely by performance of prescribed duties. Therefore, just for the sake of educating the people in general, you should perform your work.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna cites the historical example of King Janaka, who attained spiritual perfection while ruling a kingdom. Even if Arjuna feels he doesn't need to fight for himself, he should do it to set a righteous example for society (Lokasangraha).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण राजा जनक का ऐतिहासिक उदाहरण देते हैं, जिन्होंने एक राज्य पर शासन करते हुए आध्यात्मिक पूर्णता प्राप्त की। लोकसंग्रह (समाज का मार्गदर्शन) के लिए भी अर्जुन को अपना कर्म करना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Perfection can be achieved while living an active worldly life.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Leaders must act to set a positive example for society.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7691,6 +8791,61 @@
               "lines": [
                 "यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः ।",
                 "स यत्प्रमाणं कुरुते लोकस्तदनुवर्तते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yadyadācarati śreṣṭhastattadevetaro janaḥ |",
+                    "sa yatpramāṇaṃ kurute lokastadanuvartate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रेष्ठ पुरुष जो-जो आचरण करता है, अन्य पुरुष भी वैसा-वैसा ही आचरण करते हैं। वह जो कुछ प्रमाण कर देता है, समस्त मनुष्य-समुदाय उसी के अनुसार बरतने लग जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Whatever action a great man performs, common men follow. And whatever standards he sets by exemplary acts, all the world pursues.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This verse highlights the profound responsibility of leadership. Society naturally imitates the behavior, standards, and values demonstrated by its prominent figures.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यह श्लोक नेतृत्व की गहरी जिम्मेदारी पर प्रकाश डालता है। समाज स्वाभाविक रूप से अपने प्रमुख हस्तियों द्वारा प्रदर्शित व्यवहार और आदर्शों की नकल करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Leadership is primarily done through example.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Your actions create the standard for those who look up to you.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7700,6 +8855,61 @@
               "lines": [
                 "न मे पार्थास्ति कर्तव्यं त्रिषु लोकेषु किञ्चन ।",
                 "नानवाप्तमवाप्तव्यं वर्त एव च कर्मणि ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "na me pārthāsti kartavyaṃ triṣu lokeṣu kiñcana |",
+                    "nānavāptamavāptavyaṃ varta eva ca karmaṇi ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे अर्जुन! मुझे इन तीनों लोकों में न तो कुछ कर्त्तव्य है और न कोई भी प्राप्त करने योग्य वस्तु अप्राप्त है, तो भी मैं कर्म में ही बरतता हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O son of Pritha, there is no work prescribed for Me within all the three planetary systems. Nor am I in want of anything, nor have I a need to obtain anything—and yet I am engaged in prescribed duties.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna uses Himself as the ultimate example. As the Supreme Lord, He lacks nothing and owes no duty to anyone. Yet, He continuously engages in action for the maintenance of the world.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण स्वयं को अंतिम उदाहरण के रूप में उपयोग करते हैं। परमेश्वर के रूप में, उनमें किसी चीज़ की कमी नहीं है और उनका कोई कर्तव्य नहीं है। फिर भी, वह दुनिया के रखरखाव के लिए निरंतर कर्म करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The highest entities work not out of need, but out of grace.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "If the Divine works tirelessly, so should humans.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7709,6 +8919,61 @@
               "lines": [
                 "यदि ह्यहं न वर्तेयं जातु कर्मण्यतन्द्रितः ।",
                 "मम वर्त्मानुवर्तन्ते मनुष्याः पार्थ सर्वशः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yadi hyahaṃ na varteyaṃ jātu karmaṇyatandritaḥ |",
+                    "mama vartmānuvartante manuṣyāḥ pārtha sarvaśaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "क्योंकि हे पार्थ! यदि कदाचित् मैं सावधान होकर कर्मों में न बरतूँ तो बड़ी हानि हो जाए, क्योंकि मनुष्य सब प्रकार से मेरे ही मार्ग का अनुसरण करते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "For if I ever failed to engage in carefully performing prescribed duties, O Partha, certainly all men would follow My path.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "If Krishna were to stop working, humanity would use His inaction as a precedent to abandon their own responsibilities, leading to universal stagnation and moral collapse.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यदि कृष्ण काम करना बंद कर देते, तो मानवता अपनी ज़िम्मेदारियों को छोड़ने के लिए उनकी निष्क्रियता को एक मिसाल के रूप में इस्तेमाल करती, जिससे पतन होता।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Inaction by leaders provides an excuse for the laziness of the masses.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Consistent positive action is required to maintain order.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7718,6 +8983,61 @@
               "lines": [
                 "उत्सीदेयुरिमे लोका न कुर्यां कर्म चेदहम् ।",
                 "सङ्करस्य च कर्ता स्यामुपहन्यामिमाः प्रजाः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "utsīdeyurime lokā na kuryāṃ karma cedaham |",
+                    "saṅkarasya ca kartā syāmupahanyāmimāḥ prajāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इसलिए यदि मैं कर्म न करूँ तो ये सब मनुष्य नष्ट-भ्रष्ट हो जाएँ और मैं वर्णसंकर का करने वाला होऊँ तथा इस समस्त प्रजा को नष्ट करने वाला बनूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "If I did not perform prescribed duties, all these worlds would be put to ruination. I would be the cause of creating unwanted population, and I would thereby destroy the peace of all living beings.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna emphasizes that His failure to perform duty would result in cosmic and social chaos (Varnashankara). Leaders must act to prevent the destruction of societal harmony.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण इस बात पर जोर देते हैं कि यदि वह कर्म नहीं करेंगे तो सामाजिक अराजकता (वर्णसंकर) और विनाश होगा। समाज के सद्भाव को बनाए रखने के लिए कर्म आवश्यक है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Dereliction of duty at the top creates chaos at the bottom.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Action is the glue that holds society together.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7727,6 +9047,61 @@
               "lines": [
                 "सक्ताः कर्मण्यविद्वांसो यथा कुर्वन्ति भारत ।",
                 "कुर्याद्विद्वांस्तथासक्तश्चिकीर्षुर्लोकसङ्ग्रहम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "saktāḥ karmaṇyavidvāṃso yathā kurvanti bhārata |",
+                    "kuryādvidvāṃstathāsaktaścikīrṣurlokasaṅgraham ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे भारत! कर्म में आसक्त हुए अज्ञानीजन जिस प्रकार कर्म करते हैं, आसक्तिरहित विद्वान् भी लोकसंग्रह करना चाहता हुआ उसी प्रकार कर्म करे।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "As the ignorant perform their duties with attachment to results, the learned may similarly act, but without attachment, for the sake of leading people on the right path.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Externally, the wise man and the ignorant man might look like they are working equally hard. The difference is internal: the ignorant works attached to personal gain, while the wise works detached, solely for the benefit of the world.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "बाहरी रूप से, अज्ञानी और ज्ञानी समान रूप से काम करते हुए दिख सकते हैं। अंतर आंतरिक है: अज्ञानी स्वार्थ के लिए काम करता है, जबकि ज्ञानी दुनिया के लाभ के लिए अनासक्त होकर काम करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Work as hard as the ambitious, but remain internally detached.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True wisdom does not mean giving up work, but changing the motivation behind it.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7736,6 +9111,61 @@
               "lines": [
                 "न बुद्धिभेदं जनयेदज्ञानां कर्मसङ्गिनाम् ।",
                 "जोषयेत्सर्वकर्माणि विद्वान्युक्तः समाचरन् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "na buddhibhedaṃ janayedajñānāṃ karmasaṅginām |",
+                    "joṣayetsarvakarmāṇi vidvānyuktaḥ samācaran ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परमात्मा के स्वरूप में अटल स्थित हुए ज्ञानी पुरुष को चाहिए कि वह कर्मों में आसक्ति वाले अज्ञानियों की बुद्धि में भ्रम अर्थात् कर्मों में अश्रद्धा उत्पन्न न करे, किन्तु स्वयं शास्त्रविहित समस्त कर्मों को भलीभाँति करता हुआ उनसे भी वैसे ही करवाए।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "So as not to disrupt the minds of ignorant men attached to the fruitive results of prescribed duties, a learned person should not induce them to stop work. Rather, by working in the spirit of devotion, he should engage them in all sorts of activities.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "A wise person should not confuse ordinary people by preaching abrupt renunciation of action, as they might misinterpret it as an excuse for laziness. Instead, the wise should inspire them by actively demonstrating dedicated work.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "ज्ञानी को चाहिए कि वह साधारण लोगों को अचानक कर्म छोड़ने का उपदेश देकर भ्रमित न करे। इसके बजाय, उसे स्वयं कर्म करके उन्हें प्रेरित करना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Do not unsettle the faith or routine of beginners prematurely.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Teach higher truths through positive example rather than disruptive philosophy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7745,6 +9175,61 @@
               "lines": [
                 "प्रकृतेः क्रियमाणानि गुणैः कर्माणि सर्वशः ।",
                 "अहङ्कारविमूढात्मा कर्ताहमिति मन्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "prakṛteḥ kriyamāṇāni guṇaiḥ karmāṇi sarvaśaḥ |",
+                    "ahaṅkāravimūḍhātmā kartāhamiti manyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वास्तव में सम्पूर्ण कर्म सब प्रकार से प्रकृति के गुणों द्वारा किए जाते हैं, तो भी जिसका अन्तःकरण अहङ्कार से मोहित हो रहा है, ऐसा अज्ञानी 'मैं कर्त्ता हूँ' ऐसा मानता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The spirit soul bewildered by the influence of false ego thinks himself the doer of activities that are in actuality carried out by the three modes of material nature.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "All physical actions are naturally executed by the body and mind (driven by the Gunas of material nature). However, due to false ego (Ahankara), the ignorant soul falsely claims, 'I am the doer.'",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सभी कार्य स्वाभाविक रूप से प्रकृति के गुणों द्वारा किए जाते हैं। हालाँकि, झूठे अहंकार के कारण, अज्ञानी आत्मा झूठा दावा करती है, 'मैं कर्ता हूँ।'",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The ego creates the illusion of personal doership.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Nature acts; the true Self is merely the observer.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7754,6 +9239,61 @@
               "lines": [
                 "तत्त्ववित्तु महाबाहो गुणकर्मविभागयोः ।",
                 "गुणा गुणेषु वर्तन्त इति मत्वा न सज्जते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tattvavittu mahābāho guṇakarmavibhāgayoḥ |",
+                    "guṇā guṇeṣu vartanta iti matvā na sajjate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परन्तु हे महाबाहो! गुण-विभाग और कर्म-विभाग के तत्त्व को जानने वाला ज्ञानयोगी सम्पूर्ण गुण ही गुणों में बरत रहे हैं, ऐसा समझकर उनमें आसक्त नहीं होता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One who is in knowledge of the Absolute Truth, O mighty-armed, does not engage himself in the senses and sense enjoyment, knowing well the differences between work in devotion and work for fruitive results.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "An enlightened person understands the distinction between the soul and nature. Knowing that it is merely the senses (Gunas) interacting with sense objects (Gunas), they remain detached and do not claim ownership of the actions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "एक प्रबुद्ध व्यक्ति जानता है कि केवल इंद्रियां (गुण) विषयों (गुणों) के साथ बातचीत कर रही हैं, इसलिए वह अनासक्त रहता है और कर्मों में नहीं उलझता।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Knowledge separates the observer from the action.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Recognizing that 'nature is acting on nature' brings profound detachment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7763,6 +9303,61 @@
               "lines": [
                 "प्रकृतेर्गुणसम्मूढाः सज्जन्ते गुणकर्मसु ।",
                 "तानकृत्स्नविदो मन्दान्कृत्स्नविन्न विचालयेत् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "prakṛterguṇasammūḍhāḥ sajjante guṇakarmasu |",
+                    "tānakṛtsnavido mandānkṛtsnavinna vicālayet ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "प्रकृति के गुणों से अत्यन्त मोहित हुए मनुष्य गुणों में और कर्मों में आसक्त रहते हैं, उन पूर्णतया न समझने वाले मन्दबुद्धि अज्ञानियों को पूर्णतया जानने वाला ज्ञानी विचलित न करे।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Bewildered by the modes of material nature, the ignorant fully engage themselves in material activities and become attached. But the wise should not unsettle them, although these duties are inferior due to the performers' lack of knowledge.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Reiterating verse 3.26, Krishna states that ignorant people are deeply attached to their work and results. The wise, who know the whole truth, should gently guide them through action rather than violently tearing down their worldview.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अज्ञानी लोग अपने काम और परिणामों से गहराई से जुड़े होते हैं। ज्ञानी को उनके विश्वदृष्टि को हिंसक रूप से तोड़ने के बजाय उन्हें धीरे-धीरे कर्म के माध्यम से निर्देशित करना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Meet people where they are in their spiritual evolution.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Compassionate leadership avoids inducing unnecessary psychological crisis.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7772,6 +9367,61 @@
               "lines": [
                 "मयि सर्वाणि कर्माणि संन्यस्याध्यात्मचेतसा ।",
                 "निराशीर्निर्ममो भूत्वा युध्यस्व विगतज्वरः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "mayi sarvāṇi karmāṇi saṃnyasyādhyātmacetasā |",
+                    "nirāśīrnirmamo bhūtvā yudhyasva vigatajvaraḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मुझ अन्तर्यामी परमात्मा में लगे हुए चित्त द्वारा सम्पूर्ण कर्मों को मुझमें अर्पण करके आशारहित, ममतारहित और सन्तापरहित होकर युद्ध कर।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Therefore, O Arjuna, surrendering all your works unto Me, with full knowledge of Me, without desires for profit, with no claims to proprietorship, and free from lethargy, fight.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This is Krishna's ultimate command for Karma Yoga. Arjuna must dedicate all his actions to the Supreme, abandon expectations of profit, drop the ego of 'mine', and fight without mental fever (anxiety/grief).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यह कर्म योग के लिए कृष्ण का अंतिम आदेश है। अर्जुन को अपने सभी कार्यों को परमात्मा को समर्पित करना चाहिए, लाभ की उम्मीद छोड़ देनी चाहिए, और मानसिक चिंता के बिना लड़ना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Dedicate your efforts to the Divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Act without expectation, ownership, or mental agitation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7781,6 +9431,61 @@
               "lines": [
                 "ये मे मतमिदं नित्यमनुतिष्ठन्ति मानवाः ।",
                 "श्रद्धावन्तोऽनसूयन्तो मुच्यन्ते तेऽपि कर्मभिः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ye me matamidaṃ nityamanutiṣṭhanti mānavāḥ |",
+                    "śraddhāvanto'nasūyanto mucyante te'pi karmabhiḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो कोई मनुष्य दोषदृष्टि से रहित और श्रद्धायुक्त होकर मेरे इस मत का सदा अनुसरण करते हैं, वे भी सम्पूर्ण कर्मों से छूट जाते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those persons who execute their duties according to My injunctions and who follow this teaching faithfully, without envy, become free from the bondage of fruitive actions.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna promises that anyone who follows this philosophy of detached, dedicated action with faith and without cynicism will be completely liberated from the karmic cycle.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण वादा करते हैं कि जो कोई भी अनासक्त, समर्पित कर्म के इस दर्शन का श्रद्धा के साथ पालन करता है, वह कर्म चक्र से पूरी तरह मुक्त हो जाएगा।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Faithful adherence to duty brings liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A cynicism-free mind is essential for spiritual progress.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7790,6 +9495,61 @@
               "lines": [
                 "ये त्वेतदभ्यसूयन्तो नानुतिष्ठन्ति मे मतम् ।",
                 "सर्वज्ञानविमूढांस्तान्विद्धि नष्टानचेतसः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ye tvetadabhyasūyanto nānutiṣṭhanti me matam |",
+                    "sarvajñānavimūḍhāṃstānviddhi naṣṭānacetasaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परन्तु जो मनुष्य मुझमें दोषारोपण करते हुए मेरे इस मत का अनुसरण नहीं करते, उन मूर्खों को तू सम्पूर्ण ज्ञानों में मोहित और नष्ट हुए ही जान।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "But those who, out of envy, disregard these teachings and do not follow them regularly are to be considered bereft of all knowledge, befooled, and ruined in their endeavors for perfection.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Conversely, those who arrogantly reject the path of selfless duty and act out of ego and envy remain deluded, ultimately ruining their chances for spiritual and lasting peace.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "इसके विपरीत, जो लोग अहंकार में इस मार्ग को अस्वीकार करते हैं, वे भ्रमित रहते हैं, जिससे आध्यात्मिक शांति के उनके अवसर नष्ट हो जाते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Rejecting the law of selfless action leads to spiritual ruin.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Arrogance blinds the intellect.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7799,6 +9559,61 @@
               "lines": [
                 "सदृशं चेष्टते स्वस्याः प्रकृतेर्ज्ञानवानपि ।",
                 "प्रकृतिं यान्ति भूतानि निग्रहः किं करिष्यति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sadṛśaṃ ceṣṭate svasyāḥ prakṛterjñānavānapi |",
+                    "prakṛtiṃ yānti bhūtāni nigrahaḥ kiṃ kariṣyati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "सभी प्राणी प्रकृति को प्राप्त होते हैं अर्थात् अपने स्वभाव के परवश हुए कर्म करते हैं। ज्ञानवान् भी अपनी प्रकृति के अनुसार चेष्टा करता है। फिर इसमें किसी का हठ क्या करेगा?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Even a man of knowledge acts according to his own nature, for everyone follows the nature he has acquired from the three modes. What can repression accomplish?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Everyone is deeply conditioned by their innate nature (Prakriti). Even wise people act according to their psychological makeup. Mere forceful repression of one's nature is futile.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "हर कोई अपने अंतर्निहित स्वभाव से विवश है। ज्ञानी लोग भी अपने स्वभाव के अनुसार ही कार्य करते हैं। अपने स्वभाव का बलपूर्वक दमन व्यर्थ है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Understand and accept your inherent nature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Forcible repression fails; conscious channeling of one's nature succeeds.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7808,6 +9623,61 @@
               "lines": [
                 "इन्द्रियस्येन्द्रियस्यार्थे रागद्वेषौ व्यवस्थितौ ।",
                 "तयोर्न वशमागच्छेत्तौ ह्यस्य परिपन्थिनौ ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "indriyasyendriyasyārthe rāgadveṣau vyavasthitau |",
+                    "tayorna vaśamāgacchettau hyasya paripanthinau ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इन्द्रिय-इन्द्रिय के अर्थ में अर्थात् प्रत्येक इन्द्रिय के विषय में राग और द्वेष छिपे हुए स्थित हैं। मनुष्य को उन दोनों के वश में नहीं होना चाहिए, क्योंकि वे दोनों ही इसके कल्याण मार्ग में विघ्न करने वाले महान् शत्रु हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "There are principles to regulate attachment and aversion pertaining to the senses and their objects. One should not come under the control of such attachment and aversion, because they are stumbling blocks on the path of self-realization.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "While nature compels us, the key is to manage the *reactions* of the senses. Attraction (Raga) and aversion (Dvesha) exist for every sense object. A seeker must not become enslaved by these two powerful enemies.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यद्यपि स्वभाव हमें विवश करता है, परंतु इंद्रियों की प्रतिक्रियाओं को प्रबंधित करना कुंजी है। साधक को राग और द्वेष (आकर्षण और विकर्षण) का गुलाम नहीं बनना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Attraction and aversion are the two greatest roadblocks to peace.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Do not let biological impulses dictate your choices.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7817,6 +9687,61 @@
               "lines": [
                 "श्रेयान्स्वधर्मो विगुणः परधर्मात्स्वनुष्ठितात् ।",
                 "स्वधर्मे निधनं श्रेयः परधर्मो भयावहः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "śreyānsvadharmo viguṇaḥ paradharmātsvanuṣṭhitāt |",
+                    "svadharme nidhanaṃ śreyaḥ paradharmo bhayāvahaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अच्छी प्रकार आचरण में लाए हुए दूसरे के धर्म से गुणरहित भी अपना धर्म अति उत्तम है। अपने धर्म में तो मरना भी कल्याणकारक है और दूसरे का धर्म भय को देने वाला है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "It is far better to discharge one's prescribed duties, even though faultily, than another's duties perfectly. Destruction in the course of performing one's own duty is better than engaging in another's duties, for to follow another's path is dangerous.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "It is better to imperfectly execute one's own natural duty (Svadharma) than to perfectly execute someone else's. Arjuna must fight as a warrior, not retreat as a monk, because adopting an unnatural role brings psychological and spiritual danger.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अपने स्वाभाविक कर्तव्य को अपूर्ण रूप से करना किसी और के कर्तव्य को पूरी तरह से करने से बेहतर है। किसी और के मार्ग का अनुसरण करना खतरनाक है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Stay true to your own path and nature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Imitation in life's purpose leads to spiritual peril.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7829,6 +9754,54 @@
               "lines": [
                 "अथ केन प्रयुक्तोऽयं पापं चरति पूरुषः ।",
                 "अनिच्छन्नपि वार्ष्णेय बलादिव नियोजितः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "atha kena prayukto'yaṃ pāpaṃ carati pūruṣaḥ |",
+                    "anicchannapi vārṣṇeya balādiva niyojitaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अर्जुन बोले: हे कृष्ण! तो फिर यह मनुष्य स्वयं न चाहता हुआ भी बलात् लगाए हुए की भाँति किससे प्रेरित होकर पाप का आचरण करता है?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Arjuna said: O descendant of Vrishni, by what is one impelled to sinful acts, even unwillingly, as if engaged by force?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna asks a profound psychological question: Why do humans commit sins or make bad choices even when they know better and don't genuinely want to, as if driven by some invisible force?",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन एक गहरा मनोवैज्ञानिक प्रश्न पूछते हैं: मनुष्य न चाहते हुए भी, किसी अदृश्य शक्ति से प्रेरित होकर पाप क्यों करता है?",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "It is human nature to struggle between knowing the right thing and doing the wrong thing.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7841,6 +9814,61 @@
               "lines": [
                 "काम एष क्रोध एष रजोगुणसमुद्भवः ।",
                 "महाशनो महापाप्मा विद्ध्येनमिह वैरिणम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "kāma eṣa krodha eṣa rajoguṇasamudbhavaḥ |",
+                    "mahāśano mahāpāpmā viddhyenamiha vairiṇam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रीभगवान् बोले: रजोगुण से उत्पन्न हुआ यह काम ही क्रोध है; यह बहुत खाने वाला अर्थात् भोगों से कभी न अघाने वाला और बड़ा पापी है। इसको ही तू इस विषय में वैरी जान।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Supreme Personality of Godhead said: It is lust only, Arjuna, which is born of contact with the material mode of passion and later transformed into wrath, and which is the all-devouring sinful enemy of this world.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna identifies the culprit: Kama (Lust/Desire) born from the mode of passion (Rajas). When desire is unfulfilled, it turns into anger. It is an insatiable, all-devouring enemy that forces people into sinful action.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण अपराधी की पहचान करते हैं: काम (इच्छा) जो रजोगुण से पैदा होता है। जब इच्छा पूरी नहीं होती है, तो यह क्रोध में बदल जाती है। यही हमारा सबसे बड़ा दुश्मन है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Lust (unrestrained desire) is the root cause of all misdeeds.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Desire is a fire that can never be extinguished by feeding it.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7850,6 +9878,61 @@
               "lines": [
                 "धूमेनाव्रियते वह्निर्यथादर्शो मलेन च ।",
                 "यथोल्बेनावृतो गर्भस्तथा तेनेदमावृतम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "dhūmenāvriyate vahniryathādarśo malena ca |",
+                    "yatholbenāvṛto garbhastathā tenedamāvṛtam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिस प्रकार धुएँ से अग्नि और मैल से दर्पण ढका जाता है तथा जिस प्रकार जेर से गर्भ ढका रहता है, वैसे ही उस काम द्वारा यह ज्ञान ढका रहता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "As fire is covered by smoke, as a mirror is covered by dust, or as the embryo is covered by the womb, the living entity is similarly covered by different degrees of this lust.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna uses three analogies to show how desire covers our pure wisdom: like smoke hiding fire (mild covering), dust on a mirror (moderate covering), and a womb encasing an embryo (thick covering).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण यह दिखाने के लिए तीन उपमाओं का उपयोग करते हैं कि कैसे इच्छा हमारे शुद्ध ज्ञान को कवर करती है: जैसे धुएं से आग, धूल से दर्पण, और गर्भ से भ्रूण।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Desire obscures our natural inner wisdom.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The density of delusion varies based on the intensity of desire.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7859,6 +9942,61 @@
               "lines": [
                 "आवृतं ज्ञानमेतेन ज्ञानिनो नित्यवैरिणा ।",
                 "कामरूपेण कौन्तेय दुष्पूरेणानलेन च ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "āvṛtaṃ jñānametena jñānino nityavairiṇā |",
+                    "kāmarūpeṇa kaunteya duṣpūreṇānalena ca ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "और हे अर्जुन! इस अग्निसदृश कभी न पूर्ण होने वाले कामरूप ज्ञानियों के नित्य वैरी द्वारा मनुष्य का ज्ञान ढका हुआ है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Thus the wise living entity's pure consciousness becomes covered by his eternal enemy in the form of lust, which is never satisfied and which burns like fire.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This insatiable desire is the constant enemy even of the wise. Like fire, it burns endlessly; the more fuel (sense gratification) you put into it, the fiercer it burns, completely covering spiritual consciousness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यह अतृप्त इच्छा ज्ञानियों की भी निरंतर शत्रु है। आग की तरह, यह अंतहीन रूप से जलती है, आध्यात्मिक चेतना को पूरी तरह से ढक लेती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Desire is an eternal enemy that cannot be satisfied through indulgence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Awareness is the first step in combating this inner fire.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7868,6 +10006,54 @@
               "lines": [
                 "इन्द्रियाणि मनो बुद्धिरस्याधिष्ठानमुच्यते ।",
                 "एतैर्विमोहयत्येष ज्ञानमावृत्य देहिनम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "indriyāṇi mano buddhirasyādhiṣṭhānamucyate |",
+                    "etairvimohayatyeṣa jñānamāvṛtya dehinam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इन्द्रियाँ, मन और बुद्धि—ये सब इसके वासस्थान कहे जाते हैं। यह काम इन मन, बुद्धि और इन्द्रियों द्वारा ही ज्ञान को आच्छादित करके जीवात्मा को मोहित करता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The senses, the mind and the intelligence are the sitting places of this lust. Through them lust covers the real knowledge of the living entity and bewilders him.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "To defeat an enemy, one must know its hideout. Krishna pinpoints the bases of operation for lust: the senses, the mind, and the intellect. From these fortresses, it attacks and deludes the soul.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "दुश्मन को हराने के लिए, किसी को उसका ठिकाना जानना चाहिए। काम (इच्छा) के छिपने के स्थान इंद्रियां, मन और बुद्धि हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Guard your senses, mind, and intellect, for they are the entry points of destructive desires.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7877,6 +10063,61 @@
               "lines": [
                 "तस्मात्त्वमिन्द्रियाण्यादौ नियम्य भरतर्षभ ।",
                 "पाप्मानं प्रजहि ह्येनं ज्ञानविज्ञाननाशनम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tasmāttvamindriyāṇyādau niyamya bharatarṣabha |",
+                    "pāpmānaṃ prajahi hyenaṃ jñānavijñānanāśanam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इसलिए हे भरतवंशियों में श्रेष्ठ अर्जुन! तू पहले इन्द्रियों को वश में करके इस ज्ञान और विज्ञान का नाश करने वाले महान् पापी काम को अवश्य ही बलपूर्वक मार डाल।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Therefore, O Arjuna, best of the Bharatas, in the very beginning curb this great symbol of sin [lust] by regulating the senses, and slay this destroyer of knowledge and self-realization.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Since the senses are the frontline of this internal war, Krishna advises Arjuna to begin his defense by regulating his senses. By doing so, he can kill the enemy (lust) that destroys true knowledge.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "चूंकि इंद्रियां इस आंतरिक युद्ध की अग्रिम पंक्ति हैं, कृष्ण अर्जुन को सलाह देते हैं कि वे अपनी इंद्रियों को नियंत्रित करके रक्षा शुरू करें और इस ज्ञान नाशक पापी का अंत करें।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Self-discipline begins with regulating sensory input.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "You must actively strike down destructive desires.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7886,6 +10127,61 @@
               "lines": [
                 "इन्द्रियाणि पराण्याहुरिन्द्रियेभ्यः परं मनः ।",
                 "मनसस्तु परा बुद्धिर्यो बुद्धेः परतस्तु सः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "indriyāṇi parāṇyāhurindriyebhyaḥ paraṃ manaḥ |",
+                    "manasastu parā buddhiryo buddheḥ paratastu saḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इन्द्रियों को स्थूल शरीर से पर (श्रेष्ठ, बलवान् और सूक्ष्म) कहते हैं। इन इन्द्रियों से पर मन है, मन से भी पर बुद्धि है और जो बुद्धि से भी अत्यन्त पर है, वह आत्मा है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The working senses are superior to dull matter; mind is higher than the senses; intelligence is still higher than the mind; and he [the soul] is even higher than the intelligence.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna outlines the hierarchy of human consciousness. The physical senses are superior to dead matter; the mind is superior to the senses; the intellect is superior to the mind; and the true Self (the soul) is superior to all.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण चेतना के पदानुक्रम की रूपरेखा तैयार करते हैं। इंद्रियां पदार्थ से श्रेष्ठ हैं; मन इंद्रियों से श्रेष्ठ है; बुद्धि मन से श्रेष्ठ है; और आत्मा इन सबसे श्रेष्ठ है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Understand your internal hierarchy to master yourself.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The soul sits above the intellect, mind, and senses.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -7895,6 +10191,61 @@
               "lines": [
                 "एवं बुद्धेः परं बुद्ध्वा संस्तभ्यात्मानमात्मना ।",
                 "जहि शत्रुं महाबाहो कामरूपं दुरासदम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "evaṃ buddheḥ paraṃ buddhvā saṃstabhyātmānamātmanā |",
+                    "jahi śatruṃ mahābāho kāmarūpaṃ durāsadam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इस प्रकार बुद्धि से पर अर्थात् सूक्ष्म, बलवान् और अत्यन्त श्रेष्ठ आत्मा को जानकर और बुद्धि द्वारा मन को वश में करके हे महाबाहो! तू इस कामरूप दुर्जय शत्रु को मार डाल।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Thus knowing oneself to be transcendental to the material senses, mind and intelligence, O mighty-armed Arjuna, one should steady the mind by deliberate spiritual intelligence and thus—by spiritual strength—conquer this insatiable enemy known as lust.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "In the concluding verse of Chapter 3, Krishna tells Arjuna to use his intellect to steady his mind, anchoring it in the supreme soul. With this spiritual strength, he can finally conquer the formidable enemy of lust.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अध्याय 3 के समापन श्लोक में, कृष्ण अर्जुन को निर्देश देते हैं कि वह आत्मा को जानकर और बुद्धि द्वारा मन को वश में करके, काम रूपी इस दुर्जय शत्रु पर विजय प्राप्त करे।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True strength comes from anchoring the mind in the soul.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Conquering internal desires is the greatest victory.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {

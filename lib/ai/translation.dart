@@ -251,6 +251,9 @@ TranslationSource chooseSource({
   );
 }
 
+/// What to call a language code in the reader, e.g. "Bengali" for "bn".
+String languageName(String code) => TargetLanguage.forCode(code)?.name ?? code;
+
 /// The answer was not usable, so nothing is stored or shown.
 class TranslationRejected implements Exception {
   const TranslationRejected(this.message);

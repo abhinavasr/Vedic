@@ -166,7 +166,12 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Steadfast in yoga, do your work.'), findsOneWidget);
-    expect(find.text('Machine translation'), findsOneWidget);
+    // The credit names the language, so a fallback never looks like the
+    // reading language having been ignored.
+    expect(
+      find.textContaining('English  ·  Machine translation'),
+      findsOneWidget,
+    );
 
     // A machine translation is not coverage: it can be wrong, and when it is
     // the reader needs the button that made it rather than a dead end.

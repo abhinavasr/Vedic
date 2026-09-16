@@ -46,6 +46,10 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
   /// The translation being written on this phone, if any.
   _Translating? _translating;
 
+  /// The language last asked for, by verse. Someone who asks for Tamil means
+  /// to read Tamil, whatever their usual language is.
+  final _justTranslated = <String, String>{};
+
   @override
   void initState() {
     super.initState();
@@ -203,9 +207,10 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
         ),
       );
       if (!mounted) return;
-      setState(
-        () => _verses = widget.repository.verses(widget.work, widget.section),
-      );
+      setState(() {
+        _justTranslated[verse.ref] = language.code;
+        _verses = widget.repository.verses(widget.work, widget.section);
+      });
     } on Exception catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
@@ -296,6 +301,7 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
                             itemBuilder: (context, i) => _VersePage(
                               verse: _verses[i],
                               show: _show,
+                              prefer: _justTranslated[_verses[i].ref],
                               translating: _translating?.ref == _verses[i].ref
                                   ? _translating
                                   : null,
@@ -462,6 +468,7 @@ class _VersePage extends StatelessWidget {
   const _VersePage({
     required this.verse,
     required this.show,
+    required this.prefer,
     required this.translating,
     required this.onTranslate,
   });
@@ -469,15 +476,21 @@ class _VersePage extends StatelessWidget {
   final PassageView verse;
   final _Show show;
 
+  /// A language to show ahead of the reader's usual one, because they just
+  /// asked for it on this verse.
+  final String? prefer;
+
   /// Set while this verse is the one being translated.
   final _Translating? translating;
   final void Function(TargetLanguage language) onTranslate;
 
   @override
   Widget build(BuildContext context) {
-    final translation = verse.translationFor(
-      ReadingLanguage.instance.preference,
-    );
+    final reading = ReadingLanguage.instance.language;
+    final translation = verse.translationFor([
+      ?prefer,
+      ...ReadingLanguage.instance.preference,
+    ]);
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
       children: [
@@ -556,6 +569,17 @@ class _VersePage extends StatelessWidget {
                       'No translation is installed for this verse yet.',
                     )
                   else ...[
+                    // Say which language this is when it is not the one the
+                    // reader asked for. Falling back silently looks exactly
+                    // like the setting having done nothing.
+                    if (translation.language != reading.code &&
+                        !verse.hasTranslationIn(reading.code)) ...[
+                      _Missing(
+                        'No ${reading.name} translation yet — showing '
+                        '${languageName(translation.language)}.',
+                      ),
+                      const SizedBox(height: 8),
+                    ],
                     Text(
                       translation.text,
                       style: const TextStyle(
@@ -862,6 +886,7 @@ class _Credit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final credit = [
+      languageName(translation.language),
       if (translation.machine) 'Machine translation',
       ?translation.translator,
     ].join('  ·  ');
