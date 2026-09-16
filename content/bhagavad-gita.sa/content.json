@@ -2,7 +2,7 @@
   "format": "vedic-pack-content",
   "format_version": 1,
   "pack_id": "bhagavad-gita.sa",
-  "revision": 15,
+  "revision": 16,
   "languages": [
     "sa",
     "hi",
@@ -35733,6 +35733,61 @@
               "lines": [
                 "ऊर्ध्वमूलमधःशाखमश्वत्थं प्राहुरव्ययम् ।",
                 "छन्दांसि यस्य पर्णानि यस्तं वेद स वेदवित् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ūrdhvamūlamadhaḥśākhamaśvatthaṃ prāhuravyayam |",
+                    "chandāṃsi yasya parṇāni yastaṃ veda sa vedavit ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रीभगवान् बोले: ऊर्ध्वमूल (ऊपर की ओर जड़ वाले) और अधःशाख (नीचे की ओर शाखाओं वाले) जिस संसार रूपी पीपल के वृक्ष को अविनाशी कहते हैं, और वेद जिसके पत्ते हैं, उस संसार वृक्ष को जो मूल सहित तत्त्व से जानता है, वह वेद का जानने वाला है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Supreme Personality of Godhead said: It is said that there is an imperishable banyan tree that has its roots upward and its branches down and whose leaves are the Vedic hymns. One who knows this tree is the knower of the Vedas.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna uses the profound metaphor of an inverted banyan tree to describe the material world. Its roots are upward (in the Supreme), and its branches grow downward (into material existence). True knowledge means understanding this illusion and its divine source.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण भौतिक दुनिया का वर्णन करने के लिए उल्टे बरगद के पेड़ के गहरे रूपक का उपयोग करते हैं। इसकी जड़ें ऊपर (परमात्मा में) हैं, और इसकी शाखाएं नीचे (भौतिक अस्तित्व में) बढ़ती हैं। सच्चे ज्ञान का अर्थ है इस भ्रम और इसके दिव्य स्रोत को समझना।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The material world is an inverted reflection of the spiritual reality.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True wisdom lies in understanding the root of existence, not just its branches.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35744,6 +35799,63 @@
                 "गुणप्रवृद्धा विषयप्रवालाः ।",
                 "अधश्च मूलान्यनुसन्ततानि",
                 "कर्मानुबन्धीनि मनुष्यलोके ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "adhaścordhvaṃ prasṛtāstasya śākhā",
+                    "guṇapravṛddhā viṣayapravālāḥ |",
+                    "adhaśca mūlānyanusantatāni",
+                    "karmānubandhīni manuṣyaloke ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "उस वृक्ष की तीनों गुणों द्वारा पोषित विषय रूपी कोंपलों वाली शाखाएँ नीचे और ऊपर सर्वत्र फैली हुई हैं; और मनुष्य लोक में कर्मों के अनुसार बाँधने वाली उसकी अहङ्कार रूपी जड़ें नीचे की ओर भी व्याप्त हो रही हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The branches of this tree extend downward and upward, nourished by the three modes of material nature. The twigs are the objects of the senses. This tree also has roots going down, and these are bound to the fruitive actions of human society.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The tree's branches represent the various living entities, nourished by the qualities of nature (gunas). The sense objects are its twigs. Secondary roots grow downward, representing the karma and desires that bind humans to the earthly cycle of birth and death.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "पेड़ की शाखाएं विभिन्न जीवित संस्थाओं का प्रतिनिधित्व करती हैं, जो प्रकृति के गुणों (गुणों) द्वारा पोषित होती हैं। इंद्रिय वस्तुएं इसकी टहनियां हैं। द्वितीयक जड़ें नीचे की ओर बढ़ती हैं, जो कर्म और इच्छाओं का प्रतिनिधित्व करती हैं जो मनुष्यों को जन्म और मृत्यु के चक्र से बांधती हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Our attachments to sense objects feed the entanglement of material life.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Karma creates deep secondary roots that anchor us to the mortal world.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35755,6 +35867,63 @@
                 "नान्तो न चादिर्न च सम्प्रतिष्ठा ।",
                 "अश्वत्थमेनं सुविरूढमूलं",
                 "असङ्गशस्त्रेण दृढेन छित्त्वा ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "na rūpamasyeha tathopalabhyate",
+                    "nānto na cādirna ca sampratiṣṭhā |",
+                    "aśvatthhamenaṃ suvirūḍhamūlaṃ",
+                    "asaṅgaśastreṇa dṛḍhena chittvā ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इस संसार वृक्ष का यथार्थ रूप यहाँ विचार काल में नहीं पाया जाता, क्योंकि न तो इसका आदि है और न अंत है तथा न इसकी अच्छी प्रकार से स्थिति ही है। इस अत्यन्त दृढ़ मूलों वाले अश्वत्थ वृक्ष को वैराग्य रूपी दृढ़ शस्त्र द्वारा काटकर...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The real form of this tree cannot be perceived in this world. No one can understand where it ends, where it begins, or where its foundation is. But with determination one must cut down this strongly rooted tree with the weapon of detachment.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Because we are trapped inside the illusion, we cannot see the beginning, end, or true shape of this cosmic tree. The only way to escape its complex, entangling roots is to ruthlessly chop it down using the sharp axe of detachment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "चूंकि हम भ्रम के अंदर फंसे हुए हैं, हम इस लौकिक वृक्ष की शुरुआत, अंत या वास्तविक आकार को नहीं देख सकते हैं। इसकी जटिल, उलझती जड़ों से बचने का एकमात्र तरीका वैराग्य की तेज कुल्हाड़ी का उपयोग करके इसे बेरहमी से काटना है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "You cannot solve the puzzle of illusion from within the illusion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Detachment is the ultimate weapon to sever karmic ties.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35766,6 +35935,63 @@
                 "यस्मिन्गता न निवर्तन्ति भूयः ।",
                 "तमेव चाद्यं पुरुषं प्रपद्ये ।",
                 "यतः प्रवृत्तिः प्रसृता पुराणी ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tataḥ padaṃ tatparimārgitavyaṃ",
+                    "yasmingatā na nivartanti bhūyaḥ |",
+                    "tameva cādyaṃ puruṣaṃ prapadye |",
+                    "yataḥ pravṛttiḥ prasṛtā purāṇī ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "...उसके बाद उस परम पद रूप परमेश्वर की खोज करनी चाहिए, जिसमें गए हुए पुरुष फिर लौटकर संसार में नहीं आते, और जिस परमेश्वर से इस पुरातन संसार वृक्ष की प्रवृत्ति विस्तार को प्राप्त हुई है, 'उसी आदि पुरुष नारायण के मैं शरण हूँ'—इस प्रकार दृढ़ निश्चय करके।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Thereafter, one must seek that place from which, having gone, one never returns, and there surrender to that Supreme Primal Person from whom everything began and from whom the universal exapansion has spread since time immemorial.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Once the tree of material existence is felled by detachment, the seeker must actively search for the original source—the Supreme Person. By surrendering to this primordial Divine origin, the soul achieves a state of permanent liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "एक बार जब भौतिक अस्तित्व का वृक्ष वैराग्य द्वारा काट दिया जाता है, तो साधक को सक्रिय रूप से मूल स्रोत- परम पुरुष की खोज करनी चाहिए। इस आदिम ईश्वरीय उद्गम के प्रति समर्पण करके, आत्मा स्थायी मुक्ति की स्थिति प्राप्त करती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Detachment from the false must be followed by attachment to the True.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Surrender to the Supreme guarantees freedom from rebirth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35777,6 +36003,63 @@
                 "अध्यात्मनित्या विनिवृत्तकामाः ।",
                 "द्वन्द्वैर्विमुक्ताः सुखदुःखसंज्ञै-",
                 "र्गच्छन्त्यमूढाः पदमव्ययं तत् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "nirmānamohā jitasaṅgadoṣā",
+                    "adhyātmanityā vinivṛttakāmāḥ |",
+                    "dvandvairvimuktāḥ sukhaduḥkhasaṃjñai-",
+                    "rgacchantyamūḍhāḥ padamavyayaṃ tat ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिनका मान और मोह नष्ट हो गया है, जिन्होंने आसक्ति रूपी दोष को जीत लिया है, जो निरन्तर परमात्मा के ध्यान में स्थित हैं, जिनकी सम्पूर्ण कामनाएँ नष्ट हो चुकी हैं तथा जो सुख-दुःख नामक द्वन्द्वों से सर्वथा मुक्त हैं—वे ज्ञानीजन उस अविनाशी परम पद को प्राप्त होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those who are free from false prestige, illusion and false association, who understand the eternal, who are done with material lust, who are freed from the dualities of happiness and distress, and who, unbewildered, know how to surrender unto the Supreme Person attain to that eternal kingdom.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna lists the qualifications required to enter His eternal abode. One must be entirely stripped of ego, free from bad associations, situated in spiritual wisdom, devoid of lust, and perfectly balanced amidst life's dualities.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण अपने शाश्वत निवास में प्रवेश करने के लिए आवश्यक योग्यताओं को सूचीबद्ध करते हैं। व्यक्ति को पूरी तरह से अहंकार से मुक्त होना चाहिए, आध्यात्मिक ज्ञान में स्थित होना चाहिए, वासना से रहित होना चाहिए, और जीवन के द्वंद्वों के बीच पूरी तरह से संतुलित होना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Eradicating false pride is the first step to spiritual eligibility.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Only those unbothered by joy and sorrow can enter the eternal realm.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35786,6 +36069,61 @@
               "lines": [
                 "न तद्भासयते सूर्यो न शशाङ्को न पावकः ।",
                 "यद्गत्वा न निवर्तन्ते तद्धाम परमं मम ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "na tadbhāsayate sūryo na śaśāṅko na pāvakaḥ |",
+                    "yadgatvā na nivartante taddhāma paramaṃ mama ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिस परम पद को प्राप्त होकर मनुष्य लौटकर संसार में नहीं आते, उस स्थान को न सूर्य प्रकाशित कर सकता है, न चन्द्रमा और न अग्नि ही; वही मेरा परम धाम है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "That supreme abode of Mine is not illumined by the sun or moon, nor by fire or electricity. Those who reach it never return to this material world.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The spiritual realm is self-illuminating. It does not rely on physical light sources like the sun, moon, or fire. Once a soul attains this radiant, eternal home of God, it never falls back into the darkness of material existence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "आध्यात्मिक क्षेत्र स्वयं प्रकाशमान है। यह सूर्य, चंद्रमा या अग्नि जैसे भौतिक प्रकाश स्रोतों पर निर्भर नहीं करता है। एक बार जब कोई आत्मा भगवान के इस उज्ज्वल, शाश्वत घर को प्राप्त कर लेती है, तो वह कभी भी भौतिक अस्तित्व के अंधेरे में वापस नहीं आती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God's domain transcends physical physics and sources of energy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The spiritual world is self-luminous and eternally secure.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35795,6 +36133,61 @@
               "lines": [
                 "ममैवांशो जीवलोके जीवभूतः सनातनः ।",
                 "मनःषष्ठानीन्द्रियाणि प्रकृतिस्थानि कर्षति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "mamaivāṃśo jīvaloke jīvabhūtaḥ sanātanaḥ |",
+                    "manaḥṣaṣṭhānīndriyāṇi prakṛtisthāni karṣati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इस देह में यह सनातन जीवात्मा मेरा ही अंश है और वह इन त्रिगुणात्मक प्रकृति में स्थित मन सहित छहों इन्द्रियों को अपनी ओर आकर्षित करता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The living entities in this conditioned world are My eternal fragmental parts. Due to conditioned life, they are struggling very hard with the six senses, which include the mind.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Every living soul is an eternal, tiny fragment of the Supreme Lord. However, falling into the material world, the soul gets bound by nature and desperately struggles, dragged around by the mind and the five physical senses.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "प्रत्येक जीवित आत्मा परमेश्वर का एक शाश्वत, छोटा सा अंश है। हालाँकि, भौतिक दुनिया में गिरकर, आत्मा प्रकृति से बंध जाती है और मन और पाँच भौतिक इंद्रियों द्वारा घसीटे जाते हुए संघर्ष करती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "You are an eternal, inseparable fragment of God.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Worldly struggle is simply the soul wrestling with its own mind and senses.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35804,6 +36197,61 @@
               "lines": [
                 "शरीरं यदवाप्नोति यच्चाप्युत्क्रामतीश्वरः ।",
                 "गृहीत्वैतानि संयाति वायुर्गन्धानिवाशयात् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "śarīraṃ yadavāpnoti yaccāpyutkrāmatīśvaraḥ |",
+                    "gṛhītvaitāni saṃyāti vāyurgandhānivāśayāt ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वायु जैसे गन्ध के स्थान (पुष्पादि) से गन्ध को ग्रहण करके ले जाती है, वैसे ही देहादि का स्वामी जीवात्मा भी जिस शरीर को त्यागता है, उससे इन मन सहित इन्द्रियों को ग्रहण करके फिर जिस शरीर को प्राप्त होता है, उसमें ले जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The living entity in the material world carries his different conceptions of life from one body to another, as the air carries aromas. Thus he takes one kind of body and again quits it to take another.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "When a soul leaves a physical body, it doesn't leave empty-handed. Just as the wind carries the scent of flowers, the soul carries the mind and sensory impressions from its past life into its new body.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जब आत्मा भौतिक शरीर छोड़ती है, तो वह खाली हाथ नहीं जाती है। जिस प्रकार हवा फूलों की सुगंध ले जाती है, उसी प्रकार आत्मा अपने पिछले जीवन के मन और संवेदी छापों को अपने नए शरीर में ले जाती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Your mental state and desires travel with you after death.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The mind is the subtle vehicle that carries the soul to its next destination.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35813,6 +36261,61 @@
               "lines": [
                 "श्रोत्रं चक्षुः स्पर्शनं च रसनं घ्राणमेव च ।",
                 "अधिष्ठाय मनश्चायं विषयानुपसेवते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "śrotraṃ cakṣuḥ sparśanaṃ ca rasanaṃ ghrāṇameva ca |",
+                    "adhiṣṭhāya manaścāyaṃ viṣayānupasevate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "यह जीवात्मा श्रोत्र, चक्षु, त्वचा, रसना और घ्राण को तथा मन को आश्रय करके ही (अर्थात् इन सबके सहारे से ही) विषयों का सेवन करता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The living entity, thus taking another gross body, obtains a certain type of ear, eye, tongue, nose and sense of touch, which are grouped about the mind. He thus enjoys a particular set of sense objects.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Entering a new body shaped by past karma, the soul inherits a specific set of senses. Using these senses, organized around the mind, the soul experiences and attempts to enjoy the material world in its new form.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "पिछले कर्मों द्वारा आकार लिए गए नए शरीर में प्रवेश करते हुए, आत्मा को इंद्रियों का एक विशिष्ट सेट विरासत में मिलता है। मन के चारों ओर व्यवस्थित इन इंद्रियों का उपयोग करते हुए, आत्मा भौतिक दुनिया का अनुभव करती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The type of body and senses we receive are tailor-made for our past desires.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The mind is the central hub through which all physical senses operate.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35822,6 +36325,61 @@
               "lines": [
                 "उत्क्रामन्तं स्थितं वापि भुञ्जानं वा गुणान्वितम् ।",
                 "विमूढा नानुपश्यन्ति पश्यन्ति ज्ञानचक्षुषः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "utkrāmantaṃ sthitaṃ vāpi bhuñjānaṃ vā guṇānvitam |",
+                    "vimūḍhā nānupaśyanti paśyanti jñānacakṣuṣaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "शरीर को त्यागकर जाते हुए को, अथवा शरीर में स्थित हुए को, अथवा विषयों को भोगते हुए को, अथवा तीनों गुणों से युक्त हुए को भी अज्ञानी जन नहीं जानते; केवल ज्ञानरूप नेत्रों वाले ही यथार्थ देखते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The foolish cannot understand how a living entity can quit his body, nor can they understand what sort of body he enjoys under the spell of the modes of nature. But one whose eyes are trained in knowledge can see all this.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The ignorant, deluded by material life, cannot perceive the soul. They don't see it leaving at death, nor residing in the body, nor interacting with the gunas. Only those with the 'eyes of wisdom' can perceive the soul's true journey.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "भौतिक जीवन से भ्रमित अज्ञानी लोग आत्मा को नहीं देख सकते। वे इसे मृत्यु के समय निकलते हुए, या शरीर में रहते हुए नहीं देखते। केवल 'ज्ञान की आँखों' वाले ही आत्मा की सच्ची यात्रा को देख सकते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual realities are invisible to the materially absorbed mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Wisdom acts as a special lens allowing one to see the mechanics of reincarnation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35831,6 +36389,61 @@
               "lines": [
                 "यतन्तो योगिनश्चैनं पश्यन्त्यात्मन्यवस्थितम् ।",
                 "यतन्तोऽप्यकृतात्मानो नैनं पश्यन्त्यचेतसः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yatanto yoginaścainaṃ paśyantyātmanyavasthitam |",
+                    "yatanto'pyakṛtātmāno nainaṃ paśyantyacetasaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "यत्न करने वाले योगीजन अपने हृदय में स्थित इस आत्मा को तत्त्व से जानते हैं; किन्तु जिन्होंने अपने अन्तःकरण को शुद्ध नहीं किया है, ऐसे अज्ञानी जन यत्न करते रहने पर भी इस आत्मा को नहीं जानते।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The endeavoring transcendentalists who are situated in self-realization can see all this clearly. But those whose minds are not developed and who are not situated in self-realization cannot see what is taking place, though they may try.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Sincere yogis who actively discipline their minds successfully perceive the soul within. However, hypocrites or those with impure, restless minds cannot perceive spiritual truth, no matter how much they intellectually study or strive.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "ईमानदार योगी जो सक्रिय रूप से अपने मन को अनुशासित करते हैं, वे भीतर की आत्मा को सफलतापूर्वक देखते हैं। हालाँकि, अशुद्ध मन वाले लोग आध्यात्मिक सत्य को नहीं देख सकते, चाहे वे बौद्धिक रूप से कितना भी प्रयास करें।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Perceiving the soul requires an active, pure endeavor, not just wishing.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "An impure mind remains blind to truth despite immense intellectual effort.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35840,6 +36453,61 @@
               "lines": [
                 "यदादित्यगतं तेजो जगद्भासयतेऽखिलम् ।",
                 "यच्चन्द्रमसि यच्चाग्नौ तत्तेजो विद्धि मामकम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yadādityagataṃ tejo jagadbhāsayate'khilam |",
+                    "yaccandramasi yaccāgnau tattejo viddhi māmakam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "सूर्य में स्थित जो तेज सम्पूर्ण जगत् को प्रकाशित करता है, और जो तेज चन्द्रमा में है तथा जो अग्नि में है, उस तेज को तू मेरा ही जान।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The splendor of the sun, which dissipates the darkness of this whole world, comes from Me. And the splendor of the moon and the splendor of fire are also from Me.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna shifts to demonstrating His presence in the physical universe. The brilliance of the sun that lights up the solar system, the soothing light of the moon, and the illuminating heat of fire—all originate from His supreme energy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण भौतिक ब्रह्मांड में अपनी उपस्थिति प्रदर्शित करते हैं। सौर मंडल को रोशन करने वाले सूर्य की चमक, चंद्रमा का सुखदायक प्रकाश और अग्नि की गर्मी—सभी उनकी सर्वोच्च ऊर्जा से उत्पन्न होते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "All sources of light and energy in the universe are borrowed from God.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Nature's brilliance is a constant reminder of the Divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35849,6 +36517,61 @@
               "lines": [
                 "गामाविश्य च भूतानि धारयाम्यहमोजसा ।",
                 "पुष्णामि चौषधीः सर्वाः सोमो भूत्वा रसात्मकः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "gāmāviśya ca bhūtāni dhārayāmyahamojasā |",
+                    "puṣṇāmi cauṣadhīḥ sarvāḥ somo bhūtvā rasātmakaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मैं ही पृथ्वी में प्रवेश करके अपनी शक्ति से सब प्राणियों को धारण करता हूँ, और रसस्वरूप अमृतमय चन्द्रमा होकर सम्पूर्ण ओषधियों (वनस्पतियों) को पुष्ट करता हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "I enter into each planet, and by My energy they stay in orbit. I become the moon and thereby supply the juice of life to all vegetables.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "God's energy is the gravitational and sustaining force that keeps planets in orbit and allows the earth to hold life. Furthermore, as the moonlight, He infuses plants and vegetables with life-giving sap and nourishment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "ईश्वर की ऊर्जा ही वह गुरुत्वाकर्षण शक्ति है जो ग्रहों को कक्षा में रखती है। इसके अलावा, चाँदनी के रूप में, वह पौधों और सब्जियों में जीवन देने वाला रस और पोषण भरते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The laws of astrophysics and biology operate via divine energy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God is the silent sustainer of planetary orbits and biological growth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35858,6 +36581,61 @@
               "lines": [
                 "अहं वैश्वानरो भूत्वा प्राणिनां देहमाश्रितः ।",
                 "प्राणापानसमायुक्तः पचाम्यन्नं चतुर्विधम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ahaṃ vaiśvānaro bhūtvā prāṇināṃ dehamāśritaḥ |",
+                    "prāṇāpānasamāyuktaḥ pacāmyannaṃ caturvidham ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मैं ही सब प्राणियों के शरीर में स्थित होकर वैश्वानर (जठराग्नि) रूप से प्राण और अपान से युक्त होकर चार प्रकार के अन्न को पचाता हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "I am the fire of digestion in the bodies of all living entities, and I join with the air of life, outgoing and incoming, to digest the four kinds of foodstuff.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The Divine operates at the most intimate biological level. Krishna identifies Himself as the metabolic fire (Vaishvanara) inside the stomach. Coordinated with the breath, God digests the food we eat to keep us alive.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "परमात्मा सबसे अंतरंग जैविक स्तर पर कार्य करता है। कृष्ण स्वयं को पेट के अंदर चयापचय अग्नि (वैश्वानर) के रूप में पहचानते हैं। सांस के साथ समन्वयित होकर, भगवान हमारे भोजन को पचाते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God is responsible for the fundamental biological processes keeping us alive.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Digestion itself is a divine sacrifice occurring within the body.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35869,6 +36647,63 @@
                 "मत्तः स्मृतिर्ज्ञानमपोहनञ्च ।",
                 "वेदैश्च सर्वैरहमेव वेद्यो",
                 "वेदान्तकृद्वेदविदेव चाहम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sarvasya cāhaṃ hṛdi sanniviṣṭo",
+                    "mattaḥ smṛtirjñānamapohanañca |",
+                    "vedaiśca sarvairahameva vedyo",
+                    "vedāntakṛdvedavideva cāham ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मैं ही सब प्राणियों के हृदय में अन्तर्यामी रूप से स्थित हूँ। मुझी से स्मृति, ज्ञान और अपोहन (संशय-निवारण अथवा अज्ञान) होता है। सम्पूर्ण वेदों द्वारा मैं ही जानने योग्य हूँ; वेदान्त का कर्ता और वेदों का जानने वाला भी मैं ही हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "I am seated in everyone's heart, and from Me come remembrance, knowledge and forgetfulness. By all the Vedas, I am to be known. Indeed, I am the compiler of Vedanta, and I am the knower of the Vedas.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "God resides in the core of every heart, directing the soul's psychological journey by granting memory, wisdom, and even forgetfulness (according to karma). He is the ultimate author, subject, and comprehender of all sacred knowledge.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "भगवान हर दिल के मूल में निवास करते हैं, स्मृति, ज्ञान और यहां तक ​​कि भूलने की बीमारी (कर्म के अनुसार) प्रदान करके आत्मा की मनोवैज्ञानिक यात्रा का निर्देशन करते हैं। वह सभी पवित्र ज्ञान के अंतिम लेखक, विषय और ज्ञाता हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Cognitive functions like memory and realization are gifts from the Supersoul.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The singular purpose of studying any scripture is to know God.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35878,6 +36713,61 @@
               "lines": [
                 "द्वाविमौ पुरुषौ लोके क्षरश्चाक्षर एव च ।",
                 "क्षरः सर्वाणि भूतानि कूटस्थोऽक्षर उच्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "dvāvimau puruṣau loke kṣaraścākṣara eva ca |",
+                    "kṣaraḥ sarvāṇi bhūtāni kūṭastho'kṣara ucyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इस संसार में दो प्रकार के पुरुष हैं—क्षर (नाशवान्) और अक्षर (अविनाशी)। सम्पूर्ण भूत-प्राणियों के शरीर तो क्षर कहे जाते हैं और कूटस्थ (निर्विकार) जीवात्मा को अक्षर कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "There are two classes of beings, the fallible and the infallible. In the material world every living entity is fallible, and in the spiritual world every living entity is called infallible.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna divides all entities into two categories. 'Kshara' (fallible/perishable) refers to all the changing, temporary bodies in the material world. 'Akshara' (infallible/imperishable) refers to the unchanging, eternal souls within them.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण सभी संस्थाओं को दो श्रेणियों में विभाजित करते हैं। 'क्षर' (नाशवान) भौतिक दुनिया में सभी बदलते, अस्थायी निकायों को संदर्भित करता है। 'अक्षर' (अविनाशी) उनके भीतर अपरिवर्तनीय, शाश्वत आत्माओं को संदर्भित करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Everything material is subject to decay and change.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The spiritual core within all beings is permanent and unchanging.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35887,6 +36777,61 @@
               "lines": [
                 "उत्तमः पुरुषस्त्वन्यः परमात्मेत्युदाहृतः ।",
                 "यो लोकत्रयमाविश्य बिभर्त्यव्यय ईश्वरः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "uttamaḥ puruṣastvanyaḥ paramātmetyudāhṛtaḥ |",
+                    "yo lokatrayamāviśya bibhartyavyaya īśvaraḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इन दोनों से उत्तम पुरुष तो अन्य ही है, जो तीनों लोकों में प्रवेश करके सबका धारण-पोषण करता है, जिसे 'परमात्मा' (अविनाशी ईश्वर) कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Besides these two, there is the greatest living personality, the Supreme Soul, the imperishable Lord Himself, who has entered the three worlds and is maintaining them.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Beyond the perishable bodies and the imperishable individual souls, there is a third, highest entity: the Paramatma (Supersoul). This is God Himself, who enters the universe to sustain and support it entirely.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "नाशवान शरीरों और अविनाशी व्यक्तिगत आत्माओं से परे, एक तीसरी, सर्वोच्च इकाई है: परमात्मा। यह स्वयं ईश्वर है, जो ब्रह्मांड में प्रवेश करके इसे पूरी तरह से बनाए रखता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God is distinct from and superior to both the material world and individual souls.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The Supreme Soul actively enters and maintains the cosmos.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35896,6 +36841,61 @@
               "lines": [
                 "यस्मात्क्षरमतीतोऽहमक्षरादपि चोत्तमः ।",
                 "अतोऽस्मि लोके वेदे च प्रथितः पुरुषोत्तमः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yasmātkṣaramatīto'hamakṣarādapi cottamaḥ |",
+                    "ato'smi loke vede ca prathitaḥ puruṣottamaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "चूँकि मैं क्षर (नाशवान् जड़ वर्ग) से अतीत हूँ और अक्षर (अविनाशी जीवात्मा) से भी उत्तम हूँ, इसलिए लोक में और वेदों में 'पुरुषोत्तम' नाम से प्रसिद्ध हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Because I am transcendental, beyond both the fallible and the infallible, and because I am the greatest, I am celebrated both in the world and in the Vedas as that Supreme Person.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Because Krishna completely transcends the perishable material world and is infinitely greater than even the eternal individual souls, He is rightfully celebrated across all scriptures and worlds as 'Purushottama'—the Supreme Person.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "चूँकि कृष्ण नाशवान भौतिक दुनिया को पूरी तरह से पार कर जाते हैं और शाश्वत आत्माओं से भी असीम रूप से महान हैं, इसलिए उन्हें सभी शास्त्रों और दुनिया भर में 'पुरुषोत्तम'—सर्वोच्च पुरुष के रूप में मनाया जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Purushottama means the ultimate, highest entity above all matter and spirit.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God's supremacy is absolute and recognized by all Vedic wisdom.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35905,6 +36905,61 @@
               "lines": [
                 "यो मामेवमसम्मूढो जानाति पुरुषोत्तमम् ।",
                 "स सर्वविद्भजति मां सर्वभावेन भारत ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yo māmevamasammūḍho jānāti puruṣottamam |",
+                    "sa sarvavidbhajati māṃ sarvabhāvena bhārata ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे भरतवंशी! जो मोहरहित पुरुष मुझे इस प्रकार पुरुषोत्तम जानता है, वह सर्वज्ञ पुरुष सब प्रकार से निरन्तर मुझ परमेश्वर को ही भजता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Whoever knows Me as the Supreme Personality of Godhead, without doubting, is the knower of everything. He therefore engages himself in full devotional service to Me, O son of Bharata.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "A person who cuts through all illusions and recognizes Krishna as the Purushottama is considered to possess all knowledge. The natural, spontaneous result of this perfect knowledge is complete, wholehearted devotion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जो व्यक्ति सभी भ्रमों को काटता है और कृष्ण को पुरुषोत्तम के रूप में पहचानता है, उसे सभी ज्ञान रखने वाला माना जाता है। इस पूर्ण ज्ञान का स्वाभाविक परिणाम पूर्ण, सच्चे दिल से भक्ति है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Knowing God's true position is the zenith of all knowledge.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Perfect knowledge naturally expresses itself as pure, unalloyed love and service.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -35914,6 +36969,61 @@
               "lines": [
                 "इति गुह्यतमं शास्त्रमिदमुक्तं मयानघ ।",
                 "एतद्बुद्ध्वा बुद्धिमान्स्यात्कृतकृत्यश्च भारत ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "iti guhyatamaṃ śāstramidamuktaṃ mayānagha |",
+                    "etadbuddhvā buddhimānsyātkṛtakṛtyaśca bhārata ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे निष्पाप अर्जुन! इस प्रकार यह अति रहस्ययुक्त गोपनीय शास्त्र मेरे द्वारा कहा गया। हे भरतवंशी! इसको तत्त्व से जानकर मनुष्य ज्ञानवान् हो जाता है और उसके सभी कर्त्तव्य पूर्ण हो जाते हैं (कृतकृत्य हो जाता है)।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "This is the most confidential part of the Vedic scriptures, O sinless one, and it is disclosed now by Me. Whoever understands this will become wise, and his endeavors will know perfection.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna concludes the chapter by stating that this explanation of Purushottama is the most profound secret of all Vedic literature. Understanding it makes a person truly wise, bringing ultimate perfection and completion to their life's purpose.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण अध्याय का समापन करते हुए कहते हैं कि पुरुषोत्तम की यह व्याख्या सभी वैदिक साहित्य का सबसे गहरा रहस्य है। इसे समझने से व्यक्ति वास्तव में बुद्धिमान हो जाता है, जिससे उनके जीवन के उद्देश्य में पूर्णता आती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The knowledge of the Supreme Person is the ultimate spiritual secret.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Grasping this truth fulfills the very purpose of human existence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
