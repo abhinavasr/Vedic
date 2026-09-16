@@ -1,4 +1,4 @@
-package com.abhinavasr.vedic
+package com.batiyao.veda
 
 import io.flutter.embedding.android.FlutterActivity
 
