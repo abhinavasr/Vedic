@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../library/scripture_repository.dart';
+import '../ai/reading_languages.dart';
 import 'bookmarks_screen.dart';
 import 'home/home_screen.dart';
+import 'reader_screens.dart';
 import 'library_screen.dart';
 import 'meditation_screen.dart';
 import 'simple_screens.dart';
@@ -29,6 +31,27 @@ class _SadhanaShellState extends State<SadhanaShell> {
     if (tab == 2) _bookmarkVisits++;
   });
 
+  /// Opens the reader where the reader left off, with the chant switched on.
+  ///
+  /// Someone who taps Listen has said what they want to hear, so the mix is
+  /// set for them rather than left for them to find — the meaning stays on
+  /// beside it, which is what the tile has always promised.
+  void _openChants() {
+    final reading = ReadingLanguageScope.of(context);
+    reading.mix = reading.mix.with_(chant: true);
+    final work = widget.repository.works().firstOrNull;
+    if (work == null) return;
+    final mark = widget.repository.store.lastRead(work.pack.packId, work.slug);
+    final section = mark == null
+        ? widget.repository.sections(work).firstOrNull
+        : widget.repository.sections(work).where(
+            (s) => s.number == mark.split('.').first,
+          ).firstOrNull ??
+              widget.repository.sections(work).firstOrNull;
+    if (section == null) return;
+    openSection(context, widget.repository, work, section, atRef: mark);
+  }
+
   void _openSettings() =>
       Navigator.of(context)
           .push(MaterialPageRoute<void>(builder: (_) => const ProfileScreen()));
@@ -44,6 +67,7 @@ class _SadhanaShellState extends State<SadhanaShell> {
           onOpenLibrary: () => _open(1),
           onOpenMeditation: () => _open(3),
           onOpenSettings: _openSettings,
+          onOpenChants: _openChants,
         ),
         LibraryScreen(
           repository: widget.repository,

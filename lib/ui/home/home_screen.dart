@@ -22,6 +22,7 @@ class HomeScreen extends StatefulWidget {
     required this.onOpenLibrary,
     required this.onOpenMeditation,
     required this.onOpenSettings,
+    required this.onOpenChants,
     this.problem,
   });
 
@@ -29,6 +30,9 @@ class HomeScreen extends StatefulWidget {
   final VoidCallback onOpenLibrary;
   final VoidCallback onOpenMeditation;
   final VoidCallback onOpenSettings;
+
+  /// Opens the reader with the chant playing.
+  final VoidCallback onOpenChants;
 
   /// Why bundled content couldn't be installed, if it couldn't.
   final String? problem;
@@ -150,6 +154,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     final onOpenLibrary = widget.onOpenLibrary;
     final onOpenMeditation = widget.onOpenMeditation;
     final onOpenSettings = widget.onOpenSettings;
+    final onOpenChants = widget.onOpenChants;
     final verse = repository.verseOfTheDay(DateTime.now(), skip: _passedOver);
     // Only the header sits on the picture now, so the banner is as tall as
     // it needs to be to read as one rather than as a gap.
@@ -209,6 +214,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: _FeatureTiles(
+                    onOpenChants: onOpenChants,
                     onOpenLibrary: onOpenLibrary,
                     onOpenMeditation: onOpenMeditation,
                   ),
@@ -351,10 +357,12 @@ class _FeatureTiles extends StatelessWidget {
   const _FeatureTiles({
     required this.onOpenLibrary,
     required this.onOpenMeditation,
+    required this.onOpenChants,
   });
 
   final VoidCallback onOpenLibrary;
   final VoidCallback onOpenMeditation;
+  final VoidCallback onOpenChants;
 
   @override
   Widget build(BuildContext context) {
@@ -383,12 +391,10 @@ class _FeatureTiles extends StatelessWidget {
           icon: Icons.headphones_outlined,
           background: const Color(0xFFFBE3DD),
           foreground: const Color(0xFFB5563E),
-          onTap: () => comingSoon(
-            'Listen',
-            Icons.headphones_outlined,
-            'Sanskrit chanting, verse by verse, arrives as downloadable audio '
-                'packs.',
-          ),
+          // Straight to the chant, now that there is one. It opens where the
+          // reader left off, with the chant switched on for the verse they
+          // land on.
+          onTap: onOpenChants,
         ),
         _Tile(
           title: 'Panchang',

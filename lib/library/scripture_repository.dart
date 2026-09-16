@@ -91,6 +91,27 @@ class NoteView {
   final bool onThisPhone;
 }
 
+/// A recording the pack publishes for a passage.
+class AudioView {
+  const AudioView({
+    required this.voice,
+    required this.file,
+    required this.mime,
+    required this.durationMs,
+    required this.size,
+    required this.sha256,
+  });
+
+  final String voice;
+
+  /// Where it is: a path under the pack host, or an absolute https URL.
+  final String file;
+  final String mime;
+  final int durationMs;
+  final int size;
+  final String sha256;
+}
+
 class PassageView {
   const PassageView({
     required this.ref,
@@ -104,6 +125,7 @@ class PassageView {
     this.translations = const [],
     this.explanations = const [],
     this.takeaways = const [],
+    this.audio = const [],
   });
 
   final String ref;
@@ -130,6 +152,10 @@ class PassageView {
   /// Key takeaway lines shipped with the verse, in every language.
   final List<NoteView> takeaways;
 
+  /// Recordings published for this passage. Empty for most passages in most
+  /// packs, which is why nothing above here depends on there being one.
+  final List<AudioView> audio;
+
   PassageView withSpeaker(String? speaker) => PassageView(
     ref: ref,
     label: label,
@@ -142,6 +168,7 @@ class PassageView {
     translations: translations,
     explanations: explanations,
     takeaways: takeaways,
+    audio: audio,
   );
 
   /// The translation to show, preferring [languages] in order. Published
@@ -544,6 +571,21 @@ class ScriptureRepository {
     Map<String, List<TranslationView>> local = const {},
     Map<String, List<NoteView>> localNotes = const {},
   }) {
+    final audio = [
+      for (final row in db.select(
+        'SELECT voice_id, file, mime, duration_ms, size, sha256 FROM audio '
+        'WHERE passage_id = ?',
+        [row['id'] as int],
+      ))
+        AudioView(
+          voice: row['voice_id'] as String,
+          file: row['file'] as String,
+          mime: row['mime'] as String,
+          durationMs: row['duration_ms'] as int,
+          size: row['size'] as int,
+          sha256: row['sha256'] as String,
+        ),
+    ];
     final variants = <String>[];
     final translations = <TranslationView>[];
     final explanations = <NoteView>[];
@@ -589,6 +631,7 @@ class ScriptureRepository {
       translations: translations,
       explanations: explanations,
       takeaways: takeaways,
+      audio: audio,
     );
   }
 

@@ -120,7 +120,11 @@ class AudioFileSource {
 
   final String voice;
 
-  /// Relative to the pack revision directory on the host, under `audio/`.
+  /// Where the recording is.
+  ///
+  /// Normally relative to the pack revision directory on the host, under
+  /// `audio/`. An absolute https URL is also allowed, for a publisher who
+  /// serves audio from somewhere other than the pack host.
   final String file;
   final String mime;
   final int durationMs;
@@ -576,6 +580,10 @@ List<PassageSource> _parsePassage(
             mime: a.oneOf('mime', const {
               'audio/mp4': 'audio/mp4',
               'audio/ogg': 'audio/ogg',
+              // Uncompressed, as some renderers deliver it. Five times the
+              // size of AAC for the same recording, so it is a choice a
+              // publisher makes rather than the one to reach for.
+              'audio/wav': 'audio/wav',
             }),
             durationMs: a.integer('duration_ms', min: 1),
             size: a.integer('size', min: 1),

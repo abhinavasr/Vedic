@@ -21,6 +21,7 @@ import hashlib
 import json
 import os
 import pathlib
+import re
 import subprocess
 import sys
 import time
@@ -45,6 +46,23 @@ def resolve(host):
     return [a["data"] for a in answer if a.get("type") == 1]
 
 
+# Devanagari digits crash the server (HTTP 500), and they are not part of the
+# recitation anyway: the pack schema says verse numbers are removed from
+# `lines`, and only the chapter colophons still carry theirs. Taking them out
+# is what the schema asks for and what the reciter would do.
+DEVANAGARI_DIGITS = str.maketrans('', '', '\u0966\u0967\u0968\u0969\u096a\u096b\u096c\u096d\u096e\u096f')
+
+
+def speakable(text):
+    """The text as it should be recited."""
+    cleaned = text.translate(DEVANAGARI_DIGITS)
+    # A number removed from between two dandas leaves "॥ ॥", which is a pause
+    # taken twice. One danda is the end of the line either way.
+    cleaned = re.sub(r"॥\s*॥", "॥", cleaned)
+    cleaned = re.sub(r"।\s*।", "।", cleaned)
+    return "\n".join(" ".join(line.split()) for line in cleaned.splitlines())
+
+
 def passages(pack, kinds):
     """Every passage worth rendering, in the order the book has them."""
     content = json.load(open(pack))
@@ -55,7 +73,11 @@ def passages(pack, kinds):
                     continue
                 lines = [l for l in passage.get("lines", []) if l.strip()]
                 if lines:
-                    yield work.get("slug", "work"), passage["ref"], "\n".join(lines)
+                    yield (
+                        work.get("slug", "work"),
+                        passage["ref"],
+                        speakable("\n".join(lines)),
+                    )
 
 
 def render(text, out, key, address, timeout):

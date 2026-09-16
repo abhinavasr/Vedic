@@ -183,8 +183,8 @@ The unit the reader shows, a citation points to, and audio is recorded for.
 | Field | Type | Rules |
 |---|---|---|
 | `voice` | string | A `voices[].id` |
-| `file` | string | Path relative to the pack revision directory on the host, under `audio/`. Letters, digits, `.`, `_`, `-`, `/` only; no `..` |
-| `mime` | string | `audio/mp4` (AAC-LC, 64 kbps mono recommended) or `audio/ogg` (Opus, 32 kbps) |
+| `file` | string | Path relative to the pack revision directory on the host, under `audio/` — letters, digits, `.`, `_`, `-`, `/` only, no `..`. May instead be an absolute `https://` URL, for a publisher serving audio from somewhere other than the pack host |
+| `mime` | string | `audio/mp4` (AAC-LC, 64 kbps mono recommended), `audio/ogg` (Opus, 32 kbps) or `audio/wav` (uncompressed — about five times the size for the same recording) |
 | `duration_ms` | integer | Used for progress and verse highlighting |
 | `size` | integer | Bytes as served |
 | `sha256` | string | Lowercase hex of the file as served. The app rejects a mismatch |

@@ -9,10 +9,12 @@ import 'ai/assistant.dart';
 import 'ai/reading_languages.dart';
 import 'ai/store_settings.dart';
 import 'app_build.dart';
+import 'audio/chant_wiring.dart';
 import 'packs/bundled_assets.dart';
 import 'packs/pack_store.dart';
 import 'packs/trusted_keys.dart';
 import 'ui/app.dart';
+import 'ui/listen_meaning.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,6 +30,10 @@ Future<void> main() async {
   Assistant.instance = Assistant(settings: settings);
   ReadingLanguage.instance = ReadingLanguage(settings);
   Assistant.instance.watchLifecycle();
+  // Chant playback, where this build has a key for the audio host. Without
+  // one there is no chant and nothing says otherwise.
+  final chants = chantSource(directory: support);
+  if (chants != null) ChantSource.instance = chants;
   runApp(
     VedicApp(
       store: store,
