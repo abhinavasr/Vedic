@@ -40,6 +40,9 @@ flutter:
     - assets/packs/
     - assets/images/
     - assets/sounds/
+    # The tz database's own place list, public domain (test/fixtures/astronomy
+    # explains why the panchang needs coordinates as well as a clock).
+    - assets/timezones/
 
 # App icons from the Sadhana logo: `dart run flutter_launcher_icons`.
 # Sources live in branding/ so they are not bundled into the app.
