@@ -11,8 +11,6 @@ import '../simple_screens.dart';
 import '../theme.dart';
 import 'hero_background.dart';
 
-const _heroShadow = [Shadow(color: Color(0x66000000), blurRadius: 12)];
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
     super.key,
@@ -57,18 +55,7 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SadhanaHeader(onOpenSettings: onOpenSettings),
-                        const SizedBox(height: 34),
-                        Text(
-                          'Read  ·  Listen\nReflect  ·  Anytime',
-                          style: serif(
-                            size: 34,
-                            color: Colors.white,
-                            height: 1.15,
-                          ).copyWith(shadows: _heroShadow),
-                        ),
-                      ],
+                      children: [SadhanaHeader(onOpenSettings: onOpenSettings)],
                     ),
                   ),
                 ),

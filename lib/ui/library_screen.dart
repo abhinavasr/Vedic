@@ -335,24 +335,30 @@ class _Cover extends StatelessWidget {
   static const _height = 132.0;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) => ClipRRect(
+    borderRadius: BorderRadius.circular(14),
+    child: SizedBox(width: _width, height: _height, child: _picture()),
+  );
+
+  /// A cover ships with the pack or comes from a partner's server, so both an
+  /// asset path and an http URL are accepted. Either way, one that will not
+  /// load falls back rather than taking the shelf with it.
+  Widget _picture() {
     final url = work.coverUrl;
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(14),
-      child: SizedBox(
-        width: _width,
-        height: _height,
-        child: url == null
-            ? _placeholder()
-            : Image.network(
-                url,
-                fit: BoxFit.cover,
-                // A cover that will not load must not take the shelf with it.
-                errorBuilder: (_, _, _) => _placeholder(),
-                loadingBuilder: (context, child, progress) =>
-                    progress == null ? child : _placeholder(),
-              ),
-      ),
+    if (url == null) return _placeholder();
+    if (url.startsWith('http')) {
+      return Image.network(
+        url,
+        fit: BoxFit.cover,
+        errorBuilder: (_, _, _) => _placeholder(),
+        loadingBuilder: (context, child, progress) =>
+            progress == null ? child : _placeholder(),
+      );
+    }
+    return Image.asset(
+      url,
+      fit: BoxFit.cover,
+      errorBuilder: (_, _, _) => _placeholder(),
     );
   }
 
