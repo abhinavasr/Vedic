@@ -374,6 +374,13 @@ void validatePackContent(PackContent c) {
             !translations.add(r.language)) {
           throw PackFormatException('$at has two "${r.language}" translations');
         }
+        if (r.kind == RenderingKind.commentary &&
+            r.scheme != 'explanation' &&
+            r.scheme != 'takeaway') {
+          throw PackFormatException(
+            '$at has a note that is neither an explanation nor a takeaway',
+          );
+        }
         if (r.kind == RenderingKind.transliteration &&
             !schemes.add(r.scheme ?? '')) {
           throw PackFormatException(
@@ -531,6 +538,18 @@ List<PassageSource> _parsePassage(
                 ? t.oneOf('origin', _names(TextOrigin.values))
                 : TextOrigin.human,
           ),
+        for (final note in p.objects('notes', optional: true))
+          RenderingSource(
+            kind: RenderingKind.commentary,
+            language: note.string('language'),
+            scheme: note.oneOf('kind', const {
+              'explanation': 'explanation',
+              'takeaway': 'takeaway',
+            }),
+            text: note.string('text'),
+            author: note.optionalString('author'),
+            licenceId: note.string('licence'),
+          ),
         if (p.has('variants'))
           for (final variant in p.strings('variants'))
             RenderingSource(
@@ -634,6 +653,7 @@ Map<String, Object?> _passageToJson(
   ];
   final transliterations = of(RenderingKind.transliteration);
   final translations = of(RenderingKind.translation);
+  final notes = of(RenderingKind.commentary);
   final variants = of(RenderingKind.variant);
 
   return {
@@ -662,6 +682,17 @@ Map<String, Object?> _passageToJson(
             if (r.author != null) 'translator': r.author,
             'licence': r.licenceId ?? w.licenceId,
             if (r.origin == TextOrigin.machine) 'origin': 'machine',
+          },
+      ],
+    if (notes.isNotEmpty)
+      'notes': [
+        for (final r in notes)
+          {
+            'kind': r.scheme ?? 'explanation',
+            'language': r.language,
+            'text': r.text,
+            if (r.author != null) 'author': r.author,
+            'licence': r.licenceId ?? w.licenceId,
           },
       ],
     if (variants.isNotEmpty) 'variants': [for (final r in variants) r.text],

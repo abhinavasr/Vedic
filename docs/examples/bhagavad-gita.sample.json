@@ -1,0 +1,185 @@
+{
+  "_README": [
+    "SAMPLE ONLY — every '<...>' is a placeholder to replace, not real content.",
+    "This is the file the content server should produce for one pack revision.",
+    "Full rules: docs/PACK_CONTENT_JSON.md. Machine-checkable: docs/schemas/pack-content.v1.schema.json.",
+    "Send one JSON per pack revision, plus the audio files it references, keeping the audio/ paths.",
+    "Underscore-prefixed keys like this one are ignored by the app; remove them if you prefer."
+  ],
+
+  "format": "vedic-pack-content",
+  "format_version": 1,
+  "pack_id": "bhagavad-gita",
+  "revision": 1,
+  "languages": ["sa", "hi", "en"],
+
+  "licences": [
+    {
+      "id": "gita-sa",
+      "name": "Bhagavad Gītā, Sanskrit text",
+      "attribution": "<who the Sanskrit text is credited to, shown in the reader>"
+    },
+    {
+      "id": "gita-hi",
+      "name": "Hindi translation",
+      "attribution": "<translator credit>"
+    },
+    {
+      "id": "gita-en",
+      "name": "English translation and notes",
+      "attribution": "<translator credit>"
+    }
+  ],
+
+  "voices": [
+    {
+      "id": "chant-m1",
+      "name": "<voice name shown to the reader>",
+      "language": "sa",
+      "style": "chant",
+      "engine": "<model and revision that rendered the audio>",
+      "licence": "gita-sa"
+    }
+  ],
+
+  "works": [
+    {
+      "slug": "bhagavad-gita",
+      "kind": "scripture",
+      "title": {
+        "sa": "श्रीमद्भगवद्गीता",
+        "hi": "श्रीमद्भगवद्गीता",
+        "en": "Bhagavad Gītā"
+      },
+      "original_language": "sa",
+      "script": "Deva",
+      "edition": "<edition or recension, because verse numbering depends on it>",
+      "licence": "gita-sa",
+      "source_note": "<where this text came from, for our records>",
+
+      "front_matter": [
+        {
+          "ref": "invocation",
+          "kind": "prose",
+          "lines": ["॥ ॐ श्री परमात्मने नमः ॥"]
+        }
+      ],
+
+      "sections": [
+        {
+          "kind": "chapter",
+          "number": "2",
+          "title": {
+            "sa": "साङ्ख्ययोगः",
+            "hi": "सांख्य योग",
+            "en": "Sāṅkhya Yoga"
+          },
+          "summary": {
+            "en": "<one or two lines describing the chapter, shown under its title>",
+            "hi": "<वही, हिन्दी में>"
+          },
+          "passages": [
+            {
+              "ref": "2.47",
+              "kind": "verse",
+              "label": "2.47",
+              "speaker": {
+                "sa": "श्रीभगवानुवाच",
+                "hi": "श्रीभगवान् बोले",
+                "en": "The Blessed Lord said"
+              },
+              "lines": [
+                "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।",
+                "मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥"
+              ],
+              "meter": "anuṣṭubh",
+
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "<IAST line 1 — optional; the app can transliterate itself>",
+                    "<IAST line 2>"
+                  ]
+                }
+              ],
+
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "<हिन्दी अनुवाद>",
+                  "translator": "<translator>",
+                  "licence": "gita-hi",
+                  "origin": "human"
+                },
+                {
+                  "language": "en",
+                  "text": "<English translation>",
+                  "translator": "<translator>",
+                  "licence": "gita-en",
+                  "origin": "human"
+                }
+              ],
+
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "<the Explanation paragraph shown under the verse>",
+                  "author": "<author>",
+                  "licence": "gita-en"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "<one key takeaway, one line>",
+                  "licence": "gita-en"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "<another key takeaway>",
+                  "licence": "gita-en"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "<व्याख्या>",
+                  "licence": "gita-hi"
+                }
+              ],
+
+              "variants": ["<alternative reading, if the edition records one>"],
+
+              "audio": [
+                {
+                  "voice": "chant-m1",
+                  "file": "audio/chant-m1/2/2.47.m4a",
+                  "mime": "audio/mp4",
+                  "duration_ms": 11840,
+                  "size": 95123,
+                  "sha256": "<64 lowercase hex characters of the file as served>"
+                }
+              ]
+            },
+
+            {
+              "ref": "2.48",
+              "kind": "verse",
+              "label": "2.48",
+              "lines": [
+                "<Sanskrit line 1 of verse 2.48, verse numbers removed>",
+                "<Sanskrit line 2>"
+              ],
+              "translations": [
+                { "language": "en", "text": "<English translation>", "licence": "gita-en" }
+              ]
+            }
+          ]
+        }
+      ],
+
+      "back_matter": []
+    }
+  ]
+}

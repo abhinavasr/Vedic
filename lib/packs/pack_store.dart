@@ -69,6 +69,21 @@ class PackIntegrityException implements Exception {
   String toString() => 'PackIntegrityException: $message';
 }
 
+/// A place in a work the reader reached or bookmarked.
+class ReadingMark {
+  const ReadingMark({
+    required this.packId,
+    required this.workSlug,
+    required this.ref,
+    required this.at,
+  });
+
+  final String packId;
+  final String workSlug;
+  final String ref;
+  final DateTime at;
+}
+
 /// Returns the content key for an encrypted pack, e.g. by unwrapping its
 /// device key envelope.
 typedef ContentKeyProvider = Future<List<int>> Function(PackManifest manifest);
@@ -271,15 +286,112 @@ class PackStore {
     }
   }
 
+  /// The passage the reader last opened in a work.
+  String? lastRead(String packId, String workSlug) => _withRegistry((db) {
+    final rows = db.select(
+      'SELECT ref FROM reading_progress WHERE pack_id = ? AND work_slug = ?',
+      [packId, workSlug],
+    );
+    return rows.isEmpty ? null : rows.first['ref'] as String;
+  });
+
+  void saveLastRead({
+    required String packId,
+    required String workSlug,
+    required String ref,
+  }) => _withRegistry(
+    (db) => db.execute(
+      'INSERT INTO reading_progress (pack_id, work_slug, ref, updated_at) '
+      'VALUES (?, ?, ?, ?) ON CONFLICT (pack_id, work_slug) DO UPDATE SET '
+      'ref = excluded.ref, updated_at = excluded.updated_at',
+      [packId, workSlug, ref, DateTime.now().toUtc().toIso8601String()],
+    ),
+  );
+
+  /// Works the reader has opened, most recent first.
+  List<ReadingMark> recentlyRead({int limit = 10}) => _withRegistry(
+    (db) => [
+      for (final row in db.select(
+        'SELECT pack_id, work_slug, ref, updated_at FROM reading_progress '
+        'ORDER BY updated_at DESC LIMIT ?',
+        [limit],
+      ))
+        _mark(row, 'updated_at'),
+    ],
+  );
+
+  bool isBookmarked(String packId, String workSlug, String ref) =>
+      _withRegistry(
+        (db) => db.select(
+          'SELECT 1 FROM bookmarks WHERE pack_id = ? AND work_slug = ? '
+          'AND ref = ?',
+          [packId, workSlug, ref],
+        ).isNotEmpty,
+      );
+
+  /// Adds or removes a bookmark, and returns whether it is now bookmarked.
+  bool toggleBookmark({
+    required String packId,
+    required String workSlug,
+    required String ref,
+  }) {
+    final bookmarked = isBookmarked(packId, workSlug, ref);
+    _withRegistry(
+      (db) => bookmarked
+          ? db.execute(
+              'DELETE FROM bookmarks WHERE pack_id = ? AND work_slug = ? '
+              'AND ref = ?',
+              [packId, workSlug, ref],
+            )
+          : db.execute(
+              'INSERT INTO bookmarks (pack_id, work_slug, ref, created_at) '
+              'VALUES (?, ?, ?, ?)',
+              [packId, workSlug, ref, DateTime.now().toUtc().toIso8601String()],
+            ),
+    );
+    return !bookmarked;
+  }
+
+  List<ReadingMark> bookmarks({int limit = 200}) => _withRegistry(
+    (db) => [
+      for (final row in db.select(
+        'SELECT pack_id, work_slug, ref, created_at FROM bookmarks '
+        'ORDER BY created_at DESC LIMIT ?',
+        [limit],
+      ))
+        _mark(row, 'created_at'),
+    ],
+  );
+
+  ReadingMark _mark(Row row, String timeColumn) => ReadingMark(
+    packId: row['pack_id'] as String,
+    workSlug: row['work_slug'] as String,
+    ref: row['ref'] as String,
+    at: DateTime.parse(row[timeColumn] as String),
+  );
+
   T _withRegistry<T>(T Function(Database db) body) {
     root.createSync(recursive: true);
     final db = sqlite3.open(p.join(root.path, 'registry.sqlite'));
     try {
-      db.execute(
-        'CREATE TABLE IF NOT EXISTS installed_packs ('
-        'pack_id TEXT PRIMARY KEY, revision INTEGER NOT NULL, '
-        'file TEXT NOT NULL, origin TEXT NOT NULL, installed_at TEXT NOT NULL)',
-      );
+      db
+        ..execute(
+          'CREATE TABLE IF NOT EXISTS installed_packs ('
+          'pack_id TEXT PRIMARY KEY, revision INTEGER NOT NULL, '
+          'file TEXT NOT NULL, origin TEXT NOT NULL, installed_at TEXT NOT NULL)',
+        )
+        // Reading marks reference content by (pack, work, ref), which stays
+        // stable across pack revisions, never by database row id.
+        ..execute(
+          'CREATE TABLE IF NOT EXISTS reading_progress ('
+          'pack_id TEXT NOT NULL, work_slug TEXT NOT NULL, ref TEXT NOT NULL, '
+          'updated_at TEXT NOT NULL, PRIMARY KEY (pack_id, work_slug))',
+        )
+        ..execute(
+          'CREATE TABLE IF NOT EXISTS bookmarks ('
+          'pack_id TEXT NOT NULL, work_slug TEXT NOT NULL, ref TEXT NOT NULL, '
+          'created_at TEXT NOT NULL, PRIMARY KEY (pack_id, work_slug, ref))',
+        );
       return body(db);
     } finally {
       db.close();

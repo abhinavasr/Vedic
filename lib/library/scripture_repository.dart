@@ -44,6 +44,23 @@ class SectionSummary {
 
 enum PassageType { verse, speaker, heading, prose, page }
 
+/// A translation of a passage, as shipped in a pack.
+class TranslationView {
+  const TranslationView({
+    required this.language,
+    required this.text,
+    required this.translator,
+    required this.machine,
+  });
+
+  final String language;
+  final String text;
+  final String? translator;
+
+  /// Machine-translated, and labelled as such wherever it is shown.
+  final bool machine;
+}
+
 class PassageView {
   const PassageView({
     required this.ref,
@@ -51,6 +68,12 @@ class PassageView {
     required this.type,
     required this.text,
     required this.variants,
+    this.speaker,
+    this.meter,
+    this.transliteration,
+    this.translations = const [],
+    this.explanations = const [],
+    this.takeaways = const [],
   });
 
   final String ref;
@@ -60,6 +83,45 @@ class PassageView {
   /// Always the text stored in the pack. Nothing here is model-generated.
   final String text;
   final List<String> variants;
+
+  /// The "X said" line introducing this verse, if it has one.
+  final String? speaker;
+  final String? meter;
+
+  /// Transliteration shipped with the pack. Without one the app transliterates
+  /// the Devanagari itself.
+  final String? transliteration;
+  final List<TranslationView> translations;
+
+  /// Explanation paragraphs shipped with the verse.
+  final List<String> explanations;
+
+  /// Key takeaway lines shipped with the verse.
+  final List<String> takeaways;
+
+  PassageView withSpeaker(String? speaker) => PassageView(
+    ref: ref,
+    label: label,
+    type: type,
+    text: text,
+    variants: variants,
+    speaker: speaker,
+    meter: meter,
+    transliteration: transliteration,
+    translations: translations,
+    explanations: explanations,
+    takeaways: takeaways,
+  );
+
+  /// The translation to show, preferring [languages] in order.
+  TranslationView? translationFor(List<String> languages) {
+    for (final language in languages) {
+      for (final translation in translations) {
+        if (translation.language == language) return translation;
+      }
+    }
+    return translations.isEmpty ? null : translations.first;
+  }
 }
 
 /// A verse with the work and section it belongs to.
@@ -95,11 +157,16 @@ class ScriptureRepository {
       }
       return _read(work.pack, (db) {
         final row = db.select(
-          'SELECT section_id, ref, label, text FROM passages '
-          "WHERE work_id = ? AND kind = 'verse' ORDER BY ordinal LIMIT 1 OFFSET ?",
+          'SELECT id, section_id, ref, label, text, meter FROM passages '
+          "WHERE work_id = ? AND kind = 'verse' ORDER BY ordinal "
+          'LIMIT 1 OFFSET ?',
           [work.id, index],
         ).first;
-        return _verse(work, row);
+        return VerseOfTheDay(
+          work: work,
+          sectionId: row['section_id'] as int?,
+          verse: _passage(db, row, PassageType.verse),
+        );
       });
     }
     return null;
@@ -118,14 +185,20 @@ class ScriptureRepository {
     for (final work in works()) {
       _read<void>(work.pack, (db) {
         for (final row in db.select(
-          'SELECT section_id, ref, label, text FROM passages '
+          'SELECT id, section_id, ref, label, text, meter FROM passages '
           "WHERE work_id = ? AND kind = 'verse' ORDER BY ordinal",
           [work.id],
         )) {
           final text = row['text'] as String;
           final haystack = latin ? foldIast(devanagariToIast(text)) : text;
           if (!haystack.contains(needle)) continue;
-          hits.add(_verse(work, row));
+          hits.add(
+            VerseOfTheDay(
+              work: work,
+              sectionId: row['section_id'] as int?,
+              verse: _passage(db, row, PassageType.verse),
+            ),
+          );
           if (hits.length == limit) return;
         }
       });
@@ -133,18 +206,6 @@ class ScriptureRepository {
     }
     return hits;
   }
-
-  VerseOfTheDay _verse(WorkSummary work, Row row) => VerseOfTheDay(
-    work: work,
-    sectionId: row['section_id'] as int?,
-    verse: PassageView(
-      ref: row['ref'] as String,
-      label: row['label'] as String?,
-      type: PassageType.verse,
-      text: row['text'] as String,
-      variants: const [],
-    ),
-  );
 
   List<WorkSummary> works() => [
     for (final pack in store.installed())
@@ -212,37 +273,96 @@ class ScriptureRepository {
   List<PassageView> passages(WorkSummary work, SectionSummary section) =>
       _read(work.pack, (db) {
         final where = section.id == null
-            ? 'p.work_id = ? AND p.section_id IS NULL'
-            : 'p.section_id = ?';
-        final argument = section.id ?? work.id;
-
-        final variants = <int, List<String>>{};
-        for (final row in db.select(
-          'SELECT r.passage_id, r.text FROM renderings r '
-          'JOIN passages p ON p.id = r.passage_id '
-          "WHERE r.kind = 'variant' AND $where ORDER BY r.id",
-          [argument],
-        )) {
-          variants
-              .putIfAbsent(row['passage_id'] as int, () => [])
-              .add(row['text'] as String);
-        }
-
+            ? 'work_id = ? AND section_id IS NULL'
+            : 'section_id = ?';
         return [
           for (final row in db.select(
-            'SELECT p.id, p.ref, p.label, p.kind, p.text FROM passages p '
-            'WHERE $where ORDER BY p.ordinal',
-            [argument],
+            'SELECT id, ref, label, kind, text, meter FROM passages '
+            'WHERE $where ORDER BY ordinal',
+            [section.id ?? work.id],
           ))
-            PassageView(
-              ref: row['ref'] as String,
-              label: row['label'] as String?,
-              type: _typeOf(row['kind'] as String, row['ref'] as String),
-              text: row['text'] as String,
-              variants: variants[row['id']] ?? const [],
+            _passage(
+              db,
+              row,
+              _typeOf(row['kind'] as String, row['ref'] as String),
             ),
         ];
       });
+
+  /// The verses of a section in reading order, each carrying the speaker line
+  /// that introduces it.
+  List<PassageView> verses(WorkSummary work, SectionSummary section) {
+    final result = <PassageView>[];
+    String? speaker;
+    for (final passage in passages(work, section)) {
+      switch (passage.type) {
+        case PassageType.speaker:
+          speaker = passage.text;
+        case PassageType.verse:
+          result.add(passage.withSpeaker(speaker));
+          speaker = null;
+        case PassageType.heading:
+        case PassageType.prose:
+        case PassageType.page:
+          break;
+      }
+    }
+    return result;
+  }
+
+  /// The section with this id, for opening the reader where a verse lives.
+  SectionSummary? sectionOf(WorkSummary work, int? sectionId) {
+    for (final section in sections(work)) {
+      if (section.id == sectionId) return section;
+    }
+    return null;
+  }
+
+  PassageView _passage(Database db, Row row, PassageType type) {
+    final variants = <String>[];
+    final translations = <TranslationView>[];
+    final explanations = <String>[];
+    final takeaways = <String>[];
+    String? transliteration;
+    for (final rendering in db.select(
+      'SELECT kind, language, author, origin, scheme, text FROM renderings '
+      'WHERE passage_id = ? ORDER BY id',
+      [row['id'] as int],
+    )) {
+      final text = rendering['text'] as String;
+      switch (rendering['kind'] as String) {
+        case 'variant':
+          variants.add(text);
+        case 'translation':
+          translations.add(
+            TranslationView(
+              language: rendering['language'] as String,
+              text: text,
+              translator: rendering['author'] as String?,
+              machine: rendering['origin'] == 'machine',
+            ),
+          );
+        case 'commentary':
+          (rendering['scheme'] == 'takeaway' ? takeaways : explanations).add(
+            text,
+          );
+        case 'transliteration':
+          transliteration ??= text;
+      }
+    }
+    return PassageView(
+      ref: row['ref'] as String,
+      label: row['label'] as String?,
+      type: type,
+      text: row['text'] as String,
+      meter: row['meter'] as String?,
+      variants: variants,
+      transliteration: transliteration,
+      translations: translations,
+      explanations: explanations,
+      takeaways: takeaways,
+    );
+  }
 
   T _read<T>(InstalledPack pack, T Function(Database db) body) {
     final db = store.openReadOnly(pack);

@@ -122,7 +122,11 @@ where it must be reproduced.
 ```
 
 Sections nest (e.g. skandha → chapter for the Bhāgavatam). A section has `passages`, `sections`,
-or both. `number` is as printed and unique among its siblings.
+or both. `number` is as printed and unique among its siblings. `summary` is an optional
+language → text object, shown under the chapter title in the reader.
+
+**A filled-in example to hand to the content server:**
+[`examples/bhagavad-gita.sample.json`](examples/bhagavad-gita.sample.json).
 
 ## 5. Passage
 
@@ -170,6 +174,7 @@ The unit the reader shows, a citation points to, and audio is recorded for.
 | `meter` | string? | e.g. `anuṣṭubh`, `triṣṭubh` |
 | `transliterations` | object[]? | `scheme` (`IAST`, `ISO15919`) and `lines`. If absent, the app transliterates to IAST itself (deterministic, not AI) |
 | `translations` | object[]? | One per language at most. `language` BCP 47; `text` may contain paragraph breaks; `translator` optional; `licence` must be listed; `origin` is `human` (default) or `machine`. The app labels `machine` translations visibly |
+| `notes` | object[]? | The **Explanation** paragraphs and **Key Takeaways** under the verse. Each has `kind` (`explanation` or `takeaway`), `language`, `text`, optional `author`, and a listed `licence`. Order is kept; takeaways render as bullets |
 | `variants` | string[]? | Alternative readings. Never recited, never shown as the verse |
 | `audio` | object[]? | One per voice at most. See below |
 

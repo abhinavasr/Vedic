@@ -1,33 +1,16 @@
-# Base scripture pack bundled in the app. Build with:
+# Base scripture pack bundled in the app.
 #   dart run tool/build_pack.dart content/bhagavad-gita.sa --bundle
+#
+# Revision 1 was built from sources/bhagavad-gita.txt with the verse parser.
+# From revision 2 the source of truth is content.json, which adds the
+# transliterations, translations, explanations and takeaways merged in with
+# tool/merge_translations.dart. sources/ is kept for provenance.
 pack_id: bhagavad-gita.sa
-revision: 1
+revision: 2
 kind: text
-created_at: 2026-09-15T00:00:00Z
+created_at: 2026-09-16T00:00:00Z
 min_app_build: 1
 title:
-  en: Bhagavad Gītā
+  en: Bhagavad Gita
   sa: श्रीमद्भगवद्गीता
-languages: [sa]
-
-licences:
-  - id: gita-sanskrit
-    name: Bhagavad Gita, Sanskrit text
-    commercial_redistribution: true
-    grant_reference: owner-supplied-2026-09-15
-    attribution: Sanskrit text of the Bhagavad Gita.
-
-works:
-  - slug: bhagavad-gita
-    kind: scripture
-    format: verses
-    source: sources/bhagavad-gita.txt
-    title: Bhagavad Gītā
-    title_native: श्रीमद्भगवद्गीता
-    language: sa
-    script: Deva
-    licence: gita-sanskrit
-    source_note: >-
-      Geeta.txt supplied by the project owner on 2026-09-15,
-      sha256 ab48c6a9dc625a728d8a563f8fbacf066c51043a69c762c9bacfaa6fd21dec97.
-      18 chapters, 701 verses (700 plus 13.0).
+content: content.json

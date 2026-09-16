@@ -35,6 +35,7 @@ void main() {
       'invocation',
       '2.47.speaker',
       '2.47',
+      '2.48',
     ]);
 
     final speaker = work.passages[1];
@@ -56,6 +57,11 @@ void main() {
       verse.renderings.where((r) => r.kind == RenderingKind.variant),
       hasLength(1),
     );
+    final notes = [
+      for (final r in verse.renderings)
+        if (r.kind == RenderingKind.commentary) r,
+    ];
+    expect(notes.map((r) => r.scheme), ['explanation', 'takeaway', 'takeaway']);
   });
 
   test('round-trips JSON, including the parsed Gita', () {

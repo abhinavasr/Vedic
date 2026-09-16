@@ -1,25 +1,38 @@
 import 'package:flutter/material.dart';
 
 import '../library/scripture_repository.dart';
+import 'verse_reader.dart';
 
-/// Opens the section a verse belongs to.
+/// Opens a section: the verse reader where there are verses, the plain list
+/// otherwise (an invocation, or a document's pages).
+void openSection(
+  BuildContext context,
+  ScriptureRepository repository,
+  WorkSummary work,
+  SectionSummary section, {
+  String? atRef,
+}) => Navigator.of(context).push(
+  MaterialPageRoute<void>(
+    builder: (_) => section.verseCount > 0
+        ? VerseReaderScreen(
+            repository: repository,
+            work: work,
+            section: section,
+            initialRef: atRef,
+          )
+        : SectionScreen(repository: repository, work: work, section: section),
+  ),
+);
+
+/// Opens the verse of the day, or a search hit, at that verse.
 void openVerseSection(
   BuildContext context,
   ScriptureRepository repository,
   VerseOfTheDay verse,
 ) {
-  final section = repository
-      .sections(verse.work)
-      .firstWhere((s) => s.id == verse.sectionId);
-  Navigator.of(context).push(
-    MaterialPageRoute<void>(
-      builder: (_) => SectionScreen(
-        repository: repository,
-        work: verse.work,
-        section: section,
-      ),
-    ),
-  );
+  final section = repository.sectionOf(verse.work, verse.sectionId);
+  if (section == null) return;
+  openSection(context, repository, verse.work, section, atRef: verse.verse.ref);
 }
 
 class WorkScreen extends StatelessWidget {
@@ -49,15 +62,7 @@ class WorkScreen extends StatelessWidget {
                   ? '${section.verseCount} verses'
                   : '${section.passageCount} passages',
             ),
-            onTap: () => Navigator.of(context).push(
-              MaterialPageRoute<void>(
-                builder: (_) => SectionScreen(
-                  repository: repository,
-                  work: work,
-                  section: section,
-                ),
-              ),
-            ),
+            onTap: () => openSection(context, repository, work, section),
           );
         },
       ),

@@ -42,9 +42,23 @@
                 { "language": "en", "text": "Test English rendering of 2.47.", "licence": "gita-en" },
                 { "language": "hi", "text": "2.47 का परीक्षण अनुवाद।", "licence": "gita-sa", "origin": "machine" }
               ],
+              "notes": [
+                { "kind": "explanation", "language": "en", "text": "Test explanation of 2.47.", "licence": "gita-en" },
+                { "kind": "takeaway", "language": "en", "text": "First takeaway.", "licence": "gita-en" },
+                { "kind": "takeaway", "language": "en", "text": "Second takeaway.", "licence": "gita-en" }
+              ],
               "variants": ["सङ्गोऽस्त्वकर्मणि"],
               "audio": [
                 { "voice": "vagdhenu-m1", "file": "audio/vagdhenu-m1/2/2.47.m4a", "mime": "audio/mp4", "duration_ms": 11840, "size": 95123, "sha256": "0000000000000000000000000000000000000000000000000000000000000000" }
+              ]
+            },
+            {
+              "ref": "2.48",
+              "kind": "verse",
+              "label": "2.48",
+              "lines": [
+                "योगस्थः कुरु कर्माणि सङ्गं त्यक्त्वा धनञ्जय ।",
+                "सिद्ध्यसिद्ध्योः समो भूत्वा समत्वं योग उच्यते ॥"
               ]
             }
           ]
