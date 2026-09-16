@@ -2,7 +2,7 @@
   "format": "vedic-pack-content",
   "format_version": 1,
   "pack_id": "bhagavad-gita.sa",
-  "revision": 8,
+  "revision": 9,
   "languages": [
     "sa",
     "hi",
@@ -19891,6 +19891,61 @@
               "lines": [
                 "किं तद् ब्रह्म किमध्यात्मं किं कर्म पुरुषोत्तम ।",
                 "अधिभूतं च किं प्रोक्तमधिदैवं किमुच्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "kiṃ tad brahma kimadhyātmaṃ kiṃ karma puruṣottama |",
+                    "adhibhūtaṃ ca kiṃ proktamadhidaivaṃ kimucyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अर्जुन बोले: हे पुरुषोत्तम! वह ब्रह्म क्या है? अध्यात्म क्या है? कर्म क्या है? अधिभूत किसे कहा गया है और अधिदैव किसे कहते हैं?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Arjuna inquired: O my Lord, O Supreme Person, what is Brahman? What is the self? What are fruitive activities? What is this material manifestation? And what are the demigods? Please explain this to me.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna asks Krishna to clarify the complex philosophical terms used at the end of the previous chapter. He wants clear definitions of Brahman, Adhyatma, Karma, Adhibhuta, and Adhidaiva.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन कृष्ण से पिछले अध्याय के अंत में प्रयुक्त जटिल दार्शनिक शब्दों को स्पष्ट करने के लिए कहते हैं। वह ब्रह्म, अध्यात्म, कर्म, अधिभूत और अधिदैव की स्पष्ट परिभाषा चाहते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Ask questions to gain spiritual clarity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "It is important to understand foundational spiritual terminology.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -19900,6 +19955,61 @@
               "lines": [
                 "अधियज्ञः कथं कोऽत्र देहेऽस्मिन्मधुसूदन ।",
                 "प्रयाणकाले च कथं ज्ञेयोऽसि नियतात्मभिः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "adhiyajñaḥ kathaṃ ko'tra dehe'sminmadhusūdana |",
+                    "prayāṇakāle ca kathaṃ jñeyo'si niyatātmabhiḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे मधुसूदन! यहाँ इस शरीर में अधियज्ञ कौन है और वह कैसे है? और युक्त चित्त वाले पुरुषों द्वारा अंत समय में आप किस प्रकार जानने में आते हैं?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Who is the Lord of sacrifice, and how does He live in the body, O Madhusudana? And how can those engaged in devotional service know You at the time of death?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna continues his questioning, asking who the Lord of sacrifice (Adhiyajna) is within the body. Crucially, he asks how a disciplined soul can remember God at the difficult moment of death.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन अपना प्रश्न जारी रखते हुए पूछते हैं कि शरीर के भीतर यज्ञ का स्वामी (अधियज्ञ) कौन है। और सबसे महत्वपूर्ण बात, अनुशासित आत्मा मृत्यु के कठिन समय में भगवान को कैसे याद कर सकती है?",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The moment of death is a critical spiritual test.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Preparation is required to maintain spiritual focus at the end of life.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -19912,6 +20022,61 @@
               "lines": [
                 "अक्षरं ब्रह्म परमं स्वभावोऽध्यात्ममुच्यते ।",
                 "भूतभावोद्भवकरो विसर्गः कर्मसंज्ञितः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "akṣaraṃ brahma paramaṃ svabhāvo'dhyātmamucyate |",
+                    "bhūtabhāvodbhavakaro visargaḥ karmasaṃjñitaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रीभगवान् बोले: परम अक्षर (जिसका कभी नाश नहीं होता) 'ब्रह्म' है। अपना स्वरूप अर्थात् जीवात्मा 'अध्यात्म' नाम से कहा जाता है। भूतों के भाव को उत्पन्न करने वाला जो त्याग है, वह 'कर्म' नाम से जाना जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Supreme Personality of Godhead said: The indestructible, transcendental living entity is called Brahman, and his eternal nature is called adhyatma, the self. Action pertaining to the development of the material bodies of the living entities is called karma.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna answers: Brahman is the indestructible Supreme. Adhyatma is the individual soul's eternal nature. Karma refers to the actions and reactions that cause the development of material bodies.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण उत्तर देते हैं: ब्रह्म अविनाशी सर्वोच्च है। अध्यात्म व्यक्तिगत आत्मा का शाश्वत स्वभाव है। कर्म उन कार्यों और प्रतिक्रियाओं को संदर्भित करता है जो भौतिक शरीरों के विकास का कारण बनते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Karma is the creative force that drives the cycle of material existence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Our true nature is indestructible.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -19921,6 +20086,61 @@
               "lines": [
                 "अधिभूतं क्षरो भावः पुरुषश्चाधिदैवतम् ।",
                 "अधियज्ञोऽहमेवात्र देहे देहभृतां वर ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "adhibhūtaṃ kṣaro bhāvaḥ puruṣaścādhidaivatam |",
+                    "adhiyajño'hamevātra dehe dehabhṛtāṃ vara ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे देहधारियों में श्रेष्ठ अर्जुन! नाशवान स्वभाव वाला पदार्थ 'अधिभूत' है; हिरण्यगर्भ (ब्रह्मा) 'अधिदैव' है और इस शरीर में मैं वासुदेव ही 'अधियज्ञ' हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O best of the embodied beings, the physical nature, which is constantly changing, is called adhibhuta [the material manifestation]. The universal form of the Lord, which includes all the demigods, like those of the sun and moon, is called adhidaiva. And I, the Supreme Lord, represented as the Supersoul in the heart of every embodied being, am called adhiyajna [the Lord of sacrifice].",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna defines the remaining terms. Adhibhuta is the ever-changing material nature. Adhidaiva is the universal cosmic form. Adhiyajna is the Supreme Lord residing in the heart of every being as the ultimate enjoyer of all sacrifices.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण शेष शब्दों को परिभाषित करते हैं। अधिभूत निरंतर बदलती भौतिक प्रकृति है। अधिदैव सार्वभौमिक ब्रह्मांडीय रूप है। अधियज्ञ प्रत्येक प्राणी के हृदय में निवास करने वाला परमात्मा है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God resides within every living being as the ultimate witness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The physical world is characterized by constant change.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -19930,6 +20150,61 @@
               "lines": [
                 "अन्तकाले च मामेव स्मरन्मुक्त्वा कलेवरम् ।",
                 "यः प्रयाति स मद्भावं याति नास्त्यत्र संशयः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "antakāle ca māmeva smaranmuktvā kalevaram |",
+                    "yaḥ prayāti sa madbhāvaṃ yāti nāstyatra saṃśayaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो पुरुष अंतकाल में भी मुझको ही स्मरण करता हुआ शरीर को त्यागकर जाता है, वह मेरे साक्षात् स्वरूप को प्राप्त होता है, इसमें कोई संशय नहीं है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "And whoever, at the end of his life, quits his body remembering Me alone at once attains My nature. Of this there is no doubt.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna reveals a vital spiritual secret: the consciousness at the exact moment of death determines the soul's next destination. Remembering the Supreme at the end ensures liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण एक महत्वपूर्ण रहस्य प्रकट करते हैं: मृत्यु के ठीक समय की चेतना आत्मा के अगले गंतव्य को निर्धारित करती है। अंत में परमात्मा को याद करना मोक्ष सुनिश्चित करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Death is a transition, and our final thoughts dictate the trajectory.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Focus on the Divine at the end guarantees the ultimate destination.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -19939,6 +20214,61 @@
               "lines": [
                 "यं यं वापि स्मरन्भावं त्यजत्यन्ते कलेवरम् ।",
                 "तं तमेवैति कौन्तेय सदा तद्भावभावितः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yaṃ yaṃ vāpi smaranbhāvaṃ tyajatyante kalevaram |",
+                    "taṃ tamevaiti kaunteya sadā tadbhāvabhāvitaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे कुंतीपुत्र अर्जुन! यह मनुष्य अंतकाल में जिस-जिस भी भाव को स्मरण करता हुआ शरीर त्यागता है, वह उस-उस भाव को ही प्राप्त होता है; क्योंकि वह सदा उसी भाव से भावित रहा है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Whatever state of being one remembers when he quits his body, O son of Kunti, that state he will attain without fail.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The general rule of transition is explained. A person's dominant thoughts and attachments throughout their life will naturally manifest at the time of death, determining their next embodiment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "संक्रमण का सामान्य नियम समझाया गया है। जीवन भर किसी व्यक्ति के प्रमुख विचार और लगाव स्वाभाविक रूप से मृत्यु के समय प्रकट होंगे, जो उनके अगले अवतार को निर्धारित करेंगे।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "We become what we consistently think about.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Life is a preparation for the final exam of death.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -19948,6 +20278,61 @@
               "lines": [
                 "तस्मात्सर्वेषु कालेषु मामनुस्मर युध्य च ।",
                 "मय्यर्पितमनोबुद्धिर्मामेवैष्यस्यसंशयः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tasmātsarveṣu kāleṣu māmanusmara yudhya ca |",
+                    "mayyarpitamanobuddhirmāmevaiṣyasyasaṃśayaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इसलिए हे अर्जुन! तू हर समय मेरा स्मरण कर और युद्ध भी कर। मुझमें अर्पित मन और बुद्धि से युक्त होकर तू निःसंदेह मुझको ही प्राप्त होगा।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Therefore, Arjuna, you should always think of Me in the form of Krishna and at the same time carry out your prescribed duty of fighting. With your activities dedicated to Me and your mind and intelligence fixed on Me, you will attain Me without doubt.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna gives the ultimate practical advice: engage fully in worldly duties (like fighting the war) while internally maintaining constant remembrance of the Divine. This dual action guarantees liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण अंतिम व्यावहारिक सलाह देते हैं: दुनिया के कर्तव्यों (जैसे युद्ध लड़ना) में पूरी तरह से संलग्न हों, जबकि आंतरिक रूप से परमात्मा का निरंतर स्मरण बनाए रखें।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spirituality does not require abandoning worldly duty.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Perform your tasks with your mind anchored in God.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ],
               "variants": [
                 "संशयम्"
@@ -19960,6 +20345,61 @@
               "lines": [
                 "अभ्यासयोगयुक्तेन चेतसा नान्यगामिना ।",
                 "परमं पुरुषं दिव्यं याति पार्थानुचिन्तयन् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "abhyāsayogayuktena cetasā nānyagāminā |",
+                    "paramaṃ puruṣaṃ divyaṃ yāti pārthānucintayan ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे पार्थ! अभ्यास योग से युक्त और दूसरी ओर न जाने वाले चित्त से निरंतर चिंतन करता हुआ मनुष्य परम दिव्य पुरुष (परमात्मा) को ही प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "He who meditates on Me as the Supreme Personality of Godhead, his mind constantly engaged in remembering Me, undeviated from the path, he, O Partha, is sure to reach Me.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Consistent, unwavering practice (abhyasa) of meditation upon the Supreme Lord ensures that the mind does not wander. Such a disciplined practitioner will undoubtedly reach the Divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "परमात्मा पर ध्यान का निरंतर, अटूट अभ्यास यह सुनिश्चित करता है कि मन न भटके। ऐसा अनुशासित अभ्यासी निस्संदेह परमात्मा तक पहुंचेगा।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Focus and consistency in practice are the keys to spiritual realization.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "An undeviating mind is necessary to reach the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -19971,6 +20411,63 @@
                 "मणोरणीयंसमनुस्मरेद्यः ।",
                 "सर्वस्य धातारमचिन्त्यरूप-",
                 "मादित्यवर्णं तमसः परस्तात् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "kaviṃ purāṇamanuśāsitāra-",
+                    "maṇoraṇīyaṃsamanusmaredyaḥ |",
+                    "sarvasya dhātāramacintyarūpa-",
+                    "mādityavarṇaṃ tamasaḥ parastāt ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो मनुष्य सर्वज्ञ, अनादि, सबके नियंता, सूक्ष्म से भी अति सूक्ष्म, सबके धारण-पोषण करने वाले, अचिन्त्य-स्वरूप, सूर्य के समान प्रकाशमान और अज्ञान रूप अंधकार से परे सच्चिदानन्दघन परमेश्वर का स्मरण करता है...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One should meditate upon the Supreme Person as the one who knows everything, as He who is the oldest, who is the controller, who is smaller than the smallest, who is the maintainer of everything, who is beyond all material conception, who is inconceivable, and who is always a person. He is luminous like the sun, and He is transcendental, beyond this material nature.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna describes the attributes of the Supreme to aid meditation: omniscient, ancient, the supreme controller, infinitesimally small yet all-encompassing, inconceivable, and shining brilliantly like the sun beyond the darkness of ignorance.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण ध्यान में सहायता के लिए परमात्मा के गुणों का वर्णन करते हैं: सर्वज्ञ, प्राचीन, सर्वोच्च नियंत्रक, सूक्ष्म से भी सूक्ष्म लेकिन सर्वव्यापी, अकल्पनीय, और अज्ञान के अंधकार से परे सूर्य की तरह चमकने वाले।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Meditate on the profound attributes of God to steady the mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God transcends all material limitations and conceptions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -19982,6 +20479,63 @@
                 "भक्त्या युक्तो योगबलेन चैव ।",
                 "भ्रुवोर्मध्ये प्राणमावेश्य सम्यक्",
                 "स तं परं पुरुषमुपैति दिव्यम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "prayāṇakāle manasā'calena",
+                    "bhaktyā yukto yogabalena caiva |",
+                    "bhruvormadhye prāṇamāveśya samyak",
+                    "sa taṃ paraṃ puruṣamupaiti divyam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "...वह भक्तियोग युक्त पुरुष अंतकाल में अचल मन से और योगबल द्वारा भृकुटी के मध्य में प्राणों को अच्छी तरह स्थापित करके उस परम दिव्य पुरुष (परमात्मा) को ही प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One who, at the time of death, fixes his life air between the eyebrows and, by the strength of yoga, with an undeviating mind, engages himself in remembering the Supreme Lord in full devotion, will certainly attain to the Supreme Personality of Godhead.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Describing advanced yogic practice at the time of death, Krishna explains that by drawing the life force (prana) between the eyebrows with absolute devotion and a steady mind, the yogi attains the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "मृत्यु के समय उन्नत योग अभ्यास का वर्णन करते हुए, कृष्ण बताते हैं कि पूर्ण भक्ति और स्थिर मन के साथ भौंहों के बीच जीवन शक्ति (प्राण) को खींचकर, योगी परमात्मा को प्राप्त करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Deep devotion combined with yogic discipline secures the final spiritual transition.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Mastery over the life air (prana) assists consciousness at death.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -19993,6 +20547,63 @@
                 "विशन्ति यद्यतयो वीतरागाः ।",
                 "यदिच्छन्तो ब्रह्मचर्यं चरन्ति",
                 "तत्ते पदं सङ्ग्रहेण प्रवक्ष्ये ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yadakṣaraṃ vedavido vadanti",
+                    "viśanti yadyatayo vītarāgāḥ |",
+                    "yadicchanto brahmacaryaṃ caranti",
+                    "tatte padaṃ saṅgraheṇa pravakṣye ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वेद के जानने वाले विद्वान जिसे 'अक्षर' कहते हैं, आसक्तिरहित संन्यासी जिसमें प्रवेश करते हैं और जिसकी इच्छा करते हुए ब्रह्मचर्य का पालन करते हैं, उस परम पद को मैं तेरे लिए संक्षेप में कहूँगा।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Persons who are learned in the Vedas, who utter omkara and who are great sages in the renounced order enter into Brahman. Desiring such perfection, one practices celibacy. I shall now briefly explain to you this process by which one may attain salvation.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna prepares to explain the ultimate goal—the indestructible state of Brahman—which is sought by ascetics who practice strict celibacy (Brahmacharya) and detach themselves from worldly desires.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण उस अंतिम लक्ष्य- ब्रह्म की अविनाशी अवस्था - को समझाने की तैयारी करते हैं, जिसे संन्यासी खोजते हैं जो सख्त ब्रह्मचर्य का पालन करते हैं और खुद को सांसारिक इच्छाओं से अलग करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True spiritual attainment requires immense discipline.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Shedding worldly attachments is necessary to enter the Supreme state.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20002,6 +20613,61 @@
               "lines": [
                 "सर्वद्वाराणि संयम्य मनो हृदि निरुध्य च ।",
                 "मूर्ध्न्याधायात्मनः प्राणमास्थितो योगधारणाम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sarvadvārāṇi saṃyamya mano hṛdi nirudhya ca |",
+                    "mūrdhnyādhāyātmanaḥ prāṇamāsthito yogadhāraṇām ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "शरीर के सभी द्वारों (इंद्रियों) को रोककर, मन को हृदय में स्थिर करके, और अपने प्राणों को मस्तक में स्थापित करके योग-धारणा में स्थित होकर...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The yogic situation is that of detachment from all sensual engagements. Closing all the doors of the senses and fixing the mind on the heart and the life air at the top of the head, one establishes himself in yoga.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The technical process involves shutting down external sensory inputs, anchoring the mind within the heart, and raising the life force to the crown of the head. This is deep yogic concentration.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "तकनीकी प्रक्रिया में बाहरी संवेदी इनपुट को बंद करना, मन को हृदय के भीतर स्थिर करना और जीवन शक्ति को सिर के मुकुट तक बढ़ाना शामिल है। यह गहरा योगिक एकाग्रता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Sensory withdrawal is necessary to shift consciousness inward.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Yoga involves mastering the flow of internal energy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20011,6 +20677,61 @@
               "lines": [
                 "ओमित्येकाक्षरं ब्रह्म व्याहरन्मामनुस्मरन् ।",
                 "यः प्रयाति त्यजन्देहं स याति परमां गतिम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "omityekākṣaraṃ brahma vyāharanmāmanusmaran |",
+                    "yaḥ prayāti tyajandehaṃ sa yāti paramāṃ gatim ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "...जो पुरुष 'ॐ' इस एक अक्षर रूप ब्रह्म का उच्चारण करता हुआ और मेरा स्मरण करता हुआ शरीर को त्यागकर जाता है, वह परम गति को प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "After being situated in this yoga practice and vibrating the sacred syllable om, the supreme combination of letters, if one thinks of the Supreme Personality of Godhead and quits his body, he will certainly reach the spiritual planets.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Sounding the sacred syllable 'Om' (the sonic representation of Brahman) while remembering the Supreme at the time of leaving the body guarantees the soul's journey to the highest spiritual realm.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "शरीर छोड़ते समय परमात्मा को याद करते हुए पवित्र शब्दांश 'ओम' का उच्चारण करना आत्मा की उच्चतम आध्यात्मिक क्षेत्र की यात्रा की गारंटी देता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The sacred sound 'Om' focuses the mind on the Absolute Truth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The final vibration of life should be dedicated to the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20020,6 +20741,61 @@
               "lines": [
                 "अनन्यचेताः सततं यो मां स्मरति नित्यशः ।",
                 "तस्याहं सुलभः पार्थ नित्ययुक्तस्य योगिनः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ananyacetāḥ satataṃ yo māṃ smarati nityaśaḥ |",
+                    "tasyāhaṃ sulabhaḥ pārtha nityayuktasya yoginaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे पार्थ! जो पुरुष अनन्य चित्त से निरंतर सदा मेरा स्मरण करता है, उस नित्य युक्त योगी के लिए मैं सुलभ हूँ (अर्थात् उसे मैं आसानी से प्राप्त हो जाता हूँ)।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "For one who always remembers Me without deviation, I am easy to obtain, O son of Pritha, because of his constant engagement in devotional service.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "While the mechanical yogic processes are difficult, Krishna offers an easier path: pure, constant, unalloyed devotion. For the devotee who remembers Him constantly, God becomes easily accessible.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जबकि यांत्रिक योग प्रक्रियाएं कठिन हैं, कृष्ण एक आसान मार्ग प्रदान करते हैं: शुद्ध, निरंतर भक्ति। जो भक्त उन्हें लगातार याद करता है, उसके लिए भगवान आसानी से सुलभ हो जाते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Continuous loving devotion is the easiest path to the Divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God is readily available to those who seek Him with a pure heart.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20029,6 +20805,61 @@
               "lines": [
                 "मामुपेत्य पुनर्जन्म दुःखालयमशाश्वतम् ।",
                 "नाप्नुवन्ति महात्मानः संसिद्धिं परमां गताः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "māmupetya punarjanma duḥkhālayamaśāśvatam |",
+                    "nāpnuvanti mahātmānaḥ saṃsiddhiṃ paramāṃ gatāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मुझे प्राप्त करके वे महापुरुष फिर कभी दुःखों के घर और नाशवान पुनर्जन्म को प्राप्त नहीं होते, क्योंकि वे परम सिद्धि को प्राप्त हो चुके हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "After attaining Me, the great souls, who are yogis in devotion, never return to this temporary world, which is full of miseries, because they have attained the highest perfection.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Those who reach the Supreme never have to return to the material world. Krishna bluntly describes this world as a place of misery and temporary existence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जो लोग परमात्मा तक पहुँचते हैं उन्हें कभी भौतिक दुनिया में नहीं लौटना पड़ता। कृष्ण इस दुनिया को स्पष्ट रूप से दुखों का घर और अस्थायी बताते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The material world is inherently miserable and temporary.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Liberation is the permanent escape from the cycle of rebirth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20038,6 +20869,61 @@
               "lines": [
                 "आब्रह्मभुवनाल्लोकाः पुनरावर्तिनोऽर्जुन ।",
                 "मामुपेत्य तु कौन्तेय पुनर्जन्म न विद्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ābrahmabhuvanāllokāḥ punarāvartino'rjuna |",
+                    "māmupetya tu kaunteya punarjanma na vidyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे अर्जुन! ब्रह्मलोक तक सभी लोक पुनरावर्ती हैं (अर्थात् वहाँ से लौटकर फिर जन्म लेना पड़ता है), परन्तु हे कुंतीपुत्र! मुझे प्राप्त करके पुनर्जन्म नहीं होता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "From the highest planet in the material world down to the lowest, all are places of misery wherein repeated birth and death take place. But one who attains to My abode, O son of Kunti, never takes birth again.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Even if one reaches the highest heavenly realms (like Brahmaloka), they are still within the material universe and must eventually return to Earth. Only the spiritual realm of God is eternal and free from rebirth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यदि कोई उच्चतम स्वर्ग (जैसे ब्रह्मलोक) तक भी पहुँच जाता है, तो भी वे भौतिक ब्रह्मांड के भीतर हैं और अंततः उन्हें पृथ्वी पर लौटना होगा। केवल भगवान का आध्यात्मिक क्षेत्र शाश्वत है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Heavenly pleasures are temporary.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True salvation lies only in reaching the Supreme Abode.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20047,6 +20933,61 @@
               "lines": [
                 "सहस्रयुगपर्यन्तमहर्यद् ब्रह्मणो विदुः ।",
                 "रात्रिं युगसहस्रान्तां तेऽहोरात्रविदो जनाः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sahasrayugaparyantamaharyad brahmaṇo viduḥ |",
+                    "rātriṃ yugasahasrāntāṃ te'horātravido janāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो लोग ब्रह्मा के एक दिन को एक हजार महायुग तक की अवधि वाला और रात को भी एक हजार महायुग तक की अवधि वाली जानते हैं, वे ही काल के तत्त्व को जानने वाले हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "By human calculation, a thousand ages taken together form the duration of Brahma's one day. And such also is the duration of his night.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna explains the staggering scale of cosmic time. One day of Brahma (the creator god) equals billions of human years. Those who understand this vast timescale realize the insignificance of human lifespans.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण ब्रह्मांडीय समय के चौंका देने वाले पैमाने की व्याख्या करते हैं। ब्रह्मा (सृष्टिकर्ता देवता) का एक दिन अरबों मानव वर्षों के बराबर है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Understanding cosmic time humbles the human ego.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Material existence is fleeting when viewed from a cosmic perspective.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20056,6 +20997,61 @@
               "lines": [
                 "अव्यक्ताद् व्यक्तयः सर्वाः प्रभवन्त्यहरागमे ।",
                 "रात्र्यागमे प्रलीयन्ते तत्रैवाव्यक्तसंज्ञके ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "avyaktād vyaktayaḥ sarvāḥ prabhavantyaharāgame |",
+                    "rātryāgame pralīyante tatraivāvyaktasaṃjñake ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "ब्रह्मा के दिन के प्रवेश काल में अव्यक्त से संपूर्ण व्यक्त प्राणी उत्पन्न होते हैं, और रात के आने पर उसी अव्यक्त नामक ब्रह्मा के सूक्ष्म शरीर में लीन हो जाते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "At the beginning of Brahma's day, all living entities become manifest from the unmanifest state, and thereafter, when the night falls, they are merged into the unmanifest again.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Creation and destruction are cyclical. When Brahma's day begins, the universe manifests. When his night falls, everything dissolves back into an unmanifested state, only to be reborn again.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "निर्माण और विनाश चक्रीय हैं। जब ब्रह्मा का दिन शुरू होता है, ब्रह्मांड प्रकट होता है। जब उनकी रात आती है, तो सब कुछ अव्यक्त अवस्था में वापस विलीन हो जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The material universe undergoes endless cycles of creation and dissolution.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Physical manifestation is a temporary state.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20065,6 +21061,61 @@
               "lines": [
                 "भूतग्रामः स एवायं भूत्वा भूत्वा प्रलीयते ।",
                 "रात्र्यागमेऽवशः पार्थ प्रभवत्यहरागमे ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "bhūtagrāmaḥ sa evāyaṃ bhūtvā bhūtvā pralīyate |",
+                    "rātryāgame'vaśaḥ pārtha prabhavatyaharāgame ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे पार्थ! वही यह भूतग्राम (प्राणियों का समूह) बार-बार उत्पन्न होकर प्रकृति के वश में हुआ रात के आने पर लीन होता है और दिन के आने पर फिर उत्पन्न होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Again and again, when Brahma's day arrives, all living entities come into being, and with the arrival of Brahma's night they are helplessly annihilated.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The multitude of living beings is helplessly caught in this cosmic loop. Driven by their karma, they are forced to manifest and dissolve repeatedly across the vast stretches of Brahma's days and nights.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जीवों की भीड़ इस ब्रह्मांडीय लूप में असहाय रूप से फंसी हुई है। अपने कर्मों से प्रेरित होकर, वे ब्रह्मा के दिनों और रातों में बार-बार प्रकट और विलीन होने के लिए मजबूर हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Unenlightened souls are helplessly bound to the repetitive cycles of cosmic time.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Karma forces the continuous cycle of rebirth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20074,6 +21125,61 @@
               "lines": [
                 "परस्तस्मात्तु भावोऽन्योऽव्यक्तोऽव्यक्तात्सनातनः ।",
                 "यः स सर्वेषु भूतेषु नश्यत्सु न विनश्यति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "parastasmāttu bhāvo'nyo'vyakto'vyaktātsanātanaḥ |",
+                    "yaḥ sa sarveṣu bhūteṣu naśyatsu na vinaśyati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परन्तु उस अव्यक्त से भी परे दूसरा जो सनातन अव्यक्त भाव है, वह सब प्राणियों के नष्ट होने पर भी नष्ट नहीं होता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Yet there is another unmanifest nature, which is eternal and is transcendental to this manifested and unmanifested matter. It is supreme and is never annihilated. When all in this world is annihilated, that part remains as it is.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Beyond the cyclical unmanifest state of material nature lies the spiritual realm. This supreme, transcendental nature is eternal and remains untouched even when the entire physical universe is destroyed.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "भौतिक प्रकृति की चक्रीय अव्यक्त अवस्था से परे आध्यात्मिक क्षेत्र है। यह सर्वोच्च प्रकृति शाश्वत है और पूरे भौतिक ब्रह्मांड के नष्ट होने पर भी अछूती रहती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "There is a spiritual reality that is immune to cosmic destruction.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The true self belongs to this indestructible realm.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20083,6 +21189,61 @@
               "lines": [
                 "अव्यक्तोऽक्षर इत्युक्तस्तमाहुः परमां गतिम् ।",
                 "यं प्राप्य न निवर्तन्ते तद्धाम परमं मम ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "avyakto'kṣara ityuktastamāhuḥ paramāṃ gatim |",
+                    "yaṃ prāpya na nivartante taddhāma paramaṃ mama ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो अव्यक्त 'अक्षर' इस नाम से कहा गया है, उसी को परम गति कहते हैं; जिसे प्राप्त करके मनुष्य फिर लौटकर नहीं आते, वही मेरा परम धाम है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "That which the Vedantists describe as unmanifest and infallible, that which is known as the supreme destination, that place from which, having attained it, one never returns—that is My supreme abode.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This indestructible, eternal spiritual realm is the ultimate destination for the soul. Once a soul attains God's supreme abode, the painful cycle of returning to the material world finally ends.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यह अविनाशी, शाश्वत आध्यात्मिक क्षेत्र आत्मा के लिए अंतिम गंतव्य है। एक बार जब आत्मा भगवान के परम धाम को प्राप्त कर लेती है, तो भौतिक दुनिया में लौटने का दर्दनाक चक्र अंततः समाप्त हो जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The ultimate goal of life is to reach the eternal realm.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Attaining God's abode guarantees permanent freedom from suffering.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20092,6 +21253,61 @@
               "lines": [
                 "पुरुषः स परः पार्थ भक्त्या लभ्यस्त्वनन्यया ।",
                 "यस्यान्तःस्थानि भूतानि येन सर्वमिदं ततम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "puruṣaḥ sa paraḥ pārtha bhaktyā labhyastvananyayā |",
+                    "yasyāntaḥsthāni bhūtāni yena sarvamidaṃ tatam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे पार्थ! जिसके अंतर्गत सभी प्राणी हैं और जिससे यह सारा जगत् व्याप्त है, वह परम पुरुष (परमात्मा) अनन्य भक्ति से ही प्राप्त होने योग्य है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Supreme Personality of Godhead, who is greater than all, is attainable by unalloyed devotion. Although He is present in His abode, He is all-pervading, and everything is situated within Him.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "How does one reach this supreme abode? Krishna declares that pure, unalloyed devotion (Bhakti) is the key. The Supreme Lord pervades everything, and yet is attained specifically through loving devotion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कोई इस परम धाम तक कैसे पहुँचता है? कृष्ण घोषणा करते हैं कि शुद्ध भक्ति ही कुंजी है। परमात्मा हर चीज में व्याप्त है, और फिर भी प्रेमपूर्ण भक्ति के माध्यम से विशेष रूप से प्राप्त किया जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Pure devotion is the most powerful means to attain the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God is both transcendent in His abode and immanent everywhere.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20101,6 +21317,61 @@
               "lines": [
                 "यत्र काले त्वनावृत्तिमावृत्तिं चैव योगिनः ।",
                 "प्रयाता यान्ति तं कालं वक्ष्यामि भरतर्षभ ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yatra kāle tvanāvṛttimāvṛttiṃ caiva yoginaḥ |",
+                    "prayātā yānti taṃ kālaṃ vakṣyāmi bharatarṣabha ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे भरतश्रेष्ठ! जिस काल में शरीर त्याग कर गए हुए योगी अनावृत्ति (लौटकर न आना) को, और जिस काल में गए हुए आवृत्ति (लौटकर आना) को प्राप्त होते हैं, उस काल को मैं कहूँगा।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O best of the Bharatas, I shall now explain to you the different times at which, passing away from this world, the yogi does or does not come back.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna shifts to explaining the mystic pathways of the departing soul, detailing the specific times and cosmic alignments that dictate whether a soul returns to Earth or achieves liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण प्रस्थान करने वाली आत्मा के रहस्यमय मार्गों की व्याख्या करते हैं, विशिष्ट समय और लौकिक संरेखण का विवरण देते हैं जो यह निर्धारित करते हैं कि आत्मा पृथ्वी पर लौटती है या मोक्ष प्राप्त करती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Vedic mysticism involves complex cosmic paths for the departing soul.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The state of departure influences the soul's destination.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20110,6 +21381,61 @@
               "lines": [
                 "अग्निर्ज्योतिरहः शुक्लः षण्मासा उत्तरायणम् ।",
                 "तत्र प्रयाता गच्छन्ति ब्रह्म ब्रह्मविदो जनाः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "agnirjyotirahaḥ śuklaḥ ṣaṇmāsā uttarāyaṇam |",
+                    "tatra prayātā gacchanti brahma brahmavido janāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिस मार्ग में प्रकाशस्वरूप अग्नि अभिमानी देवता हैं, दिन का अभिमानी देवता है, शुक्ल पक्ष का अभिमानी देवता है और उत्तरायण के छह महीनों का अभिमानी देवता है, उस मार्ग में मरकर गए हुए ब्रह्मवेत्ता योगी ब्रह्म को प्राप्त होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those who know the Supreme Brahman attain that Supreme by passing away from the world during the influence of the fiery god, in the light, at an auspicious moment of the day, during the fortnight of the waxing moon, or during the six months when the sun travels in the north.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This path of light (Devayana) represents the journey of enlightened souls. Passing away during auspicious times symbolizing illumination leads them to Brahman, with no return.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "प्रकाश का यह मार्ग (देवयान) प्रबुद्ध आत्माओं की यात्रा का प्रतिनिधित्व करता है। रोशनी का प्रतीक शुभ समय के दौरान शरीर त्यागना उन्हें ब्रह्म तक ले जाता है, जहां से वे वापस नहीं आते।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The path of light leads to liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Light symbolizes consciousness and spiritual awakening.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20119,6 +21445,61 @@
               "lines": [
                 "धूमो रात्रिस्तथा कृष्णः षण्मासा दक्षिणायनम् ।",
                 "तत्र चान्द्रमसं ज्योतिर्योगी प्राप्य निवर्तते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "dhūmo rātristathā kṛṣṇaḥ ṣaṇmāsā dakṣiṇāyanam |",
+                    "tatra cāndramasaṃ jyotiryogī prāpya nivartate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिस मार्ग में धूमाभिमानी देवता है, रात्रि का अभिमानी देवता है, कृष्ण पक्ष का अभिमानी देवता है और दक्षिणायन के छह महीनों का अभिमानी देवता है, उस मार्ग में मरकर गया हुआ सकाम कर्मयोगी चन्द्रमा की ज्योति को प्राप्त होकर लौट आता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The mystic who passes away from this world during the smoke, the night, the fortnight of the waning moon, or the six months when the sun passes to the south reaches the moon planet but again comes back.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This path of darkness (Pitriyana) represents those attached to fruitive actions. Passing away during times symbolizing darkness leads them to temporary heavenly planets, after which they must return to Earth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अंधकार का यह मार्ग (पितृयान) सकाम कर्मों से जुड़े लोगों का प्रतिनिधित्व करता है। अंधेरे का प्रतीक समय के दौरान शरीर त्यागना उन्हें अस्थायी स्वर्गीय लोकों में ले जाता है, जिसके बाद उन्हें लौटना पड़ता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The path of darkness represents attachment to material rewards.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Following this path results in a return to the cycle of rebirth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20128,6 +21509,61 @@
               "lines": [
                 "शुक्लकृष्णे गती ह्येते जगतः शाश्वते मते ।",
                 "एकया यात्यनावृत्तिमन्ययावर्तते पुनः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "śuklakṛṣṇe gatī hyete jagataḥ śāśvate mate |",
+                    "ekayā yātyanāvṛttimanyayāvartate punaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "क्योंकि जगत् के ये दो प्रकार के (शुक्ल और कृष्ण) मार्ग सनातन माने गए हैं। इनमें से एक के द्वारा गए हुए को वापस नहीं लौटना पड़ता और दूसरे के द्वारा गए हुए को फिर वापस आना पड़ता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "According to Vedic opinion, there are two ways of passing from this world—one in light and one in darkness. When one passes in light, he does not come back; but when one passes in darkness, he returns.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna summarizes that these two paths—light and darkness—are eternal cosmic routes. One leads to permanent liberation, while the other binds the soul back into the cycle of reincarnation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण संक्षेप में बताते हैं कि प्रकाश और अंधकार के ये दो मार्ग शाश्वत ब्रह्मांडीय मार्ग हैं। एक स्थायी मोक्ष की ओर ले जाता है, जबकि दूसरा आत्मा को पुनर्जन्म के चक्र में वापस बांधता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The universe operates on a fundamental duality.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Every soul must navigate between the paths of enlightenment and material attachment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20137,6 +21573,61 @@
               "lines": [
                 "नैते सृती पार्थ जानन्योगी मुह्यति कश्चन ।",
                 "तस्मात्सर्वेषु कालेषु योगयुक्तो भवार्जुन ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "naite sṛtī pārtha jānanyogī muhyati kaścana |",
+                    "tasmātsarveṣu kāleṣu yogayukto bhavārjuna ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे पार्थ! इन दोनों मार्गों को तत्त्व से जानने वाला कोई भी योगी मोहित नहीं होता। इसलिए हे अर्जुन! तू सब कालों में समबुद्धि रूप योग से युक्त हो।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Although the devotees know these two paths, O Arjuna, they are never bewildered. Therefore be always fixed in devotion.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "A true devotee does not worry about the exact astrological timing of their death. By remaining constantly absorbed in devotion and yoga at all times, they are automatically protected and guaranteed the right path.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "एक सच्चा भक्त अपनी मृत्यु के सटीक समय के बारे में चिंता नहीं करता है। हर समय भक्ति और योग में निरंतर लीन रहने से, वे स्वतः ही सुरक्षित हो जाते हैं और सही मार्ग की गारंटी पाते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Constant devotion trumps astrological calculations.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Remain steadfast in spiritual practice at all times.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -20148,6 +21639,63 @@
                 "दानेषु यत्पुण्यफलं प्रदिष्टम् ।",
                 "अत्येति तत्सर्वमिदं विदित्वा",
                 "योगी परं स्थानमुपैति चाद्यम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "vedeṣu yajñeṣu tapaḥsu caiva",
+                    "dāneṣu yatpuṇyaphalaṃ pradiṣṭam |",
+                    "atyeti tatsarvamidaṃ viditvā",
+                    "yogī paraṃ sthānamupaiti cādyam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "योगी इस रहस्य को तत्त्व से जानकर वेदों के पढ़ने में, यज्ञों, तपों और दान के करने में जो पुण्यफल कहा गया है, उन सबके फल का अतिक्रमण कर जाता है और परम आदि स्थान (परमात्मा) को प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "A person who accepts the path of devotional service is not bereft of the results derived from studying the Vedas, performing austere sacrifices, giving charity or pursuing philosophical and fruitive activities. Simply by performing devotional service, he attains all these, and at the end he reaches the supreme eternal abode.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna concludes the chapter by stating that the path of pure devotion encompasses and surpasses all other religious practices. The yogi who understands this secret attains the Supreme Abode, bypassing all lesser rewards.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण अध्याय का समापन यह कहकर करते हैं कि शुद्ध भक्ति का मार्ग अन्य सभी धार्मिक प्रथाओं को समाहित करता है और उनसे आगे निकल जाता है। योगी सभी कम पुरस्कारों को दरकिनार कर परम धाम प्राप्त करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Pure devotion is the highest spiritual achievement.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Devotion naturally includes the merits of all other rituals.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
