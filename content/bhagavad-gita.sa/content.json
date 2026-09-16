@@ -2,7 +2,7 @@
   "format": "vedic-pack-content",
   "format_version": 1,
   "pack_id": "bhagavad-gita.sa",
-  "revision": 17,
+  "revision": 18,
   "languages": [
     "sa",
     "hi",
@@ -38625,6 +38625,61 @@
               "lines": [
                 "ये शास्त्रविधिमुत्सृज्य यजन्ते श्रद्धयान्विताः ।",
                 "तेषां निष्ठा तु का कृष्ण सत्त्वमाहो रजस्तमः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ye śāstravidhimutsṛjya yajante śraddhayānvitāḥ |",
+                    "teṣāṃ niṣṭhā tu kā kṛṣṇa sattvamāho rajastamaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अर्जुन बोले: हे कृष्ण! जो लोग शास्त्र-विधि को छोड़कर श्रद्धा से युक्त होकर पूजा करते हैं, उनकी स्थिति क्या है? क्या वह सात्त्विक है, राजसिक है या तामसिक है?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Arjuna inquired: O Krishna, what is the situation of those who do not follow the principles of scripture but worship according to their own imagination? Are they in goodness, in passion or in ignorance?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna asks a practical question regarding those who bypass scriptural rules but still possess faith. He wants to know if such faith can be classified under the modes of goodness, passion, or ignorance.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन उन लोगों के संबंध में एक व्यावहारिक प्रश्न पूछते हैं जो शास्त्र के नियमों को दरकिनार करते हैं लेकिन फिर भी श्रद्धा रखते हैं। वह जानना चाहते हैं कि क्या ऐसी श्रद्धा को सत्त्व, रज या तम के तहत वर्गीकृत किया जा सकता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Faith exists even without strict scriptural adherence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The nature of one's faith determines its quality.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38637,6 +38692,61 @@
               "lines": [
                 "त्रिविधा भवति श्रद्धा देहिनां सा स्वभावजा ।",
                 "सात्त्विकी राजसी चैव तामसी चेति तां श‍ृणु ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "trividhā bhavati śraddhā dehināṃ sā svabhāvajā |",
+                    "sāttvikī rājasī caiva tāmasī ceti tāṃ śṛṇu ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्री भगवान बोले: देहधारियों की वह स्वभाव से उत्पन्न होने वाली श्रद्धा सात्त्विकी, राजसी और तामसी—इस प्रकार तीन प्रकार की ही होती है। उसे तुम मुझसे सुनो।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Supreme Personality of Godhead said: According to the modes of nature acquired by the embodied soul, one's faith can be of three kinds—in goodness, in passion or in ignorance. Now hear about these.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna explains that faith is not uniform; it is colored by the individual's inherent nature (gunas). Everyone has faith, but its quality falls into one of three categories: goodness, passion, or ignorance.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण बताते हैं कि श्रद्धा एक समान नहीं है; यह व्यक्ति के अंतर्निहित स्वभाव (गुणों) से रंगी होती है। हर किसी में श्रद्धा होती है, लेकिन इसकी गुणवत्ता तीन श्रेणियों में से एक में आती है: सत्त्व, रज या तम।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Faith is an inherent part of human nature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The quality of faith is shaped by one's psychological conditioning.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38646,6 +38756,61 @@
               "lines": [
                 "सत्त्वानुरूपा सर्वस्य श्रद्धा भवति भारत ।",
                 "श्रद्धामयोऽयं पुरुषो यो यच्छ्रद्धः स एव सः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sattvānurūpā sarvasya śraddhā bhavati bhārata |",
+                    "śraddhāmayo'yaṃ puruṣo yo yacchraddhaḥ sa eva saḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे भरतवंशी! सभी मनुष्यों की श्रद्धा उनके अंतःकरण के अनुरूप होती है। यह पुरुष श्रद्धामय है; इसलिए जो पुरुष जैसी श्रद्धा वाला है, वह स्वयं भी वही है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O son of Bharata, according to one's existence under the various modes of nature, one evolves a particular kind of faith. The living being is said to be of a particular faith according to the modes he has acquired.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "You are what your faith makes you. A person's character and identity are essentially defined by the object and quality of their deepest convictions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "आप वही हैं जो आपकी श्रद्धा आपको बनाती है। एक व्यक्ति का चरित्र और पहचान अनिवार्य रूप से उनके सबसे गहरे विश्वासों की वस्तु और गुणवत्ता द्वारा परिभाषित की जाती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A person's core identity is shaped by what they place their faith in.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Examine your convictions to understand your true nature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38655,6 +38820,61 @@
               "lines": [
                 "यजन्ते सात्त्विका देवान्यक्षरक्षांसि राजसाः ।",
                 "प्रेतान्भूतगणांश्चान्ये यजन्ते तामसा जनाः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yajante sāttvikā devānyakṣarakṣāṃsi rājasāḥ |",
+                    "pretānbhūtagaṇāṃścānye yajante tāmasā janāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "सात्त्विक पुरुष देवों को पूजते हैं, राजसिक पुरुष यक्षों और राक्षसों को पूजते हैं, तथा अन्य तामसिक लोग भूत-प्रेतों को पूजते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Men in the mode of goodness worship the demigods; those in the mode of passion worship the demons; and those in the mode of ignorance worship ghosts and spirits.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna categorizes worship based on the gunas. Goodness seeks divine light, passion is drawn to power and wealth (yakshas/rakshasas), and ignorance delves into the dark and occult (ghosts).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण गुणों के आधार पर पूजा को वर्गीकृत करते हैं। सात्त्विक दिव्य प्रकाश चाहते हैं, राजसी शक्ति और धन (यक्ष/राक्षस) की ओर आकर्षित होते हैं, और तामसी अंधेरे और तांत्रिक विद्या (भूतों) में उतरते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The object of your worship reveals your state of mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Higher consciousness seeks the divine, while lower consciousness seeks power or the occult.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38664,6 +38884,61 @@
               "lines": [
                 "अशास्त्रविहितं घोरं तप्यन्ते ये तपो जनाः ।",
                 "दम्भाहङ्कारसंयुक्ताः कामरागबलान्विताः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "aśāstravihitaṃ ghoraṃ tapyante ye tapo janāḥ |",
+                    "dambhāhaṅkārasaṃyuktāḥ kāmarāgabalānvitāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो लोग पाखंड और अहंकार से युक्त होकर, और कामना तथा आसक्ति के बल से प्रेरित होकर शास्त्रों के विरुद्ध घोर तप करते हैं...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those who undergo severe austerities and penances not recommended in the scriptures, performing them out of pride and egoism, who are impelled by lust and attachment...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Some people invent extreme, unscriptural methods of self-torture driven by pride and ego. Krishna strictly condemns this showy asceticism.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कुछ लोग गर्व और अहंकार से प्रेरित होकर आत्म-उत्पीड़न के चरम, अशास्त्रीय तरीकों का आविष्कार करते हैं। कृष्ण इस दिखावटी तपस्या की कड़ी निंदा करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Austerity driven by ego is harmful and unspiritual.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Scriptures provide a balanced framework to prevent fanatical extremes.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38673,6 +38948,61 @@
               "lines": [
                 "कर्षयन्तः शरीरस्थं भूतग्राममचेतसः ।",
                 "मां चैवान्तःशरीरस्थं तान्विद्ध्यासुरनिश्चयान् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "karṣayantaḥ śarīrasthaṃ bhūtagrāmamacetasaḥ |",
+                    "māṃ caivāntaḥśarīrasthaṃ tānviddhyāsuraniścayān ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "...और जो मूर्ख शरीर में स्थित भूतग्राम (शरीर के तत्वों) को और अंतःकरण में स्थित मुझे (परमात्मा को) भी कष्ट देते हैं, उन्हें तुम आसुरी निश्चय वाले जानो।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "...who are foolish and who torture the material elements of the body as well as the Supersoul dwelling within, are to be known as demons.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Torturing the physical body under the guise of religion is effectively torturing the Supreme Lord who resides within. Such practices are demonic, not divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "धर्म की आड़ में भौतिक शरीर को प्रताड़ित करना प्रभावी रूप से भीतर रहने वाले परमेश्वर को प्रताड़ित करना है। ऐसी प्रथाएं आसुरी हैं, दैवीय नहीं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The body is a temple; torturing it is an offense to the divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True spirituality is not self-destructive.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38682,6 +39012,61 @@
               "lines": [
                 "आहारस्त्वपि सर्वस्य त्रिविधो भवति प्रियः ।",
                 "यज्ञस्तपस्तथा दानं तेषां भेदमिमं श‍ृणु ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "āhārastvapi sarvasya trividho bhavati priyaḥ |",
+                    "yajñastapastathā dānaṃ teṣāṃ bhedamimaṃ śṛṇu ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "भोजन भी सबको अपनी-अपनी प्रकृति के अनुसार तीन प्रकार का प्रिय होता है। वैसे ही यज्ञ, तप और दान भी तीन-तीन प्रकार के होते हैं। उनके इस भेद को तुम मुझसे सुनो।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Even the food each person prefers is of three kinds, according to the three modes of material nature. The same is true of sacrifices, austerities and charity. Now hear of the distinctions between them.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna transitions to practical, everyday life. He states that a person's diet, their style of charity, their sacrifices, and their self-discipline all reflect the specific guna (mode) that dominates their mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण व्यावहारिक, रोजमर्रा के जीवन की ओर बढ़ते हैं। वे बताते हैं कि किसी व्यक्ति का आहार, उनके दान की शैली, उनके यज्ञ और उनका आत्म-अनुशासन उस विशिष्ट गुण को दर्शाते हैं जो उनके मन पर हावी है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Your lifestyle choices mirror your spiritual state.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Everything you consume and do falls into the categories of goodness, passion, or ignorance.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38691,6 +39076,61 @@
               "lines": [
                 "आयुःसत्त्वबलारोग्यसुखप्रीतिविवर्धनाः ।",
                 "रस्याः स्निग्धाः स्थिरा हृद्या आहाराः सात्त्विकप्रियाः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "āyuḥsattvabalārogyasukhaprītivivardhanāḥ |",
+                    "rasyāḥ snigdhāḥ sthirā hṛdyā āhārāḥ sāttvikapriyāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "आयु, बुद्धि, बल, आरोग्य, सुख और प्रीति को बढ़ाने वाले, रसयुक्त, चिकने, स्थिर रहने वाले और स्वभाव से ही मन को प्रिय लगने वाले आहार सात्त्विक पुरुषों को प्रिय होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Foods dear to those in the mode of goodness increase the duration of life, purify one's existence and give strength, health, happiness and satisfaction. Such foods are juicy, fatty, wholesome, and pleasing to the heart.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Sattvic (pure) food nourishes the body and calms the mind. It is fresh, wholesome, naturally flavorful, and promotes longevity and inner peace.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सात्त्विक (शुद्ध) भोजन शरीर को पोषण देता है और मन को शांत करता है। यह ताजा, पौष्टिक, स्वाभाविक रूप से स्वादिष्ट है, और दीर्घायु और आंतरिक शांति को बढ़ावा देता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Eat pure, wholesome foods to cultivate a peaceful mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Good food increases vitality without agitating the system.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38700,6 +39140,61 @@
               "lines": [
                 "कट्वम्ललवणात्युष्णतीक्ष्णरूक्षविदाहिनः ।",
                 "आहारा राजसस्येष्टा दुःखशोकामयप्रदाः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "kaṭvamlalavaṇātyuṣṇatīkṣṇarūkṣavidāhinaḥ |",
+                    "āhārā rājasasyeṣṭā duḥkhaśokāmayapradāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "कड़वे, खट्टे, लवणयुक्त, बहुत गरम, तीखे, रूखे और दाहकारक भोजन राजस पुरुषों को प्रिय होते हैं, जो दुःख, शोक और रोग उत्पन्न करने वाले हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Foods that are too bitter, too sour, salty, hot, pungent, dry and burning are dear to those in the mode of passion. Such foods cause distress, misery and disease.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Rajasic food is overly stimulating—too spicy, salty, or hot. Such a diet agitates the nervous system, fueling passion but ultimately leading to physical and mental distress.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "राजसिक भोजन अत्यधिक उत्तेजक होता है- बहुत मसालेदार, नमकीन या गर्म। ऐसा आहार तंत्रिका तंत्र को उत्तेजित करता है, जुनून को बढ़ाता है लेकिन अंततः शारीरिक और मानसिक संकट की ओर ले जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Overly stimulating foods create anxiety and physical distress.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A passionate diet feeds a passionate, restless mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38709,6 +39204,61 @@
               "lines": [
                 "यातयामं गतरसं पूति पर्युषितं च यत् ।",
                 "उच्छिष्टमपि चामेध्यं भोजनं तामसप्रियम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yātayāmaṃ gatarasaṃ pūti paryuṣitaṃ ca yat |",
+                    "ucchiṣṭamapi cāmedhyaṃ bhojanaṃ tāmasapriyam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो भोजन अधपका, रसरहित, दुर्गंधयुक्त, बासी, जूठा और अपवित्र है, वह तामस पुरुषों को प्रिय होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Food prepared more than three hours before being eaten, food that is tasteless, decomposed and putrid, and food consisting of remnants and untouchable things is dear to those in the mode of darkness.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Tamasic food is stale, lifeless, or impure. Consuming such food dulls the intellect, increases laziness, and breeds ignorance and disease.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "तामसिक भोजन बासी, निर्जीव या अशुद्ध होता है। ऐसे भोजन का सेवन करने से बुद्धि कुंठित होती है, आलस्य बढ़ता है, और अज्ञानता तथा रोग पनपते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Stale and impure food degrades consciousness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Your diet directly impacts your mental clarity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38718,6 +39268,61 @@
               "lines": [
                 "अफलाकाङ्क्षिभिर्यज्ञो विधिदृष्टो य इज्यते ।",
                 "यष्टव्यमेवेति मनः समाधाय स सात्त्विकः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "aphalākāṅkṣibhiryajño vidhidṛṣṭo ya ijyate |",
+                    "yaṣṭavyameveti manaḥ samādhāya sa sāttvikaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो यज्ञ शास्त्र-विधि से निर्धारित है और फल की इच्छा न चाहने वाले पुरुषों द्वारा केवल 'यज्ञ करना ही कर्तव्य है' इस भाव से मन को एकाग्र करके किया जाता है, वह सात्त्विक है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Of sacrifices, the sacrifice performed according to the directions of scripture, as a matter of duty, by those who desire no reward, is of the nature of goodness.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "A pure (Sattvic) action is done simply because it is the right thing to do. It is executed according to duty, without any hidden agenda or desire for a personal reward.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "एक शुद्ध (सात्त्विक) कार्य केवल इसलिए किया जाता है क्योंकि यह करना सही है। यह बिना किसी छिपे एजेंडे या व्यक्तिगत इनाम की इच्छा के, कर्तव्य के अनुसार निष्पादित किया जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True duty is performed without expecting anything in return.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Righteousness is its own reward.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38727,6 +39332,61 @@
               "lines": [
                 "अभिसन्धाय तु फलं दम्भार्थमपि चैव यत् ।",
                 "इज्यते भरतश्रेष्ठ तं यज्ञं विद्धि राजसम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "abhisandhāya tu phalaṃ dambhārthamapi caiva yat |",
+                    "ijyate bharataśreṣṭha taṃ yajñaṃ viddhi rājasam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परन्तु हे भरतश्रेष्ठ! जो यज्ञ केवल दंभ (दिखावे) के लिए और फल को दृष्टि में रखकर किया जाता है, उस यज्ञ को तुम राजसिक जानो।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "But the sacrifice performed for some material benefit, or for the sake of pride, O chief of the Bharatas, you should know to be in the mode of passion.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Any charitable or religious act done to gain wealth, status, or to show off to others is classified as Rajasic. The motivation is selfish pride, not devotion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "धन, स्थिति प्राप्त करने या दूसरों को दिखाने के लिए किया गया कोई भी धर्मार्थ या धार्मिक कार्य राजसिक के रूप में वर्गीकृत किया गया है। प्रेरणा स्वार्थी अभिमान है, भक्ति नहीं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Actions done for PR or social status lose their spiritual value.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Selfish motives corrupt even the most pious acts.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38736,6 +39396,61 @@
               "lines": [
                 "विधिहीनमसृष्टान्नं मन्त्रहीनमदक्षिणम् ।",
                 "श्रद्धाविरहितं यज्ञं तामसं परिचक्षते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "vidhihīnamasṛṣṭānnaṃ mantrahīnamadakṣiṇam |",
+                    "śraddhāvirahitaṃ yajñaṃ tāmasaṃ paricakṣate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "शास्त्र-विधि से हीन, अन्न-दान से रहित, मन्त्रों के बिना, दक्षिणा के बिना और श्रद्धा के बिना किए गए यज्ञ को तामसिक यज्ञ कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Any sacrifice performed without regard for the directions of scripture, without distribution of prasadam [spiritual food], without chanting of Vedic hymns and remunerations to the priests, and without faith is considered to be in the mode of ignorance.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "An ignorant (Tamasic) sacrifice is careless. It lacks faith, ignores proper procedures, offers no charity, and is essentially an empty, disrespectful ritual.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "एक अज्ञानी (तामसिक) यज्ञ लापरवाह है। इसमें श्रद्धा का अभाव होता है, उचित प्रक्रियाओं की उपेक्षा की जाती है, कोई दान नहीं दिया जाता है, और यह अनिवार्य रूप से एक खाली, अपमानजनक अनुष्ठान है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Carelessness in spiritual practice demonstrates a lack of respect.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Rituals without faith or proper conduct are meaningless.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38745,6 +39460,61 @@
               "lines": [
                 "देवद्विजगुरुप्राज्ञपूजनं शौचमार्जवम् ।",
                 "ब्रह्मचर्यमहिंसा च शारीरं तप उच्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "devadvijaguruprājñapūjanaṃ śaucamārjavam |",
+                    "brahmacaryamahiṃsā ca śārīraṃ tapa ucyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "देवता, ब्राह्मण, गुरु और ज्ञानीजनों का पूजन, पवित्रता, सरलता, ब्रह्मचर्य और अहिंसा—यह शरीर संबंधी तप कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Austerity of the body consists in worship of the Supreme Lord, the brahmanas, the spiritual master, and superiors like the father and mother, and in cleanliness, simplicity, celibacy and nonviolence.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "True physical discipline is not self-harm. It is keeping the body clean, living simply, respecting elders and teachers, maintaining sexual discipline, and practicing non-violence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सच्चा शारीरिक अनुशासन आत्म-नुकसान नहीं है। यह शरीर को स्वच्छ रखना, सादगी से जीना, बड़ों और शिक्षकों का सम्मान करना, यौन अनुशासन बनाए रखना और अहिंसा का अभ्यास करना है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Physical austerity means living cleanly and harmlessly.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Respect for others is a form of bodily discipline.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38754,6 +39524,61 @@
               "lines": [
                 "अनुद्वेगकरं वाक्यं सत्यं प्रियहितं च यत् ।",
                 "स्वाध्यायाभ्यसनं चैव वाङ्मयं तप उच्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "anudvegakaraṃ vākyaṃ satyaṃ priyahitaṃ ca yat |",
+                    "svādhyāyābhyasanaṃ caiva vāṅmayaṃ tapa ucyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो उद्वेग पैदा न करने वाला, सच्चा, प्रिय और हितकारी वाक्य है तथा जो स्वाध्याय का अभ्यास है—वही वाणी संबंधी तप कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Austerity of speech consists in speaking words that are truthful, pleasing, beneficial, and not agitating to others, and also in regularly reciting Vedic literature.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The discipline of speech is rigorous: words must be true, but also spoken in a way that is pleasing, beneficial, and does not cause unnecessary agitation. Studying sacred texts is also part of this discipline.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "वाणी का अनुशासन कठोर है: शब्द सत्य होने चाहिए, लेकिन इस तरह से भी बोले जाने चाहिए जो सुखद, लाभकारी हों और अनावश्यक उद्वेग पैदा न करें। पवित्र ग्रंथों का अध्ययन भी इस अनुशासन का हिस्सा है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Speak the truth, but do not use it as a weapon to hurt others.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Beneficial and calming speech is a spiritual practice.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38763,6 +39588,61 @@
               "lines": [
                 "मनः प्रसादः सौम्यत्वं मौनमात्मविनिग्रहः ।",
                 "भावसंशुद्धिरित्येतत्तपो मानसमुच्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "manaḥ prasādaḥ saumyatvaṃ maunamātmavinigrahaḥ |",
+                    "bhāvasaṃśuddhirityetattapo mānasamucyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मन की प्रसन्नता, सौम्यता, मौन, आत्मनिग्रह और अंतःकरण की पूर्ण पवित्रता—यह मन संबंधी तप कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "And satisfaction, simplicity, gravity, self-control and purification of one's existence are the austerities of the mind.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Mental austerity involves keeping the mind cheerful, gentle, silent (free from inner chatter), disciplined, and pure in its intentions. It is the hardest discipline to master.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "मानसिक तपस्या में मन को हंसमुख, सौम्य, मौन (आंतरिक बकबक से मुक्त), अनुशासित और अपने इरादों में शुद्ध रखना शामिल है। इसमें महारत हासिल करना सबसे कठिन अनुशासन है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A cheerful mind is a sign of spiritual discipline.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True silence is the absence of mental turbulence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38772,6 +39652,61 @@
               "lines": [
                 "श्रद्धया परया तप्तं तपस्तत्त्रिविधं नरैः ।",
                 "अफलाकाङ्क्षिभिर्युक्तैः सात्त्विकं परिचक्षते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "śraddhayā parayā taptaṃ tapastattrividhaṃ naraiḥ |",
+                    "aphalākāṅkṣibhiryuktaiḥ sāttvikaṃ paricakṣate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "फल की इच्छा न चाहने वाले योगी पुरुषों द्वारा परम श्रद्धा से किए गए उस तीन प्रकार के तप (शारीरिक, वाचिक और मानसिक) को सात्त्विक तप कहते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "This threefold austerity, performed with transcendental faith by men not expecting material benefits but engaged only for the sake of the Supreme, is called austerity in goodness.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "When the disciplines of body, speech, and mind are practiced with deep faith and zero expectation for personal reward, they become pure, Sattvic austerity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जब शरीर, वाणी और मन के विषयों का अभ्यास गहरी श्रद्धा और व्यक्तिगत पुरस्कार के लिए शून्य अपेक्षा के साथ किया जाता है, तो वे शुद्ध, सात्त्विक तप बन जाते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Faith and selflessness transform habit into holy practice.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Consistency in thought, word, and deed defines true goodness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38781,6 +39716,61 @@
               "lines": [
                 "सत्कारमानपूजार्थं तपो दम्भेन चैव यत् ।",
                 "क्रियते तदिह प्रोक्तं राजसं चलमध्रुवम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "satkāramānapūjārthaṃ tapo dambhena caiva yat |",
+                    "kriyate tadiha proktaṃ rājasaṃ calamadhruvam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "सत्कार, मान और पूजा के लिए तथा केवल दिखावे के लिए जो तप किया जाता है, वह यहाँ राजसिक कहा गया है, जो अस्थिर और क्षणिक फल देने वाला है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Penance performed out of pride and for the sake of gaining respect, honor and worship is said to be in the mode of passion. It is neither stable nor permanent.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Discipline practiced to gain followers, social respect, or to build a 'holy' image is driven by ego (Rajas). Its results are shallow, unstable, and temporary.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अनुयायियों, सामाजिक सम्मान प्राप्त करने या 'पवित्र' छवि बनाने के लिए अभ्यास किया जाने वाला अनुशासन अहंकार (रजस) द्वारा संचालित होता है। इसके परिणाम उथले, अस्थिर और अस्थायी हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Do not use spirituality to build your ego or brand.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Austerity for the sake of applause loses its spiritual power.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38790,6 +39780,61 @@
               "lines": [
                 "मूढग्राहेणात्मनो यत्पीडया क्रियते तपः ।",
                 "परस्योत्सादनार्थं वा तत्तामसमुदाहृतम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "mūḍhagrāheṇātmano yatpīḍayā kriyate tapaḥ |",
+                    "parasyotsādanārthaṃ vā tattāmasamudāhṛtam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मूर्खतापूर्ण हठ से, अपने आप को पीड़ा देकर या दूसरों का नाश करने के लिए जो तप किया जाता है, वह तामसिक कहा गया है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Penance performed out of foolishness, with self-torture or to destroy or injure others, is said to be in the mode of ignorance.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Any austerity performed with the intention of harming others (like black magic) or mindlessly torturing one's own body is purely ignorant and dark (Tamasic).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "दूसरों को नुकसान पहुंचाने (जैसे काला जादू) या बिना सोचे-समझे अपने शरीर को प्रताड़ित करने के इरादे से की गई कोई भी तपस्या विशुद्ध रूप से अज्ञानी और अंधकारमय (तामसिक) है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Harming yourself or others is never a valid spiritual path.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Ignorance weaponizes discipline for destructive ends.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38799,6 +39844,61 @@
               "lines": [
                 "दातव्यमिति यद्दानं दीयतेऽनुपकारिणे ।",
                 "देशे काले च पात्रे च तद्दानं सात्त्विकं स्मृतम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "dātavyamiti yaddānaṃ dīyate'nupakāriṇe |",
+                    "deśe kāle ca pātre ca taddānaṃ sāttvikaṃ smṛtam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "दान देना ही कर्तव्य है—इस भाव से जो दान बिना किसी उपकार की आशा के, उचित स्थान, उचित समय और योग्य पात्र को दिया जाता है, उसे सात्त्विक दान माना गया है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Charity given out of duty, without expectation of return, at the proper time and place, and to a worthy person is considered to be in the mode of goodness.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Pure charity is given simply because it is the right thing to do. It requires no return favor, but it must be intelligent: given at the right time, in the right place, to someone truly deserving.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "शुद्ध दान केवल इसलिए दिया जाता है क्योंकि ऐसा करना सही है। इसमें किसी वापसी की आवश्यकता नहीं है, लेकिन यह बुद्धिमान होना चाहिए: सही समय पर, सही जगह पर, किसी ऐसे व्यक्ति को दिया जाना जो वास्तव में योग्य हो।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Give without expecting a \"thank you\" or a return favor.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Good charity requires vetting; ensure your help goes to worthy causes.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38808,6 +39908,61 @@
               "lines": [
                 "यत्तु प्रत्युपकारार्थं फलमुद्दिश्य वा पुनः ।",
                 "दीयते च परिक्लिष्टं तद्दानं राजसं स्मृतम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yattu pratyupakārārthaṃ phalamuddiśya vā punaḥ |",
+                    "dīyate ca parikliṣṭaṃ taddānaṃ rājasaṃ smṛtam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परन्तु जो दान क्लेशपूर्वक (कष्ट से) या बदले में कुछ पाने की आशा से या फल को दृष्टि में रखकर दिया जाता है, वह राजसिक दान कहा गया है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "But charity performed with the expectation of some return, or with a desire for fruitive results, or in a grudging mood, is said to be charity in the mode of passion.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Charity becomes tainted (Rajasic) if you expect a favor back, if you only give for a tax write-off or public recognition, or if you give grudgingly while regretting the loss of your money.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "दान दागी (राजसिक) हो जाता है यदि आप वापसी की उम्मीद करते हैं, यदि आप केवल कर छूट या सार्वजनिक मान्यता के लिए देते हैं, या यदि आप अपना पैसा खोने का पछतावा करते हुए अनिच्छा से देते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Grudging charity carries negative energy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Giving with an ulterior motive is a transaction, not charity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38817,6 +39972,61 @@
               "lines": [
                 "अदेशकाले यद्दानमपात्रेभ्यश्च दीयते ।",
                 "असत्कृतमवज्ञातं तत्तामसमुदाहृतम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "adeśakāle yaddānamapātrebhyaśca dīyate |",
+                    "asatkṛtamavajñātaṃ tattāmasamudāhṛtam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो दान बिना सत्कार के या अपमानपूर्वक, अनुचित स्थान और समय में तथा अयोग्य पात्रों को दिया जाता है, वह तामसिक दान कहा गया है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "And charity performed at an impure place, at an improper time, to unworthy persons, or without proper attention and respect is said to be in the mode of ignorance.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Ignorant (Tamasic) charity is destructive. It is giving money to harmful causes (like funding addictions), giving disrespectfully to humiliate the receiver, or giving recklessly without thought.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अज्ञानी (तामसिक) दान विनाशकारी है। यह हानिकारक कारणों (जैसे व्यसनों के वित्तपोषण) के लिए पैसा दे रहा है, रिसीवर को अपमानित करने के लिए अनादरपूर्वक दे रहा है, या बिना सोचे-समझे लापरवाही से दे रहा है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Disrespectful giving degrades both the giver and the receiver.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Funding vice or unworthy causes is an abuse of resources.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38826,6 +40036,61 @@
               "lines": [
                 "ॐतत्सदिति निर्देशो ब्रह्मणस्त्रिविधः स्मृतः ।",
                 "ब्राह्मणास्तेन वेदाश्च यज्ञाश्च विहिताः पुरा ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "oṃtatsaditi nirdeśo brahmaṇastrividhaḥ smṛtaḥ |",
+                    "brāhmaṇāstena vedāśca yajñāśca vihitāḥ purā ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "ॐ, तत्, सत्—यह तीन प्रकार का ब्रह्म का निर्देश (नाम) कहा गया है। उसी से सृष्टि के आदि में ब्राह्मण, वेद और यज्ञ रचे गए हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "From the beginning of creation, the three words om tat sat were used to indicate the Supreme Absolute Truth. These three symbolic representations were used by brahmanas while chanting the hymns of the Vedas and during sacrifices for the satisfaction of the Supreme.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna introduces the profound cosmic mantra 'Om Tat Sat'. These three syllables represent the Absolute Truth and were used from the beginning of creation to validate and purify all spiritual endeavors.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण एक गहरा ब्रह्मांडीय मंत्र 'ओम तत् सत्' का परिचय देते हैं। ये तीन शब्दांश पूर्ण सत्य का प्रतिनिधित्व करते हैं और सृष्टि की शुरुआत से ही सभी आध्यात्मिक प्रयासों को मान्य और शुद्ध करने के लिए उपयोग किए जाते थे।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "'Om Tat Sat' is the ultimate spiritual stamp of approval.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Sound vibration connects our actions to the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38835,6 +40100,61 @@
               "lines": [
                 "तस्मादोमित्युदाहृत्य यज्ञदानतपःक्रियाः ।",
                 "प्रवर्तन्ते विधानोक्ताः सततं ब्रह्मवादिनाम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tasmādomityudāhṛtya yajñadānatapaḥkriyāḥ |",
+                    "pravartante vidhānoktāḥ satataṃ brahmavādinām ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इसलिए वेद-मंत्रों का उच्चारण करने वाले पुरुषों की शास्त्रोक्त यज्ञ, दान और तपरूप क्रियाएँ सदा 'ॐ' का उच्चारण करके ही आरम्भ होती हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Therefore, transcendentalists undertaking performances of sacrifice, charity and penance in accordance with scriptural regulations begin always with om, to attain the Supreme.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "'Om' is the invocation. It aligns the mind with the Supreme before starting any righteous act—whether it is a sacrifice, a donation, or a discipline—ensuring it begins with divine awareness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "'ओम' आह्वान है। यह किसी भी धार्मिक कार्य को शुरू करने से पहले मन को परमात्मा के साथ जोड़ता है - चाहे वह यज्ञ हो, दान हो, या अनुशासन हो - यह सुनिश्चित करना कि यह दिव्य जागरूकता के साथ शुरू हो।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Start positive actions by acknowledging the Divine ('Om').",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Centering yourself before acting improves the quality of the action.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38844,6 +40164,61 @@
               "lines": [
                 "तदित्यनभिसन्धाय फलं यज्ञतपःक्रियाः ।",
                 "दानक्रियाश्च विविधाः क्रियन्ते मोक्षकाङ्क्षिभिः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tadityanabhisandhāya phalaṃ yajñatapaḥkriyāḥ |",
+                    "dānakriyāśca vividhāḥ kriyante mokṣakāṅkṣibhiḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "फल की इच्छा न रखकर 'तत्' (वह सब परमात्मा का ही है) इस शब्द का उच्चारण करके मोक्ष चाहने वाले पुरुषों द्वारा अनेक प्रकार के यज्ञ, तप और दान रूप क्रियाएँ की जाती हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Without desiring fruitive results, one should perform various kinds of sacrifice, penance and charity with the word tat. The purpose of such transcendental activities is to get free from material entanglement.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "'Tat' means 'That' (the Supreme). Uttering 'Tat' signifies that the action is not for personal gain but is dedicated entirely to 'That' ultimate reality, keeping the performer detached from the results.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "'तत्' का अर्थ है 'वह' (परमात्मा)। 'तत्' का उच्चारण यह दर्शाता है कि कार्य व्यक्तिगत लाभ के लिए नहीं है, बल्कि पूरी तरह से 'उस' अंतिम वास्तविकता को समर्पित है, जो प्रदर्शन करने वाले को परिणामों से अलग रखता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Dedicate your efforts to the Absolute ('Tat').",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Selflessness is the key to untangling from worldly karma.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38853,6 +40228,61 @@
               "lines": [
                 "सद्भावे साधुभावे च सदित्येतत्प्रयुज्यते ।",
                 "प्रशस्ते कर्मणि तथा सच्छब्दः पार्थ युज्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sadbhāve sādhubhāve ca sadityetatprayujyate |",
+                    "praśaste karmaṇi tathā sacchabdaḥ pārtha yujyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे पार्थ! 'सत्' शब्द का प्रयोग सत्यभाव (परमात्मा) और श्रेष्ठ भाव में किया जाता है, तथा उत्तम कर्मों में भी 'सत्' शब्द का प्रयोग किया जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Absolute Truth is the objective of devotional sacrifice, and it is indicated by the word sat. The performer of such sacrifice is also called sat, as are all works of sacrifice, penance and charity which, true to the absolute nature, are performed to please the Supreme Person, O son of Pritha.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "'Sat' means truth, goodness, and reality. It affirms that the intention is pure, the action is noble, and the ultimate goal is the eternal truth. It seals the action with divine goodness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "'सत्' का अर्थ है सत्य, अच्छाई और वास्तविकता। यह पुष्टि करता है कि इरादा शुद्ध है, कार्य नेक है, और अंतिम लक्ष्य शाश्वत सत्य है। यह कार्य को ईश्वरीय अच्छाई से सील कर देता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Noble actions are aligned with eternal truth ('Sat').",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Purity of intention defines the goodness of any endeavor.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38862,6 +40292,61 @@
               "lines": [
                 "यज्ञे तपसि दाने च स्थितिः सदिति चोच्यते ।",
                 "कर्म चैव तदर्थीयं सदित्येवाभिधीयते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yajñe tapasi dāne ca sthitiḥ saditi cocyate |",
+                    "karma caiva tadarthīyaṃ sadityevābhidhīyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "यज्ञ, तप और दान में जो दृढ़ स्थिति है, वह भी 'सत्' कही जाती है; और उस परमात्मा के लिए किया गया कर्म भी निश्चय ही 'सत्' कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Being situated in the performance of sacrifice, penance and charity is also described as the Absolute (sat), and any action dedicated to the Supreme is also named sat.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Remaining steadfast in doing one's duty—sacrifice, discipline, and charity—is itself a manifestation of the eternal truth (Sat). Any action done exclusively for God is 'Sat'.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अपने कर्तव्य-यज्ञ, अनुशासन और दान- को करने में दृढ़ रहना स्वयं शाश्वत सत्य (सत्) की अभिव्यक्ति है। विशेष रूप से ईश्वर के लिए किया गया कोई भी कार्य 'सत्' है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Steadfastness in doing good is a reflection of eternal reality.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Works dedicated to God are rendered eternal.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -38871,6 +40356,61 @@
               "lines": [
                 "अश्रद्धया हुतं दत्तं तपस्तप्तं कृतं च यत् ।",
                 "असदित्युच्यते पार्थ न च तत्प्रेत्य नो इह ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "aśraddhayā hutaṃ dattaṃ tapastaptaṃ kṛtaṃ ca yat |",
+                    "asadityucyate pārtha na ca tatpretya no iha ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे पार्थ! बिना श्रद्धा के किया हुआ हवन, दिया हुआ दान, तपा हुआ तप और जो कुछ भी किया गया कर्म है, वह सब 'असत्' कहा जाता है; उसका फल न तो यहाँ मिलता है और न मरने के बाद ही।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Anything done as sacrifice, charity or penance without faith in the Supreme, O son of Pritha, is impermanent. It is called asat and is useless both in this life and the next.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna delivers a stark warning: No matter how grand your sacrifices, charity, or discipline, if they are done without faith and sincere intention, they are 'Asat' (false/unreal). They hold no spiritual value in this life or the next.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण एक कड़ी चेतावनी देते हैं: चाहे आपके यज्ञ, दान या अनुशासन कितने भी भव्य क्यों न हों, यदि वे बिना विश्वास और सच्चे इरादे के किए जाते हैं, तो वे 'असत्' (झूठे / अवास्तविक) हैं। इस जीवन में या अगले जीवन में उनका कोई आध्यात्मिक मूल्य नहीं है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Action without faith is spiritually dead.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Mechanical performance of rituals yields zero spiritual benefit.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
