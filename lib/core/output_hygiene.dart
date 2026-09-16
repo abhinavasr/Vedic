@@ -25,12 +25,16 @@ String cleanOutput(String raw) {
 ///
 /// Run it on the visible answer only, never on the reasoning, which
 /// legitimately repeats itself.
+/// The thresholds are the ones that caught a real failure on a phone, not
+/// round numbers: 24 identical characters in a row, or a short unit repeated
+/// six times. Six is deliberately above what real text does — "ha ha ha ha ha"
+/// is five.
 int? detectRunaway(
   String visible, {
   int maxChars = 6000,
-  int maxCharRun = 40,
-  int maxUnitLength = 64,
-  int maxUnitRepeats = 8,
+  int maxCharRun = 24,
+  int maxUnitLength = 16,
+  int maxUnitRepeats = 6,
   int minRepeatSpan = 120,
 }) {
   final n = visible.length;

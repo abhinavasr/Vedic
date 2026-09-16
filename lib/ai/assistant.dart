@@ -67,12 +67,17 @@ class AssistantRequest {
     required this.prompt,
     this.maxOutputTokens = 512,
     this.temperature = 0.2,
+    this.maxChars = 6000,
   });
 
   final String systemInstruction;
   final String prompt;
   final int maxOutputTokens;
   final double temperature;
+
+  /// How long an answer may get before it is treated as a loop. Sized to the
+  /// task, because a caption and an explanation are not the same length.
+  final int maxChars;
 }
 
 /// Where the assistant remembers its few settings between runs.
@@ -414,7 +419,10 @@ class Assistant {
           case TextResponse(:final token):
             answer.write(token);
             // Measure the guard against the visible answer only.
-            final keep = detectRunaway(answer.toString());
+            final keep = detectRunaway(
+              answer.toString(),
+              maxChars: request.maxChars,
+            );
             if (keep != null) {
               await chat.stopGeneration();
               return cleanOutput(answer.toString().substring(0, keep));

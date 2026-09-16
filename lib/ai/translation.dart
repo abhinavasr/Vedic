@@ -98,6 +98,10 @@ Future<String> translateVerse(
       systemInstruction: translationSystemInstruction(language),
       prompt: translationPrompt(verse),
       maxOutputTokens: 220,
+      // A translation runs about as long as its verse; six times that is
+      // generous, and past it the model is repeating itself rather than
+      // translating.
+      maxChars: (verse.length * 6).clamp(400, 8000),
     ),
   );
   return checkTranslation(answer, language, verse);
