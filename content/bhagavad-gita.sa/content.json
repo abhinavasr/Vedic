@@ -2,7 +2,7 @@
   "format": "vedic-pack-content",
   "format_version": 1,
   "pack_id": "bhagavad-gita.sa",
-  "revision": 6,
+  "revision": 7,
   "languages": [
     "sa",
     "hi",
@@ -14895,6 +14895,61 @@
               "lines": [
                 "अनाश्रितः कर्मफलं कार्यं कर्म करोति यः ।",
                 "स संन्यासी च योगी च न निरग्निर्न चाक्रियः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "anāśritaḥ karmaphalaṃ kāryaṃ karma karoti yaḥ |",
+                    "sa saṃnyāsī ca yogī ca na niragnirna cākriyaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रीभगवान् बोले: जो मनुष्य कर्मफल का आश्रय न लेकर करने योग्य कर्म करता है, वह संन्यासी तथा योगी है; और केवल अग्नि का त्याग करने वाला संन्यासी नहीं है तथा केवल क्रियाओं का त्याग करने वाला योगी नहीं है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Supreme Personality of Godhead said: One who is unattached to the fruits of his work and who works as he is obligated is in the renounced order of life, and he is the true mystic, not he who lights no fire and performs no duty.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna redefines true renunciation. It is not about abandoning worldly duties or rituals (like lighting the sacred fire), but about abandoning the desire for the fruits of one's actions. True yoga is selfless action.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण सच्चे संन्यास को फिर से परिभाषित करते हैं। यह सांसारिक कर्तव्यों या अनुष्ठानों को छोड़ने के बारे में नहीं है, बल्कि अपने कर्मों के फल की इच्छा को छोड़ने के बारे में है। निस्वार्थ कर्म ही सच्चा योग है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Renunciation is an internal attitude, not an external display.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Obligatory duties must be performed without attachment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -14904,6 +14959,61 @@
               "lines": [
                 "यं संन्यासमिति प्राहुर्योगं तं विद्धि पाण्डव ।",
                 "न ह्यसंन्यस्तसङ्कल्पो योगी भवति कश्चन ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yaṃ saṃnyāsamiti prāhuryogaṃ taṃ viddhi pāṇḍava |",
+                    "na hyasaṃnyastasaṅkalpo yogī bhavati kaścana ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे पाण्डव! जिसको संन्यास कहते हैं, उसी को तू योग जान; क्योंकि संकल्पों का त्याग किए बिना कोई भी योगी नहीं होता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "What is called renunciation you should know to be the same as yoga, or linking oneself with the Supreme, O son of Pandu, for one can never become a yogi unless he renounces the desire for sense gratification.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Sannyasa (renunciation) and Yoga (connection with the Supreme) are essentially the same. Both require letting go of material intentions and selfish desires (sankalpa). Without this internal letting go, spiritual progress is impossible.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "संन्यास और योग अनिवार्य रूप से एक ही हैं। दोनों के लिए भौतिक इरादों और स्वार्थी इच्छाओं (संकल्प) को छोड़ने की आवश्यकता होती है। इसके बिना आध्यात्मिक प्रगति असंभव है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Yoga and renunciation are two sides of the same coin.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "You cannot be spiritually connected while holding onto selfish desires.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -14913,6 +15023,61 @@
               "lines": [
                 "आरुरुक्षोर्मुनेर्योगं कर्म कारणमुच्यते ।",
                 "योगारूढस्य तस्यैव शमः कारणमुच्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ārurukṣormuneryogaṃ karma kāraṇamucyate |",
+                    "yogārūḍhasya tasyaiva śamaḥ kāraṇamucyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "योग में आरूढ़ होने की इच्छा वाले मुनि के लिए कर्म करना ही कारण कहा जाता है और योगारूढ़ हो जाने पर उस योगारूढ़ पुरुष का जो शम अर्थात् सर्वसंकल्पों का अभाव है, वही कल्याण में कारण कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "For one who is a neophyte in the eightfold yoga system, work is said to be the means; and for one who is already elevated in yoga, cessation of all material activities is said to be the means.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "For a beginner, active selfless work is the method to purify the mind and ascend in yoga. For the advanced practitioner who has achieved mental stillness, that very tranquility (shama) becomes the means to maintain their spiritual state.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "शुरुआती के लिए, मन को शुद्ध करने के लिए सक्रिय निस्वार्थ कर्म तरीका है। एक उन्नत अभ्यासी के लिए जिसने मानसिक शांति प्राप्त कर ली है, वही शांति (शम) उनकी आध्यात्मिक स्थिति को बनाए रखने का साधन बन जाती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual practice evolves from dynamic action to inner stillness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Work is the ladder; tranquility is the destination.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -14922,6 +15087,61 @@
               "lines": [
                 "यदा हि नेन्द्रियार्थेषु न कर्मस्वनुषज्जते ।",
                 "सर्वसङ्कल्पसंन्यासी योगारूढस्तदोच्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yadā hi nendriyārtheṣu na karmasvanuṣajjate |",
+                    "sarvasaṅkalpasaṃnyāsī yogārūḍhastadoccyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिस काल में न तो इन्द्रियों के भोगों में और न कर्मों में ही आसक्त होता है, उस काल में सर्वसंकल्पों का त्यागी पुरुष योगारूढ़ कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "A person is said to be elevated in yoga when, having renounced all material desires, he neither acts for sense gratification nor engages in fruitive activities.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The hallmark of someone perfectly established in yoga is absolute non-attachment. They have no interest in sensory pleasures and do not act with any hidden motives or material calculations.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "योग में पूरी तरह से स्थापित किसी व्यक्ति की पहचान पूर्ण अनासक्ति है। उन्हें संवेदी सुखों में कोई दिलचस्पी नहीं है और वे किसी भी छिपे हुए इरादों से कार्य नहीं करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Elevation in yoga is measured by one's detachment from sensory rewards.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A true yogi acts without calculating personal gain.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -14931,6 +15151,61 @@
               "lines": [
                 "उद्धरेदात्मनात्मानं नात्मानमवसादयेत् ।",
                 "आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "uddharedātmanātmānaṃ nātmānamavasādayet |",
+                    "ātmaiva hyātmano bandhurātmaiva ripurātmanaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अपने द्वारा अपना संसार-समुद्र से उद्धार करे और अपने को अधोगति में न डाले; क्योंकि यह मनुष्य आप ही तो अपना मित्र है और आप ही अपना शत्रु है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One must deliver himself with the help of his mind, and not degrade himself. The mind is the friend of the conditioned soul, and his enemy as well.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This profound verse emphasizes self-responsibility. No one can save you but yourself. Your own mind, depending on how you train it, will either be your greatest ally in liberation or your worst enemy leading to degradation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यह श्लोक आत्म-जिम्मेदारी पर जोर देता है। आपको कोई और नहीं बल्कि आप स्वयं ही बचा सकते हैं। आपका अपना मन, इस बात पर निर्भर करता है कि आप इसे कैसे प्रशिक्षित करते हैं, या तो आपका सबसे बड़ा सहयोगी होगा या आपका सबसे बड़ा दुश्मन।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "You are entirely responsible for your own spiritual upliftment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The mind is a tool; you must master it before it ruins you.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -14940,6 +15215,61 @@
               "lines": [
                 "बन्धुरात्मात्मनस्तस्य येनात्मैवात्मना जितः ।",
                 "अनात्मनस्तु शत्रुत्वे वर्तेतात्मैव शत्रुवत् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "bandhurātmātmanastasya yenātmaivātmanā jitaḥ |",
+                    "anātmanastu śatrutve vartetātmaiva śatruvat ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जीवात्मा द्वारा मन और इन्द्रियों सहित शरीर जीता हुआ है, उस जीवात्मा का तो वह आप ही मित्र है और जिसके द्वारा मन तथा इन्द्रियों सहित शरीर नहीं जीता गया है, उसके लिए वह आप ही शत्रु के सदृश शत्रुता में बर्तता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "For him who has conquered the mind, the mind is the best of friends; but for one who has failed to do so, his mind will remain the greatest enemy.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "A controlled mind acts as a faithful friend, guiding one toward peace and right action. An uncontrolled mind behaves like a hostile enemy, constantly creating desires, fears, and misery.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "नियंत्रित मन एक वफादार दोस्त के रूप में कार्य करता है। एक अनियंत्रित मन एक शत्रु की तरह व्यवहार करता है, जो लगातार इच्छाओं, भय और दुख पैदा करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Mind control is the prerequisite for inner peace.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "An untamed mind will actively sabotage your well-being.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -14949,6 +15279,61 @@
               "lines": [
                 "जितात्मनः प्रशान्तस्य परमात्मा समाहितः ।",
                 "शीतोष्णसुखदुःखेषु तथा मानापमानयोः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "jitātmanaḥ praśāntasya paramātmā samāhitaḥ |",
+                    "śītoṣṇasukhaduḥkheṣu tathā mānāpamānayoḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "सर्दी-गर्मी, सुख-दुःख तथा मान-अपमान में, जिसके अन्तःकरण की वृत्तियाँ भलीभाँति शान्त हैं, ऐसे स्वाधीन आत्मा वाले पुरुष के ज्ञान में सच्चिदानन्दघन परमात्मा सम्यक् प्रकार से स्थित हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "For one who has conquered the mind, the Supersoul is already reached, for he has attained tranquility. To such a man happiness and distress, heat and cold, honor and dishonor are all the same.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "When the mind is conquered, absolute tranquility is achieved. In this state, the dualities of life—like temperature changes, joy and sorrow, or praise and insult—lose their power to disturb the soul.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जब मन पर विजय प्राप्त हो जाती है, तो पूर्ण शांति प्राप्त होती है। इस स्थिति में, जीवन के द्वंद्व - जैसे सुख-दुःख, या मान-अपमान - आत्मा को परेशान करने की अपनी शक्ति खो देते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Tranquility is the natural state of a conquered mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Equanimity towards external conditions reflects internal realization.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -14958,6 +15343,61 @@
               "lines": [
                 "ज्ञानविज्ञानतृप्तात्मा कूटस्थो विजितेन्द्रियः ।",
                 "युक्त इत्युच्यते योगी समलोष्टाश्मकाञ्चनः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "jñānavijñānatṛptātmā kūṭastho vijitendriyaḥ |",
+                    "yukta ityucyate yogī samaloṣṭāśmakāñcanaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिसका अन्तःकरण ज्ञान और विज्ञान से तृप्त है, जो विकाररहित और जितेन्द्रिय है, तथा मिट्टी, पत्थर और सुवर्ण में समान भाव वाला है, वह योगी युक्त अर्थात् योगारूढ़ कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "A person is said to be established in self-realization and is called a yogi [or mystic] when he is fully satisfied by virtue of acquired knowledge and realization. Such a person is situated in transcendence and is self-controlled. He sees everything—whether it be pebbles, stones or gold—as the same.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "A true yogi is satisfied by spiritual knowledge (theoretical) and realization (practical). Having mastered their senses, they view all material things—be it a lump of dirt, a rock, or solid gold—with equal, detached vision, valuing none over the other.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "एक सच्चा योगी आध्यात्मिक ज्ञान और साक्षात्कार से संतुष्ट होता है। अपनी इंद्रियों में महारत हासिल करने के बाद, वे सभी भौतिक चीजों को - चाहे वह मिट्टी हो, पत्थर हो या सोना - समान, विरक्त दृष्टि से देखते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True satisfaction comes from spiritual realization, not material wealth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "To the enlightened, worldly valuables hold no special allure.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -14967,6 +15407,61 @@
               "lines": [
                 "सुहृन्मित्रार्युदासीनमध्यस्थद्वेष्यबन्धुषु ।",
                 "साधुष्वपि च पापेषु समबुद्धिर्विशिष्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "suhṛnmitrāryudāsīnamadhyasthadveṣyabandhuṣu |",
+                    "sādhuṣvapi ca pāpeṣu samabuddhirviśiṣyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "सुहृद्, मित्र, वैरी, उदासीन, मध्यस्थ, द्वेष्य और बन्धुगणों में, धर्मात्माओं में और पापियों में भी समान भाव रखने वाला पुरुष अति श्रेष्ठ है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "A person is considered still further advanced when he regards honest well-wishers, affectionate benefactors, the neutral, mediators, the envious, friends and enemies, the pious and the sinners all with an equal mind.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The highest level of spiritual maturity is seeing the same divine spark in all people, regardless of their relationship to you or their moral standing. The yogi treats a friend, a bitter enemy, a saint, and a sinner with the same internal respect and equanimity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "आध्यात्मिक परिपक्वता का उच्चतम स्तर सभी लोगों में समान ईश्वरीय चिंगारी को देखना है। योगी एक मित्र, एक कट्टर दुश्मन, एक संत और एक पापी के साथ समान आंतरिक सम्मान और समभाव से व्यवहार करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual advancement eradicates prejudice and bias.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Equanimity extends not just to objects, but to all human relationships.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -14976,6 +15471,61 @@
               "lines": [
                 "योगी युञ्जीत सततमात्मानं रहसि स्थितः ।",
                 "एकाकी यतचित्तात्मा निराशीरपरिग्रहः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yogī yuñjīta satatamātmānaṃ rahasi sthitaḥ |",
+                    "ekākī yatacittātmā nirāśīraparigrahaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मन और इन्द्रियों सहित शरीर को वश में रखने वाला, आशारहित और संग्रहरहित योगी अकेला ही एकान्त स्थान में स्थित होकर आत्मा को निरन्तर परमात्मा में लगावे।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "A transcendentalist should always engage his body, mind and self in relationship with the Supreme; he should live alone in a secluded place and should always carefully control his mind. He should be free from desires and feelings of possessiveness.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna gives practical instructions for meditation. To effectively focus the mind on the Supreme, one needs physical solitude, a controlled mind, zero expectations, and freedom from the urge to possess or hoard things.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण ध्यान के लिए व्यावहारिक निर्देश देते हैं। मन को परमात्मा पर प्रभावी ढंग से केंद्रित करने के लिए, एकांत, एक नियंत्रित मन, शून्य अपेक्षाओं और चीजों को रखने की इच्छा से मुक्ति की आवश्यकता होती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Solitude and simplicity are powerful aids to meditation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Possessiveness clutters the mind and prevents focus.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -14985,6 +15535,61 @@
               "lines": [
                 "शुचौ देशे प्रतिष्ठाप्य स्थिरमासनमात्मनः ।",
                 "नात्युच्छ्रितं नातिनीचं चैलाजिनकुशोत्तरम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "śucau deśe pratiṣṭhāpya sthiramāsanamātmanaḥ |",
+                    "nātyucchritaṃ nātinīcaṃ cailājinakuśottaram ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "शुद्ध भूमि में, जिसके ऊपर क्रमशः कुशा, मृगछाला और वस्त्र बिछे हैं, जो न बहुत ऊँचा है और न बहुत नीचा, ऐसे अपने आसन को स्थिर स्थापन करके...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "To practice yoga, one should go to a secluded place and should lay kusha grass on the ground and then cover it with a deerskin and a soft cloth. The seat should be neither too high nor too low and should be situated in a sacred place.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This verse details the traditional physical setup for meditation. The seat should be clean, stable, insulated from the ground (using grass and cloth), and at a comfortable height to ensure the body is not disturbed.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यह श्लोक ध्यान के लिए पारंपरिक भौतिक व्यवस्था का विवरण देता है। आसन साफ, स्थिर, जमीन से अछूता होना चाहिए ताकि यह सुनिश्चित हो सके कि शरीर परेशान न हो।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A stable and clean physical environment supports mental stability.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Preparation is essential before beginning deep spiritual practices.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -14994,6 +15599,61 @@
               "lines": [
                 "तत्रैकाग्रं मनः कृत्वा यतचित्तेन्द्रियक्रियः ।",
                 "उपविश्यासने युञ्ज्याद्योगमात्मविशुद्धये ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tatraikāgraṃ manaḥ kṛtvā yatacittendriyakriyaḥ |",
+                    "upaviśyāsane yuñjyādyogamātmaviśuddhaye ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "उस आसन पर बैठकर, चित्त और इन्द्रियों की क्रियाओं को वश में रखते हुए, मन को एकाग्र करके अन्तःकरण की शुद्धि के लिए योग का अभ्यास करे।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The yogi should then sit on it very firmly and practice yoga to purify the heart by controlling his mind, senses and activities and fixing the mind on one point.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Once seated, the actual practice begins: making the mind one-pointed by deliberately stopping the wandering of the senses and thoughts. The ultimate goal of this rigorous focus is the purification of the heart.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "एक बार बैठने के बाद, वास्तविक अभ्यास शुरू होता है: इंद्रियों और विचारों के भटकने को रोककर मन को एकाग्र करना। इस कठोर ध्यान का अंतिम लक्ष्य हृदय की शुद्धि है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Meditation is an active process of focusing, not just sitting idly.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The purpose of yoga is inner purification, not just physical fitness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15003,6 +15663,61 @@
               "lines": [
                 "समं कायशिरोग्रीवं धारयन्नचलं स्थिरः ।",
                 "सम्प्रेक्ष्य नासिकाग्रं स्वं दिशश्चानवलोकयन् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "samaṃ kāyaśirogrīvaṃ dhārayannacalaṃ sthiraḥ |",
+                    "samprekṣya nāsikāgraṃ svaṃ diśaścānavalokayan ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "काया, सिर और गले को समान एवं अचल धारण करके और स्थिर होकर, अपनी नासिका के अग्रभाग पर दृष्टि जमाकर, अन्य दिशाओं को न देखता हुआ...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One should hold one's body, neck and head erect in a straight line and stare steadily at the tip of the nose. Thus, with an unagitated, subdued mind...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Posture is critical. A straight spine (body, neck, and head aligned) allows energy to flow freely and keeps one alert. Focusing the eyes slightly (like at the tip of the nose) prevents visual distractions without inducing sleep.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "मुद्रा महत्वपूर्ण है। एक सीधी रीढ़ ऊर्जा को स्वतंत्र रूप से प्रवाहित होने देती है और व्यक्ति को सतर्क रखती है। आंखों को थोड़ा केंद्रित करने से दृश्य व्याकुलता को रोका जा सकता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Physical posture directly influences mental alertness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Visual focus helps rein in a wandering mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15012,6 +15727,61 @@
               "lines": [
                 "प्रशान्तात्मा विगतभीर्ब्रह्मचारिव्रते स्थितः ।",
                 "मनः संयम्य मच्चित्तो युक्त आसीत मत्परः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "praśāntātmā vigatabhīrbrahmacārivrate sthitaḥ |",
+                    "manaḥ saṃyamya maccitto yukta āsīta matparaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "प्रशान्त अन्तःकरण वाला, भयरहित, ब्रह्मचारी के व्रत में स्थित, मन को संयम करके, मेरे में चित्त लगाने वाला और मेरे ही परायण होकर बैठे।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "...devoid of fear, completely free from sex life, one should meditate upon Me within the heart and make Me the ultimate goal of life.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Mental attitude is as important as posture. The yogi must be fearless, strictly celibate (brahmacharya) to conserve vital energy, and make the Supreme Lord the exclusive object of their meditation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "मानसिक दृष्टिकोण उतना ही महत्वपूर्ण है जितनी मुद्रा। योगी को निडर होना चाहिए, ऊर्जा के संरक्षण के लिए ब्रह्मचर्य का पालन करना चाहिए, और भगवान को ध्यान का विशेष उद्देश्य बनाना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Fearlessness and sensory discipline are required for deep meditation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The ultimate target of concentration must be the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15021,6 +15791,61 @@
               "lines": [
                 "युञ्जन्नेवं सदात्मानं योगी नियतमानसः ।",
                 "शान्तिं निर्वाणपरमां मत्संस्थामधिगच्छति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yuñjannevaṃ sadātmānaṃ yogī niyatamānasaḥ |",
+                    "śāntiṃ nirvāṇaparamāṃ matsaṃsthāmadhigacchati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इस प्रकार वश में किए हुए मन वाला योगी निरन्तर अपने आत्मा को परमात्मा में लगाता हुआ मुझमें स्थित, परम निर्वाण (शान्ति) को प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Thus practicing constant control of the body, mind and activities, the mystic transcendentalist, his mind regulated, attains to the kingdom of God [or the abode of Krishna] by cessation of material existence.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "By strictly following this regimen of physical, mental, and spiritual discipline, the yogi eventually reaches the supreme state of peace—Nirvana—which is the cessation of material existence and merging with the Divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "शारीरिक, मानसिक और आध्यात्मिक अनुशासन के इस नियम का सख्ती से पालन करने से, योगी अंततः शांति की सर्वोच्च स्थिति - निर्वाण - तक पहुंचता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Consistent discipline leads to the ultimate spiritual payoff.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True peace is found only in connection with the Divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15030,6 +15855,61 @@
               "lines": [
                 "नात्यश्नतस्तु योगोऽस्ति न चैकान्तमनश्नतः ।",
                 "न चातिस्वप्नशीलस्य जाग्रतो नैव चार्जुन ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "nātyaśnatastu yogo'sti na caikāntamanaśnataḥ |",
+                    "na cātisvapnaśīlasya jāgrato naiva cārjuna ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे अर्जुन! यह योग न तो बहुत खाने वाले का, न बिल्कुल न खाने वाले का, न बहुत सोने वाले स्वभाव वाले का और न सदा जागने वाले का ही सिद्ध होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "There is no possibility of one's becoming a yogi, O Arjuna, if one eats too much or eats too little, sleeps too much or does not sleep enough.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna advocates the Middle Path. Extremes are detrimental to spiritual practice. Gluttony makes one lethargic; starvation makes one weak. Excessive sleep causes dullness; insomnia agitates the mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण मध्य मार्ग की वकालत करते हैं। अति आध्यात्मिक अभ्यास के लिए हानिकारक है। पेटूपन सुस्त बनाता है; भुखमरी कमजोर बनाती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Avoid extremes; moderation is the key to spiritual success.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Your physical habits directly impact your meditation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15039,6 +15919,61 @@
               "lines": [
                 "युक्ताहारविहारस्य  युक्तचेष्टस्य कर्मसु ।",
                 "युक्तस्वप्नावबोधस्य योगो भवति दुःखहा ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yuktāhāravihārasya yuktaceṣṭasya karmasu |",
+                    "yuktasvapnāvabodhasya yogo bhavati duḥkhahā ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "दुःखों का नाश करने वाला योग तो यथायोग्य आहार और विहार करने वाले का, कर्मों में यथायोग्य चेष्टा करने वाले का और यथायोग्य सोने तथा जागने वाले का ही सिद्ध होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "He who is regulated in his habits of eating, sleeping, recreation and work can mitigate all material pains by practicing the yoga system.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "A balanced lifestyle is a prerequisite for destroying sorrow through yoga. One must regulate their diet, balance their work and recreation, and maintain a healthy sleep cycle to progress spiritually.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "योग के माध्यम से दुखों को नष्ट करने के लिए एक संतुलित जीवन शैली एक शर्त है। आध्यात्मिक रूप से प्रगति करने के लिए आहार, काम और स्वस्थ नींद के चक्र को नियंत्रित करना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A disciplined, balanced lifestyle is the foundation of yoga.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual life is not separate from how you manage your daily routine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15048,6 +15983,61 @@
               "lines": [
                 "यदा विनियतं चित्तमात्मन्येवावतिष्ठते ।",
                 "निःस्पृहः सर्वकामेभ्यो युक्त इत्युच्यते तदा ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yadā viniyataṃ cittamātmanyevāvatiṣṭhate |",
+                    "niḥspṛhaḥ sarvakāmebhyo yukta ityucyate tadā ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिस काल में अत्यन्त वश में किया हुआ चित्त परमात्मा में ही भलीभाँति स्थित हो जाता है, उस काल में सम्पूर्ण कामनाओं से स्पृहारहित पुरुष 'योगयुक्त' है—ऐसा कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "When the yogi, by practice of yoga, disciplines his mental activities and becomes situated in transcendence—devoid of all material desires—he is said to be well established in yoga.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The culmination of this practice is when the perfectly disciplined mind rests exclusively in the Self. At this point, the yogi loses all craving for material desires and is considered truly 'yukta' (connected/established).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "इस अभ्यास की परिणति तब होती है जब पूरी तरह से अनुशासित मन विशेष रूप से स्वयं में रहता है। इस बिंदु पर, योगी को 'युक्त' (स्थापित) माना जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The goal of discipline is to anchor the mind in the soul.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Desirelessness is the natural outcome of finding the inner Self.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15057,6 +16047,61 @@
               "lines": [
                 "यथा दीपो निवातस्थो नेङ्गते सोपमा स्मृता ।",
                 "योगिनो यतचित्तस्य युञ्जतो योगमात्मनः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yathā dīpo nivātastho neṅgate sopamā smṛtā |",
+                    "yogino yatacittasya yuñjato yogamātmanaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिस प्रकार वायुरहित स्थान में दीपक चलायमान नहीं होता, वैसी ही उपमा परमात्मा के ध्यान में लगे हुए योगी के जीते हुए चित्त की कही गई है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "As a lamp in a windless place does not waver, so the transcendentalist, whose mind is controlled, remains always steady in his meditation on the transcendent self.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna gives a beautiful visual analogy: Just as a candle flame burns perfectly still in a room with no wind, the mind of a yogi remains perfectly steady, undisturbed by the 'winds' of worldly desires.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण एक सुंदर दृश्य सादृश्य देते हैं: जिस प्रकार हवा रहित कमरे में मोमबत्ती की लौ पूरी तरह स्थिर जलती है, वैसे ही योगी का मन सांसारिक इच्छाओं की 'हवाओं' से अप्रभावित, पूरी तरह स्थिर रहता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A controlled mind is characterized by unwavering steadiness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "External and internal stillness must mirror each other.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15066,6 +16111,61 @@
               "lines": [
                 "यत्रोपरमते चित्तं निरुद्धं योगसेवया ।",
                 "यत्र चैवात्मनात्मानं पश्यन्नात्मनि तुष्यति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yatroparamate cittaṃ niruddhaṃ yogasevayā |",
+                    "yatra caivātmanātmānaṃ paśyannātmani tuṣyati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "योग के अभ्यास से निरुद्ध चित्त जिस अवस्था में उपराम हो जाता है और जिस अवस्था में परमात्मा के ध्यान से शुद्ध हुई सूक्ष्म बुद्धि द्वारा परमात्मा को साक्षात् करता हुआ सच्चिदानन्दघन परमात्मा में ही सन्तुष्ट रहता है...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "In the stage of perfection called trance, or samadhi, one's mind is completely restrained from material mental activities by practice of yoga. This perfection is characterized by one's ability to see the self by the pure mind and to relish and rejoice in the self.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This verse describes the state of Samadhi (trance). The mind completely ceases its material churning. Using this purified intellect, the yogi finally 'sees' the true Self and finds absolute satisfaction within it.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यह श्लोक समाधि की स्थिति का वर्णन करता है। इस शुद्ध बुद्धि का उपयोग करते हुए, योगी अंततः सच्चे स्वरूप को 'देखता' है और उसमें पूर्ण संतुष्टि पाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Samadhi is the complete cessation of mental turbulence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True rejoicing happens when the pure mind perceives the soul.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15075,6 +16175,61 @@
               "lines": [
                 "सुखमात्यन्तिकं यत्तद् बुद्धिग्राह्यमतीन्द्रियम् ।",
                 "वेत्ति यत्र न चैवायं स्थितश्चलति तत्त्वतः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sukhamātyantikaṃ yattad buddhigrāhyamatīndriyam |",
+                    "vetti yatra na caivāyaṃ sthitaścalati tattvataḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इन्द्रियों से अतीत, केवल शुद्ध हुई सूक्ष्म बुद्धि द्वारा ग्रहण करने योग्य जो अनन्त आनन्द है, उसको जिस अवस्था में अनुभव करता है, और जिस अवस्था में स्थित यह योगी भगवत्स्वरूप से विचलित नहीं होता...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "In that joyous state, one is situated in boundless transcendental happiness, realized through transcendental senses. Established thus, one never departs from the truth...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The bliss experienced in Samadhi is beyond anything the physical senses can feel. It is an infinite, spiritual joy grasped only by pure intelligence. Once this truth is experienced, the yogi never wavers from it.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "समाधि में अनुभव किया गया आनंद भौतिक इंद्रियों की तुलना में बहुत परे है। यह एक अनंत, आध्यात्मिक आनंद है। एक बार जब यह सत्य अनुभव हो जाता है, तो योगी इससे कभी विचलित नहीं होता।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual bliss is infinitely greater than sensory pleasure.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Direct experience of truth creates unshakable conviction.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15084,6 +16239,61 @@
               "lines": [
                 "यं लब्ध्वा चापरं लाभं मन्यते नाधिकं ततः ।",
                 "यस्मिन्स्थितो न दुःखेन गुरुणापि विचाल्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yaṃ labdhvā cāparaṃ lābhaṃ manyate nādhikaṃ tataḥ |",
+                    "yasminsthito na duḥkhena guruṇāpi vicālyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परमेश्वर की प्राप्ति रूप जिस लाभ को प्राप्त होकर उससे अधिक दूसरा कुछ भी लाभ नहीं मानता, और जिस अवस्था में स्थित योगी बड़े भारी दुःख से भी चलायमान नहीं होता...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "...and upon gaining this he thinks there is no greater gain. Being situated in such a position, one is never shaken, even in the midst of greatest difficulty.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Having found the ultimate inner treasure, worldly achievements seem insignificant. Grounded in this supreme realization, the yogi remains entirely unshakeable, even if faced with the most catastrophic tragedies.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "परम आंतरिक खजाना पा लेने के बाद, सांसारिक उपलब्धियां नगण्य लगती हैं। इस सर्वोच्च बोध में आधारित, योगी पूरी तरह से अडिग रहता है, भले ही सबसे बड़ी त्रासदियों का सामना करना पड़े।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Self-realization is the highest possible achievement.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual grounding provides immunity to life's worst tragedies.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15093,6 +16303,61 @@
               "lines": [
                 "तं विद्याद् दुःखसंयोगवियोगं योगसंज्ञितम् ।",
                 "स निश्चयेन योक्तव्यो योगोऽनिर्विण्णचेतसा ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "taṃ vidyād duḥkhasaṃyogaviyogaṃ yogasaṃjñitam |",
+                    "sa niścayena yoktavyo yogo'nirviṇṇacetasā ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो दुःखरूप संसार के संयोग से रहित है तथा जिसका नाम योग है, उसको जानना चाहिए। वह योग न उकताए हुए चित्त से निश्चयपूर्वक करना कर्त्तव्य है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "This indeed is actual freedom from all miseries arising from material contact. This yoga is to be practiced with determination and an undaunted heart.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna re-defines Yoga as the 'disconnection from union with suffering.' To achieve this profound freedom, one must practice persistently, with absolute determination, and without getting disheartened by failures.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण योग को 'दुख के साथ मिलन से वियोग' के रूप में फिर से परिभाषित करते हैं। इस स्वतंत्रता को प्राप्त करने के लिए, पूर्ण दृढ़ संकल्प के साथ, बिना निराश हुए अभ्यास करना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Yoga is the systematic untangling of oneself from suffering.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Patience, determination, and optimism are essential for spiritual practice.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15102,6 +16367,61 @@
               "lines": [
                 "सङ्कल्पप्रभवान्कामांस्त्यक्त्वा सर्वानशेषतः ।",
                 "मनसैवेन्द्रियग्रामं विनियम्य समन्ततः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "saṅkalpaprabhavānkāmāṃstyaktvā sarvānaśeṣataḥ |",
+                    "manasaivendriyagrāmaṃ viniyamya samantataḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "संकल्प से उत्पन्न होने वाली सम्पूर्ण कामनाओं को निःशेष रूप से त्यागकर और मन द्वारा इन्द्रियों के समुदाय को सब ओर से भलीभाँति रोककर...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One should engage oneself in the practice of yoga with determination and faith and not be deviated from the path. One should abandon, without exception, all material desires born of mental speculation and thus control all the senses on all sides by the mind.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The practical first step: One must consciously and completely abandon all desires born of imagination and mental planning (sankalpa). Using the mind, one must firmly rein in all the senses from their objects.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "व्यावहारिक पहला कदम: कल्पना और मानसिक योजना (संकल्प) से पैदा होने वाली सभी इच्छाओं को पूरी तरह से छोड़ देना चाहिए। मन का उपयोग करते हुए इंद्रियों को रोकना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Desires are born from our own mental speculations.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The mind must be used as a tool to block the senses from wandering.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15111,6 +16431,61 @@
               "lines": [
                 "शनैः शनैरुपरमेद् बुद्ध्या धृतिगृहीतया ।",
                 "आत्मसंस्थं मनः कृत्वा न किञ्चिदपि चिन्तयेत् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "śanaiḥ śanairuparamed buddhyā dhṛtigṛhītayā |",
+                    "ātmasaṃsthaṃ manaḥ kṛtvā na kiñcidapi cintayet ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "क्रम-क्रम से अभ्यास करता हुआ, धैर्ययुक्त बुद्धि द्वारा मन को परमात्मा में स्थित करके, परमात्मा के सिवा और कुछ भी चिन्तन न करे।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Gradually, step by step, one should become situated in trance by means of intelligence sustained by full conviction, and thus the mind should be fixed on the self alone and should think of nothing else.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Mind control is not instantaneous. It requires a gradual, patient, step-by-step process. Using a resolute intellect, one must repeatedly draw the mind back until it rests entirely in the Self, thinking of absolutely nothing else.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "मन पर नियंत्रण तात्कालिक नहीं है। इसके लिए क्रमिक, धैर्यवान, चरण-दर-चरण प्रक्रिया की आवश्यकता होती है। दृढ़ बुद्धि का उपयोग करते हुए, मन को वापस खींचना चाहिए।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Do not rush meditation; proceed gradually with patience.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The ultimate goal of concentration is complete emptiness of worldly thoughts.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15120,6 +16495,61 @@
               "lines": [
                 "यतो यतो निश्चरति मनश्चञ्चलमस्थिरम् ।",
                 "ततस्ततो नियम्यैतदात्मन्येव वशं नयेत् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yato yato niścarati manaścañcalamasthiram |",
+                    "tatastato niyamyaitadātmanyeva vaśaṃ nayet ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "यह स्थिर न रहने वाला और चंचल मन जिस-जिस शब्दादि विषय के निमित्त से संसार में विचरता है, उस-उस विषय से रोककर अर्थात् हटाकर इसे बार-बार परमात्मा में ही निरुद्ध करे।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "From wherever the mind wanders due to its flickering and unsteady nature, one must certainly withdraw it and bring it back under the control of the self.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna provides the basic mechanism of meditation. Expect the mind to wander because that is its nature. Whenever it strays, gently but firmly catch it and pull it back to the focus on the Self. This is the practice.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण ध्यान का मूल तंत्र प्रदान करते हैं। मन के भटकने की अपेक्षा करें क्योंकि यह उसका स्वभाव है। जब भी यह भटक जाए, इसे मजबूती से पकड़ें और वापस खींच लें।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A wandering mind is normal; the practice is the act of returning.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Be persistent and vigilant in catching your distractions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15129,6 +16559,61 @@
               "lines": [
                 "प्रशान्तमनसं ह्येनं योगिनं सुखमुत्तमम् ।",
                 "उपैति शान्तरजसं ब्रह्मभूतमकल्मषम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "praśāntamanasaṃ hyenaṃ yoginaṃ sukhamuttamam |",
+                    "upaiti śāntarajasaṃ brahmabhūtamakalmaṣam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "क्योंकि जिसका मन भली प्रकार शान्त है, जो पाप से रहित है और जिसका रजोगुण शान्त हो गया है, ऐसे इस सच्चिदानन्दघन ब्रह्म के साथ एकीभाव हुए योगी को उत्तम आनन्द प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The yogi whose mind is fixed on Me verily attains the highest perfection of transcendental happiness. He is beyond the mode of passion, he realizes his qualitative identity with the Supreme, and thus he is freed from all reactions to past deeds.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "When the mind is finally pacified and the passionate mode of nature (rajas) is quieted, the yogi becomes sinless and realizes their oneness with the Divine. This state yields supreme, flawless happiness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जब मन शांत हो जाता है और प्रकृति का भाव (रजस) शांत हो जाता है, तो योगी पापरहित हो जाता है। यह स्थिति सर्वोच्च, दोषरहित खुशी प्रदान करती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Supreme happiness is available only to a peaceful mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Quieting passion (rajas) is necessary to realize divine identity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15138,6 +16623,61 @@
               "lines": [
                 "युञ्जन्नेवं सदात्मानं योगी विगतकल्मषः ।",
                 "सुखेन ब्रह्मसंस्पर्शमत्यन्तं सुखमश्नुते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yuñjannevaṃ sadātmānaṃ yogī vigatakalmaṣaḥ |",
+                    "sukhena brahmasaṃsparśamatyantaṃ sukhamaśnute ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "पाप रहित योगी इस प्रकार निरन्तर आत्मा को परमात्मा में लगाता हुआ, सुखपूर्वक परब्रह्म परमात्मा की प्राप्ति रूप अनन्त आनन्द का अनुभव करता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Thus the self-realized yogi, constantly engaged in yoga practice, becomes free from all material contamination and achieves the highest stage of perfect happiness in transcendental loving service to the Lord.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "By constantly keeping the mind engaged in this spiritual discipline, the yogi is completely cleansed of all sins and impurities. They easily and continuously enjoy the boundless joy of direct contact with the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "लगातार मन को इस आध्यात्मिक अनुशासन में लगाकर, योगी सभी पापों से पूरी तरह से साफ हो जाता है। वे परमात्मा के सीधे संपर्क के असीम आनंद का अनुभव करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Constant practice ensures complete purification.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Contact with the Divine ('Brahma-samsparsha') is the source of infinite joy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15147,6 +16687,61 @@
               "lines": [
                 "सर्वभूतस्थमात्मानं सर्वभूतानि चात्मनि ।",
                 "ईक्षते योगयुक्तात्मा सर्वत्र समदर्शनः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sarvabhūtasthamātmānaṃ sarvabhūtāni cātmani |",
+                    "īkṣate yogayuktātmā sarvatra samadarśanaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "सर्वव्यापी अनन्त चेतन में एकीभाव से स्थित रूप योग से युक्त आत्मा वाला तथा सबमें समभाव से देखने वाला योगी आत्मा को सम्पूर्ण भूतों में स्थित और सम्पूर्ण भूतों को आत्मा में कल्पित देखता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "A true yogi observes Me in all beings and also sees every being in Me. Indeed, the self-realized person sees Me, the same Supreme Lord, everywhere.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The ultimate realization of yoga is universal vision. The enlightened yogi sees the Supreme Soul dwelling within every single creature, and simultaneously sees all creatures dwelling within the Supreme. All of existence is unified.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "योग का अंतिम बोध सार्वभौमिक दृष्टि है। प्रबुद्ध योगी परम आत्मा को हर एक प्राणी के भीतर निवास करते हुए देखता है, और साथ ही सभी प्राणियों को परमात्मा के भीतर देखता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God is in everything, and everything is in God.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True yoga eradicates the illusion of separation between beings.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15156,6 +16751,61 @@
               "lines": [
                 "यो मां पश्यति सर्वत्र सर्वं च मयि पश्यति ।",
                 "तस्याहं न प्रणश्यामि स च मे न प्रणश्यति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yo māṃ paśyati sarvatra sarvaṃ ca mayi paśyati |",
+                    "tasyāhaṃ na praṇaśyāmi sa ca me na praṇaśyati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो पुरुष सम्पूर्ण भूतों में सबके आत्मरूप मुझे वासुदेव को ही व्यापक देखता है और सम्पूर्ण भूतों को मुझ वासुदेव के अन्तर्गत देखता है, उसके लिए मैं अदृश्य नहीं होता और वह मेरे लिए अदृश्य नहीं होता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "For one who sees Me everywhere and sees everything in Me, I am never lost, nor is he ever lost to Me.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna makes a deeply personal promise: If a devotee maintains this universal vision of seeing the Divine everywhere, they establish an unbreakable bond. God is never hidden from them, and they are never separated from God.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण एक गहरा व्यक्तिगत वादा करते हैं: यदि कोई भक्त हर जगह परमात्मा को देखने की इस सार्वभौमिक दृष्टि को बनाए रखता है, तो वे एक अटूट बंधन स्थापित करते हैं। भगवान उनसे कभी दूर नहीं होते।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Universal vision guarantees eternal divine presence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God is never lost to those who look for Him in everything.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15165,6 +16815,61 @@
               "lines": [
                 "सर्वभूतस्थितं यो मां भजत्येकत्वमास्थितः ।",
                 "सर्वथा वर्तमानोऽपि स योगी मयि वर्तते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sarvabhūtasthitaṃ yo māṃ bhajatyekatvamāsthitaḥ |",
+                    "sarvathā vartamāno'pi sa yogī mayi vartate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो पुरुष एकीभाव में स्थित होकर सम्पूर्ण भूतों में आत्मरूप से स्थित मुझ सच्चिदानन्दघन वासुदेव को भजता है, वह योगी सब प्रकार से बर्तता हुआ भी मुझमें ही बर्तता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Such a yogi, who engages in the worshipful service of the Supersoul, knowing that I and the Supersoul are one, remains always in Me in all circumstances.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Rooted in the realization of oneness, the yogi who worships the Divine present in all beings is eternally connected. No matter what activities they perform in the world, they are constantly living within the Divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "एकता के बोध में निहित, योगी जो सभी प्राणियों में मौजूद परमात्मा की पूजा करता है, वह हमेशा के लिए जुड़ जाता है। वे चाहे कोई भी काम करें, वे परमात्मा में ही रहते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Service to all beings is service to God.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "An enlightened state is maintained regardless of external activities.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15174,6 +16879,61 @@
               "lines": [
                 "आत्मौपम्येन सर्वत्र समं पश्यति योऽर्जुन ।",
                 "सुखं वा यदि वा दुःखं स योगी परमो मतः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ātmaupamyena sarvatra samaṃ paśyati yo'rjuna |",
+                    "sukhaṃ vā yadi vā duḥkhaṃ sa yogī paramo mataḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे अर्जुन! जो योगी अपनी भाँति सम्पूर्ण भूतों में सम देखता है और सुख अथवा दुःख को भी सबमें सम देखता है, वह योगी परम श्रेष्ठ माना गया है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "He is a perfect yogi who, by comparison to his own self, sees the true equality of all beings, in both their happiness and their distress, O Arjuna!",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The highest yogi uses their own self as the standard of empathy. They realize that just as they desire happiness and recoil from pain, so does every other creature. Thus, they treat the joys and sorrows of others as their very own.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सर्वोच्च योगी सहानुभूति के मानक के रूप में अपने स्वयं का उपयोग करता है। वे महसूस करते हैं कि जिस तरह वे खुशी चाहते हैं और दर्द से दूर भागते हैं, वैसे ही हर दूसरा प्राणी भी करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Empathy is the truest mark of an advanced yogi.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Treat the pain and joy of others exactly as you would your own.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15186,6 +16946,61 @@
               "lines": [
                 "योऽयं योगस्त्वया प्रोक्तः साम्येन मधुसूदन ।",
                 "एतस्याहं न पश्यामि चञ्चलत्वात्स्थितिं स्थिराम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yo'yaṃ yogastvayā proktaḥ sāmyena madhusūdana |",
+                    "etasyāhaṃ na paśyāmi cañcalatvātsthitiṃ sthirām ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अर्जुन बोले: हे मधुसूदन! जो यह योग आपने समभाव से कहा है, मन के चंचल होने से मैं इसकी नित्य स्थिति को नहीं देखता हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Arjuna said: O Madhusudana, the system of yoga which You have summarized appears impractical and unendurable to me, for the mind is restless and unsteady.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna voices a very relatable human struggle. He finds Krishna's description of perfect, steady equanimity sounds great in theory, but practically impossible to maintain because the human mind is inherently restless.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन एक बहुत ही प्रासंगिक मानवीय संघर्ष को आवाज देते हैं। उन्हें लगता है कि पूर्ण समभाव का वर्णन सिद्धांत रूप में बहुत अच्छा लगता है, लेकिन व्यवहारिक रूप से बनाए रखना असंभव है क्योंकि मानव मन स्वाभाविक रूप से बेचैन है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "It is natural to find high spiritual ideals daunting.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The primary obstacle to yoga is the restlessness of the mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15195,6 +17010,61 @@
               "lines": [
                 "चञ्चलं हि मनः कृष्ण प्रमाथि बलवद् दृढम् ।",
                 "तस्याहं निग्रहं मन्ये वायोरिव सुदुष्करम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "cañcalaṃ hi manaḥ kṛṣṇa pramāthi balavad dṛḍham |",
+                    "tasyāhaṃ nigrahaṃ manye vāyoriva suduṣkaram ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "क्योंकि हे कृष्ण! यह मन बड़ा चंचल, प्रमथन स्वभाव वाला, बड़ा दृढ़ और बलवान् है। इसलिए उसका वश में करना मैं वायु को रोकने की भाँति अत्यन्त दुष्कर मानता हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "For the mind is restless, turbulent, obstinate and very strong, O Krishna, and to subdue it, I think, is more difficult than controlling the wind.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna powerfully describes the mind: it is flickering, turbulent, stubborn, and immensely strong. He compares trying to control the mind to trying to catch a hurricane with bare hands—it seems completely impossible.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन मन का शक्तिशाली वर्णन करते हैं: यह चंचल, अशांत, जिद्दी और बेहद मजबूत है। वह मन को नियंत्रित करने की कोशिश की तुलना नंगे हाथों से तूफान को पकड़ने की कोशिश से करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Acknowledge the immense difficulty of mind control.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The mind is naturally turbulent and stubborn.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15207,6 +17077,61 @@
               "lines": [
                 "असंशयं महाबाहो मनो दुर्निग्रहं चलम् ।",
                 "अभ्यासेन तु कौन्तेय वैराग्येण च गृह्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "asaṃśayaṃ mahābāho mano durnigrahaṃ calam |",
+                    "abhyāsena tu kaunteya vairāgyeṇa ca gṛhyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रीभगवान् बोले: हे महाबाहो! निःसन्देह मन चंचल और कठिनता से वश में होने वाला है; परन्तु हे कुन्तीपुत्र अर्जुन! यह अभ्यास और वैराग्य से वश में होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Lord Krishna said: O mighty-armed son of Kunti, it is undoubtedly very difficult to curb the restless mind, but it is possible by suitable practice and by detachment.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna agrees with Arjuna that the mind is exceptionally difficult to control. However, He offers the two-fold solution: Abhyasa (constant, rigorous practice) and Vairagya (detachment from worldly desires).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण अर्जुन से सहमत हैं कि मन को नियंत्रित करना असाधारण रूप से कठिन है। हालाँकि, वह दो गुना समाधान प्रदान करते हैं: अभ्यास (निरंतर अभ्यास) और वैराग्य (सांसारिक इच्छाओं से अलगाव)।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Mind control is difficult, but not impossible.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Consistent practice and detachment are the two pillars of mastering the mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15216,6 +17141,61 @@
               "lines": [
                 "असंयतात्मना योगो दुष्प्राप इति मे मतिः ।",
                 "वश्यात्मना तु यतता शक्योऽवाप्तुमुपायतः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "asaṃyatātmanā yogo duṣprāpa iti me matiḥ |",
+                    "vaśyātmanā tu yatatā śakyo'vāptumupāyataḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिसका मन वश में किया हुआ नहीं है, ऐसे पुरुष द्वारा योग दुष्प्राप्य है और वश में किए हुए मन वाले प्रयत्नशील पुरुष द्वारा साधन से उसका प्राप्त होना सहज है—यह मेरा मत है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "For one whose mind is unbridled, self-realization is difficult work. But he whose mind is controlled and who strives by appropriate means is assured of success. That is My assessment.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna states plainly that if you do not control your mind, trying to achieve spiritual success is a waste of time. But if the mind is disciplined, and you put in the right effort, success is guaranteed.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण स्पष्ट रूप से कहते हैं कि यदि आप अपने मन को नियंत्रित नहीं करते हैं, तो आध्यात्मिक सफलता प्राप्त करने की कोशिश करना समय की बर्बादी है। लेकिन अगर मन अनुशासित है, तो सफलता की गारंटी है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual progress is impossible without mental discipline.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Directed effort with a controlled mind always leads to success.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15228,6 +17208,61 @@
               "lines": [
                 "अयतिः श्रद्धयोपेतो योगाच्चलितमानसः ।",
                 "अप्राप्य योगसंसिद्धिं कां गतिं कृष्ण गच्छति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ayatiḥ śraddhayopeto yogāccalitamānasaḥ |",
+                    "aprāpya yogasaṃsiddhiṃ kāṃ gatiṃ kṛṣṇa gacchati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अर्जुन बोले: हे कृष्ण! जो योग में श्रद्धा रखने वाला है, किन्तु संयमी नहीं है, इस कारण जिसका मन अन्तकाल में योग से विचलित हो गया है, ऐसा साधक योग की सिद्धि को अर्थात् भगवत्साक्षात्कार को न प्राप्त होकर किस गति को प्राप्त होता है?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Arjuna said: O Krishna, what is the destination of the unsuccessful transcendentalist, who in the beginning takes to the process of self-realization with faith but who later desists due to worldly-mindedness and thus does not attain perfection in mysticism?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna asks another practical question: What happens to a person who starts spiritual practice with faith but fails to finish it because their mind gets distracted? Do they lose everything?",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन एक और व्यावहारिक प्रश्न पूछते हैं: उस व्यक्ति का क्या होता है जो विश्वास के साथ आध्यात्मिक अभ्यास शुरू करता है लेकिन उसे पूरा करने में विफल रहता है क्योंकि उसका मन विचलित हो जाता है? क्या वे सब कुछ खो देते हैं?",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "It is common to fear that incomplete spiritual efforts are wasted.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Falling off the path is a realistic concern for seekers.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15237,6 +17272,61 @@
               "lines": [
                 "कच्चिन्नोभयविभ्रष्टश्छिन्नाभ्रमिव नश्यति ।",
                 "अप्रतिष्ठो महाबाहो विमूढो ब्रह्मणः पथि ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "kaccinnobhayavibhraṣṭaśchinnābhramiva naśyati |",
+                    "apratiṣṭho mahābāho vimūḍho brahmaṇaḥ pathi ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे महाबाहो! क्या वह भगवत्प्राप्ति के मार्ग में मोहित और आश्रयरहित पुरुष छिन्न-भिन्न बादल की भाँति दोनों ओर से भ्रष्ट होकर नष्ट तो नहीं हो जाता?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O mighty-armed Krishna, does not such a man, who is bewildered from the path of transcendence, fall away from both spiritual and material success and perish like a riven cloud, with no position in any sphere?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna fears that the unsuccessful yogi is left with nothing. Having given up material pursuits for yoga, but failing at yoga, are they not like a torn cloud that scatters into nothingness, belonging nowhere?",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन को डर है कि असफल योगी के पास कुछ नहीं बचता। योग के लिए भौतिक कार्यों को छोड़ देने के बाद, लेकिन योग में विफल रहने पर, क्या वे फटे हुए बादल की तरह नहीं हैं जो शून्यता में बिखर जाते हैं?",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The fear of being left with neither worldly success nor spiritual enlightenment is paralyzing.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Doubt can make one feel utterly unanchored.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15246,6 +17336,61 @@
               "lines": [
                 "एतन्मे संशयं कृष्ण छेत्तुमर्हस्यशेषतः ।",
                 "त्वदन्यः संशयस्यास्य छेत्ता न ह्युपपद्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "etanme saṃśayaṃ kṛṣṇa chettumarhasyaśeṣataḥ |",
+                    "tvadanyaḥ saṃśayasyāsya chettā na hyupapadyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे कृष्ण! मेरे इस संशय को सम्पूर्ण रूप से छेदन करने के लिए आप ही योग्य हैं; क्योंकि आपके सिवा दूसरा इस संशय का छेदन करने वाला मिलना सम्भव नहीं है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "This is my doubt, O Krishna, and I ask You to clear it up completely. But for You, no one is to be found who can destroy this doubt.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna surrenders this deep anxiety to Krishna, acknowledging that only the Supreme, who possesses perfect omniscience, can accurately answer questions regarding the soul's trajectory after death.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन इस गहरी चिंता को कृष्ण को सौंप देते हैं, यह स्वीकार करते हुए कि केवल परमात्मा ही मृत्यु के बाद आत्मा के प्रक्षेपवक्र के बारे में प्रश्नों का सटीक उत्तर दे सकता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Take your deepest existential doubts to the highest authority.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Divine wisdom is required to understand the mechanics of karma and rebirth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15258,6 +17403,61 @@
               "lines": [
                 "पार्थ नैवेह नामुत्र विनाशस्तस्य विद्यते ।",
                 "न हि कल्याणकृत्कश्चिद् दुर्गतिं तात गच्छति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "pārtha naiveha nāmutra vināśastasya vidyate |",
+                    "na hi kalyāṇakṛtkaścid durgatiṃ tāta gacchati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रीभगवान् बोले: हे पार्थ! उस पुरुष का न तो इस लोक में नाश होता है और न परलोक में ही; क्योंकि हे प्यारे! आत्मोद्धार के लिए अर्थात् भगवत्प्राप्ति के लिए कर्म करने वाला कोई भी मनुष्य दुर्गति को प्राप्त नहीं होता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Supreme Personality of Godhead said: Son of Pritha, a transcendentalist engaged in auspicious activities does not meet with destruction either in this world or in the spiritual world; one who does good, My friend, is never overcome by evil.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna offers tremendous reassurance. A person who strives for spiritual realization is never destroyed. Any effort made toward goodness and self-realization protects the soul from a bad destiny.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण जबरदस्त आश्वासन देते हैं। आध्यात्मिक बोध के लिए प्रयास करने वाले व्यक्ति का कभी विनाश नहीं होता। अच्छाई और आत्म-साक्षात्कार की दिशा में किया गया कोई भी प्रयास आत्मा को एक बुरे भाग्य से बचाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual effort is completely risk-free; nothing is ever lost.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Good intentions and actions guarantee a safe spiritual future.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15267,6 +17467,61 @@
               "lines": [
                 "प्राप्य पुण्यकृतां लोकानुषित्वा शाश्वतीः समाः ।",
                 "शुचीनां श्रीमतां गेहे योगभ्रष्टोऽभिजायते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "prāpya puṇyakṛtāṃ lokānuṣitvā śāśvatīḥ samāḥ |",
+                    "śucīnāṃ śrīmatāṃ gehe yogabhraṣṭo'bhijāyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "योगभ्रष्ट पुरुष पुण्यवानों के लोकों को अर्थात् स्वर्गादि उत्तम लोकों को प्राप्त होकर, उनमें बहुत वर्षों तक निवास करके फिर शुद्ध आचरण वाले श्रीमान् पुरुषों के घर में जन्म लेता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The unsuccessful yogi, after many, many years of enjoyment on the planets of the pious living entities, is born into a family of righteous people, or into a family of rich aristocracy.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "If a yogi fails due to material desires, they are first sent to higher heavenly planets to enjoy those desires. After that merit is exhausted, they are reborn on Earth in a wealthy and pious family, providing an ideal environment to resume their practice.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यदि कोई योगी भौतिक इच्छाओं के कारण विफल हो जाता है, तो उसे पहले उन इच्छाओं का आनंद लेने के लिए स्वर्ग में भेजा जाता है। फिर वे पृथ्वी पर एक धनी और पवित्र परिवार में पुनर्जन्म लेते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Unfulfilled wholesome desires are granted in favorable environments.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A prosperous, pious birth is often the result of past spiritual efforts.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15276,6 +17531,61 @@
               "lines": [
                 "अथवा योगिनामेव कुले भवति धीमताम् ।",
                 "एतद्धि दुर्लभतरं लोके जन्म यदीदृशम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "athavā yogināmeva kule bhavati dhīmatām |",
+                    "etaddhi durlabhataraṃ loke janma yadīdṛśam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अथवा वैराग्यवान् पुरुष उन लोकों में न जाकर ज्ञानवान् योगियों के ही कुल में जन्म लेता है; परन्तु इस प्रकार का जो यह जन्म है, सो संसार में निःसन्देह अत्यन्त दुर्लभ है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Or [if unsuccessful after long practice of yoga] he takes his birth in a family of transcendentalists who are surely great in wisdom. Certainly, such a birth is rare in this world.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "If the yogi had advanced further and failed not from material desire but just ran out of time, they bypass heaven and are born directly into a family of wise, practicing yogis. This highly conducive birth is very rare.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यदि योगी आगे बढ़ गया था और भौतिक इच्छा से नहीं बल्कि केवल समय से बाहर हो गया था, तो वे सीधे ज्ञानी योगियों के परिवार में पैदा होते हैं। यह जन्म बहुत दुर्लभ है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Advanced spiritual failure leads to an expedited spiritual rebirth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Being born into a family of wise seekers is a massive cosmic privilege.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15285,6 +17595,61 @@
               "lines": [
                 "तत्र तं बुद्धिसंयोगं लभते पौर्वदेहिकम् ।",
                 "यतते च ततो भूयः संसिद्धौ कुरुनन्दन ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tatra taṃ buddhisaṃyogaṃ labhate paurvadehikam |",
+                    "yatate ca tato bhūyaḥ saṃsiddhau kurunandana ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वहाँ उस पहले शरीर में संग्रह किए हुए बुद्धिसंयोग को अर्थात् समबुद्धिरूप योग के संस्कारों को अनायास ही प्राप्त हो जाता है और हे कुरुनन्दन! उसके प्रभाव से वह फिर परमात्मा की प्राप्तिरूप सिद्धि के लिए पहले से भी बढ़कर प्रयत्न करता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "On taking such a birth, he revives the divine consciousness of his previous life, and he again tries to make further progress in order to achieve complete success, O son of Kuru.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "In this new life, the soul does not start from zero. The spiritual intelligence and progress from the previous life are automatically reawakened, and the individual strives even harder toward perfection.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "इस नए जीवन में, आत्मा शून्य से शुरू नहीं होती है। पिछले जीवन की आध्यात्मिक बुद्धि और प्रगति अपने आप फिर से जाग्रत हो जाती है, और व्यक्ति पूर्णता की ओर और भी अधिक प्रयास करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual progress carries over across lifetimes.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Inner inclinations often reflect past-life developments.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15294,6 +17659,61 @@
               "lines": [
                 "पूर्वाभ्यासेन तेनैव ह्रियते ह्यवशोऽपि सः ।",
                 "जिज्ञासुरपि योगस्य शब्दब्रह्मातिवर्तते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "pūrvābhyāsena tenaiva hriyate hyavaśo'pi saḥ |",
+                    "jijñāsurapi yogasya śabdabrahmātivartate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वह श्रीमानों के घर में जन्म लेने वाला योगभ्रष्ट पराधीन हुआ भी उस पहले के अभ्यास से ही निःसन्देह भगवान् की ओर आकर्षित किया जाता है, तथा समबुद्धिरूप योग का जिज्ञासु भी वेदोक्त सकाम कर्मों के फल को उल्लंघन कर जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "By virtue of the divine consciousness of his previous life, he automatically becomes attracted to the yogic principles—even without seeking them. Such an inquisitive transcendentalist stands always above the ritualistic principles of the scriptures.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The momentum of past spiritual practice is so strong that the person feels naturally drawn to yoga, almost involuntarily. This innate drive elevates them beyond mere ritualistic religion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "पिछले आध्यात्मिक अभ्यास की गति इतनी मजबूत है कि व्यक्ति स्वाभाविक रूप से योग की ओर आकर्षित महसूस करता है, लगभग अनैच्छिक रूप से।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Deeply ingrained spiritual habits pull you toward the truth automatically.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Sincere seekers quickly transcend superficial religious rituals.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15303,6 +17723,61 @@
               "lines": [
                 "प्रयत्नाद्यतमानस्तु योगी संशुद्धकिल्बिषः ।",
                 "अनेकजन्मसंसिद्धस्ततो याति परां गतिम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "prayatnādyatamānastu yogī saṃśuddhakilbiṣaḥ |",
+                    "anekajanmasaṃsiddhastato yāti parāṃ gatim ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परन्तु प्रयत्नपूर्वक अभ्यास करने वाला योगी तो पिछले अनेक जन्मों के संस्कारबल से इसी जन्म में संसिद्ध होकर सम्पूर्ण पापों से रहित हो फिर तत्काल ही परम गति को प्राप्त हो जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "And when the yogi engages himself with sincere endeavor in making further progress, being washed of all contaminations, then ultimately, achieving perfection after many, many births of practice, he attains the supreme goal.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "When a yogi, carrying the accumulated merit of many lifetimes, makes a sincere and rigorous effort in the current life, they are completely cleansed of all remaining sins and finally attain the supreme destination (liberation).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जब एक योगी, कई जन्मों की संचित योग्यता को वहन करते हुए, वर्तमान जीवन में एक ईमानदार और कठोर प्रयास करता है, तो वे पूरी तरह से साफ हो जाते हैं और अंततः सर्वोच्च गंतव्य (मोक्ष) प्राप्त करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Enlightenment is usually the culmination of efforts across multiple lifetimes.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Sincere endeavor in the present acts as the final catalyst.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15312,6 +17787,61 @@
               "lines": [
                 "तपस्विभ्योऽधिको योगी ज्ञानिभ्योऽपि मतोऽधिकः ।",
                 "कर्मिभ्यश्चाधिको योगी तस्माद्योगी भवार्जुन ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tapasvibhyo'dhiko yogī jñānibhyo'pi mato'dhikaḥ |",
+                    "karmibhyaścādhiko yogī tasmādyogī bhavārjuna ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "योगी तपस्वियों से श्रेष्ठ है, शास्त्रज्ञानियों से भी श्रेष्ठ माना गया है और सकाम कर्म करने वालों से भी योगी श्रेष्ठ है; इससे हे अर्जुन! तू योगी हो।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "A yogi is greater than the ascetic, greater than the empiricist and greater than the fruitive worker. Therefore, O Arjuna, in all circumstances, be a yogi.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna places the Yogi (one who seeks union with the Divine) above those who practice severe physical austerities (ascetics), those who study scriptures intellectually (empiricists), and those who work for material gain. Therefore, Arjuna is commanded to be a yogi.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण योगी को उन लोगों से ऊपर रखते हैं जो गंभीर शारीरिक तपस्या करते हैं, जो शास्त्रों का बौद्धिक अध्ययन करते हैं, और जो भौतिक लाभ के लिए काम करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Direct connection with the Divine (Yoga) is the highest path.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Intellect, austerity, and work are inferior if not directed toward spiritual union.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -15321,6 +17851,61 @@
               "lines": [
                 "योगिनामपि सर्वेषां मद्गतेनान्तरात्मना ।",
                 "श्रद्धावान्भजते यो मां स मे युक्ततमो मतः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yogināmapi sarveṣāṃ madgatenāntarātmanā |",
+                    "śraddhāvānbhajate yo māṃ sa me yuktatamo mataḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "सम्पूर्ण योगियों में भी जो श्रद्धावान् योगी मुझमें लगे हुए अन्तरात्मा से मुझको निरन्तर भजता है, वह योगी मुझे परम मान्य है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "And of all yogis, the one with great faith who always abides in Me, thinks of Me within himself, and renders transcendental loving service to Me—he is the most intimately united with Me in yoga and is the highest of all. That is My opinion.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Concluding the chapter on meditation, Krishna makes a definitive statement: among all types of yogis, the Bhakti Yogi—the one who meditates on the Supreme Lord with deep faith and loving devotion—is the highest and most intimately connected to Him.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "ध्यान पर अध्याय का समापन करते हुए, कृष्ण कहते हैं: सभी प्रकार के योगियों में से, भक्ति योगी - जो गहरे विश्वास और प्रेमपूर्ण भक्ति के साथ परमेश्वर का ध्यान करता है - सबसे ऊंचा है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Bhakti (loving devotion) is the pinnacle of all yoga systems.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Faith and love elevate technical meditation into a divine relationship.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
