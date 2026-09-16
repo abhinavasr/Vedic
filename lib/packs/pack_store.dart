@@ -434,6 +434,25 @@ class PackStore {
     ),
   );
 
+  /// A small app setting, such as the download host the reader picked.
+  String? setting(String key) => _withRegistry((db) {
+    final rows = db.select('SELECT value FROM app_settings WHERE key = ?', [
+      key,
+    ]);
+    return rows.isEmpty ? null : rows.first['value'] as String;
+  });
+
+  /// Stores a setting, or removes it when [value] is null.
+  void saveSetting(String key, String? value) => _withRegistry(
+    (db) => value == null
+        ? db.execute('DELETE FROM app_settings WHERE key = ?', [key])
+        : db.execute(
+            'INSERT INTO app_settings (key, value) VALUES (?, ?) '
+            'ON CONFLICT (key) DO UPDATE SET value = excluded.value',
+            [key, value],
+          ),
+  );
+
   /// Forgets on-device translations: all of them, or one language's.
   void clearLocalTranslations({String? language}) => _withRegistry(
     (db) => language == null
@@ -480,6 +499,10 @@ class PackStore {
           'language TEXT NOT NULL, text TEXT NOT NULL, model TEXT NOT NULL, '
           'created_at TEXT NOT NULL, '
           'PRIMARY KEY (pack_id, work_slug, ref, language))',
+        )
+        ..execute(
+          'CREATE TABLE IF NOT EXISTS app_settings ('
+          'key TEXT PRIMARY KEY, value TEXT NOT NULL)',
         );
       return body(db);
     } finally {

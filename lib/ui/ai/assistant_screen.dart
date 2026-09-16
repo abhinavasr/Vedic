@@ -1,6 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../ai/assistant.dart';
+import '../../ai/model_host.dart';
 import '../../core/capability.dart';
 import '../../core/units.dart';
 import '../theme.dart';
@@ -94,13 +96,72 @@ class _AssistantScreenState extends State<AssistantScreen> {
           _StatusCard(
             state: state,
             requirement: _assistant.requirement,
+            loadEstimate: _assistant.loadEstimate,
+            loadElapsed: _assistant.loadElapsed,
             onInstall: _assistant.install,
+            onCancel: _assistant.cancelDownload,
             onRetry: _assistant.refresh,
             onRemove: _confirmRemoval,
           ),
+          if (state.phase == AssistantPhase.notInstalled ||
+              state.phase == AssistantPhase.failed) ...[
+            const SizedBox(height: 24),
+            _HostPicker(
+              chosen: _assistant.preferredHost,
+              onChanged: (host) => setState(() {
+                _assistant.preferredHost = host;
+              }),
+            ),
+          ],
         ],
       ),
     ),
+  );
+}
+
+/// Where to download from.
+///
+/// Offered rather than reasoned about: whoever is watching the bar knows more
+/// about their connection than one speed test would.
+class _HostPicker extends StatelessWidget {
+  const _HostPicker({required this.chosen, required this.onChanged});
+
+  final ModelHost? chosen;
+  final void Function(ModelHost? host) onChanged;
+
+  @override
+  Widget build(BuildContext context) => Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text('Download from', style: serif(size: 18, color: SadhanaColors.ink)),
+      const SizedBox(height: 4),
+      const _Line(
+        'Hugging Face by default. If the download crawls, the mirror may be '
+        'closer to you.',
+      ),
+      const SizedBox(height: 8),
+      RadioGroup<ModelHost?>(
+        groupValue: chosen,
+        onChanged: onChanged,
+        child: Column(
+          children: [
+            const RadioListTile<ModelHost?>(
+              key: ValueKey('host-auto'),
+              value: null,
+              contentPadding: EdgeInsets.zero,
+              title: Text('Whichever answers first'),
+            ),
+            for (final host in ModelHost.values)
+              RadioListTile<ModelHost?>(
+                key: ValueKey('host-${host.name}'),
+                value: host,
+                contentPadding: EdgeInsets.zero,
+                title: Text(host.label),
+              ),
+          ],
+        ),
+      ),
+    ],
   );
 }
 
@@ -108,14 +169,20 @@ class _StatusCard extends StatelessWidget {
   const _StatusCard({
     required this.state,
     required this.requirement,
+    required this.loadEstimate,
+    required this.loadElapsed,
     required this.onInstall,
+    required this.onCancel,
     required this.onRetry,
     required this.onRemove,
   });
 
   final AssistantState state;
   final ModelRequirement requirement;
+  final Duration loadEstimate;
+  final ValueListenable<Duration> loadElapsed;
   final VoidCallback onInstall;
+  final VoidCallback onCancel;
   final VoidCallback onRetry;
   final VoidCallback onRemove;
 
@@ -185,6 +252,15 @@ class _StatusCard extends StatelessWidget {
           ),
         ];
 
+      case AssistantPhase.checking:
+        return const [
+          _Title('Checking the download'),
+          SizedBox(height: 12),
+          LinearProgressIndicator(),
+          SizedBox(height: 12),
+          _Line('Making sure the file is there before starting.'),
+        ];
+
       case AssistantPhase.downloading:
         final percent = state.percent ?? 0;
         return [
@@ -196,15 +272,36 @@ class _StatusCard extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           const _Line('You can keep reading; leave the app open.'),
+          const SizedBox(height: 8),
+          TextButton(
+            key: const ValueKey('assistant-cancel'),
+            onPressed: onCancel,
+            child: const Text('Stop the download'),
+          ),
         ];
 
       case AssistantPhase.loading:
-        return const [
-          _Title('Getting ready'),
-          SizedBox(height: 12),
-          LinearProgressIndicator(),
-          SizedBox(height: 12),
-          _Line('The first start takes about a minute.'),
+        return [
+          const _Title('Getting ready'),
+          const SizedBox(height: 12),
+          // Time against the last measured load: the runtime reports no
+          // progress, and the bar stops short of full rather than claiming to
+          // be finished while it is not.
+          ValueListenableBuilder<Duration>(
+            valueListenable: loadElapsed,
+            builder: (context, elapsed, _) => LinearProgressIndicator(
+              value: loadEstimate.inMilliseconds <= 0
+                  ? null
+                  : (elapsed.inMilliseconds / loadEstimate.inMilliseconds)
+                        .clamp(0.0, 0.99),
+              color: SadhanaColors.green,
+            ),
+          ),
+          const SizedBox(height: 12),
+          _Line(
+            'The first start takes about ${loadEstimate.inSeconds} seconds on '
+            'this phone.',
+          ),
         ];
 
       case AssistantPhase.ready:

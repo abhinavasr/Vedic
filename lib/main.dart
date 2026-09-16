@@ -1,9 +1,12 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
+import 'ai/assistant.dart';
+import 'ai/store_settings.dart';
 import 'app_build.dart';
 import 'packs/bundled_assets.dart';
 import 'packs/pack_store.dart';
@@ -18,6 +21,10 @@ Future<void> main() async {
     trustedKeys: trustedPublisherKeys,
     appBuild: appBuild,
   );
+  // The assistant remembers its host and its measured load time; everything
+  // else about it is decided fresh each run.
+  Assistant.instance = Assistant(settings: StoreAssistantSettings(store));
+  Assistant.instance.watchLifecycle();
   runApp(
     VedicApp(
       store: store,
@@ -27,4 +34,7 @@ Future<void> main() async {
       },
     ),
   );
+  // Nothing waits on this: with no model installed it settles on
+  // "not installed" and the app never mentions it again.
+  unawaited(Assistant.instance.warmUp());
 }

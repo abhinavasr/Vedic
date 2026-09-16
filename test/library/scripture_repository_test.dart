@@ -177,6 +177,18 @@ void main() {
     );
   });
 
+  test('remembers small app settings between runs', () {
+    expect(store.setting('assistant.host'), isNull);
+    store.saveSetting('assistant.host', 'mirror');
+    expect(store.setting('assistant.host'), 'mirror');
+
+    store.saveSetting('assistant.host', 'huggingFace');
+    expect(store.setting('assistant.host'), 'huggingFace');
+
+    store.saveSetting('assistant.host', null);
+    expect(store.setting('assistant.host'), isNull);
+  });
+
   test('searches verses in Devanagari and in plain Latin', () {
     expect(repository.searchVerses('कदाचन').single.verse.ref, '2.47');
     expect(repository.searchVerses('karmanye').single.verse.ref, '2.47');
