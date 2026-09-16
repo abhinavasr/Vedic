@@ -313,6 +313,21 @@ final _audioFile = RegExp(
   r'^audio/(?:[A-Za-z0-9_-][A-Za-z0-9._-]*/)*[A-Za-z0-9_-][A-Za-z0-9._-]*$',
 );
 
+/// Whether an audio reference is one the app may follow.
+///
+/// Either a path under the pack's own `audio/` directory — no `..`, nothing
+/// that could climb out of it — or an absolute https URL, for a publisher who
+/// serves recordings from somewhere other than the pack host. Plain http is
+/// refused: these are fetched with a key, and a key does not travel in clear.
+bool safeAudioReference(String file) {
+  if (_audioFile.hasMatch(file)) return true;
+  final url = Uri.tryParse(file);
+  return url != null &&
+      url.isScheme('https') &&
+      url.host.isNotEmpty &&
+      !url.hasFragment;
+}
+
 /// Throws [PackFormatException] for content the app must not install.
 void validatePackContent(PackContent c) {
   if (!PackManifest.packIdPattern.hasMatch(c.packId)) {
@@ -409,7 +424,7 @@ void validatePackContent(PackContent c) {
         if (!audioVoices.add(a.voice)) {
           throw PackFormatException('$at has two audio files for "${a.voice}"');
         }
-        if (!_audioFile.hasMatch(a.file)) {
+        if (!safeAudioReference(a.file)) {
           throw PackFormatException('$at has an unsafe audio path "${a.file}"');
         }
       }

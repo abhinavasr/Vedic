@@ -5,8 +5,12 @@
 # From revision 2 the source of truth is content.json, which adds the
 # transliterations, translations, explanations and takeaways merged in with
 # tool/merge_translations.dart. sources/ is kept for provenance.
+#
+# Revision 21 adds the recitation: 719 passages rendered by Vagdhenu and
+# published to the audio host (tool/render_audio.py, tool/upload_audio.py,
+# tool/merge_audio.py), and the meter each one was detected to be in.
 pack_id: bhagavad-gita.sa
-revision: 20
+revision: 21
 kind: text
 created_at: 2026-09-16T00:00:00Z
 min_app_build: 1

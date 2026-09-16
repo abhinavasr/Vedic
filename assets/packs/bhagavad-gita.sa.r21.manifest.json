@@ -2,7 +2,7 @@
   "format": "vedic-pack",
   "format_version": 1,
   "pack_id": "bhagavad-gita.sa",
-  "revision": 20,
+  "revision": 21,
   "kind": "text",
   "schema_version": 1,
   "min_app_build": 1,
@@ -18,13 +18,13 @@
   ],
   "payload": {
     "file": "payload.bin",
-    "size": 375689,
-    "sha256": "94f231b49cf3f10ed91b6e4e796b2835a29db873a07624b24d93c825fe04809b",
+    "size": 442808,
+    "sha256": "dadb8ee23aee12236610bc7f2c7e0315b7342b7b5dd4e8b92a3b84954b9a316e",
     "compression": "deflate",
     "encryption": "none",
     "key_delivery": "none",
-    "plaintext_size": 1691383,
-    "plaintext_sha256": "f5d5c205fba6db4b550fa4911308067b76cf5ee73994c04f1862e3a4f38d3258"
+    "plaintext_size": 1879559,
+    "plaintext_sha256": "11927262479a9ecf3d23bbd9231adb33d807088d8a5381e6447f7b2ac29c23f5"
   },
   "licences": [
     {
@@ -33,6 +33,10 @@
     },
     {
       "id": "gita-ai-notes",
+      "commercial_redistribution": true
+    },
+    {
+      "id": "vagdhenu",
       "commercial_redistribution": true
     }
   ]
