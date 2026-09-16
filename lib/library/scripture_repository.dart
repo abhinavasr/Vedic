@@ -15,6 +15,7 @@ class WorkSummary {
     required this.title,
     required this.titleNative,
     required this.verseCount,
+    this.coverUrl,
   });
 
   final InstalledPack pack;
@@ -23,6 +24,10 @@ class WorkSummary {
   final String title;
   final String? titleNative;
   final int verseCount;
+
+  /// A picture of the book, supplied by whoever published the pack. Null is
+  /// normal; the library shows a plain card instead.
+  final String? coverUrl;
 }
 
 class SectionSummary {
@@ -230,7 +235,7 @@ class ScriptureRepository {
         pack,
         (db) => [
           for (final row in db.select(
-            'SELECT w.id, w.slug, w.title, w.title_native, '
+            'SELECT w.id, w.slug, w.title, w.title_native, w.cover_url, '
             '(SELECT count(*) FROM passages p '
             "WHERE p.work_id = w.id AND p.kind = 'verse') AS verses "
             'FROM works w ORDER BY w.id',
@@ -242,6 +247,7 @@ class ScriptureRepository {
               title: row['title'] as String,
               titleNative: row['title_native'] as String?,
               verseCount: row['verses'] as int,
+              coverUrl: row['cover_url'] as String?,
             ),
         ],
       ),

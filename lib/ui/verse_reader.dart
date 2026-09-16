@@ -5,6 +5,7 @@ import '../ai/assistant.dart';
 import '../ai/reading_languages.dart';
 import '../ai/translation.dart';
 import '../ai/verse_context.dart';
+import '../audio/speech.dart';
 import '../core/transliteration.dart';
 import '../library/scripture_repository.dart';
 import '../packs/pack_store.dart';
@@ -600,7 +601,7 @@ class _VersePage extends StatelessWidget {
                 const SizedBox(height: 16),
                 const Divider(height: 1, color: SadhanaColors.line),
                 const SizedBox(height: 12),
-                const _ListenChant(),
+                _ListenChant(verse: verse),
               ],
             ),
           ),
@@ -753,12 +754,14 @@ class _TranslateOnPhone extends StatelessWidget {
       );
     }
 
-    // A language counts as covered only when something published covers it.
-    // A machine translation can be wrong — and when it is, the reader needs
-    // the button that made it, not a dead end.
-    final published = {
+    // Whatever the pack carries counts as covered, machine-made or not: the
+    // publisher shipped it, and re-translating it here would replace a vetted
+    // rendering with a weaker one. Only what this phone made is redoable —
+    // that one can be wrong, and the reader needs the button that made it
+    // rather than a dead end.
+    final fromPack = {
       for (final translation in verse.translations)
-        if (!translation.machine) translation.language,
+        if (!translation.onThisPhone) translation.language,
     };
     // The reader's own language leads; English and Hindi follow because packs
     // usually carry them. Every other language is behind "More languages", so
@@ -770,12 +773,29 @@ class _TranslateOnPhone extends StatelessWidget {
         TargetLanguage.english,
         TargetLanguage.hindi,
       ])
-        if (!published.contains(language.code) && seen.add(language.code))
+        if (!fromPack.contains(language.code) && seen.add(language.code))
           language,
     ];
     final again = missing.any(
       (language) => verse.hasTranslationIn(language.code),
     );
+    // Nothing to offer up front, but every other language is still a tap
+    // away — without a label promising work that is already done.
+    if (missing.isEmpty) {
+      return Align(
+        alignment: Alignment.centerLeft,
+        child: TextButton(
+          key: const ValueKey('translate-more'),
+          onPressed: () => _pickLanguage(context, verse, onTranslate),
+          style: TextButton.styleFrom(
+            foregroundColor: SadhanaColors.inkSoft,
+            visualDensity: VisualDensity.compact,
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+          ),
+          child: const Text('Translate into another language…'),
+        ),
+      );
+    }
 
     return Padding(
       padding: const EdgeInsets.only(top: 10),
@@ -946,43 +966,118 @@ class _Chip extends StatelessWidget {
   );
 }
 
-/// Chant audio arrives as a pack or is generated on the phone; until then the
-/// control explains itself instead of doing nothing.
-class _ListenChant extends StatelessWidget {
-  const _ListenChant();
+/// Sounds the verse out.
+///
+/// No pack carries a recorded chant yet, so this is the phone's own voice
+/// reading the phonetic. That is a different thing from a chant and the
+/// control says so; when a pack brings a recording, the recording takes this
+/// place.
+class _ListenChant extends StatefulWidget {
+  const _ListenChant({required this.verse});
+
+  final PassageView verse;
 
   @override
-  Widget build(BuildContext context) => InkWell(
-    borderRadius: BorderRadius.circular(28),
-    onTap: () => ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text(
-          "Chant audio isn't installed yet. It will arrive as a download.",
-        ),
-      ),
-    ),
-    child: const Row(
-      children: [
-        CircleAvatar(
-          radius: 22,
-          backgroundColor: SadhanaColors.green,
-          child: Icon(Icons.play_arrow_rounded, color: Colors.white, size: 28),
-        ),
-        SizedBox(width: 12),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+  State<_ListenChant> createState() => _ListenChantState();
+}
+
+class _ListenChantState extends State<_ListenChant> {
+  SpokenChoice? _choice;
+
+  @override
+  void initState() {
+    super.initState();
+    _pick();
+  }
+
+  @override
+  void didUpdateWidget(_ListenChant old) {
+    super.didUpdateWidget(old);
+    if (old.verse.ref != widget.verse.ref) _pick();
+  }
+
+  /// Which language this phone can read this verse in. Asked once per verse,
+  /// because listing the installed voices touches the platform.
+  Future<void> _pick() async {
+    final choice = await VerseSpeech.instance.chooseForChant(
+      verse: widget.verse.text,
+      transliteration: widget.verse.transliteration,
+    );
+    if (mounted) setState(() => _choice = choice);
+  }
+
+  Future<void> _tap(bool speaking) async {
+    final speech = VerseSpeech.instance;
+    if (speaking) return speech.stop();
+    final choice = _choice;
+    if (choice == null) return;
+    try {
+      await speech.speak(widget.verse.ref, choice);
+    } on Object {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('This phone could not read it aloud.')),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) => ValueListenableBuilder<String?>(
+    valueListenable: VerseSpeech.instance.speaking,
+    builder: (context, ref, _) {
+      final speaking = ref == widget.verse.ref;
+      final choice = _choice;
+      return InkWell(
+        borderRadius: BorderRadius.circular(28),
+        onTap: choice == null
+            ? () => ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text(
+                    'This phone has no voice for the languages this verse is '
+                    'in, and no chant is installed.',
+                  ),
+                ),
+              )
+            : () => _tap(speaking),
+        child: Row(
           children: [
-            Text(
-              'Listen Chant',
-              style: TextStyle(fontSize: 16, color: SadhanaColors.ink),
+            CircleAvatar(
+              radius: 22,
+              backgroundColor: choice == null
+                  ? SadhanaColors.inkSoft
+                  : SadhanaColors.green,
+              child: Icon(
+                speaking ? Icons.stop_rounded : Icons.play_arrow_rounded,
+                color: Colors.white,
+                size: 28,
+              ),
             ),
-            Text(
-              'Hear the verse in Sanskrit',
-              style: TextStyle(fontSize: 13, color: SadhanaColors.inkSoft),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    speaking ? 'Stop' : 'Listen Chant',
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: SadhanaColors.ink,
+                    ),
+                  ),
+                  Text(
+                    choice?.description ??
+                        'This phone has no voice that can read it',
+                    style: const TextStyle(
+                      fontSize: 13,
+                      color: SadhanaColors.inkSoft,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
-      ],
-    ),
+      );
+    },
   );
 }

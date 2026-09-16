@@ -7,10 +7,9 @@ import '../../core/transliteration.dart';
 import '../../library/scripture_repository.dart';
 import '../brand_header.dart';
 import '../reader_screens.dart';
-import '../search_screen.dart';
 import '../simple_screens.dart';
 import '../theme.dart';
-import 'hero_painter.dart';
+import 'hero_background.dart';
 
 const _heroShadow = [Shadow(color: Color(0x66000000), blurRadius: 12)];
 
@@ -50,8 +49,7 @@ class HomeScreen extends StatelessWidget {
               left: 0,
               right: 0,
               height: heroHeight,
-              child: CustomPaint(
-                painter: const HeroPainter(fadeTo: SadhanaColors.background),
+              child: HeroBackground(
                 child: SafeArea(
                   bottom: false,
                   child: Padding(
@@ -63,21 +61,12 @@ class HomeScreen extends StatelessWidget {
                         SadhanaHeader(onOpenSettings: onOpenSettings),
                         const SizedBox(height: 34),
                         Text(
-                          'Ancient Wisdom\nfor a Calmer You',
+                          'Read  ·  Listen\nReflect  ·  Anytime',
                           style: serif(
                             size: 34,
                             color: Colors.white,
                             height: 1.15,
                           ).copyWith(shadows: _heroShadow),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          'Read  ·  Listen  ·  Reflect  ·  Anytime',
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.white.withValues(alpha: 0.85),
-                            shadows: _heroShadow,
-                          ),
                         ),
                       ],
                     ),
@@ -116,19 +105,6 @@ class HomeScreen extends StatelessWidget {
                     onOpenMeditation: onOpenMeditation,
                   ),
                 ),
-                const SizedBox(height: 28),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: _SearchBar(
-                    onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                        builder: (_) => SearchScreen(repository: repository),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 36),
-                const _QuoteCard(),
                 const SizedBox(height: 40),
               ],
             ),
@@ -431,82 +407,4 @@ class _Tile extends StatelessWidget {
       ),
     ),
   );
-}
-
-class _SearchBar extends StatelessWidget {
-  const _SearchBar({required this.onTap});
-
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) => Material(
-    color: SadhanaColors.searchFill,
-    shape: const StadiumBorder(side: BorderSide(color: SadhanaColors.line)),
-    child: InkWell(
-      customBorder: const StadiumBorder(),
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-        child: Row(
-          children: [
-            const Icon(Icons.search, color: SadhanaColors.inkSoft, size: 26),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Text(
-                'Search scriptures, verses or ask a question…',
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: serif(size: 15, color: SadhanaColors.inkSoft),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
-}
-
-class _QuoteCard extends StatelessWidget {
-  const _QuoteCard();
-
-  @override
-  Widget build(BuildContext context) {
-    final rule = SizedBox(
-      width: 48,
-      child: Divider(color: SadhanaColors.gold.withValues(alpha: 0.5)),
-    );
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            rule,
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: Text(
-                '“',
-                style: serif(size: 44, color: SadhanaColors.gold, height: 0.9),
-              ),
-            ),
-            rule,
-          ],
-        ),
-        const Text(
-          'धर्मो रक्षति रक्षितः ।',
-          style: TextStyle(fontSize: 24, color: SadhanaColors.ink),
-        ),
-        const SizedBox(height: 6),
-        const Text(
-          'Dharma protects those who protect it.',
-          style: TextStyle(fontSize: 15, color: SadhanaColors.inkSoft),
-        ),
-        const SizedBox(height: 16),
-        Container(
-          width: 72,
-          height: 1.5,
-          color: SadhanaColors.gold.withValues(alpha: 0.6),
-        ),
-      ],
-    );
-  }
 }

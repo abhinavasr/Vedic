@@ -166,6 +166,7 @@ class WorkSource {
     this.script,
     this.edition,
     this.sourceNote,
+    this.coverUrl,
   });
 
   final String slug;
@@ -186,6 +187,13 @@ class WorkSource {
   final String? edition;
   final String licenceId;
   final String? sourceNote;
+
+  /// A picture of the book, for the library. Supplied by whoever publishes
+  /// the pack, so a partner can give their own edition its own cover.
+  ///
+  /// An `https:` URL, or an asset path inside the app. Absent is normal: the
+  /// library falls back to a plain card.
+  final String? coverUrl;
 
   /// Reading order: front matter, sections depth-first, back matter.
   final List<PassageSource> passages;
@@ -467,6 +475,7 @@ WorkSource _parseWork(JsonReader w) {
     edition: w.optionalString('edition'),
     licenceId: w.string('licence'),
     sourceNote: w.optionalString('source_note'),
+    coverUrl: w.optionalString('cover_url'),
     passages: passages,
   );
 }
@@ -630,6 +639,7 @@ Map<String, Object?> _workToJson(WorkSource w) {
     if (w.edition != null) 'edition': w.edition,
     'licence': w.licenceId,
     if (w.sourceNote != null) 'source_note': w.sourceNote,
+    if (w.coverUrl != null) 'cover_url': w.coverUrl,
     if (front.isNotEmpty) 'front_matter': front,
     if (roots.isNotEmpty)
       'sections': [for (final r in roots) r.toJson(w.language)],

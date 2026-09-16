@@ -37,7 +37,11 @@ class _SadhanaShellState extends State<SadhanaShell> {
           onOpenMeditation: () => _open(3),
           onOpenSettings: _openSettings,
         ),
-        LibraryScreen(repository: widget.repository),
+        LibraryScreen(
+          repository: widget.repository,
+          problem: widget.problem,
+          onOpenSettings: _openSettings,
+        ),
         const ComingSoonScreen(
           title: 'Insights',
           icon: Icons.spa_outlined,

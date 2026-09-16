@@ -15,6 +15,7 @@ dependencies:
     sdk: flutter
   flutter_gemma: ^1.8.3
   flutter_gemma_litertlm: ^1.6.4
+  flutter_tts: ^4.2.5
   path: ^1.9.1
   path_provider: ^2.1.6
   sqlite3: ^3.6.0

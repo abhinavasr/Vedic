@@ -80,8 +80,8 @@ void _writeWork(
 ) {
   db.execute(
     'INSERT INTO works (slug, kind, title, title_native, language, '
-    'script, edition, licence_id, source_note) '
-    'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    'script, edition, licence_id, source_note, cover_url) '
+    'VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
     [
       w.slug,
       w.kind.name,
@@ -92,6 +92,7 @@ void _writeWork(
       w.edition,
       w.licenceId,
       w.sourceNote,
+      w.coverUrl,
     ],
   );
   final workId = db.lastInsertRowId;

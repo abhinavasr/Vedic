@@ -41,7 +41,8 @@ CREATE TABLE works (
   script       TEXT,
   edition      TEXT,
   licence_id   TEXT NOT NULL REFERENCES licences(id),
-  source_note  TEXT
+  source_note  TEXT,
+  cover_url    TEXT
 );
 
 CREATE TABLE work_titles (

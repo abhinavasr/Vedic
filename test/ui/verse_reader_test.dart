@@ -130,14 +130,14 @@ void main() {
   ) async {
     await openReader(tester);
 
-    // 2.47's English is published, so it is settled. Its Hindi is marked
-    // machine in the pack itself, so it is offered again.
+    // 2.47 carries both from the pack, machine-made or not. The publisher
+    // shipped them, so nothing here is offered for re-translation.
     expect(find.byKey(const ValueKey('translate-en')), findsNothing);
-    expect(find.byKey(const ValueKey('translate-hi')), findsOneWidget);
-    expect(
-      find.textContaining('Translate again on this phone'),
-      findsOneWidget,
-    );
+    expect(find.byKey(const ValueKey('translate-hi')), findsNothing);
+    // Every other language is still a tap away, without a label promising
+    // work that is already done.
+    expect(find.textContaining('Translate on this phone'), findsNothing);
+    expect(find.byKey(const ValueKey('translate-more')), findsOneWidget);
 
     await tester.tap(find.byIcon(Icons.chevron_right));
     await tester.pumpAndSettle();
