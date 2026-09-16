@@ -110,6 +110,41 @@ State is a `ValueNotifier<AssistantState>`: `unknown`, `unsupported`,
 `failed`. The setup screen (`lib/ui/ai/assistant_screen.dart`) renders exactly
 those.
 
+## What the model can actually do — measured
+
+Gemma 4 E2B, the real 2.4 GB file, on an iOS simulator, 2026-09-16. Weights,
+prompt and seed decide the words, so **quality here is the quality anywhere**.
+Speed is not: the simulator runs on the Mac's CPU.
+
+Bhagavad Gītā 2.1, with full context supplied (1.47 and its published English
+translation, the speaker line, the transliteration):
+
+| | |
+| --- | --- |
+| English, 23 s | "That, likewise, the most compassionate and tearful eye of the charioteer, this poisonous sentence, he said Madhusūdana." |
+| Hindi, 22 s | "मधुसूदन ने कहा कि वह तथा दया से भरा हुआ, आँसुओं से भरा हुआ, उल्लू की आँख वाला, विषदंत वाला वाक्य है।" |
+
+The verse says: *to him, thus overcome by pity, his eyes brimming with tears,
+despondent, Madhusūdana spoke these words.*
+
+Both readings make the same mistake — विषीदन्तम्, "despondent", read as विष,
+"poison" — and both invent what is not there: a charioteer, an owl's eye. The
+error is systematic rather than unlucky: the model does not parse the word,
+and reaches for the one it knows.
+
+So the pipeline is sound and **this model's Sanskrit is not**. What follows
+from that:
+
+- Where a published translation exists in *another* language, translating from
+  that is a different and much easier task — English to Hindi is work this
+  model does well. The pivot is not a nicety; on this evidence it is most of
+  the quality.
+- Where nothing is published, Sanskrit to anything is unreliable, and calling
+  the result a translation of scripture overstates it.
+- The guards cannot help here. An answer this wrong is fluent, in the right
+  script, and not an echo — every check passes it. Only a better source or a
+  better model fixes it.
+
 ## Answering as it is written
 
 `Assistant.stream` returns a `Stream<AssistantChunk>` at once and starts the

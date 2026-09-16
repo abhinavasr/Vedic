@@ -89,6 +89,18 @@ flutter run -d <device>          # real phone for anything AI-related
 
 ## What cannot be tested on a simulator
 
-The capability gate **refuses simulators** (they report the Mac's RAM, not the phone's), and
-LiteRT-LM needs real hardware. **All AI work requires a physical device.** The simulator is fine
-for UI, navigation, database and panchang work.
+The capability gate **refuses simulators** by default — they report the Mac's RAM, not the
+phone's — but that is a rule about who should be *offered* a 2.4 GB download, not a statement
+about what runs.
+
+LiteRT-LM ships an `ios_sim_arm64` build, and the real Gemma 4 E2B has been loaded and run on an
+iOS simulator on an 8 GB Mac (docs/ON_DEVICE_AI.md). So:
+
+- **Quality can be measured on a simulator.** Weights, prompt and seed decide the words; the host
+  does not. An answer that is wrong there is wrong on the phone.
+- **Speed cannot.** Load time, tokens per second and thermal behaviour are the Mac's, not a
+  handset's. Every timing in this repo must come from a real device and say which one.
+- `--dart-define=ASSISTANT_ALLOW_SIMULATOR=true` relaxes only the simulator refusal, and
+  `ASSISTANT_MODEL_FILE` / `_FAMILY` / `_BYTES` point a test build at a smaller model.
+
+The simulator is also fine for UI, navigation, database and panchang work.
