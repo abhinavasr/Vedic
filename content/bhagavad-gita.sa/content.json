@@ -2,7 +2,7 @@
   "format": "vedic-pack-content",
   "format_version": 1,
   "pack_id": "bhagavad-gita.sa",
-  "revision": 14,
+  "revision": 15,
   "languages": [
     "sa",
     "hi",
@@ -33971,6 +33971,61 @@
               "lines": [
                 "परं भूयः प्रवक्ष्यामि ज्ञानानां ज्ञानमुत्तमम् ।",
                 "यज्ज्ञात्वा मुनयः सर्वे परां सिद्धिमितो गताः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "paraṃ bhūyaḥ pravakṣyāmi jñānānāṃ jñānamuttamam |",
+                    "yajjñātvā munayaḥ sarve parāṃ siddhimito gatāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रीभगवान् बोले: ज्ञानों में भी अति उत्तम उस परम ज्ञान को मैं फिर कहूँगा, जिसे जानकर सब मुनिजन इस संसार से मुक्त होकर परम सिद्धि को प्राप्त हो गए हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Supreme Personality of Godhead said: Again I shall declare to you this supreme wisdom, the best of all knowledge, knowing which all the sages have attained the supreme perfection.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna prepares Arjuna to receive the highest wisdom regarding the three modes of material nature. This knowledge has liberated all great sages in the past.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण अर्जुन को भौतिक प्रकृति के तीन गुणों के संबंध में सर्वोच्च ज्ञान प्राप्त करने के लिए तैयार करते हैं। इस ज्ञान ने अतीत में सभी महान ऋषियों को मुक्त किया है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The highest wisdom brings ultimate perfection.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Understanding the modes of nature is key to liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -33980,6 +34035,61 @@
               "lines": [
                 "इदं ज्ञानमुपाश्रित्य मम साधर्म्यमागताः ।",
                 "सर्गेऽपि नोपजायन्ते प्रलये न व्यथन्ति च ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "idaṃ jñānamupāśritya mama sādharmyamāgatāḥ |",
+                    "sarge'pi nopajāyante pralaye na vyathanti ca ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "इस ज्ञान का आश्रय लेकर अर्थात् इसको धारण करके मेरे स्वरूप को प्राप्त हुए पुरुष सृष्टि के आदि में पुनः उत्पन्न नहीं होते और प्रलयकाल में भी व्याकुल नहीं होते।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "By becoming fixed in this knowledge, one can attain to the transcendental nature like My own. Thus established, one is not born at the time of creation or disturbed at the time of dissolution.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "By mastering this knowledge, a soul attains a divine nature similar to the Supreme. They are no longer forced to be reborn during cosmic creation nor do they suffer during cosmic annihilation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "इस ज्ञान में पारंगत होकर, आत्मा परमात्मा के समान दिव्य स्वभाव प्राप्त कर लेती है। वे अब लौकिक सृजन के दौरान पुनर्जन्म लेने के लिए मजबूर नहीं होते हैं और न ही प्रलय के दौरान पीड़ित होते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Spiritual knowledge grants immunity from the cycle of creation and destruction.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The ultimate goal is to attain a nature akin to the Divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -33989,6 +34099,61 @@
               "lines": [
                 "मम योनिर्महद् ब्रह्म तस्मिन्गर्भं दधाम्यहम् ।",
                 "सम्भवः सर्वभूतानां ततो भवति भारत ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "mama yonirmahad brahma tasmingarbhaṃ dadhāmyaham |",
+                    "sambhavaḥ sarvabhūtānāṃ tato bhavati bhārata ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे भरतवंशी! मेरी महद्ब्रह्मरूप मूल प्रकृति सम्पूर्ण भूतों की योनि (गर्भाधान का स्थान) है और मैं उस योनि में चेतन रूप बीज को स्थापन करता हूँ। उस जड़-चेतन के संयोग से सब भूतों की उत्पत्ति होती है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O son of Bharata, the total material substance, called Brahman, is the source of birth, and it is that Brahman that I impregnate, making possible the births of all living beings.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna explains the process of creation. The vast material nature (Mahat-Brahma) acts as the womb, and the Supreme Lord places the seed of consciousness (souls) within it, generating all life.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण सृष्टि की प्रक्रिया की व्याख्या करते हैं। विशाल भौतिक प्रकृति (महत्-ब्रह्म) गर्भ के रूप में कार्य करती है, और परमेश्वर उसमें चेतना (आत्माओं) का बीज रखते हैं, जिससे सभी जीव उत्पन्न होते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Material nature is the mother of all beings.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God is the seed-giving father who injects consciousness into matter.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -33998,6 +34163,61 @@
               "lines": [
                 "सर्वयोनिषु कौन्तेय मूर्तयः सम्भवन्ति याः ।",
                 "तासां ब्रह्म महद्योनिरहं बीजप्रदः पिता ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sarvayoniṣu kaunteya mūrtayaḥ sambhavanti yāḥ |",
+                    "tāsāṃ brahma mahadyonirahaṃ bījapradaḥ pitā ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे कुन्तीपुत्र! नाना प्रकार की सब योनियों में जितनी मूर्तियाँ (शरीर) उत्पन्न होती हैं, प्रकृति तो उन सबकी गर्भ धारण करने वाली माता है और मैं बीज को स्थापन करने वाला पिता हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "It should be understood that all species of life, O son of Kunti, are made possible by birth in this material nature, and that I am the seed-giving father.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Emphasizing the previous point, Krishna states that regardless of the species or form a living entity takes, the material world is their mother and the Supreme Lord is their ultimate father.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "पिछले बिंदु पर जोर देते हुए, कृष्ण कहते हैं कि चाहे कोई भी प्रजाति या रूप हो, भौतिक दुनिया उनकी माँ है और परमेश्वर उनके अंतिम पिता हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Every living entity, across all species, shares a divine lineage.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Recognizing God as the universal father promotes universal brotherhood.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34007,6 +34227,61 @@
               "lines": [
                 "सत्त्वं रजस्तम इति गुणाः प्रकृतिसम्भवाः ।",
                 "निबध्नन्ति महाबाहो देहे देहिनमव्ययम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sattvaṃ rajastama iti guṇāḥ prakṛtisambhavāḥ |",
+                    "nibadhnanti mahābāho dehe dehinamavyayam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे महाबाहु! सत्त्वगुण, रजोगुण और तमोगुण—ये प्रकृति से उत्पन्न तीनों गुण अविनाशी जीवात्मा को शरीर में बाँधते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Material nature consists of three modes—goodness, passion and ignorance. When the eternal living entity comes in contact with nature, O mighty-armed Arjuna, he becomes conditioned by these modes.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna introduces the three fundamental qualities (Gunas) of material nature: Sattva (goodness/purity), Rajas (passion/activity), and Tamas (ignorance/inertia). These modes bind the free soul to the physical body.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण भौतिक प्रकृति के तीन मूलभूत गुणों (गुणों) का परिचय देते हैं: सत्त्व (अच्छाई/पवित्रता), रजस (जुनून/गतिविधि), और तमस (अज्ञान/जड़ता)। ये गुण मुक्त आत्मा को भौतिक शरीर से बांधते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The material world operates through three primary modes: Goodness, Passion, and Ignorance.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Our eternal soul is conditioned and restricted by these natural forces.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34016,6 +34291,61 @@
               "lines": [
                 "तत्र सत्त्वं निर्मलत्वात्प्रकाशकमनामयम् ।",
                 "सुखसङ्गेन बध्नाति ज्ञानसङ्गेन चानघ ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tatra sattvaṃ nirmalatvātprakāśakamanāmayam |",
+                    "sukhasaṅgena badhnāti jñānasaṅgena cānagha ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे निष्पाप! उन तीनों गुणों में सत्त्वगुण तो निर्मल होने के कारण प्रकाश करने वाला और विकाररहित है, वह सुख के संग से और ज्ञान के संग से अर्थात् उसके अभिमान से बाँधता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O sinless one, the mode of goodness, being purer than the others, is illuminating, and it frees one from all sinful reactions. Those situated in that mode become conditioned by a sense of happiness and knowledge.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The mode of goodness (Sattva) is pure, illuminating, and peaceful. However, it still binds the soul to the material world through attachment to happiness, comfort, and intellectual pride.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सत्त्व गुण शुद्ध, प्रकाशमान और शांतिपूर्ण है। हालाँकि, यह अभी भी आत्मा को सुख, आराम और बौद्धिक अभिमान के लगाव के माध्यम से भौतिक दुनिया से बांधता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Even goodness can be a trap if it leads to pride or attachment to comfort.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Purity illuminates the mind but still belongs to the material realm.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34025,6 +34355,61 @@
               "lines": [
                 "रजो रागात्मकं विद्धि तृष्णासङ्गसमुद्भवम् ।",
                 "तन्निबध्नाति कौन्तेय कर्मसङ्गेन देहिनम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "rajo rāgātmaṃ viddhi tṛṣṇāsaṅgasamudbhavam |",
+                    "tannibadhnāti kaunteya karmasaṅgena dehinam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे कुन्तीपुत्र! रागरूप रजोगुण को कामना और आसक्ति से उत्पन्न जान। वह इस जीवात्मा को कर्मों के और उनके फलों के सम्बन्ध से बाँधता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The mode of passion is born of unlimited desires and longings, O son of Kunti, and because of this the embodied living entity is bound to material fruitive actions.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The mode of passion (Rajas) is characterized by intense desires, worldly ambitions, and attachments. It compels the soul to engage in endless, stressful activities to achieve material goals.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "रजोगुण तीव्र इच्छाओं, सांसारिक महत्वाकांक्षाओं और आसक्तियों की विशेषता है। यह आत्मा को भौतिक लक्ष्यों को प्राप्त करने के लिए अंतहीन, तनावपूर्ण गतिविधियों में संलग्न होने के लिए मजबूर करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Passion drives us to constantly work for future rewards.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Unlimited desires create a cycle of endless labor and stress.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34034,6 +34419,61 @@
               "lines": [
                 "तमस्त्वज्ञानजं विद्धि मोहनं सर्वदेहिनाम् ।",
                 "प्रमादालस्यनिद्राभिस्तन्निबध्नाति भारत ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tamastvajñānajaṃ viddhi mohanaṃ sarvadehinām |",
+                    "pramādālasyanidrābhistannibadhnāti bhārata ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे भरतवंशी! सब देहाभिमानियों को मोहित करने वाले तमोगुण को तो अज्ञान से उत्पन्न जान। वह इस जीवात्मा को प्रमाद, आलस्य और निद्रा के द्वारा बाँधता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O son of Bharata, know that the mode of darkness, born of ignorance, is the delusion of all embodied living entities. The results of this mode are madness, indolence and sleep, which bind the conditioned soul.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The mode of ignorance (Tamas) causes delusion and dullness. It binds the soul through laziness, excessive sleep, negligence, and a complete misunderstanding of reality.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "तमस गुण भ्रम और सुस्ती का कारण बनता है। यह आत्मा को आलस्य, अत्यधिक नींद, लापरवाही और वास्तविकता की पूर्ण गलतफहमी के माध्यम से बांधता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Ignorance breeds laziness, lethargy, and delusion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Tamas is the lowest mode, keeping the soul completely in the dark.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34043,6 +34483,61 @@
               "lines": [
                 "सत्त्वं सुखे सञ्जयति रजः कर्मणि भारत ।",
                 "ज्ञानमावृत्य तु तमः प्रमादे सञ्जयत्युत ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sattvaṃ sukhe sañjayati rajaḥ karmaṇi bhārata |",
+                    "jñānamāvṛtya tu tamaḥ pramāde sañjayatyuta ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे अर्जुन! सत्त्वगुण सुख में लगाता है और रजोगुण कर्म में तथा तमोगुण तो ज्ञान को ढँककर प्रमाद में ही लगाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O Bharata, the mode of goodness conditions one to happiness; passion conditions one to fruitive action; and ignorance, covering one's knowledge, binds one to madness.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna summarizes the effects: Goodness attaches you to joy and wisdom. Passion attaches you to relentless action and ambition. Ignorance obscures your knowledge and attaches you to negligence and illusion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण प्रभावों का सार प्रस्तुत करते हैं: सत्त्व आपको आनंद और ज्ञान से जोड़ता है। रजस आपको अथक कार्य और महत्वाकांक्षा से जोड़ता है। तमस आपके ज्ञान को छुपाता है और आपको लापरवाही और भ्रम से जोड़ता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Each mode pulls the mind in a specific direction.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Identify which mode is dominating your thoughts by observing your attachments.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34052,6 +34547,61 @@
               "lines": [
                 "रजस्तमश्चाभिभूय सत्त्वं भवति भारत ।",
                 "रजः सत्त्वं तमश्चैव तमः सत्त्वं रजस्तथा ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "rajastamaścābhibhūya sattvaṃ bhavati bhārata |",
+                    "rajaḥ sattvaṃ tamaścaiva tamaḥ sattvaṃ rajastathā ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे भरतवंशी! रजोगुण और तमोगुण को दबाकर सत्त्वगुण, सत्त्वगुण और तमोगुण को दबाकर रजोगुण, वैसे ही सत्त्वगुण और रजोगुण को दबाकर तमोगुण होता है (अर्थात् बढ़ता है)।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Sometimes the mode of goodness becomes prominent, defeating the modes of passion and ignorance, O son of Bharata. Sometimes the mode of passion defeats goodness and ignorance, and at other times ignorance defeats goodness and passion. In this way there is always competition for supremacy.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The three modes are in a constant state of flux, competing for dominance within the mind. Sometimes we feel peaceful (Sattva), sometimes agitated and driven (Rajas), and sometimes lazy and depressed (Tamas).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "तीनों गुण निरंतर प्रवाह की स्थिति में हैं, जो मन के भीतर प्रभुत्व के लिए प्रतिस्पर्धा कर रहे हैं। कभी हम शांत (सत्त्व) महसूस करते हैं, कभी उत्तेजित और प्रेरित (रजस), और कभी आलसी और उदास (तमस)।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Our psychological state is a battlefield for the three modes.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Fluctuations in mood are natural shifts in the dominance of the Gunas.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34061,6 +34611,61 @@
               "lines": [
                 "सर्वद्वारेषु देहेऽस्मिन्प्रकाश उपजायते ।",
                 "ज्ञानं यदा तदा विद्याद्विवृद्धं सत्त्वमित्युत ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sarvadvāreṣu dehe'sminprakāśa upajāyate |",
+                    "jñānaṃ yadā tadā vidyādvivṛddhaṃ sattvamityuta ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिस समय इस देह में तथा अन्तःकरण और इन्द्रियों में चेतनता और विवेक-शक्ति उत्पन्न होती है, उस समय ऐसा जानना चाहिए कि सत्त्वगुण बढ़ा है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The manifestations of the mode of goodness can be experienced when all the gates of the body are illuminated by knowledge.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "When the mode of goodness dominates, the mind is clear, the senses are perceptive and controlled, and one feels a natural inclination toward wisdom, truth, and peacefulness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जब सत्त्व गुण हावी होता है, तो मन स्पष्ट होता है, इंद्रियां बोधगम्य और नियंत्रित होती हैं, और व्यक्ति ज्ञान, सत्य और शांति की ओर स्वाभाविक झुकाव महसूस करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Clarity and a desire for truth indicate the dominance of Sattva.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A calm, illuminated mind is the ideal state for learning.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34070,6 +34675,61 @@
               "lines": [
                 "लोभः प्रवृत्तिरारम्भः कर्मणामशमः स्पृहा ।",
                 "रजस्येतानि जायन्ते विवृद्धे भरतर्षभ ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "lobhaḥ pravṛttirārambhaḥ karmaṇāmaśamaḥ spṛhā |",
+                    "rajasyetāni jāyante vivṛddhe bharatarṣabha ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे भरतश्रेष्ठ! रजोगुण के बढ़ने पर लोभ, प्रवृत्ति (सांसारिक चेष्टा), स्वार्थबुद्धि से कर्मों का सकाम आरम्भ, अशान्ति और विषय-भोगों की लालसा—ये सब उत्पन्न होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "O chief of the Bharatas, when there is an increase in the mode of passion the symptoms of great attachment, fruitive activity, intense endeavor, and uncontrollable desire and hankering develop.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "When the mode of passion takes over, a person exhibits greed, restless energy, an urge to start new, ambitious projects, and an insatiable craving for material success and sensory enjoyment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जब रजोगुण हावी हो जाता है, तो व्यक्ति लालच, बेचैन ऊर्जा, नई महत्वाकांक्षी परियोजनाओं को शुरू करने का आग्रह, और भौतिक सफलता और संवेदी आनंद के लिए एक अतृप्त लालसा प्रदर्शित करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Restlessness and greed are clear signs of Rajas.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Endless hustle without inner peace is a symptom of the mode of passion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34079,6 +34739,61 @@
               "lines": [
                 "अप्रकाशोऽप्रवृत्तिश्च प्रमादो मोह एव च ।",
                 "तमस्येतानि जायन्ते विवृद्धे कुरुनन्दन ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "aprakāśo'pravṛttiśca pramādo moha eva ca |",
+                    "tamasyetāni jāyante vivṛddhe kurunandana ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे कुरुनन्दन! तमोगुण के बढ़ने पर अन्तःकरण और इन्द्रियों में अप्रकाश, कर्त्तव्य कर्मों में अप्रवृत्ति, प्रमाद और निद्रा आदि अन्तःकरण की मोहिनी वृत्तियाँ—ये सब ही उत्पन्न होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "When there is an increase in the mode of ignorance, O son of Kuru, darkness, inertia, madness and illusion are manifested.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "When the mode of ignorance dominates, the mind feels foggy and depressed. There is a lack of motivation, neglect of duties, laziness, and an inability to distinguish right from wrong.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जब तमस गुण हावी होता है, तो मन उदास महसूस करता है। प्रेरणा की कमी, कर्तव्यों की उपेक्षा, आलस्य, और सही और गलत के बीच अंतर करने में असमर्थता होती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Depression, extreme laziness, and confusion are signs of Tamas.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Ignorance paralyzes the will to act responsibly.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34088,6 +34803,61 @@
               "lines": [
                 "यदा सत्त्वे प्रवृद्धे तु प्रलयं याति देहभृत् ।",
                 "तदोत्तमविदां लोकानमलान्प्रतिपद्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yadā sattve pravṛddhe tu pralayaṃ yāti dehabhṛt |",
+                    "tadottamavidāṃ lokānamalānpratipadyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जब यह मनुष्य सत्त्वगुण की वृद्धि में मृत्यु को प्राप्त होता है, तब तो उत्तम कर्म करने वालों के निर्मल दिव्य स्वर्गादि लोकों को प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "When one dies in the mode of goodness, he attains to the pure higher planets of the great sages.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The mode dominant at the time of death dictates the soul's next destination. Dying while in a state of purity and goodness (Sattva) elevates the soul to higher, heavenly realms filled with wise beings.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "मृत्यु के समय हावी गुण आत्मा के अगले गंतव्य को निर्देशित करता है। पवित्रता और अच्छाई (सत्त्व) की स्थिति में मरना आत्मा को बुद्धिमान प्राणियों से भरे उच्च, स्वर्गीय लोकों में ले जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The consciousness at death determines the next life.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "A life of goodness leads to an elevated, peaceful afterlife.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34097,6 +34867,61 @@
               "lines": [
                 "रजसि प्रलयं गत्वा कर्मसङ्गिषु जायते ।",
                 "तथा प्रलीनस्तमसि मूढयोनिषु जायते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "rajasi pralayaṃ gatvā karmasaṅgiṣu jāyate |",
+                    "tathā pralīnastamasi mūḍhayoniṣu jāyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "रजोगुण के बढ़ने पर मृत्यु को प्राप्त होकर कर्मों की आसक्ति वाले मनुष्यों में जन्म लेता है; तथा तमोगुण के बढ़ने पर मृत्यु को प्राप्त होकर कीट, पशु आदि मूढ़ योनियों में जन्म लेता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "When one dies in the mode of passion, he takes birth among those engaged in fruitive activities; and when one dies in the mode of ignorance, he takes birth in the animal kingdom.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Dying in the mode of passion results in rebirth among ambitious, earthly humans who are driven by work. Dying in the mode of ignorance causes the soul to degrade into lower, less conscious species like animals.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "रजोगुण में मरने से काम से प्रेरित महत्वाकांक्षी, सांसारिक मनुष्यों के बीच पुनर्जन्म होता है। तमस गुण में मरने से आत्मा जानवरों जैसी कम जागरूक प्रजातियों में गिर जाती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Passion leads to rebirth in a similarly stressful, work-driven human environment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Ignorance degrades the soul's evolutionary status in the next life.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34106,6 +34931,61 @@
               "lines": [
                 "कर्मणः सुकृतस्याहुः सात्त्विकं निर्मलं फलम् ।",
                 "रजसस्तु फलं दुःखमज्ञानं तमसः फलम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "karmaṇaḥ sukṛtasyāhuḥ sāttvikaṃ nirmalaṃ phalam |",
+                    "rajasastu phalaṃ duḥkhamajñānaṃ tamasaḥ phalam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रेष्ठ कर्म का तो सात्त्विक अर्थात् सुख, ज्ञान और वैराग्यादि निर्मल फल कहा है; राजस कर्म का फल दुःख है तथा तामस कर्म का फल अज्ञान कहा है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The result of pious action is pure and is said to be in the mode of goodness. But action done in the mode of passion results in misery, and action performed in the mode of ignorance results in foolishness.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The long-term consequences of actions correspond to their underlying mode. Good deeds bring pure joy; passionate, ambitious deeds inevitably lead to stress and suffering; and ignorant deeds lead to deeper foolishness and pain.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कार्यों के दीर्घकालिक परिणाम उनके अंतर्निहित तरीके से मेल खाते हैं। अच्छे कर्म शुद्ध आनंद लाते हैं; भावुक, महत्वाकांक्षी कार्य तनाव और पीड़ा की ओर ले जाते हैं; और अज्ञानी कार्य गहरी मूर्खता और दर्द की ओर ले जाते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Purity creates joy; passion creates stress; ignorance creates delusion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Evaluate your actions by the mode driving them to predict the outcome.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34115,6 +34995,61 @@
               "lines": [
                 "सत्त्वात्सञ्जायते ज्ञानं रजसो लोभ एव च ।",
                 "प्रमादमोहौ तमसो भवतोऽज्ञानमेव च ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sattvātsañjāyate jñānaṃ rajaso lobha eva ca |",
+                    "pramādamohau tamaso bhavato'jñānameva ca ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "सत्त्वगुण से ज्ञान उत्पन्न होता है और रजोगुण से निःसंदेह लोभ; तथा तमोगुण से प्रमाद और मोह उत्पन्न होते हैं और अज्ञान भी।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "From the mode of goodness, real knowledge develops; from the mode of passion, greed develops; and from the mode of ignorance develop foolishness, madness and illusion.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna clearly links the modes to their psychological byproducts. If you cultivate goodness, you gain wisdom. If you cultivate passion, your greed grows. Cultivating ignorance only breeds madness and delusion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण स्पष्ट रूप से गुणों को उनके मनोवैज्ञानिक उपोत्पादों से जोड़ते हैं। यदि आप अच्छाई की खेती करते हैं, तो आप ज्ञान प्राप्त करते हैं। यदि आप रजोगुण की खेती करते हैं, तो आपका लालच बढ़ता है। अज्ञानता की खेती केवल पागलपन और भ्रम पैदा करती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Wisdom is the natural fruit of a pure lifestyle.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Greed is a direct symptom of too much passion and ambition.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34124,6 +35059,61 @@
               "lines": [
                 "ऊर्ध्वं गच्छन्ति सत्त्वस्था मध्ये तिष्ठन्ति राजसाः ।",
                 "जघन्यगुणवृत्तिस्था अधो गच्छन्ति तामसाः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ūrdhvaṃ gacchanti sattvasthā madhye tiṣṭhanti rājasāḥ |",
+                    "jaghanyaguṇavṛttisthā adho gacchanti tāmasāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "सत्त्वगुण में स्थित पुरुष स्वर्गादि उच्च लोकों को जाते हैं, रजोगुण में स्थित राजस पुरुष मध्य में (मनुष्य लोक में) ही रहते हैं और तमोगुण के कार्यरूप निद्रा, प्रमाद और आलस्यादि में स्थित तामस पुरुष अधोगति (नरक और पशु आदि नीच योनियों) को प्राप्त होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those situated in the mode of goodness gradually go upward to the higher planets; those in the mode of passion live on the earthly planets; and those in the abominable mode of ignorance go down to the hellish worlds.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The spiritual trajectory of a soul is determined by the modes it associates with. Goodness elevates, passion keeps one horizontally stuck in the human struggle, and ignorance drags one downward into darker existences.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "एक आत्मा का आध्यात्मिक प्रक्षेपवक्र उन गुणों द्वारा निर्धारित होता है जिनसे वह जुड़ता है। अच्छाई ऊपर उठाती है, जुनून व्यक्ति को क्षैतिज रूप से मानव संघर्ष में फँसाए रखता है, और अज्ञानता व्यक्ति को नीचे की ओर गहरे अस्तित्व में खींचती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Your current habits dictate your future evolutionary trajectory.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Goodness elevates; ignorance degrades.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34133,6 +35123,61 @@
               "lines": [
                 "नान्यं गुणेभ्यः कर्तारं यदा द्रष्टानुपश्यति ।",
                 "गुणेभ्यश्च परं वेत्ति मद्भावं सोऽधिगच्छति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "nānyaṃ guṇebhyaḥ kartāraṃ yadā draṣṭānupaśyati |",
+                    "guṇebhyaśca paraṃ vetti madbhāvaṃ so'dhigacchati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिस समय द्रष्टा तीनों गुणों के अतिरिक्त अन्य किसी को कर्ता नहीं देखता और तीनों गुणों से परे सच्चिदानन्दघन स्वरूप मुझ परमात्मा को तत्त्व से जानता है, उस समय वह मेरे स्वरूप को प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "When one properly sees that in all activities no other performer is at work than these modes of nature and he knows the Supreme Lord, who is transcendental to all these modes, he attains My spiritual nature.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Liberation begins when you realize that your physical and mental actions are just the interplay of the three modes of nature. The true self is the observer, beyond these modes. Knowing this connects one to the Divine.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "मोक्ष तब शुरू होता है जब आपको एहसास होता है कि आपके शारीरिक और मानसिक कार्य केवल प्रकृति के तीन गुणों की परस्पर क्रिया हैं। सच्चा स्वरूप पर्यवेक्षक है, इन विधियों से परे। यह जानने से व्यक्ति परमात्मा से जुड़ जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Realize that your ego is not the doer; nature is acting through you.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The soul is transcendental to the psychological modes of nature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34142,6 +35187,61 @@
               "lines": [
                 "गुणानेतानतीत्य त्रीन्देही देहसमुद्भवान् ।",
                 "जन्ममृत्युजरादुःखैर्विमुक्तोऽमृतमश्नुते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "guṇānetānatītya trīndehī dehasamudbhavān |",
+                    "janmamṛtyujarāduḥkhairvimukto'mṛtamaśnute ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "यह जीवात्मा शरीर की उत्पत्ति के कारण रूप इन तीनों गुणों का उल्लंघन करके जन्म, मृत्यु, वृद्धावस्था और सब प्रकार के दुःखों से मुक्त हुआ परमानन्द को प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "When the embodied being is able to transcend these three modes associated with the material body, he can become free from birth, death, old age and their distresses and can enjoy nectar even in this life.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "By observing and transcending the influence of the three modes, the soul frees itself from the cycle of birth, death, and old age. Such a person tastes the nectar of immortality and absolute joy while still alive.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "तीन गुणों के प्रभाव को देखने और पार करने से, आत्मा खुद को जन्म, मृत्यु और बुढ़ापे के चक्र से मुक्त कर लेती है। ऐसा व्यक्ति जीवित रहते हुए ही अमरता और पूर्ण आनंद के अमृत का स्वाद लेता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Transcending the Gunas is the path to overcoming the miseries of life.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Immortality and bliss can be experienced in the present moment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34154,6 +35254,61 @@
               "lines": [
                 "कैर्लिङ्गैस्त्रीन्गुणानेतानतीतो भवति प्रभो ।",
                 "किमाचारः कथं चैतांस्त्रीन्गुणानतिवर्तते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "kairliṅgaistrīnguṇānetānatīto bhavati prabho |",
+                    "kimācāraḥ kathaṃ caitāṃstrīnguṇānativartate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अर्जुन बोले: हे प्रभो! इन तीनों गुणों से अतीत हुआ पुरुष किन-किन लक्षणों से युक्त होता है? उसका कैसा आचरण होता है? और किस उपाय से वह मनुष्य इन तीनों गुणों से अतीत होता है?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Arjuna inquired: O my dear Lord, by which symptoms is one known who is transcendental to these three modes? What is his behavior? And how does he transcend the modes of nature?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna asks three highly practical questions: How can I recognize someone who has transcended the modes of nature? How does such a person behave? What is the method to achieve this transcendence?",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन तीन अत्यधिक व्यावहारिक प्रश्न पूछते हैं: मैं उस व्यक्ति को कैसे पहचान सकता हूँ जिसने प्रकृति के गुणों को पार कर लिया है? ऐसा व्यक्ति कैसा व्यवहार करता है? इस पारलौकिकता को प्राप्त करने की विधि क्या है?",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "It is important to know the practical symptoms of spiritual advancement.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Seeking the 'how-to' of spiritual mastery is the mark of a good student.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34166,6 +35321,61 @@
               "lines": [
                 "प्रकाशं च प्रवृत्तिं च मोहमेव च पाण्डव ।",
                 "न द्वेष्टि सम्प्रवृत्तानि न निवृत्तानि काङ्क्षति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "prakāśaṃ ca pravṛttiṃ ca mohameva ca pāṇḍava |",
+                    "na dveṣṭi sampravṛttāni na nivṛttāni kāṅkṣati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रीभगवान् बोले: हे पाण्डव! जो पुरुष प्रकाश (सत्त्वगुण का कार्य), प्रवृत्ति (रजोगुण का कार्य) तथा मोह (तमोगुण का कार्य)—इनके प्राप्त होने पर न तो उनसे द्वेष करता है और निवृत्त होने पर न उनकी आकांक्षा करता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Supreme Personality of Godhead said: O son of Pandu, he who does not hate illumination, attachment and delusion when they are present or long for them when they disappear...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna answers the first question. A transcended person observes their own mental states. When clarity (goodness), restless activity (passion), or delusion (ignorance) arises, they neither hate the negative states nor crave the positive ones. They just observe.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण पहले प्रश्न का उत्तर देते हैं। एक श्रेष्ठ व्यक्ति अपनी मानसिक स्थिति को देखता है। जब स्पष्टता (सत्त्व), बेचैन गतिविधि (रजस), या भ्रम (तमस) उत्पन्न होता है, तो वे न तो नकारात्मक राज्यों से नफरत करते हैं और न ही सकारात्मक लोगों के लिए तरसते हैं। वे सिर्फ निरीक्षण करते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Do not fight your shifting moods; observe them objectively.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Transcendence means emotional neutrality toward your own internal weather.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34175,6 +35385,61 @@
               "lines": [
                 "उदासीनवदासीनो गुणैर्यो न विचाल्यते ।",
                 "गुणा वर्तन्त इत्येवं योऽवतिष्ठति नेङ्गते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "udāsīnavadāsīno guṇairyo na vicālyate |",
+                    "guṇā vartanta ityevaṃ yo'vatiṣṭhati neṅgate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो साक्षी के सदृश स्थित हुआ गुणों द्वारा विचलित नहीं किया जा सकता और 'गुण ही गुणों में बरत रहे हैं'—ऐसा समझकर जो सच्चिदानन्दघन परमात्मा में एकीभाव से स्थित रहता है तथा उस स्थिति से कभी विचलित नहीं होता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "...who is unwavering and undisturbed through all these reactions of the material qualities, remaining neutral and transcendental, knowing that the modes alone are active; who is situated in the self...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Answering the second question (behavior): The transcended person sits like a neutral observer. Knowing that all mental and physical turbulence is just the friction of the 'Gunas' interacting, they remain undisturbed and rooted in the Self.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "दूसरे प्रश्न का उत्तर (व्यवहार): श्रेष्ठ व्यक्ति एक तटस्थ पर्यवेक्षक की तरह बैठता है। यह जानकर कि सभी मानसिक और शारीरिक अशांति केवल बातचीत करने वाले 'गुणों' का घर्षण है, वे निर्विवाद और स्वयं में निहित रहते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Act as a neutral witness to the drama of your own mind.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Recognize that your thoughts and emotions are biological/karmic machinery at work.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34184,6 +35449,61 @@
               "lines": [
                 "समदुःखसुखः स्वस्थः समलोष्टाश्मकाञ्चनः ।",
                 "तुल्यप्रियाप्रियो धीरस्तुल्यनिन्दात्मसंस्तुतिः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "samaduḥkhasukhaḥ svasthaḥ samaloṣṭāśmakāñcanaḥ |",
+                    "tulyapriyāpriyo dhīrastulyanindātmasaṃstutiḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो निरन्तर आत्मभाव में स्थित है, दुःख-सुख को समान समझने वाला है, मिट्टी, पत्थर और स्वर्ण में समान भाव वाला है, ज्ञानी है, प्रिय तथा अप्रिय को एक-सा मानने वाला है और अपनी निन्दा-स्तुति में भी समान भाव वाला है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "...who regards alike happiness and distress; who looks upon a lump of earth, a stone and a piece of gold with an equal eye; who is equal toward the desirable and the undesirable; who is steady, situated equally well in praise and blame...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Continuing on behavior: The liberated person maintains absolute equanimity. Pain and pleasure, a clump of dirt and a bar of gold, praise and severe criticism—all are treated with the exact same steady indifference.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "व्यवहार पर जारी: मुक्त व्यक्ति पूर्ण समभाव बनाए रखता है। दर्द और खुशी, गंदगी का एक झुरमुट और सोने का एक टुकड़ा, प्रशंसा और गंभीर आलोचना—सभी के साथ समान स्थिर उदासीनता के साथ व्यवहार किया जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Equanimity is the behavioral signature of enlightenment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "External events do not dictate the internal value or peace of the wise.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34193,6 +35513,61 @@
               "lines": [
                 "मानापमानयोस्तुल्यस्तुल्यो मित्रारिपक्षयोः ।",
                 "सर्वारम्भपरित्यागी गुणातीतः स उच्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "mānāpamānayostulyastulyo mitrāripakṣayoḥ |",
+                    "sarvārambhaparityāgī guṇātītaḥ sa ucyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो मान और अपमान में सम है, मित्र और वैरी के पक्ष में भी सम है एवं सम्पूर्ण आरम्भों में कर्तापन के अभिमान से रहित है—वह पुरुष गुणातीत कहा जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "...honor and dishonor, who treats friend and foe alike, and who has abandoned all fruitive undertakings—such a man is said to have transcended the modes of nature.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "They remain balanced in honor and dishonor, treat friends and enemies alike, and have completely given up starting ambitious, self-centered projects. Such a person is officially recognized as having transcended the modes of nature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "वे सम्मान और अपमान में संतुलित रहते हैं, दोस्तों और दुश्मनों के साथ समान व्यवहार करते हैं, और महत्वाकांक्षी, आत्मकेंद्रित परियोजनाओं को शुरू करना पूरी तरह से छोड़ दिया है। ऐसे व्यक्ति को आधिकारिक तौर पर प्रकृति के गुणों को पार करने के रूप में मान्यता प्राप्त है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Release the need for social validation and the distinction between allies and foes.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Abandon the ego's constant need to 'start' new ambitious schemes.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34202,6 +35577,61 @@
               "lines": [
                 "मां च योऽव्यभिचारेण भक्तियोगेन सेवते ।",
                 "स गुणान्समतीत्यैतान्ब्रह्मभूयाय कल्पते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "māṃ ca yo'vyabhicāreṇa bhaktiyogena sevate |",
+                    "sa guṇānsamatītyaitānbrahmabhūyāya kalpate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "और जो पुरुष अनन्य भक्तियोग द्वारा मुझे भजता है, वह भी इन तीनों गुणों को भलीभाँति लाँघकर सच्चिदानन्दघन ब्रह्म को प्राप्त होने के लिए योग्य बन जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One who engages in full devotional service, unfailing in all circumstances, at once transcends the modes of material nature and thus comes to the level of Brahman.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna answers the third question (the method). The most reliable way to transcend the intense grip of material nature is through unfailing, unalloyed devotion (Bhakti Yoga) to the Supreme. This devotion elevates the soul to the spiritual platform.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण तीसरे प्रश्न (विधि) का उत्तर देते हैं। भौतिक प्रकृति की तीव्र पकड़ को पार करने का सबसे विश्वसनीय तरीका परमात्मा की अचूक, अनन्य भक्ति (भक्ति योग) के माध्यम से है। यह भक्ति आत्मा को आध्यात्मिक मंच तक ले जाती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Unfailing devotion is the most powerful method to break free from psychological conditioning.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Serving the Divine elevates one above material nature immediately.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -34211,6 +35641,61 @@
               "lines": [
                 "ब्रह्मणो हि प्रतिष्ठाहममृतस्याव्ययस्य च ।",
                 "शाश्वतस्य च धर्मस्य सुखस्यैकान्तिकस्य च ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "brahmaṇo hi pratiṣṭhāhamamṛtasyāvyayasya ca |",
+                    "śāśvatasya ca dharmasya sukhasyaikāntikasya ca ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "क्योंकि उस अविनाशी परब्रह्म का, अमृत का, शाश्वत धर्म का और अखण्ड एकरस आनन्द का आश्रय मैं ही हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "And I am the basis of the impersonal Brahman, which is immortal, imperishable and eternal and is the constitutional position of ultimate happiness.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna concludes the chapter by establishing His supreme position. The impersonal, infinite light of Brahman (which many seek) is actually just the radiant effulgence of Krishna's own personal form. He is the foundation of immortality, eternal dharma, and absolute bliss.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण अपनी सर्वोच्च स्थिति स्थापित करके अध्याय का समापन करते हैं। ब्रह्म का अवैयक्तिक, अनंत प्रकाश (जिसकी कई लोग तलाश करते हैं) वास्तव में कृष्ण के अपने व्यक्तिगत रूप का उज्ज्वल तेज है। वह अमरता, शाश्वत धर्म और पूर्ण आनंद की नींव है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The personal form of God is the foundation of the impersonal infinite.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True, eternal happiness rests only in the Supreme Person.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
