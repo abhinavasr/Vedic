@@ -184,7 +184,11 @@ class Assistant {
   Future<void> refresh() async {
     try {
       final facts = await readDeviceFacts();
-      switch (checkCapability(facts, requirement)) {
+      switch (checkCapability(
+        facts,
+        requirement,
+        allowSimulator: allowSimulatorAi,
+      )) {
         case NotCapable(:final message):
           _set(AssistantPhase.unsupported, message: message);
           return;
@@ -231,7 +235,7 @@ class Assistant {
 
       final installation =
           await FlutterGemma.installModel(
-                modelType: ModelType.gemma4,
+                modelType: _modelFamily,
                 fileType: ModelFileType.litertlm,
               )
               .fromNetwork(chosen.host!.url)
@@ -338,7 +342,7 @@ class Assistant {
       await _registerEngine();
       _set(AssistantPhase.loading);
       await FlutterGemma.installModel(
-        modelType: ModelType.gemma4,
+        modelType: _modelFamily,
         fileType: path.endsWith('.task')
             ? ModelFileType.task
             : ModelFileType.litertlm,
@@ -458,7 +462,7 @@ class Assistant {
         randomSeed: 1,
         maxOutputTokens: request.maxOutputTokens,
         isThinking: request.thinking,
-        modelType: ModelType.gemma4,
+        modelType: _modelFamily,
       );
       final raw = StringBuffer();
       final thinking = StringBuffer();
@@ -546,6 +550,21 @@ class Assistant {
     backend: backend ?? state.value.backend,
   );
 }
+
+/// Which family the runtime treats the installed file as.
+///
+/// The pairing matters: hand a file to the wrong family and it fails to load
+/// with "Model may be invalid", which is true only of the pairing.
+ModelType get _modelFamily => switch (assistantModelFamily) {
+  'gemma4' => ModelType.gemma4,
+  'gemmaIt' => ModelType.gemmaIt,
+  'qwen3' => ModelType.qwen3,
+  'qwen' => ModelType.qwen,
+  'deepSeek' => ModelType.deepSeek,
+  'llama' => ModelType.llama,
+  'phi' => ModelType.phi,
+  final other => throw ArgumentError('Unknown model family: $other'),
+};
 
 /// Listens for the two moments worth unloading a 2.4 GB model.
 class _AssistantLifecycle with WidgetsBindingObserver {

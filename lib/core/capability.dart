@@ -80,12 +80,20 @@ const int minIosMajor = 16;
 ///
 /// Must run before any download prompt. Checks run in a fixed order so the
 /// user is told about the most fundamental problem first.
-Capability checkCapability(DeviceFacts device, ModelRequirement model) {
+Capability checkCapability(
+  DeviceFacts device,
+  ModelRequirement model, {
+  bool allowSimulator = false,
+}) {
   final name = model.displayName;
 
   // Simulators report the host Mac's memory and disk, so every check below
   // would pass for the wrong reasons.
-  if (!device.isPhysicalDevice) {
+  //
+  // [allowSimulator] is for testing the pipeline itself, where the answer the
+  // model gives is the point and the speed it gives it at is meaningless. It
+  // is never on in a release: see docs/DEVELOPMENT.md.
+  if (!device.isPhysicalDevice && !allowSimulator) {
     return NotCapable(
       Refusal.simulator,
       '$name runs only on a real phone, not on a simulator or emulator.',

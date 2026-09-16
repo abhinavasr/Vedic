@@ -171,7 +171,9 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
           ref: verse.ref,
           language: language.code,
           text: text,
-          model: gemmaModelFileName,
+          // The model that actually wrote it, which is what makes it possible
+          // to re-translate everything a weaker one produced.
+          model: assistantModelFile,
           createdAt: DateTime.now().toUtc(),
         ),
       );
@@ -692,11 +694,21 @@ class _TranslateOnPhone extends StatelessWidget {
       );
     }
 
+    // A language counts as covered only when something published covers it.
+    // A machine translation can be wrong — and when it is, the reader needs
+    // the button that made it, not a dead end.
+    final published = {
+      for (final translation in verse.translations)
+        if (!translation.machine) translation.language,
+    };
     final missing = [
       for (final language in TargetLanguage.all)
-        if (!verse.hasTranslationIn(language.code)) language,
+        if (!published.contains(language.code)) language,
     ];
     if (missing.isEmpty) return const SizedBox.shrink();
+    final again = missing.any(
+      (language) => verse.hasTranslationIn(language.code),
+    );
 
     return Padding(
       padding: const EdgeInsets.only(top: 10),
@@ -704,9 +716,11 @@ class _TranslateOnPhone extends StatelessWidget {
         spacing: 4,
         crossAxisAlignment: WrapCrossAlignment.center,
         children: [
-          const Text(
-            'Translate on this phone:',
-            style: TextStyle(fontSize: 13, color: SadhanaColors.inkSoft),
+          Text(
+            again
+                ? 'Translate again on this phone:'
+                : 'Translate on this phone:',
+            style: const TextStyle(fontSize: 13, color: SadhanaColors.inkSoft),
           ),
           for (final language in missing)
             TextButton(

@@ -22,14 +22,40 @@ const String assistantModelFallbackBase = String.fromEnvironment(
   defaultValue: 'https://batiyao.com/models',
 );
 
-String get gemmaModelUrl => '$assistantModelBase/$gemmaModelFileName';
+/// Overridable so a test build can point at a small model. The file name is
+/// part of the model's identity on disk, so changing it installs a different
+/// model rather than confusing this one.
+const String assistantModelFile = String.fromEnvironment(
+  'ASSISTANT_MODEL_FILE',
+  defaultValue: gemmaModelFileName,
+);
+
+/// Which family the runtime should treat the file as: `gemma4` for the real
+/// model, and whatever a test build points at otherwise. Wrong values here
+/// fail at load with "Model may be invalid", which is true only of the pairing.
+const String assistantModelFamily = String.fromEnvironment(
+  'ASSISTANT_MODEL_FAMILY',
+  defaultValue: 'gemma4',
+);
+
+/// The download's size, for the prompt that asks before spending it.
+const int assistantModelBytes = int.fromEnvironment(
+  'ASSISTANT_MODEL_BYTES',
+  defaultValue: 2588147712,
+);
+
+/// Lets a test build run the assistant on a simulator, where the answer is
+/// the point and the speed is meaningless. Never on in a release.
+const bool allowSimulatorAi = bool.fromEnvironment('ASSISTANT_ALLOW_SIMULATOR');
+
+String get gemmaModelUrl => '$assistantModelBase/$assistantModelFile';
 
 String get gemmaModelFallbackUrl =>
-    '$assistantModelFallbackBase/$gemmaModelFileName';
+    '$assistantModelFallbackBase/$assistantModelFile';
 
 const ModelRequirement gemma4E2bIt = ModelRequirement(
   displayName: 'The assistant',
-  downloadBytes: 2588147712,
+  downloadBytes: assistantModelBytes,
   // Roadmap §3.5: "~3 GB RAM". From the inherited playbook; not yet measured
   // on this project's devices.
   minRamMb: 3 * 1024,

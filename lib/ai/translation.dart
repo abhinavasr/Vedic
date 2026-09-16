@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 import '../core/script.dart';
+import '../core/transliteration.dart';
 import 'assistant.dart';
 
 // Translating a verse on the phone. The model never produces scripture: it is
@@ -259,7 +260,44 @@ String checkTranslation(String answer, TargetLanguage language, String verse) {
       'The assistant returned the verse instead of a translation.',
     );
   }
+  // The transliteration is Latin letters, so a model that simply echoes it
+  // passes every check above — and the prompt hands it one to echo. Measured
+  // on a phone: this is what a model reaches for when it cannot translate.
+  if (_echoesTransliteration(text, verse)) {
+    throw const TranslationRejected(
+      'The assistant spelled the verse out in Latin letters instead of '
+      'translating it.',
+    );
+  }
   return text;
+}
+
+/// Whether [answer] is mostly the verse transliterated rather than translated.
+bool _echoesTransliteration(String answer, String verse) {
+  final iast = _comparable(devanagariToIast(verse));
+  final candidate = _comparable(answer);
+  if (iast.length < 8 || candidate.length < 8) return false;
+  if (candidate.contains(iast) || iast.contains(candidate)) return true;
+  // Not identical, because a model's spelling wanders: compare how much of
+  // the answer is made of runs that appear in the transliteration.
+  return _runOverlap(candidate, iast) >= 0.5;
+}
+
+/// Letters only, folded so diacritics do not decide the answer.
+String _comparable(String text) =>
+    foldIast(text).toLowerCase().replaceAll(RegExp(r'[^a-z]'), '');
+
+/// The share of [a]'s five-character runs that also occur in [b].
+double _runOverlap(String a, String b) {
+  const run = 5;
+  if (a.length < run) return 0;
+  var hits = 0;
+  var total = 0;
+  for (var i = 0; i + run <= a.length; i++) {
+    total++;
+    if (b.contains(a.substring(i, i + run))) hits++;
+  }
+  return total == 0 ? 0 : hits / total;
 }
 
 /// A translation as it is being written.

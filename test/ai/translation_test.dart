@@ -151,6 +151,44 @@ void main() {
     );
   });
 
+  test('rejects the verse spelled out in Latin letters', () {
+    // Measured on a phone: a model that cannot translate reaches for the
+    // transliteration, which is Latin script and so passes every other check.
+    expect(
+      () => checkTranslation(
+        'taṃ tathā kṛpayāviṣṭamaśrupūrṇākulekṣaṇam '
+            'viṣīdantamidaṃ vākyamuvāca madhusūdanaḥ',
+        TargetLanguage.english,
+        'तं तथा कृपयाविष्टमश्रुपूर्णाकुलेक्षणम् ।\n'
+            'विषीदन्तमिदं वाक्यमुवाच मधुसूदनः ॥',
+      ),
+      throwsA(isA<TranslationRejected>()),
+    );
+
+    // Spelling that wanders is still the same echo.
+    expect(
+      () => checkTranslation(
+        'tam tatha krpayavistam asrupurnakuleksanam visidantamidam',
+        TargetLanguage.english,
+        'तं तथा कृपयाविष्टमश्रुपूर्णाकुलेक्षणम् ।',
+      ),
+      throwsA(isA<TranslationRejected>()),
+    );
+  });
+
+  test('a real translation of the same verse is kept', () {
+    expect(
+      checkTranslation(
+        'To him, overcome by pity, his eyes filled with tears, '
+            'Madhusudana spoke these words.',
+        TargetLanguage.english,
+        'तं तथा कृपयाविष्टमश्रुपूर्णाकुलेक्षणम् ।\n'
+            'विषीदन्तमिदं वाक्यमुवाच मधुसूदनः ॥',
+      ),
+      startsWith('To him'),
+    );
+  });
+
   test('rejects an empty answer and one that echoes the verse', () {
     expect(
       () => checkTranslation('   ', TargetLanguage.english, _verse),

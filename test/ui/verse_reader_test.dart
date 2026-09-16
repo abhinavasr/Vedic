@@ -130,13 +130,21 @@ void main() {
   ) async {
     await openReader(tester);
 
-    // 2.47 ships both languages, so there is nothing to offer.
-    expect(find.textContaining('Translate on this phone'), findsNothing);
+    // 2.47's English is published, so it is settled. Its Hindi is marked
+    // machine in the pack itself, so it is offered again.
+    expect(find.byKey(const ValueKey('translate-en')), findsNothing);
+    expect(find.byKey(const ValueKey('translate-hi')), findsOneWidget);
+    expect(
+      find.textContaining('Translate again on this phone'),
+      findsOneWidget,
+    );
 
     await tester.tap(find.byIcon(Icons.chevron_right));
     await tester.pumpAndSettle();
     expect(find.byKey(const ValueKey('translate-en')), findsOneWidget);
     expect(find.byKey(const ValueKey('translate-hi')), findsOneWidget);
+    // Nothing has been translated here at all, so it is not "again".
+    expect(find.textContaining('Translate on this phone'), findsOneWidget);
   });
 
   testWidgets('shows a translation this phone already made, labelled', (
@@ -159,7 +167,14 @@ void main() {
 
     expect(find.text('Steadfast in yoga, do your work.'), findsOneWidget);
     expect(find.text('Machine translation'), findsOneWidget);
-    expect(find.byKey(const ValueKey('translate-en')), findsNothing);
+
+    // A machine translation is not coverage: it can be wrong, and when it is
+    // the reader needs the button that made it rather than a dead end.
+    expect(find.byKey(const ValueKey('translate-en')), findsOneWidget);
+    expect(
+      find.textContaining('Translate again on this phone'),
+      findsOneWidget,
+    );
   });
 
   testWidgets('remembers the verse reached and bookmarks it', (tester) async {
