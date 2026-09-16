@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 
 import 'assistant.dart';
 import 'translation.dart';
@@ -39,4 +39,21 @@ class ReadingLanguage extends ChangeNotifier {
     if (_code != 'en') 'en',
     if (_code != 'hi') 'hi',
   ];
+}
+
+/// Puts the reading language above the navigator, so every screen — including
+/// one already open on top of another — rebuilds the moment it changes.
+class ReadingLanguageScope extends InheritedNotifier<ReadingLanguage> {
+  const ReadingLanguageScope({
+    super.key,
+    required ReadingLanguage language,
+    required super.child,
+  }) : super(notifier: language);
+
+  /// The reading language, registering the caller to rebuild when it changes.
+  static ReadingLanguage of(BuildContext context) =>
+      context
+          .dependOnInheritedWidgetOfExactType<ReadingLanguageScope>()
+          ?.notifier ??
+      ReadingLanguage.instance;
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../ai/reading_languages.dart';
+
 import '../library/scripture_repository.dart';
 import '../packs/pack_store.dart';
 import 'shell.dart';
@@ -22,20 +24,23 @@ class _VedicAppState extends State<VedicApp> {
   late final Future<void> _ready = widget.prepare();
 
   @override
-  Widget build(BuildContext context) => MaterialApp(
-    title: 'Sadhana',
-    theme: sadhanaTheme(),
-    home: FutureBuilder<void>(
-      future: _ready,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState != ConnectionState.done) {
-          return const _Preparing();
-        }
-        return SadhanaShell(
-          repository: ScriptureRepository(widget.store),
-          problem: snapshot.hasError ? '${snapshot.error}' : null,
-        );
-      },
+  Widget build(BuildContext context) => ReadingLanguageScope(
+    language: ReadingLanguage.instance,
+    child: MaterialApp(
+      title: 'Sadhana',
+      theme: sadhanaTheme(),
+      home: FutureBuilder<void>(
+        future: _ready,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState != ConnectionState.done) {
+            return const _Preparing();
+          }
+          return SadhanaShell(
+            repository: ScriptureRepository(widget.store),
+            problem: snapshot.hasError ? '${snapshot.error}' : null,
+          );
+        },
+      ),
     ),
   );
 }

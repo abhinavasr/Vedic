@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import '../../core/transliteration.dart';
 import '../../library/scripture_repository.dart';
 import '../brand_header.dart';
+import '../listen_meaning.dart';
 import '../reader_screens.dart';
 import '../simple_screens.dart';
 import '../theme.dart';
@@ -32,9 +33,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final verse = repository.verseOfTheDay(DateTime.now());
+    // Only the header sits on the picture now, so the banner is as tall as
+    // it needs to be to read as one rather than as a gap.
     final heroHeight = math.max(
-      380.0,
-      MediaQuery.sizeOf(context).height * 0.44,
+      260.0,
+      MediaQuery.sizeOf(context).height * 0.32,
     );
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -192,7 +195,7 @@ class _VerseCard extends StatelessWidget {
               const SizedBox(height: 18),
               Row(
                 children: [
-                  const Expanded(child: _ListenButton()),
+                  Expanded(child: ListenMeaning(verse: verse.verse)),
                   FilledButton.tonal(
                     onPressed: onRead,
                     style: FilledButton.styleFrom(
@@ -217,50 +220,6 @@ class _VerseCard extends StatelessWidget {
       ),
     );
   }
-}
-
-/// Chant audio arrives as downloadable packs; until one is installed the
-/// button explains that rather than doing nothing.
-class _ListenButton extends StatelessWidget {
-  const _ListenButton();
-
-  @override
-  Widget build(BuildContext context) => InkWell(
-    borderRadius: BorderRadius.circular(28),
-    onTap: () => ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text(
-          "Chant audio isn't installed yet. It will arrive as a download.",
-        ),
-      ),
-    ),
-    child: const Row(
-      children: [
-        CircleAvatar(
-          radius: 24,
-          backgroundColor: SadhanaColors.green,
-          child: Icon(Icons.play_arrow_rounded, color: Colors.white, size: 30),
-        ),
-        SizedBox(width: 10),
-        Flexible(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Listen',
-                style: TextStyle(fontSize: 16, color: SadhanaColors.ink),
-              ),
-              Text(
-                'Sanskrit Chant',
-                style: TextStyle(fontSize: 13, color: SadhanaColors.inkSoft),
-                overflow: TextOverflow.ellipsis,
-              ),
-            ],
-          ),
-        ),
-      ],
-    ),
-  );
 }
 
 class _FeatureTiles extends StatelessWidget {

@@ -49,6 +49,33 @@ void main() {
     expect(ReadingLanguage(settings).language.name, 'Tamil');
   });
 
+  testWidgets('a change reaches a screen already on top of another', (
+    tester,
+  ) async {
+    // The bug this guards: settings changed the language and the reader,
+    // still open underneath, kept showing the old one until it was rebuilt.
+    final reading = ReadingLanguage(_MemorySettings());
+    late String seen;
+    await tester.pumpWidget(
+      ReadingLanguageScope(
+        language: reading,
+        child: MaterialApp(
+          home: Builder(
+            builder: (context) {
+              seen = ReadingLanguageScope.of(context).language.name;
+              return Text(seen);
+            },
+          ),
+        ),
+      ),
+    );
+    expect(seen, 'English');
+
+    reading.language = TargetLanguage.hindi;
+    await tester.pump();
+    expect(seen, 'Hindi', reason: 'the open screen rebuilt on its own');
+  });
+
   test('the reader\'s language leads, with the common two behind it', () {
     final settings = _MemorySettings()..values['reading.language'] = 'mr';
     expect(ReadingLanguage(settings).preference, ['mr', 'en', 'hi']);

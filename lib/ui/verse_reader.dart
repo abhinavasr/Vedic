@@ -5,11 +5,11 @@ import '../ai/assistant.dart';
 import '../ai/reading_languages.dart';
 import '../ai/translation.dart';
 import '../ai/verse_context.dart';
-import '../audio/speech.dart';
 import '../core/transliteration.dart';
 import '../library/scripture_repository.dart';
 import '../packs/pack_store.dart';
 import 'ai/assistant_screen.dart';
+import 'listen_meaning.dart';
 import 'home/hero_painter.dart';
 import 'simple_screens.dart';
 import 'theme.dart';
@@ -487,10 +487,10 @@ class _VersePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reading = ReadingLanguage.instance.language;
+    final reading = ReadingLanguageScope.of(context).language;
     final translation = verse.translationFor([
       ?prefer,
-      ...ReadingLanguage.instance.preference,
+      ...ReadingLanguageScope.of(context).preference,
     ]);
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
@@ -601,7 +601,7 @@ class _VersePage extends StatelessWidget {
                 const SizedBox(height: 16),
                 const Divider(height: 1, color: SadhanaColors.line),
                 const SizedBox(height: 12),
-                _ListenMeaning(verse: verse),
+                ListenMeaning(verse: verse),
               ],
             ),
           ),
@@ -769,7 +769,7 @@ class _TranslateOnPhone extends StatelessWidget {
     final seen = <String>{};
     final missing = [
       for (final language in [
-        ReadingLanguage.instance.language,
+        ReadingLanguageScope.of(context).language,
         TargetLanguage.english,
         TargetLanguage.hindi,
       ])
@@ -964,114 +964,4 @@ class _Chip extends StatelessWidget {
       ),
     ),
   );
-}
-
-/// Reads the verse's meaning aloud.
-///
-/// There is no chant here. A chant has to be a recording by someone who knows
-/// the text, and no pack carries one yet; a phone sounding the Sanskrit out
-/// from its transliteration was tried and was not worth offering. The meaning
-/// is a different matter, and a phone reads it perfectly well.
-class _ListenMeaning extends StatefulWidget {
-  const _ListenMeaning({required this.verse});
-
-  final PassageView verse;
-
-  @override
-  State<_ListenMeaning> createState() => _ListenMeaningState();
-}
-
-class _ListenMeaningState extends State<_ListenMeaning> {
-  SpokenChoice? _choice;
-
-  @override
-  void initState() {
-    super.initState();
-    _pick();
-  }
-
-  @override
-  void didUpdateWidget(_ListenMeaning old) {
-    super.didUpdateWidget(old);
-    if (old.verse.ref != widget.verse.ref) _pick();
-  }
-
-  /// Which language this phone can read this verse in. Asked once per verse,
-  /// because listing the installed voices touches the platform.
-  Future<void> _pick() async {
-    final choice = await VerseSpeech.instance.chooseForMeaning(
-      available: {
-        for (final translation in widget.verse.translations)
-          translation.language: translation.text,
-      },
-      preferred: ReadingLanguage.instance.language.code,
-    );
-    if (mounted) setState(() => _choice = choice);
-  }
-
-  Future<void> _tap(bool speaking) async {
-    final speech = VerseSpeech.instance;
-    if (speaking) return speech.stop();
-    final choice = _choice;
-    if (choice == null) return;
-    try {
-      await speech.speak(widget.verse.ref, choice);
-    } on Object {
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('This phone could not read it aloud.')),
-      );
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final choice = _choice;
-    if (choice == null) return const SizedBox.shrink();
-    return ValueListenableBuilder<String?>(
-      valueListenable: VerseSpeech.instance.speaking,
-      builder: (context, ref, _) {
-        final speaking = ref == widget.verse.ref;
-        return InkWell(
-          borderRadius: BorderRadius.circular(28),
-          onTap: () => _tap(speaking),
-          child: Row(
-            children: [
-              CircleAvatar(
-                radius: 22,
-                backgroundColor: SadhanaColors.green,
-                child: Icon(
-                  speaking ? Icons.stop_rounded : Icons.play_arrow_rounded,
-                  color: Colors.white,
-                  size: 28,
-                ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      speaking ? 'Stop' : 'Listen to the meaning',
-                      style: const TextStyle(
-                        fontSize: 16,
-                        color: SadhanaColors.ink,
-                      ),
-                    ),
-                    Text(
-                      choice.description,
-                      style: const TextStyle(
-                        fontSize: 13,
-                        color: SadhanaColors.inkSoft,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
 }

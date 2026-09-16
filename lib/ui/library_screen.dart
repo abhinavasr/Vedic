@@ -478,7 +478,7 @@ class _VersePreview extends StatelessWidget {
     if (pick == null) return const SizedBox.shrink();
     final verse = pick.verse;
     final translation = verse.translationFor(
-      ReadingLanguage.instance.preference,
+      ReadingLanguageScope.of(context).preference,
     );
 
     return DecoratedBox(
