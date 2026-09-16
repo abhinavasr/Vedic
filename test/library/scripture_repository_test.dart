@@ -105,12 +105,18 @@ void main() {
   });
 
   test('verse of the day is stable within a day and varies across days', () {
-    final day = DateTime(2026, 9, 15);
+    final day = DateTime(2026, 9, 15, 5);
     final pick = repository.verseOfTheDay(day)!;
     expect(pick.verse.type, PassageType.verse);
     expect(['1.1', '1.2', '2.47'], contains(pick.verse.ref));
+    // The whole of that day, and on into the small hours, which belong to the
+    // night before rather than to the morning after.
     expect(
       repository.verseOfTheDay(DateTime(2026, 9, 15, 23))!.verse.ref,
+      pick.verse.ref,
+    );
+    expect(
+      repository.verseOfTheDay(DateTime(2026, 9, 16, 4, 30))!.verse.ref,
       pick.verse.ref,
     );
 

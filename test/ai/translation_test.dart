@@ -204,4 +204,28 @@ void main() {
     expect(TargetLanguage.forCode('hi')?.name, 'Hindi');
     expect(TargetLanguage.forCode('sa'), isNull);
   });
+
+  test('a translation is left end-stopped, in its own script', () {
+    // The voice reads these aloud: with no stop it runs one verse into the
+    // next, and Devanagari does not end a sentence with a full stop.
+    expect(
+      checkTranslation('वह युद्ध में चतुर है', TargetLanguage.hindi, 'क'),
+      'वह युद्ध में चतुर है।',
+    );
+    expect(
+      checkTranslation('He is skilled in war', TargetLanguage.english, 'क'),
+      'He is skilled in war.',
+    );
+    // One that is already punctuated is left alone.
+    expect(
+      checkTranslation('Who am I?', TargetLanguage.english, 'क'),
+      'Who am I?',
+    );
+  });
+
+  test('the rules ask for punctuation, and say why', () {
+    final rules = translationSystemInstruction(TargetLanguage.hindi);
+    expect(rules, contains('a comma wherever a reader would pause'));
+    expect(rules, contains('read aloud by a voice'));
+  });
 }

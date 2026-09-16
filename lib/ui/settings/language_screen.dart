@@ -15,7 +15,11 @@ class LanguageScreen extends StatefulWidget {
 }
 
 class _LanguageScreenState extends State<LanguageScreen> {
-  ReadingLanguage get _reading => widget.reading ?? ReadingLanguage.instance;
+  /// Through the scope, like every other screen: this one writes the language,
+  /// and reading it from anywhere else is how a screen ends up showing one
+  /// thing while the app does another.
+  ReadingLanguage get _reading =>
+      widget.reading ?? ReadingLanguageScope.of(context);
 
   @override
   Widget build(BuildContext context) => Scaffold(

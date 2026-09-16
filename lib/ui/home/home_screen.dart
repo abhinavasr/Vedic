@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ import '../simple_screens.dart';
 import '../theme.dart';
 import 'hero_background.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({
     super.key,
     required this.repository,
@@ -31,7 +32,55 @@ class HomeScreen extends StatelessWidget {
   final String? problem;
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
+  /// Fires at the next five in the morning, so a phone left open overnight
+  /// shows the new verse without being reopened.
+  Timer? _turnover;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    _waitForTomorrow();
+  }
+
+  @override
+  void dispose() {
+    _turnover?.cancel();
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // A sleeping phone does not run its timers. Coming back to the app is the
+    // other way the day changes, and the more common one.
+    if (state == AppLifecycleState.resumed) _turnTheDay();
+  }
+
+  void _turnTheDay() {
+    if (!mounted) return;
+    setState(_waitForTomorrow);
+  }
+
+  /// Sets the alarm for the next turnover, in the device's own local time.
+  void _waitForTomorrow() {
+    _turnover?.cancel();
+    final now = DateTime.now();
+    final wait = nextScriptureDay(now).difference(now);
+    _turnover = Timer(wait.isNegative ? Duration.zero : wait, _turnTheDay);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final repository = widget.repository;
+    final problem = widget.problem;
+    final onOpenLibrary = widget.onOpenLibrary;
+    final onOpenMeditation = widget.onOpenMeditation;
+    final onOpenSettings = widget.onOpenSettings;
     final verse = repository.verseOfTheDay(DateTime.now());
     // Only the header sits on the picture now, so the banner is as tall as
     // it needs to be to read as one rather than as a gap.
@@ -193,26 +242,33 @@ class _VerseCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 18),
-              Row(
-                children: [
-                  Expanded(child: ListenMeaning(verse: verse.verse)),
-                  FilledButton.tonal(
-                    onPressed: onRead,
-                    style: FilledButton.styleFrom(
-                      backgroundColor: SadhanaColors.greenTint,
-                      foregroundColor: SadhanaColors.green,
-                      padding: const EdgeInsets.fromLTRB(18, 12, 10, 12),
-                    ),
-                    child: const Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text('Read Full Verse', style: TextStyle(fontSize: 15)),
-                        SizedBox(width: 4),
-                        Icon(Icons.chevron_right, size: 20),
-                      ],
-                    ),
+              // One under the other. Side by side, the two of them squeezed
+              // the listen row until it broke a word across every line.
+              ListenMeaning(
+                verse: verse.verse,
+                // The explanation is not on this card, so the switch that
+                // reads it aloud belongs with it in the reader.
+                offerExplanation: false,
+              ),
+              const SizedBox(height: 14),
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton.tonal(
+                  onPressed: onRead,
+                  style: FilledButton.styleFrom(
+                    backgroundColor: SadhanaColors.greenTint,
+                    foregroundColor: SadhanaColors.green,
+                    padding: const EdgeInsets.symmetric(vertical: 14),
                   ),
-                ],
+                  child: const Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('Read Full Verse', style: TextStyle(fontSize: 15)),
+                      SizedBox(width: 4),
+                      Icon(Icons.chevron_right, size: 20),
+                    ],
+                  ),
+                ),
               ),
             ],
           ],

@@ -57,7 +57,9 @@ class ProfileScreen extends StatelessWidget {
         ListTile(
           leading: const Icon(Icons.translate_outlined),
           title: const Text('Reading language'),
-          subtitle: Text(ReadingLanguage.instance.language.name),
+          // Through the scope, not the singleton: read directly, this row kept
+          // showing the language that was set when it was first drawn.
+          subtitle: Text(ReadingLanguageScope.of(context).language.name),
           onTap: () async {
             await Navigator.of(context).push(
               MaterialPageRoute<void>(builder: (_) => const LanguageScreen()),

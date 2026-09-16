@@ -40,9 +40,21 @@ Future<SpokenChoice?> spokenVerse(
 /// from its transliteration was tried and was not worth offering. The meaning
 /// is a different matter, and a phone reads it perfectly well.
 class ListenMeaning extends StatefulWidget {
-  const ListenMeaning({super.key, required this.verse, this.onBeforePlay});
+  const ListenMeaning({
+    super.key,
+    required this.verse,
+    this.onBeforePlay,
+    this.offerExplanation = true,
+  });
 
   final PassageView verse;
+
+  /// Whether to offer the toggle that reads the explanation too.
+  ///
+  /// Off where the explanation itself is not on screen: a card showing one
+  /// verse has no room for it, and a switch over something invisible is a
+  /// puzzle rather than a choice.
+  final bool offerExplanation;
 
   /// Called before this verse is read, so a reader that is reading straight
   /// through can stand down rather than compete for the voice.
@@ -55,12 +67,32 @@ class ListenMeaning extends StatefulWidget {
 class _ListenMeaningState extends State<ListenMeaning> {
   SpokenChoice? _choice;
 
+  /// What the choice was made for, so a setting changed elsewhere — the
+  /// language, or the explanation switched off in Settings — is picked up
+  /// rather than leaving a stale line about reading something it no longer
+  /// will.
+  ({String language, bool explanation})? _madeFor;
+
+  /// Counts the choices asked for, so a slow answer cannot land on top of a
+  /// newer one.
+  var _asked = 0;
+
   /// Whether this verse has an explanation to add at all.
-  bool get _hasExplanation => widget.verse.explanations.isNotEmpty;
+  bool get _hasExplanation =>
+      widget.offerExplanation && widget.verse.explanations.isNotEmpty;
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Registers this widget with the reading language, so it is called again
+    // whenever that changes.
+    final reading = ReadingLanguageScope.of(context);
+    final now = (
+      language: reading.language.code,
+      explanation: reading.withExplanation,
+    );
+    if (_madeFor == now) return;
+    _madeFor = now;
     _pick();
   }
 
@@ -74,8 +106,11 @@ class _ListenMeaningState extends State<ListenMeaning> {
   /// because listing the installed voices touches the platform.
   Future<void> _pick() async {
     final reading = ReadingLanguageScope.of(context);
+    final asked = ++_asked;
     final choice = await spokenVerse(widget.verse, reading);
-    if (mounted) setState(() => _choice = choice);
+    // Two changes in quick succession leave two of these in flight, and the
+    // slower one must not overwrite the newer answer.
+    if (mounted && asked == _asked) setState(() => _choice = choice);
   }
 
   Future<void> _tap(bool speaking) async {
@@ -133,6 +168,8 @@ class _ListenMeaningState extends State<ListenMeaning> {
                     ),
                     Text(
                       '${choice.description}, this verse only',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         fontSize: 13,
                         color: SadhanaColors.inkSoft,
@@ -146,10 +183,9 @@ class _ListenMeaningState extends State<ListenMeaning> {
               if (_hasExplanation)
                 _WithExplanation(
                   on: reading.withExplanation,
-                  onChanged: (on) {
-                    reading.withExplanation = on;
-                    _pick();
-                  },
+                  // Setting it is enough: the change comes back round through
+                  // the scope, which is also how Settings reaches this row.
+                  onChanged: (on) => reading.withExplanation = on,
                 ),
             ],
           ),

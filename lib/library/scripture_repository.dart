@@ -173,10 +173,48 @@ class PassageView {
     return [for (final note in notes) note.text];
   }
 
+  /// The language [notesFor] settles on, so the reader can be told when it is
+  /// not the one they asked for.
+  String? noteLanguageOf(List<NoteView> notes, List<String> languages) {
+    for (final language in languages) {
+      if (notes.any((note) => note.language == language)) return language;
+    }
+    return notes.isEmpty ? null : notes.first.language;
+  }
+
   /// Which languages this passage has notes in.
   Set<String> noteLanguages(List<NoteView> notes) => {
     for (final note in notes) note.language,
   };
+}
+
+/// When the day's verse turns over: five in the morning, the device's own
+/// local time.
+///
+/// Not midnight. Someone still reading at one in the morning is having last
+/// night, not this morning, and a verse that changes under them mid-sitting
+/// reads as a bug. Five is before anyone is up for it.
+const dayStartsAtHour = 5;
+
+/// Which day's verse to show at [when], in local time.
+DateTime scriptureDay(DateTime when) {
+  final local = when.isUtc ? when.toLocal() : when;
+  final day = DateTime(local.year, local.month, local.day);
+  return local.hour < dayStartsAtHour
+      ? day.subtract(const Duration(days: 1))
+      : day;
+}
+
+/// When the verse next changes, so a phone left open overnight turns the page
+/// itself rather than showing yesterday's until it is reopened.
+DateTime nextScriptureDay(DateTime when) {
+  final local = when.isUtc ? when.toLocal() : when;
+  final today = DateTime(local.year, local.month, local.day, dayStartsAtHour);
+  // DateTime arithmetic over a day boundary, so the hour survives a clock
+  // change: adding 24 hours to a DST morning would not.
+  return today.isAfter(local)
+      ? today
+      : DateTime(local.year, local.month, local.day + 1, dayStartsAtHour);
 }
 
 /// A verse with the work and section it belongs to.
@@ -198,7 +236,11 @@ class ScriptureRepository {
   final PackStore store;
 
   /// A verse picked at random from every installed work, the same all day.
-  VerseOfTheDay? verseOfTheDay(DateTime day) {
+  ///
+  /// [when] is the device's own local time; the day it belongs to is decided
+  /// by [scriptureDay].
+  VerseOfTheDay? verseOfTheDay(DateTime when) {
+    final day = scriptureDay(when);
     final candidates = works().where((w) => w.verseCount > 0).toList();
     final total = candidates.fold(0, (n, w) => n + w.verseCount);
     if (total == 0) return null;

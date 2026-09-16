@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -48,12 +50,31 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
   /// The translation being written on this phone, if any.
   _Translating? _translating;
 
+  /// The explanation being rendered into another language, if any.
+  _Translating? _explaining;
+
   /// Whether the reader is being read to, verse after verse.
   var _continuous = false;
 
   /// The language last asked for, by verse. Someone who asks for Tamil means
   /// to read Tamil, whatever their usual language is.
   final _justTranslated = <String, String>{};
+
+  /// The reading language, kept so the work running ahead can follow it
+  /// across the awaits where there is no context to ask.
+  ReadingLanguage? _reading;
+
+  /// Work that came back unusable, so running ahead does not spend the next
+  /// hour failing at the same verse.
+  final _refused = <String>{};
+
+  /// The run working ahead of the reader, while there is one.
+  Future<void>? _ahead;
+
+  /// The wait between page turn and background work, held so that leaving the
+  /// reader ends it rather than leaving a timer running over a dead screen.
+  Timer? _settle;
+  Completer<void>? _settling;
 
   @override
   void initState() {
@@ -65,11 +86,95 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
     _index = at < 0 ? 0 : at;
     _pages = PageController(initialPage: _index);
     _syncVerse();
+    // The model is usually still loading when the reader opens. Start the
+    // moment it can answer rather than waiting for the next page turn.
+    Assistant.instance.state.addListener(_keepAhead);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final reading = ReadingLanguageScope.of(context);
+    if (identical(reading, _reading)) return _keepAhead();
+    _reading = reading;
+    // A language just chosen is a language to start filling in.
+    _keepAhead();
+  }
+
+  /// How far ahead of the reader to work.
+  ///
+  /// Two pages: far enough that paging on finds the next verse already done,
+  /// near enough that a reader who stops has not set the phone translating
+  /// the rest of the chapter.
+  static const _lookAhead = 2;
+
+  /// Translates what the reader is about to reach, one piece at a time.
+  ///
+  /// Nothing here is asked for: a reader who has chosen a language means to
+  /// read in it, and being shown the English while a button offers to fix it
+  /// is a worse answer than simply having it ready. It runs only when the
+  /// model is already installed and loaded — this never starts a download —
+  /// and everything it produces is stored, so a verse is translated once on
+  /// this phone and never again.
+  void _keepAhead() {
+    if (_ahead != null) return;
+    _ahead = _runAhead().whenComplete(() => _ahead = null);
+  }
+
+  Future<void> _runAhead() async {
+    // Let the page settle first: the reader is paging, and the first frames
+    // matter more than the work behind them.
+    await _pause(const Duration(milliseconds: 600));
+    while (mounted) {
+      final job = _nextAhead();
+      if (job == null) return;
+      final done = job.note
+          ? await _explain(job.verse, job.language, automatic: true)
+          : await _translate(job.verse, job.language, automatic: true);
+      if (!done) _refused.add(_jobKey(job.verse.ref, job.language, job.note));
+    }
+  }
+
+  /// Waits, and gives up waiting the moment the reader is gone.
+  Future<void> _pause(Duration wait) {
+    final waited = _settling = Completer<void>();
+    _settle = Timer(wait, () {
+      if (!waited.isCompleted) waited.complete();
+    });
+    return waited.future;
+  }
+
+  String _jobKey(String ref, TargetLanguage language, bool note) =>
+      '$ref/${language.code}/${note ? 'note' : 'text'}';
+
+  /// The next thing worth translating, nearest the reader first: each verse's
+  /// meaning before its explanation, since that is what is read.
+  ({PassageView verse, TargetLanguage language, bool note})? _nextAhead() {
+    final language = _reading?.language;
+    if (language == null) return null;
+    if (!Assistant.instance.state.value.canAnswer) return null;
+    for (var i = _index; i <= _index + _lookAhead && i < _verses.length; i++) {
+      final verse = _verses[i];
+      for (final note in const [false, true]) {
+        if (_refused.contains(_jobKey(verse.ref, language, note))) continue;
+        final has = note
+            ? verse.noteLanguages(verse.explanations)
+            : {for (final t in verse.translations) t.language};
+        if (has.contains(language.code)) continue;
+        // An explanation can only be rendered from one somebody wrote.
+        if (note && _packNotes(verse).isEmpty) continue;
+        return (verse: verse, language: language, note: note);
+      }
+    }
+    return null;
   }
 
   @override
   void dispose() {
     _continuous = false;
+    _settle?.cancel();
+    if (_settling?.isCompleted == false) _settling?.complete();
+    Assistant.instance.state.removeListener(_keepAhead);
     VerseSpeech.instance.stop();
     _pages.dispose();
     super.dispose();
@@ -298,22 +403,142 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
     );
   }
 
+  /// Whether the model can answer, sending the reader to set it up if not.
+  ///
+  /// The download is large and never starts on its own, so asking for work the
+  /// phone cannot do yet leads to the setup screen rather than an error — but
+  /// only when the reader asked. Work running ahead of them gives up quietly
+  /// instead: it was never requested, and a screen nobody asked for is worse
+  /// than a verse that stays in the language the pack shipped.
+  Future<bool> _assistantReady(Assistant assistant, {required bool automatic}) async {
+    if (assistant.state.value.phase == AssistantPhase.unknown) {
+      await assistant.refresh();
+    }
+    if (!mounted) return false;
+    if (assistant.state.value.canAnswer) return true;
+    if (automatic) return false;
+    await Navigator.of(
+      context,
+    ).push(MaterialPageRoute<void>(builder: (_) => const AssistantScreen()));
+    return false;
+  }
+
+  /// The explanations the pack itself carries, by language, ready to render
+  /// from. One of this phone's own would be a translation of a translation,
+  /// twice removed from the person who wrote it.
+  Map<String, String> _packNotes(PassageView verse) {
+    final published = <String, String>{};
+    for (final note in verse.explanations) {
+      if (note.onThisPhone) continue;
+      published[note.language] = [
+        ?published[note.language],
+        note.text,
+      ].join('\n\n');
+    }
+    return published;
+  }
+
+  /// Renders this verse's explanation into another language, on this phone.
+  ///
+  /// It translates an explanation the pack carries; it never writes one. An
+  /// explanation this app invented would be the model commenting on scripture
+  /// from memory, which is exactly what it does not do.
+  Future<bool> _explain(
+    PassageView verse,
+    TargetLanguage language, {
+    bool automatic = false,
+  }) async {
+    final assistant = Assistant.instance;
+    if (!await _assistantReady(assistant, automatic: automatic)) return false;
+
+    final source = chooseNoteSource(
+      target: language,
+      available: _packNotes(verse),
+    );
+    if (source == null) return false;
+
+    setState(
+      () => _explaining = _Translating(
+        ref: verse.ref,
+        language: language,
+        source: source,
+      ),
+    );
+    try {
+      var text = '';
+      await for (final progress in translateNoteStream(
+        assistant,
+        note: source.text,
+        from: source.languageName,
+        language: language,
+        about: [
+          widget.work.title,
+          if (widget.section.number case final number?) 'Chapter $number',
+          'verse ${verse.label ?? verse.ref}',
+        ].join(', '),
+      )) {
+        text = progress.text;
+        if (!mounted) return false;
+        setState(
+          () => _explaining = _explaining?.with_(
+            text: progress.text,
+            thinking: progress.thinking,
+          ),
+        );
+      }
+      widget.repository.store.saveLocalNote(
+        LocalTranslation(
+          packId: widget.work.pack.packId,
+          workSlug: widget.work.slug,
+          ref: verse.ref,
+          language: language.code,
+          text: text,
+          model: '${assistant.model.fileName} via ${source.languageCode}',
+          createdAt: DateTime.now().toUtc(),
+        ),
+      );
+      if (!mounted) return true;
+      setState(
+        () => _verses = widget.repository.verses(widget.work, widget.section),
+      );
+      return true;
+    } on Exception catch (e) {
+      if (!mounted) return false;
+      // Work nobody asked for fails quietly; the verse simply stays in the
+      // language it was already in.
+      if (!automatic) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              e is TranslationRejected
+                  ? e.message
+                  : 'The explanation did not finish. Try again.',
+            ),
+          ),
+        );
+      }
+      return false;
+    } finally {
+      if (mounted) setState(() => _explaining = null);
+    }
+  }
+
   /// Translates a verse on this phone, once the reader has asked for it.
   ///
   /// With no model installed this leads to the setup screen instead: the
   /// download is large and never starts on its own.
-  Future<void> _translate(PassageView verse, TargetLanguage language) async {
+  Future<bool> _translate(
+    PassageView verse,
+    TargetLanguage language, {
+    bool automatic = false,
+  }) async {
+    // The pack's own rendering stands. Re-doing it here would replace a vetted
+    // translation with a weaker one, and the reader did not ask for that —
+    // they asked for a language they could not read the verse in. Guarded here
+    // as well as in the buttons, so no path into this screen can start one.
+    if (_fromPack(verse).contains(language.code)) return false;
     final assistant = Assistant.instance;
-    if (assistant.state.value.phase == AssistantPhase.unknown) {
-      await assistant.refresh();
-    }
-    if (!mounted) return;
-    if (!assistant.state.value.canAnswer) {
-      await Navigator.of(
-        context,
-      ).push(MaterialPageRoute<void>(builder: (_) => const AssistantScreen()));
-      return;
-    }
+    if (!await _assistantReady(assistant, automatic: automatic)) return false;
 
     // Measured on a phone: going from a translation someone already made
     // beats going from the Sanskrit, in both directions
@@ -349,7 +574,7 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
             : const VerseContext(),
       )) {
         text = progress.text;
-        if (!mounted) return;
+        if (!mounted) return false;
         // Only the final value has been checked, so what is shown while it
         // runs is never stored.
         setState(
@@ -375,22 +600,28 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
           createdAt: DateTime.now().toUtc(),
         ),
       );
-      if (!mounted) return;
+      if (!mounted) return true;
       setState(() {
-        _justTranslated[verse.ref] = language.code;
+        // Only when they asked: a verse filled in ahead of the reader should
+        // still follow their own language when they reach it.
+        if (!automatic) _justTranslated[verse.ref] = language.code;
         _verses = widget.repository.verses(widget.work, widget.section);
       });
+      return true;
     } on Exception catch (e) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            e is TranslationRejected
-                ? e.message
-                : 'The translation did not finish. Try again.',
+      if (!mounted) return false;
+      if (!automatic) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              e is TranslationRejected
+                  ? e.message
+                  : 'The translation did not finish. Try again.',
+            ),
           ),
-        ),
-      );
+        );
+      }
+      return false;
     } finally {
       if (mounted) setState(() => _translating = null);
     }
@@ -463,10 +694,14 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
                         : PageView.builder(
                             controller: _pages,
                             itemCount: _verses.length,
-                            onPageChanged: (index) => setState(() {
-                              _index = index;
-                              _syncVerse();
-                            }),
+                            onPageChanged: (index) {
+                              setState(() {
+                                _index = index;
+                                _syncVerse();
+                              });
+                              // Keep the work ahead of where they now are.
+                              _keepAhead();
+                            },
                             itemBuilder: (context, i) => _VersePage(
                               verse: _verses[i],
                               show: _show,
@@ -476,6 +711,11 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
                                   : null,
                               onTranslate: (language) =>
                                   _translate(_verses[i], language),
+                              explaining: _explaining?.ref == _verses[i].ref
+                                  ? _explaining
+                                  : null,
+                              onExplain: (language) =>
+                                  _explain(_verses[i], language),
                               onBeforePlay: _stopReading,
                             ),
                           ),
@@ -669,6 +909,8 @@ class _VersePage extends StatelessWidget {
     required this.prefer,
     required this.translating,
     required this.onTranslate,
+    required this.explaining,
+    required this.onExplain,
     required this.onBeforePlay,
   });
 
@@ -683,6 +925,10 @@ class _VersePage extends StatelessWidget {
   final _Translating? translating;
   final void Function(TargetLanguage language) onTranslate;
 
+  /// Set while this verse's explanation is the one being rendered.
+  final _Translating? explaining;
+  final void Function(TargetLanguage language) onExplain;
+
   /// Lets reading-straight-through stand down when one verse is asked for.
   final Future<void> Function() onBeforePlay;
 
@@ -692,6 +938,10 @@ class _VersePage extends StatelessWidget {
     final preference = ReadingLanguageScope.of(context).preference;
     // One language's notes, not every language's at once.
     final explanations = verse.notesFor(verse.explanations, preference);
+    final explanationLanguage = verse.noteLanguageOf(
+      verse.explanations,
+      preference,
+    );
     final takeaways = verse.notesFor(verse.takeaways, preference);
     final translation = verse.translationFor([
       ?prefer,
@@ -815,6 +1065,17 @@ class _VersePage extends StatelessWidget {
           const SizedBox(height: 22),
           _SectionLabel('Explanation'),
           const SizedBox(height: 8),
+          // Say which language this is when it is not the one asked for, for
+          // the same reason the meaning does: a silent fallback looks like the
+          // setting having done nothing.
+          if (explanationLanguage != null &&
+              explanationLanguage != reading.code) ...[
+            _Missing(
+              'No ${reading.name} explanation yet — showing '
+              '${languageName(explanationLanguage)}.',
+            ),
+            const SizedBox(height: 8),
+          ],
           for (final explanation in explanations)
             Padding(
               padding: const EdgeInsets.only(bottom: 10),
@@ -827,6 +1088,11 @@ class _VersePage extends StatelessWidget {
                 ),
               ),
             ),
+          _ExplainOnPhone(
+            verse: verse,
+            explaining: explaining,
+            onExplain: onExplain,
+          ),
         ],
         if (takeaways.isNotEmpty) ...[
           const SizedBox(height: 14),
@@ -959,15 +1225,7 @@ class _TranslateOnPhone extends StatelessWidget {
       );
     }
 
-    // Whatever the pack carries counts as covered, machine-made or not: the
-    // publisher shipped it, and re-translating it here would replace a vetted
-    // rendering with a weaker one. Only what this phone made is redoable —
-    // that one can be wrong, and the reader needs the button that made it
-    // rather than a dead end.
-    final fromPack = {
-      for (final translation in verse.translations)
-        if (!translation.onThisPhone) translation.language,
-    };
+    final fromPack = _fromPack(verse);
     // The reader's own language leads; English and Hindi follow because packs
     // usually carry them. Every other language is behind "More languages", so
     // the row stays a row rather than becoming a menu.
@@ -1041,13 +1299,123 @@ class _TranslateOnPhone extends StatelessWidget {
   }
 }
 
-/// Every language the app can be asked for, with what the verse already has
-/// marked so the reader is not offered work that is already done.
+/// Offers the explanation in a language the pack does not carry it in.
+///
+/// Only ever a rendering of an explanation somebody wrote — the model is never
+/// asked to explain a verse itself. As with the meaning, whatever the pack
+/// ships counts as covered, and only this phone's own work can be redone.
+class _ExplainOnPhone extends StatelessWidget {
+  const _ExplainOnPhone({
+    required this.verse,
+    required this.explaining,
+    required this.onExplain,
+  });
+
+  final PassageView verse;
+  final _Translating? explaining;
+  final void Function(TargetLanguage language) onExplain;
+
+  @override
+  Widget build(BuildContext context) {
+    if (explaining case final live?) {
+      return Padding(
+        padding: const EdgeInsets.only(top: 6, bottom: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const SizedBox(
+                  width: 14,
+                  height: 14,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                ),
+                const SizedBox(width: 10),
+                Flexible(
+                  child: Text(
+                    'Putting the explanation into ${live.language.name}, '
+                    'from the ${live.source.languageName}…',
+                    style: const TextStyle(
+                      fontSize: 13,
+                      color: SadhanaColors.inkSoft,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            if (live.text.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Text(
+                  live.text,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    height: 1.55,
+                    color: SadhanaColors.ink,
+                  ),
+                ),
+              ),
+          ],
+        ),
+      );
+    }
+
+    final fromPack = {
+      for (final note in verse.explanations)
+        if (!note.onThisPhone) note.language,
+    };
+    // Nothing shipped means nothing to render from: this is a translator, not
+    // a commentator.
+    if (fromPack.isEmpty) return const SizedBox.shrink();
+
+    final reading = ReadingLanguageScope.of(context).language;
+    final already = verse.noteLanguages(verse.explanations);
+    // Only the reader's own language is offered here. Anything else would be
+    // asking which language they want an explanation they cannot read in.
+    if (fromPack.contains(reading.code)) return const SizedBox.shrink();
+
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: TextButton.icon(
+        key: const ValueKey('explain-here'),
+        onPressed: () => onExplain(reading),
+        icon: const Icon(Icons.auto_awesome_outlined, size: 16),
+        label: Text(
+          already.contains(reading.code)
+              ? 'Explain again in ${reading.name}'
+              : 'Explain in ${reading.name} on this phone',
+        ),
+        style: TextButton.styleFrom(
+          foregroundColor: SadhanaColors.green,
+          visualDensity: VisualDensity.compact,
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+        ),
+      ),
+    );
+  }
+}
+
+/// Whatever the pack carries counts as covered, machine-made or not: the
+/// publisher shipped it, and re-translating it here would replace a vetted
+/// rendering with a weaker one. Only what this phone made is redoable — that
+/// one can be wrong, and the reader needs the button that made it rather than
+/// a dead end.
+Set<String> _fromPack(PassageView verse) => {
+  for (final translation in verse.translations)
+    if (!translation.onThisPhone) translation.language,
+};
+
+/// Every language the app can be asked for, with the ones the pack already
+/// carries greyed out rather than merely ticked.
+///
+/// A tick beside a language still reads as a button, and it was: this sheet
+/// was the one way left to start a translation the pack had already shipped.
 Future<void> _pickLanguage(
   BuildContext context,
   PassageView verse,
   void Function(TargetLanguage language) onTranslate,
 ) async {
+  final fromPack = _fromPack(verse);
   final chosen = await showModalBottomSheet<TargetLanguage>(
     context: context,
     backgroundColor: SadhanaColors.surface,
@@ -1067,8 +1435,11 @@ Future<void> _pickLanguage(
           for (final language in TargetLanguage.all)
             ListTile(
               key: ValueKey('sheet-${language.code}'),
+              enabled: !fromPack.contains(language.code),
               title: Text(language.name),
-              subtitle: language.endonym == language.name
+              subtitle: fromPack.contains(language.code)
+                  ? const Text('Already in this book')
+                  : language.endonym == language.name
                   ? null
                   : Text(language.endonym),
               trailing: verse.hasTranslationIn(language.code)
