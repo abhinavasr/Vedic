@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import '../ai/reading_languages.dart';
+import '../ai/translation.dart';
 import '../audio/listen_player.dart';
 import '../audio/speech.dart';
 import '../library/scripture_repository.dart';
@@ -36,41 +37,38 @@ Future<List<ListenSegment>> listenSegments(
   ReadingLanguage reading,
 ) async {
   final mix = reading.mix;
+  final here = reading.language.code;
   final segments = <ListenSegment>[];
 
+  // The chant has no language to choose: it is a recording of the Sanskrit.
   if (mix.chant) {
     final file = await ChantSource.instance.find(verse);
     if (file != null) segments.add(ChantSegment(file));
   }
-  if (!mix.meaning && !mix.explanation) return segments;
 
-  final choice = await VerseSpeech.instance.chooseForMeaning(
-    available: {
-      for (final translation in verse.translations)
-        translation.language: translation.text,
-    },
-    preferred: reading.language.code,
-  );
-  if (choice == null) return segments;
-  if (mix.meaning) segments.add(SpokenSegment(choice));
+  if (mix.meaning) {
+    final choice = await VerseSpeech.instance.chooseForMeaning(
+      available: {
+        for (final translation in verse.translations)
+          translation.language: translation.text,
+      },
+      preferred: mix.meaningIn(here),
+    );
+    if (choice != null) segments.add(SpokenSegment(choice));
+  }
+
   if (mix.explanation) {
-    // Read in the same language as the meaning, so one voice is never asked
-    // to read two languages in a row.
-    final explanation = verse
-        .notesFor(verse.explanations, [choice.languageCode])
-        .join(' ');
-    if (explanation.isNotEmpty) {
-      segments.add(
-        SpokenSegment(
-          SpokenChoice(
-            text: explanation,
-            locale: choice.locale,
-            languageCode: choice.languageCode,
-            description: choice.description,
-          ),
-        ),
-      );
-    }
+    final wanted = mix.explanationIn(here);
+    // The explanation is chosen the same way the meaning is, so a language
+    // the phone cannot speak falls back rather than going silent.
+    final choice = await VerseSpeech.instance.chooseForMeaning(
+      available: {
+        for (final language in verse.noteLanguages(verse.explanations))
+          language: verse.notesFor(verse.explanations, [language]).join(' '),
+      },
+      preferred: wanted,
+    );
+    if (choice != null) segments.add(SpokenSegment(choice));
   }
   return segments;
 }
@@ -220,7 +218,10 @@ class _ListenControlState extends State<ListenControl> {
                           ),
                         ),
                         Text(
-                          mix.describe(language: _spokenLanguage),
+                          mix.describe(
+                            reading: reading.language.code,
+                            nameOf: languageName,
+                          ),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(

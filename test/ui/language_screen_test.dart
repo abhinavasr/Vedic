@@ -81,7 +81,7 @@ void main() {
     // restart. It is now one of the three things a verse can be played as.
     final settings = _MemorySettings();
     final reading = ReadingLanguage(settings)..withExplanation = true;
-    expect(settings.values['reading.listenMix'], 'me');
+    expect(settings.values['reading.listenMix'], 'm,e');
     expect(ReadingLanguage(settings).withExplanation, isTrue);
 
     reading.withExplanation = false;

@@ -47,28 +47,70 @@ void main() {
   test('turning everything off is a state, not a crash', () {
     const nothing = ListenMix(meaning: false);
     expect(nothing.isSilent, isTrue);
-    expect(nothing.describe(), 'Nothing selected');
+    expect(
+      nothing.describe(reading: 'en', nameOf: (c) => c),
+      'Nothing selected',
+    );
     expect(ListenMix.parse(''), nothing);
   });
 
   test('it says what is about to be played, in the order it plays', () {
+    String name(String code) => switch (code) {
+      'hi' => 'Hindi',
+      'en' => 'English',
+      _ => code,
+    };
+    String describe(ListenMix mix) =>
+        mix.describe(reading: 'hi', nameOf: name);
+
+    // One language for both reads as a sentence, not a specification.
     expect(
-      const ListenMix(chant: true, meaning: true, explanation: true)
-          .describe(language: 'Hindi'),
-      'The chant, the meaning in Hindi and the explanation in Hindi',
+      describe(const ListenMix(chant: true, meaning: true, explanation: true)),
+      'The chant and the meaning and the explanation in Hindi',
     );
+    expect(describe(const ListenMix(chant: true, meaning: false)), 'The chant');
+    // Two languages are worth saying twice, because that is the point of
+    // being able to choose them separately.
     expect(
-      const ListenMix(chant: true, meaning: false).describe(),
-      'The chant',
-    );
-    expect(
-      const ListenMix(meaning: true, explanation: true).describe(),
-      'The meaning and the explanation',
+      describe(
+        const ListenMix(
+          meaning: true,
+          explanation: true,
+          explanationLanguage: 'en',
+        ),
+      ),
+      'The meaning in Hindi and the explanation in English',
     );
   });
 
+  test('each clip carries its own language, and the chant carries none', () {
+    const mix = ListenMix(
+      chant: true,
+      meaning: true,
+      explanation: true,
+      meaningLanguage: 'hi',
+      explanationLanguage: 'en',
+    );
+    expect(mix.meaningIn('ta'), 'hi');
+    expect(mix.explanationIn('ta'), 'en');
+    expect(ListenMix.parse(mix.code), mix);
+  });
+
+  test('a clip with no language of its own follows the app', () {
+    const mix = ListenMix(meaning: true, explanation: true);
+    expect(mix.meaningIn('bn'), 'bn');
+    expect(mix.explanationIn('bn'), 'bn');
+    // And an explanation with none follows the meaning, not the app.
+    const chosen = ListenMix(
+      meaning: true,
+      explanation: true,
+      meaningLanguage: 'en',
+    );
+    expect(chosen.explanationIn('bn'), 'en');
+  });
+
   test('a setting written by a newer version is not half-read', () {
-    expect(ListenMix.parse('cmx'), isNull);
+    expect(ListenMix.parse('c,m,x'), isNull);
     expect(ListenMix.parse(null), isNull);
   });
 
@@ -79,7 +121,7 @@ void main() {
       meaning: false,
       explanation: true,
     );
-    expect(settings.values['reading.listenMix'], 'ce');
+    expect(settings.values['reading.listenMix'], 'c,e');
     expect(ReadingLanguage(settings).mix.chant, isTrue);
     expect(ReadingLanguage(settings).mix.meaning, isFalse);
   });

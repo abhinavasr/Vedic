@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../library/scripture_repository.dart';
-import '../ai/reading_languages.dart';
 import 'bookmarks_screen.dart';
 import 'home/home_screen.dart';
-import 'reader_screens.dart';
+import 'listen_screen.dart';
 import 'library_screen.dart';
 import 'meditation_screen.dart';
 import 'simple_screens.dart';
@@ -31,25 +30,31 @@ class _SadhanaShellState extends State<SadhanaShell> {
     if (tab == 2) _bookmarkVisits++;
   });
 
-  /// Opens the reader where the reader left off, with the chant switched on.
+  /// Opens the listening player where the listener left off.
   ///
-  /// Someone who taps Listen has said what they want to hear, so the mix is
-  /// set for them rather than left for them to find — the meaning stays on
-  /// beside it, which is what the tile has always promised.
+  /// A destination of its own rather than the reader with a chip set: nothing
+  /// to read, nothing to scroll, and it keeps going by itself.
   void _openChants() {
-    final reading = ReadingLanguageScope.of(context);
-    reading.mix = reading.mix.with_(chant: true);
     final work = widget.repository.works().firstOrNull;
     if (work == null) return;
     final mark = widget.repository.store.lastRead(work.pack.packId, work.slug);
-    final section = mark == null
-        ? widget.repository.sections(work).firstOrNull
-        : widget.repository.sections(work).where(
-            (s) => s.number == mark.split('.').first,
-          ).firstOrNull ??
-              widget.repository.sections(work).firstOrNull;
+    final sections = widget.repository.sections(work);
+    final section =
+        sections
+            .where((s) => s.number == mark?.split('.').first)
+            .firstOrNull ??
+        sections.firstOrNull;
     if (section == null) return;
-    openSection(context, widget.repository, work, section, atRef: mark);
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => ListenScreen(
+          repository: widget.repository,
+          work: work,
+          section: section,
+          startAt: mark,
+        ),
+      ),
+    );
   }
 
   void _openSettings() =>

@@ -10,12 +10,16 @@ import 'translation.dart';
 /// from it would launder a guess into a second language.
 VerseContext verseContext({
   required String workTitle,
-  required SectionSummary section,
+  required SectionSummary? section,
   required PassageView verse,
   PassageView? previous,
 }) => VerseContext(
   work: workTitle,
-  chapter: section.number == null ? section.title : 'Chapter ${section.number}',
+  chapter: switch (section) {
+    null => null,
+    SectionSummary(number: null, :final title) => title,
+    SectionSummary(:final number) => 'Chapter $number',
+  },
   speaker: verse.speaker,
   // The pack's own transliteration where there is one; otherwise the app's,
   // which is a mechanical mapping rather than anybody's reading.
