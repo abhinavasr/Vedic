@@ -2,7 +2,7 @@
   "format": "vedic-pack",
   "format_version": 1,
   "pack_id": "bhagavad-gita.sa",
-  "revision": 19,
+  "revision": 20,
   "kind": "text",
   "schema_version": 1,
   "min_app_build": 1,
@@ -18,13 +18,13 @@
   ],
   "payload": {
     "file": "payload.bin",
-    "size": 375653,
-    "sha256": "b3d8236e40a4b9391881e683c03c8123a2db263a4b75c0031bc95919385867be",
+    "size": 375689,
+    "sha256": "94f231b49cf3f10ed91b6e4e796b2835a29db873a07624b24d93c825fe04809b",
     "compression": "deflate",
     "encryption": "none",
     "key_delivery": "none",
-    "plaintext_size": 1691331,
-    "plaintext_sha256": "86cb44ef60fa013d1131512b3a23e05621aa1b231c71795ad60028ff24f086fb"
+    "plaintext_size": 1691383,
+    "plaintext_sha256": "f5d5c205fba6db4b550fa4911308067b76cf5ee73994c04f1862e3a4f38d3258"
   },
   "licences": [
     {

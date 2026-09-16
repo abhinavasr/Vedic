@@ -601,7 +601,7 @@ class _VersePage extends StatelessWidget {
                 const SizedBox(height: 16),
                 const Divider(height: 1, color: SadhanaColors.line),
                 const SizedBox(height: 12),
-                _ListenChant(verse: verse),
+                _ListenMeaning(verse: verse),
               ],
             ),
           ),
@@ -966,22 +966,22 @@ class _Chip extends StatelessWidget {
   );
 }
 
-/// Sounds the verse out.
+/// Reads the verse's meaning aloud.
 ///
-/// No pack carries a recorded chant yet, so this is the phone's own voice
-/// reading the phonetic. That is a different thing from a chant and the
-/// control says so; when a pack brings a recording, the recording takes this
-/// place.
-class _ListenChant extends StatefulWidget {
-  const _ListenChant({required this.verse});
+/// There is no chant here. A chant has to be a recording by someone who knows
+/// the text, and no pack carries one yet; a phone sounding the Sanskrit out
+/// from its transliteration was tried and was not worth offering. The meaning
+/// is a different matter, and a phone reads it perfectly well.
+class _ListenMeaning extends StatefulWidget {
+  const _ListenMeaning({required this.verse});
 
   final PassageView verse;
 
   @override
-  State<_ListenChant> createState() => _ListenChantState();
+  State<_ListenMeaning> createState() => _ListenMeaningState();
 }
 
-class _ListenChantState extends State<_ListenChant> {
+class _ListenMeaningState extends State<_ListenMeaning> {
   SpokenChoice? _choice;
 
   @override
@@ -991,7 +991,7 @@ class _ListenChantState extends State<_ListenChant> {
   }
 
   @override
-  void didUpdateWidget(_ListenChant old) {
+  void didUpdateWidget(_ListenMeaning old) {
     super.didUpdateWidget(old);
     if (old.verse.ref != widget.verse.ref) _pick();
   }
@@ -999,9 +999,12 @@ class _ListenChantState extends State<_ListenChant> {
   /// Which language this phone can read this verse in. Asked once per verse,
   /// because listing the installed voices touches the platform.
   Future<void> _pick() async {
-    final choice = await VerseSpeech.instance.chooseForChant(
-      verse: widget.verse.text,
-      transliteration: widget.verse.transliteration,
+    final choice = await VerseSpeech.instance.chooseForMeaning(
+      available: {
+        for (final translation in widget.verse.translations)
+          translation.language: translation.text,
+      },
+      preferred: ReadingLanguage.instance.language.code,
     );
     if (mounted) setState(() => _choice = choice);
   }
@@ -1022,62 +1025,53 @@ class _ListenChantState extends State<_ListenChant> {
   }
 
   @override
-  Widget build(BuildContext context) => ValueListenableBuilder<String?>(
-    valueListenable: VerseSpeech.instance.speaking,
-    builder: (context, ref, _) {
-      final speaking = ref == widget.verse.ref;
-      final choice = _choice;
-      return InkWell(
-        borderRadius: BorderRadius.circular(28),
-        onTap: choice == null
-            ? () => ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text(
-                    'This phone has no voice for the languages this verse is '
-                    'in, and no chant is installed.',
-                  ),
+  Widget build(BuildContext context) {
+    final choice = _choice;
+    if (choice == null) return const SizedBox.shrink();
+    return ValueListenableBuilder<String?>(
+      valueListenable: VerseSpeech.instance.speaking,
+      builder: (context, ref, _) {
+        final speaking = ref == widget.verse.ref;
+        return InkWell(
+          borderRadius: BorderRadius.circular(28),
+          onTap: () => _tap(speaking),
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 22,
+                backgroundColor: SadhanaColors.green,
+                child: Icon(
+                  speaking ? Icons.stop_rounded : Icons.play_arrow_rounded,
+                  color: Colors.white,
+                  size: 28,
                 ),
-              )
-            : () => _tap(speaking),
-        child: Row(
-          children: [
-            CircleAvatar(
-              radius: 22,
-              backgroundColor: choice == null
-                  ? SadhanaColors.inkSoft
-                  : SadhanaColors.green,
-              child: Icon(
-                speaking ? Icons.stop_rounded : Icons.play_arrow_rounded,
-                color: Colors.white,
-                size: 28,
               ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    speaking ? 'Stop' : 'Listen Chant',
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: SadhanaColors.ink,
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      speaking ? 'Stop' : 'Listen to the meaning',
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: SadhanaColors.ink,
+                      ),
                     ),
-                  ),
-                  Text(
-                    choice?.description ??
-                        'This phone has no voice that can read it',
-                    style: const TextStyle(
-                      fontSize: 13,
-                      color: SadhanaColors.inkSoft,
+                    Text(
+                      choice.description,
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: SadhanaColors.inkSoft,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
-      );
-    },
-  );
+            ],
+          ),
+        );
+      },
+    );
+  }
 }

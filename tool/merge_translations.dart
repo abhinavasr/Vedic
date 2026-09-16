@@ -99,6 +99,7 @@ Future<void> main(List<String> arguments) async {
         edition: work.edition,
         licenceId: work.licenceId,
         sourceNote: work.sourceNote,
+        coverUrl: work.coverUrl,
         passages: [
           for (final passage in work.passages)
             _merge(
