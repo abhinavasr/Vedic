@@ -2,7 +2,7 @@
   "format": "vedic-pack-content",
   "format_version": 1,
   "pack_id": "bhagavad-gita.sa",
-  "revision": 5,
+  "revision": 6,
   "languages": [
     "sa",
     "hi",
@@ -13008,6 +13008,61 @@
               "lines": [
                 "संन्यासं कर्मणां कृष्ण पुनर्योगं च शंससि ।",
                 "यच्छ्रेय एतयोरेकं तन्मे ब्रूहि सुनिश्चितम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "saṃnyāsaṃ karmaṇāṃ kṛṣṇa punaryogaṃ ca śaṃsasi |",
+                    "yacchreya etayorekaṃ tanme brūhi suniścitam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अर्जुन बोले: हे कृष्ण! आप कर्मों के संन्यास की और फिर कर्मयोग की भी प्रशंसा करते हैं। इन दोनों में से जो एक मेरे लिए भलीभाँति निश्चित कल्याणकारक श्रेयस्कर हो, उसे कहिए।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Arjuna said: O Krishna, first of all You ask me to renounce work, and then again You recommend work with devotion. Now will You kindly tell me definitely which of the two is more beneficial?",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Arjuna is confused again. He hears Krishna praising both the renunciation of actions (Sannyasa) and the selfless performance of actions (Karma Yoga). He wants a definitive answer on which single path is better.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अर्जुन फिर से भ्रमित हो जाते हैं। वह कृष्ण को कर्मों के संन्यास और निष्काम कर्म योग दोनों की प्रशंसा करते सुनते हैं। वह जानना चाहते हैं कि दोनों में से कौन सा मार्ग निश्चित रूप से बेहतर है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Clarity is sought when multiple good options are presented.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "It is natural to be confused by seemingly contradictory paths.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13020,6 +13075,61 @@
               "lines": [
                 "संन्यासः कर्मयोगश्च निःश्रेयसकरावुभौ ।",
                 "तयोस्तु कर्मसंन्यासात्कर्मयोगो विशिष्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "saṃnyāsaḥ karmayogaśca niḥśreyasakarāvubhau |",
+                    "tayostu karmasaṃnyāsātkarmayogo viśiṣyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "श्रीभगवान् बोले: कर्मसंन्यास और कर्मयोग—ये दोनों ही परम कल्याण के करने वाले हैं, परन्तु उन दोनों में भी कर्मसंन्यास से कर्मयोग साधन में सुगम होने से श्रेष्ठ है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The Personality of Godhead replied: The renunciation of work and work in devotion are both good for liberation. But, of the two, work in devotional service is better than renunciation of work.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna clarifies that both paths lead to liberation. However, He explicitly states that Karma Yoga (acting selflessly) is superior and more practical than the complete renunciation of action, because it is easier to practice and less prone to hypocrisy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण स्पष्ट करते हैं कि दोनों मार्ग मोक्ष की ओर ले जाते हैं। हालाँकि, वह स्पष्ट रूप से कहते हैं कि कर्म योग (निष्काम कर्म) कर्मों के पूर्ण संन्यास से श्रेष्ठ और अधिक व्यावहारिक है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Action with detachment is better than abandoning action.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Practical spirituality is superior to forced asceticism.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13029,6 +13139,61 @@
               "lines": [
                 "ज्ञेयः स नित्यसंन्यासी यो न द्वेष्टि न काङ्क्षति ।",
                 "निर्द्वन्द्वो हि महाबाहो सुखं बन्धात्प्रमुच्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "jñeyaḥ sa nityasaṃnyāsī yo na dveṣṭi na kāṅkṣati |",
+                    "nirdvandvo hi mahābāho sukhaṃ bandhātpramucyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "हे महाबाहो! जो पुरुष न किसी से द्वेष करता है और न किसी की आकांक्षा करता है, वह कर्मयोगी सदा संन्यासी ही समझने योग्य है; क्योंकि राग-द्वेषादि द्वन्द्वों से रहित पुरुष सुखपूर्वक संसार बन्धन से मुक्त हो जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One who neither hates nor desires the fruits of his activities is known to be always renounced. Such a person, free from all dualities, easily overcomes material bondage and is completely liberated, O mighty-armed Arjuna.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna redefines the concept of a 'Sannyasi' (renunciant). It is not someone who leaves society, but someone who lives in it without craving or aversion. True renunciation is a state of mind, not a change of clothes.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण संन्यासी की अवधारणा को फिर से परिभाषित करते हैं। वह वह नहीं है जो समाज को छोड़ देता है, बल्कि वह है जो उसमें राग या द्वेष के बिना रहता है। सच्चा संन्यास मन की एक अवस्था है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True renunciation is freedom from craving and hatred.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "You can be a renunciant while fully engaged in worldly duties.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13038,6 +13203,61 @@
               "lines": [
                 "साङ्ख्ययोगौ पृथग्बालाः प्रवदन्ति न पण्डिताः ।",
                 "एकमप्यास्थितः सम्यगुभयोर्विन्दते फलम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sāṅkhyayogau pṛthagbālāḥ pravadanti na paṇḍitāḥ |",
+                    "ekamapyāsthitaḥ samyagubhayorvindate phalam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अज्ञानीजन सांख्य (ज्ञानयोग) और योग (कर्मयोग) को अलग-अलग फल देने वाले कहते हैं, न कि पण्डितजन; क्योंकि दोनों में से एक में भी अच्छी प्रकार स्थित पुरुष दोनों के फलरूप परमात्मा को प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Only the ignorant speak of devotional service (karma-yoga) as being different from the analytical study of the material world (Sankhya). Those who are actually learned say that he who applies himself well to one of these paths achieves the results of both.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Immature thinkers view the path of knowledge and the path of action as separate and conflicting. The wise understand that fully dedicating oneself to either path leads to the exact same ultimate realization.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अपरिपक्व विचारक ज्ञान के मार्ग और कर्म के मार्ग को अलग और परस्पर विरोधी मानते हैं। बुद्धिमान समझते हैं कि किसी भी मार्ग के प्रति पूरी तरह से समर्पित होने से एक ही अंतिम बोध प्राप्त होता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Different spiritual paths ultimately lead to the same destination.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Do not get caught up in sectarian debates about which path is 'best'.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13047,6 +13267,61 @@
               "lines": [
                 "यत्साङ्ख्यैः प्राप्यते स्थानं तद्योगैरपि गम्यते ।",
                 "एकं साङ्ख्यं च योगं च यः पश्यति स पश्यति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yatsāṅkhyaiḥ prāpyate sthānaṃ tadyogairapi gamyate |",
+                    "ekaṃ sāṅkhyaṃ ca yogaṃ ca yaḥ paśyati sa paśyati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "ज्ञानयोगियों द्वारा जो परम धाम प्राप्त किया जाता है, कर्मयोगियों द्वारा भी वही प्राप्त किया जाता है। इसलिए जो पुरुष ज्ञानयोग और कर्मयोग को फलरूप में एक देखता है, वही यथार्थ देखता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One who knows that the position reached by means of analytical study can also be attained by devotional service, and who therefore sees analytical study and devotional service to be on the same level, sees things as they are.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Reaffirming the previous verse, Krishna states that the destination reached by renunciants is the exact same destination reached by selfless workers. True vision is seeing this underlying unity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "पिछले श्लोक की पुष्टि करते हुए, कृष्ण कहते हैं कि संन्यासियों द्वारा जिस मंजिल तक पहुँचा जाता है, वही मंजिल निष्काम कर्मयोगियों द्वारा भी प्राप्त की जाती है। इस अंतर्निहित एकता को देखना ही सच्ची दृष्टि है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The goal of action and inaction is identical.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True vision sees unity where others see division.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13056,6 +13331,61 @@
               "lines": [
                 "संन्यासस्तु महाबाहो दुःखमाप्तुमयोगतः ।",
                 "योगयुक्तो मुनिर्ब्रह्म नचिरेणाधिगच्छति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "saṃnyāsastu mahābāho duḥkhamāptumayogataḥ |",
+                    "yogayukto munirbrahma nacireṇādhigacchati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परन्तु हे महाबाहो! कर्मयोग के बिना संन्यास अर्थात् मन, इन्द्रिय और शरीर द्वारा होने वाले सम्पूर्ण कर्मों में कर्तापन का त्याग प्राप्त होना कठिन है; और भगवत्स्वरूप को मनन करने वाला कर्मयोगी परब्रह्म परमात्मा को शीघ्र ही प्राप्त हो जाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Merely renouncing all activities yet not engaging in the devotional service of the Lord cannot make one happy. But a thoughtful person engaged in devotional service can achieve the Supreme without delay.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Attempting to renounce action without having first practiced selfless action (Karma Yoga) leads only to sorrow and frustration. However, a seeker grounded in Karma Yoga easily and quickly reaches the Supreme.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "निष्काम कर्म (कर्म योग) का अभ्यास किए बिना कर्म को त्यागने का प्रयास केवल दुःख और निराशा की ओर ले जाता है। हालाँकि, कर्म योग में आधारित साधक आसानी से और जल्दी से परमात्मा तक पहुँच जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Premature renunciation is dangerous and leads to frustration.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Selfless action is the necessary stepping stone to true detachment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13065,6 +13395,61 @@
               "lines": [
                 "योगयुक्तो विशुद्धात्मा विजितात्मा जितेन्द्रियः ।",
                 "सर्वभूतात्मभूतात्मा कुर्वन्नपि न लिप्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yogayukto viśuddhātmā vijitātmā jitendriyaḥ |",
+                    "sarvabhūtātmabhūtātmā kurvannapi na lipyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिसका अन्तःकरण विशुद्ध है, जिसने अपने वश में कर लिया है, जिसने इन्द्रियों को जीत लिया है और जो सम्पूर्ण प्राणियों का आत्मरूप परमात्मा ही जिसका आत्मा है, ऐसा कर्मयोगी कर्म करता हुआ भी लिप्त नहीं होता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One who works in devotion, who is a pure soul, and who controls his mind and senses is dear to everyone, and everyone is dear to him. Though always working, such a man is never entangled.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "A master of Karma Yoga has a pure heart, a controlled mind, and conquered senses. Because such a person sees their own soul as the soul of all beings, their actions never bind them.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कर्म योग के स्वामी का हृदय पवित्र होता है, मन नियंत्रित होता है और इंद्रियां वश में होती हैं। चूँकि ऐसा व्यक्ति अपनी आत्मा को ही सभी प्राणियों की आत्मा के रूप में देखता है, इसलिए उसके कर्म उसे कभी नहीं बांधते।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Mastery of self creates a pure connection with others.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Action performed with universal love creates no karmic debt.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13074,6 +13459,61 @@
               "lines": [
                 "नैव किञ्चित्करोमीति युक्तो मन्येत तत्त्ववित् ।",
                 "पश्यञ्श‍ृण्वन्स्पृशञ्जिघ्रन्नश्नन्गच्छन्स्वपञ्श्वसन् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "naiva kiñcitkaromīti yukto manyeta tattvavit |",
+                    "paśyañśṛṇvanspṛśañjighrannaśnangacchansvapañśvasan ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "तत्त्व को जानने वाला सांख्ययोगी तो देखता हुआ, सुनता हुआ, स्पर्श करता हुआ, सूँघता हुआ, भोजन करता हुआ, गमन करता हुआ, सोता हुआ, श्वास लेता हुआ...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "A person in the divine consciousness, although engaged in seeing, hearing, touching, smelling, eating, moving about, sleeping and breathing, always knows within himself that he actually does nothing at all.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The enlightened person realizes that all bodily functions are just interactions of material nature. The true self is just a witness. Thus, even while engaged in physical activities, they internally know 'I am doing nothing.'",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "प्रबुद्ध व्यक्ति महसूस करता है कि सभी शारीरिक कार्य केवल भौतिक प्रकृति की बातचीत हैं। सच्चा स्वरूप केवल एक साक्षी है। इस प्रकार, शारीरिक गतिविधियों में लगे रहने पर भी, वे आंतरिक रूप से जानते हैं 'मैं कुछ नहीं कर रहा हूँ।'",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The physical body acts; the spiritual self merely observes.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Detachment involves separating one's identity from physiological functions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13083,6 +13523,61 @@
               "lines": [
                 "प्रलपन्विसृजन्गृह्णन्नुन्मिषन्निमिषन्नपि ।",
                 "इन्द्रियाणीन्द्रियार्थेषु वर्तन्त इति धारयन् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "pralapanvisṛjangṛhṇannunmiṣannimiṣannapi |",
+                    "indriyāṇīndriyārtheṣu vartanta iti dhārayan ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "...बोलता हुआ, त्यागता हुआ, ग्रहण करता हुआ तथा आँखों को खोलता और मूँदता हुआ भी, सब इन्द्रियाँ अपने-अपने अर्थों में बरत रही हैं—इस प्रकार समझकर निःसन्देह ऐसा माने कि मैं कुछ भी नहीं करता हूँ।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Because while speaking, evacuating, receiving, or opening or closing his eyes, he always knows that only the material senses are engaged with their objects and that he is aloof from them.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Continuing the thought, every involuntary and voluntary action of the body is understood as the senses interacting with sense objects. The soul remains a detached, pristine observer of this biological machinery.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "विचार को जारी रखते हुए, शरीर की हर अनैच्छिक और स्वैच्छिक क्रिया को इंद्रियों की इंद्रिय वस्तुओं के साथ बातचीत के रूप में समझा जाता है। आत्मा इस जैविक मशीनरी की एक अलग, प्राचीन पर्यवेक्षक बनी हुई है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Consciousness is distinct from the mechanics of the body.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Observe your own actions as if watching a machine operate.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13092,6 +13587,61 @@
               "lines": [
                 "ब्रह्मण्याधाय कर्माणि सङ्गं त्यक्त्वा करोति यः ।",
                 "लिप्यते न स पापेन पद्मपत्रमिवाम्भसा ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "brahmaṇyādhāya karmāṇi saṅgaṃ tyaktvā karoti yaḥ |",
+                    "lipyate na sa pāpena padmapatramivāmbhasā ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो पुरुष सब कर्मों को परमात्मा में अर्पण करके और आसक्ति को त्यागकर कर्म करता है, वह पुरुष जल से कमल के पत्ते की भाँति पाप से लिप्त नहीं होता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One who performs his duty without attachment, surrendering the results unto the Supreme Lord, is unaffected by sinful action, as the lotus leaf is untouched by water.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This provides one of the most famous metaphors in Indian philosophy. Just as a lotus leaf floats on water without getting wet, a person who dedicates all actions to the Divine lives in the world without being tainted by its sins or sorrows.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यह भारतीय दर्शन के सबसे प्रसिद्ध रूपकों में से एक है। जिस प्रकार कमल का पत्ता पानी में रहते हुए भी भीगता नहीं है, उसी प्रकार जो व्यक्ति अपने सभी कार्यों को परमात्मा को समर्पित करता है, वह संसार के पापों से मुक्त रहता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Live in the world, but do not let the world live in you.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Dedication to the Supreme acts as a waterproof shield against karma.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13101,6 +13651,61 @@
               "lines": [
                 "कायेन मनसा बुद्ध्या केवलैरिन्द्रियैरपि ।",
                 "योगिनः कर्म कुर्वन्ति सङ्गं त्यक्त्वात्मशुद्धये ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "kāyena manasā buddhyā kevalairindriyairapi |",
+                    "yoginaḥ karma kurvanti saṅgaṃ tyaktvātmaśuddhaye ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "कर्मयोगी ममतबुद्धिरहित केवल इन्द्रिय, मन, बुद्धि और शरीर द्वारा भी आसक्ति को त्यागकर अन्तःकरण की शुद्धि के लिए कर्म करते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The yogis, abandoning attachment, act with body, mind, intelligence and even with the senses, only for the purpose of purification.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "For the practitioner of Karma Yoga, every action of the body, mind, and intellect is not for gaining material rewards, but serves as a tool for self-purification and removing ego.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कर्म योग के अभ्यासी के लिए, शरीर, मन और बुद्धि का हर कार्य भौतिक पुरस्कार प्राप्त करने के लिए नहीं है, बल्कि आत्म-शुद्धि और अहंकार को दूर करने के उपकरण के रूप में कार्य करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Action is the scrub brush that cleanses the ego.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Reframing work as self-improvement changes the nature of the effort.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13110,6 +13715,61 @@
               "lines": [
                 "युक्तः कर्मफलं त्यक्त्वा शान्तिमाप्नोति नैष्ठिकीम् ।",
                 "अयुक्तः कामकारेण फले सक्तो निबध्यते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yuktaḥ karmaphalaṃ tyaktvā śāntimāpnoti naiṣṭhikīm |",
+                    "ayuktaḥ kāmakāreṇa phale sakto nibadhyate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "कर्मयोगी कर्मों के फल का त्याग करके भगवत्प्राप्तिरूप शान्ति को प्राप्त होता है और सकामपुरुष कामना की प्रेरणा से फल में आसक्त होकर बँधता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The steadily devoted soul attains unadulterated peace because he offers the result of all activities to Me; whereas a person who is not in union with the Divine, who is greedy for the fruits of his labor, becomes entangled.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The contrast is clear: letting go of the results brings immediate inner peace. Desiring the results creates greed, which entangles the person in endless stress and karmic reactions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "विषमता स्पष्ट है: परिणामों को छोड़ देने से तत्काल आंतरिक शांति मिलती है। परिणामों की इच्छा से लालच पैदा होता है, जो व्यक्ति को अंतहीन तनाव और कर्म प्रतिक्रियाओं में उलझा देता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Peace is the direct byproduct of giving up expectations.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Greed for the harvest makes the farming miserable.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13119,6 +13779,61 @@
               "lines": [
                 "सर्वकर्माणि मनसा संन्यस्यास्ते सुखं वशी ।",
                 "नवद्वारे पुरे देही नैव कुर्वन्न कारयन् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sarvakarmāṇi manasā saṃnyasyāste sukhaṃ vaśī |",
+                    "navadvāre pure dehī naiva kurvanna kārayan ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "अन्तःकरण को वश में करने वाला देहधारी जीवात्मा और मन से सम्पूर्ण कर्मों का त्याग करके नौ द्वारों वाले नगररूप शरीर में आनन्दपूर्वक सच्चिदानन्दघन परमात्मा के स्वरूप में स्थित रहता है, वह कुछ भी न करता है और न करवाता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "When the embodied living being controls his nature and mentally renounces all actions, he resides happily in the city of nine gates [the material body], neither working nor causing work to be done.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The body is described as a city with nine gates (eyes, ears, nostrils, mouth, etc.). An enlightened soul lives in this city as a detached resident, fully aware they are not the city itself, thus living in complete happiness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "शरीर को नौ द्वारों वाले शहर के रूप में वर्णित किया गया है। एक प्रबुद्ध आत्मा इस शहर में एक अलग निवासी के रूप में रहती है, यह पूरी तरह से जानते हुए कि वे स्वयं शहर नहीं हैं, इस प्रकार पूर्ण आनंद में रहते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "You are the resident of your body, not the body itself.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Mental renunciation brings joy, regardless of physical location.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13128,6 +13843,61 @@
               "lines": [
                 "न कर्तृत्वं न कर्माणि लोकस्य सृजति प्रभुः ।",
                 "न कर्मफलसंयोगं स्वभावस्तु प्रवर्तते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "na kartṛtvaṃ na karmāṇi lokasya sṛjati prabhuḥ |",
+                    "na karmaphalasaṃyogaṃ svabhāvastu pravartate ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परमेश्वर मनुष्यों के न तो कर्तापन की, न कर्मों की और न कर्मफल के संयोग की ही रचना करते हैं, किन्तु स्वभाव ही बर्त रहा है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The embodied spirit master of the city of his body does not create activities, nor does he induce people to act, nor does he create the fruits of action. All this is enacted by the modes of material nature.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "God does not force people to act, nor does He determine the specific karmic fruits of their actions. The entire mechanism of action and reaction operates automatically through material nature (the gunas).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "ईश्वर लोगों को कार्य करने के लिए बाध्य नहीं करता है, न ही वह उनके कार्यों के विशिष्ट कर्म फलों को निर्धारित करता है। क्रिया और प्रतिक्रिया का संपूर्ण तंत्र भौतिक प्रकृति (गुणों) के माध्यम से स्वचालित रूप से संचालित होता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "God is not a micromanager of your daily actions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Nature's laws automatically manage cause and effect.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13137,6 +13907,61 @@
               "lines": [
                 "नादत्ते कस्यचित्पापं न चैव सुकृतं विभुः ।",
                 "अज्ञानेनावृतं ज्ञानं तेन मुह्यन्ति जन्तवः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "nādatte kasyacitpāpaṃ na caiva sukṛtaṃ vibhuḥ |",
+                    "ajñānenāvṛtaṃ jñānaṃ tena muhyanti jantavaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "सर्वव्यापी परमेश्वर भी न किसी के पाप कर्म को और न किसी के शुभकर्म को ही ग्रहण करता है; किन्तु अज्ञान के द्वारा ज्ञान ढका हुआ है, उसी से सब अज्ञानी मनुष्य मोहित हो रहे हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Nor does the Supreme Lord assume anyone's sinful or pious activities. Embodied beings, however, are bewildered because of the ignorance which covers their true knowledge.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The Supreme is utterly neutral and does not absorb human sins or virtues. Humans suffer or rejoice because their true knowledge is covered by ignorance, leading them to falsely identify with their actions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "परमात्मा पूरी तरह से तटस्थ है और मानवीय पापों या गुणों को अवशोषित नहीं करता है। मनुष्य पीड़ित होते हैं या आनन्दित होते हैं क्योंकि उनका सच्चा ज्ञान अज्ञानता से ढका होता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The Divine is a neutral witness to human choices.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Ignorance is the root cause of feeling burdened by sin or virtue.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13146,6 +13971,61 @@
               "lines": [
                 "ज्ञानेन तु तदज्ञानं येषां नाशितमात्मनः ।",
                 "तेषामादित्यवज्ज्ञानं प्रकाशयति तत्परम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "jñānena tu tadajñānaṃ yeṣāṃ nāśitamātmanaḥ |",
+                    "teṣāmādityavajjñānaṃ prakāśayati tatparam ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "परन्तु जिनका वह अज्ञान परमात्मतत्त्व के ज्ञान द्वारा नष्ट कर दिया गया है, उनका वह ज्ञान सूर्य के सदृश उस सच्चिदानन्दघन परमात्मा को प्रकाशित कर देता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "When, however, one is enlightened with the knowledge by which nescience is destroyed, then his knowledge reveals everything, as the sun lights up everything in the daytime.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Just as the rising sun instantly dispels the darkness of night and reveals the world, the dawn of spiritual knowledge destroys ignorance and reveals the Supreme Reality in all its glory.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जैसे उगता हुआ सूरज तुरंत रात के अंधेरे को दूर करता है और दुनिया को प्रकट करता है, आध्यात्मिक ज्ञान की सुबह अज्ञानता को नष्ट कर देती है और परम वास्तविकता को प्रकट करती है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Knowledge is self-illuminating like the sun.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Enlightenment instantly removes the darkness of delusion.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13155,6 +14035,61 @@
               "lines": [
                 "तद्बुद्धयस्तदात्मानस्तन्निष्ठास्तत्परायणाः ।",
                 "गच्छन्त्यपुनरावृत्तिं ज्ञाननिर्धूतकल्मषाः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "tadbuddhayastadātmānastanniṣṭhāstatparāyaṇāḥ |",
+                    "gacchantyapunarāvṛttiṃ jñānanirdhūtakalmaṣāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिनका मन तद्रूप हो रहा है, जिनकी बुद्धि तद्रूप हो रही है और सच्चिदानन्दघन परमात्मा में ही जिनकी निरन्तर एकीभाव से स्थिति है, ऐसे तत्परायण पुरुष ज्ञान के द्वारा पापरहित होकर अपुनरावृत्ति को अर्थात् परम गति को प्राप्त होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "When one's intelligence, mind, faith and refuge are all fixed in the Supreme, then one becomes fully cleansed of misgivings through complete knowledge and thus proceeds straight on the path of liberation.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "When every aspect of a person's inner life—intellect, mind, faith, and identity—is aligned with the Divine, all impurities are washed away, ensuring they reach liberation and never return to the cycle of rebirth.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जब किसी व्यक्ति के आंतरिक जीवन का हर पहलू—बुद्धि, मन, विश्वास और पहचान—परमात्मा के साथ जुड़ जाता है, तो सभी अशुद्धियाँ दूर हो जाती हैं, जिससे मोक्ष सुनिश्चित होता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Complete alignment of mind and intellect is required for liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Total focus on the Supreme cleanses all past karma.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13164,6 +14099,61 @@
               "lines": [
                 "विद्याविनयसम्पन्ने ब्राह्मणे गवि हस्तिनि ।",
                 "शुनि चैव श्वपाके च पण्डिताः समदर्शिनः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "vidyāvinayasampanne brāhmaṇe gavi hastini |",
+                    "śuni caiva śvapāke ca paṇḍitāḥ samadarśinaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "वे ज्ञानीजन विद्या और विनययुक्त ब्राह्मण में तथा गौ, हाथी, कुत्ते और चाण्डाल में भी समदर्शी ही होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "The humble sages, by virtue of true knowledge, see with equal vision a learned and gentle brahmana, a cow, an elephant, a dog and a dog-eater [outcaste].",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This is a profound statement of spiritual equality. An enlightened person sees the exact same divine spark in all beings, regardless of their societal status, species, or external appearance.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "यह आध्यात्मिक समानता का एक गहरा कथन है। एक प्रबुद्ध व्यक्ति सभी प्राणियों में एक ही ईश्वरीय चिंगारी देखता है, चाहे उनकी सामाजिक स्थिति, प्रजाति या बाहरी रूप कुछ भी हो।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True wisdom eradicates all prejudice and discrimination.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The soul is identical in every living creature.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13173,6 +14163,61 @@
               "lines": [
                 "इहैव तैर्जितः सर्गो येषां साम्ये स्थितं मनः ।",
                 "निर्दोषं हि समं ब्रह्म तस्माद् ब्रह्मणि ते स्थिताः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ihaiva tairjitaḥ sargo yeṣāṃ sāmye sthitaṃ manaḥ |",
+                    "nirdoṣaṃ hi samaṃ brahma tasmād brahmaṇi te sthitāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिनका मन समभाव में स्थित है, उनके द्वारा इस जीवित अवस्था में ही सम्पूर्ण संसार जीत लिया गया है; क्योंकि सच्चिदानन्दघन परमात्मा निर्दोष और सम है, इससे वे सच्चिदानन्दघन परमात्मा में ही स्थित हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those whose minds are established in sameness and equanimity have already conquered the conditions of birth and death. They are flawless like Brahman, and thus they are already situated in Brahman.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Liberation isn't something that only happens after death. If one achieves perfect equanimity (sameness of vision) while alive, they have already conquered the material world and exist in a state of divine perfection.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "मोक्ष कोई ऐसी चीज नहीं है जो मृत्यु के बाद ही होती है। यदि कोई व्यक्ति जीवित रहते हुए पूर्ण समभाव प्राप्त कर लेता है, तो उसने पहले ही भौतिक दुनिया पर विजय प्राप्त कर ली है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Equanimity is victory over the world.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Liberation can be experienced in the present moment, here and now.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13182,6 +14227,61 @@
               "lines": [
                 "न प्रहृष्येत्प्रियं प्राप्य नोद्विजेत्प्राप्य चाप्रियम् ।",
                 "स्थिरबुद्धिरसम्मूढो ब्रह्मविद् ब्रह्मणि स्थितः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "na prahṛṣyetpriyaṃ prāpya nodvijetprāpya cāpriyam |",
+                    "sthirabuddhirasammūḍho brahmavid brahmaṇi sthitaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो पुरुष प्रिय को प्राप्त होकर हर्षित नहीं हो और अप्रिय को प्राप्त होकर उद्विग्न न हो, वह स्थिरबुद्धि, संशयरहित, ब्रह्मवेत्ता पुरुष सच्चिदानन्दघन परब्रह्म परमात्मा में एकीभाव से नित्य स्थित है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "A person who neither rejoices upon achieving something pleasant nor laments upon obtaining something unpleasant, who is self-intelligent, unbewildered, and who knows the science of God, is to be understood as already situated in transcendence.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna provides the behavioral symptoms of a liberated person: absolute emotional stability. They are not thrown into ecstasy by good fortune, nor plunged into despair by tragedy, maintaining a steady, divine intellect.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण एक मुक्त व्यक्ति के व्यवहारिक लक्षण प्रदान करते हैं: पूर्ण भावनात्मक स्थिरता। वे सौभाग्य से परमानंद में नहीं जाते, न ही त्रासदी से निराशा में डूबते हैं।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Emotional reactivity is a sign of spiritual immaturity.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Stability in all circumstances is the hallmark of knowing God.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13191,6 +14291,61 @@
               "lines": [
                 "बाह्यस्पर्शेष्वसक्तात्मा विन्दत्यात्मनि यत्सुखम् ।",
                 "स ब्रह्मयोगयुक्तात्मा सुखमक्षयमश्नुते ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "bāhyasparśeṣvasaktātmā vindatyātmani yatsukham |",
+                    "sa brahmayogayuktātmā sukhamakṣayamaśnute ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "बाहर के विषयों में आसक्तिरहित अन्तःकरण वाला साधक आत्मा में स्थित जो ध्यानजनित सात्त्विक आनन्द है, उसको प्राप्त होता है। तदनन्तर वह सच्चिदानन्दघन परब्रह्म परमात्मा के ध्यानरूप योग में अभिन्नभाव से स्थित पुरुष अक्षय आनन्द का अनुभव करता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Such a liberated person is not attracted to material sense pleasure or external objects but is always in trance, enjoying the pleasure within. In this way the self-realized person enjoys unlimited happiness, for he concentrates on the Supreme.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "External pleasures are temporary, but the joy found within the self through spiritual connection is infinite. A wise person detaches from the temporary to experience the eternal, inexhaustible bliss.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "बाहरी सुख अस्थायी हैं, लेकिन आध्यात्मिक संबंध के माध्यम से स्वयं के भीतर पाया जाने वाला आनंद अनंत है। एक बुद्धिमान व्यक्ति शाश्वत आनंद का अनुभव करने के लिए अस्थायी से अलग हो जाता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True happiness is an inside job.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Unlimited bliss is accessed by detaching from limited external objects.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13200,6 +14355,61 @@
               "lines": [
                 "ये हि संस्पर्शजा भोगा दुःखयोनय एव ते ।",
                 "आद्यन्तवन्तः कौन्तेय न तेषु रमते बुधः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "ye hi saṃsparśajā bhogā duḥkhayonaya eva te |",
+                    "ādyantavantaḥ kaunteya na teṣu ramate budhaḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो ये इन्द्रिय तथा विषयों के संयोग से उत्पन्न होने वाले सब भोग हैं, यद्यपि विषयी पुरुषों को सुखरूप भासते हैं, तो भी दुःख के ही हेतु हैं और आदि-अन्त वाले अर्थात् अनित्य हैं। इसलिए हे अर्जुन! बुद्धिमान् विवेकी पुरुष उनमें नहीं रमता।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "An intelligent person does not take part in the sources of misery, which are due to contact with the material senses. O son of Kunti, such pleasures have a beginning and an end, and so the wise man does not delight in them.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Every pleasure derived from physical senses has a beginning and an end. Because they end, they inevitably lead to suffering (withdrawal, loss). The wise know this and therefore do not chase them.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "शारीरिक इंद्रियों से प्राप्त होने वाले हर सुख की एक शुरुआत और अंत होता है। क्योंकि वे समाप्त होते हैं, वे अनिवार्य रूप से दुःख का कारण बनते हैं। बुद्धिमान इसे जानते हैं इसलिए उनके पीछे नहीं भागते।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Sensory pleasures are the wombs of future suffering.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Wisdom is recognizing the temporary nature of material joy.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13209,6 +14419,61 @@
               "lines": [
                 "शक्नोतीहैव यः सोढुं प्राक्शरीरविमोक्षणात् ।",
                 "कामक्रोधोद्भवं वेगं स युक्तः स सुखी नरः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "śaknotīhaiva yaḥ soḍhuṃ prākśarīravimokṣaṇāt |",
+                    "kāmakrodhodbhavaṃ vegaṃ sa yuktaḥ sa sukhī naraḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो साधक इस मनुष्य शरीर में, शरीर का नाश होने से पहले-पहले ही काम-क्रोध से उत्पन्न होने वाले वेग को सहन करने में समर्थ हो जाता है, वही पुरुष योगी है और वही सुखी है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Before giving up this present body, if one is able to tolerate the urges of the material senses and check the force of desire and anger, he is a yogi and is happy in this world.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Success must be achieved while still alive. The ultimate test of a yogi is the ability to withstand and neutralize the powerful urges of lust and anger before death. Doing so guarantees a happy life.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सफलता जीवित रहते हुए ही प्राप्त की जानी चाहिए। योगी की अंतिम परीक्षा मृत्यु से पहले काम और क्रोध के शक्तिशाली आग्रह का सामना करने और उन्हें बेअसर करने की क्षमता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Self-control must be mastered in this lifetime.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "True happiness belongs to those who conquer their impulses.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13218,6 +14483,61 @@
               "lines": [
                 "योऽन्तःसुखोऽन्तरारामस्तथान्तर्ज्योतिरेव यः ।",
                 "स योगी ब्रह्मनिर्वाणं ब्रह्मभूतोऽधिगच्छति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yo'ntaḥsukho'ntarārāmastathāntarjyotireva yaḥ |",
+                    "sa yogī brahmanirvāṇaṃ brahmabhūto'dhigacchati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जो पुरुष अन्तरात्मा में ही सुख वाला है, आत्मा में ही रमण करने वाला है तथा जो आत्मा में ही ज्ञान वाला है, वह सच्चिदानन्दघन परब्रह्म परमात्मा के साथ एकीभाव को प्राप्त सांख्ययोगी शान्त ब्रह्म को प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "One whose happiness is within, who is active within, who rejoices within and is illumined within, is actually the perfect mystic. He is liberated in the Supreme, and ultimately he attains the Supreme.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "The perfect yogi is entirely self-sufficient in joy. Their happiness, playground, and source of light are all internal. Such a person is already merged with the Divine and attains eternal liberation (Nirvana).",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "सिद्ध योगी आनंद में पूरी तरह से आत्मनिर्भर है। उनकी खुशी, खेल का मैदान और प्रकाश का स्रोत सभी आंतरिक हैं। ऐसा व्यक्ति पहले से ही परमात्मा में विलीन है और मोक्ष प्राप्त करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Cultivate an inner sanctuary of joy and light.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Liberation is discovering that everything you need is already inside you.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13227,6 +14547,61 @@
               "lines": [
                 "लभन्ते ब्रह्मनिर्वाणमृषयः क्षीणकल्मषाः ।",
                 "छिन्नद्वैधा यतात्मानः सर्वभूतहिते रताः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "labhante brahmanirvāṇamṛṣayaḥ kṣīṇakalmaṣāḥ |",
+                    "chinnadvaidhā yatātmānaḥ sarvabhūtahite ratāḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "जिनके सब पाप नष्ट हो गए हैं, जिनके सब संशय ज्ञान द्वारा निवृत्त हो गए हैं, जो सम्पूर्ण प्राणियों के हित में रत हैं और जिनका जीता हुआ मन निश्चल भाव से परमात्मा में स्थित है, वे ब्रह्मवेत्ता पुरुष शान्त परब्रह्म को प्राप्त होते हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those who are beyond the dualities that arise from doubts, whose minds are engaged within, who are always busy working for the welfare of all living beings, and who are free from all sins, achieve liberation in the Supreme.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna lists the qualities of those who achieve Nirvana: their sins are erased, doubts removed, minds disciplined, and crucially, they are actively dedicated to the welfare of all beings. Enlightenment is not selfish.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण मोक्ष प्राप्त करने वालों के गुणों को सूचीबद्ध करते हैं: उनके पाप मिट जाते हैं, संदेह दूर हो जाते हैं, और सबसे महत्वपूर्ण बात, वे सक्रिय रूप से सभी प्राणियों के कल्याण के लिए समर्पित हैं। आत्मज्ञान स्वार्थी नहीं है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Enlightenment produces deep compassion and active service for others.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Doubt and sin must be eradicated for final liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13236,6 +14611,61 @@
               "lines": [
                 "कामक्रोधवियुक्तानां यतीनां यतचेतसाम् ।",
                 "अभितो ब्रह्मनिर्वाणं वर्तते विदितात्मनाम् ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "kāmakrodhaviyuktānāṃ yatīnāṃ yatacetasām |",
+                    "abhito brahmanirvāṇaṃ vartate viditātmanām ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "काम-क्रोध से रहित, जीते हुए चित्त वाले, परब्रह्म परमात्मा का साक्षात्कार किए हुए ज्ञानी पुरुषों के लिए सब ओर से शान्त परब्रह्म परमात्मा ही प्राप्त हैं।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Those who are free from anger and all material desires, who are self-realized, self-disciplined and constantly endeavoring for perfection, are assured of liberation in the Supreme in the very near future.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "For the ascetics who have conquered desire and anger, disciplined their minds, and realized the self, liberation is not a distant goal; it surrounds them completely in the present moment.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "जिन सन्यासियों ने काम और क्रोध पर विजय प्राप्त कर ली है, मन को अनुशासित कर लिया है, उनके लिए मोक्ष कोई दूर का लक्ष्य नहीं है; वह उन्हें वर्तमान क्षण में पूरी तरह से घेरे हुए है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Freedom from anger and lust brings immediate spiritual presence.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Self-discipline is the gateway to constant divine awareness.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13245,6 +14675,61 @@
               "lines": [
                 "स्पर्शान्कृत्वा बहिर्बाह्यांश्चक्षुश्चैवान्तरे भ्रुवोः ।",
                 "प्राणापानौ समौ कृत्वा नासाभ्यन्तरचारिणौ ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "sparśānkṛtvā bahirbāhyāṃścakṣuścaivāntare bhruvoḥ |",
+                    "prāṇāpānau samau kṛtvā nāsābhyantaracāriṇau ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "बाहर के विषय-भोगों को न चिन्तन करता हुआ बाहर ही निकालकर और नेत्रों की दृष्टि को भृकुटी के बीच में स्थित करके तथा नासिका में विचरने वाले प्राण और अपान वायु को सम करके...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "Shutting out all external sense objects, keeping the eyes and vision concentrated between the two eyebrows, suspending the inward and outward breaths within the nostrils...",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Krishna briefly introduces the mechanical process of Astanga Yoga (meditation): shutting out external stimuli, focusing the gaze between the eyebrows, and regulating the breath.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "कृष्ण अष्टांग योग (ध्यान) की यांत्रिक प्रक्रिया का संक्षेप में परिचय देते हैं: बाहरी उत्तेजनाओं को बंद करना, भौंहों के बीच टकटकी लगाना और सांस को नियंत्रित करना।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Physical and sensory regulation aids in mental concentration.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Meditation requires a systematic withdrawal from the external world.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13254,6 +14739,61 @@
               "lines": [
                 "यतेन्द्रियमनोबुद्धिर्मुनिर्मोक्षपरायणः ।",
                 "विगतेच्छाभयक्रोधो यः सदा मुक्त एव सः ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "yatendriyamanobuddhirmunirmokṣaparāyaṇaḥ |",
+                    "vigatecchābhayakrodho yaḥ sadā mukta eva saḥ ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "...जिसने इन्द्रियाँ, मन और बुद्धि जीती हुई हैं, ऐसा जो मोक्षपरायण मुनि इच्छा, भय और क्रोध से रहित हो गया है, वह सदा मुक्त ही है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "...and thus controlling the mind, senses and intelligence, the transcendentalist aiming at liberation becomes free from desire, fear and anger. One who is always in this state is certainly liberated.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "Continuing the previous verse, the one who applies this meditative discipline to control the mind and intellect, shedding desire, fear, and anger, achieves a permanent state of liberation.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "पिछले श्लोक को जारी रखते हुए, जो कोई मन और बुद्धि को नियंत्रित करने के लिए इस ध्यान अनुशासन को लागू करता है, और इच्छा, भय और क्रोध को छोड़ देता है, वह मोक्ष की स्थायी स्थिति प्राप्त करता है।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Meditation aims at mastering the inner psychological forces.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Consistent practice leads to permanent freedom.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
@@ -13263,6 +14803,61 @@
               "lines": [
                 "भोक्तारं यज्ञतपसां सर्वलोकमहेश्वरम् ।",
                 "सुहृदं सर्वभूतानां ज्ञात्वा मां शान्तिमृच्छति ॥"
+              ],
+              "transliterations": [
+                {
+                  "scheme": "IAST",
+                  "lines": [
+                    "bhoktāraṃ yajñatapasāṃ sarvalokamaheśvaram |",
+                    "suhṛdaṃ sarvabhūtānāṃ jñātvā māṃ śāntimṛcchati ||"
+                  ]
+                }
+              ],
+              "translations": [
+                {
+                  "language": "hi",
+                  "text": "मेरा भक्त मुझको सब यज्ञ और तपों का भोक्ता, सम्पूर्ण लोकों के ईश्वरों का भी ईश्वर तथा सम्पूर्ण प्राणियों का सुहृद् अर्थात् स्वार्थरहित दयालु और प्रेमी, ऐसा तत्त्व से जानकर शान्ति को प्राप्त होता है।",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                },
+                {
+                  "language": "en",
+                  "text": "A person in full consciousness of Me, knowing Me to be the ultimate beneficiary of all sacrifices and austerities, the Supreme Lord of all planets and demigods, and the benefactor and well-wisher of all living entities, attains peace from the pangs of material miseries.",
+                  "translator": "Gemini",
+                  "licence": "gita-ai-notes",
+                  "origin": "machine"
+                }
+              ],
+              "notes": [
+                {
+                  "kind": "explanation",
+                  "language": "en",
+                  "text": "This concluding verse of Chapter 5 provides the ultimate formula for peace: recognizing the Supreme as the final receiver of all efforts, the sovereign controller of all realms, and most importantly, the unconditional friend of all beings.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "explanation",
+                  "language": "hi",
+                  "text": "अध्याय 5 का यह समापन श्लोक शांति का अंतिम सूत्र प्रदान करता है: परमात्मा को सभी प्रयासों का अंतिम प्राप्तकर्ता, सभी लोकों का नियंत्रक, और सबसे महत्वपूर्ण बात, सभी प्राणियों का बिना शर्त मित्र मानना।",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "Peace is found in knowing God is the ultimate beneficiary of all actions.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                },
+                {
+                  "kind": "takeaway",
+                  "language": "en",
+                  "text": "The Supreme is not just a ruler, but the greatest well-wisher of every soul.",
+                  "author": "Gemini",
+                  "licence": "gita-ai-notes"
+                }
               ]
             },
             {
