@@ -17,14 +17,18 @@ import UIKit
     // no location permission, no API, nothing to refuse. The same channel
     // answers the notification question on Android; here there is nothing to
     // ask for, because iOS grants the media controls with the audio session.
-    if let messenger = engineBridge.applicationRegistry as? FlutterBinaryMessenger {
+    if let registrar = engineBridge.pluginRegistry.registrar(
+      forPlugin: "SadhanaPlatformChannel"
+    ) {
       let channel = FlutterMethodChannel(
         name: "com.batiyao.veda/notifications",
-        binaryMessenger: messenger
+        binaryMessenger: registrar.messenger()
       )
       channel.setMethodCallHandler { call, result in
         switch call.method {
         case "timezone": result(TimeZone.current.identifier)
+        // iOS grants the media controls with the audio session; there is no
+        // notification permission to ask for.
         case "request": result(true)
         default: result(FlutterMethodNotImplemented)
         }

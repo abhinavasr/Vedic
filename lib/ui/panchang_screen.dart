@@ -283,10 +283,15 @@ class _LimbsCard extends StatelessWidget {
       children: [
         _CardTitle('Today’s Panchang', icon: Icons.brightness_5_outlined),
         const SizedBox(height: 14),
-        _LimbRow(label: 'Tithi', limb: day.tithi, paksha: day.paksha.label),
-        _LimbRow(label: 'Nakṣatra', limb: day.nakshatra),
-        _LimbRow(label: 'Yoga', limb: day.yoga),
-        _LimbRow(label: 'Karaṇa', limb: day.karana),
+        _LimbRow(
+          label: 'Tithi',
+          limb: day.tithi,
+          day: day.day,
+          paksha: day.paksha.label,
+        ),
+        _LimbRow(label: 'Nakṣatra', limb: day.nakshatra, day: day.day),
+        _LimbRow(label: 'Yoga', limb: day.yoga, day: day.day),
+        _LimbRow(label: 'Karaṇa', limb: day.karana, day: day.day),
         _PlainRow(label: 'Pakṣa', value: day.paksha.label),
         _PlainRow(label: 'Māsa', value: day.masa),
       ],
@@ -295,10 +300,18 @@ class _LimbsCard extends StatelessWidget {
 }
 
 class _LimbRow extends StatelessWidget {
-  const _LimbRow({required this.label, required this.limb, this.paksha});
+  const _LimbRow({
+    required this.label,
+    required this.limb,
+    required this.day,
+    this.paksha,
+  });
 
   final String label;
   final Limb limb;
+
+  /// The day being shown, so a boundary that falls on another one says so.
+  final DateTime day;
   final String? paksha;
 
   @override
@@ -333,7 +346,10 @@ class _LimbRow extends StatelessWidget {
                 ),
                 if (ends != null)
                   Text(
-                    'until ${clockTime(ends)}',
+                    // A tithi can run past midnight — printed panchangs say
+                    // "upto full night" for it — and "until 8:31 AM" with no
+                    // day is a different claim from the one the maths makes.
+                    'until ${clockTime(ends)}${_dayOf(ends, day)}',
                     style: const TextStyle(
                       fontSize: 12,
                       color: SadhanaColors.inkSoft,
@@ -612,6 +628,19 @@ class _CardTitle extends StatelessWidget {
       Text(text, style: serif(size: 19, color: SadhanaColors.ink)),
     ],
   );
+}
+
+/// Which day a boundary falls on, where it is not the one being shown.
+String _dayOf(DateTime at, DateTime day) {
+  final difference = DateTime(at.year, at.month, at.day)
+      .difference(DateTime(day.year, day.month, day.day))
+      .inDays;
+  return switch (difference) {
+    0 => '',
+    1 => ' tomorrow',
+    -1 => ' yesterday',
+    _ => ' on ${at.day}/${at.month}',
+  };
 }
 
 /// A time as a reader reads it, in their own clock's convention.
