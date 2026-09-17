@@ -1,0 +1,411 @@
+{
+  "pack_id": "rigveda.sa",
+  "revision": 1,
+  "work": "Ṛgveda, Śākala Saṃhitā",
+  "accents": "present",
+  "totals": {
+    "suktas_in_recension": 1028,
+    "suktas_supplied": 829,
+    "suktas_in_pack": 809,
+    "suktas_missing": 199,
+    "suktas_held_back": 20,
+    "verses_in_pack": 8048
+  },
+  "held_back": [
+    {
+      "mandala": 1,
+      "sukta": 65,
+      "header_says": 10,
+      "verses_found": 10,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 1,
+      "sukta": 66,
+      "header_says": 10,
+      "verses_found": 5,
+      "why": "header count differs"
+    },
+    {
+      "mandala": 1,
+      "sukta": 67,
+      "header_says": 10,
+      "verses_found": 5,
+      "why": "header count differs"
+    },
+    {
+      "mandala": 1,
+      "sukta": 68,
+      "header_says": 10,
+      "verses_found": 13,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 1,
+      "sukta": 69,
+      "header_says": 10,
+      "verses_found": 13,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 1,
+      "sukta": 70,
+      "header_says": 11,
+      "verses_found": 15,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 1,
+      "sukta": 164,
+      "header_says": 52,
+      "verses_found": 62,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 2,
+      "sukta": 43,
+      "header_says": 3,
+      "verses_found": 4,
+      "why": "header count differs"
+    },
+    {
+      "mandala": 3,
+      "sukta": 39,
+      "header_says": 10,
+      "verses_found": 9,
+      "why": "header count differs"
+    },
+    {
+      "mandala": 4,
+      "sukta": 7,
+      "header_says": 15,
+      "verses_found": 11,
+      "why": "header count differs"
+    },
+    {
+      "mandala": 5,
+      "sukta": 24,
+      "header_says": 4,
+      "verses_found": 4,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 7,
+      "sukta": 56,
+      "header_says": 25,
+      "verses_found": 20,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 8,
+      "sukta": 5,
+      "header_says": 39,
+      "verses_found": 39,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 8,
+      "sukta": 12,
+      "header_says": 33,
+      "verses_found": 33,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 8,
+      "sukta": 32,
+      "header_says": 30,
+      "verses_found": 30,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 8,
+      "sukta": 81,
+      "header_says": 9,
+      "verses_found": 9,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 10,
+      "sukta": 85,
+      "header_says": 47,
+      "verses_found": 47,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 10,
+      "sukta": 134,
+      "header_says": null,
+      "verses_found": 7,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 10,
+      "sukta": 157,
+      "header_says": 5,
+      "verses_found": 5,
+      "why": "numbering not 1…N"
+    },
+    {
+      "mandala": 10,
+      "sukta": 172,
+      "header_says": 4,
+      "verses_found": 2,
+      "why": "header count differs"
+    }
+  ],
+  "mandalas": [
+    {
+      "mandala": 1,
+      "suktas_in_recension": 191,
+      "supplied": 153,
+      "in_pack": 146,
+      "verses_in_pack": 1506,
+      "held_back": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        164
+      ],
+      "missing_count": 38,
+      "missing": [
+        "8-9",
+        "20-23",
+        "26-27",
+        "32-37",
+        "140-143",
+        "146-147",
+        "152-157",
+        "168",
+        "174-175",
+        "179-185",
+        "190-191"
+      ]
+    },
+    {
+      "mandala": 2,
+      "suktas_in_recension": 43,
+      "supplied": 29,
+      "in_pack": 28,
+      "verses_in_pack": 290,
+      "held_back": [
+        43
+      ],
+      "missing_count": 14,
+      "missing": [
+        "18-19",
+        "22-27",
+        "30-33",
+        "36-37"
+      ]
+    },
+    {
+      "mandala": 3,
+      "suktas_in_recension": 62,
+      "supplied": 50,
+      "in_pack": 49,
+      "verses_in_pack": 470,
+      "held_back": [
+        39
+      ],
+      "missing_count": 12,
+      "missing": [
+        "13-14",
+        "25-26",
+        "29-30",
+        "34",
+        "45-46",
+        "49",
+        "53-54"
+      ]
+    },
+    {
+      "mandala": 4,
+      "suktas_in_recension": 58,
+      "supplied": 49,
+      "in_pack": 48,
+      "verses_in_pack": 477,
+      "held_back": [
+        7
+      ],
+      "missing_count": 9,
+      "missing": [
+        "8",
+        "17-18",
+        "21",
+        "37",
+        "41-42",
+        "57-58"
+      ]
+    },
+    {
+      "mandala": 5,
+      "suktas_in_recension": 87,
+      "supplied": 70,
+      "in_pack": 69,
+      "verses_in_pack": 575,
+      "held_back": [
+        24
+      ],
+      "missing_count": 17,
+      "missing": [
+        "4",
+        "20",
+        "25-26",
+        "37-38",
+        "41",
+        "47",
+        "51-52",
+        "55",
+        "67-68",
+        "71",
+        "75-76",
+        "87"
+      ]
+    },
+    {
+      "mandala": 6,
+      "suktas_in_recension": 75,
+      "supplied": 62,
+      "in_pack": 62,
+      "verses_in_pack": 655,
+      "held_back": [],
+      "missing_count": 13,
+      "missing": [
+        "1",
+        "4-5",
+        "9",
+        "20-21",
+        "25",
+        "28-29",
+        "42",
+        "46",
+        "57",
+        "73"
+      ]
+    },
+    {
+      "mandala": 7,
+      "suktas_in_recension": 104,
+      "supplied": 86,
+      "in_pack": 85,
+      "verses_in_pack": 652,
+      "held_back": [
+        56
+      ],
+      "missing_count": 18,
+      "missing": [
+        "1-2",
+        "17-18",
+        "21",
+        "37",
+        "41-42",
+        "57-58",
+        "64",
+        "76",
+        "79-80",
+        "86",
+        "89-90",
+        "94"
+      ]
+    },
+    {
+      "mandala": 8,
+      "suktas_in_recension": 103,
+      "supplied": 84,
+      "in_pack": 80,
+      "verses_in_pack": 1232,
+      "held_back": [
+        5,
+        12,
+        32,
+        81
+      ],
+      "missing_count": 19,
+      "missing": [
+        "1-2",
+        "6",
+        "9-10",
+        "21",
+        "25-26",
+        "29",
+        "41-42",
+        "45",
+        "49-50",
+        "64",
+        "66",
+        "69",
+        "85",
+        "89"
+      ]
+    },
+    {
+      "mandala": 9,
+      "suktas_in_recension": 114,
+      "supplied": 88,
+      "in_pack": 88,
+      "verses_in_pack": 809,
+      "held_back": [],
+      "missing_count": 26,
+      "missing": [
+        "1-2",
+        "5-6",
+        "21",
+        "25-26",
+        "38",
+        "41-42",
+        "45-46",
+        "60",
+        "63-64",
+        "68",
+        "78",
+        "89-90",
+        "93-94",
+        "97-98",
+        "109-110",
+        "114"
+      ]
+    },
+    {
+      "mandala": 10,
+      "suktas_in_recension": 191,
+      "supplied": 158,
+      "in_pack": 154,
+      "verses_in_pack": 1382,
+      "held_back": [
+        85,
+        134,
+        157,
+        172
+      ],
+      "missing_count": 33,
+      "missing": [
+        "3",
+        "15",
+        "19-20",
+        "23-24",
+        "35-36",
+        "39",
+        "42",
+        "58",
+        "67",
+        "71",
+        "87-88",
+        "91-92",
+        "108",
+        "112",
+        "127-128",
+        "131-132",
+        "145",
+        "149-150",
+        "153",
+        "163",
+        "175",
+        "179-180",
+        "183-184"
+      ]
+    }
+  ]
+}
