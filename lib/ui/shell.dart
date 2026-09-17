@@ -38,7 +38,13 @@ class _SadhanaShellState extends State<SadhanaShell> {
   void _openChants() {
     final work = widget.repository.works().firstOrNull;
     if (work == null) return;
-    final mark = widget.repository.store.lastRead(work.pack.packId, work.slug);
+    // Where listening left off, which is its own place in the book: someone
+    // may be reading one chapter and listening to another.
+    final mark =
+        widget.repository.store.setting(
+          'listen.at/${work.pack.packId}/${work.slug}',
+        ) ??
+        widget.repository.store.lastRead(work.pack.packId, work.slug);
     final sections = widget.repository.sections(work);
     final section =
         sections

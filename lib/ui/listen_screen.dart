@@ -9,6 +9,7 @@ import '../ai/translation.dart';
 import '../audio/chant_session.dart';
 import '../audio/listen_player.dart';
 import '../library/scripture_repository.dart';
+import 'home/hero_background.dart';
 import 'jump_sheet.dart';
 import 'listen_meaning.dart';
 import 'theme.dart';
@@ -51,6 +52,20 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
   /// Whether the listener has asked for it to keep going.
   var _playing = false;
   ReadingLanguage? _reading;
+
+  /// Where the listener last got to, remembered apart from where they last
+  /// read to.
+  ///
+  /// Listening and reading are different places in the book — someone may be
+  /// reading chapter 2 and listening to chapter 12 — so they are kept apart,
+  /// and neither moves the other.
+  String get _mark => 'listen.at/${widget.work.pack.packId}/${widget.work.slug}';
+
+  void _remember() {
+    final verse = _verse;
+    if (verse == null) return;
+    widget.repository.store.saveSetting(_mark, verse.ref);
+  }
 
   int _startingIndex() {
     final at = widget.startAt;
@@ -175,6 +190,7 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
       if (!mounted || !_playing) break;
       if (_index >= _verses.length - 1) break;
       setState(() => _index++);
+      _remember();
       _publish();
     }
     if (mounted) {
@@ -197,6 +213,7 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
     await _stop();
     if (!mounted) return;
     setState(() => _index = index);
+    _remember();
     _publish();
     _fillAhead();
     if (wasPlaying) unawaited(_playOn());
@@ -223,6 +240,7 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
       final at = _verses.indexWhere((v) => v.ref == target.ref);
       _index = at < 0 ? 0 : at;
     });
+    _remember();
     _publish();
     _fillAhead();
     if (wasPlaying) unawaited(_playOn());
@@ -236,16 +254,15 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
 
     return Scaffold(
       backgroundColor: SadhanaColors.background,
-      appBar: AppBar(
-        backgroundColor: SadhanaColors.background,
-        foregroundColor: SadhanaColors.ink,
-        elevation: 0,
-        title: Text('Listen', style: serif(size: 22, color: SadhanaColors.ink)),
-      ),
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 32),
-          children: [
+      body: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const _ListenHeader(),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 16, 20, 32),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
             _WhereTo(
               chapter: chapterName(_section),
               onTap: _showJump,
@@ -267,28 +284,33 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
               onPlay: mix.isSilent ? null : () => _playing ? _stop() : _playOn(),
             ),
             const SizedBox(height: 28),
-            Text(
-              'What to play',
-              style: serif(size: 18, color: SadhanaColors.ink),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              mix.describe(reading: reading.language.code, nameOf: languageName),
+                Text(
+                  'What to play',
+                  style: serif(size: 22, color: SadhanaColors.ink),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  mix.describe(
+                    reading: reading.language.code,
+                    nameOf: languageName,
+                  ),
               style: const TextStyle(
                 fontSize: 13,
                 color: SadhanaColors.inkSoft,
               ),
             ),
             const SizedBox(height: 12),
-            _ClipRow(
-              label: 'Chant',
-              // Sanskrit, and nothing to choose: it is a recording.
-              detail: 'Sanskrit',
-              on: mix.chant,
-              onChanged: (on) => reading.mix = mix.with_(chant: on),
-            ),
-            _ClipRow(
-              label: 'Meaning',
+                _ClipRow(
+                  label: 'Chant',
+                  icon: Icons.self_improvement,
+                  // Sanskrit, and nothing to choose: it is a recording.
+                  detail: 'Sanskrit',
+                  on: mix.chant,
+                  onChanged: (on) => reading.mix = mix.with_(chant: on),
+                ),
+                _ClipRow(
+                  label: 'Meaning',
+                  icon: Icons.menu_book_outlined,
               detail: languageName(mix.meaningIn(reading.language.code)),
               on: mix.meaning,
               onChanged: (on) => reading.mix = mix.with_(meaning: on),
@@ -300,8 +322,9 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
                     : mix.with_(meaningLanguage: code),
               ),
             ),
-            _ClipRow(
-              label: 'Explanation',
+                _ClipRow(
+                  label: 'Explanation',
+                  icon: Icons.eco_outlined,
               detail: languageName(mix.explanationIn(reading.language.code)),
               on: mix.explanation,
               onChanged: (on) => reading.mix = mix.with_(explanation: on),
@@ -313,28 +336,30 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
                     : mix.with_(explanationLanguage: code),
               ),
             ),
-            if (_fill.busy) ...[
-              const SizedBox(height: 18),
-              Row(
-                children: [
-                  const SizedBox(
-                    width: 13,
-                    height: 13,
-                    child: CircularProgressIndicator(strokeWidth: 2),
-                  ),
-                  const SizedBox(width: 10),
-                  Text(
-                    'Translating the verses coming up, on this phone…',
-                    style: const TextStyle(
-                      fontSize: 13,
-                      color: SadhanaColors.inkSoft,
-                    ),
+                if (_fill.busy) ...[
+                  const SizedBox(height: 18),
+                  Row(
+                    children: const [
+                      SizedBox(
+                        width: 13,
+                        height: 13,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      ),
+                      SizedBox(width: 10),
+                      Text(
+                        'Translating the verses coming up, on this phone…',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: SadhanaColors.inkSoft,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
-              ),
-            ],
-          ],
-        ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -390,6 +415,63 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
     onChosen(picked == 'follow' ? null : picked);
     _fillAhead();
   }
+}
+
+/// The picture, the title and the line under it, as every other screen has.
+class _ListenHeader extends StatelessWidget {
+  const _ListenHeader();
+
+  @override
+  Widget build(BuildContext context) => SizedBox(
+    height: 250,
+    child: HeroBackground(
+      child: SafeArea(
+        bottom: false,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 4, 8, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () => Navigator.of(context).maybePop(),
+                    icon: const Icon(Icons.arrow_back, size: 22),
+                    color: SadhanaColors.ink,
+                    tooltip: 'Back',
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Listen',
+                      style: serif(size: 40, color: SadhanaColors.ink),
+                    ),
+                    const SizedBox(height: 8),
+                    Container(width: 54, height: 2, color: SadhanaColors.gold),
+                    const SizedBox(height: 12),
+                    const Text(
+                      'Sacred recitations, meanings,\nand reflections.',
+                      style: TextStyle(
+                        fontSize: 15,
+                        height: 1.5,
+                        color: SadhanaColors.ink,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
 }
 
 /// The chapter being listened to, and the way to any other.
@@ -574,6 +656,7 @@ class _Transport extends StatelessWidget {
 class _ClipRow extends StatelessWidget {
   const _ClipRow({
     required this.label,
+    required this.icon,
     required this.detail,
     required this.on,
     required this.onChanged,
@@ -581,6 +664,7 @@ class _ClipRow extends StatelessWidget {
   });
 
   final String label;
+  final IconData icon;
   final String detail;
   final bool on;
   final void Function(bool on) onChanged;
@@ -608,6 +692,8 @@ class _ClipRow extends StatelessWidget {
                 color: on ? SadhanaColors.green : SadhanaColors.inkSoft,
               ),
               const SizedBox(width: 12),
+              Icon(icon, size: 20, color: SadhanaColors.gold),
+              const SizedBox(width: 10),
               Expanded(
                 child: Text(
                   label,
