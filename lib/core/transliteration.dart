@@ -33,7 +33,42 @@ const _others = {
 const _virama = '्';
 
 /// Ignored: nukta, and the joiners that only affect glyph shaping.
-const _silent = {'़', '\u200C', '\u200D'};
+const _silent = {
+  '़',
+  '\u200C',
+  '\u200D',
+  // Vedic tone marks: anudātta, svarita and the rest. They are dropped rather
+  // than transliterated, because the conventions for writing them in Latin
+  // disagree — one edition's acute is another's grave — and passing them
+  // through untouched was worse than either: it put Devanagari combining
+  // marks inside Latin words, so the Rigveda transliterated to "a॒gnimī॑ḷe".
+  // A pack that ships its own accented transliteration is used in preference
+  // to this, and the accents are always there in the Devanagari above it.
+  '\u0951',
+  '\u0952',
+  '\u1CD0',
+  '\u1CD1',
+  '\u1CD2',
+  '\u1CD3',
+  '\u1CD4',
+  '\u1CD5',
+  '\u1CD6',
+  '\u1CD7',
+  '\u1CD8',
+  '\u1CD9',
+  '\u1CDA',
+  '\u1CDB',
+  '\u1CDC',
+  '\u1CDD',
+  '\u1CDE',
+  '\u1CDF',
+  '\u1CE0',
+  '\u1CE1',
+  '\uA8E0',
+  '\uA8E1',
+  '\uA8E2',
+  '\uA8E3',
+};
 
 String devanagariToIast(String text) {
   final out = StringBuffer();
