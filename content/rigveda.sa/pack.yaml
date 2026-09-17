@@ -1,0 +1,22 @@
+# The Ṛgveda, Śākala Saṃhitā — accented Devanagari.
+#   python3 tool/rigveda_to_json.py content/rigveda.sa
+#   dart run tool/build_pack.dart content/rigveda.sa
+#
+# 818 of the 1028 suktas. The sources are 830 text files, of which 650 were
+# saved by a browser under names that do not say which sukta they hold; every
+# one was identified by its text rather than its filename (sukta-index.csv),
+# and eleven whose verse division is unsettled are held back
+# (needs-review.csv).
+#
+# Bundled: 4 MB of text compresses to under 600 KB in the pack, which is
+# nothing against the app's size, and it means the Veda is there offline from
+# the first launch rather than behind a download.
+pack_id: rigveda.sa
+revision: 1
+kind: text
+created_at: 2026-09-17T00:00:00Z
+min_app_build: 1
+title:
+  en: Rigveda
+  sa: ऋग्वेदः
+content: content.json

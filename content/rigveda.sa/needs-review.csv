@@ -1,0 +1,27 @@
+# Suktas left out of the pack: the number of verses the
+# header states and the number the text divides into do not
+# agree, so their verse numbering — which is their citation —
+# is not settled. Most are dvipadā, where the printed text
+# groups two pādas into one numbered unit and the standard
+# citation does not.
+mandala,sukta,header_says,verses_found,why,file
+1,65,10,10,numbering not 1…N,"Rigveda – Shakala Samhita – Mandala 01 Sukta 065.txt"
+1,66,10,5,header count differs,"Rigveda – Shakala Samhita – Mandala 01 Sukta 066.txt"
+1,67,10,5,header count differs,"Rigveda – Shakala Samhita – Mandala 01 Sukta 067.txt"
+1,68,10,13,numbering not 1…N,"Rigveda – Shakala Samhita – Mandala 01 Sukta 068.txt"
+1,69,10,13,numbering not 1…N,"Rigveda – Shakala Samhita – Mandala 01 Sukta 069.txt"
+1,70,11,15,numbering not 1…N,"Rigveda – Shakala Samhita – Mandala 01 Sukta 070.txt"
+1,164,52,62,numbering not 1…N,"Rigveda – Shakala Samhita – Mandala 01 Sukta 164.txt"
+2,43,3,4,header count differs,"Rigveda – Shakala Samhita – Mandala 02 Sukta 043.txt"
+3,39,10,9,header count differs,"SELECT SUKTA OF MANDALA 03 (38).txt"
+4,7,15,11,header count differs,"SELECT MANDALA (6).txt"
+5,24,4,4,numbering not 1…N,"SELECT MANDALA (81).txt"
+7,56,25,20,numbering not 1…N,"SELECT MANDALA (275).txt"
+8,5,39,39,numbering not 1…N,"SELECT MANDALA (328).txt"
+8,12,33,33,numbering not 1…N,"SELECT MANDALA (335).txt"
+8,32,30,30,numbering not 1…N,"SELECT MANDALA (355).txt"
+8,81,9,9,numbering not 1…N,"SELECT MANDALA (403).txt"
+10,85,47,47,numbering not 1…N,"SELECT MANDALA (624).txt"
+10,134,,7,numbering not 1…N,"SELECT MANDALA (673).txt"
+10,157,5,5,numbering not 1…N,"SELECT MANDALA (696).txt"
+10,172,4,2,header count differs,"SELECT MANDALA (711).txt"

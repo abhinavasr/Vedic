@@ -1,0 +1,847 @@
+# Which sukta each source file holds.
+#
+# The filenames do not say: 650 of the 830 were saved by a browser as
+# "SELECT MANDALA (n).txt", where n is the download counter and not the
+# position in the book. Inferring the mapping from that counter looked
+# convincing and was wrong for 82 suktas — Mandala 4 alone drifted by two
+# — so every line here was instead matched on the text itself, by the
+# opening of each first verse with the accents stripped, against an
+# independently published index of the same recension
+# (github.com/bhavykhatri/DharmicData, which carries the same source text
+# with mandala and sukta labelled). 828 of 830 matched uniquely, none
+# ambiguously, none to the same sukta twice. Of the two that did not:
+# Mandala 01 Sukta 025 has its header and first verse on one line, which
+# defeated the fingerprint, and its filename names it; and
+# "SELECT MANDALA (463).txt" was a nought-byte download and is dropped.
+#
+# A citation must never be renumbered, so it is worth being sure.
+mandala,sukta,file
+1,1,Rigveda – Shakala Samhita – Mandala 01 Sukta 001.txt
+1,2,Rigveda – Shakala Samhita – Mandala 01 Sukta 002.txt
+1,3,Rigveda – Shakala Samhita – Mandala 01 Sukta 003.txt
+1,4,Rigveda – Shakala Samhita – Mandala 01 Sukta 004.txt
+1,5,Rigveda – Shakala Samhita – Mandala 01 Sukta 005.txt
+1,6,Rigveda – Shakala Samhita – Mandala 01 Sukta 006.txt
+1,7,Rigveda – Shakala Samhita – Mandala 01 Sukta 007.txt
+1,10,Rigveda – Shakala Samhita – Mandala 01 Sukta 010.txt
+1,11,Rigveda – Shakala Samhita – Mandala 01 Sukta 011.txt
+1,12,Rigveda – Shakala Samhita – Mandala 01 Sukta 012.txt
+1,13,Mandala 01.txt
+1,14,Rigveda – Shakala Samhita – Mandala 01 Sukta 014.txt
+1,15,Rigveda – Shakala Samhita – Mandala 01 Sukta 015.txt
+1,16,Rigveda – Shakala Samhita – Mandala 01 Sukta 016.txt
+1,17,Rigveda – Shakala Samhita – Mandala 01 Sukta 017.txt
+1,18,Rigveda – Shakala Samhita – Mandala 01 Sukta 018.txt
+1,19,Mandala 01 (1).txt
+1,24,Rigveda – Shakala Samhita – Mandala 01 Sukta 024.txt
+1,25,Rigveda – Shakala Samhita – Mandala 01 Sukta 025.txt
+1,28,Rigveda – Shakala Samhita – Mandala 01 Sukta 028.txt
+1,29,Rigveda – Shakala Samhita – Mandala 01 Sukta 029.txt
+1,30,Rigveda – Shakala Samhita – Mandala 01 Sukta 030.txt
+1,31,Rigveda – Shakala Samhita – Mandala 01 Sukta 031.txt
+1,38,Rigveda – Shakala Samhita – Mandala 01 Sukta 038.txt
+1,39,Rigveda – Shakala Samhita – Mandala 01 Sukta 039.txt
+1,40,Rigveda – Shakala Samhita – Mandala 01 Sukta 040.txt
+1,41,Rigveda – Shakala Samhita – Mandala 01 Sukta 041.txt
+1,42,Rigveda – Shakala Samhita – Mandala 01 Sukta 042.txt
+1,43,Rigveda – Shakala Samhita – Mandala 01 Sukta 043.txt
+1,44,Rigveda – Shakala Samhita – Mandala 01 Sukta 044.txt
+1,45,Rigveda – Shakala Samhita – Mandala 01 Sukta 045.txt
+1,46,Rigveda – Shakala Samhita – Mandala 01 Sukta 046.txt
+1,47,Rigveda – Shakala Samhita – Mandala 01 Sukta 047.txt
+1,48,Rigveda – Shakala Samhita – Mandala 01 Sukta 048.txt
+1,49,Rigveda – Shakala Samhita – Mandala 01 Sukta 049.txt
+1,50,Rigveda – Shakala Samhita – Mandala 01 Sukta 050.txt
+1,51,Rigveda – Shakala Samhita – Mandala 01 Sukta 051.txt
+1,52,Rigveda – Shakala Samhita – Mandala 01 Sukta 052.txt
+1,53,Rigveda – Shakala Samhita – Mandala 01 Sukta 053.txt
+1,54,Rigveda – Shakala Samhita – Mandala 01 Sukta 054.txt
+1,55,Rigveda – Shakala Samhita – Mandala 01 Sukta 055.txt
+1,56,Rigveda – Shakala Samhita – Mandala 01 Sukta 056.txt
+1,57,Rigveda – Shakala Samhita – Mandala 01 Sukta 057.txt
+1,58,Rigveda – Shakala Samhita – Mandala 01 Sukta 058.txt
+1,59,Rigveda – Shakala Samhita – Mandala 01 Sukta 059.txt
+1,60,Rigveda – Shakala Samhita – Mandala 01 Sukta 060.txt
+1,61,Rigveda – Shakala Samhita – Mandala 01 Sukta 061.txt
+1,62,Rigveda – Shakala Samhita – Mandala 01 Sukta 062.txt
+1,63,Rigveda – Shakala Samhita – Mandala 01 Sukta 063.txt
+1,64,Rigveda – Shakala Samhita – Mandala 01 Sukta 064.txt
+1,65,Rigveda – Shakala Samhita – Mandala 01 Sukta 065.txt
+1,66,Rigveda – Shakala Samhita – Mandala 01 Sukta 066.txt
+1,67,Rigveda – Shakala Samhita – Mandala 01 Sukta 067.txt
+1,68,Rigveda – Shakala Samhita – Mandala 01 Sukta 068.txt
+1,69,Rigveda – Shakala Samhita – Mandala 01 Sukta 069.txt
+1,70,Rigveda – Shakala Samhita – Mandala 01 Sukta 070.txt
+1,71,Rigveda – Shakala Samhita – Mandala 01 Sukta 071.txt
+1,72,Rigveda – Shakala Samhita – Mandala 01 Sukta 072.txt
+1,73,Rigveda – Shakala Samhita – Mandala 01 Sukta 073.txt
+1,74,Rigveda – Shakala Samhita – Mandala 01 Sukta 074.txt
+1,75,Rigveda – Shakala Samhita – Mandala 01 Sukta 075.txt
+1,76,Rigveda – Shakala Samhita – Mandala 01 Sukta 076.txt
+1,77,Rigveda – Shakala Samhita – Mandala 01 Sukta 077.txt
+1,78,Rigveda – Shakala Samhita – Mandala 01 Sukta 078.txt
+1,79,Rigveda – Shakala Samhita – Mandala 01 Sukta 079.txt
+1,80,Rigveda – Shakala Samhita – Mandala 01 Sukta 080.txt
+1,81,Rigveda – Shakala Samhita – Mandala 01 Sukta 081.txt
+1,82,Rigveda – Shakala Samhita – Mandala 01 Sukta 082.txt
+1,83,Rigveda – Shakala Samhita – Mandala 01 Sukta 083.txt
+1,84,Rigveda – Shakala Samhita – Mandala 01 Sukta 084.txt
+1,85,Rigveda – Shakala Samhita – Mandala 01 Sukta 085.txt
+1,86,Rigveda – Shakala Samhita – Mandala 01 Sukta 086.txt
+1,87,Rigveda – Shakala Samhita – Mandala 01 Sukta 087.txt
+1,88,Rigveda – Shakala Samhita – Mandala 01 Sukta 088.txt
+1,89,Rigveda – Shakala Samhita – Mandala 01 Sukta 089.txt
+1,90,Rigveda – Shakala Samhita – Mandala 01 Sukta 090.txt
+1,91,Rigveda – Shakala Samhita – Mandala 01 Sukta 091.txt
+1,92,Rigveda – Shakala Samhita – Mandala 01 Sukta 092.txt
+1,93,Rigveda – Shakala Samhita – Mandala 01 Sukta 093.txt
+1,94,Rigveda – Shakala Samhita – Mandala 01 Sukta 094.txt
+1,95,Rigveda – Shakala Samhita – Mandala 01 Sukta 095.txt
+1,96,Rigveda – Shakala Samhita – Mandala 01 Sukta 096.txt
+1,97,Rigveda – Shakala Samhita – Mandala 01 Sukta 097.txt
+1,98,Rigveda – Shakala Samhita – Mandala 01 Sukta 098.txt
+1,99,Rigveda – Shakala Samhita – Mandala 01 Sukta 099.txt
+1,100,Rigveda – Shakala Samhita – Mandala 01 Sukta 100.txt
+1,101,Rigveda – Shakala Samhita – Mandala 01 Sukta 101.txt
+1,102,Rigveda – Shakala Samhita – Mandala 01 Sukta 102.txt
+1,103,Rigveda – Shakala Samhita – Mandala 01 Sukta 103.txt
+1,104,Rigveda – Shakala Samhita – Mandala 01 Sukta 104.txt
+1,105,Rigveda – Shakala Samhita – Mandala 01 Sukta 105.txt
+1,106,Rigveda – Shakala Samhita – Mandala 01 Sukta 106.txt
+1,107,Rigveda – Shakala Samhita – Mandala 01 Sukta 107.txt
+1,108,Rigveda – Shakala Samhita – Mandala 01 Sukta 108.txt
+1,109,Rigveda – Shakala Samhita – Mandala 01 Sukta 109.txt
+1,110,Rigveda – Shakala Samhita – Mandala 01 Sukta 110.txt
+1,111,Rigveda – Shakala Samhita – Mandala 01 Sukta 111.txt
+1,112,Rigveda – Shakala Samhita – Mandala 01 Sukta 112.txt
+1,113,Rigveda – Shakala Samhita – Mandala 01 Sukta 113.txt
+1,114,Rigveda – Shakala Samhita – Mandala 01 Sukta 114.txt
+1,115,Rigveda – Shakala Samhita – Mandala 01 Sukta 115.txt
+1,116,Rigveda – Shakala Samhita – Mandala 01 Sukta 116.txt
+1,117,Rigveda – Shakala Samhita – Mandala 01 Sukta 117.txt
+1,118,Rigveda – Shakala Samhita – Mandala 01 Sukta 118.txt
+1,119,Rigveda – Shakala Samhita – Mandala 01 Sukta 119.txt
+1,120,Rigveda – Shakala Samhita – Mandala 01 Sukta 120.txt
+1,121,Rigveda – Shakala Samhita – Mandala 01 Sukta 121.txt
+1,122,Rigveda – Shakala Samhita – Mandala 01 Sukta 122.txt
+1,123,Rigveda – Shakala Samhita – Mandala 01 Sukta 123.txt
+1,124,Rigveda – Shakala Samhita – Mandala 01 Sukta 124.txt
+1,125,Rigveda – Shakala Samhita – Mandala 01 Sukta 125.txt
+1,126,Rigveda – Shakala Samhita – Mandala 01 Sukta 126.txt
+1,127,Rigveda – Shakala Samhita – Mandala 01 Sukta 127.txt
+1,128,Rigveda – Shakala Samhita – Mandala 01 Sukta 128.txt
+1,129,Rigveda – Shakala Samhita – Mandala 01 Sukta 129.txt
+1,130,Rigveda – Shakala Samhita – Mandala 01 Sukta 130.txt
+1,131,Rigveda – Shakala Samhita – Mandala 01 Sukta 131.txt
+1,132,Rigveda – Shakala Samhita – Mandala 01 Sukta 132.txt
+1,133,Rigveda – Shakala Samhita – Mandala 01 Sukta 133.txt
+1,134,Rigveda – Shakala Samhita – Mandala 01 Sukta 134.txt
+1,135,Rigveda – Shakala Samhita – Mandala 01 Sukta 135.txt
+1,136,Rigveda – Shakala Samhita – Mandala 01 Sukta 136.txt
+1,137,Rigveda – Shakala Samhita – Mandala 01 Sukta 137.txt
+1,138,Rigveda – Shakala Samhita – Mandala 01 Sukta 138.txt
+1,139,Rigveda – Shakala Samhita – Mandala 01 Sukta 139.txt
+1,144,Rigveda – Shakala Samhita – Mandala 01 Sukta 144.txt
+1,145,Rigveda – Shakala Samhita – Mandala 01 Sukta 145.txt
+1,148,Rigveda – Shakala Samhita – Mandala 01 Sukta 148.txt
+1,149,Rigveda – Shakala Samhita – Mandala 01 Sukta 149.txt
+1,150,Rigveda – Shakala Samhita – Mandala 01 Sukta 150.txt
+1,151,Rigveda – Shakala Samhita – Mandala 01 Sukta 151.txt
+1,158,Rigveda – Shakala Samhita – Mandala 01 Sukta 158.txt
+1,159,Rigveda – Shakala Samhita – Mandala 01 Sukta 159.txt
+1,160,Rigveda – Shakala Samhita – Mandala 01 Sukta 160.txt
+1,161,Rigveda – Shakala Samhita – Mandala 01 Sukta 161.txt
+1,162,Rigveda – Shakala Samhita – Mandala 01 Sukta 162.txt
+1,163,Rigveda – Shakala Samhita – Mandala 01 Sukta 163.txt
+1,164,Rigveda – Shakala Samhita – Mandala 01 Sukta 164.txt
+1,165,Rigveda – Shakala Samhita – Mandala 01 Sukta 165.txt
+1,166,Rigveda – Shakala Samhita – Mandala 01 Sukta 166.txt
+1,167,Rigveda – Shakala Samhita – Mandala 01 Sukta 167.txt
+1,169,Rigveda – Shakala Samhita – Mandala 01 Sukta 169 .txt
+1,170,Rigveda – Shakala Samhita – Mandala 01 Sukta 170 .txt
+1,171,Rigveda – Shakala Samhita – Mandala 01 Sukta 171 .txt
+1,172,Rigveda – Shakala Samhita – Mandala 01 Sukta 172 .txt
+1,173,Rigveda – Shakala Samhita – Mandala 01 Sukta 173 .txt
+1,176,Rigveda – Shakala Samhita – Mandala 01 Sukta 176.txt
+1,177,Rigveda – Shakala Samhita – Mandala 01 Sukta 177 .txt
+1,178,Rigveda – Shakala Samhita – Mandala 01 Sukta 178 .txt
+1,186,Rigveda – Shakala Samhita – Mandala 01 Sukta 186.txt
+1,187,Rigveda – Shakala Samhita – Mandala 01 Sukta 187.txt
+1,188,Rigveda – Shakala Samhita – Mandala 01 Sukta 188.txt
+1,189,Rigveda – Shakala Samhita – Mandala 01 Sukta 189.txt
+2,1,Rigveda – Shakala Samhita – Mandala 02 Sukta 001.txt
+2,2,Rigveda – Shakala Samhita – Mandala 02 Sukta 002.txt
+2,3,Rigveda – Shakala Samhita – Mandala 02 Sukta 003.txt
+2,4,Rigveda – Shakala Samhita – Mandala 02 Sukta 004.txt
+2,5,Rigveda – Shakala Samhita – Mandala 02 Sukta 005.txt
+2,6,Rigveda – Shakala Samhita – Mandala 02 Sukta 006.txt
+2,7,Rigveda – Shakala Samhita – Mandala 02 Sukta 007.txt
+2,8,Rigveda – Shakala Samhita – Mandala 02 Sukta 008.txt
+2,9,Rigveda – Shakala Samhita – Mandala 02 Sukta 009.txt
+2,10,Rigveda – Shakala Samhita – Mandala 02 Sukta 010.txt
+2,11,Rigveda – Shakala Samhita – Mandala 02 Sukta 011.txt
+2,12,Rigveda – Shakala Samhita – Mandala 02 Sukta 012.txt
+2,13,Rigveda – Shakala Samhita – Mandala 02 Sukta 013.txt
+2,14,Rigveda – Shakala Samhita – Mandala 02 Sukta 014.txt
+2,15,Rigveda – Shakala Samhita – Mandala 02 Sukta 015.txt
+2,16,Rigveda – Shakala Samhita – Mandala 02 Sukta 016.txt
+2,17,Rigveda – Shakala Samhita – Mandala 02 Sukta 017.txt
+2,20,Rigveda – Shakala Samhita – Mandala 02 Sukta 020.txt
+2,21,Rigveda – Shakala Samhita – Mandala 02 Sukta 021.txt
+2,28,Rigveda – Shakala Samhita – Mandala 02 Sukta 028.txt
+2,29,Rigveda – Shakala Samhita – Mandala 02 Sukta 029.txt
+2,34,Rigveda – Shakala Samhita – Mandala 02 Sukta 034.txt
+2,35,Rigveda – Shakala Samhita – Mandala 02 Sukta 035.txt
+2,38,Rigveda – Shakala Samhita – Mandala 02 Sukta 038.txt
+2,39,Rigveda – Shakala Samhita – Mandala 02 Sukta 039.txt
+2,40,Rigveda – Shakala Samhita – Mandala 02 Sukta 040.txt
+2,41,Rigveda – Shakala Samhita – Mandala 02 Sukta 041.txt
+2,42,Rigveda – Shakala Samhita – Mandala 02 Sukta 042.txt
+2,43,Rigveda – Shakala Samhita – Mandala 02 Sukta 043.txt
+3,1,SELECT SUKTA OF MANDALA 03.txt
+3,2,SELECT SUKTA OF MANDALA 03 (1).txt
+3,3,SELECT SUKTA OF MANDALA 03 (2).txt
+3,4,SELECT SUKTA OF MANDALA 03 (3).txt
+3,5,SELECT SUKTA OF MANDALA 03 (4).txt
+3,6,SELECT SUKTA OF MANDALA 03 (5).txt
+3,7,SELECT SUKTA OF MANDALA 03 (6).txt
+3,8,SELECT SUKTA OF MANDALA 03 (7).txt
+3,9,SELECT SUKTA OF MANDALA 03 (8).txt
+3,10,SELECT SUKTA OF MANDALA 03 (9).txt
+3,11,SELECT SUKTA OF MANDALA 03 (10).txt
+3,12,SELECT SUKTA OF MANDALA 03 (11).txt
+3,15,SELECT SUKTA OF MANDALA 03 (14).txt
+3,16,SELECT SUKTA OF MANDALA 03 (15).txt
+3,17,SELECT SUKTA OF MANDALA 03 (16).txt
+3,18,SELECT SUKTA OF MANDALA 03 (17).txt
+3,19,SELECT SUKTA OF MANDALA 03 (18).txt
+3,20,SELECT SUKTA OF MANDALA 03 (19).txt
+3,21,SELECT SUKTA OF MANDALA 03 (20).txt
+3,22,SELECT SUKTA OF MANDALA 03 (21).txt
+3,23,SELECT SUKTA OF MANDALA 03 (22).txt
+3,24,SELECT SUKTA OF MANDALA 03 (23).txt
+3,27,SELECT SUKTA OF MANDALA 03 (26).txt
+3,28,SELECT SUKTA OF MANDALA 03 (27).txt
+3,31,SELECT SUKTA OF MANDALA 03 (30).txt
+3,32,SELECT SUKTA OF MANDALA 03 (31).txt
+3,33,SELECT SUKTA OF MANDALA 03 (32).txt
+3,35,SELECT SUKTA OF MANDALA 03 (34).txt
+3,36,SELECT SUKTA OF MANDALA 03 (35).txt
+3,37,SELECT SUKTA OF MANDALA 03 (36).txt
+3,38,SELECT SUKTA OF MANDALA 03 (37).txt
+3,39,SELECT SUKTA OF MANDALA 03 (38).txt
+3,40,SELECT SUKTA OF MANDALA 03 (39).txt
+3,41,SELECT SUKTA OF MANDALA 03 (40).txt
+3,42,SELECT SUKTA OF MANDALA 03 (41).txt
+3,43,SELECT SUKTA OF MANDALA 03 (42).txt
+3,44,SELECT SUKTA OF MANDALA 03 (43).txt
+3,47,SELECT SUKTA OF MANDALA 03 (46).txt
+3,48,SELECT SUKTA OF MANDALA 03 (47).txt
+3,50,SELECT SUKTA OF MANDALA 03 (49).txt
+3,51,SELECT SUKTA OF MANDALA 03 (50).txt
+3,52,SELECT SUKTA OF MANDALA 03 (51).txt
+3,55,SELECT SUKTA OF MANDALA 03 (54).txt
+3,56,SELECT SUKTA OF MANDALA 03 (55).txt
+3,57,SELECT SUKTA OF MANDALA 03 (56).txt
+3,58,SELECT SUKTA OF MANDALA 03 (57).txt
+3,59,SELECT SUKTA OF MANDALA 03 (58).txt
+3,60,SELECT SUKTA OF MANDALA 03 (59).txt
+3,61,SELECT SUKTA OF MANDALA 03 (60).txt
+3,62,SELECT SUKTA OF MANDALA 03 (61).txt
+4,1,SELECT MANDALA.txt
+4,2,SELECT MANDALA (1).txt
+4,3,SELECT MANDALA (2).txt
+4,4,SELECT MANDALA (3).txt
+4,5,SELECT MANDALA (4).txt
+4,6,SELECT MANDALA (5).txt
+4,7,SELECT MANDALA (6).txt
+4,9,SELECT MANDALA (8).txt
+4,10,SELECT MANDALA (9).txt
+4,11,SELECT MANDALA (10).txt
+4,12,SELECT MANDALA (11).txt
+4,13,SELECT MANDALA (12).txt
+4,14,SELECT MANDALA (13).txt
+4,15,SELECT MANDALA (14).txt
+4,16,SELECT MANDALA (15).txt
+4,19,SELECT MANDALA (18).txt
+4,20,SELECT MANDALA (19).txt
+4,22,SELECT MANDALA (21).txt
+4,23,SELECT MANDALA (22).txt
+4,24,SELECT MANDALA (23).txt
+4,25,SELECT MANDALA (24).txt
+4,26,SELECT MANDALA (25).txt
+4,27,SELECT MANDALA (26).txt
+4,28,SELECT MANDALA (27).txt
+4,29,SELECT MANDALA (28).txt
+4,30,SELECT MANDALA (29).txt
+4,31,SELECT MANDALA (30).txt
+4,32,SELECT MANDALA (31).txt
+4,33,SELECT MANDALA (32).txt
+4,34,SELECT MANDALA (33).txt
+4,35,SELECT MANDALA (34).txt
+4,36,SELECT MANDALA (35).txt
+4,38,SELECT MANDALA (37).txt
+4,39,SELECT MANDALA (38).txt
+4,40,SELECT MANDALA (39).txt
+4,43,SELECT MANDALA (42).txt
+4,44,SELECT MANDALA (43).txt
+4,45,SELECT MANDALA (44).txt
+4,46,SELECT MANDALA (45).txt
+4,47,SELECT MANDALA (46).txt
+4,48,SELECT MANDALA (47).txt
+4,49,SELECT MANDALA (48).txt
+4,50,SELECT MANDALA (49).txt
+4,51,SELECT MANDALA (50).txt
+4,52,SELECT MANDALA (51).txt
+4,53,SELECT MANDALA (52).txt
+4,54,SELECT MANDALA (53).txt
+4,55,SELECT MANDALA (54).txt
+4,56,SELECT MANDALA (55).txt
+5,1,SELECT MANDALA (58).txt
+5,2,SELECT MANDALA (59).txt
+5,3,SELECT MANDALA (60).txt
+5,5,SELECT MANDALA (62).txt
+5,6,SELECT MANDALA (63).txt
+5,7,SELECT MANDALA (64).txt
+5,8,SELECT MANDALA (65).txt
+5,9,SELECT MANDALA (66).txt
+5,10,SELECT MANDALA (67).txt
+5,11,SELECT MANDALA (68).txt
+5,12,SELECT MANDALA (69).txt
+5,13,SELECT MANDALA (70).txt
+5,14,SELECT MANDALA (71).txt
+5,15,SELECT MANDALA (72).txt
+5,16,SELECT MANDALA (73).txt
+5,17,SELECT MANDALA (74).txt
+5,18,SELECT MANDALA (75).txt
+5,19,SELECT MANDALA (76).txt
+5,21,SELECT MANDALA (78).txt
+5,22,SELECT MANDALA (79).txt
+5,23,SELECT MANDALA (80).txt
+5,24,SELECT MANDALA (81).txt
+5,27,SELECT MANDALA (84).txt
+5,28,SELECT MANDALA (85).txt
+5,29,SELECT MANDALA (86).txt
+5,30,SELECT MANDALA (87).txt
+5,31,SELECT MANDALA (88).txt
+5,32,SELECT MANDALA (89).txt
+5,33,SELECT MANDALA (90).txt
+5,34,SELECT MANDALA (91).txt
+5,35,SELECT MANDALA (92).txt
+5,36,SELECT MANDALA (93).txt
+5,39,SELECT MANDALA (96).txt
+5,40,SELECT MANDALA (97).txt
+5,42,SELECT MANDALA (99).txt
+5,43,SELECT MANDALA (100).txt
+5,44,SELECT MANDALA (101).txt
+5,45,SELECT MANDALA (102).txt
+5,46,SELECT MANDALA (103).txt
+5,48,SELECT MANDALA (105).txt
+5,49,SELECT MANDALA (106).txt
+5,50,SELECT MANDALA (107).txt
+5,53,SELECT MANDALA (110).txt
+5,54,SELECT MANDALA (111).txt
+5,56,SELECT MANDALA (113).txt
+5,57,SELECT MANDALA (114).txt
+5,58,SELECT MANDALA (115).txt
+5,59,SELECT MANDALA (116).txt
+5,60,SELECT MANDALA (117).txt
+5,61,SELECT MANDALA (118).txt
+5,62,SELECT MANDALA (119).txt
+5,63,SELECT MANDALA (120).txt
+5,64,SELECT MANDALA (121).txt
+5,65,SELECT MANDALA (122).txt
+5,66,SELECT MANDALA (123).txt
+5,69,SELECT MANDALA (126).txt
+5,70,SELECT MANDALA (127).txt
+5,72,SELECT MANDALA (129).txt
+5,73,SELECT MANDALA (130).txt
+5,74,SELECT MANDALA (131).txt
+5,77,SELECT MANDALA (134).txt
+5,78,SELECT MANDALA (135).txt
+5,79,SELECT MANDALA (136).txt
+5,80,SELECT MANDALA (137).txt
+5,81,SELECT MANDALA (138).txt
+5,82,SELECT MANDALA (139).txt
+5,83,SELECT MANDALA (140).txt
+5,84,SELECT MANDALA (141).txt
+5,85,SELECT MANDALA (142).txt
+5,86,SELECT MANDALA (143).txt
+6,2,SELECT MANDALA (146).txt
+6,3,SELECT MANDALA (147).txt
+6,6,SELECT MANDALA (150).txt
+6,7,SELECT MANDALA (151).txt
+6,8,SELECT MANDALA (152).txt
+6,10,SELECT MANDALA (154).txt
+6,11,SELECT MANDALA (155).txt
+6,12,SELECT MANDALA (156).txt
+6,13,SELECT MANDALA (157).txt
+6,14,SELECT MANDALA (158).txt
+6,15,SELECT MANDALA (159).txt
+6,16,SELECT MANDALA (160).txt
+6,17,SELECT MANDALA (161).txt
+6,18,SELECT MANDALA (162).txt
+6,19,SELECT MANDALA (163).txt
+6,22,SELECT MANDALA (166).txt
+6,23,SELECT MANDALA (167).txt
+6,24,SELECT MANDALA (168).txt
+6,26,SELECT MANDALA (170).txt
+6,27,SELECT MANDALA (171).txt
+6,30,SELECT MANDALA (174).txt
+6,31,SELECT MANDALA (175).txt
+6,32,SELECT MANDALA (176).txt
+6,33,SELECT MANDALA (177).txt
+6,34,SELECT MANDALA (178).txt
+6,35,SELECT MANDALA (179).txt
+6,36,SELECT MANDALA (180).txt
+6,37,SELECT MANDALA (181).txt
+6,38,SELECT MANDALA (182).txt
+6,39,SELECT MANDALA (183).txt
+6,40,SELECT MANDALA (184).txt
+6,41,SELECT MANDALA (185).txt
+6,43,SELECT MANDALA (187).txt
+6,44,SELECT MANDALA (188).txt
+6,45,SELECT MANDALA (189).txt
+6,47,SELECT MANDALA (191).txt
+6,48,SELECT MANDALA (192).txt
+6,49,SELECT MANDALA (193).txt
+6,50,SELECT MANDALA (194).txt
+6,51,SELECT MANDALA (195).txt
+6,52,SELECT MANDALA (196).txt
+6,53,SELECT MANDALA (197).txt
+6,54,SELECT MANDALA (198).txt
+6,55,SELECT MANDALA (199).txt
+6,56,SELECT MANDALA (200).txt
+6,58,SELECT MANDALA (202).txt
+6,59,SELECT MANDALA (203).txt
+6,60,SELECT MANDALA (204).txt
+6,61,SELECT MANDALA (205).txt
+6,62,SELECT MANDALA (206).txt
+6,63,SELECT MANDALA (207).txt
+6,64,SELECT MANDALA (208).txt
+6,65,SELECT MANDALA (209).txt
+6,66,SELECT MANDALA (210).txt
+6,67,SELECT MANDALA (211).txt
+6,68,SELECT MANDALA (212).txt
+6,69,SELECT MANDALA (213).txt
+6,70,SELECT MANDALA (214).txt
+6,71,SELECT MANDALA (215).txt
+6,72,SELECT MANDALA (216).txt
+6,74,SELECT MANDALA (218).txt
+6,75,SELECT MANDALA (219).txt
+7,3,SELECT MANDALA (222).txt
+7,4,SELECT MANDALA (223).txt
+7,5,SELECT MANDALA (224).txt
+7,6,SELECT MANDALA (225).txt
+7,7,SELECT MANDALA (226).txt
+7,8,SELECT MANDALA (227).txt
+7,9,SELECT MANDALA (228).txt
+7,10,SELECT MANDALA (229).txt
+7,11,SELECT MANDALA (230).txt
+7,12,SELECT MANDALA (231).txt
+7,13,SELECT MANDALA (232).txt
+7,14,SELECT MANDALA (233).txt
+7,15,SELECT MANDALA (234).txt
+7,16,SELECT MANDALA (235).txt
+7,19,SELECT MANDALA (238).txt
+7,20,SELECT MANDALA (239).txt
+7,22,SELECT MANDALA (241).txt
+7,23,SELECT MANDALA (242).txt
+7,24,SELECT MANDALA (243).txt
+7,25,SELECT MANDALA (244).txt
+7,26,SELECT MANDALA (245).txt
+7,27,SELECT MANDALA (246).txt
+7,28,SELECT MANDALA (247).txt
+7,29,SELECT MANDALA (248).txt
+7,30,SELECT MANDALA (249).txt
+7,31,SELECT MANDALA (250).txt
+7,32,SELECT MANDALA (251).txt
+7,33,SELECT MANDALA (252).txt
+7,34,SELECT MANDALA (253).txt
+7,35,SELECT MANDALA (254).txt
+7,36,SELECT MANDALA (255).txt
+7,38,SELECT MANDALA (257).txt
+7,39,SELECT MANDALA (258).txt
+7,40,SELECT MANDALA (259).txt
+7,43,SELECT MANDALA (262).txt
+7,44,SELECT MANDALA (263).txt
+7,45,SELECT MANDALA (264).txt
+7,46,SELECT MANDALA (265).txt
+7,47,SELECT MANDALA (266).txt
+7,48,SELECT MANDALA (267).txt
+7,49,SELECT MANDALA (268).txt
+7,50,SELECT MANDALA (269).txt
+7,51,SELECT MANDALA (270).txt
+7,52,SELECT MANDALA (271).txt
+7,53,SELECT MANDALA (272).txt
+7,54,SELECT MANDALA (273).txt
+7,55,SELECT MANDALA (274).txt
+7,56,SELECT MANDALA (275).txt
+7,59,SELECT MANDALA (278).txt
+7,60,SELECT MANDALA (279).txt
+7,61,SELECT MANDALA (280).txt
+7,62,SELECT MANDALA (281).txt
+7,63,SELECT MANDALA (282).txt
+7,65,SELECT MANDALA (284).txt
+7,66,SELECT MANDALA (285).txt
+7,67,SELECT MANDALA (286).txt
+7,68,SELECT MANDALA (287).txt
+7,69,SELECT MANDALA (288).txt
+7,70,SELECT MANDALA (289).txt
+7,71,SELECT MANDALA (290).txt
+7,72,SELECT MANDALA (291).txt
+7,73,SELECT MANDALA (292).txt
+7,74,SELECT MANDALA (293).txt
+7,75,SELECT MANDALA (294).txt
+7,77,SELECT MANDALA (296).txt
+7,78,SELECT MANDALA (297).txt
+7,81,SELECT MANDALA (300).txt
+7,82,SELECT MANDALA (301).txt
+7,83,SELECT MANDALA (302).txt
+7,84,SELECT MANDALA (303).txt
+7,85,SELECT MANDALA (304).txt
+7,87,SELECT MANDALA (306).txt
+7,88,SELECT MANDALA (307).txt
+7,91,SELECT MANDALA (310).txt
+7,92,SELECT MANDALA (311).txt
+7,93,SELECT MANDALA (312).txt
+7,95,SELECT MANDALA (314).txt
+7,96,SELECT MANDALA (315).txt
+7,97,SELECT MANDALA (316).txt
+7,98,SELECT MANDALA (317).txt
+7,99,SELECT MANDALA (318).txt
+7,100,SELECT MANDALA (319).txt
+7,101,SELECT MANDALA (320).txt
+7,102,SELECT MANDALA (321).txt
+7,103,SELECT MANDALA (322).txt
+7,104,SELECT MANDALA (323).txt
+8,3,SELECT MANDALA (326).txt
+8,4,SELECT MANDALA (327).txt
+8,5,SELECT MANDALA (328).txt
+8,7,SELECT MANDALA (330).txt
+8,8,SELECT MANDALA (331).txt
+8,11,SELECT MANDALA (334).txt
+8,12,SELECT MANDALA (335).txt
+8,13,SELECT MANDALA (336).txt
+8,14,SELECT MANDALA (337).txt
+8,15,SELECT MANDALA (338).txt
+8,16,SELECT MANDALA (339).txt
+8,17,SELECT MANDALA (340).txt
+8,18,SELECT MANDALA (341).txt
+8,19,SELECT MANDALA (342).txt
+8,20,SELECT MANDALA (343).txt
+8,22,SELECT MANDALA (345).txt
+8,23,SELECT MANDALA (346).txt
+8,24,SELECT MANDALA (347).txt
+8,27,SELECT MANDALA (350).txt
+8,28,SELECT MANDALA (351).txt
+8,30,SELECT MANDALA (353).txt
+8,31,SELECT MANDALA (354).txt
+8,32,SELECT MANDALA (355).txt
+8,33,SELECT MANDALA (356).txt
+8,34,SELECT MANDALA (357).txt
+8,35,SELECT MANDALA (358).txt
+8,36,SELECT MANDALA (359).txt
+8,37,SELECT MANDALA (360).txt
+8,38,SELECT MANDALA (361).txt
+8,39,SELECT MANDALA (362).txt
+8,40,SELECT MANDALA (363).txt
+8,43,SELECT MANDALA (366).txt
+8,44,SELECT MANDALA (367).txt
+8,46,SELECT MANDALA (369).txt
+8,47,SELECT MANDALA (370).txt
+8,48,SELECT MANDALA (371).txt
+8,51,SELECT MANDALA (374).txt
+8,52,SELECT MANDALA (375).txt
+8,53,SELECT MANDALA (376).txt
+8,54,SELECT MANDALA (377).txt
+8,55,SELECT MANDALA (378).txt
+8,56,SELECT MANDALA (379).txt
+8,57,SELECT MANDALA (380).txt
+8,58,SELECT MANDALA (381).txt
+8,59,SELECT MANDALA (382).txt
+8,60,SELECT MANDALA (383).txt
+8,61,SELECT MANDALA (384).txt
+8,62,SELECT MANDALA (385).txt
+8,63,SELECT MANDALA (386).txt
+8,65,SELECT MANDALA (388).txt
+8,67,SELECT MANDALA (389).txt
+8,68,SELECT MANDALA (390).txt
+8,70,SELECT MANDALA (392).txt
+8,71,SELECT MANDALA (393).txt
+8,72,SELECT MANDALA (394).txt
+8,73,SELECT MANDALA (395).txt
+8,74,SELECT MANDALA (396).txt
+8,75,SELECT MANDALA (397).txt
+8,76,SELECT MANDALA (398).txt
+8,77,SELECT MANDALA (399).txt
+8,78,SELECT MANDALA (400).txt
+8,79,SELECT MANDALA (401).txt
+8,80,SELECT MANDALA (402).txt
+8,81,SELECT MANDALA (403).txt
+8,82,SELECT MANDALA (404).txt
+8,83,SELECT MANDALA (405).txt
+8,84,SELECT MANDALA (406).txt
+8,86,SELECT MANDALA (408).txt
+8,87,SELECT MANDALA (409).txt
+8,88,SELECT MANDALA (410).txt
+8,90,SELECT MANDALA (412).txt
+8,91,SELECT MANDALA (413).txt
+8,92,SELECT MANDALA (414).txt
+8,93,SELECT MANDALA (415).txt
+8,94,SELECT MANDALA (416).txt
+8,95,SELECT MANDALA (417).txt
+8,96,SELECT MANDALA (418).txt
+8,97,SELECT MANDALA (419).txt
+8,98,SELECT MANDALA (420).txt
+8,99,SELECT MANDALA (421).txt
+8,100,SELECT MANDALA (422).txt
+8,101,SELECT MANDALA (423).txt
+8,102,SELECT MANDALA (424).txt
+8,103,SELECT MANDALA (425).txt
+9,3,SELECT MANDALA (428).txt
+9,4,SELECT MANDALA (429).txt
+9,7,SELECT MANDALA (432).txt
+9,8,SELECT MANDALA (433).txt
+9,9,SELECT MANDALA (434).txt
+9,10,SELECT MANDALA (435).txt
+9,11,SELECT MANDALA (436).txt
+9,12,SELECT MANDALA (437).txt
+9,13,SELECT MANDALA (438).txt
+9,14,SELECT MANDALA (439).txt
+9,15,SELECT MANDALA (440).txt
+9,16,SELECT MANDALA (441).txt
+9,17,SELECT MANDALA (442).txt
+9,18,SELECT MANDALA (443).txt
+9,19,SELECT MANDALA (444).txt
+9,20,SELECT MANDALA (445).txt
+9,22,SELECT MANDALA (447).txt
+9,23,SELECT MANDALA (448).txt
+9,24,SELECT MANDALA (449).txt
+9,27,SELECT MANDALA (452).txt
+9,28,SELECT MANDALA (453).txt
+9,29,SELECT MANDALA (454).txt
+9,30,SELECT MANDALA (455).txt
+9,31,SELECT MANDALA (456).txt
+9,32,SELECT MANDALA (457).txt
+9,33,SELECT MANDALA (458).txt
+9,34,SELECT MANDALA (459).txt
+9,35,SELECT MANDALA (460).txt
+9,36,SELECT MANDALA (461).txt
+9,37,SELECT MANDALA (462).txt
+9,39,SELECT MANDALA (464).txt
+9,40,SELECT MANDALA (465).txt
+9,43,SELECT MANDALA (468).txt
+9,44,SELECT MANDALA (469).txt
+9,47,SELECT MANDALA (472).txt
+9,48,SELECT MANDALA (473).txt
+9,49,SELECT MANDALA (474).txt
+9,50,SELECT MANDALA (475).txt
+9,51,SELECT MANDALA (476).txt
+9,52,SELECT MANDALA (477).txt
+9,53,SELECT MANDALA (478).txt
+9,54,SELECT MANDALA (479).txt
+9,55,SELECT MANDALA (480).txt
+9,56,SELECT MANDALA (481).txt
+9,57,SELECT MANDALA (482).txt
+9,58,SELECT MANDALA (483).txt
+9,59,SELECT MANDALA (484).txt
+9,61,SELECT MANDALA (486).txt
+9,62,SELECT MANDALA (487).txt
+9,65,SELECT MANDALA (490).txt
+9,66,SELECT MANDALA (491).txt
+9,67,SELECT MANDALA (492).txt
+9,69,SELECT MANDALA (494).txt
+9,70,SELECT MANDALA (495).txt
+9,71,SELECT MANDALA (496).txt
+9,72,SELECT MANDALA (497).txt
+9,73,SELECT MANDALA (498).txt
+9,74,SELECT MANDALA (499).txt
+9,75,SELECT MANDALA (500).txt
+9,76,SELECT MANDALA (501).txt
+9,77,SELECT MANDALA (502).txt
+9,79,SELECT MANDALA (504).txt
+9,80,SELECT MANDALA (505).txt
+9,81,SELECT MANDALA (506).txt
+9,82,SELECT MANDALA (507).txt
+9,83,SELECT MANDALA (508).txt
+9,84,SELECT MANDALA (509).txt
+9,85,SELECT MANDALA (510).txt
+9,86,SELECT MANDALA (511).txt
+9,87,SELECT MANDALA (512).txt
+9,88,SELECT MANDALA (513).txt
+9,91,SELECT MANDALA (516).txt
+9,92,SELECT MANDALA (517).txt
+9,95,SELECT MANDALA (520).txt
+9,96,SELECT MANDALA (521).txt
+9,99,SELECT MANDALA (524).txt
+9,100,SELECT MANDALA (525).txt
+9,101,SELECT MANDALA (526).txt
+9,102,SELECT MANDALA (527).txt
+9,103,SELECT MANDALA (528).txt
+9,104,SELECT MANDALA (529).txt
+9,105,SELECT MANDALA (530).txt
+9,106,SELECT MANDALA (531).txt
+9,107,SELECT MANDALA (532).txt
+9,108,SELECT MANDALA (533).txt
+9,111,SELECT MANDALA (536).txt
+9,112,SELECT MANDALA (537).txt
+9,113,SELECT MANDALA (538).txt
+10,1,SELECT MANDALA (540).txt
+10,2,SELECT MANDALA (541).txt
+10,4,SELECT MANDALA (543).txt
+10,5,SELECT MANDALA (544).txt
+10,6,SELECT MANDALA (545).txt
+10,7,SELECT MANDALA (546).txt
+10,8,SELECT MANDALA (547).txt
+10,9,SELECT MANDALA (548).txt
+10,10,SELECT MANDALA (549).txt
+10,11,SELECT MANDALA (550).txt
+10,12,SELECT MANDALA (551).txt
+10,13,SELECT MANDALA (552).txt
+10,14,SELECT MANDALA (553).txt
+10,16,SELECT MANDALA (555).txt
+10,17,SELECT MANDALA (556).txt
+10,18,SELECT MANDALA (557).txt
+10,21,SELECT MANDALA (560).txt
+10,22,SELECT MANDALA (561).txt
+10,25,SELECT MANDALA (564).txt
+10,26,SELECT MANDALA (565).txt
+10,27,SELECT MANDALA (566).txt
+10,28,SELECT MANDALA (567).txt
+10,29,SELECT MANDALA (568).txt
+10,30,SELECT MANDALA (569).txt
+10,31,SELECT MANDALA (570).txt
+10,32,SELECT MANDALA (571).txt
+10,33,SELECT MANDALA (572).txt
+10,34,SELECT MANDALA (573).txt
+10,37,SELECT MANDALA (576).txt
+10,38,SELECT MANDALA (577).txt
+10,40,SELECT MANDALA (579).txt
+10,41,SELECT MANDALA (580).txt
+10,43,SELECT MANDALA (582).txt
+10,44,SELECT MANDALA (583).txt
+10,45,SELECT MANDALA (584).txt
+10,46,SELECT MANDALA (585).txt
+10,47,SELECT MANDALA (586).txt
+10,48,SELECT MANDALA (587).txt
+10,49,SELECT MANDALA (588).txt
+10,50,SELECT MANDALA (589).txt
+10,51,SELECT MANDALA (590).txt
+10,52,SELECT MANDALA (591).txt
+10,53,SELECT MANDALA (592).txt
+10,54,SELECT MANDALA (593).txt
+10,55,SELECT MANDALA (594).txt
+10,56,SELECT MANDALA (595).txt
+10,57,SELECT MANDALA (596).txt
+10,59,SELECT MANDALA (598).txt
+10,60,SELECT MANDALA (599).txt
+10,61,SELECT MANDALA (600).txt
+10,62,SELECT MANDALA (601).txt
+10,63,SELECT MANDALA (602).txt
+10,64,SELECT MANDALA (603).txt
+10,65,SELECT MANDALA (604).txt
+10,66,SELECT MANDALA (605).txt
+10,68,SELECT MANDALA (607).txt
+10,69,SELECT MANDALA (608).txt
+10,70,SELECT MANDALA (609).txt
+10,72,SELECT MANDALA (611).txt
+10,73,SELECT MANDALA (612).txt
+10,74,SELECT MANDALA (613).txt
+10,75,SELECT MANDALA (614).txt
+10,76,SELECT MANDALA (615).txt
+10,77,SELECT MANDALA (616).txt
+10,78,SELECT MANDALA (617).txt
+10,79,SELECT MANDALA (618).txt
+10,80,SELECT MANDALA (619).txt
+10,81,SELECT MANDALA (620).txt
+10,82,SELECT MANDALA (621).txt
+10,83,SELECT MANDALA (622).txt
+10,84,SELECT MANDALA (623).txt
+10,85,SELECT MANDALA (624).txt
+10,86,SELECT MANDALA (625).txt
+10,89,SELECT MANDALA (628).txt
+10,90,SELECT MANDALA (629).txt
+10,93,SELECT MANDALA (632).txt
+10,94,SELECT MANDALA (633).txt
+10,95,SELECT MANDALA (634).txt
+10,96,SELECT MANDALA (635).txt
+10,97,SELECT MANDALA (636).txt
+10,98,SELECT MANDALA (637).txt
+10,99,SELECT MANDALA (638).txt
+10,100,SELECT MANDALA (639).txt
+10,101,SELECT MANDALA (640).txt
+10,102,SELECT MANDALA (641).txt
+10,103,SELECT MANDALA (642).txt
+10,104,SELECT MANDALA (643).txt
+10,105,SELECT MANDALA (644).txt
+10,106,SELECT MANDALA (645).txt
+10,107,SELECT MANDALA (646).txt
+10,109,SELECT MANDALA (648).txt
+10,110,SELECT MANDALA (649).txt
+10,111,SELECT MANDALA (650).txt
+10,113,SELECT MANDALA (652).txt
+10,114,SELECT MANDALA (653).txt
+10,115,SELECT MANDALA (654).txt
+10,116,SELECT MANDALA (655).txt
+10,117,SELECT MANDALA (656).txt
+10,118,SELECT MANDALA (657).txt
+10,119,SELECT MANDALA (658).txt
+10,120,SELECT MANDALA (659).txt
+10,121,SELECT MANDALA (660).txt
+10,122,SELECT MANDALA (661).txt
+10,123,SELECT MANDALA (662).txt
+10,124,SELECT MANDALA (663).txt
+10,125,SELECT MANDALA (664).txt
+10,126,SELECT MANDALA (665).txt
+10,129,SELECT MANDALA (668).txt
+10,130,SELECT MANDALA (669).txt
+10,133,SELECT MANDALA (672).txt
+10,134,SELECT MANDALA (673).txt
+10,135,SELECT MANDALA (674).txt
+10,136,SELECT MANDALA (675).txt
+10,137,SELECT MANDALA (676).txt
+10,138,SELECT MANDALA (677).txt
+10,139,SELECT MANDALA (678).txt
+10,140,SELECT MANDALA (679).txt
+10,141,SELECT MANDALA (680).txt
+10,142,SELECT MANDALA (681).txt
+10,143,SELECT MANDALA (682).txt
+10,144,SELECT MANDALA (683).txt
+10,146,SELECT MANDALA (685).txt
+10,147,SELECT MANDALA (686).txt
+10,148,SELECT MANDALA (687).txt
+10,151,SELECT MANDALA (690).txt
+10,152,SELECT MANDALA (691).txt
+10,154,SELECT MANDALA (693).txt
+10,155,SELECT MANDALA (694).txt
+10,156,SELECT MANDALA (695).txt
+10,157,SELECT MANDALA (696).txt
+10,158,SELECT MANDALA (697).txt
+10,159,SELECT MANDALA (698).txt
+10,160,SELECT MANDALA (699).txt
+10,161,SELECT MANDALA (700).txt
+10,162,SELECT MANDALA (701).txt
+10,164,SELECT MANDALA (703).txt
+10,165,SELECT MANDALA (704).txt
+10,166,SELECT MANDALA (705).txt
+10,167,SELECT MANDALA (706).txt
+10,168,SELECT MANDALA (707).txt
+10,169,SELECT MANDALA (708).txt
+10,170,SELECT MANDALA (709).txt
+10,171,SELECT MANDALA (710).txt
+10,172,SELECT MANDALA (711).txt
+10,173,SELECT MANDALA (712).txt
+10,174,SELECT MANDALA (713).txt
+10,176,SELECT MANDALA (715).txt
+10,177,SELECT MANDALA (716).txt
+10,178,SELECT MANDALA (717).txt
+10,181,SELECT MANDALA (720).txt
+10,182,SELECT MANDALA (721).txt
+10,185,SELECT MANDALA (724).txt
+10,186,SELECT MANDALA (725).txt
+10,187,SELECT MANDALA (726).txt
+10,188,SELECT MANDALA (727).txt
+10,189,SELECT MANDALA (728).txt
+10,190,SELECT MANDALA (729).txt
+10,191,SELECT MANDALA (730).txt
