@@ -45,11 +45,18 @@ class _SadhanaShellState extends State<SadhanaShell> {
           'listen.at/${work.pack.packId}/${work.slug}',
         ) ??
         widget.repository.store.lastRead(work.pack.packId, work.slug);
-    final sections = widget.repository.sections(work);
+    // Only sections with verses in them: a work's front matter has no chapter
+    // number, so matching on a null mark landed there — a chapter called
+    // "Other" holding nothing, and a player reporting "1 of 0".
+    final sections = [
+      for (final section in widget.repository.sections(work))
+        if (section.verseCount > 0) section,
+    ];
+    final chapter = mark?.split('.').first;
     final section =
-        sections
-            .where((s) => s.number == mark?.split('.').first)
-            .firstOrNull ??
+        (chapter == null
+            ? null
+            : sections.where((s) => s.number == chapter).firstOrNull) ??
         sections.firstOrNull;
     if (section == null) return;
     Navigator.of(context).push(

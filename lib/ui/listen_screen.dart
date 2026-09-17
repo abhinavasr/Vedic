@@ -51,6 +51,9 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
 
   /// Whether the listener has asked for it to keep going.
   var _playing = false;
+
+  /// Whether the verse being played is one they have kept.
+  var _bookmarked = false;
   ReadingLanguage? _reading;
 
   /// Where the listener last got to, remembered apart from where they last
@@ -65,6 +68,23 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
     final verse = _verse;
     if (verse == null) return;
     widget.repository.store.saveSetting(_mark, verse.ref);
+    final kept = widget.repository.store.isBookmarked(
+      widget.work.pack.packId,
+      widget.work.slug,
+      verse.ref,
+    );
+    if (kept != _bookmarked && mounted) setState(() => _bookmarked = kept);
+  }
+
+  void _toggleBookmark() {
+    final verse = _verse;
+    if (verse == null) return;
+    final now = widget.repository.store.toggleBookmark(
+      packId: widget.work.pack.packId,
+      workSlug: widget.work.slug,
+      ref: verse.ref,
+    );
+    setState(() => _bookmarked = now);
   }
 
   int _startingIndex() {
@@ -95,6 +115,7 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
   void didChangeDependencies() {
     super.didChangeDependencies();
     _reading = ReadingLanguageScope.of(context);
+    _remember();
     _fillAhead();
   }
 
@@ -268,12 +289,14 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
               onTap: _showJump,
             ),
             const SizedBox(height: 20),
-            _NowPlaying(
-              work: widget.work,
-              verse: verse,
-              position: _index + 1,
-              of: _verses.length,
-            ),
+                _NowPlaying(
+                  work: widget.work,
+                  verse: verse,
+                  position: _index + 1,
+                  of: _verses.length,
+                  bookmarked: _bookmarked,
+                  onBookmark: _toggleBookmark,
+                ),
             const SizedBox(height: 20),
             _Transport(
               playing: _playing,
@@ -533,12 +556,16 @@ class _NowPlaying extends StatelessWidget {
     required this.verse,
     required this.position,
     required this.of,
+    required this.bookmarked,
+    required this.onBookmark,
   });
 
   final WorkSummary work;
   final PassageView? verse;
   final int position;
   final int of;
+  final bool bookmarked;
+  final VoidCallback onBookmark;
 
   @override
   Widget build(BuildContext context) {
@@ -560,15 +587,36 @@ class _NowPlaying extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            verse == null
-                ? work.title
-                : '${work.title}  ·  ${verse.label ?? verse.ref}',
-            style: const TextStyle(
-              fontSize: 13,
-              color: SadhanaColors.green,
-              fontWeight: FontWeight.w600,
-            ),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  verse == null
+                      ? work.title
+                      : '${work.title}  ·  ${verse.label ?? verse.ref}',
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: SadhanaColors.green,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              // A verse worth keeping is usually noticed while listening to
+              // it, not while looking for it.
+              IconButton(
+                key: const ValueKey('listen-bookmark'),
+                onPressed: verse == null ? null : onBookmark,
+                visualDensity: VisualDensity.compact,
+                iconSize: 22,
+                color: bookmarked
+                    ? SadhanaColors.gold
+                    : SadhanaColors.inkSoft,
+                icon: Icon(
+                  bookmarked ? Icons.bookmark : Icons.bookmark_border,
+                ),
+                tooltip: bookmarked ? 'Kept' : 'Keep this verse',
+              ),
+            ],
           ),
           const SizedBox(height: 12),
           Text(
@@ -580,9 +628,34 @@ class _NowPlaying extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 14),
-          Text(
-            '$position of $of',
-            style: const TextStyle(fontSize: 13, color: SadhanaColors.inkSoft),
+          Row(
+            children: [
+              Text(
+                '$position of $of',
+                style: const TextStyle(
+                  fontSize: 13,
+                  color: SadhanaColors.inkSoft,
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(3),
+                  child: LinearProgressIndicator(
+                    // Verses, not seconds. Two of the three clips are spoken
+                    // by the phone as they are needed, so there is no total
+                    // to count down to — a bar that pretended otherwise would
+                    // sit still through most of a verse.
+                    value: of == 0 ? 0 : position / of,
+                    minHeight: 5,
+                    backgroundColor: SadhanaColors.line,
+                    valueColor: const AlwaysStoppedAnimation(
+                      SadhanaColors.green,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
