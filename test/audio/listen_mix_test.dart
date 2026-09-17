@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:vedic/ai/assistant.dart';
 import 'package:vedic/ai/reading_languages.dart';
+import 'package:vedic/ai/translation.dart';
 import 'package:vedic/audio/listen_mix.dart';
 
 class _MemorySettings implements AssistantSettings {
@@ -134,5 +135,29 @@ void main() {
     final reading = ReadingLanguage(settings);
     expect(reading.mix.explanation, isTrue);
     expect(reading.mix.meaning, isTrue, reason: 'and still reads the meaning');
+  });
+
+  test('changing the app language releases a pinned clip', () {
+    // The bug this guards: a clip pinned to Hindi went on being spoken in
+    // Hindi after the app was switched to English, while Settings said
+    // English — "English is not working", and rightly so.
+    final settings = _MemorySettings();
+    final reading = ReadingLanguage(settings)
+      ..mix = const ListenMix(
+        meaning: true,
+        explanation: true,
+        meaningLanguage: 'hi',
+        explanationLanguage: 'hi',
+      );
+    expect(reading.mix.meaningIn('en'), 'hi', reason: 'pinned, for now');
+
+    reading.language = TargetLanguage.english;
+    expect(reading.mix.meaningLanguage, isNull);
+    expect(reading.mix.explanationLanguage, isNull);
+    expect(reading.mix.meaningIn(reading.language.code), 'en');
+    expect(reading.mix.explanationIn(reading.language.code), 'en');
+    // And what plays is still the same three clips.
+    expect(reading.mix.meaning, isTrue);
+    expect(reading.mix.explanation, isTrue);
   });
 }

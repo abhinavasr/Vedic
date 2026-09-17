@@ -4,6 +4,7 @@ import '../library/scripture_repository.dart';
 import 'bookmarks_screen.dart';
 import 'home/home_screen.dart';
 import 'listen_screen.dart';
+import 'panchang_screen.dart';
 import 'library_screen.dart';
 import 'meditation_screen.dart';
 import 'simple_screens.dart';
@@ -57,6 +58,13 @@ class _SadhanaShellState extends State<SadhanaShell> {
     );
   }
 
+  /// The day's panchang, computed here rather than fetched.
+  void _openPanchang() => Navigator.of(context).push(
+    MaterialPageRoute<void>(
+      builder: (_) => PanchangScreen(onOpenSettings: _openSettings),
+    ),
+  );
+
   void _openSettings() =>
       Navigator.of(context)
           .push(MaterialPageRoute<void>(builder: (_) => const ProfileScreen()));
@@ -73,6 +81,7 @@ class _SadhanaShellState extends State<SadhanaShell> {
           onOpenMeditation: () => _open(3),
           onOpenSettings: _openSettings,
           onOpenChants: _openChants,
+          onOpenPanchang: _openPanchang,
         ),
         LibraryScreen(
           repository: widget.repository,

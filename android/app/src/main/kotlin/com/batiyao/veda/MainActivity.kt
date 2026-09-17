@@ -35,6 +35,9 @@ class MainActivity : AudioServiceActivity() {
             .setMethodCallHandler { call, result ->
                 when (call.method) {
                     "request" -> result.success(requestNotifications())
+                    // The panchang needs to know where the phone is, and the
+                    // timezone says so without a location permission.
+                    "timezone" -> result.success(java.util.TimeZone.getDefault().id)
                     else -> result.notImplemented()
                 }
             }

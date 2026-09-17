@@ -115,6 +115,17 @@ Place? placeForZone(List<Place> places, String zone) {
   return null;
 }
 
+/// Somewhere to stand when the device will not say where it is.
+///
+/// Ujjain, which Indian astronomy has used as its prime meridian for a very
+/// long time, and which is at least in the right country for most readers.
+const fallbackPlace = Place(
+  zone: 'Asia/Kolkata',
+  latitude: 23.1765,
+  longitude: 75.7885,
+  country: 'IN',
+);
+
 /// How far the zone's own city is from where the reader actually is, in
 /// minutes of sunrise time.
 ///

@@ -11,7 +11,6 @@ import '../../library/scripture_repository.dart';
 import '../brand_header.dart';
 import '../listen_meaning.dart';
 import '../reader_screens.dart';
-import '../simple_screens.dart';
 import '../theme.dart';
 import 'hero_background.dart';
 
@@ -23,6 +22,7 @@ class HomeScreen extends StatefulWidget {
     required this.onOpenMeditation,
     required this.onOpenSettings,
     required this.onOpenChants,
+    required this.onOpenPanchang,
     this.problem,
   });
 
@@ -33,6 +33,9 @@ class HomeScreen extends StatefulWidget {
 
   /// Opens the reader with the chant playing.
   final VoidCallback onOpenChants;
+
+  /// Opens the day's panchang.
+  final VoidCallback onOpenPanchang;
 
   /// Why bundled content couldn't be installed, if it couldn't.
   final String? problem;
@@ -155,6 +158,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     final onOpenMeditation = widget.onOpenMeditation;
     final onOpenSettings = widget.onOpenSettings;
     final onOpenChants = widget.onOpenChants;
+    final onOpenPanchang = widget.onOpenPanchang;
     final verse = repository.verseOfTheDay(DateTime.now(), skip: _passedOver);
     // Only the header sits on the picture now, so the banner is as tall as
     // it needs to be to read as one rather than as a gap.
@@ -215,6 +219,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                   padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: _FeatureTiles(
                     onOpenChants: onOpenChants,
+                    onOpenPanchang: onOpenPanchang,
                     onOpenLibrary: onOpenLibrary,
                     onOpenMeditation: onOpenMeditation,
                   ),
@@ -358,22 +363,16 @@ class _FeatureTiles extends StatelessWidget {
     required this.onOpenLibrary,
     required this.onOpenMeditation,
     required this.onOpenChants,
+    required this.onOpenPanchang,
   });
 
   final VoidCallback onOpenLibrary;
   final VoidCallback onOpenMeditation;
   final VoidCallback onOpenChants;
+  final VoidCallback onOpenPanchang;
 
   @override
   Widget build(BuildContext context) {
-    void comingSoon(String title, IconData icon, String message) =>
-        Navigator.of(context).push(
-          MaterialPageRoute<void>(
-            builder: (_) =>
-                ComingSoonScreen(title: title, icon: icon, message: message),
-          ),
-        );
-
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -402,12 +401,7 @@ class _FeatureTiles extends StatelessWidget {
           icon: Icons.calendar_month_outlined,
           background: const Color(0xFFE4EFE0),
           foreground: const Color(0xFF4E7A45),
-          onTap: () => comingSoon(
-            'Panchang',
-            Icons.calendar_month_outlined,
-            'Tithi, nakṣatra, yoga, karaṇa and sunrise, calculated on this '
-                'phone for where you are. Coming in a later update.',
-          ),
+          onTap: onOpenPanchang,
         ),
         _Tile(
           title: 'Meditation',

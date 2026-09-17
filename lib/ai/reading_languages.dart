@@ -40,6 +40,20 @@ class ReadingLanguage extends ChangeNotifier {
     if (choice.code == _code) return;
     _code = choice.code;
     settings?.write(_key, choice.code);
+    // Choosing the app's language chooses it for what is read aloud too.
+    //
+    // A clip can be pinned to a language of its own — the meaning in Hindi
+    // while the explanation is in English — and a pin outlives the setting
+    // that was current when it was made. So someone who pinned the meaning to
+    // Hindi and later switched the app to English went on hearing Hindi, with
+    // the setting screen saying English and nothing explaining the
+    // difference. Changing the app's language releases the pins: anyone who
+    // wants one back is two taps from it, and nobody is left arguing with a
+    // setting that appears to do nothing.
+    mix = _mix.with_(
+      clearMeaningLanguage: true,
+      clearExplanationLanguage: true,
+    );
     notifyListeners();
   }
 
