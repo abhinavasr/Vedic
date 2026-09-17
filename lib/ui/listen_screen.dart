@@ -155,7 +155,7 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
         title: '${widget.work.title}  ·  ${verse.label ?? verse.ref}',
         album: _section.number == null
             ? widget.work.title
-            : 'Chapter ${_section.number}',
+            : '${divisionName(_section)} ${_section.number}',
         artist: 'Vāgdhenu',
       ),
       playing: _playing,

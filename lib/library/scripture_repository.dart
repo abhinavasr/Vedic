@@ -37,7 +37,13 @@ class SectionSummary {
     required this.title,
     required this.passageCount,
     required this.verseCount,
+    this.kind = 'chapter',
   });
+
+  /// What the book calls this division: a chapter in the Gītā, a sūkta in the
+  /// Veda. The reader says the word the book uses rather than calling
+  /// everything a chapter.
+  final String kind;
 
   /// Null for the passages outside any section, such as an invocation.
   final int? id;
@@ -409,7 +415,7 @@ class ScriptureRepository {
   List<SectionSummary> sections(WorkSummary work) => _read(work.pack, (db) {
     final sections = [
       for (final row in db.select(
-        'SELECT s.id, s.number, s.title, '
+        'SELECT s.id, s.number, s.title, s.kind, '
         '(SELECT count(*) FROM passages p WHERE p.section_id = s.id) AS passages, '
         '(SELECT count(*) FROM passages p '
         "WHERE p.section_id = s.id AND p.kind = 'verse') AS verses "
@@ -421,6 +427,7 @@ class ScriptureRepository {
           id: row['id'] as int,
           number: row['number'] as String?,
           title: row['title'] as String?,
+          kind: row['kind'] as String? ?? 'chapter',
           passageCount: row['passages'] as int,
           verseCount: row['verses'] as int,
         ),

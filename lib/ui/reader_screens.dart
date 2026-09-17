@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../library/scripture_repository.dart';
+import 'jump_sheet.dart';
+import 'theme.dart';
 import 'verse_reader.dart';
 
 /// Opens a section: the verse reader where there are verses, the plain list
@@ -65,10 +67,32 @@ class WorkScreen extends StatelessWidget {
           final section = sections[i];
           final number = section.number;
           return ListTile(
-            leading: CircleAvatar(child: Text(number ?? '·')),
+            // Not a circle: a sūkta's number is "10.191", which a circle
+            // sized for "2" cannot hold, and it spilled over the edge.
+            leading: Container(
+              width: 56,
+              alignment: Alignment.center,
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+              decoration: BoxDecoration(
+                color: SadhanaColors.greenTint,
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: Text(
+                number ?? '·',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontSize: 13,
+                  color: SadhanaColors.green,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
             title: Text(
               section.title ??
-                  (number == null ? 'Other text' : 'Chapter $number'),
+                  (number == null
+                      ? 'Other text'
+                      : '${divisionName(section)} $number'),
             ),
             subtitle: Text(
               section.verseCount > 0

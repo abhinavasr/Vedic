@@ -12,7 +12,7 @@
 # nothing against the app's size, and it means the Veda is there offline from
 # the first launch rather than behind a download.
 pack_id: rigveda.sa
-revision: 1
+revision: 3
 kind: text
 created_at: 2026-09-17T00:00:00Z
 min_app_build: 1
@@ -20,3 +20,7 @@ title:
   en: Rigveda
   sa: ऋग्वेदः
 content: content.json
+#
+# Revision 2 merges the first translation responses — English, Hindi and IAST —
+# into suktas 1.1 to 1.4. The rest of the Veda is Sanskrit only, and the app
+# fills a reader's language in as they reach it.

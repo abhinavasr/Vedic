@@ -556,7 +556,7 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
     final section = widget.section;
     final chapter = section.number == null
         ? section.title ?? 'Other text'
-        : 'Chapter ${section.number}'
+        : '${divisionName(section)} ${section.number}'
               '${section.title == null ? '' : '  ·  ${section.title}'}';
 
     return AnnotatedRegion<SystemUiOverlayStyle>(

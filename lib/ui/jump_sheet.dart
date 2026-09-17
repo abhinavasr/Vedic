@@ -44,7 +44,7 @@ Future<JumpTarget?> showJumpSheet(
                     style: serif(size: 20, color: SadhanaColors.ink),
                   ),
                 ),
-                const _JumpLabel('Chapter'),
+                _JumpLabel(divisionName(chosen)),
                 SizedBox(
                   height: 44,
                   child: ListView(
@@ -68,7 +68,9 @@ Future<JumpTarget?> showJumpSheet(
                 _JumpLabel(
                   chosen.number == null
                       ? 'Verse'
-                      : 'Verse in chapter ${chosen.number}',
+                      : 'Verse in '
+                            '${divisionName(chosen).toLowerCase()} '
+                            '${chosen.number}',
                 ),
                 Expanded(
                   child: GridView.count(
@@ -112,6 +114,19 @@ Future<JumpTarget?> showJumpSheet(
     ),
   );
 }
+
+/// What this book calls its divisions, capitalised for a heading.
+///
+/// A Gītā has chapters and a Veda has sūktas, and telling a reader that the
+/// Ṛgveda's first sūkta is "Chapter 1.1" is simply the wrong word.
+String divisionName(SectionSummary section) => switch (section.kind) {
+  'sukta' => 'Sūkta',
+  'kanda' => 'Kāṇḍa',
+  'mandala' => 'Maṇḍala',
+  'anuvaka' => 'Anuvāka',
+  'canto' => 'Canto',
+  _ => 'Chapter',
+};
 
 /// A chapter, named the way the book names it.
 ///
