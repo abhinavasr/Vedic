@@ -231,19 +231,43 @@ PassageSource _merge(
   );
 }
 
+/// The lines of a rendering, however the answer chose to give them.
+///
+/// A transliteration comes back as a list of pādas from one model and as a
+/// single string from the next. Taking only the list meant the second kind was
+/// dropped without a word, which is the worst way to lose something: the merge
+/// reported success and the verse simply had no transliteration.
 List<String> _lines(JsonReader answer, String key) {
   final value = answer.map[key];
+  if (value is String) {
+    return [
+      for (final line in value.split('\n'))
+        if (_clean(line).isNotEmpty) _clean(line),
+    ];
+  }
   if (value is! List) return const [];
   return [
     for (final line in value)
-      if (line is String && line.trim().isNotEmpty) line.trim(),
+      if (line is String && _clean(line).isNotEmpty) _clean(line),
   ];
 }
 
+/// Strips the footnote markers a model leaves in its answer.
+///
+/// Some return prose with "[cite: 1]" or "【3†source】" attached, pointing at
+/// whatever they were reading. That is a note to their own operator, not part
+/// of the translation, and a verse of scripture is not the place to find it.
+String _clean(String text) => text
+    .replaceAll(RegExp(r'\s*\[\s*cite[^\]]*\]', caseSensitive: false), '')
+    .replaceAll(RegExp(r'\s*\[\s*citation[^\]]*\]', caseSensitive: false), '')
+    .replaceAll(RegExp(r'\s*【[^】]*】'), '')
+    .replaceAll(RegExp(r'\s+'), ' ')
+    .trim();
+
 String? _text(JsonReader answer, String key) {
   final value = answer.map[key];
-  if (value is! String || value.trim().isEmpty) return null;
-  return value.trim();
+  if (value is! String || _clean(value).isEmpty) return null;
+  return _clean(value);
 }
 
 List<String> _languages(PackContent content, List<WorkSource> works) {
