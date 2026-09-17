@@ -48,11 +48,18 @@ class _PanchangScreenState extends State<PanchangScreen> {
   @override
   Widget build(BuildContext context) => AnnotatedRegion<SystemUiOverlayStyle>(
     value: SystemUiOverlayStyle.light,
-    child: FutureBuilder<DayPanchang>(
-      future: _day,
-      builder: (context, snapshot) {
-        final day = snapshot.data;
-        return SingleChildScrollView(
+    // A Scaffold, because this is pushed as its own route and does not inherit
+    // the shell's. Without one there is no Material above the text, and
+    // Flutter draws it as it draws any unstyled text — yellow double
+    // underlines on black, which is the framework saying "no theme here"
+    // rather than anything this screen asked for.
+    child: Scaffold(
+      backgroundColor: SadhanaColors.background,
+      body: FutureBuilder<DayPanchang>(
+        future: _day,
+        builder: (context, snapshot) {
+          final day = snapshot.data;
+          return SingleChildScrollView(
           child: Stack(
             children: [
               const Positioned(
@@ -116,11 +123,12 @@ class _PanchangScreenState extends State<PanchangScreen> {
                   ],
                   const SizedBox(height: 32),
                 ],
-              ),
-            ],
-          ),
-        );
-      },
+                ),
+              ],
+            ),
+          );
+        },
+      ),
     ),
   );
 }

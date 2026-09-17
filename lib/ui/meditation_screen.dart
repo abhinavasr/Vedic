@@ -185,193 +185,199 @@ class _MeditationScreenState extends State<MeditationScreen> {
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.dark,
-      child: SingleChildScrollView(
-        child: Stack(
-          children: [
-            const Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              height: 380,
-              child: CustomPaint(
-                painter: HeroPainter(
-                  fadeTo: SadhanaColors.background,
-                  light: true,
+      // Its own Scaffold, now that it is pushed as a route rather than held in
+      // the shell's stack of tabs. Without one there is no Material above it,
+      // and its switches and ink have nothing to draw on.
+      child: Scaffold(
+        backgroundColor: SadhanaColors.background,
+        body: SingleChildScrollView(
+          child: Stack(
+            children: [
+              const Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                height: 380,
+                child: CustomPaint(
+                  painter: HeroPainter(
+                    fadeTo: SadhanaColors.background,
+                    light: true,
+                  ),
                 ),
               ),
-            ),
-            SafeArea(
-              bottom: false,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 12),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Meditation Timer',
-                            style: serif(size: 36, color: SadhanaColors.ink),
-                          ),
-                          const SizedBox(height: 10),
-                          Container(
-                            width: 44,
-                            height: 2,
-                            color: SadhanaColors.gold,
-                          ),
-                          const SizedBox(height: 12),
-                          Text(
-                            'A simple space to sit, breathe,\nand return within.',
-                            style: serif(
-                              size: 18,
-                              color: SadhanaColors.inkSoft,
-                              height: 1.35,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 24),
-                    DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: SadhanaColors.surface,
-                        borderRadius: BorderRadius.circular(24),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Color(0x14000000),
-                            blurRadius: 24,
-                            offset: Offset(0, 8),
-                          ),
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(14, 20, 14, 20),
+              SafeArea(
+                bottom: false,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 12),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Center(
-                              child: _TimerDial(
-                                remaining: remaining,
-                                progress: progress,
-                                status: switch (phase) {
-                                  MeditationPhase.ready => 'Ready to begin',
-                                  MeditationPhase.running => 'Breathe',
-                                  MeditationPhase.paused => 'Paused',
-                                  MeditationPhase.finished =>
-                                    'Session complete',
-                                },
+                            Text(
+                              'Meditation Timer',
+                              style: serif(size: 36, color: SadhanaColors.ink),
+                            ),
+                            const SizedBox(height: 10),
+                            Container(
+                              width: 44,
+                              height: 2,
+                              color: SadhanaColors.gold,
+                            ),
+                            const SizedBox(height: 12),
+                            Text(
+                              'A simple space to sit, breathe,\nand return within.',
+                              style: serif(
+                                size: 18,
+                                color: SadhanaColors.inkSoft,
+                                height: 1.35,
                               ),
                             ),
-                            const SizedBox(height: 22),
-                            const _SettingTitle(
-                              icon: Icons.schedule,
-                              title: 'Total Time',
-                              subtitle:
-                                  "Choose how long you'd like to meditate.",
-                            ),
-                            const SizedBox(height: 10),
-                            Row(
-                              children: [
-                                for (final minutes in _totalMinutes)
-                                  _Choice(
-                                    label: '$minutes min',
-                                    selected: _total.inMinutes == minutes,
-                                    onTap: locked
-                                        ? null
-                                        : () => _change(
-                                            () => _total = Duration(
-                                              minutes: minutes,
-                                            ),
-                                          ),
-                                  ),
-                                _Choice(
-                                  label: isCustom
-                                      ? '${_total.inMinutes} min'
-                                      : 'Custom',
-                                  selected: isCustom,
-                                  onTap: locked ? null : _pickCustom,
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 22),
-                            const _SettingTitle(
-                              icon: Icons.notifications_none,
-                              title: 'Interval Chime',
-                              subtitle:
-                                  'Play a gentle chime during your meditation.',
-                            ),
-                            const SizedBox(height: 10),
-                            Row(
-                              children: [
-                                for (final minutes in _intervalMinutes)
-                                  _Choice(
-                                    label: minutes == null
-                                        ? 'Off'
-                                        : '$minutes min',
-                                    selected: _interval?.inMinutes == minutes,
-                                    onTap: locked
-                                        ? null
-                                        : () => _change(
-                                            () => _interval = minutes == null
-                                                ? null
-                                                : Duration(minutes: minutes),
-                                          ),
-                                  ),
-                              ],
-                            ),
-                            const SizedBox(height: 18),
-                            Row(
-                              children: [
-                                const Expanded(
-                                  child: _SettingTitle(
-                                    icon: Icons.notifications_active_outlined,
-                                    title: 'Ending Bell',
-                                    subtitle:
-                                        'Ring the bell until you stop it when '
-                                        'the session ends.',
-                                  ),
-                                ),
-                                Switch(
-                                  value: _endingBell,
-                                  trackColor: WidgetStateProperty.resolveWith(
-                                    (states) =>
-                                        states.contains(WidgetState.selected)
-                                        ? SadhanaColors.green
-                                        : null,
-                                  ),
-                                  onChanged: locked
-                                      ? null
-                                      : (on) => _change(() => _endingBell = on),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 22),
-                            _controls(phase),
                           ],
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 26),
-                    Center(
-                      child: Text(
-                        '“A quieter mind, a kinder you.”',
-                        style: serif(
-                          size: 18,
-                          style: FontStyle.italic,
-                          color: SadhanaColors.inkSoft,
+                      const SizedBox(height: 24),
+                      DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: SadhanaColors.surface,
+                          borderRadius: BorderRadius.circular(24),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color(0x14000000),
+                              blurRadius: 24,
+                              offset: Offset(0, 8),
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(14, 20, 14, 20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Center(
+                                child: _TimerDial(
+                                  remaining: remaining,
+                                  progress: progress,
+                                  status: switch (phase) {
+                                    MeditationPhase.ready => 'Ready to begin',
+                                    MeditationPhase.running => 'Breathe',
+                                    MeditationPhase.paused => 'Paused',
+                                    MeditationPhase.finished =>
+                                      'Session complete',
+                                  },
+                                ),
+                              ),
+                              const SizedBox(height: 22),
+                              const _SettingTitle(
+                                icon: Icons.schedule,
+                                title: 'Total Time',
+                                subtitle:
+                                    "Choose how long you'd like to meditate.",
+                              ),
+                              const SizedBox(height: 10),
+                              Row(
+                                children: [
+                                  for (final minutes in _totalMinutes)
+                                    _Choice(
+                                      label: '$minutes min',
+                                      selected: _total.inMinutes == minutes,
+                                      onTap: locked
+                                          ? null
+                                          : () => _change(
+                                              () => _total = Duration(
+                                                minutes: minutes,
+                                              ),
+                                            ),
+                                    ),
+                                  _Choice(
+                                    label: isCustom
+                                        ? '${_total.inMinutes} min'
+                                        : 'Custom',
+                                    selected: isCustom,
+                                    onTap: locked ? null : _pickCustom,
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 22),
+                              const _SettingTitle(
+                                icon: Icons.notifications_none,
+                                title: 'Interval Chime',
+                                subtitle: 'Play a gentle chime during your meditation.',
+                              ),
+                              const SizedBox(height: 10),
+                              Row(
+                                children: [
+                                  for (final minutes in _intervalMinutes)
+                                    _Choice(
+                                      label: minutes == null
+                                          ? 'Off'
+                                          : '$minutes min',
+                                      selected: _interval?.inMinutes == minutes,
+                                      onTap: locked
+                                          ? null
+                                          : () => _change(
+                                              () => _interval = minutes == null
+                                                  ? null
+                                                  : Duration(minutes: minutes),
+                                            ),
+                                    ),
+                                ],
+                              ),
+                              const SizedBox(height: 18),
+                              Row(
+                                children: [
+                                  const Expanded(
+                                    child: _SettingTitle(
+                                      icon: Icons.notifications_active_outlined,
+                                      title: 'Ending Bell',
+                                      subtitle:
+                                          'Ring the bell until you stop it when '
+                                          'the session ends.',
+                                    ),
+                                  ),
+                                  Switch(
+                                    value: _endingBell,
+                                    trackColor: WidgetStateProperty.resolveWith(
+                                      (states) =>
+                                          states.contains(WidgetState.selected)
+                                          ? SadhanaColors.green
+                                          : null,
+                                    ),
+                                    onChanged: locked
+                                        ? null
+                                        : (on) =>
+                                              _change(() => _endingBell = on),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 22),
+                              _controls(phase),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 36),
-                  ],
+                      const SizedBox(height: 26),
+                      Center(
+                        child: Text(
+                          '“A quieter mind, a kinder you.”',
+                          style: serif(
+                            size: 18,
+                            style: FontStyle.italic,
+                            color: SadhanaColors.inkSoft,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 36),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../ai/reading_languages.dart';
+import '../notify/daily_verse.dart';
 
 import 'ai/assistant_screen.dart';
 import 'settings/language_screen.dart';
@@ -46,9 +47,14 @@ class ComingSoonScreen extends StatelessWidget {
   );
 }
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: const Text('Profile')),
@@ -66,6 +72,22 @@ class ProfileScreen extends StatelessWidget {
             );
           },
         ),
+        const Divider(height: 1),
+        // Off until asked for, and off again the moment it is not wanted.
+        if (DailyVerseNotice.instance case final notice?)
+          SwitchListTile(
+            key: const ValueKey('daily-verse-notice'),
+            secondary: const Icon(Icons.notifications_none),
+            value: notice.enabled,
+            onChanged: (on) async {
+              await notice.set(on: on);
+              if (mounted) setState(() {});
+            },
+            title: const Text('A verse each morning'),
+            subtitle: const Text(
+              'A quiet notice at five, when the day’s verse changes',
+            ),
+          ),
         const Divider(height: 1),
         ListTile(
           leading: const Icon(Icons.auto_awesome_outlined),

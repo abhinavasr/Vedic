@@ -12,6 +12,7 @@ import 'ai/store_settings.dart';
 import 'app_build.dart';
 import 'audio/chant_session.dart';
 import 'audio/chant_wiring.dart';
+import 'notify/daily_verse.dart';
 import 'packs/bundled_assets.dart';
 import 'packs/pack_store.dart';
 import 'packs/trusted_keys.dart';
@@ -61,6 +62,10 @@ Future<void> main() async {
     debugPrint('SADHANA: the media session did not start: $error\n$stack');
     ChantSession.instance = null;
   }
+  // The morning notice, if it was ever asked for. Nothing is scheduled until
+  // the reader turns it on.
+  DailyVerseNotice.instance = DailyVerseNotice(settings: settings);
+  unawaited(DailyVerseNotice.instance!.restore());
   runApp(
     VedicApp(
       store: store,

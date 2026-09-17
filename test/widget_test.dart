@@ -41,7 +41,11 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await tester.tap(find.widgetWithText(NavigationDestination, 'Meditation'));
+    // Through the tile on the home screen: meditation is something you go and
+    // do, not a place to keep returning to, so it lost its tab.
+    final tile = find.text('Meditation');
+    await tester.ensureVisible(tile.first);
+    await tester.tap(tile.first);
     await tester.pumpAndSettle();
     expect(find.text('Meditation Timer'), findsOneWidget);
     expect(find.text('20:00'), findsOneWidget);

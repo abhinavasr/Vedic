@@ -71,6 +71,11 @@ class _SadhanaShellState extends State<SadhanaShell> {
     );
   }
 
+  /// Meditation, which lost its tab but not its place.
+  void _openMeditation() => Navigator.of(
+    context,
+  ).push(MaterialPageRoute<void>(builder: (_) => const MeditationScreen()));
+
   /// The day's panchang, computed here rather than fetched.
   void _openPanchang() => Navigator.of(context).push(
     MaterialPageRoute<void>(
@@ -83,15 +88,24 @@ class _SadhanaShellState extends State<SadhanaShell> {
           .push(MaterialPageRoute<void>(builder: (_) => const ProfileScreen()));
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-    body: IndexedStack(
+  Widget build(BuildContext context) => PopScope(
+    // Back goes Home before it goes anywhere else. Leaving the app from the
+    // middle of it — three tabs deep, having pressed nothing but Back — is a
+    // way to lose your place, and every Android app worth using returns you to
+    // its first screen first.
+    canPop: _tab == 0,
+    onPopInvokedWithResult: (didPop, _) {
+      if (!didPop) _open(0);
+    },
+    child: Scaffold(
+      body: IndexedStack(
       index: _tab,
       children: [
         HomeScreen(
           repository: widget.repository,
           problem: widget.problem,
           onOpenLibrary: () => _open(1),
-          onOpenMeditation: () => _open(3),
+          onOpenMeditation: _openMeditation,
           onOpenSettings: _openSettings,
           onOpenChants: _openChants,
           onOpenPanchang: _openPanchang,
@@ -109,34 +123,32 @@ class _SadhanaShellState extends State<SadhanaShell> {
           onOpenSettings: _openSettings,
           revision: _bookmarkVisits,
         ),
-        const MeditationScreen(),
       ],
-    ),
-    bottomNavigationBar: NavigationBar(
-      selectedIndex: _tab,
-      onDestinationSelected: _open,
-      destinations: const [
-        NavigationDestination(
-          icon: Icon(Icons.home_outlined),
-          selectedIcon: Icon(Icons.home_rounded),
-          label: 'Home',
-        ),
-        NavigationDestination(
-          icon: Icon(Icons.menu_book_outlined),
-          selectedIcon: Icon(Icons.menu_book_rounded),
-          label: 'Library',
-        ),
-        NavigationDestination(
-          icon: Icon(Icons.bookmark_border),
-          selectedIcon: Icon(Icons.bookmark),
-          label: 'Bookmarks',
-        ),
-        NavigationDestination(
-          icon: Icon(Icons.self_improvement),
-          selectedIcon: Icon(Icons.self_improvement),
-          label: 'Meditation',
-        ),
-      ],
+      ),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _tab,
+        onDestinationSelected: _open,
+        // Three, not four. Meditation had a tab and a tile on the home
+        // screen, and the tab was the one nobody needed: it is a thing you go
+        // and do, not a place you keep returning to.
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(Icons.home_outlined),
+            selectedIcon: Icon(Icons.home_rounded),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.menu_book_outlined),
+            selectedIcon: Icon(Icons.menu_book_rounded),
+            label: 'Library',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.bookmark_border),
+            selectedIcon: Icon(Icons.bookmark),
+            label: 'Bookmarks',
+          ),
+        ],
+      ),
     ),
   );
 }
