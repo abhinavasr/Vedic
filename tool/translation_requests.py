@@ -40,6 +40,8 @@ def main():
     ap.add_argument('--out', required=True)
     ap.add_argument('--verses', type=int, default=120,
                     help='roughly how many verses per file')
+    ap.add_argument('--single', action='store_true',
+                    help='one file holding everything, grouped by sukta')
     args = ap.parse_args()
 
     root = pathlib.Path(args.directory)
@@ -50,6 +52,39 @@ def main():
 
     content = json.loads((root / 'content.json').read_text(encoding='utf-8'))
     work = content['works'][0]
+
+    if args.single:
+        # Grouped by sukta rather than flat: the ṛṣi, devatā and chandas are a
+        # property of the sukta, and repeating them against all eight thousand
+        # verses would add a megabyte that says nothing new.
+        suktas, total = [], 0
+        for section in work['sections']:
+            verses = {p['ref']: p['lines'] for p in section['passages']}
+            total += len(verses)
+            meters = {p['meter'] for p in section['passages'] if p.get('meter')}
+            suktas.append({
+                'sukta': section['number'],
+                **({'header': section['summary']['sa']}
+                   if section.get('summary') else {}),
+                **({'meter': sorted(meters)[0]} if len(meters) == 1 else {}),
+                'verses': verses,
+            })
+        body = {
+            'instructions': INSTRUCTIONS,
+            'return_format': RETURN_FORMAT,
+            'work': 'Ṛgveda, Śākala Saṃhitā',
+            'pack_id': content['pack_id'],
+            'sukta_count': len(suktas),
+            'verse_count': total,
+            'suktas': suktas,
+        }
+        out.mkdir(parents=True, exist_ok=True)
+        target = out / 'rigveda-all.json'
+        target.write_text(json.dumps(body, ensure_ascii=False), encoding='utf-8')
+        size = target.stat().st_size
+        print(f'{len(suktas)} suktas, {total} verses, '
+              f'{size / 1_000_000:.1f} MB → {target}')
+        return
 
     # Group whole suktas into parts.
     parts, current, count = [], [], 0
