@@ -1,4 +1,5 @@
 import 'package:audio_service/audio_service.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 // The notification and the lock screen.
@@ -51,6 +52,7 @@ class ChantSession extends BaseAudioHandler {
 
   /// Shows [item] in the notification and on the lock screen.
   void show(MediaItem item, {required bool playing}) {
+    debugPrint('SADHANA: show ${item.id} playing=$playing');
     mediaItem.add(item);
     playbackState.add(
       PlaybackState(

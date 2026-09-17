@@ -5,12 +5,20 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import io.flutter.embedding.android.FlutterActivity
+import com.ryanheise.audioservice.AudioServiceActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 
 /**
- * Asking for the one permission the recitation's notification needs.
+ * The activity the recitation's media session needs, and the permission its
+ * notification needs.
+ *
+ * It must extend AudioServiceActivity: audio_service hands the notification's
+ * buttons back through this activity's engine, and a plain FlutterActivity
+ * makes AudioService.init throw "the Activity class declared in your
+ * AndroidManifest.xml is wrong" — at startup, where nobody is looking, leaving
+ * an app with no session, no permission prompt and no notification, and no
+ * sign of why.
  *
  * From Android 13 a media notification does not appear without
  * POST_NOTIFICATIONS — no error, nothing in the log, exactly as it looks when
@@ -18,7 +26,7 @@ import io.flutter.plugin.common.MethodChannel
  * dependency that would drag the whole app's compileSdk forward for one
  * permission dialog.
  */
-class MainActivity : FlutterActivity() {
+class MainActivity : AudioServiceActivity() {
     private val channel = "com.batiyao.veda/notifications"
 
     override fun configureFlutterEngine(engine: FlutterEngine) {

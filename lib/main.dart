@@ -40,6 +40,11 @@ Future<void> main() async {
   // service that keeps a recitation going once the screen is off. A platform
   // that will not give us one leaves listening working on screen, as before.
   try {
+    // Its own errors are asynchronous and swallowed unless somebody listens,
+    // which is how a media session can fail for an evening in silence.
+    AudioService.asyncError.listen(
+      (error) => debugPrint('SADHANA: media session error: $error'),
+    );
     ChantSession.instance = await AudioService.init(
       builder: ChantSession.new,
       config: const AudioServiceConfig(
@@ -49,7 +54,11 @@ Future<void> main() async {
         androidStopForegroundOnPause: true,
       ),
     );
-  } on Object {
+  } on Object catch (error, stack) {
+    // Said out loud rather than swallowed: a session that fails to start is
+    // indistinguishable from one that was never asked for, and that cost an
+    // evening once already.
+    debugPrint('SADHANA: the media session did not start: $error\n$stack');
     ChantSession.instance = null;
   }
   runApp(

@@ -67,7 +67,9 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
     ChantSession.instance?.controls = this;
     // Asked here rather than at launch: the prompt makes sense to someone who
     // has just opened the player, and to nobody who has just opened the app.
-    unawaited(ChantSession.instance?.ensureNotificationAllowed() ?? Future.value());
+    final session = ChantSession.instance;
+    debugPrint('SADHANA: listening opened, media session: ${session != null}');
+    unawaited(session?.ensureNotificationAllowed() ?? Future.value());
     _fill.onFilled = () {
       if (!mounted) return;
       setState(() => _verses = widget.repository.verses(widget.work, _section));
