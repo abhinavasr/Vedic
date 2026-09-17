@@ -12,6 +12,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+        // The notification scheduler uses java.time, which minSdk 31 has but
+        // the library it comes from still asks to be desugared for.
+        isCoreLibraryDesugaringEnabled = true
     }
 
     defaultConfig {
@@ -57,4 +60,8 @@ kotlin {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
 }
