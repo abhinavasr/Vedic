@@ -29,6 +29,19 @@ import urllib.request
 
 HOST = "tts.abhinava.xyz"
 
+# The chandas the server has a reference clip for, keyed by the name the
+# source writes. GET /meters lists the bank; anything missing from it is
+# rendered in vasantatilakā, which the server names as its fallback.
+#
+# Only anuṣṭubh of the Rigveda's meters is in there. Gāyatrī and triṣṭubh,
+# which are four fifths of the Saṃhitā between them, are not — so asking for
+# them by name would change nothing, and rendering them anyway produces a
+# 14-syllable classical chant over an 8- or 11-syllable Vedic line.
+METERS = {
+    "अनुष्टुप्": "anuṣṭubh",
+    "अनुष्टुभ्": "anuṣṭubh",
+}
+
 
 def resolve(host):
     """Addresses for [host], asked for over HTTPS.
@@ -77,13 +90,17 @@ def passages(pack, kinds):
                         work.get("slug", "work"),
                         passage["ref"],
                         speakable("\n".join(lines)),
+                        METERS.get((passage.get("meter") or "").strip()),
                     )
 
 
-def render(text, out, key, address, timeout):
+def render(text, out, key, address, timeout, meter=None):
     """One passage. Returns the server's headers, or raises."""
     head = out.with_suffix(".headers")
-    body = json.dumps({"text": text}, ensure_ascii=False).encode()
+    request = {"text": text}
+    if meter:
+        request["meter"] = meter
+    body = json.dumps(request, ensure_ascii=False).encode()
     result = subprocess.run(
         [
             "curl", "-sS", "--fail", "-m", str(timeout),
@@ -120,6 +137,10 @@ def main():
     parser.add_argument("--pause", type=float, default=0.3,
                         help="seconds between requests, to be a good guest")
     parser.add_argument("--retries", type=int, default=4)
+    parser.add_argument("--known-meters", action="store_true",
+                        help="render only verses whose chandas is in the "
+                             "server's reference bank, instead of letting the "
+                             "rest fall back to vasantatilakā")
     args = parser.parse_args()
 
     key = os.environ.get("VAGDHENU_KEY")
@@ -141,17 +162,23 @@ def main():
                 done.add(json.loads(line)["ref"])
 
     work = list(passages(args.pack, set(args.kinds.split(","))))
+    if args.known_meters:
+        held = [w for w in work if not w[3]]
+        work = [w for w in work if w[3]]
+        print(f"{len(held)} passages held back: no reference clip for their "
+              f"chandas", flush=True)
     print(f"{len(work)} passages, {len(done)} already rendered", flush=True)
     started = time.time()
 
     with index.open("a") as log:
-        for i, (slug, ref, text) in enumerate(work, 1):
+        for i, (slug, ref, text, meter) in enumerate(work, 1):
             out = root / f"{ref}.wav"
             if ref in done and out.exists():
                 continue
             for attempt in range(1, args.retries + 1):
                 try:
-                    headers = render(text, out, key, address, args.timeout)
+                    headers = render(text, out, key, address,
+                                     args.timeout, meter)
                     break
                 except Exception as error:  # noqa: BLE001 — every failure retries
                     if attempt == args.retries:
