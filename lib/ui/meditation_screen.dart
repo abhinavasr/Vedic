@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
+import '../meditation/meditation_music.dart';
+
 import '../meditation/meditation_session.dart';
 import 'home/hero_painter.dart';
 import 'theme.dart';
@@ -24,9 +26,11 @@ class _MeditationScreenState extends State<MeditationScreen> {
   var _total = const Duration(minutes: 20);
   Duration? _interval = const Duration(minutes: 5);
   var _endingBell = true;
+  var _music = MeditationMusic.none;
   MeditationSession? _session;
   Timer? _ticker;
   _Bells? _bells;
+  _Music? _player;
 
   /// Whether the ending bell is ringing and waiting to be stopped.
   var _ringing = false;
@@ -35,6 +39,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
   void dispose() {
     _ticker?.cancel();
     _bells?.dispose();
+    _player?.dispose();
     unawaited(_keepAwake(false));
     super.dispose();
   }
@@ -57,6 +62,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
   void _start() {
     _stopBell();
     _bells ??= _Bells();
+    _playMusic();
     setState(
       () => _session = MeditationSession(
         MeditationSettings(
@@ -95,6 +101,7 @@ class _MeditationScreenState extends State<MeditationScreen> {
     }
     if (session.phase == MeditationPhase.finished) {
       _stopTicker();
+      unawaited(_player?.stop());
       unawaited(HapticFeedback.mediumImpact());
     }
     setState(() {});
@@ -103,19 +110,35 @@ class _MeditationScreenState extends State<MeditationScreen> {
   void _pause() {
     _session?.pause(DateTime.now());
     _stopTicker();
+    unawaited(_player?.pause());
     setState(() {});
   }
 
   void _resume() {
     _session?.resume(DateTime.now());
     _runTicker();
+    unawaited(_player?.resume());
     setState(() {});
   }
 
   void _end() {
     _stopTicker();
     _stopBell();
+    unawaited(_player?.stop());
     setState(() => _session = null);
+  }
+
+  /// Starts whatever was chosen, looping, and stops whatever was playing.
+  ///
+  /// Silence is a choice here, so choosing it stops the sound rather than
+  /// leaving the last track running under a sitting meant to be quiet.
+  void _playMusic() {
+    if (!_music.sounds) {
+      unawaited(_player?.stop());
+      return;
+    }
+    _player ??= _Music();
+    unawaited(_player!.loop(_music.asset!));
   }
 
   void _stopBell() {
@@ -327,6 +350,38 @@ class _MeditationScreenState extends State<MeditationScreen> {
                                     ),
                                 ],
                               ),
+                              const SizedBox(height: 22),
+                              const _SettingTitle(
+                                icon: Icons.music_note_outlined,
+                                title: 'Sound',
+                                subtitle:
+                                    'Play something under the timer, on a '
+                                    'loop, for as long as you sit.',
+                              ),
+                              const SizedBox(height: 10),
+                              Wrap(
+                                spacing: 8,
+                                runSpacing: 8,
+                                children: [
+                                  for (final music in MeditationMusic.values)
+                                    _Choice(
+                                      key: ValueKey('music-${music.name}'),
+                                      share: false,
+                                      label: music.label,
+                                      selected: _music == music,
+                                      onTap: () {
+                                        setState(() => _music = music);
+                                        // Changing it mid-sitting swaps the
+                                        // track rather than ending the
+                                        // sitting, which _change would do.
+                                        if (_session?.phase ==
+                                            MeditationPhase.running) {
+                                          _playMusic();
+                                        }
+                                      },
+                                    ),
+                                ],
+                              ),
                               const SizedBox(height: 18),
                               Row(
                                 children: [
@@ -448,6 +503,37 @@ class _MeditationScreenState extends State<MeditationScreen> {
 
 /// The temple bell: once for an interval chime, and on repeat at the end of
 /// a session until stopped.
+/// The track under the sitting, looping until the sitting ends.
+class _Music {
+  final _player = AudioPlayer();
+
+  Future<void> loop(String asset) => _quietly(() async {
+    await _player.stop();
+    await _player.setReleaseMode(ReleaseMode.loop);
+    // Under the bells rather than over them: the chime marks the time and
+    // has to be audible through whatever is playing.
+    await _player.setVolume(0.6);
+    await _player.play(AssetSource(asset));
+  });
+
+  Future<void> pause() => _quietly(_player.pause);
+
+  Future<void> resume() => _quietly(_player.resume);
+
+  Future<void> stop() => _quietly(_player.stop);
+
+  void dispose() => unawaited(_player.dispose());
+
+  static Future<void> _quietly(Future<void> Function() action) async {
+    try {
+      await action();
+    } on Exception {
+      // Sound is best-effort: a track that will not play must never stop
+      // the timer, which is the thing somebody is actually sitting with.
+    }
+  }
+}
+
 class _Bells {
   final _chime = AudioPlayer();
   final _ending = AudioPlayer();
@@ -621,18 +707,25 @@ class _SettingTitle extends StatelessWidget {
 
 class _Choice extends StatelessWidget {
   const _Choice({
+    super.key,
     required this.label,
     required this.selected,
     required this.onTap,
+    this.share = true,
   });
 
   final String label;
   final bool selected;
   final VoidCallback? onTap;
 
+  /// Whether to take an equal share of a Row, which is how the minute chips
+  /// line up. A Wrap is not a Flex, so anything laid out there sizes itself
+  /// to its own label instead.
+  final bool share;
+
   @override
-  Widget build(BuildContext context) => Expanded(
-    child: Opacity(
+  Widget build(BuildContext context) {
+    final chip = Opacity(
       opacity: onTap == null && !selected ? 0.5 : 1,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 3),
@@ -660,6 +753,7 @@ class _Choice extends StatelessWidget {
           ),
         ),
       ),
-    ),
-  );
+    );
+    return share ? Expanded(child: chip) : chip;
+  }
 }
