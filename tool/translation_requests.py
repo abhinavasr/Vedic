@@ -12,13 +12,23 @@ import argparse
 import json
 import pathlib
 
+# Transliteration is deliberately not asked for. It is a mechanical mapping
+# from the Devanagari we already hold, so deriving it is exact and free, while
+# asking for it is asking a model to retype scripture from memory. When we did
+# ask, 58 of 409 verses came back misread — almost always a dropped vowel
+# length, which reads perfectly well and is a different word.
 INSTRUCTIONS = (
     'Translate each verse of the Ṛgveda (Śākala Saṃhitā) below. For every ref '
-    'in "verses", return three things: "iast" — the Sanskrit transliterated '
-    'into IAST, keeping the Vedic accents where you can; "hi" — a plain Hindi '
-    'translation; "en" — a plain English translation. '
+    'in "verses", return two things: "hi" — a plain Hindi translation; '
+    '"en" — a plain English translation. Do not return the Sanskrit itself in '
+    'any script. '
     'Translate what the verse says: add nothing, leave nothing out, and do not '
     'explain. Keep the names of gods, ṛṣis and places as they are. '
+    'Punctuate properly: a comma wherever a reader would pause, a full stop at '
+    'the end of every English sentence and "।" at the end of every Hindi one. '
+    'These translations are read aloud by a voice, which has nothing but the '
+    'punctuation to tell it where to breathe. '
+    'Add no citation or footnote markers of any kind. '
     'Return only JSON in the shape of "return_format", with one entry per ref, '
     'and do not change or renumber a ref.'
 )
@@ -26,7 +36,6 @@ INSTRUCTIONS = (
 RETURN_FORMAT = {
     'verses': {
         '<ref, exactly as given>': {
-            'iast': '<the Sanskrit in IAST>',
             'hi': '<Hindi translation>',
             'en': '<English translation>',
         }
@@ -42,6 +51,8 @@ def main():
                     help='roughly how many verses per file')
     ap.add_argument('--single', action='store_true',
                     help='one file holding everything, grouped by sukta')
+    ap.add_argument('--todo', action='store_true',
+                    help='ask only for verses that have no translation yet')
     args = ap.parse_args()
 
     root = pathlib.Path(args.directory)
@@ -53,15 +64,25 @@ def main():
     content = json.loads((root / 'content.json').read_text(encoding='utf-8'))
     work = content['works'][0]
 
+    def wanted(passage):
+        """Whether this verse still needs asking about."""
+        if not args.todo:
+            return True
+        have = {t['language'] for t in passage.get('translations', [])}
+        return not {'hi', 'en'} <= have
+
     if args.single:
         # Grouped by sukta rather than flat: the ṛṣi, devatā and chandas are a
         # property of the sukta, and repeating them against all eight thousand
         # verses would add a megabyte that says nothing new.
         suktas, total = [], 0
         for section in work['sections']:
-            verses = {p['ref']: p['lines'] for p in section['passages']}
+            asking = [p for p in section['passages'] if wanted(p)]
+            if not asking:
+                continue
+            verses = {p['ref']: p['lines'] for p in asking}
             total += len(verses)
-            meters = {p['meter'] for p in section['passages'] if p.get('meter')}
+            meters = {p['meter'] for p in asking if p.get('meter')}
             suktas.append({
                 'sukta': section['number'],
                 **({'header': section['summary']['sa']}
