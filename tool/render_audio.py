@@ -29,17 +29,38 @@ import urllib.request
 
 HOST = "tts.abhinava.xyz"
 
-# The chandas the server has a reference clip for, keyed by the name the
-# source writes. GET /meters lists the bank; anything missing from it is
-# rendered in vasantatilakā, which the server names as its fallback.
+# What to ask the server to chant a verse as.
 #
-# Only anuṣṭubh of the Rigveda's meters is in there. Gāyatrī and triṣṭubh,
-# which are four fifths of the Saṃhitā between them, are not — so asking for
-# them by name would change nothing, and rendering them anyway produces a
-# 14-syllable classical chant over an 8- or 11-syllable Vedic line.
+# The reference bank holds classical chandas, and of the Rigveda's meters only
+# anuṣṭubh is among them by name. Asked to detect, the server falls back to
+# vasantatilakā — which is what a gāyatrī and a triṣṭubh both came back as.
+#
+# But a chant is governed by the length of the pāda, and the bank has a
+# classical meter of the same length for nearly all of them. Triṣṭubh and
+# upajāti are both eleven syllables to the pāda, gāyatrī and anuṣṭubh both
+# eight, jagatī and vaṃśastha both twelve. Mapping by that length covers
+# about ninety per cent of the Saṃhitā and was judged by ear to be right.
+#
+# It is an approximation and worth replacing: a classical meter fixes which
+# syllables are heavy and light within the pāda, where the Vedic meters are
+# looser, and Vedic recitation is shaped by the accents besides. Reference
+# clips of actual Vedic chanting would be the real answer.
+#
+# The mixed-length meters are left out rather than forced. Uṣṇik and bṛhatī
+# run 8-8-12 and 8-8-12-8, so no single pāda length is the meter, and aṣṭi
+# and atyaṣṭi are longer than anything in the bank.
 METERS = {
-    "अनुष्टुप्": "anuṣṭubh",
+    # Uniform pāda, matched to the classical meter of the same length.
+    "गायत्री": "anuṣṭubh",       # 3 x 8
+    "अनुष्टुप्": "anuṣṭubh",      # 4 x 8
     "अनुष्टुभ्": "anuṣṭubh",
+    "पंक्ति": "anuṣṭubh",        # 5 x 8
+    "पङ्क्ति": "anuṣṭubh",
+    "त्रिष्टुप्": "upajāti",       # 4 x 11
+    "त्रिष्टुभ्": "upajāti",
+    "जगती": "vaṃśastha",        # 4 x 12
+    "शक्वरी": "vasantatilakā",   # 4 x 14
+    "अतिजगती": "vasantatilakā",  # 4 x 13, nearest the bank holds
 }
 
 
