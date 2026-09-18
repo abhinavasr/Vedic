@@ -47,9 +47,13 @@ Future<void> installFixture() async {
   repository = ScriptureRepository(store);
 }
 
-Future<void> openReader(WidgetTester tester) async {
+Future<void> openReader(
+  WidgetTester tester, {
+  Size size = const Size(1200, 2600),
+  double textScale = 1,
+}) async {
   // A phone-sized window, so a verse and its notes are all built.
-  tester.view.physicalSize = const Size(1200, 2600);
+  tester.view.physicalSize = size;
   tester.view.devicePixelRatio = 1;
   addTearDown(tester.view.resetPhysicalSize);
   addTearDown(tester.view.resetDevicePixelRatio);
@@ -58,13 +62,32 @@ Future<void> openReader(WidgetTester tester) async {
   final chapter = repository.sections(work).first;
   await tester.pumpWidget(
     MaterialApp(
-      home: VerseReaderScreen(
-        repository: repository,
-        work: work,
-        section: chapter,
+      // copyWith, not a fresh MediaQueryData: a bare one has a zero size,
+      // and everything that lays itself out against the screen then gets
+      // nothing to lay out against.
+      home: Builder(
+        builder: (context) => MediaQuery(
+          data: MediaQuery.of(context)
+              .copyWith(textScaler: TextScaler.linear(textScale)),
+          child: VerseReaderScreen(
+            repository: repository,
+            work: work,
+            section: chapter,
+          ),
+        ),
       ),
     ),
   );
+  await tester.pumpAndSettle();
+}
+
+/// Moving to the next verse the way a reader does.
+///
+/// The chevrons either side of the counter were the first thing to be pushed
+/// off a narrow screen, and they were never the way to turn a page: the verses
+/// are a PageView, so the gesture is a swipe.
+Future<void> swipeToNextVerse(WidgetTester tester) async {
+  await tester.fling(find.byType(PageView), const Offset(-400, 0), 1000);
   await tester.pumpAndSettle();
 }
 
@@ -117,8 +140,7 @@ void main() {
   ) async {
     await openReader(tester);
 
-    await tester.tap(find.byIcon(Icons.chevron_right));
-    await tester.pumpAndSettle();
+    await swipeToNextVerse(tester);
     expect(find.text('Verse 2.48'), findsOneWidget);
     expect(find.text('2 of 2'), findsOneWidget);
     expect(
@@ -141,8 +163,7 @@ void main() {
     expect(find.textContaining('Translate on this phone'), findsNothing);
     expect(find.byKey(const ValueKey('translate-more')), findsOneWidget);
 
-    await tester.tap(find.byIcon(Icons.chevron_right));
-    await tester.pumpAndSettle();
+    await swipeToNextVerse(tester);
     expect(find.byKey(const ValueKey('translate-en')), findsOneWidget);
     expect(find.byKey(const ValueKey('translate-hi')), findsOneWidget);
     // Nothing has been translated here at all, so it is not "again".
@@ -164,8 +185,7 @@ void main() {
       ),
     );
     await openReader(tester);
-    await tester.tap(find.byIcon(Icons.chevron_right));
-    await tester.pumpAndSettle();
+    await swipeToNextVerse(tester);
 
     expect(find.text('Steadfast in yoga, do your work.'), findsOneWidget);
     // The credit names the language, so a fallback never looks like the
@@ -184,13 +204,41 @@ void main() {
     );
   });
 
+  testWidgets('the controls survive a small screen at a large font', (
+    tester,
+  ) async {
+    // The complaint this fixes: on a narrow phone, or at the font size
+    // somebody actually reads scripture at, the row above the verse ran off
+    // the edge and took its buttons with it. A control you cannot reach is
+    // worse than one that was never there, because the reader cannot tell
+    // the difference between a broken screen and a missing feature.
+    await openReader(tester, size: const Size(320, 1000), textScale: 2);
+
+    expect(
+      tester.takeException(),
+      isNull,
+      reason: 'nothing may overflow, however wide the words get',
+    );
+    // The three things that cannot be done by any other gesture are all
+    // still hittable.
+    expect(find.byKey(const ValueKey('read-on')), findsOneWidget);
+    expect(find.byKey(const ValueKey('jump')), findsOneWidget);
+    // Both are hit-testable: tap() fails the test if the centre of the
+    // widget is not actually reachable, which is what "getting hidden"
+    // meant. (The jump sheet itself waits on VersePlayer.stop(), which
+    // never returns without an audio backend, so opening it is not
+    // something a widget test can check.)
+    await tester.tap(find.byKey(const ValueKey('jump')), warnIfMissed: true);
+    await tester.tap(find.byKey(const ValueKey('read-on')), warnIfMissed: true);
+    await tester.pump();
+  });
+
   testWidgets('remembers the verse reached and bookmarks it', (tester) async {
     await openReader(tester);
     final store = repository.store;
     expect(store.lastRead('bhagavad-gita', 'bhagavad-gita'), '2.47');
 
-    await tester.tap(find.byIcon(Icons.chevron_right));
-    await tester.pumpAndSettle();
+    await swipeToNextVerse(tester);
     expect(store.lastRead('bhagavad-gita', 'bhagavad-gita'), '2.48');
 
     await tester.tap(find.byIcon(Icons.bookmark_border));

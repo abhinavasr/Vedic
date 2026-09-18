@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import '../ai/reading_languages.dart';
 import '../core/transliteration.dart';
 import '../library/scripture_repository.dart';
-import '../packs/pack_store.dart';
 import 'brand_header.dart';
 import 'home/hero_background.dart';
 import 'reader_screens.dart';
@@ -56,7 +55,18 @@ class _LibraryScreenState extends State<LibraryScreen> {
       300.0,
       MediaQuery.sizeOf(context).height * 0.34,
     );
-    final recent = repository.store.recentlyRead(limit: 5);
+    // Every book the reader has opened, most recent first. The store keeps
+    // one row per work, so this is already "where I am in each book" — the
+    // screen just used to throw all but the first away and show works.first,
+    // which meant somebody halfway through the Ṛgveda was told to continue
+    // the Gītā.
+    final recent = repository.store.recentlyRead(limit: 20);
+    final byKey = {
+      for (final work in works) '${work.pack.packId}/${work.slug}': work,
+    };
+    final started = [
+      for (final mark in recent) ?byKey['${mark.packId}/${mark.workSlug}'],
+    ];
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
@@ -143,13 +153,19 @@ class _LibraryScreenState extends State<LibraryScreen> {
                   )
                 else ...[
                   const SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: _FeaturedCard(
-                      repository: repository,
-                      work: works.first,
+                  // One card per book on the go. Nothing started yet means a
+                  // single card inviting them into the first book.
+                  for (final work in started.isEmpty ? [works.first] : started)
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+                      child: _FeaturedCard(
+                        key: ValueKey(
+                          'continue-${work.pack.packId}/${work.slug}',
+                        ),
+                        repository: repository,
+                        work: work,
+                      ),
                     ),
-                  ),
                   const SizedBox(height: 22),
                   _WorkTiles(repository: repository, works: works),
                   const SizedBox(height: 22),
@@ -163,18 +179,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                     ),
                   ),
                 ],
-                if (recent.isNotEmpty) ...[
-                  const SizedBox(height: 26),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
-                    child: Text(
-                      'Recently Read',
-                      style: serif(size: 22, color: SadhanaColors.ink),
-                    ),
-                  ),
-                  for (final mark in recent)
-                    _RecentRow(repository: repository, mark: mark),
-                ],
+
                 const SizedBox(height: 32),
               ],
             ),
@@ -187,7 +192,11 @@ class _LibraryScreenState extends State<LibraryScreen> {
 
 /// The book to pick up again: where the reader stopped, and how far in.
 class _FeaturedCard extends StatelessWidget {
-  const _FeaturedCard({required this.repository, required this.work});
+  const _FeaturedCard({
+    super.key,
+    required this.repository,
+    required this.work,
+  });
 
   final ScriptureRepository repository;
   final WorkSummary work;
@@ -603,55 +612,6 @@ class _Toggle extends StatelessWidget {
       ),
     ),
   );
-}
-
-class _RecentRow extends StatelessWidget {
-  const _RecentRow({required this.repository, required this.mark});
-
-  final ScriptureRepository repository;
-  final ReadingMark mark;
-
-  @override
-  Widget build(BuildContext context) {
-    final work = repository
-        .works()
-        .where((w) => w.pack.packId == mark.packId && w.slug == mark.workSlug)
-        .firstOrNull;
-    if (work == null) return const SizedBox.shrink();
-    return ListTile(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
-      leading: ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: SizedBox(
-          width: 52,
-          height: 52,
-          child: Image.asset('assets/images/hero.jpg', fit: BoxFit.cover),
-        ),
-      ),
-      title: Text(work.title, style: serif(size: 17, color: SadhanaColors.ink)),
-      subtitle: Text(
-        'Verse ${mark.ref}',
-        style: const TextStyle(fontSize: 13, color: SadhanaColors.inkSoft),
-      ),
-      trailing: const Icon(Icons.chevron_right, color: SadhanaColors.inkSoft),
-      onTap: () {
-        final section = _sectionOf(work, mark.ref);
-        if (section == null) {
-          _openWork(context, repository, work);
-        } else {
-          openSection(context, repository, work, section, atRef: mark.ref);
-        }
-      },
-    );
-  }
-
-  SectionSummary? _sectionOf(WorkSummary work, String ref) {
-    final chapter = ref.split('.').first;
-    for (final section in repository.sections(work)) {
-      if (section.number == chapter) return section;
-    }
-    return null;
-  }
 }
 
 class _SearchBar extends StatelessWidget {

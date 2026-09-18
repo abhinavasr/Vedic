@@ -334,16 +334,18 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
   /// only when the reader asked. Work running ahead of them gives up quietly
   /// instead: it was never requested, and a screen nobody asked for is worse
   /// than a verse that stays in the language the pack shipped.
-  Future<bool> _assistantReady(Assistant assistant, {required bool automatic}) async {
+  Future<bool> _assistantReady(
+    Assistant assistant, {
+    required bool automatic,
+  }) async {
     if (assistant.state.value.phase == AssistantPhase.unknown) {
       await assistant.refresh();
     }
     if (!mounted) return false;
     if (assistant.state.value.canAnswer) return true;
     if (automatic) return false;
-    await Navigator.of(
-      context,
-    ).push(MaterialPageRoute<void>(builder: (_) => const AssistantScreen()));
+    await Navigator.of(context)
+        .push(MaterialPageRoute<void>(builder: (_) => const AssistantScreen()));
     return false;
   }
 
@@ -681,6 +683,14 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
     ],
   );
 
+  // The row above the verse: what to show, read-on, and where you are.
+  //
+  // There used to be a chevron either side of the counter. They were the first
+  // things to be pushed off the edge on a small screen or at a large font
+  // size, and they were never needed: the verse is a PageView, so the gesture
+  // that moves it is a swipe. Losing them gave the row back the width it was
+  // overflowing by, and the three things left are the three that cannot be
+  // done any other way.
   Widget _controls() => DecoratedBox(
     decoration: BoxDecoration(
       color: SadhanaColors.surface,
@@ -697,17 +707,29 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       child: Row(
         children: [
-          for (final mode in _Show.values)
-            _ModeChip(
-              key: ValueKey('show-${mode.name}'),
-              label: switch (mode) {
-                _Show.sanskrit => 'Sanskrit',
-                _Show.meaning => 'Meaning',
-                _Show.both => 'Both',
-              },
-              selected: _show == mode,
-              onTap: () => setState(() => _show = mode),
+          // The chips scroll rather than squeeze, so a font size that makes
+          // "Sanskrit" wide enough to fill the row still leaves the counter
+          // and the play button where they are.
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  for (final mode in _Show.values)
+                    _ModeChip(
+                      key: ValueKey('show-${mode.name}'),
+                      label: switch (mode) {
+                        _Show.sanskrit => 'Sanskrit',
+                        _Show.meaning => 'Meaning',
+                        _Show.both => 'Both',
+                      },
+                      selected: _show == mode,
+                      onTap: () => setState(() => _show = mode),
+                    ),
+                ],
+              ),
             ),
+          ),
           const SizedBox(width: 4),
           IconButton(
             key: const ValueKey('read-on'),
@@ -725,11 +747,6 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
                   : Icons.play_circle_fill_rounded,
             ),
           ),
-          IconButton(
-            visualDensity: VisualDensity.compact,
-            onPressed: _index == 0 ? null : () => _goTo(_index - 1),
-            icon: const Icon(Icons.chevron_left),
-          ),
           InkWell(
             key: const ValueKey('jump'),
             borderRadius: BorderRadius.circular(12),
@@ -738,6 +755,7 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
               child: Text(
                 _verses.isEmpty ? '—' : '${_index + 1} of ${_verses.length}',
+                maxLines: 1,
                 style: const TextStyle(
                   fontSize: 13,
                   color: SadhanaColors.green,
@@ -745,13 +763,6 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
                 ),
               ),
             ),
-          ),
-          IconButton(
-            visualDensity: VisualDensity.compact,
-            onPressed: _index >= _verses.length - 1
-                ? null
-                : () => _goTo(_index + 1),
-            icon: const Icon(Icons.chevron_right),
           ),
         ],
       ),
@@ -892,13 +903,22 @@ class _VersePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
+                // A Row with a Spacer put the meter hard against the right
+                // edge, which is where it belongs until the words are wide
+                // enough that there is no edge left — at a large font on a
+                // narrow phone this overflowed by 500 pixels. Wrapping keeps
+                // the same line when it fits and drops the chip underneath
+                // when it does not.
+                Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: 8,
+                  runSpacing: 6,
                   children: [
                     Text(
                       'Verse ${verse.label ?? verse.ref}',
                       style: serif(size: 17, color: SadhanaColors.ink),
                     ),
-                    const Spacer(),
                     if (verse.meter case final meter?)
                       _Chip(text: 'Meter: $meter'),
                   ],
