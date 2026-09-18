@@ -18,16 +18,25 @@ import pathlib
 # ask, 58 of 409 verses came back misread — almost always a dropped vowel
 # length, which reads perfectly well and is a different word.
 INSTRUCTIONS = (
-    'Translate each verse of the Ṛgveda (Śākala Saṃhitā) below. For every ref '
-    'in "verses", return two things: "hi" — a plain Hindi translation; '
-    '"en" — a plain English translation. Do not return the Sanskrit itself in '
-    'any script. '
-    'Translate what the verse says: add nothing, leave nothing out, and do not '
-    'explain. Keep the names of gods, ṛṣis and places as they are. '
-    'Punctuate properly: a comma wherever a reader would pause, a full stop at '
-    'the end of every English sentence and "।" at the end of every Hindi one. '
-    'These translations are read aloud by a voice, which has nothing but the '
-    'punctuation to tell it where to breathe. '
+    'Translate and explain each verse of the Ṛgveda (Śākala Saṃhitā) below. '
+    'For every ref in "verses" return five things: '
+    '"hi" — a plain Hindi translation; '
+    '"en" — a plain English translation; '
+    '"explanation_en" — two or three sentences in English on what the verse '
+    'means and why it matters, naming the deity and any ṛṣi, rite or story it '
+    'refers to; '
+    '"explanation_hi" — the same explanation in Hindi, not a translation of '
+    'the English word for word; '
+    '"takeaways_en" — one or two short English lines, each standing on its '
+    'own, that a reader would remember. '
+    'In "hi" and "en" translate what the verse says: add nothing, leave '
+    'nothing out, and do not explain — the explanation belongs in its own '
+    'field. Keep the names of gods, ṛṣis and places as they are. '
+    'Do not return the Sanskrit itself in any script. '
+    'Punctuate properly, in every field: a comma wherever a reader would '
+    'pause, a full stop at the end of every English sentence and "।" at the '
+    'end of every Hindi one. All of this is read aloud by a voice, which has '
+    'nothing but the punctuation to tell it where to breathe. '
     'Add no citation or footnote markers of any kind. '
     'Return only JSON in the shape of "return_format", with one entry per ref, '
     'and do not change or renumber a ref.'
@@ -38,6 +47,9 @@ RETURN_FORMAT = {
         '<ref, exactly as given>': {
             'hi': '<Hindi translation>',
             'en': '<English translation>',
+            'explanation_en': '<two or three sentences in English>',
+            'explanation_hi': '<the same explanation in Hindi>',
+            'takeaways_en': ['<a short line>', '<another, optional>'],
         }
     }
 }
