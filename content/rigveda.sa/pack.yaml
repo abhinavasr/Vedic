@@ -12,7 +12,7 @@
 # nothing against the app's size, and it means the Veda is there offline from
 # the first launch rather than behind a download.
 pack_id: rigveda.sa
-revision: 3
+revision: 4
 kind: text
 created_at: 2026-09-17T00:00:00Z
 min_app_build: 1

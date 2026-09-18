@@ -2,7 +2,7 @@
   "format": "vedic-pack",
   "format_version": 1,
   "pack_id": "rigveda.sa",
-  "revision": 3,
+  "revision": 4,
   "kind": "text",
   "schema_version": 1,
   "min_app_build": 1,
@@ -18,13 +18,13 @@
   ],
   "payload": {
     "file": "payload.bin",
-    "size": 610633,
-    "sha256": "7ea4f531641b8e40dcd23a0d0e9bd4625107bb51143665391b6f1f55f231fdf0",
+    "size": 140585,
+    "sha256": "48be22430e765d9dfecddf7992049db3e975ffd6f5d6b082ff93d5e90121e7c8",
     "compression": "deflate",
     "encryption": "none",
     "key_delivery": "none",
-    "plaintext_size": 3339294,
-    "plaintext_sha256": "d77b0a2c223e86143324757436fc605e72554968f131435f13c1d087ad23a794"
+    "plaintext_size": 564461,
+    "plaintext_sha256": "087be452dbe0a496eb9fcf2dbfd00195d6604f243d46232be426be9bd4bd959a"
   },
   "licences": [
     {
@@ -33,6 +33,10 @@
     },
     {
       "id": "rigveda-ai",
+      "commercial_redistribution": true
+    },
+    {
+      "id": "vagdhenu",
       "commercial_redistribution": true
     }
   ]

@@ -28,3 +28,21 @@ fi
 
 # The transliteration is mechanical, so it is derived last, over everything.
 dart run tool/derive_iast.dart $PACK/content.json
+
+# Audio, when a render directory is to hand. RIGVEDA_AUDIO points at what
+# render_audio.py wrote and upload_audio.py then sent to the vault; the pack
+# carries the vault URLs, never the files.
+if [ -n "$RIGVEDA_AUDIO" ] && [ -f "$RIGVEDA_AUDIO/uploads.jsonl" ]; then
+  # The revision comes from pack.yaml, which is the one place it is decided;
+  # merge_audio would otherwise stamp its own and disagree with the manifest.
+  python3 tool/merge_audio.py --dir "$RIGVEDA_AUDIO" --pack $PACK/content.json \
+    --revision "$(sed -n 's/^revision: //p' $PACK/pack.yaml)"
+fi
+
+# What ships. A verse the app offers and then cannot say is worse than one it
+# does not offer: the reader taps play and nothing happens. So a release
+# carries the sūktas that are finished rather than the whole book half-done.
+# Unset RIGVEDA_ALL_SUKTAS to build the complete text for editing.
+if [ -z "$RIGVEDA_ALL_SUKTAS" ]; then
+  dart run tool/limit_to_audio.dart $PACK/content.json
+fi
