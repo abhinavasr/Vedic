@@ -52,6 +52,25 @@ void main() {
     expect(devanagariToIast('९ मेधातिथिः'), '9 medhātithiḥ');
   });
 
+  test('the skeleton keeps what a misreading changes', () {
+    // Accents, word division and punctuation are the two editions
+    // disagreeing; they do not change which sounds are in the verse.
+    expect(
+      iastSkeleton('agním īḷe puróhitaṃ'),
+      iastSkeleton('agnimīḷe purohitaṃ'),
+    );
+    expect(iastSkeleton('ṛtásya'), iastSkeleton('r̥tásya'));
+    // Vowel length does. This is the error that survives review, because
+    // "ratnadhatamam" reads perfectly well and is a different word — so
+    // unlike foldIast, the skeleton must keep the two apart.
+    expect(
+      iastSkeleton('ratnadhátamam'),
+      isNot(iastSkeleton('ratnadhātamam')),
+    );
+    expect(iastSkeleton('anāvadyair'), isNot(iastSkeleton('anavadyair')));
+    expect(iastSkeleton('deva'), isNot(iastSkeleton('devā')));
+  });
+
   test('folds IAST for accent-insensitive search', () {
     expect(foldIast('Karmaṇyevādhikāraste mā'), 'karmanyevadhikarastema');
     expect(foldIast("saṅgo'stu"), 'sangostu');

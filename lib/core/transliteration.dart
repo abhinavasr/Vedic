@@ -130,6 +130,50 @@ String devanagariToIast(String text) {
   return out.toString();
 }
 
+/// Accent marks, written on their own or built into the letter.
+const _accentMarks = {'̀', '́', '̀', '́'};
+const _accentedVowels = {
+  'á': 'a', 'à': 'a', 'é': 'e', 'è': 'e', 'í': 'i', //
+  'ì': 'i', 'ó': 'o', 'ò': 'o', 'ú': 'u', 'ù': 'u',
+};
+
+/// The marks below a letter, which some editions write as combining marks and
+/// others as one character. "r̥" and "ṛ" are the same sound.
+const _belowMarks = {
+  'r̥': 'ṛ', 'ṛ': 'ṛ', 'l̥': 'ḷ', 'ḷ': 'ḷ', //
+  'ṭ': 'ṭ', 'ḍ': 'ḍ', 'ṇ': 'ṇ', 'ṣ': 'ṣ',
+  'ḥ': 'ḥ', 'ṃ': 'ṃ', 'ṅ': 'ṅ', 'ś': 'ś',
+};
+
+/// A transliteration reduced to the letters it claims the text has.
+///
+/// Two good IAST renderings of one verse differ: one marks the Vedic accents,
+/// another splits the sandhi into words, a third punctuates. None of that
+/// changes which sounds are in the verse, so removing all of it should leave
+/// two identical strings — and when it does not, one of them has misread the
+/// text.
+///
+/// Vowel length and the marks below a letter are kept, unlike [foldIast],
+/// because that is where a misreading hides: "ratnadhatamam" for
+/// "ratnadhātamam" is a different word, and folding the two together is how
+/// the error survives review.
+String iastSkeleton(String text) {
+  var plain = text;
+  for (final entry in _belowMarks.entries) {
+    plain = plain.replaceAll(entry.key, entry.value);
+  }
+  for (final mark in _accentMarks) {
+    plain = plain.replaceAll(mark, '');
+  }
+  for (final entry in _accentedVowels.entries) {
+    plain = plain.replaceAll(entry.key, entry.value);
+  }
+  return plain.toLowerCase().replaceAll(
+    RegExp('[^a-zāīūṛṝḷḹṅñṭḍṇśṣṃḥm̐]'),
+    '',
+  );
+}
+
 const _folds = {
   'ā': 'a', 'ī': 'i', 'ū': 'u', 'ṛ': 'r', 'ṝ': 'r', 'ḷ': 'l', 'ḹ': 'l', //
   'ṅ': 'n', 'ñ': 'n', 'ṭ': 't', 'ḍ': 'd', 'ṇ': 'n', 'ś': 's', 'ṣ': 's',

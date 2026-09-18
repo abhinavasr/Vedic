@@ -173,25 +173,9 @@ Future<void> main(List<String> arguments) async {
 /// the same letters in the same order — and when it does not, something has
 /// been misread. Vowel length is the usual casualty: "ratnadhatamam" for
 /// "ratnadhātamam" looks right and is a different word.
-/// The acutes and graves an edition may write, precomposed rather than as
-/// combining marks. Stripping only the combining ones deleted these whole,
-/// which made every accented verse look like a misreading.
-const _accented = {
-  'á': 'a', 'à': 'a', 'é': 'e', 'è': 'e', 'í': 'i', //
-  'ì': 'i', 'ó': 'o', 'ò': 'o', 'ú': 'u', 'ù': 'u',
-};
-
-String _bare(String text) {
-  var plain = text.replaceAll(RegExp(r'[̀-ͯ]'), '');
-  for (final entry in _accented.entries) {
-    plain = plain.replaceAll(entry.key, entry.value);
-  }
-  return foldIast(plain).toLowerCase().replaceAll(RegExp('[^a-z]'), '');
-}
-
 /// The verse as the source writes it, reduced the same way.
 String _fromSource(PassageSource passage) =>
-    _bare(devanagariToIast(passage.text.replaceAll('\n', ' ')));
+    iastSkeleton(devanagariToIast(passage.text.replaceAll('\n', ' ')));
 
 PassageSource _merge(
   PassageSource passage,
@@ -208,7 +192,7 @@ PassageSource _merge(
   final added = <RenderingSource>[];
   final iast = _lines(answer, 'iast');
   if (iast.isNotEmpty) {
-    final given = _bare(iast.join(' '));
+    final given = iastSkeleton(iast.join(' '));
     final source = _fromSource(passage);
     if (given != source) misread.add((passage.ref, given, source));
     added.add(
