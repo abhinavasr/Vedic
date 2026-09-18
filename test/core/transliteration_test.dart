@@ -32,6 +32,26 @@ void main() {
     expect(devanagariToIast('श$zwj्$zwnjऋणु'), 'śṛṇu');
   });
 
+  test('reads a colon after Devanagari as a visarga', () {
+    // The Rigveda sources type visarga as an ASCII colon as often as "ः".
+    // Without this the "ḥ" disappears and jaritāraḥ reads "jaritāra".
+    expect(devanagariToIast('अ॒द्रुह॑:'), 'adruhaḥ');
+    expect(devanagariToIast('जरि॒तार॑: सु॒तसो॑मा अह॒र्विद॑:'),
+        'jaritāraḥ sutasomā aharvidaḥ');
+    // The same colon doing its own job is left alone.
+    expect(devanagariToIast('note: श्री'), 'note: śrī');
+  });
+
+  test('drops a numeral used to mark an independent svarita', () {
+    // The digit sits inside the word and is an accent, not a number;
+    // passing it through gave "makṣvi1tthā".
+    expect(devanagariToIast('म॒क्ष्वि१त्था'), 'makṣvitthā');
+    expect(devanagariToIast('रा॒यो॒३ऽवनि॑:'), "rāyo'vaniḥ");
+    // A numeral standing on its own is still a number.
+    expect(devanagariToIast('॥१२॥'), '||12||');
+    expect(devanagariToIast('९ मेधातिथिः'), '9 medhātithiḥ');
+  });
+
   test('folds IAST for accent-insensitive search', () {
     expect(foldIast('Karmaṇyevādhikāraste mā'), 'karmanyevadhikarastema');
     expect(foldIast("saṅgo'stu"), 'sangostu');

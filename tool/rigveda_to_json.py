@@ -77,6 +77,19 @@ VERSE_END = re.compile(r'॥\s*([०-९]*)\s*॥?')
 MARGIN_NUMBER = re.compile(r'\s+[०-९]+\s*$')
 
 
+# The sources type visarga as an ASCII colon about as often as they use the
+# real "ः" — "अ॒द्रुह॑:" rather than "अ॒द्रुहः". It looks close enough on the page
+# and is not a Devanagari mark at all, so it has to be normalised before the
+# text is stored: otherwise the reader sees a colon, the transliterator drops
+# the sound, and the speech synthesiser is handed punctuation mid-word.
+COLON_VISARGA = re.compile(r'(?<=[\u0900-\u097F\u1CD0-\u1CFF\uA8E0-\uA8FF]):')
+
+
+def normalise(line):
+    """Typography the edition used that is not what the text says."""
+    return COLON_VISARGA.sub('\u0903', line)
+
+
 def verses(body):
     """The verses, in order, without their numbers."""
     out = []
@@ -91,7 +104,7 @@ def verses(body):
             line = MARGIN_NUMBER.sub('', line)
             line = re.sub(r'\s+', ' ', line).strip()
             if line and any('\u0900' <= c <= '\u097f' for c in line):
-                lines.append(line)
+                lines.append(normalise(line))
         if lines and number:
             out.append((number, lines))
             previous = number

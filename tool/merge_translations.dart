@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:args/args.dart';
 import 'package:vedic/packs/content.dart';
+import 'package:vedic/core/transliteration.dart';
 import 'package:vedic/packs/manifest.dart' show JsonReader;
 
 const _usage = '''
@@ -60,6 +61,9 @@ Future<void> main(List<String> arguments) async {
   }
   stdout.writeln('${answers.length} verses in ${args.rest.length - 1} files');
 
+  // Refs whose transliteration does not reduce to the Devanagari beside it.
+  final misread = <(String, String, String)>[];
+
   final origin = args.option('origin') == 'human'
       ? TextOrigin.human
       : TextOrigin.machine;
@@ -109,6 +113,7 @@ Future<void> main(List<String> arguments) async {
               licenceId: licenceOverride ?? work.licenceId,
               origin: origin,
               translator: args.option('translator'),
+              misread: misread,
             ),
         ],
       ),
@@ -130,6 +135,27 @@ Future<void> main(List<String> arguments) async {
       '${unmatched.take(10).join(', ')}',
     );
   }
+  if (misread.isNotEmpty) {
+    stderr.writeln(
+      '\nwarning: ${misread.length} transliterations do not match the '
+      'Devanagari they sit beside:',
+    );
+    for (final (ref, given, source) in misread.take(20)) {
+      var at = 0;
+      while (at < given.length && at < source.length && given[at] == source[at]) {
+        at++;
+      }
+      String around(String s) {
+        final from = at - 12 < 0 ? 0 : at - 12;
+        final to = at + 14 > s.length ? s.length : at + 14;
+        return '${from > 0 ? '…' : ''}${s.substring(from, to)}'
+            '${to < s.length ? '…' : ''}';
+      }
+
+      stderr.writeln('  $ref  given ${around(given)}  '
+          'source ${around(source)}');
+    }
+  }
   stdout.writeln('merged ${used.length} verses');
 
   final out = File(args.option('out') ?? contentFile.path);
@@ -139,6 +165,34 @@ Future<void> main(List<String> arguments) async {
   stdout.writeln('${out.path}  (${await out.length()} bytes)');
 }
 
+/// Everything a transliteration is allowed to differ by.
+///
+/// A good IAST rendering of a verse is not character-for-character what the
+/// transliterator produces: it carries the Vedic accents as acutes, splits the
+/// sandhi into words, and punctuates. Folding all of that away should leave
+/// the same letters in the same order — and when it does not, something has
+/// been misread. Vowel length is the usual casualty: "ratnadhatamam" for
+/// "ratnadhātamam" looks right and is a different word.
+/// The acutes and graves an edition may write, precomposed rather than as
+/// combining marks. Stripping only the combining ones deleted these whole,
+/// which made every accented verse look like a misreading.
+const _accented = {
+  'á': 'a', 'à': 'a', 'é': 'e', 'è': 'e', 'í': 'i', //
+  'ì': 'i', 'ó': 'o', 'ò': 'o', 'ú': 'u', 'ù': 'u',
+};
+
+String _bare(String text) {
+  var plain = text.replaceAll(RegExp(r'[̀-ͯ]'), '');
+  for (final entry in _accented.entries) {
+    plain = plain.replaceAll(entry.key, entry.value);
+  }
+  return foldIast(plain).toLowerCase().replaceAll(RegExp('[^a-z]'), '');
+}
+
+/// The verse as the source writes it, reduced the same way.
+String _fromSource(PassageSource passage) =>
+    _bare(devanagariToIast(passage.text.replaceAll('\n', ' ')));
+
 PassageSource _merge(
   PassageSource passage,
   JsonReader? answer, {
@@ -146,6 +200,7 @@ PassageSource _merge(
   required String licenceId,
   required TextOrigin origin,
   required String? translator,
+  required List<(String, String, String)> misread,
 }) {
   if (answer == null) return passage;
   used.add(passage.ref);
@@ -153,6 +208,9 @@ PassageSource _merge(
   final added = <RenderingSource>[];
   final iast = _lines(answer, 'iast');
   if (iast.isNotEmpty) {
+    final given = _bare(iast.join(' '));
+    final source = _fromSource(passage);
+    if (given != source) misread.add((passage.ref, given, source));
     added.add(
       RenderingSource(
         kind: RenderingKind.transliteration,

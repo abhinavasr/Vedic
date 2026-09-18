@@ -70,7 +70,33 @@ const _silent = {
   '\uA8E3',
 };
 
+/// A colon standing in for a visarga.
+///
+/// The Rigveda sources type visarga as an ASCII colon about as often as they
+/// use "ः" — "अ॒द्रुह॑:" rather than "अ॒द्रुहः". Left alone it is not a mark at
+/// all, so the "ḥ" simply disappears and "jaritāraḥ" transliterates to
+/// "jaritāra". Only a colon that follows Devanagari is rewritten, so a colon
+/// doing its own job in a title or a note survives.
+final _colonVisarga = RegExp(
+  r'(?<=[\u0900-\u097F\u1CD0-\u1CFF\uA8E0-\uA8FF]):',
+);
+
+/// A numeral used as an accent mark rather than as a number.
+///
+/// An independent svarita is written as a digit inside the word — "म॒क्ष्वि१त्था",
+/// "रा॒यो॒३ऽवनि॑:" — so passing it through put arabic numerals in the middle of
+/// Latin words: "makṣvi1tthā". A digit that follows a letter or a mark belongs
+/// to the word and is dropped with the other accents; a digit standing on its
+/// own is a number and is kept.
+final _svaritaDigit = RegExp(
+  r'(?<=[\u0900-\u094F\u0951-\u0963\u0971-\u097F\u1CD0-\u1CFF\uA8E0-\uA8FF])'
+  r'[\u0966-\u096F]',
+);
+
 String devanagariToIast(String text) {
+  text = text
+      .replaceAll(_colonVisarga, '\u0903')
+      .replaceAll(_svaritaDigit, '');
   final out = StringBuffer();
   var inherentA = false;
   for (final rune in text.runes) {
