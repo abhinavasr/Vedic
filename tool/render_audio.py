@@ -107,11 +107,16 @@ def passages(pack, kinds):
                     continue
                 lines = [l for l in passage.get("lines", []) if l.strip()]
                 if lines:
+                    languages = {
+                        t.get("language")
+                        for t in passage.get("translations", [])
+                    }
                     yield (
                         work.get("slug", "work"),
                         passage["ref"],
                         speakable("\n".join(lines)),
                         METERS.get((passage.get("meter") or "").strip()),
+                        bool(languages),
                     )
 
 
@@ -158,6 +163,10 @@ def main():
     parser.add_argument("--pause", type=float, default=0.3,
                         help="seconds between requests, to be a good guest")
     parser.add_argument("--retries", type=int, default=4)
+    parser.add_argument("--translated", action="store_true",
+                        help="render only verses that already have a "
+                             "translation, so a recorded verse is one the "
+                             "reader can also read")
     parser.add_argument("--known-meters", action="store_true",
                         help="render only verses whose chandas is in the "
                              "server's reference bank, instead of letting the "
@@ -188,11 +197,16 @@ def main():
         work = [w for w in work if w[3]]
         print(f"{len(held)} passages held back: no reference clip for their "
               f"chandas", flush=True)
+    if args.translated:
+        untranslated = [w for w in work if not w[4]]
+        work = [w for w in work if w[4]]
+        print(f"{len(untranslated)} passages held back: nothing to read "
+              f"alongside the chant yet", flush=True)
     print(f"{len(work)} passages, {len(done)} already rendered", flush=True)
     started = time.time()
 
     with index.open("a") as log:
-        for i, (slug, ref, text, meter) in enumerate(work, 1):
+        for i, (slug, ref, text, meter, _) in enumerate(work, 1):
             out = root / f"{ref}.wav"
             if ref in done and out.exists():
                 continue
