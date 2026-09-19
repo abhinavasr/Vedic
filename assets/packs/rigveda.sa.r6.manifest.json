@@ -1,0 +1,43 @@
+{
+  "format": "vedic-pack",
+  "format_version": 1,
+  "pack_id": "rigveda.sa",
+  "revision": 6,
+  "kind": "text",
+  "schema_version": 1,
+  "min_app_build": 1,
+  "created_at": "2026-09-17T00:00:00.000Z",
+  "title": {
+    "en": "Rigveda",
+    "sa": "ऋग्वेदः"
+  },
+  "languages": [
+    "sa",
+    "hi",
+    "en"
+  ],
+  "payload": {
+    "file": "payload.bin",
+    "size": 3787918,
+    "sha256": "79056f2f1fd6478bdee74961a6fb9cd4a2ddf641a2afafa6d7428702a1b53c0c",
+    "compression": "deflate",
+    "encryption": "none",
+    "key_delivery": "none",
+    "plaintext_size": 15723405,
+    "plaintext_sha256": "0037b6d54a30541aa5f73938ee16a6d976b6aff897e9f82299a77b4b1169a9bf"
+  },
+  "licences": [
+    {
+      "id": "rigveda-sa",
+      "commercial_redistribution": true
+    },
+    {
+      "id": "rigveda-ai",
+      "commercial_redistribution": true
+    },
+    {
+      "id": "vagdhenu",
+      "commercial_redistribution": true
+    }
+  ]
+}
