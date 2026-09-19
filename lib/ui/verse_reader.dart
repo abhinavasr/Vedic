@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import '../ai/assistant.dart';
 import '../ai/reading_languages.dart';
 import '../ai/translation.dart';
+import '../audio/chant_download.dart';
 import '../ai/verse_context.dart';
 import '../core/transliteration.dart';
 import '../library/scripture_repository.dart';
@@ -127,8 +128,31 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
   /// and everything it produces is stored, so a verse is translated once on
   /// this phone and never again.
   void _keepAhead() {
+    // The chant first, and separately: it is a download rather than a
+    // generation, so it neither waits for the model nor blocks it, and it is
+    // the one the reader notices — a verse whose audio is already here plays
+    // the instant they tap, where a missing one pauses first.
+    unawaited(_keepChantsAhead());
     if (_ahead != null) return;
     _ahead = _runAhead().whenComplete(() => _ahead = null);
+  }
+
+  /// Fetches the chants just ahead of where the reader is.
+  ///
+  /// Not kept against eviction: this is a convenience nobody asked for, and
+  /// somebody who downloaded a book on purpose should not find it pushed out
+  /// by verses that were merely nearly read.
+  Future<void> _keepChantsAhead() async {
+    final downloads = ChantSource.instance.downloads;
+    if (downloads == null) return;
+    final upcoming = [
+      for (var i = _index + 1;
+          i < _verses.length && i <= _index + ChantDownloader.lookAhead;
+          i++)
+        _verses[i],
+    ];
+    if (upcoming.isEmpty) return;
+    await downloads.keepAhead(upcoming);
   }
 
   Future<void> _runAhead() async {

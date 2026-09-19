@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../ai/fill_ahead.dart';
 import '../ai/reading_languages.dart';
 import '../ai/translation.dart';
+import '../audio/chant_download.dart';
 import '../audio/chant_session.dart';
 import '../audio/listen_player.dart';
 import '../library/scripture_repository.dart';
@@ -41,6 +42,8 @@ class ListenScreen extends StatefulWidget {
 }
 
 class _ListenScreenState extends State<ListenScreen> implements ListenControls {
+  DownloadProgress? _downloading;
+  StreamSubscription<DownloadProgress>? _downloadWatch;
   late SectionSummary _section = widget.section;
   late var _verses = widget.repository.verses(widget.work, _section);
   late var _index = _startingIndex();
@@ -62,7 +65,8 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
   /// Listening and reading are different places in the book — someone may be
   /// reading chapter 2 and listening to chapter 12 — so they are kept apart,
   /// and neither moves the other.
-  String get _mark => 'listen.at/${widget.work.pack.packId}/${widget.work.slug}';
+  String get _mark =>
+      'listen.at/${widget.work.pack.packId}/${widget.work.slug}';
 
   void _remember() {
     final verse = _verse;
@@ -117,11 +121,15 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
     _reading = ReadingLanguageScope.of(context);
     _remember();
     _fillAhead();
+    unawaited(_keepChantsAhead());
   }
 
   @override
   void dispose() {
     _playing = false;
+    // The download itself keeps going — it is fetching into the cache, not
+    // into this screen — but nothing here is left listening for it.
+    unawaited(_downloadWatch?.cancel());
     final session = ChantSession.instance;
     if (identical(session?.controls, this)) session?.clear();
     VersePlayer.instance.stop();
@@ -165,6 +173,50 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
   PassageView? get _verse =>
       _index >= 0 && _index < _verses.length ? _verses[_index] : null;
 
+  /// The chants just ahead, so moving on never waits on a download.
+  Future<void> _keepChantsAhead() async {
+    final downloads = ChantSource.instance.downloads;
+    if (downloads == null) return;
+    await downloads.keepAhead([
+      for (
+        var i = _index + 1;
+        i < _verses.length && i <= _index + lookAhead;
+        i++
+      )
+        _verses[i],
+    ]);
+  }
+
+  /// Fetches every verse of this chapter and keeps it, so it plays with no
+  /// connection at all.
+  Future<void> _downloadChapter() async {
+    final downloads = ChantSource.instance.downloads;
+    if (downloads == null || _downloading != null) return;
+    await _downloadWatch?.cancel();
+    final withAudio = [
+      for (final v in _verses)
+        if (v.audio.isNotEmpty) v,
+    ];
+    if (withAudio.isEmpty) return;
+    setState(() {
+      _downloading = DownloadProgress(
+        done: 0,
+        total: withAudio.length,
+        failed: 0,
+      );
+    });
+    _downloadWatch = downloads
+        .download(withAudio)
+        .listen(
+          (progress) {
+            if (mounted) setState(() => _downloading = progress);
+          },
+          onDone: () {
+            if (mounted) setState(() => _downloading = null);
+          },
+        );
+  }
+
   /// The verses about to be heard, for the phone to translate before they are.
   void _fillAhead() {
     final reading = _reading;
@@ -177,7 +229,9 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
       // The meaning's language, since that is what is played. Read fresh each
       // time, so changing it mid-session changes what is worked on next.
       language: () =>
-          TargetLanguage.forCode(reading.mix.meaningIn(reading.language.code)) ??
+          TargetLanguage.forCode(
+            reading.mix.meaningIn(reading.language.code),
+          ) ??
           reading.language,
       notes: reading.mix.explanation,
     );
@@ -193,6 +247,7 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
       final verse = _verse;
       if (verse == null) break;
       _fillAhead();
+      unawaited(_keepChantsAhead());
       final segments = await listenSegments(verse, reading);
       if (!mounted || !_playing) break;
       if (segments.isEmpty) {
@@ -237,6 +292,7 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
     _remember();
     _publish();
     _fillAhead();
+    unawaited(_keepChantsAhead());
     if (wasPlaying) unawaited(_playOn());
   }
 
@@ -264,6 +320,7 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
     _remember();
     _publish();
     _fillAhead();
+    unawaited(_keepChantsAhead());
     if (wasPlaying) unawaited(_playOn());
   }
 
@@ -284,11 +341,8 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-            _WhereTo(
-              chapter: chapterName(_section),
-              onTap: _showJump,
-            ),
-            const SizedBox(height: 20),
+                _WhereTo(chapter: chapterName(_section), onTap: _showJump),
+                const SizedBox(height: 20),
                 _NowPlaying(
                   work: widget.work,
                   verse: verse,
@@ -297,16 +351,26 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
                   bookmarked: _bookmarked,
                   onBookmark: _toggleBookmark,
                 ),
-            const SizedBox(height: 20),
-            _Transport(
-              playing: _playing,
-              canGoBack: _index > 0,
-              canGoOn: _index < _verses.length - 1,
-              onBack: () => _goTo(_index - 1),
-              onOn: () => _goTo(_index + 1),
-              onPlay: mix.isSilent ? null : () => _playing ? _stop() : _playOn(),
-            ),
-            const SizedBox(height: 28),
+                const SizedBox(height: 20),
+                _Transport(
+                  playing: _playing,
+                  canGoBack: _index > 0,
+                  canGoOn: _index < _verses.length - 1,
+                  onBack: () => _goTo(_index - 1),
+                  onOn: () => _goTo(_index + 1),
+                  onPlay: mix.isSilent
+                      ? null
+                      : () => _playing ? _stop() : _playOn(),
+                ),
+                if (ChantSource.instance.downloads != null) ...[
+                  const SizedBox(height: 14),
+                  _DownloadRow(
+                    progress: _downloading,
+                    verses: _verses.where((v) => v.audio.isNotEmpty).length,
+                    onDownload: _downloadChapter,
+                  ),
+                ],
+                const SizedBox(height: 28),
                 Text(
                   'What to play',
                   style: serif(size: 22, color: SadhanaColors.ink),
@@ -317,12 +381,12 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
                     reading: reading.language.code,
                     nameOf: languageName,
                   ),
-              style: const TextStyle(
-                fontSize: 13,
-                color: SadhanaColors.inkSoft,
-              ),
-            ),
-            const SizedBox(height: 12),
+                  style: const TextStyle(
+                    fontSize: 13,
+                    color: SadhanaColors.inkSoft,
+                  ),
+                ),
+                const SizedBox(height: 12),
                 _ClipRow(
                   label: 'Chant',
                   icon: Icons.self_improvement,
@@ -334,31 +398,33 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
                 _ClipRow(
                   label: 'Meaning',
                   icon: Icons.menu_book_outlined,
-              detail: languageName(mix.meaningIn(reading.language.code)),
-              on: mix.meaning,
-              onChanged: (on) => reading.mix = mix.with_(meaning: on),
-              onLanguage: () => _pickLanguage(
-                title: 'Read the meaning in',
-                chosen: mix.meaningIn(reading.language.code),
-                onChosen: (code) => reading.mix = code == null
-                    ? mix.with_(clearMeaningLanguage: true)
-                    : mix.with_(meaningLanguage: code),
-              ),
-            ),
+                  detail: languageName(mix.meaningIn(reading.language.code)),
+                  on: mix.meaning,
+                  onChanged: (on) => reading.mix = mix.with_(meaning: on),
+                  onLanguage: () => _pickLanguage(
+                    title: 'Read the meaning in',
+                    chosen: mix.meaningIn(reading.language.code),
+                    onChosen: (code) => reading.mix = code == null
+                        ? mix.with_(clearMeaningLanguage: true)
+                        : mix.with_(meaningLanguage: code),
+                  ),
+                ),
                 _ClipRow(
                   label: 'Explanation',
                   icon: Icons.eco_outlined,
-              detail: languageName(mix.explanationIn(reading.language.code)),
-              on: mix.explanation,
-              onChanged: (on) => reading.mix = mix.with_(explanation: on),
-              onLanguage: () => _pickLanguage(
-                title: 'Read the explanation in',
-                chosen: mix.explanationIn(reading.language.code),
-                onChosen: (code) => reading.mix = code == null
-                    ? mix.with_(clearExplanationLanguage: true)
-                    : mix.with_(explanationLanguage: code),
-              ),
-            ),
+                  detail: languageName(
+                    mix.explanationIn(reading.language.code),
+                  ),
+                  on: mix.explanation,
+                  onChanged: (on) => reading.mix = mix.with_(explanation: on),
+                  onLanguage: () => _pickLanguage(
+                    title: 'Read the explanation in',
+                    chosen: mix.explanationIn(reading.language.code),
+                    onChosen: (code) => reading.mix = code == null
+                        ? mix.with_(clearExplanationLanguage: true)
+                        : mix.with_(explanationLanguage: code),
+                  ),
+                ),
                 if (_fill.busy) ...[
                   const SizedBox(height: 18),
                   Row(
@@ -437,6 +503,7 @@ class _ListenScreenState extends State<ListenScreen> implements ListenControls {
     if (picked == null) return;
     onChosen(picked == 'follow' ? null : picked);
     _fillAhead();
+    unawaited(_keepChantsAhead());
   }
 }
 
@@ -538,11 +605,7 @@ class _WhereTo extends StatelessWidget {
               'Go to',
               style: TextStyle(fontSize: 13, color: SadhanaColors.green),
             ),
-            const Icon(
-              Icons.expand_more,
-              size: 20,
-              color: SadhanaColors.green,
-            ),
+            const Icon(Icons.expand_more, size: 20, color: SadhanaColors.green),
           ],
         ),
       ),
@@ -608,12 +671,8 @@ class _NowPlaying extends StatelessWidget {
                 onPressed: verse == null ? null : onBookmark,
                 visualDensity: VisualDensity.compact,
                 iconSize: 22,
-                color: bookmarked
-                    ? SadhanaColors.gold
-                    : SadhanaColors.inkSoft,
-                icon: Icon(
-                  bookmarked ? Icons.bookmark : Icons.bookmark_border,
-                ),
+                color: bookmarked ? SadhanaColors.gold : SadhanaColors.inkSoft,
+                icon: Icon(bookmarked ? Icons.bookmark : Icons.bookmark_border),
                 tooltip: bookmarked ? 'Kept' : 'Keep this verse',
               ),
             ],
@@ -810,4 +869,61 @@ class _ClipRow extends StatelessWidget {
       ),
     ),
   );
+}
+
+/// Getting a chapter onto the phone, and saying how far that has got.
+///
+/// Chants stream and are cached as they play, which is right until there is
+/// no signal. This is the reader saying they will be somewhere without one.
+class _DownloadRow extends StatelessWidget {
+  const _DownloadRow({
+    required this.progress,
+    required this.verses,
+    required this.onDownload,
+  });
+
+  final DownloadProgress? progress;
+  final int verses;
+  final VoidCallback onDownload;
+
+  @override
+  Widget build(BuildContext context) {
+    if (verses == 0) return const SizedBox.shrink();
+    final running = progress;
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: running == null
+          ? TextButton.icon(
+              key: const ValueKey('download-chapter'),
+              onPressed: onDownload,
+              icon: const Icon(Icons.download_outlined, size: 18),
+              label: Text('Download all $verses for offline'),
+              style: TextButton.styleFrom(foregroundColor: SadhanaColors.green),
+            )
+          : Column(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: LinearProgressIndicator(
+                    value: running.fraction,
+                    minHeight: 4,
+                    backgroundColor: SadhanaColors.line,
+                    color: SadhanaColors.green,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  running.failed > 0
+                      ? '${running.done} of ${running.total} · '
+                            '${running.failed} could not be fetched'
+                      : 'Downloading ${running.done} of ${running.total}',
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: SadhanaColors.inkSoft,
+                  ),
+                ),
+              ],
+            ),
+    );
+  }
 }
