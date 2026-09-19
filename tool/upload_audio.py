@@ -99,7 +99,7 @@ def main():
                 print(f"  {ref}: DIGEST MISMATCH — not recording", flush=True)
                 failures += 1
                 continue
-            log.write(json.dumps({
+            line = {
                 "ref": ref,
                 "id": record["id"],
                 "url": record["downloadUrl"],
@@ -107,8 +107,15 @@ def main():
                 "sha256": record["sha256"],
                 "duration_s": item["duration_s"],
                 "meter": item.get("meter"),
-            }, ensure_ascii=False) + "\n")
+            }
+            log.write(json.dumps(line, ensure_ascii=False) + "\n")
             log.flush()
+            # Within this run as well as across runs. The vault gives every
+            # upload its own id, so sending the same verse twice leaves two
+            # copies and only the second is ever referenced — and `done` was
+            # read once at startup, which is no defence against the same ref
+            # appearing twice in the index.
+            done[ref] = line
             if i % 25 == 0 or i == len(rendered):
                 rate = i / max(time.time() - started, 1)
                 print(f"  {i}/{len(rendered)}  {ref}  ({rate:.2f}/s)", flush=True)
