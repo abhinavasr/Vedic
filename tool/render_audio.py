@@ -191,6 +191,17 @@ def main():
             if line.strip():
                 done.add(json.loads(line)["ref"])
 
+    # A verse whose audio is in the vault is finished, whether or not its WAV
+    # is still on this disk. Eight thousand of them is a couple of gigabytes,
+    # so they are uploaded and then swept, and without this that sweep would
+    # make the renderer do all of it again.
+    uploads = root / "uploads.jsonl"
+    uploaded = set()
+    if uploads.exists():
+        for line in uploads.read_text().splitlines():
+            if line.strip():
+                uploaded.add(json.loads(line)["ref"])
+
     work = list(passages(args.pack, set(args.kinds.split(","))))
     if args.known_meters:
         held = [w for w in work if not w[3]]
@@ -208,7 +219,7 @@ def main():
     with index.open("a") as log:
         for i, (slug, ref, text, meter, _) in enumerate(work, 1):
             out = root / f"{ref}.wav"
-            if ref in done and out.exists():
+            if ref in done and (out.exists() or ref in uploaded):
                 continue
             for attempt in range(1, args.retries + 1):
                 try:
