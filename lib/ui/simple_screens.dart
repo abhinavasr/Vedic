@@ -1,9 +1,13 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../ai/reading_languages.dart';
+import '../audio/chant_audio.dart';
 import '../notify/daily_verse.dart';
 
 import 'ai/assistant_screen.dart';
+import 'listen_meaning.dart';
 import 'settings/language_screen.dart';
 import 'theme.dart';
 
@@ -55,6 +59,59 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  CacheUsage? _chants;
+  var _clearing = false;
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(_measure());
+  }
+
+  Future<void> _measure() async {
+    final source = ChantSource.instance;
+    if (source.downloads == null) return;
+    final usage = await source.downloads!.usage();
+    if (mounted) setState(() => _chants = usage);
+  }
+
+  Future<void> _clearChants() async {
+    final downloads = ChantSource.instance.downloads;
+    if (downloads == null) return;
+    final agreed = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Delete downloaded chants?'),
+        content: Text(
+          'This frees ${_chants?.size ?? 'the space they use'}. Nothing is '
+          'lost — any verse can be fetched again when you next play it, so '
+          'long as you have a connection.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text('Keep'),
+          ),
+          FilledButton(
+            key: const ValueKey('confirm-clear-chants'),
+            onPressed: () => Navigator.of(context).pop(true),
+            child: const Text('Delete'),
+          ),
+        ],
+      ),
+    );
+    if (agreed != true) return;
+    setState(() => _clearing = true);
+    final freed = await downloads.clear();
+    if (!mounted) return;
+    setState(() {
+      _clearing = false;
+      _chants = const CacheUsage(bytes: 0, files: 0);
+    });
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text('Freed ${freed.size}')));
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: const Text('Profile')),
@@ -100,6 +157,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
         const Divider(height: 1),
+        // Hidden where there is nothing to manage: a build with no vault key
+        // never downloads a chant, and a row reporting 0 bytes would only
+        // raise a question it cannot answer.
+        if (ChantSource.instance.downloads != null) ...[
+          ListTile(
+            key: const ValueKey('downloaded-chants'),
+            leading: const Icon(Icons.graphic_eq_outlined),
+            title: const Text('Downloaded chants'),
+            subtitle: Text(switch (_chants) {
+              null => 'Measuring…',
+              final usage when usage.isEmpty =>
+                'Nothing downloaded yet. Chants are kept as you play them.',
+              final usage when usage.kept > 0 =>
+                '${usage.size} · ${usage.files} recordings, '
+                    '${usage.kept} kept for offline',
+              final usage => '${usage.size} · ${usage.files} recordings',
+            }),
+            trailing: _clearing
+                ? const SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : TextButton(
+                    onPressed: (_chants?.isEmpty ?? true) ? null : _clearChants,
+                    child: const Text('Delete'),
+                  ),
+          ),
+          const Divider(height: 1),
+        ],
         ListTile(
           leading: const Icon(Icons.description_outlined),
           title: const Text('Open source licences'),

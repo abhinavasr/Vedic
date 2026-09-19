@@ -64,6 +64,35 @@ abstract interface class ChantEngine {
   Future<List<int>> generate(String text);
 }
 
+/// What the cache is holding.
+class CacheUsage {
+  const CacheUsage({
+    required this.bytes,
+    required this.files,
+    this.kept = 0,
+  });
+
+  final int bytes;
+  final int files;
+
+  /// How many were downloaded on purpose rather than picked up by listening.
+  final int kept;
+
+  bool get isEmpty => files == 0;
+
+  /// Rounded the way a storage screen would say it.
+  String get size {
+    if (bytes >= 1024 * 1024 * 1024) {
+      return '${(bytes / (1024 * 1024 * 1024)).toStringAsFixed(1)} GB';
+    }
+    if (bytes >= 1024 * 1024) {
+      return '${(bytes / (1024 * 1024)).round()} MB';
+    }
+    if (bytes >= 1024) return '${(bytes / 1024).round()} KB';
+    return '$bytes bytes';
+  }
+}
+
 /// Audio downloaded or generated on this phone, evicted least recently played
 /// first once it outgrows [maxBytes].
 class ChantCache {
@@ -97,6 +126,63 @@ class ChantCache {
     return file;
   }
 
+  /// How much of the phone this has taken, and over how many recordings.
+  ///
+  /// Eviction keeps it under [maxBytes] without anyone being told, which is
+  /// the right default and the wrong thing to be silent about: somebody
+  /// looking for what is using their storage should find it and be able to
+  /// take it back.
+  Future<CacheUsage> usage() async {
+    if (!await directory.exists()) return const CacheUsage(bytes: 0, files: 0);
+    var bytes = 0, files = 0, kept = 0;
+    await for (final entity in directory.list()) {
+      if (entity is File && entity.path.endsWith('.wav')) {
+        bytes += await entity.length();
+        files++;
+        if (File('${entity.path}.pin').existsSync()) kept++;
+      }
+    }
+    return CacheUsage(bytes: bytes, files: files, kept: kept);
+  }
+
+  /// Throws all of it away. Nothing is lost that cannot be fetched again.
+  Future<CacheUsage> clear() async {
+    final before = await usage();
+    if (!await directory.exists()) return before;
+    await for (final entity in directory.list()) {
+      if (entity is File) {
+        try {
+          await entity.delete();
+        } on FileSystemException {
+          // A file being played is held open; the next sweep takes it.
+        }
+      }
+    }
+    return before;
+  }
+
+  /// Whether this verse is already on the phone.
+  Future<bool> has(ChantRequest request, String voiceId) =>
+      _fileFor(request, voiceId).exists();
+
+  /// Keeps this recording until the reader says otherwise.
+  ///
+  /// Eviction exists so that listening to a lot does not quietly fill a
+  /// phone. Downloading a book on purpose is the opposite: it is a promise
+  /// that it will be there on a train with no signal, and a cache that
+  /// evicted its way through the download would break that promise while
+  /// appearing to keep it. A pinned recording is skipped by eviction and
+  /// goes only when the reader removes the book or clears everything.
+  Future<void> pin(ChantRequest request, String voiceId) async {
+    final marker = File('${_fileFor(request, voiceId).path}.pin');
+    if (!await marker.exists()) await marker.create(recursive: true);
+  }
+
+  Future<void> unpin(ChantRequest request, String voiceId) async {
+    final marker = File('${_fileFor(request, voiceId).path}.pin');
+    if (await marker.exists()) await marker.delete();
+  }
+
   File _fileFor(ChantRequest request, String voiceId) {
     final digest = crypto.sha256.convert(
       utf8.encode('${request._identity}|$voiceId'),
@@ -108,13 +194,20 @@ class ChantCache {
     final entries = [
       for (final entity in directory.listSync())
         if (entity is File && entity.path.endsWith('.wav'))
-          (file: entity, stat: entity.statSync()),
+          (
+            file: entity,
+            stat: entity.statSync(),
+            pinned: File('${entity.path}.pin').existsSync(),
+          ),
     ]..sort((a, b) => a.stat.modified.compareTo(b.stat.modified));
 
+    // Pinned recordings count towards what is on the phone — the reader
+    // asked for them and should see them in the total — but they are not
+    // candidates for eviction.
     var total = entries.fold(0, (sum, e) => sum + e.stat.size);
     for (final e in entries) {
       if (total <= maxBytes) break;
-      if (e.file.path == keep) continue;
+      if (e.file.path == keep || e.pinned) continue;
       await e.file.delete();
       total -= e.stat.size;
     }

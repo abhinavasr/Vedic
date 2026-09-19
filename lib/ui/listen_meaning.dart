@@ -1,5 +1,8 @@
 import 'dart:io';
 
+import '../audio/chant_audio.dart';
+import '../audio/chant_download.dart';
+
 import 'package:flutter/material.dart';
 
 import '../ai/reading_languages.dart';
@@ -14,14 +17,37 @@ import 'theme.dart';
 /// A hook rather than a dependency: the reader asks for a recording and gets
 /// one or gets nothing, and everything above here works the same either way.
 /// Packs without audio, and builds without a vault key, simply answer null.
+/// Managing the recordings kept on this phone: what is here, fetching more,
+/// and throwing them away.
+///
+/// Absent in a build with no vault key, where there is nothing to fetch and
+/// nothing to manage, and every control for it then stays hidden rather than
+/// offering something that cannot happen.
+class ChantDownloads {
+  const ChantDownloads({
+    required this.usage,
+    required this.clear,
+    required this.download,
+    required this.keepAhead,
+  });
+
+  final Future<CacheUsage> Function() usage;
+  final Future<CacheUsage> Function() clear;
+  final Stream<DownloadProgress> Function(List<PassageView> verses) download;
+  final Future<void> Function(List<PassageView> verses) keepAhead;
+}
+
 class ChantSource {
-  ChantSource({Future<File?> Function(PassageView verse)? find})
+  ChantSource({Future<File?> Function(PassageView verse)? find, this.downloads})
     : _find = find ?? ((_) async => null);
 
   /// The app's. Replaceable in tests, and wired up at startup.
   static ChantSource instance = ChantSource();
 
   final Future<File?> Function(PassageView verse) _find;
+
+  /// Null when this build cannot fetch or keep anything.
+  final ChantDownloads? downloads;
 
   Future<File?> find(PassageView verse) => _find(verse);
 }

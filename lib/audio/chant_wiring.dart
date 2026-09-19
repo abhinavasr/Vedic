@@ -2,8 +2,10 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 
+import '../library/scripture_repository.dart';
 import '../ui/listen_meaning.dart';
 import 'chant_audio.dart';
+import 'chant_download.dart';
 import 'vault_audio.dart';
 
 // Joining the three parts of a chant: what the pack says exists, where it is
@@ -30,12 +32,42 @@ ChantSource? chantSource({required Directory directory}) {
   );
   if (!vault.available) return null;
 
-  final service = ChantAudioService(
-    cache: ChantCache(Directory(p.join(directory.path, 'chants'))),
-    server: vault,
-  );
+  final cache = ChantCache(Directory(p.join(directory.path, 'chants')));
+  final service = ChantAudioService(cache: cache, server: vault);
+  final downloader = ChantDownloader(service: service, cache: cache);
+
+  // Turning a verse on the screen into something the cache can be asked
+  // about. Registering what it publishes first, exactly as playing it does,
+  // because that is how the vault learns where to fetch it from.
+  ChantRequest? requestFor(PassageView verse) {
+    final audio = verse.audio.firstOrNull;
+    if (audio == null) return null;
+    final request = ChantRequest(
+      packId: '',
+      workSlug: '',
+      ref: verse.ref,
+      text: verse.text,
+    );
+    published[keyOf(request)] = VaultAudioFile(
+      url: audio.file,
+      sha256: audio.sha256,
+      bytes: audio.size,
+    );
+    return request;
+  }
+
+  List<ChantRequest> requestsFor(List<PassageView> verses) => [
+    for (final verse in verses) ?requestFor(verse),
+  ];
 
   return ChantSource(
+    downloads: ChantDownloads(
+      usage: cache.usage,
+      clear: cache.clear,
+      download: (verses) =>
+          downloader.download(requestsFor(verses), vault.voiceId),
+      keepAhead: (verses) => downloader.keepAhead(requestsFor(verses)),
+    ),
     find: (verse) async {
       final audio = verse.audio.firstOrNull;
       if (audio == null) return null;
