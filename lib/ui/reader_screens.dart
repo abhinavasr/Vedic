@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../library/quote_sources.dart';
 import '../library/scripture_repository.dart';
 import 'jump_sheet.dart';
 import 'theme.dart';
@@ -50,21 +51,66 @@ void openVerseSection(
   );
 }
 
-class WorkScreen extends StatelessWidget {
+class WorkScreen extends StatefulWidget {
   const WorkScreen({super.key, required this.repository, required this.work});
 
   final ScriptureRepository repository;
   final WorkSummary work;
 
   @override
+  State<WorkScreen> createState() => _WorkScreenState();
+}
+
+class _WorkScreenState extends State<WorkScreen> {
+  late final _quotes = QuoteSources(widget.repository.store);
+  late var _isSource = _quotes.includes(widget.work);
+
+  void _toggleSource(bool on) {
+    _quotes.set(widget.work, on: on, all: widget.repository.works());
+    setState(() => _isSource = on);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final repository = widget.repository;
+    final work = widget.work;
     final sections = repository.sections(work);
     return Scaffold(
       appBar: AppBar(title: Text(work.titleNative ?? work.title)),
       body: ListView.builder(
-        itemCount: sections.length,
-        itemBuilder: (context, i) {
-          final section = sections[i];
+        // The switch rides at the top of the list, so it belongs to the book
+        // it is about. It was in Settings, which meant somebody who wanted
+        // the Ṛgveda in their mornings had to leave the Ṛgveda to say so.
+        itemCount: sections.length + 1,
+        itemBuilder: (context, index) {
+          if (index == 0) {
+            return Column(
+              children: [
+                SwitchListTile(
+                  key: const ValueKey('quote-source'),
+                  value: _isSource,
+                  onChanged: _toggleSource,
+                  secondary: Icon(
+                    _isSource
+                        ? Icons.format_quote
+                        : Icons.format_quote_outlined,
+                    color: _isSource
+                        ? SadhanaColors.gold
+                        : SadhanaColors.inkSoft,
+                  ),
+                  title: const Text('Use for the verse of the day'),
+                  subtitle: Text(
+                    _isSource
+                        ? 'A verse from here may open your morning'
+                        : 'Not drawn on for the morning verse',
+                    style: const TextStyle(color: SadhanaColors.inkSoft),
+                  ),
+                ),
+                const Divider(height: 1),
+              ],
+            );
+          }
+          final section = sections[index - 1];
           final number = section.number;
           return ListTile(
             // Not a circle: a sūkta's number is "10.191", which a circle

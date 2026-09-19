@@ -4,14 +4,12 @@ import 'package:flutter/material.dart';
 
 import '../ai/reading_languages.dart';
 import '../audio/chant_audio.dart';
-import '../library/quote_sources.dart';
 import '../library/scripture_repository.dart';
 import '../notify/daily_verse.dart';
 
 import 'ai/assistant_screen.dart';
 import 'listen_meaning.dart';
 import 'settings/language_screen.dart';
-import 'settings/quote_sources_screen.dart';
 import 'theme.dart';
 
 /// A feature that isn't available yet, explained rather than broken.
@@ -74,19 +72,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void initState() {
     super.initState();
     unawaited(_measure());
-  }
-
-  String _quoteSourceSummary(ScriptureRepository repository) {
-    final works = repository.works();
-    final sources = QuoteSources(repository.store);
-    final on = [
-      for (final work in works)
-        if (sources.includes(work)) work,
-    ];
-    if (on.isEmpty) return 'No book selected';
-    if (on.length == 1) return 'From ${on.single.title}';
-    if (on.length == works.length) return 'From every book';
-    return 'From ${on.length} of ${works.length} books';
   }
 
   Future<void> _measure() async {
@@ -178,23 +163,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
         const Divider(height: 1),
-        if (widget.repository case final repository?) ...[
-          ListTile(
-            key: const ValueKey('quote-sources'),
-            leading: const Icon(Icons.format_quote_outlined),
-            title: const Text('Verse of the day'),
-            subtitle: Text(_quoteSourceSummary(repository)),
-            onTap: () async {
-              await Navigator.of(context).push(
-                MaterialPageRoute<void>(
-                  builder: (_) => QuoteSourcesScreen(repository: repository),
-                ),
-              );
-              if (mounted) setState(() {});
-            },
-          ),
-          const Divider(height: 1),
-        ],
         // Hidden where there is nothing to manage: a build with no vault key
         // never downloads a chant, and a row reporting 0 bytes would only
         // raise a question it cannot answer.
