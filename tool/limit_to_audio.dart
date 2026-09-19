@@ -30,25 +30,30 @@ Future<void> main(List<String> arguments) async {
       : file.path;
 
   var keptSections = 0, keptVerses = 0, dropped = 0, partial = 0;
+  // A maṇḍala with nothing finished in it drops out altogether rather than
+  // shipping as an empty book. The pack format refuses a work with no text,
+  // which is the right answer: a title on a shelf that opens onto nothing is
+  // worse than a title that is not there yet.
   final works = [
     for (final work in content.works)
-      WorkSource(
-        slug: work.slug,
-        kind: work.kind,
-        title: work.title,
-        titleNative: work.titleNative,
-        titles: work.titles,
-        language: work.language,
-        script: work.script,
-        edition: work.edition,
-        licenceId: work.licenceId,
-        sourceNote: work.sourceNote,
-        coverUrl: work.coverUrl,
-        passages: [
-          for (final passage in work.passages)
-            if (_keep(work, passage)) passage,
-        ],
-      ),
+      if (work.passages.any((p) => _keep(work, p)))
+        WorkSource(
+          slug: work.slug,
+          kind: work.kind,
+          title: work.title,
+          titleNative: work.titleNative,
+          titles: work.titles,
+          language: work.language,
+          script: work.script,
+          edition: work.edition,
+          licenceId: work.licenceId,
+          sourceNote: work.sourceNote,
+          coverUrl: work.coverUrl,
+          passages: [
+            for (final passage in work.passages)
+              if (_keep(work, passage)) passage,
+          ],
+        ),
   ];
 
   // Counting is done over the result rather than guessed at during it.
@@ -72,14 +77,7 @@ Future<void> main(List<String> arguments) async {
   }
 
   await File(outPath).writeAsString(
-    '${const JsonEncoder.withIndent('  ').convert(PackContent(
-      packId: content.packId,
-      revision: content.revision,
-      languages: content.languages,
-      licences: content.licences,
-      voices: content.voices,
-      works: works,
-    ).toJson())}\n',
+    '${const JsonEncoder.withIndent('  ').convert(PackContent(packId: content.packId, revision: content.revision, languages: content.languages, licences: content.licences, voices: content.voices, works: works).toJson())}\n',
   );
   stdout.writeln(
     'kept $keptSections sūktas, $keptVerses verses · dropped $dropped '
@@ -93,8 +91,9 @@ String? _sectionKey(PassageSource passage) =>
 /// Whether this passage survives: its sūkta must be recorded right through.
 bool _keep(WorkSource work, PassageSource passage) {
   final key = _sectionKey(passage);
-  final verses = work.passages
-      .where((p) => _sectionKey(p) == key && p.kind == PassageKind.verse);
+  final verses = work.passages.where(
+    (p) => _sectionKey(p) == key && p.kind == PassageKind.verse,
+  );
   if (verses.isEmpty) return false;
   return verses.every((p) => p.audio.isNotEmpty);
 }

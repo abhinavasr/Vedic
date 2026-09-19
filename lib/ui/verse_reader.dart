@@ -9,6 +9,7 @@ import '../ai/translation.dart';
 import '../audio/chant_download.dart';
 import '../ai/verse_context.dart';
 import '../core/transliteration.dart';
+import '../library/quote_sources.dart';
 import '../library/scripture_repository.dart';
 import '../packs/pack_store.dart';
 import '../audio/listen_player.dart';
@@ -146,9 +147,11 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
     final downloads = ChantSource.instance.downloads;
     if (downloads == null) return;
     final upcoming = [
-      for (var i = _index + 1;
-          i < _verses.length && i <= _index + ChantDownloader.lookAhead;
-          i++)
+      for (
+        var i = _index + 1;
+        i < _verses.length && i <= _index + ChantDownloader.lookAhead;
+        i++
+      )
         _verses[i],
     ];
     if (upcoming.isEmpty) return;
@@ -315,6 +318,24 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
       index,
       duration: const Duration(milliseconds: 250),
       curve: Curves.easeOut,
+    );
+  }
+
+  late final _quotes = QuoteSources(widget.repository.store);
+  late var _isQuoteSource = _quotes.includes(widget.work);
+
+  void _toggleQuoteSource() {
+    final on = !_isQuoteSource;
+    _quotes.set(widget.work, on: on, all: widget.repository.works());
+    setState(() => _isQuoteSource = on);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          on
+              ? '${widget.work.title} now feeds the verse of the day'
+              : '${widget.work.title} no longer feeds the verse of the day',
+        ),
+      ),
     );
   }
 
@@ -695,12 +716,29 @@ class _VerseReaderScreenState extends State<VerseReaderScreen> {
         color: _bookmarked ? SadhanaColors.green : SadhanaColors.ink,
         icon: Icon(_bookmarked ? Icons.bookmark : Icons.bookmark_border),
       ),
+      // Marking the book this verse is in as somewhere the morning verse may
+      // come from. The unit is the book rather than the verse: the day's
+      // verse is drawn at random, and a list of individually starred verses
+      // would be a different feature — a reading list, not a source.
+      IconButton(
+        key: const ValueKey('quote-source-toggle'),
+        onPressed: _toggleQuoteSource,
+        tooltip: _isQuoteSource
+            ? 'Stop drawing the day’s verse from this book'
+            : 'Draw the day’s verse from this book too',
+        color: _isQuoteSource ? SadhanaColors.gold : SadhanaColors.ink,
+        icon: Icon(
+          _isQuoteSource ? Icons.format_quote : Icons.format_quote_outlined,
+        ),
+      ),
       IconButton(
         tooltip: 'Settings',
         color: SadhanaColors.gold,
-        onPressed: () => Navigator.of(
-          context,
-        ).push(MaterialPageRoute<void>(builder: (_) => const ProfileScreen())),
+        onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute<void>(
+            builder: (_) => ProfileScreen(repository: widget.repository),
+          ),
+        ),
         icon: const Icon(Icons.settings_outlined),
       ),
       const SizedBox(width: 4),

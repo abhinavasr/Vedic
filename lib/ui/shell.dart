@@ -85,7 +85,7 @@ class _SadhanaShellState extends State<SadhanaShell> {
 
   void _openSettings() =>
       Navigator.of(context)
-          .push(MaterialPageRoute<void>(builder: (_) => const ProfileScreen()));
+          .push(MaterialPageRoute<void>(builder: (_) => ProfileScreen(repository: widget.repository)));
 
   @override
   Widget build(BuildContext context) => PopScope(

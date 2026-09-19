@@ -30,6 +30,9 @@ ACCENTS = '॒॑᳐᳑᳒᳓᳔᳕᳖᳗᳘᳜᳝᳞᳟᳚᳛᳠᳡꣠꣡꣢꣣
 
 DIGITS = {c: str(i) for i, c in enumerate('०१२३४५६७८९')}
 
+# The maṇḍala number as the title writes it.
+DEVANAGARI = {n: ''.join('०१२३४५६७८९'[int(d)] for d in str(n)) for n in range(1, 11)}
+
 # Chandas worth naming, longest first so "अनुष्टुप्" wins over "अनुष्टु".
 METERS = [
     'गायत्री', 'त्रिष्टुप्', 'त्रिष्टुभ्', 'जगती', 'अनुष्टुप्', 'अनुष्टुभ्',
@@ -124,7 +127,12 @@ def main():
             index.append((int(row['mandala']), int(row['sukta']), row['file']))
     index.sort()
 
-    sections, total, held = [], 0, []
+    # Sections gathered per maṇḍala rather than into one heap. The Ṛgveda is
+    # not a book of 1,028 chapters: it is ten, and they are what the tradition
+    # names, what editions print as separate volumes, and what somebody means
+    # when they say where they are in it. Flat, the reader met 483 chips in a
+    # row with nothing to tell one part of the book from another.
+    by_mandala, total, held = {}, 0, []
     for mandala, sukta, name in index:
         text = (root / 'sources' / name).read_text(encoding='utf-8')
         header, body = split_header(text)
@@ -168,7 +176,7 @@ def main():
             # and the chandas, sometimes verse by verse, and picking it apart
             # would lose more than it would tidy.
             section['summary'] = {'sa': header}
-        sections.append(section)
+        by_mandala.setdefault(mandala, []).append(section)
 
     content = {
         'format': 'vedic-pack-content',
@@ -182,26 +190,36 @@ def main():
             'attribution': 'Ṛgveda Śākala Saṃhitā, accented Devanagari text.',
         }],
         'voices': [],
-        'works': [{
-            'slug': 'rigveda',
-            'kind': 'scripture',
-            'title': {'sa': 'ऋग्वेदः', 'en': 'Rigveda'},
-            'original_language': 'sa',
-            'script': 'Deva',
-            'edition': 'Śākala Saṃhitā',
-            'licence': 'rigveda-sa',
-            'source_note': (
-                f'{len(index)} of the 1028 suktas, supplied as {len(index)} text '
-                'files with Vedic accents. Which sukta each file holds was '
-                'settled by matching the text, not the filenames: see '
-                'sukta-index.csv.'
-            ),
-            'sections': sections,
-        }],
+        'works': [
+            {
+                # Numbered so they sort as they are read, and so a tenth
+                # maṇḍala never files between the first and the second.
+                'slug': f'rigveda-{mandala:02d}',
+                'kind': 'scripture',
+                'title': {
+                    'sa': f'ऋग्वेदः · मण्डल {DEVANAGARI[mandala]}',
+                    'en': f'Rigveda · Maṇḍala {mandala}',
+                },
+                'original_language': 'sa',
+                'script': 'Deva',
+                'edition': 'Śākala Saṃhitā',
+                'licence': 'rigveda-sa',
+                'source_note': (
+                    f'Maṇḍala {mandala}: {len(sections)} suktas of the '
+                    f'{len(index)} supplied, as text files with Vedic '
+                    'accents. Which sukta each file holds was settled by '
+                    'matching the text, not the filenames: see '
+                    'sukta-index.csv.'
+                ),
+                'sections': sections,
+            }
+            for mandala, sections in sorted(by_mandala.items())
+        ],
     }
     out = root / 'content.json'
     out.write_text(json.dumps(content, ensure_ascii=False), encoding='utf-8')
-    print(f'{len(sections)} suktas, {total} verses → {out}')
+    suktas = sum(len(v) for v in by_mandala.values())
+    print(f'{len(by_mandala)} mandalas, {suktas} suktas, {total} verses → {out}')
     if held:
         review = root / 'needs-review.csv'
         with review.open('w', encoding='utf-8') as f:

@@ -4,6 +4,7 @@ import 'package:sqlite3/sqlite3.dart';
 
 import '../core/transliteration.dart';
 import '../packs/pack_store.dart';
+import 'quote_sources.dart';
 
 // Read-only queries over installed packs for the reader UI.
 
@@ -316,9 +317,16 @@ class ScriptureRepository {
     return picked;
   }
 
-  /// One verse drawn from everything installed, by the day's own dice.
+  /// One verse drawn from the books chosen for it, by the day's own dice.
   VerseOfTheDay? _nthVerse(math.Random seed) {
-    final candidates = works().where((w) => w.verseCount > 0).toList();
+    // Weighted by length, as before, but only over the books the reader
+    // nominated. Drawing from everything installed meant the Ṛgveda, being
+    // ten times the Gītā, supplied almost every morning.
+    final chosen = QuoteSources(store);
+    final candidates = [
+      for (final work in works())
+        if (work.verseCount > 0 && chosen.includes(work)) work,
+    ];
     final total = candidates.fold(0, (n, w) => n + w.verseCount);
     if (total == 0) return null;
 
